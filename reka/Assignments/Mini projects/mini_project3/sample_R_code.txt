@@ -1,0 +1,36 @@
+# Set the working directory. You can also do this step by clicking on "File" and then "Change dir..."
+setwd("C:/Users/howardr/Documents/Stat801/Fall_2016/Assignments/Mini projects/mini_project3")
+
+#Read in the data, and name it
+
+data<-read.csv("example.csv")
+
+#Check dimensionality of the data
+
+dim(data)
+
+#Look at the first few rows of the data
+
+head(data)
+
+# Decide on which column you need. In my case I need the second column of the data, which is the Pheno
+
+pheno<-data[,2]
+
+# Plot histogram, and get summary statistics
+
+hist(pheno)
+summary(pheno)
+sd(pheno)
+
+#Take a random subset of the data, namely 50 observations.
+
+subset<-sample(pheno,50)
+
+# Plot histogram, and get summary statistics
+hist(subset)
+summary(subset)
+sd(subset)
+
+
+

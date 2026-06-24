@@ -1,0 +1,5 @@
+setwd("C:\\Users\\howardr\\Documents\\Stat801\\Fall_2016\\exams")
+data<-read.csv("data_for_exam2.csv")
+attach(data)
+fit = lm(Miles ~ as.factor(Brand))
+anova(fit)

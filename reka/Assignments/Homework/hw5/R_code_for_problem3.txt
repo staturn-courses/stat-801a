@@ -1,0 +1,5 @@
+setwd("C:\\Users\\howardr\\Documents\\Stat801\\Fall_2016\\Assignments\\Homework\\hw5")
+data<-read.csv("problem3_data.csv")
+attach(data)
+fit = lm(Friction ~ as.factor(Material))
+anova(fit)

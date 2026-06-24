@@ -1,0 +1,1664 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>section-2-probability – STAT 801A</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <div id="quarto-announcement" data-announcement-id="5baa15d4f3ba2343b03e365d390cad3a" class="alert alert-warning hidden"><div class="quarto-announcement-content">
+<p>This course is under active development</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">STAT 801A</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Section 1 Introduction.html">Notes</a></li><li class="breadcrumb-item"><a href="./Section 2 Probability.html">Probability Basics and Probability Distributions</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Course Overview</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Goals for STAT 801A</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Section 1 Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Data and the Scientific Method</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Section 2 Probability.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Probability Basics and Probability Distributions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Section 3 Sampling Distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sampling Distributions and Foundations of Statistical Inference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Section 4 One Pred Two Levels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">One Predictor/Explanatory Variable, Two Levels</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Section5-One-Pred-More-Than-Two-Levels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">One Predictor/Explanatory Variable, More Than Two Levels</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Labs</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Assignments</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project 1</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="probability-basics-and-probability-distributions" class="level1">
+<h1>Probability Basics and Probability Distributions</h1>
+<p>Probability is the language we use to talk about chance and quantify uncertainty. A probability is a number between 0 and 1, where an event is more likely the closer the probability is to 1.</p>
+<p>We’ve already seen a probability! Back to the babies–when we considered how unusual it was to see 13/16 babies pick the good puppet, we calculated:</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>The value we calculated is a <strong>p-value</strong>: the (empirical) probability of observing what we did in the data (or something even more extreme), under the assumption that the null hypothesis is true. For better or worse, science runs on p-values.</p>
+<p>In this section, we’ll see some basic probability theory and calculations, as well as probability distributions.</p>
+<section id="probability-basics" class="level2">
+<h2 class="anchored" data-anchor-id="probability-basics">Probability Basics</h2>
+<p>When we are uncertain about an outcome’s occurrence (e.g., whether a coin will come up heads or tails, the number of dots observed on the roll of a die, whether or not the bus will be late), we typically quantify this uncertainty with a probability. Probability is the foundation upon which all of statistics is built, and it a provides a framework for modeling populations, experiments, and almost anything that could be considered a random phenomenon.</p>
+<p>A <strong>sample space</strong>, denoted by <span class="math inline">\(S\)</span>, is comprised of all possible outcomes of a random phenomenon.</p>
+<p>An <strong>event</strong> is a collection of possible outcomes. Each event <span class="math inline">\(A\)</span> is a subset of <span class="math inline">\(S\)</span>.</p>
+<p>We want to formalize the idea of the “chance” that event <span class="math inline">\(A\)</span> occurs. We will do this by defining the <strong>probability</strong> of each <span class="math inline">\(A\)</span>, which we denote <span class="math inline">\(P(A)\)</span>.</p>
+<p>Probabilities are calculated by defining functions on sets, and should be defined for all possible events. One thing that must be true: <span class="math display">\[
+0 \leq P(A) \leq 1
+\]</span> </p>
+<p>More formally, a probability function is defined as follows.</p>
+<p>Given a sample space <span class="math inline">\(S\)</span>, a <strong>probability function</strong> is a function P(<span class="math inline">\(\cdot\)</span>) that satisfies</p>
+<ul>
+<li></li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li></li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li></li>
+</ul>
+<p><br>
+Any function P(<span class="math inline">\(\cdot\)</span>) that satisfies these three requirements is called a probability function.</p>
+<p>If we let <span class="math inline">\(S\)</span> be a sample space with associated probability function P, we can state some basic facts. Let <span class="math inline">\(A, B\)</span> be events in <span class="math inline">\(S\)</span>.</p>
+<ol type="1">
+<li></li>
+</ol>
+<p><br>
+</p>
+<ol start="2" type="1">
+<li></li>
+</ol>
+<p><br>
+</p>
+<ol start="3" type="1">
+<li></li>
+</ol>
+<p><br>
+</p>
+<ol start="4" type="1">
+<li></li>
+</ol>
+<p><br>
+</p>
+<ol start="5" type="1">
+<li></li>
+</ol>
+<p><br>
+</p>
+<ol start="6" type="1">
+<li></li>
+</ol>
+<p><br>
+</p>
+<p>We’ll use these facts when calculating probabilities. First, however, we need to figure out how to assign probabilities to specific events. There are several ways we can do this.</p>
+<ol type="1">
+<li><strong>Equally likely outcomes</strong></li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ol start="2" type="1">
+<li><strong>Relative frequencies</strong></li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ol start="3" type="1">
+<li><strong>Making assumptions</strong></li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>However we arrive at probabilities for a given scenario, we can use them to construct a <strong>probability distribution.</strong> There are several flavors of probability distribution. The simplest is a list of all possible outcomes and their associated probabilities, and it must satisfy three rules:</p>
+<ol type="1">
+<li></li>
+<li></li>
+<li></li>
+</ol>
+<p>Any probability distribution that can be written this way corresponds to a discrete variable or one that we have discretized.</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>We’ll see some other (more common, but more complicated) flavors of probability distributions in a bit, after some facts and definitions.</p>
+<p>Consider the following table:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Survived</th>
+<th>Did Not Survive</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>First Class</strong></td>
+<td>201</td>
+<td>123</td>
+</tr>
+<tr class="even">
+<td><strong>Second Class</strong></td>
+<td>118</td>
+<td>166</td>
+</tr>
+<tr class="odd">
+<td><strong>Third Class</strong></td>
+<td>181</td>
+<td>528</td>
+</tr>
+</tbody>
+</table>
+<p>The counts in the table are the number of Titanic passengers that fell into each of the categories. From this table, we can calculate some probabilities.</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>Sometimes we have partial information about a certain event and wish to know how this affects the probablities of other events, if at all. For example, we might be interested in the probability a passenger survived, given they were in First Class. This is called <strong>conditional probability.</strong></p>
+<p><strong>Definition:</strong></p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p><strong>Example:</strong> Toss a fair die. Let <span class="math inline">\(A=\{1\}\)</span> and let <span class="math inline">\(B=\{1,3,5\}\)</span>. What is the probability of throwing a 1, given an odd number was thrown?</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>This definition of conditional probability leads to:</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>Let <span class="math inline">\(A_1, A_2, \dots\)</span> be a collection of mutually exclusive and exhaustive events. What does this mean?</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>Suppose we want the probability of an event <span class="math inline">\(B\)</span>.</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>This leads to the general form of Bayes’ Theorem:</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p><strong>Example:</strong> (Problem 2.18) A genetic test is used to determine if people have a predisposition for thrombosis, which is a formation of a blood clot inside a blood vessel that obstructs the flow of blood through the circulatory system. It is believed that 3% of people actually have this predisposition. The genetic test is 99% accurate if a person actually has the predisposition. The test is 98% accurate if a person does not have the predisposition.</p>
+<p>What is the probability a randomly selected person who tests positive for the predisposition by the test actually has the predisposition?</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>Consider the following table, which summarizes all flights arriving at an airport in a single day:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Late</th>
+<th>On Time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Domestic</td>
+<td>12</td>
+<td>109</td>
+</tr>
+<tr class="even">
+<td>International</td>
+<td>6</td>
+<td>53</td>
+</tr>
+</tbody>
+</table>
+<p>What is the probability a randomly selected flight on this day was on time?</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>What is the probability a randomly selected flight was on time, given it was a domestic flight?</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>What do you notice?</p>
+<p><br>
+<br>
+<br>
+</p>
+<p>Does this make sense in the context of this scenario? What do you think it means?</p>
+<p><br>
+<br>
+<br>
+</p>
+<p>Sometimes the occurrence of one event, <span class="math inline">\(B\)</span>, will have no effect on the probability of another event, <span class="math inline">\(A\)</span>. If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are unrelated, then intuitively it should be the case</p>
+<p><br>
+<br>
+</p>
+<p>Also, it follows that</p>
+<p><br>
+<br>
+<br>
+</p>
+<p><strong>Definition:</strong></p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>How is independence used? Let’s do a pretty famous example. We’ll use a few of the rules we’ve seen so far.</p>
+<p><br>
+<br>
+<br>
+</p>
+</section>
+<section id="random-variables-and-probability-distributions" class="level2">
+<h2 class="anchored" data-anchor-id="random-variables-and-probability-distributions">Random Variables and Probability Distributions</h2>
+<p>Typically we are interested in a numerical measurement of the outcome of a random experiment. For example, we might want to know the number of insects treated with a dose of a new insecticide that are killed. In this case, the outcome is the survival status of each dosed insect and the numerical measurement we’re interested in is the number that died. However, the observed number varies depending on the actual result of the experiment. This type of variable is called a <strong>random variable.</strong></p>
+<p><strong>Definition:</strong> A <strong>random variable</strong> is a function that associates a real number with each element in the sample space. That is, a random variable is a function from a sample space, <span class="math inline">\(S\)</span>, into the real numbers.</p>
+<p><strong>Example:</strong> Suppose we roll two dice and we’re interested in the number of 1s that are thrown.</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>Random variables can also be defined on a continuous range.</p>
+<p><strong>Example:</strong> Take a 1 gram soil sample and measure the amount of phosphorus in the sample (in g).</p>
+<p><br>
+<br>
+<br>
+</p>
+<p>We’ve already seen one flavor of <strong>probability distribution</strong>: a list of possible outcomes for the random variable, and the associated probabilities.</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>We can define probability distribution more generally.</p>
+<p><strong>Definition:</strong> A probability distribution is a function that is used to assign probability to each value the random variable can take on.</p>
+<p>Maybe that function can be written in tabular form, as above, maybe it’s a function in the mathematical function sense (we’ll see some of these later in this section). We can have probability distributions for discrete random variables and continuous random variables.</p>
+<p><strong>Discrete probability distributions</strong></p>
+<ul>
+<li><p>Probabilities are denoted P<span class="math inline">\((X=x)\)</span> for the realized value <span class="math inline">\(x\)</span> of random variable <span class="math inline">\(X\)</span></p></li>
+<li><p><span class="math inline">\(\sum_i\)</span> P<span class="math inline">\((X=x_i)\)</span> = 1.</p></li>
+</ul>
+<p><br>
+<br>
+<br>
+</p>
+<p><strong>Example:</strong> We have two seeds in a Petri dish, and will observe how many germinate. We assume the seeds germinate independently, and the probability a randomly selected seed germinates is 0.80.</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p><strong>Continuous probability distributions</strong></p>
+<ul>
+<li><p>This distribution is called a probability density function (pdf) and denoted <span class="math inline">\(f(x)\)</span>.</p></li>
+<li><p>The area bounded by <span class="math inline">\(f(x)\)</span>, the horizontal axis, and the values <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> is P<span class="math inline">\((a \leq X \leq b)\)</span>.</p></li>
+<li><p>The total area under the pdf is 1.</p></li>
+</ul>
+<p><br>
+<br>
+<br>
+</p>
+<p><strong>Example:</strong> Let <span class="math inline">\(X\)</span> = phosphorus in a 1 gram soil sample. Suppose we assume the pdf is <span class="math display">\[
+f(x) = \left \{ \begin{array}{ll} 1 &amp; 0 \leq x \leq 1 \\ 0 &amp; x &lt; 0, x &gt; 1 \end{array} \right .
+\]</span><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p><strong>Joint probability distributions:</strong> We’ve already seen some of these! A joint probability distribution can be used to study the relationship between two variables, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, simultaneously. We’re going to restrict our attention to discrete joint probability distributions, and summarize them as two-way tables.</p>
+<p>Let’s go back to the Titanic example:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Survived</th>
+<th>Did Not Survive</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>First Class</strong></td>
+<td>201</td>
+<td>123</td>
+</tr>
+<tr class="even">
+<td><strong>Second Class</strong></td>
+<td>118</td>
+<td>166</td>
+</tr>
+<tr class="odd">
+<td><strong>Third Class</strong></td>
+<td>181</td>
+<td>528</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>If we know the probability distribution for a random variable, we can use it to calculate things like the “true” mean and variance for that variable.</p>
+<p><strong>Expected value:</strong> The expected value (or mean) of a discrete random variable is defined as</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>There are some rules that come along with expected values (discrete or continuous):</p>
+<ol type="1">
+<li>If <span class="math inline">\(X\)</span> is a random variable and <span class="math inline">\(c\)</span> is a constant, then</li>
+</ol>
+<p><br>
+<br>
+<br>
+</p>
+<ol start="2" type="1">
+<li>If <span class="math inline">\(X\)</span> is a random variable, <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span> are constants, and <span class="math inline">\(Y=bX + c\)</span>, then</li>
+</ol>
+<p><br>
+<br>
+<br>
+</p>
+<ol start="3" type="1">
+<li>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are random variables, <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span> are constants, and <span class="math inline">\(W=bX + cY\)</span>, then</li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p><strong>Example</strong>: Let <span class="math inline">\(X\)</span> = number of 1s thrown when rolling two dice.</p>
+<p><br>
+<br>
+<br>
+</p>
+<p><strong>Variance:</strong> The variance of a discrete random variable is defined as</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>There are also rules that come along with variance (discrete or continuous):</p>
+<ol type="1">
+<li>For any random variable <span class="math inline">\(X\)</span> and any constant <span class="math inline">\(c\)</span>,<br>
+</li>
+<li>If <span class="math inline">\(X\)</span> is a random variable, <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span> are constants, and <span class="math inline">\(Y=bX + c\)</span>, then</li>
+</ol>
+<p><br>
+<br>
+</p>
+<ol start="3" type="1">
+<li>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <strong>independent</strong> random variables, and <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span> are constants, then</li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ol start="4" type="1">
+<li>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are any two random variables, and <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span> are constants, then</li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p><strong>Example:</strong> In Mendel’s experiments on pea plants, he found the trait of being tall is dominant over being short. His theory indicates that if pure-line tall and pure-line short plants are cross-pollinated and then the hybrids in the next generation are cross-pollinated, in the resulting population approximately 3/4 of the plants will appear tall and 1/4 will appear short. If four plants are chosen at random from such a population, the best model (i.e., probability distribution) for the number of tall plants out of the four is</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(y\)</span></th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>P<span class="math inline">\((Y=y)\)</span></td>
+<td>1/256</td>
+<td>12/256</td>
+<td>54/256</td>
+<td>108/256</td>
+<td>81/256</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Find the expected number of tall plants</li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ul>
+<li>Find the variance of number of tall plants</li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ul>
+<li>Find the standard deviation of number of tall plants</li>
+</ul>
+<p><br>
+<br>
+</p>
+<ul>
+<li>What is the probability that the value of <span class="math inline">\(Y\)</span> will be more than 2 standard deviations below the expected value?</li>
+</ul>
+<p><br>
+<br>
+</p>
+<p><strong>Example:</strong> Three patients receive injections to desensitize them from an allergen. The serum used is said to be 90% effective. Let <span class="math inline">\(X\)</span> denote the number of patients who become desensitized.</p>
+<ul>
+<li>Find the probability distribution of <span class="math inline">\(X\)</span>.</li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ul>
+<li>Find the expected number of patients that will become desensitized.</li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ul>
+<li>Find the variance and standard deviation of the number of patients who become desensitized.</li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ul>
+<li>If a patient does not become desensitized, the insurance company will spend $50 on additional treatment. How much should the insurance company expect to pay in additional costs for these three patients?</li>
+</ul>
+<p><br>
+<br>
+<br>
+</p>
+<p><strong>Example:</strong> A forester is studying a population of trees that are known to have a mean height of 23.4 ft with a variance of 256 ft<span class="math inline">\(^2\)</span>. A tree is randomly selected from the population and its height is measured in feet. Let <span class="math inline">\(X\)</span> represent the height of the randomly selected tree.</p>
+<ul>
+<li>What is the selected tree’s expected height in meters? (there are 0.3048 meters in a foot)</li>
+</ul>
+<p><br>
+<br>
+<br>
+</p>
+<ul>
+<li>What is the variance of the height of the selected tree in meters?</li>
+</ul>
+<p><br>
+<br>
+</p>
+<p><strong>Example:</strong> Contracts for two construction jobs are randomly assigned to one or more of three firms: A, B, and C. Let <span class="math inline">\(Y_1\)</span> denote the number of contracts assigned to firm A and <span class="math inline">\(Y_2\)</span> the number of contracts assigned to firm B. The joint probability distribution for this scenario is</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ul>
+<li>Find the expected number of contracts awarded to Firm A.</li>
+</ul>
+<p><br>
+<br>
+</p>
+<ul>
+<li>Find the expected number of contracts awarded to Firm B.</li>
+</ul>
+<p><br>
+<br>
+</p>
+<ul>
+<li>Find the variance of number of contracts awarded to Firm A.</li>
+</ul>
+<p><br>
+<br>
+</p>
+<ul>
+<li>Find the variance of number of number of contracts awarded to Firm B.</li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li>Find the expected number of contracts awarded to either Firm A or Firm B.</li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li>Find the variance of the number of contracts award to either Firm A or Firm B.</li>
+</ul>
+<p><br>
+<br>
+<br>
+</p>
+<p>What now? What is this Cov?</p>
+<p><strong>Covariance</strong> is a measure of the linear relationship between two random variables. It can be positive or negative. A positive covariance indicates that as the value of one RV increases, so does the other. A negative covariance indicates that as the value of RV increases, the other decreases.</p>
+<p>For discrete RVs, the covariance is calculated as</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>If two random variables are independent, the covariance is 0.</p>
+<p><br>
+</p>
+<p>For our example, do you think covariance will be positive, negative, or 0?</p>
+<p>Let’s calculate it, and find the variance above.</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>Note the units of measurement on covariance.</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>This makes covariance less intuitive as a measure of dependence–its value depends on the scale of measurement. A measure of dependence that is not dependent on scale is the <strong>correlation</strong>:</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>The correlation is unitless, and must be <span class="math inline">\(-1 \leq \rho \leq 1\)</span>. Just like covariance, if two random variables are independent, their correlation will be 0.</p>
+</section>
+<section id="special-probability-distributions" class="level2">
+<h2 class="anchored" data-anchor-id="special-probability-distributions">Special Probability Distributions</h2>
+<p>Earlier, we mentioned that some probability distributions can be written as mathematical functions. We’re going to discuss some probability distributions that commonly arise in data analysis.</p>
+<section id="the-binomial-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="the-binomial-distribution">The Binomial Distribution</h3>
+<p>In some studies, the variable of interest only has two potential outcomes: success and failure. These could be died/survived, yes/no, occurred/did not occur, picked the good puppet/picked the bad puppet. Under some very specific conditions, variables like these follow a theoretical probability distribution called the <strong>binomial distribution.</strong></p>
+<p>Here are the conditions we need:</p>
+<ol type="1">
+<li></li>
+</ol>
+<p><br>
+</p>
+<ol start="2" type="1">
+<li></li>
+</ol>
+<p><br>
+</p>
+<ol start="3" type="1">
+<li></li>
+</ol>
+<p><br>
+</p>
+<ol start="4" type="1">
+<li></li>
+</ol>
+<p><br>
+</p>
+<ol start="5" type="1">
+<li></li>
+</ol>
+<p><br>
+</p>
+<p>If these conditions are met, the probability distribution of <span class="math inline">\(X\)</span> = number of “successes” observed in <span class="math inline">\(n\)</span> trials is</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>If <span class="math inline">\(X\)</span> follows a binomial distribution with <strong>parameter</strong> <span class="math inline">\(p\)</span>, then</p>
+<p><br>
+<br>
+<br>
+</p>
+<p>Right now, we’ll use the binomial distribution to calculate some probabilities assuming a specific value for <span class="math inline">\(p\)</span>, but inference for scenarios like this typically focuses on testing hypotheses about <span class="math inline">\(p\)</span> (like the babies!) and estimating <span class="math inline">\(p\)</span>.</p>
+<p><strong>Example:</strong> A new variety of turfgrass has been developed for use on golf courses, with the goal of obtaining a germination rate of 85%. To evaluate the grass, 20 seeds are planted in a greenhouse so that each seed will be exposed to identical conditions. If the 85% germination rate is correct, what is the probability that 18 or more seeds will germinate?</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>How many seeds do we expect to germinate? What is the variance of the number of germinated seeds?</p>
+<p><br>
+<br>
+</p>
+</section>
+<section id="the-poisson-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="the-poisson-distribution">The Poisson Distribution</h3>
+<p>The <strong>Poisson distribution</strong> models count data, typically the number of events observed for a particular unit of time or space. For example, the Poisson can be used to model variables like:</p>
+<ul>
+<li><p>the number of hits to a website per minute</p></li>
+<li><p>the number of PCB particles in a liter of water</p></li>
+<li><p>the number of insects in a square meter</p></li>
+<li><p>the number of cars passing through an intersection in 5 minutes</p></li>
+<li><p>the number of flaws in a yard of fabric</p></li>
+</ul>
+<p>Like the Binomial, the Poisson has some requirements:</p>
+<ol type="1">
+<li></li>
+</ol>
+<p><br>
+</p>
+<ol start="2" type="1">
+<li></li>
+</ol>
+<p><br>
+</p>
+<ol start="3" type="1">
+<li></li>
+</ol>
+<p><br>
+</p>
+<p>The probability distribution for the Poisson is</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>The Poisson distribution has a couple of interesting features:</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p><strong>Example:</strong> Suppose grasshoppers are distributed at random in a large field according to a Poisson distribution with <span class="math inline">\(\lambda=2\)</span> grasshoppers per square meter.</p>
+<ul>
+<li>Find the probability that no grasshoppers will be found in a randomly selected square meter.</li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ul>
+<li>Find the probability that 2 or fewer grasshoppers will be found in 2 square meters.</li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ul>
+<li>Find the expected number of grasshoppers in 10 square meters.</li>
+</ul>
+<p><br>
+<br>
+<br>
+</p>
+<ul>
+<li>Find the expected number of grasshoppers in 0.5 square meters.</li>
+</ul>
+<p><br>
+<br>
+</p>
+</section>
+<section id="the-normal-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="the-normal-distribution">The Normal Distribution</h3>
+<p>The most commonly used continuous distribution (maybe the most commonly used distribution, period) is the <strong>normal distribution</strong>. It’s commonly used because</p>
+<ul>
+<li></li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li></li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li></li>
+</ul>
+<p><br>
+</p>
+<p>The normal distribution is bell-shaped, symmetric, and unimodal. In fact, we shouldn’t call it <strong>the</strong> normal distribution, there are an infinite number of different normal distributions, depending on the <strong>parameters</strong> of the distribution, <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span>.</p>
+<ul>
+<li><span class="math inline">\(\mu\)</span> represents the mean of the distribution</li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ul>
+<li><span class="math inline">\(\sigma^2\)</span> represents the variance of the distribution</li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>The normal distribution does has a mathematical function (a pdf) that governs its shape:</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>We denote random variables following the normal as</p>
+<p><br>
+<br>
+</p>
+<p>and the normal with mean <span class="math inline">\(\mu=0\)</span> and variance <span class="math inline">\(\sigma^2=1\)</span> is called the <strong>standard normal</strong> distribution.</p>
+<p>The standard normal gives us a convenient way to compare observations, and any normal distribution can be transformed into a standard normal. The <strong>Z-score</strong> is</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>If the Z-score is positive</p>
+<p><br>
+</p>
+<p>If the Z-score is negative</p>
+<p><br>
+</p>
+<p>Z-scores can be used to</p>
+<ul>
+<li>gauge the unusualness of an observation</li>
+</ul>
+<p><br>
+<br>
+</p>
+<ul>
+<li>find probabilities</li>
+</ul>
+<p><br>
+<br>
+<br>
+</p>
+<p>Some helpful R functions:</p>
+<ul>
+<li><p><code>pnorm(x, mean=0, sd=1)</code></p></li>
+<li><p><code>qnorm(prob, meam=0, sd=1)</code></p></li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li><code>normTail(m=0,s=1, L=x)</code> or <code>normTail(m=0,s=1,U=x)</code> (does require the OpenIntro library)</li>
+</ul>
+<p><strong>Example:</strong> Full-term birth weights for single babies are normally distributed with a mean of 7.5 pounds and a standard deviation of 1.1 pounds.</p>
+<ul>
+<li>A randomly selected newborn weighs 9.1 pounds. What is the weight percentile for this baby?</li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<ul>
+<li>Babies that weigh less than 5.5 pounds are considered low birth weight. What proportion of babies are low birth weight?</li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ul>
+<li>What weight would make a baby at the 25th percentile?</li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ul>
+<li>What is the probability a randomly selected baby weighs between 7 and 8 pounds?</li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>The <strong>Empirical Rule</strong> (aka the 68-95-99.7 Rule) presents a general rule for the probability of falling within one, two, and three standard deviations of the mean in a normal distribution.</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>This rule is useful in a wide range of settings when trying to make a quick estimate.</p>
+<p>The normal distribution is useful because it can be used to approximate other distributions, such as the binomial.</p>
+<p>Let’s see what happens with <span class="math inline">\(p=0.15\)</span> as we change the sample size.</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>Recall the binomial distribution has</p>
+<p><br>
+</p>
+<p>If <span class="math inline">\(n\)</span> is sufficiently large, the binomial can be well-approximated with a normal distibution with <span class="math inline">\(\mu=np\)</span> and <span class="math inline">\(\sigma^2 = np(1-p)\)</span>.</p>
+<p>What’s sufficiently large?</p>
+<p><br>
+</p>
+<p><strong>Example:</strong> (problem 3.33) Suppose a university announced that it admitted 2500 students for the incoming first year class. However, the univesity has dorm room spots for only 1786 first year students. If there is a 70% chance an admitted student will enroll at the university, what is the probability the university will not have enough dorm room spots?</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

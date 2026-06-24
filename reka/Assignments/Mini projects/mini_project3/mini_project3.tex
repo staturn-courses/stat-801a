@@ -1,0 +1,53 @@
+%1/2in left/right margins, 1in top, 1/2 bottom
+\documentclass[12pt]{article}
+\hbadness=10000
+\tolerance=10000
+\textheight 9.7in
+\textwidth 7.0in
+\oddsidemargin -.5in
+\topmargin -.5in
+\headsep 0in
+\headheight 0in
+%\pagestyle{empty}
+
+\newcommand{\by}{\mbox{\boldmath$y$}}
+\newcommand{\bX}{\mbox{\boldmath$X$}}
+\newcommand{\bbeta}{\mbox{\boldmath$\beta$}}
+
+\begin{document}
+\hrule
+\medskip
+\centerline{\textbf{STATISTICS 801 - Section 250}}\hfill \textbf{Fall 2016}
+\centerline{\textbf{Mini Project 3}}
+\centerline{\textbf{Due 4:30 pm, Sept 26, 2016}}
+\smallskip
+\hrule
+
+The purpose of this assignment is to learn how to install R, how to read in a data set into R, and get familiar with confidence intervals and hypothesis testing. I posted an example data set and a corresponding sample R code on Blackboard in the Mini projects section.
+\begin{enumerate}
+\item Install R on your computer or on a computer that you will use for this project. Even if R is already installed on the computer but you are not familiar with the installation, please look at the R installation instructions. Straight forward instructions for installing R can be found at http://ftp.heanet.ie/mirrors/cran.r-project.org/. 
+\item Find a data set that has a continuous variable or continuous variables. You need data that are approximately normal. Before you read in your data, you can check whether it is approximately normal using your favorite software, or you can just do it in R. Document the source of your data.
+\item Read your data into R. The easiest way to read your data into R is to convert your data into a .csv file (if it is not already in a .csv format). 
+\item If you have more than one variable in your data set that satisfy the above restrictions please chose one variable. Explain what the data are about. Extract this one variable that you will work with. 
+\item Plot the histogram of your data. Calculate the summary statistics (you will need the standard deviation too). Attach the histogram. Describe your histogram.
+\item Assume that $\sigma=s$. Treat your data as a sample. Find the $10\%  , 50\%, 90\%, 95\%$, and $99\%$ confidence intervals, and interpret them.
+\item Compare the confidence intervals found in part 6. in terms of their width, the $\alpha$ level, and the confidence coefficient.
+\item Take a random half of your data. I provided code for this part in the sample R code.
+Provide the histogram, and the summary statistics. Compare the distribution with the distribution for the whole data.
+\item Calculate the  $10\%  , 50\%, 90\%, 95\%$, and $99\%$ confidence intervals, and interpret them. For the confidence interval calculations assume that the population standard deviation is the same as the one used in part 6.
+\item Compare the confidence intervals found in part 6. with the confidence intervals found in part 9. How does the sample size influence the confidence intervals?
+\item Come up with a testable hypotheses for the whole data, and test it.
+\begin{enumerate}
+\item State the question that you want to find the answer to (in words).
+\item What is your confidence level?
+\item State the null hypothesis. State the alternative hypothesis.
+\item What is the value of the test statistics?
+\item Do you reject or fail to reject the null hypothesis? Why?
+\item What is your conclusion?
+\end{enumerate}
+\end{enumerate}
+
+\textbf{If you have any questions please don't hesitate to contact me! Please start the project as soon as possible so you will have time to ask questions.}
+
+\end{document}
+ , 50/%, 90/%, 95/%$, and $99/%$ confidence intervals.

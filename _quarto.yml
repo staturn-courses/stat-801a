@@ -1,0 +1,46 @@
+project: 
+  type: website
+  
+website:
+  title: "STAT 801A"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+  announcement: 
+    content: "This course is under active development" 
+    type: warning
+
+  sidebar:
+    contents:
+      - section: "Course Overview"
+        contents:
+          - index.qmd
+      - section: "Notes"
+        contents:
+          - Section 1 Introduction.qmd
+          - Section 2 Probability.qmd
+          - Section 3 Sampling Distributions.qmd
+          - Section 4 One Pred Two Levels.qmd
+          - Section5-One-Pred-More-Than-Two-Levels.qmd
+      - section: "Slide Notes"
+        contents:
+          - notes/index.qmd
+          - notes/section-1-introduction.qmd
+          - notes/section-2-probability.qmd
+          - notes/section-3-sampling-distributions.qmd
+          - notes/section-4-two-levels.qmd
+          - notes/section-5-more-than-two-levels.qmd
+      - section: "Labs"
+      - section: "Assignments"
+        contents:
+          - project1.qmd
+        
+
+format: 
+  html:
+    theme: cosmo
+    toc: false
+
+execute:
+  eval: false

@@ -1,0 +1,34 @@
+\item A study was conducted among individuals with chronic pain to determine how effective acupuncture is in relieving pain. A random sample of 15 subjects were chosen and their sensory rates were measured. Assume that the measurements on sensory rates follow a  normal distribution. The data from the study are given below:
+
+
+\begin{verbatim}
+  8.6  9.4  7.9  6.8  8.3  7.3  9.2  9.6  8.7  11.4  10.3  5.4  8.1  5.5  6.9
+\end{verbatim}
+
+\begin{enumerate}
+      \item What is the value of $\bar{x}$, the sample mean (Use SAS, R, JMP or MS Excel to calculate)?  (Round your answer to the nearest 2 decimal places) \red{$\bar{x} = 8.23$} 
+     \item What is the value of $s$, the sample standard deviation (Use SAS, R, JMP or MS Excel to calculate)? \ (Round your answer to the nearest 2 decimal places) \red{$s = 1.67$} 
+     \item Report the degrees of freedom associated with the t-distribution. \red{$df = 14$} 
+     \item What is the value of $t_{\frac{\alpha}{2},n-1}$ for the 95\% confidence interval for the mean sensory rate? (The value obtained from Table-D, accurate to the nearest 3 decimal places) \red{$t_{\frac{\alpha}{2},n-1} = 2.145$} 
+      \item What is the margin of error for the 95\% confidence interval for the mean sensory rate? \ (Round your answer to the nearest 2 decimal places) \\ \red{$m = 2.145 \times \frac{1.67}{\sqrt{15}}=0.92$} 
+      \item Calculate the 95\% confidence interval for the mean sensory rate.
+      \begin{enumerate}
+      \item What is the value of the lower bound of the 95\% confidence interval? \ (Round your answer to the nearest 2 decimal places) \\ \red{$8.23 - 2.145 \times \frac{1.67}{\sqrt{15}} = 7.31$} 
+      \item What is the value of the upper bound of the 95\% confidence interval?  \ (Round your answer to the nearest 2 decimal places) \\ \red{$8.23 + 2.145 \times \frac{1.67}{\sqrt{15}} = 9.15$} 
+%\end{enumerate}
+\end{enumerate}
+\item  Interpret the confidence interval you constructed above in the context of the problem.\newline
+\red{We are 95\% confident that the true mean sensory rate for all individuals with chronic pain is between 7.31 and 9.15.}
+    \newpage   \item Assume that the standard deviation of all the sensory rates is known to be 1.67. %that is $\sigma = 1.67$. % ,i.e, \textbf {$\sigma$ is known}. 
+      Calculate the 95\% confidence interval for the mean sensory rate under this situation. 
+      \begin{enumerate}
+      \item What is the value of the lower bound of the 95\% confidence interval? (Round your answer to the nearest 2 decimal places)  \\ \red{$8.23 - 1.96 \times \frac{1.67}{\sqrt{15}} = 7.38$}
+      \item What is the value of the upper bound of the 95\% confidence interval? (Round your answer to the nearest 2 decimal places)  \\ \red{$8.23 + 1.96 \times \frac{1.67}{\sqrt{15}} = 9.08$}
+      \end{enumerate}
+      \item Is the 95\% confidence interval constructed in part(f) \textbf{wider} or \textbf{narrower} than the 95\% confidence interval in part(h)? Explain why.\\ 
+  \red{The 95\% confidence interval in part(f) is \textbf{wider} than the 95\% confidence interval constructed in part(h). This is because we used the $t_{\frac{\alpha}{2},n-1}$ value of 2.145 which is higher than the $z_\frac{\alpha}{2}$ value of 1.96, to account for the additional source of uncertainty due to estimating $\sigma$ with $s$. }\\
+
+
+
+\end{enumerate}
+

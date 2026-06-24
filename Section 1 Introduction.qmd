@@ -1,0 +1,476 @@
+# Introduction to Data and the Scientific Method
+
+Sound scientific conclusions require evidence from data. Statistics is the science of collecting, analyzing, and drawing conclusions from data. The goal of STAT 801A is to introduce you to the statistical methods used to answer research questions.
+
+The **scientific method** has been used for hundreds of years for discovering new knowledge, and can be summarized with the following diagram:
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/The_Scientific_Method.svg/960px-The_Scientific_Method.svg.png)
+
+It's not coincidental that the steps in the scientific method are closely related to the steps in a statistical investigation. These steps appear in Tintle et al. (2021), but are not at all unique to this textbook.
+
+-   Step 1: Ask a research question
+-   Step 2: Design a study and collect data
+-   Step 3: Explore the data
+-   Step 4: Draw inferences beyond the data
+-   Step 5: Formulate conclusions
+-   Step 6: Look back and look ahead
+
+How do you think the steps in a statistical investigation map to the scientific method? Can you map the baby study to either paradigm?
+
+Each of these steps has a lot of moving parts, so we'll look at each step in more detail and introduce some concepts and introductory definitions as we do so.
+
+## Step 1: Ask a research question
+
+Step 1 boils down to
+
+\
+\
+\
+
+This may involve
+
+-   
+
+\
+\
+\
+\
+\
+\
+\
+
+-   
+
+\
+\
+\
+\
+\
+
+-   
+
+\
+\
+\
+\
+\
+\
+
+\newpage
+
+Let's consider the baby example.
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+Why is a well-stated research question so important?
+
+\
+\
+\
+\
+\
+\
+
+Asking a research question is often the hardest part of the process, and requires technical information and experience in the discipline. A big reason why you are in graduate school is to gain this information and experience! A statistician can help you narrow your research question and state it precisely, but will not be able to formulate it for you.
+
+## Step 2: Design a study and collect data
+
+Step 2 involves
+
+\
+\
+\
+\
+
+There is so much going on here that is not evident from the simple statement of "collect data." Let's first think about why there are so many things to consider.
+
+Let's think about the babies. What questions do you think the researchers had to address in their design and data collection?
+
+\
+\
+
+\newpage
+
+We're trying answer a research question, and let's specifically think about evaluating hypotheses (though the same applies to estimating an unknown quantity). We can almost never absolutely accept or reject a research theory for two reasons:
+
+1.  Variability of experimental material
+
+\
+\
+\
+\
+
+2.  Sampling
+
+\
+\
+\
+\
+
+Variability and sampling are probably the two most important ideas in statistics, but they are also some of the hardest to grasp. Let's lay out some basic concepts.
+
+A researcher's major goal is to make general statements about their question as it applies to their **population of interest**.
+
+\
+\
+\
+\
+\
+\
+
+Populations can be finite or infinite. Even if the population is finite, we typically can't measure all of the units in the population. So, to collect data, we must select a subset of the population, a **sample** and hope that the subset is representative of the population.
+
+We'd really rather not rely on hope, and collect data in a way that ensures the sample represents the population. This is typically accomplished by **random sampling**
+
+\
+\
+\
+\
+\
+\
+\
+
+\newpage
+
+There are other considerations as well, typically driven by both the research question and practicality. These include:
+
+**Experiment or observational study?**
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+**If it's an experiment, what is the experimental unit?**
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+**What variable(s) will be measured?**
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+\newpage
+
+**How will the variables be measured? With how much precision?**
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+**If two or more variables are measured, can one be considered the response variable and the other(s) be considered explanatory?**
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+\newpage
+
+**Is it possible to employ random sampling, random assignment, or both?**
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+**How many observations should we collect?**\
+\
+\
+\
+\
+\
+\
+\
+\
+
+\newpage
+
+## Step 3: Explore the data
+
+Exploring the data means
+
+\
+\
+\
+\
+\
+
+For example, consider the histogram below. It shows the percent of residents aged 65 years and over in the 50 US states and District of Columbia.
+
+![Histogram of percent of residents aged 65 and over.](histogram%20outlier.jpg){fig-alt="The histograms depicts the percent of US residents aged 65 and over in each of the 50 states and DC. There are two noticeable outliers, one state with 6% over 65 and one state with 18% over 65." width="507"}
+
+Do you think these outliers are the result of a recording error?
+
+\newpage
+
+However, exploring the data goes beyond looking for unexpected outcomes, it also encompasses **exploratory data analysis** (EDA). EDA includes both numerical exploration and graphical exploration. Our textbook does a great job summarizing both numerical and graphical summaries of data (pages 30-73), including walking through how EDA can be used in several case studies.
+
+We won't spend a lot of time here, since these are mostly very familiar concepts (mean, median, etc.) However, we'll go through a small example as a preview of coming attractions.
+
+**Example:** The Gettysburg Address is comprised of 268 words, with word lengths varying from 1 ("a") to 11 ("consecrated") letters. Supposed we're interested in the average word length.
+
+The population of interest is
+
+\
+\
+
+We're going to take a random sample of $n=9$ words. The sample is
+
+| Word ID | Word  | Length |
+|---------|-------|--------|
+| 53      | long  | 4      |
+| 31      | Now   | 3      |
+| 120     | brave | 5      |
+| 263     | shall | 5      |
+| 264     | not   | 3      |
+| 249     | of    | 2      |
+| 221     | full  | 4      |
+| 144     | note  | 4      |
+| 209     | take  | 4      |
+
+: Random sample of 9 words from the Gettysburg Address
+
+Using our sample, we can easily find the sample mean and sample median.
+
+\
+\
+\
+\
+
+These values are **statistics**.
+
+\
+\
+\
+
+We typically use statistics to estimate **parameters**.
+
+\newpage
+
+In this case, we can actually calculate the parameters, because we have access to the entire population.
+
+\
+\
+\
+
+This is a very artificial situation. Most of the time, we only have the data in the sample and we want to use the statistics to make some statements about the parameters.
+
+We may also be interested in how much variability there is among word lengths. There are a few ways we could quantify variability. Again, let's consider the sample of 9 words.
+
+\
+\
+\
+
+\newpage
+
+Again, these are statistics because they're calculated only from our sample of $n=9$ observed words. In this case, we can get the parameters.
+
+\
+\
+\
+\
+\
+
+If we were to take a different sample of size $n=9$, we'd likely get different statistics. Let's try it.
+
+\
+\
+\
+\
+\
+
+So the sample mean, a **statistic**, is itself a **random variable**. There is uncertainty associated the outcome.
+
+What happens if we draw samples that are bigger than $n=9$?
+
+\
+\
+\
+\
+\
+
+So, the sample mean has its own variance, which depends on the sample size. Specifically,
+
+\
+\
+\
+\
+\
+\
+
+But, in real life, we only observe one sample--which means we get one mean and one variance. We need to understand the underlying behavior/variability of the sample statistics to be able to use them to make statements about the population parameters. This is why variability and sampling are such important concepts in statistics. We need to know how our sample statistic behaves in order to ...
+
+\newpage
+
+## Step 4: Draw inferences beyond the data
+
+The general idea in drawing inferences beyond the data
+
+\
+\
+\
+\
+
+Basically, we're trying to see what the sample data tells us about the population of interest.
+
+\
+\
+\
+\
+\
+
+Let's go back to the babies. If the babies really can't tell right from wrong, how likely is a baby to pick the good character?
+
+\
+\
+\
+
+We haven't even seen the data yet, but we can think about how a sample statistic should behave. What was measured? What is the sample statistic of interest? Once we get a handle on how the sample statistic should behave, we can assess how unusual the observed data actually are, if the babies really can't tell right from wrong.
+
+\
+\
+\
+\
+
+\newpage
+
+## Step 5: Formulate conclusions
+
+Here, our conclusions must consider the scope of inference made in Step 4.
+
+\
+\
+\
+\
+\
+
+It's important to keep in mind the population of interest, and whether we employed random assignment, random sampling, both, or neither.
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+\newpage
+
+## Step 6: Look back and ahead
+
+This step involves
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+As we progress through the semester, Step 4 is where we'll spend most of our time. We'll consider different types of variables, different research goals, different study designs, and how we can use the data to draw inferences to a larger population.
+
+As we saw earlier, in order to draw those inferences we need to understand and be able to quantify how much variability we expect to see in the sample statistic. We also need more precise definitions and rules around the uncertainty associated with data. In the next section, we'll discuss the basics of probability and probability distributions.

@@ -1,0 +1,5 @@
+setwd("C:\\Users\\howardr\\Documents\\Stat801\\Fall_2016\\Assignments\\Homework\\practice_problems_exam2")
+data<-read.csv("data.csv")
+attach(data)
+fit = lm(Hours ~ as.factor(School))
+anova(fit)

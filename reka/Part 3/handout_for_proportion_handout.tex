@@ -1,0 +1,34 @@
+%1/2in left/right margins, 1in top, 1/2 bottom
+\documentclass[12pt]{article}
+\hbadness=10000
+\tolerance=10000
+\textheight 9.7in
+\textwidth 7.0in
+\oddsidemargin -.5in
+\topmargin -.5in
+\headsep 0in
+\headheight 0in
+%\pagestyle{empty}
+
+\newcommand{\by}{\mbox{\boldmath$y$}}
+\newcommand{\bX}{\mbox{\boldmath$X$}}
+\newcommand{\bbeta}{\mbox{\boldmath$\beta$}}
+
+\begin{document}
+\hrule
+\medskip
+\centerline{\textbf{STATISTICS 801 - Section 250}}\hfill \textbf{Fall 2016}
+\centerline{\textbf{Why is this the test statistics for testing hypotheses for proportions?}}
+\smallskip
+\hrule
+For a binomial random variable $E(X)=np$ and $V(X)=np(1-p)$.\\
+Test statistic for proportions:\\
+\begin{equation}
+z=\frac{\hat{p}-p}{\sqrt{p(1-p)/n}}
+\end{equation}
+where $\hat{p}=\frac{X}{n}$ (sample proportion),\\
+p is the population proportion, and n is the sample size.\\
+The formula above for the test statistics can be derived from the $z=\frac{X-\mu}{\sigma}$ formula. Since $\mu=np$ and $\sigma=\sqrt{np(1-p)}$, we can write the following:\\
+$z=\frac{X-np}{\sqrt{np(1-p)}}=\frac{X/n-np/n}{\sqrt{np(1-p)}/n}=\frac{\hat{p}-p}{\sqrt{np(1-p)/n^2}}=\frac{\hat{p}-p}{\sqrt{p(1-p)/n}}$.
+\end{document}
+

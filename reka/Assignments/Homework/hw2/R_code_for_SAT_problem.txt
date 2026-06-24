@@ -1,0 +1,26 @@
+#Setting the working directory.
+#Be careful, R does not like single back-slash
+
+setwd("C:\\Users\\howardr\\Documents\\Stat801")
+
+#Read in the data set called SAT.csv, and name it data
+
+data<-read.csv(""SAT.csv")
+
+#Check the dimension of the data
+dim(data)
+
+#Print out (look at) the first few rows of the data
+head(data)
+
+#Histogram of the data
+# Be careful! Since our data is a matrix, we need to specify which column we are talking about
+# when we plot the histogram. Even when we only have one column (like in this example) we have to specify the column
+# The [,1] means that I am taking all of the rows and the first column
+hist(data[,1])
+
+#Plotting the histogram for the first 100 rows and first column of the data (which in our case is the first 100 observations)
+hist(data[1:100,1])
+
+#Summary statistics of the data
+summary(data[,1])

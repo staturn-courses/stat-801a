@@ -1,0 +1,190 @@
+---
+title: "Project 1"
+date: '2026-01-01'
+author: STAT 801A, Fall 2026
+date-format: "[Due on] MMMM D, YYYY at 9:00 PM"
+format: 
+  pdf:
+    include-in-header:
+      text: '\pagenumbering{gobble}'
+---
+
+## Overview
+
+The American Community Survey is a large national survey that collects information on many aspects of life in the United States. You are tasked with analyzing a subset of the 2022 survey for people who live and work in Lancaster County, Nebraska. In this particular subset, respondents were asked how long it takes for them to commute to work and only responses for people who drive alone are included. The data is available in the file `travel-time-31109.csv`.
+
+**Variable Descriptions:**
+
+- `RESPONDENT`: Unique identifier for each respondent
+- `TRANTIME`: Travel time to work in minutes
+- `DEPARTS`: Time of day the respondent leaves for work (e.g., 7:30 AM = 730)
+- `ARRIVES`: Time of day the respondent arrives at work (e.g., 7:30 AM = 730)
+
+```{r}
+#| eval: false
+#| echo: false
+library(tidyverse)
+dat <- read.csv('usa_00008.csv')
+ne <- dat %>% 
+  filter(STATEFIP==31 & COUNTYFIP == 109) %>% # State and county
+  filter(TRANWORK == 10) %>%  # Travel by car, truck, or van
+  filter(CARPOOL == 1) %>%  # Does not carpool
+  filter(RIDERS == 1) %>% # Verify one rider
+  filter(PWSTATE2 == 31 & PWCOUNTY == 109) %>% # Work in Lancaster County, NE
+  mutate(RESPONDENT = row_number()) %>% # Add a unique identifier for each respondent
+  select(RESPONDENT, TRANTIME, DEPARTS, ARRIVES) # Select only the variables of interest
+write_csv(ne, 'travel-time-31109.csv')
+
+ne %>% 
+  # slice_sample(n = 100) %>% 
+  ggplot(mapping = aes(x = TRANTIME)) +
+  geom_histogram()
+
+mean(ne$TRANTIME)
+median(ne$TRANTIME)
+sd(ne$TRANTIME)
+var(ne$TRANTIME)
+summary(ne$TRANTIME)
+hist(ne$TRANTIME)
+```
+
+## Problems
+
+Complete each of the following problems; solutions and brief explanations are provided below. The solution code reads `travel-time-31109.csv` from the project folder.
+
+```{r}
+#| echo: false
+# Load packages used in the solutions
+library(tidyverse)
+library(knitr)
+```
+
+## Solution: Problem 1
+
+```{r}
+#| echo: true
+# Read the data and show the first 10 rows
+ne_work_commute <- read.csv("travel-time-31109.csv")
+head(ne_work_commute, 10)
+```
+
+## Solution: Problem 2
+
+```{r}
+#| echo: true
+# Get dimensions and display a one-sentence summary
+dim_ne <- dim(ne_work_commute)
+dim_ne
+paste0("The dataset has ", dim_ne[1], " rows and ", dim_ne[2], " columns.")
+```
+
+## Solution: Problem 3
+
+```{r}
+#| echo: true
+# Mean of TRANTIME
+mean_tran <- mean(ne_work_commute$TRANTIME, na.rm = TRUE)
+mean_tran
+```
+
+## Solution: Problem 4
+
+```{r}
+#| echo: true
+# Median of TRANTIME
+median_tran <- median(ne_work_commute$TRANTIME, na.rm = TRUE)
+median_tran
+```
+
+## Solution: Problem 5
+
+```{r}
+#| echo: true
+# Variance of TRANTIME
+var_tran <- var(ne_work_commute$TRANTIME, na.rm = TRUE)
+var_tran
+```
+
+## Solution: Problem 6
+
+```{r}
+#| echo: true
+# Standard deviation of TRANTIME
+sd_tran <- sd(ne_work_commute$TRANTIME, na.rm = TRUE)
+sd_tran
+```
+
+## Solution: Problem 7
+
+```{r}
+#| echo: true
+# Quartiles / summary of TRANTIME
+summary(ne_work_commute$TRANTIME)
+```
+
+## Solution: Problem 8
+
+```{r}
+#| echo: true
+# Histogram of TRANTIME using ggplot2
+ggplot(ne_work_commute, aes(x = TRANTIME)) +
+  geom_histogram(binwidth = 5, color = "black", fill = "skyblue") +
+  labs(title = "Histogram of Travel Time (minutes)", x = "TRANTIME (minutes)", y = "Count")
+```
+
+## Solution: Problem 9
+
+```{r}
+#| echo: true
+# Compare mean and median and comment on which is preferable
+mean_tran
+median_tran
+```
+
+The mean is compared to the median above; if the mean is substantially larger than the median the distribution is right-skewed and the median is the more robust (preferred) measure of center.
+
+## Solution: Problem 10
+
+```{r}
+#| echo: true
+# Compute IQR-based bounds and create filtered_travel_time (non-outliers)
+q1 <- quantile(ne_work_commute$TRANTIME, 0.25, na.rm = TRUE)
+q3 <- quantile(ne_work_commute$TRANTIME, 0.75, na.rm = TRUE)
+iqr_val <- IQR(ne_work_commute$TRANTIME, na.rm = TRUE)
+lower <- q1 - 1.5 * iqr_val
+upper <- q3 + 1.5 * iqr_val
+filtered_travel_time <- ne_work_commute$TRANTIME[ne_work_commute$TRANTIME >= lower & ne_work_commute$TRANTIME <= upper]
+length(filtered_travel_time)
+head(filtered_travel_time)
+```
+
+## Solution: Problem 11
+
+```{r}
+#| echo: true
+# Histogram of filtered_travel_time
+filtered_df <- tibble(TRANTIME = filtered_travel_time)
+ggplot(filtered_df, aes(x = TRANTIME)) +
+  geom_histogram(binwidth = 5, color = "black", fill = "lightgreen") +
+  labs(title = "Histogram of Filtered Travel Time (no IQR outliers)", x = "TRANTIME (minutes)", y = "Count")
+```
+
+## Solution: Problem 12
+
+```{r}
+#| echo: true
+# Summary statistics for filtered_travel_time and formatted table
+mean_f <- mean(filtered_travel_time, na.rm = TRUE)
+median_f <- median(filtered_travel_time, na.rm = TRUE)
+var_f <- var(filtered_travel_time, na.rm = TRUE)
+sd_f <- sd(filtered_travel_time, na.rm = TRUE)
+
+summary_table <- tibble(
+  Statistic = c("Mean", "Median", "Variance", "SD"),
+  Value = c(mean_f, median_f, var_f, sd_f)
+) %>%
+  mutate(Value = round(Value, 2))
+
+knitr::kable(summary_table, caption = "Summary statistics for filtered_travel_time (rounded to 2 decimals)")
+```
+

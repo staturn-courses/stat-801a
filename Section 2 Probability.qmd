@@ -1,0 +1,1009 @@
+# Probability Basics and Probability Distributions
+
+Probability is the language we use to talk about chance and quantify uncertainty. A probability is a number between 0 and 1, where an event is more likely the closer the probability is to 1.
+
+We've already seen a probability! Back to the babies--when we considered how unusual it was to see 13/16 babies pick the good puppet, we calculated:
+
+\
+\
+\
+\
+\
+\
+\
+\
+
+The value we calculated is a **p-value**: the (empirical) probability of observing what we did in the data (or something even more extreme), under the assumption that the null hypothesis is true. For better or worse, science runs on p-values.
+
+In this section, we'll see some basic probability theory and calculations, as well as probability distributions.
+
+## Probability Basics
+
+When we are uncertain about an outcome's occurrence (e.g., whether a coin will come up heads or tails, the number of dots observed on the roll of a die, whether or not the bus will be late), we typically quantify this uncertainty with a probability. Probability is the foundation upon which all of statistics is built, and it a provides a framework for modeling populations, experiments, and almost anything that could be considered a random phenomenon.
+
+A **sample space**, denoted by $S$, is comprised of all possible outcomes of a random phenomenon.
+
+An **event** is a collection of possible outcomes. Each event $A$ is a subset of $S$.
+
+We want to formalize the idea of the "chance" that event $A$ occurs. We will do this by defining the **probability** of each $A$, which we denote $P(A)$.
+
+Probabilities are calculated by defining functions on sets, and should be defined for all possible events. One thing that must be true: $$
+0 \leq P(A) \leq 1
+$$ \newpage
+
+More formally, a probability function is defined as follows.
+
+Given a sample space $S$, a **probability function** is a function P($\cdot$) that satisfies
+
+-   
+
+\
+
+-   
+
+\
+
+-   
+
+\
+Any function P($\cdot$) that satisfies these three requirements is called a probability function.
+
+If we let $S$ be a sample space with associated probability function P, we can state some basic facts. Let $A, B$ be events in $S$.
+
+1.  
+
+\
+
+2.  
+
+\
+
+3.  
+
+\
+
+4.  
+
+\
+
+5.  
+
+\
+
+6.  
+
+\
+
+\newpage
+
+We'll use these facts when calculating probabilities. First, however, we need to figure out how to assign probabilities to specific events. There are several ways we can do this.
+
+1.  **Equally likely outcomes**
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+2.  **Relative frequencies**
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+3.  **Making assumptions**
+
+\
+\
+\
+\
+\
+
+\newpage
+
+However we arrive at probabilities for a given scenario, we can use them to construct a **probability distribution.** There are several flavors of probability distribution. The simplest is a list of all possible outcomes and their associated probabilities, and it must satisfy three rules:
+
+1.  
+
+2.  
+
+3.  
+
+Any probability distribution that can be written this way corresponds to a discrete variable or one that we have discretized.
+
+\
+\
+\
+\
+\
+\
+\
+\
+
+We'll see some other (more common, but more complicated) flavors of probability distributions in a bit, after some facts and definitions.
+
+Consider the following table:
+
+|                  | Survived | Did Not Survive |
+|------------------|----------|-----------------|
+| **First Class**  | 201      | 123             |
+| **Second Class** | 118      | 166             |
+| **Third Class**  | 181      | 528             |
+
+The counts in the table are the number of Titanic passengers that fell into each of the categories. From this table, we can calculate some probabilities.
+
+\
+\
+\
+\
+
+\newpage
+
+Sometimes we have partial information about a certain event and wish to know how this affects the probablities of other events, if at all. For example, we might be interested in the probability a passenger survived, given they were in First Class. This is called **conditional probability.**
+
+**Definition:**
+
+\
+\
+\
+\
+
+**Example:** Toss a fair die. Let $A=\{1\}$ and let $B=\{1,3,5\}$. What is the probability of throwing a 1, given an odd number was thrown?
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+This definition of conditional probability leads to:
+
+\
+\
+\
+\
+\
+\
+
+\newpage
+
+Let $A_1, A_2, \dots$ be a collection of mutually exclusive and exhaustive events. What does this mean?
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+Suppose we want the probability of an event $B$.
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+This leads to the general form of Bayes' Theorem:
+
+\
+\
+\
+\
+
+\newpage
+
+**Example:** (Problem 2.18) A genetic test is used to determine if people have a predisposition for thrombosis, which is a formation of a blood clot inside a blood vessel that obstructs the flow of blood through the circulatory system. It is believed that 3% of people actually have this predisposition. The genetic test is 99% accurate if a person actually has the predisposition. The test is 98% accurate if a person does not have the predisposition.
+
+What is the probability a randomly selected person who tests positive for the predisposition by the test actually has the predisposition?
+
+\
+\
+\
+\
+\
+
+\newpage
+
+Consider the following table, which summarizes all flights arriving at an airport in a single day:
+
+|               | Late | On Time |
+|---------------|------|---------|
+| Domestic      | 12   | 109     |
+| International | 6    | 53      |
+
+What is the probability a randomly selected flight on this day was on time?
+
+\
+\
+\
+\
+
+What is the probability a randomly selected flight was on time, given it was a domestic flight?
+
+\
+\
+\
+\
+
+What do you notice?
+
+\
+\
+\
+
+Does this make sense in the context of this scenario? What do you think it means?
+
+\
+\
+\
+
+\newpage
+
+Sometimes the occurrence of one event, $B$, will have no effect on the probability of another event, $A$. If $A$ and $B$ are unrelated, then intuitively it should be the case
+
+\
+\
+
+Also, it follows that
+
+\
+\
+\
+
+**Definition:**
+
+\
+\
+\
+\
+\
+\
+
+How is independence used? Let's do a pretty famous example. We'll use a few of the rules we've seen so far.
+
+\
+\
+\
+
+\newpage
+
+## Random Variables and Probability Distributions
+
+Typically we are interested in a numerical measurement of the outcome of a random experiment. For example, we might want to know the number of insects treated with a dose of a new insecticide that are killed. In this case, the outcome is the survival status of each dosed insect and the numerical measurement we're interested in is the number that died. However, the observed number varies depending on the actual result of the experiment. This type of variable is called a **random variable.**
+
+**Definition:** A **random variable** is a function that associates a real number with each element in the sample space. That is, a random variable is a function from a sample space, $S$, into the real numbers.
+
+**Example:** Suppose we roll two dice and we're interested in the number of 1s that are thrown.
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+Random variables can also be defined on a continuous range.
+
+**Example:** Take a 1 gram soil sample and measure the amount of phosphorus in the sample (in g).
+
+\
+\
+\
+
+\newpage
+
+We've already seen one flavor of **probability distribution**: a list of possible outcomes for the random variable, and the associated probabilities.
+
+\
+\
+\
+\
+
+We can define probability distribution more generally.
+
+**Definition:** A probability distribution is a function that is used to assign probability to each value the random variable can take on.
+
+Maybe that function can be written in tabular form, as above, maybe it's a function in the mathematical function sense (we'll see some of these later in this section). We can have probability distributions for discrete random variables and continuous random variables.
+
+**Discrete probability distributions**
+
+-   Probabilities are denoted P$(X=x)$ for the realized value $x$ of random variable $X$
+
+-   $\sum_i$ P$(X=x_i)$ = 1.
+
+\
+\
+\
+
+**Example:** We have two seeds in a Petri dish, and will observe how many germinate. We assume the seeds germinate independently, and the probability a randomly selected seed germinates is 0.80.
+
+\
+\
+\
+\
+\
+
+\newpage
+
+**Continuous probability distributions**
+
+-   This distribution is called a probability density function (pdf) and denoted $f(x)$.
+
+-   The area bounded by $f(x)$, the horizontal axis, and the values $a$ and $b$ is P$(a \leq X \leq b)$.
+
+-   The total area under the pdf is 1.
+
+\
+\
+\
+
+**Example:** Let $X$ = phosphorus in a 1 gram soil sample. Suppose we assume the pdf is $$
+f(x) = \left \{ \begin{array}{ll} 1 & 0 \leq x \leq 1 \\ 0 & x < 0, x > 1 \end{array} \right .
+$$\
+\
+\
+\
+\
+\
+\
+\
+
+\newpage
+
+**Joint probability distributions:** We've already seen some of these! A joint probability distribution can be used to study the relationship between two variables, $X$ and $Y$, simultaneously. We're going to restrict our attention to discrete joint probability distributions, and summarize them as two-way tables.
+
+Let's go back to the Titanic example:
+
+|                  | Survived | Did Not Survive |
+|------------------|----------|-----------------|
+| **First Class**  | 201      | 123             |
+| **Second Class** | 118      | 166             |
+| **Third Class**  | 181      | 528             |
+
+\
+\
+\
+\
+
+\newpage
+
+If we know the probability distribution for a random variable, we can use it to calculate things like the "true" mean and variance for that variable.
+
+**Expected value:** The expected value (or mean) of a discrete random variable is defined as
+
+\
+\
+\
+\
+\
+\
+\
+\
+
+There are some rules that come along with expected values (discrete or continuous):
+
+1.  If $X$ is a random variable and $c$ is a constant, then
+
+\
+\
+\
+
+2.  If $X$ is a random variable, $b$ and $c$ are constants, and $Y=bX + c$, then
+
+\
+\
+\
+
+3.  If $X$ and $Y$ are random variables, $b$ and $c$ are constants, and $W=bX + cY$, then
+
+\
+\
+\
+\
+\
+\
+
+**Example**: Let $X$ = number of 1s thrown when rolling two dice.
+
+\
+\
+\
+
+\newpage
+
+**Variance:** The variance of a discrete random variable is defined as
+
+\
+\
+\
+\
+\
+\
+\
+
+There are also rules that come along with variance (discrete or continuous):
+
+1.  For any random variable $X$ and any constant $c$,\
+2.  If $X$ is a random variable, $b$ and $c$ are constants, and $Y=bX + c$, then
+
+\
+\
+
+3.  If $X$ and $Y$ are **independent** random variables, and $b$ and $c$ are constants, then
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+4.  If $X$ and $Y$ are any two random variables, and $b$ and $c$ are constants, then
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+\newpage
+
+**Example:** In Mendel's experiments on pea plants, he found the trait of being tall is dominant over being short. His theory indicates that if pure-line tall and pure-line short plants are cross-pollinated and then the hybrids in the next generation are cross-pollinated, in the resulting population approximately 3/4 of the plants will appear tall and 1/4 will appear short. If four plants are chosen at random from such a population, the best model (i.e., probability distribution) for the number of tall plants out of the four is
+
+| $y$      | 0     | 1      | 2      | 3       | 4      |
+|----------|-------|--------|--------|---------|--------|
+| P$(Y=y)$ | 1/256 | 12/256 | 54/256 | 108/256 | 81/256 |
+
+-   Find the expected number of tall plants
+
+\
+\
+\
+\
+\
+\
+
+-   Find the variance of number of tall plants
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+-   Find the standard deviation of number of tall plants
+
+\
+\
+
+-   What is the probability that the value of $Y$ will be more than 2 standard deviations below the expected value?
+
+\
+\
+
+\newpage
+
+**Example:** Three patients receive injections to desensitize them from an allergen. The serum used is said to be 90% effective. Let $X$ denote the number of patients who become desensitized.
+
+-   Find the probability distribution of $X$.
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+-   Find the expected number of patients that will become desensitized.
+
+\
+\
+\
+\
+\
+\
+
+-   Find the variance and standard deviation of the number of patients who become desensitized.
+
+\
+\
+\
+\
+\
+\
+
+-   If a patient does not become desensitized, the insurance company will spend \$50 on additional treatment. How much should the insurance company expect to pay in additional costs for these three patients?
+
+\
+\
+\
+
+\newpage
+
+**Example:** A forester is studying a population of trees that are known to have a mean height of 23.4 ft with a variance of 256 ft$^2$. A tree is randomly selected from the population and its height is measured in feet. Let $X$ represent the height of the randomly selected tree.
+
+-   What is the selected tree's expected height in meters? (there are 0.3048 meters in a foot)
+
+\
+\
+\
+
+-   What is the variance of the height of the selected tree in meters?
+
+\
+\
+
+**Example:** Contracts for two construction jobs are randomly assigned to one or more of three firms: A, B, and C. Let $Y_1$ denote the number of contracts assigned to firm A and $Y_2$ the number of contracts assigned to firm B. The joint probability distribution for this scenario is
+
+\
+\
+\
+\
+\
+\
+\
+
+-   Find the expected number of contracts awarded to Firm A.
+
+\
+\
+
+-   Find the expected number of contracts awarded to Firm B.
+
+\
+\
+
+-   Find the variance of number of contracts awarded to Firm A.
+
+\
+\
+
+-   Find the variance of number of number of contracts awarded to Firm B.
+
+\
+
+\newpage
+
+-   Find the expected number of contracts awarded to either Firm A or Firm B.
+
+\
+
+-   Find the variance of the number of contracts award to either Firm A or Firm B.
+
+\
+\
+\
+
+What now? What is this Cov?
+
+**Covariance** is a measure of the linear relationship between two random variables. It can be positive or negative. A positive covariance indicates that as the value of one RV increases, so does the other. A negative covariance indicates that as the value of RV increases, the other decreases.
+
+For discrete RVs, the covariance is calculated as
+
+\
+\
+\
+\
+
+If two random variables are independent, the covariance is 0.
+
+\
+
+For our example, do you think covariance will be positive, negative, or 0?
+
+Let's calculate it, and find the variance above.
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+Note the units of measurement on covariance.
+
+\
+\
+\
+\
+
+\newpage
+
+This makes covariance less intuitive as a measure of dependence--its value depends on the scale of measurement. A measure of dependence that is not dependent on scale is the **correlation**:
+
+\
+\
+\
+\
+
+The correlation is unitless, and must be $-1 \leq \rho \leq 1$. Just like covariance, if two random variables are independent, their correlation will be 0.
+
+## Special Probability Distributions
+
+Earlier, we mentioned that some probability distributions can be written as mathematical functions. We're going to discuss some probability distributions that commonly arise in data analysis.
+
+### The Binomial Distribution
+
+In some studies, the variable of interest only has two potential outcomes: success and failure. These could be died/survived, yes/no, occurred/did not occur, picked the good puppet/picked the bad puppet. Under some very specific conditions, variables like these follow a theoretical probability distribution called the **binomial distribution.**
+
+Here are the conditions we need:
+
+1.  
+
+\
+
+2.  
+
+\
+
+3.  
+
+\
+
+4.  
+
+\
+
+5.  
+
+\
+
+If these conditions are met, the probability distribution of $X$ = number of "successes" observed in $n$ trials is
+
+\
+\
+\
+\
+\
+
+If $X$ follows a binomial distribution with **parameter** $p$, then
+
+\
+\
+\
+
+Right now, we'll use the binomial distribution to calculate some probabilities assuming a specific value for $p$, but inference for scenarios like this typically focuses on testing hypotheses about $p$ (like the babies!) and estimating $p$.
+
+**Example:** A new variety of turfgrass has been developed for use on golf courses, with the goal of obtaining a germination rate of 85%. To evaluate the grass, 20 seeds are planted in a greenhouse so that each seed will be exposed to identical conditions. If the 85% germination rate is correct, what is the probability that 18 or more seeds will germinate?
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+How many seeds do we expect to germinate? What is the variance of the number of germinated seeds?
+
+\
+\
+
+\newpage
+
+### The Poisson Distribution
+
+The **Poisson distribution** models count data, typically the number of events observed for a particular unit of time or space. For example, the Poisson can be used to model variables like:
+
+-   the number of hits to a website per minute
+
+-   the number of PCB particles in a liter of water
+
+-   the number of insects in a square meter
+
+-   the number of cars passing through an intersection in 5 minutes
+
+-   the number of flaws in a yard of fabric
+
+Like the Binomial, the Poisson has some requirements:
+
+1.  
+
+\
+
+2.  
+
+\
+
+3.  
+
+\
+
+The probability distribution for the Poisson is
+
+\
+\
+\
+\
+\
+\
+
+The Poisson distribution has a couple of interesting features:
+
+\
+\
+\
+\
+
+\newpage
+
+**Example:** Suppose grasshoppers are distributed at random in a large field according to a Poisson distribution with $\lambda=2$ grasshoppers per square meter.
+
+-   Find the probability that no grasshoppers will be found in a randomly selected square meter.
+
+\
+\
+\
+\
+\
+\
+
+-   Find the probability that 2 or fewer grasshoppers will be found in 2 square meters.
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+-   Find the expected number of grasshoppers in 10 square meters.
+
+\
+\
+\
+
+-   Find the expected number of grasshoppers in 0.5 square meters.
+
+\
+\
+
+\newpage
+
+### The Normal Distribution
+
+The most commonly used continuous distribution (maybe the most commonly used distribution, period) is the **normal distribution**. It's commonly used because
+
+-   
+
+\
+
+-   
+
+\
+
+-   
+
+\
+
+The normal distribution is bell-shaped, symmetric, and unimodal. In fact, we shouldn't call it **the** normal distribution, there are an infinite number of different normal distributions, depending on the **parameters** of the distribution, $\mu$ and $\sigma^2$.
+
+-   $\mu$ represents the mean of the distribution
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+-   $\sigma^2$ represents the variance of the distribution
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+\newpage
+
+The normal distribution does has a mathematical function (a pdf) that governs its shape:
+
+\
+\
+\
+\
+\
+\
+
+We denote random variables following the normal as
+
+\
+\
+
+and the normal with mean $\mu=0$ and variance $\sigma^2=1$ is called the **standard normal** distribution.
+
+The standard normal gives us a convenient way to compare observations, and any normal distribution can be transformed into a standard normal. The **Z-score** is
+
+\
+\
+\
+\
+\
+
+If the Z-score is positive
+
+\
+
+If the Z-score is negative
+
+\
+
+Z-scores can be used to
+
+-   gauge the unusualness of an observation
+
+\
+\
+
+-   find probabilities
+
+\
+\
+\
+
+\newpage
+
+Some helpful R functions:
+
+-   `pnorm(x, mean=0, sd=1)`
+
+-   `qnorm(prob, meam=0, sd=1)`
+
+\
+
+-   `normTail(m=0,s=1, L=x)` or `normTail(m=0,s=1,U=x)` (does require the OpenIntro library)
+
+**Example:** Full-term birth weights for single babies are normally distributed with a mean of 7.5 pounds and a standard deviation of 1.1 pounds.
+
+-   A randomly selected newborn weighs 9.1 pounds. What is the weight percentile for this baby?
+
+\
+\
+\
+\
+
+-   Babies that weigh less than 5.5 pounds are considered low birth weight. What proportion of babies are low birth weight?
+
+\
+\
+\
+\
+\
+
+-   What weight would make a baby at the 25th percentile?
+
+\
+\
+\
+\
+\
+
+-   What is the probability a randomly selected baby weighs between 7 and 8 pounds?
+
+\
+\
+\
+\
+
+\newpage
+
+The **Empirical Rule** (aka the 68-95-99.7 Rule) presents a general rule for the probability of falling within one, two, and three standard deviations of the mean in a normal distribution.
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+This rule is useful in a wide range of settings when trying to make a quick estimate.
+
+The normal distribution is useful because it can be used to approximate other distributions, such as the binomial.
+
+Let's see what happens with $p=0.15$ as we change the sample size.
+
+\
+\
+\
+\
+
+Recall the binomial distribution has
+
+\
+
+If $n$ is sufficiently large, the binomial can be well-approximated with a normal distibution with $\mu=np$ and $\sigma^2 = np(1-p)$.
+
+What's sufficiently large?
+
+\
+
+**Example:** (problem 3.33) Suppose a university announced that it admitted 2500 students for the incoming first year class. However, the univesity has dorm room spots for only 1786 first year students. If there is a 70% chance an admitted student will enroll at the university, what is the probability the university will not have enough dorm room spots?

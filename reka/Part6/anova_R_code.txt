@@ -1,0 +1,27 @@
+# Example 8.1
+
+var1<-c(0.35,0.40,0.58,0.50,0.47)
+var2<-c(0.65,0.70,0.90,0.84,0.79)
+var3<-c(0.60,0.80,0.75,0.73,0.66)
+
+combine<-c(var1,var2,var3)
+groups<-as.factor(c(rep(1,5),rep(2,5),rep(3,5)))
+
+
+fit = lm(formula = combine ~ groups)
+
+anova(fit)
+
+#############################
+
+setwd("C:\\Users\\howardr\\Documents\\Stat801\\Fall_2016\\Part6")
+data<-read.csv("example81.csv")
+attach(data)
+fit = lm(phosphorus ~ as.factor(variety))
+anova(fit)
+
+###################################
+
+data<-read.csv("example82.csv")
+fit = lm(data$Score ~as.factor(data$Method))
+anova(fit)

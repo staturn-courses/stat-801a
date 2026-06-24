@@ -1,0 +1,82 @@
+%1/2in left/right margins, 1in top, 1/2 bottom
+\documentclass[12pt]{article}
+\hbadness=10000
+\tolerance=10000
+\textheight 9.7in
+\textwidth 7.0in
+\oddsidemargin -.5in
+\topmargin -.5in
+\headsep 0in
+\headheight 0in
+%\pagestyle{empty}
+
+\newcommand{\by}{\mbox{\boldmath$y$}}
+\newcommand{\bX}{\mbox{\boldmath$X$}}
+\newcommand{\bbeta}{\mbox{\boldmath$\beta$}}
+
+\begin{document}
+\hrule
+\medskip
+\centerline{\textbf{STATISTICS 801 - Section 250}}\hfill \textbf{Fall 2016}
+\centerline{\textbf{z Test for a Proportion}}
+\smallskip
+\hrule
+Many hypothesis testing situations involve proportions. A hypothesis test involving a population proportion can be considered as a binomial experiment when there are only two outcomes and the probability of success does not change from trial to trial.\\
+For a binomial random variable $E(X)=np$ and $V(X)=np(1-p)$.\\
+Since the normal distribution can be used to approximate the binomial distribution when $np\geq 5$ and $n(1-p)\geq 5$, the standard normal distribution can be used to test hypotheses for proportions.\\
+Test statistic for proportions:\\
+\begin{equation}
+z=\frac{\hat{p}-p}{\sqrt{p(1-p)/n}}
+\end{equation}
+where $\hat{p}=\frac{X}{n}$ (sample proportion),\\
+p is the population proportion, and n is the sample size.
+
+\begin{enumerate}
+\item An educator estimates that the dropout rate for seniors at high schools in Nebraska is $15\%$. Last year, 38 seniors from a random sample of 200 Nebraska seniors withdrew. At $\alpha=0.05$, is there enough evidence to reject the educator's claim?
+\begin{enumerate}
+\item State the hypotheses.\\
+$H_0:p=0.15$ and $H_1:p\neq 0.15$
+\item Check whether we can use the standard normal distribution to test the hypothesis.\\
+$np=38\times 0.15=5.7$ and $n(1-p)=38\times 0.85=32.3$
+\item Find the critical value(s). Since $\alpha=0.05$ and the test is two-tailed, the critical values are 1.96 and -1.96.
+\item Compute the test statistic. First, it is necessary to find $\hat{p}$.\\
+$\hat{p}=\frac{X}{n}=\frac{38}{200}=0.19$ and $p=0.15$, so $1-p=0.85$\\
+$z=\frac{\hat{p}-p}{\sqrt{p(1-p)/n}}=\frac{0.19-0.15}{\sqrt{(0.15)(0.85)/200}}=1.58$
+\item Make the decision. We fail to reject the null hypothesis because the test statistic falls outside of the rejection region.
+\item Make a conclusion. There is not enough evidence to reject the claim that the dropout rate for seniors in high schools in Nebraska is $15\%$.\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\end{enumerate}
+\item An attorney claims that more than $25\%$ of all lawyers advertise. A sample of 200 lawyers in a certain city showed that 63 had used some form of advertising, At $\alpha=0.05$, is there enough evidence to support the attorney's claim? Use the p-value method.
+\begin{enumerate}
+\item State the hypotheses.\\
+$H_0: \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; $ and $H_1:$
+\item $\hat{p}=$\\
+\\
+$p= \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; 1-p=$\\
+$z=$\\
+\\
+\\
+\item Find the p-value.\\
+\\
+\item Make a decision.\\
+\\
+\item Make a conclusion.\\
+\\
+\\
+\\
+\end{enumerate}
+A recent survey found that $64.7\%$ of the population own their homes. In a random sample of 150 heads of households, 92 responded that they owned their homes. At the 0.01 level of significance, does that indicate a difference from the national proportion?
+\end{enumerate}
+\end{document}
+

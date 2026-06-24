@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>section-3-sampling-distributions – STAT 801A</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <div id="quarto-announcement" data-announcement-id="5baa15d4f3ba2343b03e365d390cad3a" class="alert alert-warning hidden"><div class="quarto-announcement-content">
+<p>This course is under active development</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">STAT 801A</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Section 1 Introduction.html">Notes</a></li><li class="breadcrumb-item"><a href="./Section 3 Sampling Distributions.html">Sampling Distributions and Foundations of Statistical Inference</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Course Overview</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Goals for STAT 801A</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Section 1 Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Data and the Scientific Method</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Section 2 Probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probability Basics and Probability Distributions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Section 3 Sampling Distributions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Sampling Distributions and Foundations of Statistical Inference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Section 4 One Pred Two Levels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">One Predictor/Explanatory Variable, Two Levels</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Section5-One-Pred-More-Than-Two-Levels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">One Predictor/Explanatory Variable, More Than Two Levels</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Labs</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Assignments</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project 1</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="sampling-distributions-and-foundations-of-statistical-inference" class="level1">
+<h1>Sampling Distributions and Foundations of Statistical Inference</h1>
+<p>As we’ve seen in the last two chapters, variability is natural and expected. We expect to see variability in observations, which implies there will also be variability in summary statistics. We’ve seen this already:</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>If we want to use a summary statistic (like <span class="math inline">\(\bar X\)</span> or <span class="math inline">\(\hat p\)</span>) calculated from our sample to draw inferences about the population, we have to understand how the summary statistic behaves.</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>This means, we need to know the <strong>sampling distribution</strong> of the statistic.</p>
+<section id="sampling-distributions" class="level2">
+<h2 class="anchored" data-anchor-id="sampling-distributions">Sampling Distributions</h2>
+<p>As a refresher, the goal of statistical inference is to use an observed data set to answer questions about the overall population from which the sample data set was drawn. Typically, those questions may be answered using some <strong>parameter(s)</strong> of the population distribution.</p>
+<p>A <strong>parameter</strong> is</p>
+<p><br>
+<br>
+</p>
+<p>For example,</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>Parameters are generally fixed, unknown constants. We want to use our sample data to answer a question about the parameter (hypothesis test) or estimate the parameter (confidence interval). We may also be interested in functions of parameters.</p>
+<p>Often, the <strong>statistic</strong> we’ll use to estimate the underlying parameter is pretty intuitive.</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>But, if we want to use a statistic, we have to understand its behavior.</p>
+<p>The <strong>sampling distribution</strong> is</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>We’ve can study sampling distributions empirically, through simulation. We’ve already done this!</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>We can also quantify sampling distributions theoretically. We’ve already done this too!</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>The sampling distributions we’ve seen so far have been (mostly):</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>This isn’t coincidence it’s guaranteed by a very important theorem, the <strong>Central Limit Theorem</strong>.</p>
+<p><strong>Central Limit Theorem</strong>:</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>But wait, the sample mean? Weren’t we also considering sample proportions?</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>Let’s think more about these requirements:</p>
+<ul>
+<li>Independence</li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ul>
+<li>“Large enough”</li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<div style="page-break-after: always;"></div>
+<p>If the Central Limit Theorem holds, the underlying parameters of the resulting approximate normal distribution will depend on the population from which the original data were drawn.</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>Other statistics will have sampling distributions that do not follow an approximate normal. For example, the sample variance is a natural estimate for the population variance. But, the CLT does not apply to variances. We’ll need a different distribution.</p>
+<p>Once we can articulate the sampling distribution, we can use it to do statistical inference.</p>
+</section>
+<section id="foundations-of-statistical-inference" class="level2">
+<h2 class="anchored" data-anchor-id="foundations-of-statistical-inference">Foundations of Statistical Inference</h2>
+<p>In Chapter One, we talked about framing a research question. Many (but not all) research questions can be answered using <strong>statistical inference</strong>. We’ll now lay out the basic logic of statistical inference, illustraing the different methods for the case in which we have a single response variable (quantitative or categorical) and no explanatory variable. The framework for statistical inference will not change as we move to more complicated scenarios.</p>
+<p><strong>Statistical inference</strong> is a collection of techniques which use information from a sample to make precise statements about the entire population. In STAT 801A, the general statements about populations will be expressed in terms of the parameters, or functions of parameters, of probability distributions. Because we know the sampling distribution, we can use probability to precisely quantify the accuracy of our general statements.</p>
+<p>Statistical inference is broken into two broad categories: estimation and testing. These map back to the types of research questions we outlined in Chapter One.</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<div style="page-break-after: always;"></div>
+<section id="estimation" class="level3">
+<h3 class="anchored" data-anchor-id="estimation">Estimation</h3>
+<p>This category of statistical inference is concerned with using sample information to estimate one or more parameters, or functions of parameters, of the probability distribution for a population. For example, we may be interested in estimating the mean of a population, or the difference in means between two populations. There are two types of estimation, point estimation and interval estimation.</p>
+<p><strong>Point estimation</strong></p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>But a single value is not very meaningful without some way of telling how close our estimate comes to the true value.</p>
+<p><strong>Interval estimation</strong></p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>We’ll illustrate how interval estimation works with an example.</p>
+<p><strong>Example:</strong> An entomologist is studying a new tick species that may be the carrier of the pathogen associated with lyme disease. They design a study to estimate prevalence of the pathogen in the tick. They examine 200 ticks randomly selected in the study region during a period of the year when ticks have been known to be infected with the pathogen in other regions of the country. They find 18 ticks that are infected with the pathogen.</p>
+<ul>
+<li>Parameter of interest:</li>
+</ul>
+<p><br>
+<br>
+</p>
+<ul>
+<li>Sample statistic:</li>
+</ul>
+<p><br>
+<br>
+</p>
+<p>Are the requirements for the Central Limit Theorem met?</p>
+<p><br>
+<br>
+</p>
+<div style="page-break-after: always;"></div>
+<p>The Central Limit Theorem tells us</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>Now let’s consider the Empirical Rule.</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>Most (but not all) confidence intervals have the form:</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>So, to calculate a confidence interval of this form we’ll need the <strong>margin of error</strong>, which is calculated based on the <strong>standard error of the statistic</strong> and the <strong>sampling distribution of the statistic</strong>. We’ll also need to specify how much certainly we want in our interval estimate.</p>
+<p><br>
+<br>
+</p>
+<div style="page-break-after: always;"></div>
+<p>Back to the ticks.</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+&nbsp;<br>
+<br>
+</p>
+<p>What happens if we change our level of confidence?</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>What if we want a confidence level that isn’t 68, 95, or 99.7?</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<div style="page-break-after: always;"></div>
+<p>Let’s think more carefully about what this confidence level means. A confidence interval is a probability statement, but not the probability statement that is intuitive. Suppose we are interested in an interval estimate for a parameter <span class="math inline">\(\theta\)</span>.</p>
+<p><br>
+<br>
+<br>
+</p>
+<p>It’s super important to understand that this probability statement is only valid for as long as <span class="math inline">\(L\)</span> and <span class="math inline">\(U\)</span> are unknown. Once we use the data to estimate <span class="math inline">\(L\)</span> and <span class="math inline">\(U\)</span>, and get <span class="math inline">\(\hat{L}\)</span> and <span class="math inline">\(\hat{U}\)</span>, the interval is no longer random. The interval either contains the parameter or it doesn’t. This means statements like</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>are <strong>incorrect</strong>, as tempting as they are to write. Rather, the statement of probability is about the method used to obtain the confidence interval.</p>
+<p>Let’s look at the applet to explore what that confidence level really means: <a href="https://www.isi-stats.com/isi2nd/ISIapplets2021.html">Applet</a></p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>So, let’s find a 98% confidence interval for the proportion of ticks that are infected by the pathogen.</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<div style="page-break-after: always;"></div>
+<p><strong>Example:</strong> (4.17, sort of) The nutrition label on a bag of potato chips says that a one ounce serving has 130 calories and 10 grams of fat. A random sample of 35 bags yielded a sample mean of <span class="math inline">\(\bar{x}=134\)</span> calories with a sample standard deviation of <span class="math inline">\(s = 17\)</span> calories. Assume the distribution of bags is relatively symmetric. We want a 95% confidence interval for the true mean calorie count of a bag of potato chips.</p>
+<p>What’s different about this example, compared to the tick example?</p>
+<p><br>
+<br>
+<br>
+</p>
+<p>Let’s state the Central Limit Theorem again.</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>This presents a few complications:</p>
+<ul>
+<li></li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ul>
+<li></li>
+</ul>
+<p><br>
+</p>
+<p>The natural fix is to use <span class="math inline">\(s\)</span> (the sample standard deviation) in place of <span class="math inline">\(\sigma\)</span>, so the standard error is</p>
+<p><br>
+<br>
+</p>
+<div style="page-break-after: always;"></div>
+<p>But this leads to yet another complication: the normal distribution isn’t quite right. Instead, we end up with a distribution that has heavier tails than the normal. Instead, we use the <span class="math inline">\(t\)</span> distribution. The <span class="math inline">\(t\)</span> distribution has a single parameter, the degrees of freedom (<span class="math inline">\(df\)</span>). The degrees of freedom determines the shape of the <span class="math inline">\(t\)</span>, with the distribution getting closer and closer to the normal as the <span class="math inline">\(df\)</span> increase.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="t vs z.jpg" class="img-fluid figure-img" alt="The graph shows that as df increases, the t distribution approaches the standard normal." width="500"></p>
+<figcaption>Standard normal compared to the t distribution with various df</figcaption>
+</figure>
+</div>
+<p>In the scenario of a single mean, <span class="math inline">\(df=n-1\)</span> but this will change as the scenario gets more complicated.</p>
+<p>We can get <span class="math inline">\(t\)</span> probabilities and quantiles using the R functions</p>
+<ul>
+<li><p><code>pt(x, df=)</code></p></li>
+<li><p><code>qt(prob, df=)</code></p></li>
+</ul>
+<p>So, if we’re interested in calculating an interval estimate for a mean</p>
+<p><br>
+<br>
+</p>
+<p>Back to the potato chips example. Are the conditions for the Central Limit Theorem met?</p>
+<p><br>
+<br>
+<br>
+</p>
+<p>We’ll calculate a 95% confidence interval.</p>
+<div style="page-break-after: always;"></div>
+<p><strong>Example:</strong> An ichthyologist is interested in estimating the variance of lengths of trout minnows in a very large tank at a fish hatchery. It is reasonable to assume that lengths are normally distributed. 15 minnows are randomly sampled from the tank and measured. The sample variance is <span class="math inline">\(s^2 = 0.17\)</span> inch<span class="math inline">\(^2\)</span>.</p>
+<p>What’s different now?</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>What complications does this present?</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>We need a new distribution! We need the sampling distribution of <span class="math inline">\(S^2\)</span>. It turns out that a function of <span class="math inline">\(S^2\)</span> follows the <span class="math inline">\(\chi^2\)</span> distribution. The <span class="math inline">\(\chi^2\)</span> has the following properties:</p>
+<ul>
+<li></li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li></li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>If our original observations come from a normal distribution, then</p>
+<p><br>
+</p>
+<div style="page-break-after: always;"></div>
+<p>This gives us a straightforward way to find a confidence interval for <span class="math inline">\(\sigma^2\)</span>.</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>We can find these <span class="math inline">\(\chi^2_{\alpha/2}\)</span> and <span class="math inline">\(\chi^2_{1-\alpha/2}\)</span> using the <code>qchisq(prob,df=)</code> function in R. For example,</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>This is one of the cases where the confidence interval does not have the estimate <span class="math inline">\(\pm\)</span> margin of error form. That’s because the <span class="math inline">\(\chi^2\)</span> isn’t symmetric. But, we now have all the information we need to calculate the confidence interval for the variance in trout length.</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>A word of warning. This is not a robust procedure. If the assumption of normality is not met, this interval will give poor results. This is not true of the <span class="math inline">\(t\)</span> interval for the mean.</p>
+</section>
+<section id="hypothesis-testing" class="level3">
+<h3 class="anchored" data-anchor-id="hypothesis-testing">Hypothesis Testing</h3>
+<p>The goal of hypothesis tests is to use an observed data set to answer a yes/no question about a characteristic of a larger population from which the observed data set was drawn.</p>
+<p>For example, let’s consider the ticks again. The entomologist knows from a literature review that the prevalence of the lyme disease pathogen in the black-legged tick is 0.02. They are interested in whether the presence of the pathogen is more prevalent in the new tick species. The yes/no question we will answer is whether the resulting data provide convincing evidence that the pathogen is more prevalent in the new species. These questions lead to two competing claims, both stated in terms of parameters of a probability distribution</p>
+<ul>
+<li><strong>Null hypothesis</strong></li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<ul>
+<li><strong>Alternative hypothesis</strong></li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>We will choose between the competing claims by assessing whether the data conflict so much with H<span class="math inline">\(_0\)</span> that the null hypothesis cannot be considered reasonable. If this happens, we’ll reject the notion of H<span class="math inline">\(_0\)</span> and conclude that H<span class="math inline">\(_a\)</span> must be true. We will <strong>NEVER</strong> conclude that the null hypothesis is true.</p>
+<p>Hypothesis tests work by assuming the null hypothesis is true, and assessing the plausibility of the observed data under that assumption.</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>The entomologist examined 200 ticks randomly selected from the study region. If we assume the null hypothesis is true, then we expect to see</p>
+<p><br>
+<br>
+</p>
+<p>In fact, 18/200 ticks were infected with the pathogen. The question then becomes</p>
+<p><br>
+<br>
+</p>
+<div style="page-break-after: always;"></div>
+<p>To see how unusual this sample result of 18/200 is, we again need the sampling distribution of the sample statistic. As a reminder, the Central Limit Theorem says</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>So we can use normal distribution to see how unusual 18/200 is, if the null hypothesis is true.</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p><strong>Example:</strong> Let’s consider the potato chip example again. The bag claims that a serving contains 130 calories. We want to test whether this is true. This leads to the hypotheses</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>What’s different here?</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>We can again appeal to the Central Limit Theorem and the <span class="math inline">\(t\)</span> distribution to characterize the sampling distribution of <span class="math inline">\(\bar{X}\)</span>, which leads to the <strong>test statistic</strong></p>
+<p><br>
+<br>
+<br>
+</p>
+<div style="page-break-after: always;"></div>
+<p>The random sample of 35 bags had a sample mean of <span class="math inline">\(\bar{x}=134\)</span> and standard deviation <span class="math inline">\(s=17\)</span>.</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>But now what is “more unusual” assuming the null hypothesis is true?</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>When in doubt, use a two-sided test! Use a one-sided test only if you truly have interest in only one direction. Why? To fully answer this, we need to address <strong>decision errors.</strong></p>
+<p>Anytime we’re using sample data to make decisions about a larger population we can potentially make a mistake. We can make an incorrect decision in a hypothesis test or calculate a confidence interval that does not capture the true population parameter. In a hypothesis test, there are four possible outcomes at the outset of the study:</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<div style="page-break-after: always;"></div>
+<ul>
+<li><strong>Type I error</strong>:</li>
+</ul>
+<p><br>
+<br>
+<br>
+</p>
+<ul>
+<li><strong>Type II error</strong>:</li>
+</ul>
+<p><br>
+<br>
+<br>
+</p>
+<p><strong>Examples</strong>:</p>
+<ul>
+<li>Doping in the Olympics</li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ul>
+<li>Criminal trial</li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<ul>
+<li>Diagnostic test for a serious disease</li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<div style="page-break-after: always;"></div>
+<p>Errors require a balancing act. We want to reduce the chance of making a Type I error but this will necessarily increase the chance of making a Type II error. The best we can do is to set the probability of a Type I error. We can do this through setting the <strong>significance level</strong>.</p>
+<p><strong>Significance level</strong>:</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>So how does this fit in with one- and two-sided hypotheses?</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>How else can we control Type I error?</p>
+<ul>
+<li><p>Set up tests before seeing the data.</p></li>
+<li><p>Collect enough data that the test has sufficient <strong>power</strong>. Power is the probability of correcting rejecting a false null hypothesis. It’s a function of how big the true difference is (which we don’t know and can’t control), the expected variability in our responses (also can’t control, but might know), and the sample size (which we can control). We’ll talk more about power later on in the semester.</p></li>
+</ul>
+<p>The two examples we’ve seen have both utilized a test statistic with the form</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>With confidence intervals, we mentioned that many confidence intervals have the form estimate <span class="math inline">\(\pm\)</span> margin of error, but not all do. We saw an example, a confidence interval for a variance, that had a different form. Similarly, many tests have a test statistic of the form</p>
+<p><span class="math display">\[
+\frac{\hbox{estimate - hypothesized value}}{\hbox{standard error of estimate}}
+\]</span></p>
+<p>but not all do.</p>
+<p><strong>Example</strong>: The Poisson distribution is often a good model for scenarios in which we are counting occurrences over some specified time or space unit. However, the Poisson distribution has the characteristic that the population mean = population variance. In some scenarios, this may not be true, invalidating the Poisson as a possible model. We can use hypothesis testing to determine if the Poisson is a reaonable model for a data set. A scientist is interested in modeling the number of parasites found on a host, and believes the Poisson may be a feasible model.</p>
+<p><br>
+<br>
+<br>
+<br>
+</p>
+<p>The researcher examines 80 host organisms, and records the number of parasites found on each. The data are:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Number of Parasites</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Number of hosts</td>
+<td>20</td>
+<td>28</td>
+<td>19</td>
+<td>9</td>
+<td>3</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>There is not a single mean or proportion (or variance) we can calculate here that will summarize how closely these data follow a Poisson distribution. Instead, we’ll need to come up with a new test statistic.</p>
+<p>The first thing we’ll need is an estimate of the Poisson parameter, <span class="math inline">\(\lambda\)</span>.</p>
+<p><br>
+<br>
+<br>
+</p>
+<p>Now, if we consider the Poisson distribution with <span class="math inline">\(\lambda = 1.375\)</span> we can calculate some probabilities:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.2528</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.3477</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.2390</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0.1095</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>0.0377</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>0.0104</td>
+</tr>
+<tr class="odd">
+<td>over 5</td>
+<td>0.0029</td>
+</tr>
+</tbody>
+</table>
+<p>If the Poisson distribution is a realistic model, we would expect to see our data fall into these categories in about these proportions. So, we expect</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 9%">
+<col style="width: 8%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Number of Parasites</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>&gt;5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Number of hosts</td>
+<td>20</td>
+<td>28</td>
+<td>19</td>
+<td>9</td>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Expected</td>
+<td>20.224</td>
+<td>27.816</td>
+<td>19.12</td>
+<td>8.76</td>
+<td>3.016</td>
+<td>0.832</td>
+<td>0.232</td>
+</tr>
+</tbody>
+</table>
+<p>and we can compare the observed counts to the expected counts.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 9%">
+<col style="width: 8%">
+<col style="width: 10%">
+<col style="width: 9%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Number of Parasites</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>&gt;5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Number of hosts</td>
+<td>20</td>
+<td>28</td>
+<td>19</td>
+<td>9</td>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Expected</td>
+<td>20.224</td>
+<td>27.816</td>
+<td>19.12</td>
+<td>8.76</td>
+<td>3.016</td>
+<td>0.832</td>
+<td>0.232</td>
+</tr>
+<tr class="odd">
+<td>Difference</td>
+<td>-0.224</td>
+<td>0.184</td>
+<td>-0.12</td>
+<td>0.24</td>
+<td>-0.016</td>
+<td>0.168</td>
+<td>-0.232</td>
+</tr>
+</tbody>
+</table>
+<p>But we’ve got another problem.</p>
+<p><br>
+<br>
+<br>
+</p>
+<p>Again, our solution will be squaring! This time we’ll also scale. The resulting test statistic is:</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>This is called the <strong>chi-squared goodness-of-fit</strong> test. Under the null hypothesis, this test statistic will follow a <span class="math inline">\(\chi^2\)</span> distribution with <span class="math inline">\(k-1\)</span> degrees of freedom, where <span class="math inline">\(k\)</span> is the number of categories. However, we also need a big enough sample so that all expected counts are at least 5. That’s not true here. What now?</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Number of Parasites</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th><span class="math inline">\(\geq\)</span> 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Number of hosts</td>
+<td>20</td>
+<td>28</td>
+<td>19</td>
+<td>13</td>
+</tr>
+<tr class="even">
+<td>Expected</td>
+<td>20.224</td>
+<td>27.816</td>
+<td>19.12</td>
+<td>12.84</td>
+</tr>
+<tr class="odd">
+<td>Difference</td>
+<td>-0.224</td>
+<td>0.184</td>
+<td>-0.12</td>
+<td>0.16</td>
+</tr>
+</tbody>
+</table>
+<p>So now,</p>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p>We can also easily do this in R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>host<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">28</span>,<span class="dv">19</span>,<span class="dv">9</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(host,<span class="at">p=</span><span class="fu">c</span>(<span class="fl">0.2528</span>, <span class="fl">0.3477</span>, <span class="fl">0.2390</span>, <span class="fl">0.1095</span>, <span class="fl">0.0377</span>, <span class="fl">0.0104</span>, <span class="fl">0.0029</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>So R is telling us our sample size isn’t big enough for the <span class="math inline">\(\chi^2\)</span> distribution to work. Like we did by hand, we can collapse some categories.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>host<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">28</span>,<span class="dv">19</span>,<span class="dv">13</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(host,<span class="at">p=</span><span class="fu">c</span>(<span class="fl">0.2528</span>, <span class="fl">0.3477</span>, <span class="fl">0.2390</span>, <span class="fl">0.1605</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>So it appears we have no reason to doubt that the Poisson distribution is a good model for these data.</p>
+<p>Now that we’ve seen the logic behind statistical inference, we can move on to more complicated situations. We’ll consider cases in which we have a single explanatory variable and a single response variable. We’ll first cover the case where the explanatory variable is categorical with only two levels, and the response variable is either categorical or numeric (comparing two groups). We’ll then move on to the case where the the explanatory variable is categorical with more than two levels, and the response variable is categorical or numeric. Finally, we’ll consider the case where the explanatory and response variable are both numeric.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,104 @@
+%1/2in left/right margins, 1in top, 1/2 bottom
+\documentclass[12pt]{article}
+\hbadness=10000
+\tolerance=10000
+\textheight 9.6in
+\textwidth 7.0in
+\oddsidemargin -.5in
+\topmargin -.5in
+\headsep 0in
+\headheight 0in
+%\pagestyle{empty}
+
+\newcommand{\by}{\mbox{\boldmath$y$}}
+\newcommand{\bX}{\mbox{\boldmath$X$}}
+\newcommand{\bbeta}{\mbox{\boldmath$\beta$}}
+
+\begin{document}
+\hrule
+\medskip
+\centerline{\textbf{STATISTICS 801}}\hfill \textbf{Fall 2016}
+\centerline{\textbf{Homework 7}}
+\smallskip
+\hrule
+\begin{enumerate}
+\item Experience with a certain type of plastic indicates that a relation 
+exist between the hardness (measured in Brinell units) of items molded
+from the plastic ($y$) and the elapsed time since termination of the molding 
+process ($x$). In a study to examine this relationship, sixteen batches of 
+the plastic were made, and from each batch one test item was molded. Each 
+test item was randomly assigned to one of four predetermined time levels, 
+and the hardness was measured after the assigned time had elapsed. The result
+are shown below:\\
+\begin{center}
+\begin{tabular}{c@{\extracolsep{.5in}}c} \hline
+$x$, Elapsed Time (hours) &  $y$, Hardness
+ \\ \hline
+16  & 199, 205, 196, 200  \\
+24  & 218, 220, 215, 223    \\
+32  & 237, 234, 235, 230  \\
+40 & 250, 248, 253, 245    \\
+ \hline
+\end{tabular}
+\end{center}
+
+Answer the following questions. \texttt{For parts a) to d), do all 
+computations by hand using these quantities computed from the data:}
+$\sum y =3608, \,\sum y^2 =819,008, \\
+\sum x =448, \,\sum x^2=13,824, \,\sum xy = 103,616$
+\begin{description}
+\item[a)] Plot the data in a $y$ vs. $x$ scatter plot. Does it appear that a simple
+linear regression model would be a good fit?
+\item[b)] Use the LS method to fit a  a simple
+linear regression model. What is your prediction equation?
+\item[c)] Construct an analysis of variance table for the regression.
+Use the F-ratio to perform a test of $H_0:\beta_1 = 0$ vs. $H_a:\beta_1 \neq 0$
+using $\alpha=.05$
+\item[d)] Compute a  lack of fit test for this model and report the
+results in an  anova table  where $SS_{Lack}$ and
+$SSP_{exp}$ are shown as a partition of $SSE$ as demonstrated in the 
+class example. What is your conclusion from this test? Use $\alpha=.05$.
+\end{description}
+For the rest of the problem you may use any software analysis tool using the data table. Attach the output to your solution.
+\begin{description}
+\item[e)] Use a software to obtain the answers to parts a) to d).
+\item[f)] Compute the predicted values and
+residuals. Obtain plots of the residuals against \texttt{elapsed time} and the
+predicted values, respectively. Do these two plots suggest any 
+inadequacies of this model ? Explain why you reached your
+conclusion.
+\end{description}
+\item  In an investigation of the properties of synthetic rubber, 10 varying compounds were prepared which had varying levels of hardness.  These compounds with varying hardness were then tested for abrasion loss.  The investigator was interested in seeing if there was a linear relationship between the hardness of the compound and the loss. The following data were collected:
+\begin{center}
+\begin{tabular}{ccccccccccc} \hline
+$x$, Hardness &  45&55&61&66&71&71&81&86&53&60 \\ \hline
+$y$, Abrasion loss &372&206&175&154&136&112&55&45&221&166\\ \hline
+\end{tabular}
+\end{center}
+The following summary statistics were calculated from these data:\\
+$\sum_{i=1}^{10}x_i=649,\sum_{i=1}^{10}y_i=1642,\sum_{i=1}^{10}x^2_i=43575,\sum_{i=1}^{10}y^2_i=347648,\sum_{i=1}^{10}x_i y_i=96515, S_{xx}=\sum_{i=1}^{n}(x_i-\bar{x})^2=1454.9,S_{yy}=\sum_{i=1}^{n}(y_i-\bar{y})^2=78031.6,S_{xy}=\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})=-10050.8$.
+\begin{enumerate}
+\item Estimate the slope coefficient.
+\item Estimate the intercept.
+\item Test the $H_0:\beta_1=0$ versus $H_a:\beta_1\neq 0$ at the $\alpha=0.05$ level.
+\item What can the researcher conclude?
+\end{enumerate}
+\item A researcher conducted an experiment to compare the effect of three different insecticide on a variety of string beans. To obtain a sufficient amount of data, it was necessary to use four different plots of land. Since the plots had somewhat different soil fertility, drainage characteristics, and sheltering from winds, the researcher decided to conduct a randomized complete block design with the plots serving as the blocks. Each plot was subdivided into three rows. A suitable distance was maintained between rows within a plot so that the insecticides could be confined to a particular row. Each row was planted with 100 seeds and the maintained under the insecticide assigned to the row. The insecticides were randomly assigned to the rows within the plot so that each insecticide appeared in one row within all four plots. The response $y_{ij}$ of interest was the number of seedlings that emerged per row. The data and means are given in the table below. \\
+\begin{center}
+\begin{tabular}{l|cccc|r} \hline
+Insecticide & Plot 1 & Plot 2 & Plot 3 & Plot 4 & Insecticide Mean \\ \hline
+1&56&48&66&62&58\\
+2&83&78&94&93&87\\
+3&80&72&83&85&80\\ \hline
+Plot mean & 73&66&81&80&75
+\end{tabular}
+\end{center}
+\begin{enumerate}
+\item Write out the linear additive model for this experiment and define all of the terms.
+\item Summarize your result in an ANOVA table. Complete the ANOVA table by hand.
+\item What hypotheses can you test with your F-statistics? Write down the hypotheses, the decision and the conclusion.
+\item Repeat part (b) using software.
+\end{enumerate}
+\end{enumerate}
+
+\end{document}

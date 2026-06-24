@@ -1,0 +1,66 @@
+---
+title: "Project 1"
+date: '2026-01-01 21:00:00'
+author: STAT 801A, Fall 2026
+date-format: "[Due on] MMMM D, YYYY [at] h:mm a"
+format: 
+  pdf:
+    include-in-header:
+      text: '\pagenumbering{gobble}'
+---
+
+## Overview
+
+The American Community Survey is a large national survey that collects information on many aspects of life in the United States. You are tasked with analyzing a subset of the 2022 survey for people who live and work in Lancaster County, Nebraska. In this particular subset, respondents were asked how long it takes for them to commute to work and only responses for people who drive alone are included. The data is available in the file `travel-time-31109.csv`.
+
+**Variable Descriptions:**
+
+- `RESPONDENT`: Unique identifier for each respondent
+- `TRANTIME`: Travel time to work in minutes
+- `DEPARTS`: Time of day the respondent leaves for work (e.g., 7:30 AM = 730)
+- `ARRIVES`: Time of day the respondent arrives at work (e.g., 7:30 AM = 730)
+
+```{r}
+#| eval: false
+#| echo: false
+library(tidyverse)
+dat <- read.csv('usa_00008.csv')
+ne <- dat %>% 
+  filter(STATEFIP==31 & COUNTYFIP == 109) %>% # State and county
+  filter(TRANWORK == 10) %>%  # Travel by car, truck, or van
+  filter(CARPOOL == 1) %>%  # Does not carpool
+  filter(RIDERS == 1) %>% # Verify one rider
+  filter(PWSTATE2 == 31 & PWCOUNTY == 109) %>% # Work in Lancaster County, NE
+  mutate(RESPONDENT = row_number()) %>% # Add a unique identifier for each respondent
+  select(RESPONDENT, TRANTIME, DEPARTS, ARRIVES) # Select only the variables of interest
+write_csv(ne, 'travel-time-31109.csv')
+
+ne %>% 
+  # slice_sample(n = 100) %>% 
+  ggplot(mapping = aes(x = TRANTIME)) +
+  geom_histogram()
+
+mean(ne$TRANTIME)
+median(ne$TRANTIME)
+sd(ne$TRANTIME)
+var(ne$TRANTIME)
+summary(ne$TRANTIME)
+hist(ne$TRANTIME)
+```
+
+## Problems
+
+Complete each of the following problems using the provided Quarto template. Your code must be reproducible, but you are free to use any R packages that you would like (i.e., I can get the same output file by rendering your Quarto file). Submit your completed Quarto file and the rendered PDF file to Canvas.
+
+1. Read in the data into an object called `ne_work_commute` and use the `head()` function to print out the first 10 observations.
+2. Use the `dim()` function to get the dimensions of the dataset. In writing (1 sentence), state the number of rows and columns of `ne_work_commute`.
+3. Compute the mean of `TRANTIME`.
+4. Compute the median of `TRANTIME`.
+5. Compute the variance of `TRANTIME`.
+6. Compute the standard deviation of `TRANTIME`.
+7. Use the `summary()` function to compute the quartiles of `TRANTIME`.
+8. Create a histogram of `TRANTIME` using interpretable text for the title and axis text (Note: You may use either base R or `ggplot2`.)
+9. Would the mean or median be a better description of travel time? Briefly explain your decision.
+10. Your supervisor wants to remove outliers when reporting the summary statistics using the interquartile range (IQR) method. Create a vector called `filtered_travel_time` that contains values that are not outliers. (Note: this removes values that are less than $Q1-1.5\times IQR$ and greater than $Q3+1.5\times IQR$. The `IQR()` function would be helpful here.)
+11. Create a histogram of `filtered_travel_time`.
+12. Repeat problems 3-6 using using `filtered_travel_time` and arrange your results into a nicely formatted table. Round all values for this table to 2 decimal places. (Hint: create a data frame with the summary statistics and use the `knitr::kable()` function.)

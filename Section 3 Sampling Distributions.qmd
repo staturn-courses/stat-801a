@@ -1,0 +1,801 @@
+# Sampling Distributions and Foundations of Statistical Inference
+
+As we've seen in the last two chapters, variability is natural and expected. We expect to see variability in observations, which implies there will also be variability in summary statistics. We've seen this already:
+
+\
+\
+\
+\
+
+If we want to use a summary statistic (like $\bar X$ or $\hat p$) calculated from our sample to draw inferences about the population, we have to understand how the summary statistic behaves.
+
+\
+\
+\
+\
+
+This means, we need to know the **sampling distribution** of the statistic.
+
+## Sampling Distributions
+
+As a refresher, the goal of statistical inference is to use an observed data set to answer questions about the overall population from which the sample data set was drawn. Typically, those questions may be answered using some **parameter(s)** of the population distribution.
+
+A **parameter** is
+
+\
+\
+
+For example,
+
+\
+\
+\
+\
+
+Parameters are generally fixed, unknown constants. We want to use our sample data to answer a question about the parameter (hypothesis test) or estimate the parameter (confidence interval). We may also be interested in functions of parameters.
+
+Often, the **statistic** we'll use to estimate the underlying parameter is pretty intuitive.
+
+\
+\
+\
+\
+\
+\
+
+But, if we want to use a statistic, we have to understand its behavior.
+
+The **sampling distribution** is
+
+\
+\
+\
+\
+
+We've can study sampling distributions empirically, through simulation. We've already done this!
+
+\
+\
+\
+\
+\
+
+We can also quantify sampling distributions theoretically. We've already done this too!
+
+\
+\
+\
+\
+\
+\
+\
+
+The sampling distributions we've seen so far have been (mostly):
+
+\
+\
+\
+\
+\
+
+This isn't coincidence \dots it's guaranteed by a very important theorem, the **Central Limit Theorem**.
+
+**Central Limit Theorem**:
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+But wait, the sample mean? Weren't we also considering sample proportions?
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+Let's think more about these requirements:
+
+-   Independence
+
+\
+\
+\
+\
+\
+
+-   "Large enough"
+
+\
+\
+\
+\
+\
+\
+
+\newpage
+
+If the Central Limit Theorem holds, the underlying parameters of the resulting approximate normal distribution will depend on the population from which the original data were drawn.
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+Other statistics will have sampling distributions that do not follow an approximate normal. For example, the sample variance is a natural estimate for the population variance. But, the CLT does not apply to variances. We'll need a different distribution.
+
+Once we can articulate the sampling distribution, we can use it to do statistical inference.
+
+## Foundations of Statistical Inference
+
+In Chapter One, we talked about framing a research question. Many (but not all) research questions can be answered using **statistical inference**. We'll now lay out the basic logic of statistical inference, illustraing the different methods for the case in which we have a single response variable (quantitative or categorical) and no explanatory variable. The framework for statistical inference will not change as we move to more complicated scenarios.
+
+**Statistical inference** is a collection of techniques which use information from a sample to make precise statements about the entire population. In STAT 801A, the general statements about populations will be expressed in terms of the parameters, or functions of parameters, of probability distributions. Because we know the sampling distribution, we can use probability to precisely quantify the accuracy of our general statements.
+
+Statistical inference is broken into two broad categories: estimation and testing. These map back to the types of research questions we outlined in Chapter One.
+
+\
+\
+\
+\
+
+\newpage
+
+### Estimation
+
+This category of statistical inference is concerned with using sample information to estimate one or more parameters, or functions of parameters, of the probability distribution for a population. For example, we may be interested in estimating the mean of a population, or the difference in means between two populations. There are two types of estimation, point estimation and interval estimation.
+
+**Point estimation**
+
+\
+\
+\
+\
+
+But a single value is not very meaningful without some way of telling how close our estimate comes to the true value.
+
+**Interval estimation**
+
+\
+\
+\
+\
+
+We'll illustrate how interval estimation works with an example.
+
+**Example:** An entomologist is studying a new tick species that may be the carrier of the pathogen associated with lyme disease. They design a study to estimate prevalence of the pathogen in the tick. They examine 200 ticks randomly selected in the study region during a period of the year when ticks have been known to be infected with the pathogen in other regions of the country. They find 18 ticks that are infected with the pathogen.
+
+-   Parameter of interest:
+
+\
+\
+
+-   Sample statistic:
+
+\
+\
+
+Are the requirements for the Central Limit Theorem met?
+
+\
+\
+
+\newpage
+
+The Central Limit Theorem tells us
+
+\
+\
+\
+\
+\
+
+Now let's consider the Empirical Rule.
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+Most (but not all) confidence intervals have the form:
+
+\
+\
+\
+\
+\
+\
+
+So, to calculate a confidence interval of this form we'll need the **margin of error**, which is calculated based on the **standard error of the statistic** and the **sampling distribution of the statistic**. We'll also need to specify how much certainly we want in our interval estimate.
+
+\
+\
+
+\newpage
+
+Back to the ticks.
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+ \
+\
+
+What happens if we change our level of confidence?
+
+\
+\
+\
+\
+\
+\
+\
+\
+
+What if we want a confidence level that isn't 68, 95, or 99.7?
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+\newpage
+
+Let's think more carefully about what this confidence level means. A confidence interval is a probability statement, but not the probability statement that is intuitive. Suppose we are interested in an interval estimate for a parameter $\theta$.
+
+\
+\
+\
+
+It's super important to understand that this probability statement is only valid for as long as $L$ and $U$ are unknown. Once we use the data to estimate $L$ and $U$, and get $\hat{L}$ and $\hat{U}$, the interval is no longer random. The interval either contains the parameter or it doesn't. This means statements like
+
+\
+\
+\
+\
+
+are **incorrect**, as tempting as they are to write. Rather, the statement of probability is about the method used to obtain the confidence interval.
+
+Let's look at the applet to explore what that confidence level really means: [Applet](https://www.isi-stats.com/isi2nd/ISIapplets2021.html)
+
+\
+\
+\
+\
+\
+\
+\
+
+So, let's find a 98% confidence interval for the proportion of ticks that are infected by the pathogen.
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+\newpage
+
+**Example:** (4.17, sort of) The nutrition label on a bag of potato chips says that a one ounce serving has 130 calories and 10 grams of fat. A random sample of 35 bags yielded a sample mean of $\bar{x}=134$ calories with a sample standard deviation of $s = 17$ calories. Assume the distribution of bags is relatively symmetric. We want a 95% confidence interval for the true mean calorie count of a bag of potato chips.
+
+What's different about this example, compared to the tick example?
+
+\
+\
+\
+
+Let's state the Central Limit Theorem again.
+
+\
+\
+\
+\
+\
+\
+\
+
+This presents a few complications:
+
+-   
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+-   
+
+\
+
+The natural fix is to use $s$ (the sample standard deviation) in place of $\sigma$, so the standard error is
+
+\
+\
+
+\newpage
+
+But this leads to yet another complication: the normal distribution isn't quite right. Instead, we end up with a distribution that has heavier tails than the normal. Instead, we use the $t$ distribution. The $t$ distribution has a single parameter, the degrees of freedom ($df$). The degrees of freedom determines the shape of the $t$, with the distribution getting closer and closer to the normal as the $df$ increase.
+
+![Standard normal compared to the t distribution with various df](t%20vs%20z.jpg){fig-alt="The graph shows that as df increases, the t distribution approaches the standard normal." width="500"}
+
+In the scenario of a single mean, $df=n-1$ but this will change as the scenario gets more complicated.
+
+We can get $t$ probabilities and quantiles using the R functions
+
+-   `pt(x, df=)`
+
+-   `qt(prob, df=)`
+
+So, if we're interested in calculating an interval estimate for a mean
+
+\
+\
+
+Back to the potato chips example. Are the conditions for the Central Limit Theorem met?
+
+\
+\
+\
+
+We'll calculate a 95% confidence interval.
+
+\newpage
+
+**Example:** An ichthyologist is interested in estimating the variance of lengths of trout minnows in a very large tank at a fish hatchery. It is reasonable to assume that lengths are normally distributed. 15 minnows are randomly sampled from the tank and measured. The sample variance is $s^2 = 0.17$ inch$^2$.
+
+What's different now?
+
+\
+\
+\
+\
+
+What complications does this present?
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+We need a new distribution! We need the sampling distribution of $S^2$. It turns out that a function of $S^2$ follows the $\chi^2$ distribution. The $\chi^2$ has the following properties:
+
+-   
+
+\
+
+-   
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+If our original observations come from a normal distribution, then
+
+\
+
+\newpage
+
+This gives us a straightforward way to find a confidence interval for $\sigma^2$.
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+We can find these $\chi^2_{\alpha/2}$ and $\chi^2_{1-\alpha/2}$ using the `qchisq(prob,df=)` function in R. For example,
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+This is one of the cases where the confidence interval does not have the estimate $\pm$ margin of error form. That's because the $\chi^2$ isn't symmetric. But, we now have all the information we need to calculate the confidence interval for the variance in trout length.
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+A word of warning. This is not a robust procedure. If the assumption of normality is not met, this interval will give poor results. This is not true of the $t$ interval for the mean.
+
+### Hypothesis Testing
+
+The goal of hypothesis tests is to use an observed data set to answer a yes/no question about a characteristic of a larger population from which the observed data set was drawn.
+
+For example, let's consider the ticks again. The entomologist knows from a literature review that the prevalence of the lyme disease pathogen in the black-legged tick is 0.02. They are interested in whether the presence of the pathogen is more prevalent in the new tick species. The yes/no question we will answer is whether the resulting data provide convincing evidence that the pathogen is more prevalent in the new species. These questions lead to two competing claims, both stated in terms of parameters of a probability distribution
+
+-   **Null hypothesis**
+
+\
+\
+\
+\
+
+-   **Alternative hypothesis**
+
+\
+\
+\
+\
+
+We will choose between the competing claims by assessing whether the data conflict so much with H$_0$ that the null hypothesis cannot be considered reasonable. If this happens, we'll reject the notion of H$_0$ and conclude that H$_a$ must be true. We will **NEVER** conclude that the null hypothesis is true.
+
+Hypothesis tests work by assuming the null hypothesis is true, and assessing the plausibility of the observed data under that assumption.
+
+\
+\
+\
+\
+
+The entomologist examined 200 ticks randomly selected from the study region. If we assume the null hypothesis is true, then we expect to see
+
+\
+\
+
+In fact, 18/200 ticks were infected with the pathogen. The question then becomes
+
+\
+\
+
+\newpage
+
+To see how unusual this sample result of 18/200 is, we again need the sampling distribution of the sample statistic. As a reminder, the Central Limit Theorem says
+
+\
+\
+\
+\
+\
+\
+\
+
+So we can use normal distribution to see how unusual 18/200 is, if the null hypothesis is true.
+
+\
+\
+\
+\
+\
+\
+\
+\
+
+**Example:** Let's consider the potato chip example again. The bag claims that a serving contains 130 calories. We want to test whether this is true. This leads to the hypotheses
+
+\
+\
+\
+\
+
+What's different here?
+
+\
+\
+\
+\
+\
+
+We can again appeal to the Central Limit Theorem and the $t$ distribution to characterize the sampling distribution of $\bar{X}$, which leads to the **test statistic**
+
+\
+\
+\
+
+\newpage
+
+The random sample of 35 bags had a sample mean of $\bar{x}=134$ and standard deviation $s=17$.
+
+\
+\
+\
+\
+\
+\
+
+But now what is "more unusual" assuming the null hypothesis is true?
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+When in doubt, use a two-sided test! Use a one-sided test only if you truly have interest in only one direction. Why? To fully answer this, we need to address **decision errors.**
+
+Anytime we're using sample data to make decisions about a larger population we can potentially make a mistake. We can make an incorrect decision in a hypothesis test or calculate a confidence interval that does not capture the true population parameter. In a hypothesis test, there are four possible outcomes at the outset of the study:
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+\newpage
+
+-   **Type I error**:
+
+\
+\
+\
+
+-   **Type II error**:
+
+\
+\
+\
+
+**Examples**:
+
+-   Doping in the Olympics
+
+\
+\
+\
+\
+\
+
+-   Criminal trial
+
+\
+\
+\
+\
+\
+
+-   Diagnostic test for a serious disease
+
+\
+\
+\
+\
+\
+\
+
+\newpage
+
+Errors require a balancing act. We want to reduce the chance of making a Type I error but this will necessarily increase the chance of making a Type II error. The best we can do is to set the probability of a Type I error. We can do this through setting the **significance level**.
+
+**Significance level**:
+
+\
+\
+\
+\
+
+So how does this fit in with one- and two-sided hypotheses?
+
+\
+\
+\
+\
+\
+\
+\
+\
+
+How else can we control Type I error?
+
+-   Set up tests before seeing the data.
+
+-   Collect enough data that the test has sufficient **power**. Power is the probability of correcting rejecting a false null hypothesis. It's a function of how big the true difference is (which we don't know and can't control), the expected variability in our responses (also can't control, but might know), and the sample size (which we can control). We'll talk more about power later on in the semester.
+
+The two examples we've seen have both utilized a test statistic with the form
+
+\
+\
+\
+\
+\
+\
+
+With confidence intervals, we mentioned that many confidence intervals have the form estimate $\pm$ margin of error, but not all do. We saw an example, a confidence interval for a variance, that had a different form. Similarly, many tests have a test statistic of the form
+
+$$
+\frac{\hbox{estimate - hypothesized value}}{\hbox{standard error of estimate}}
+$$
+
+but not all do.
+
+**Example**: The Poisson distribution is often a good model for scenarios in which we are counting occurrences over some specified time or space unit. However, the Poisson distribution has the characteristic that the population mean = population variance. In some scenarios, this may not be true, invalidating the Poisson as a possible model. We can use hypothesis testing to determine if the Poisson is a reaonable model for a data set. A scientist is interested in modeling the number of parasites found on a host, and believes the Poisson may be a feasible model.
+
+\
+\
+\
+\
+
+The researcher examines 80 host organisms, and records the number of parasites found on each. The data are:
+
+| Number of Parasites | 0   | 1   | 2   | 3   | 4   | 5   |
+|---------------------|-----|-----|-----|-----|-----|-----|
+| Number of hosts     | 20  | 28  | 19  | 9   | 3   | 1   |
+
+There is not a single mean or proportion (or variance) we can calculate here that will summarize how closely these data follow a Poisson distribution. Instead, we'll need to come up with a new test statistic.
+
+The first thing we'll need is an estimate of the Poisson parameter, $\lambda$.
+
+\
+\
+\
+
+Now, if we consider the Poisson distribution with $\lambda = 1.375$ we can calculate some probabilities:
+
+| X      | Probability |
+|--------|-------------|
+| 0      | 0.2528      |
+| 1      | 0.3477      |
+| 2      | 0.2390      |
+| 3      | 0.1095      |
+| 4      | 0.0377      |
+| 5      | 0.0104      |
+| over 5 | 0.0029      |
+
+If the Poisson distribution is a realistic model, we would expect to see our data fall into these categories in about these proportions. So, we expect
+
+| Number of Parasites | 0      | 1      | 2     | 3    | 4     | 5     | \>5   |
+|---------------------|--------|--------|-------|------|-------|-------|-------|
+| Number of hosts     | 20     | 28     | 19    | 9    | 3     | 1     | 0     |
+| Expected            | 20.224 | 27.816 | 19.12 | 8.76 | 3.016 | 0.832 | 0.232 |
+
+and we can compare the observed counts to the expected counts.
+
+| Number of Parasites | 0      | 1      | 2     | 3    | 4      | 5     | \>5    |
+|---------------------|--------|--------|-------|------|--------|-------|--------|
+| Number of hosts     | 20     | 28     | 19    | 9    | 3      | 1     | 0      |
+| Expected            | 20.224 | 27.816 | 19.12 | 8.76 | 3.016  | 0.832 | 0.232  |
+| Difference          | -0.224 | 0.184  | -0.12 | 0.24 | -0.016 | 0.168 | -0.232 |
+
+But we've got another problem.
+
+\
+\
+\
+
+Again, our solution will be squaring! This time we'll also scale. The resulting test statistic is:
+
+\
+\
+\
+\
+\
+
+This is called the **chi-squared goodness-of-fit** test. Under the null hypothesis, this test statistic will follow a $\chi^2$ distribution with $k-1$ degrees of freedom, where $k$ is the number of categories. However, we also need a big enough sample so that all expected counts are at least 5. That's not true here. What now?
+
+\
+\
+\
+\
+\
+
+| Number of Parasites | 0      | 1      | 2     | $\geq$ 3 |
+|---------------------|--------|--------|-------|----------|
+| Number of hosts     | 20     | 28     | 19    | 13       |
+| Expected            | 20.224 | 27.816 | 19.12 | 12.84    |
+| Difference          | -0.224 | 0.184  | -0.12 | 0.16     |
+
+So now,
+
+\
+\
+\
+\
+\
+\
+
+We can also easily do this in R:
+
+```{r}
+host<-c(20,28,19,9, 3, 1, 0)
+chisq.test(host,p=c(0.2528, 0.3477, 0.2390, 0.1095, 0.0377, 0.0104, 0.0029))
+```
+
+So R is telling us our sample size isn't big enough for the $\chi^2$ distribution to work. Like we did by hand, we can collapse some categories.
+
+```{r}
+host<-c(20,28,19,13)
+chisq.test(host,p=c(0.2528, 0.3477, 0.2390, 0.1605))
+```
+
+So it appears we have no reason to doubt that the Poisson distribution is a good model for these data.
+
+Now that we've seen the logic behind statistical inference, we can move on to more complicated situations. We'll consider cases in which we have a single explanatory variable and a single response variable. We'll first cover the case where the explanatory variable is categorical with only two levels, and the response variable is either categorical or numeric (comparing two groups). We'll then move on to the case where the the explanatory variable is categorical with more than two levels, and the response variable is categorical or numeric. Finally, we'll consider the case where the explanatory and response variable are both numeric.

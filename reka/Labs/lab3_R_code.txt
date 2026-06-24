@@ -1,0 +1,14 @@
+first_column<-c(0:30)
+
+result1<-rep(0,31)
+for (i in 0:30){
+ result1[i+1]<-dbinom(i,30,0.68)}
+
+result2<-rep(0,31)
+for (i in 0:30){
+ result2[i+1]<-pbinom(i,30,0.68)}
+
+cbind(first_column,result1,result2)
+
+plot(result1)
+plot(result2)

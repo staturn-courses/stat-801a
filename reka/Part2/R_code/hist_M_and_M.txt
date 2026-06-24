@@ -1,0 +1,12 @@
+x<-c(5,6,7,8,9,10,11)
+y<-c(2,2,5,7,5,4,3)
+y<-y/28
+
+plot(x,y,xlab="x",ylab="P(x)",main="Probability Distribution for M & M Data")
+segments(x[1],0,x[1],y[1])
+segments(x[2],0,x[2],y[2])
+segments(x[3],0,x[3],y[3])
+segments(x[4],0,x[4],y[4])
+segments(x[5],0,x[5],y[5])
+segments(x[6],0,x[6],y[6])
+segments(x[7],0,x[7],y[7])

@@ -1,0 +1,110 @@
+\item \textbf{New York Stock Exchange.} Suppose that the percentage returns for a given year for all Stocks listed on the New York Stock Exchange follows a \emph{non}-normal distribution with mean $\mu=11.2$ percent and a standard deviation of $\sigma=8.4$ percent.
+
+\begin{enumerate}
+\item  Given the tools we have learned in class, can you find the probability that a \emph{single} stock has an annual return less than 34 percent? Explain why or why not. (Note: you do not need to calculate anything.)\\
+
+\red{No. The problem states that the population follows a non-normal distribution. Thus, we cannot calculate this probability.}\\
+
+\item Consider drawing a random sample of $n=5$ stocks from the population of all stocks and calculating the mean return of the five sampled stocks. Remember that we can think of the \emph{observed} sample mean, $\bar{x}$, as a single draw from a distribution that relates to the random variable $\bar{X}$. We call this distribution \textit{the sampling distribution of the sample mean}.
+
+\begin{enumerate}
+\item  What is the shape of the sampling distribution of the sample mean when n=5? %Is it \textsc{normal} or \textsc{non-normal} or is there not enough information to tell? (Multiple Choice) \\
+\begin{enumerate}
+	\item Normal
+	\item \red{Non-normal}
+	\item Not enough information to tell\\
+\end{enumerate}
+
+
+\item What is the mean of the sampling distribution of the sample mean when $n=5$? (Report to two decimal places.)
+\begin{equation*}
+\red{\mu_{\bar{X}}=\mu=\mathbf{11.2}}
+\end{equation*}
+
+
+\item  What is the standard error of the sampling distribution of the sample mean when $n=5$? (Report to two decimal places.)
+
+\begin{equation*}
+\red{\sigma_{\bar{X}}=\sigma/\sqrt{n}=8.4/\sqrt{5}= \mathbf{3.76} }
+\end{equation*}
+
+
+
+\item  (\textbf{Yes} or \red{\textbf{No}}) Can you find now the probability that the mean return of the five sampled stocks is less than 34 percent? \\
+
+
+\end{enumerate}
+
+\item In general a sample size of $n=30$ should be sufficiently large to ensure that $\bar{X}$ follows an approximately Normal distribution. Thus, we are able to calculate probabilities associated with sample means even though we are drawing from a  \emph{non}-normal distribution using the Standard normal table. To answer the following questions you will want to use the following z-score formula:
+\begin{equation*}
+z=\frac{\bar{x}-\mu_{\bar{x}}}{\sigma}=\frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}}.
+\end{equation*}
+
+\begin{enumerate}
+	\item Specify the sampling distribution of the sample mean when $n=30,$ i.e. what are the mean, the standard error and the shape of the sampling distribution?\\
+	\begin{enumerate}
+		\item shape: (Multiple Choice)
+		\begin{itemize}
+			\item \red{Normal}
+			\item Not Normal
+			\item Not enough information to tell
+		\end{itemize}
+		% \textit{Normal/not Normal/not enough information to tell} \hfill (Multiple Choice.)
+		\item mean: $\red{\mu_{\bar{X}}=\mu=\mathbf{11.2}}$
+		
+		\item standard error: $\red{\sigma_{\bar{X}}=\sigma/\sqrt{n}=8.4/\sqrt{30}= \mathbf{1.53} }$ \\
+		
+		
+		
+	\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\item The CLT says a sample size of $n=30$ should be sufficiently large to ensure an approximately Normal distribution for the sampling distribution of the sample mean. Thus, we are able to calculate the following probabilities even though we are drawing from a  \emph{non}-normal distribution. To answer the following questions you will want to use z-score formula: $z=\frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}}$.
+%\begin{enumerate}
+%\item Specify the sampling distribution of the sample mean when $n=30,$ i.e. what are the mean, the standard error and the shape of the sampling distribution?
+
+%\red{\begin{align*}
+%\bar{X} \sim \mathcal{N}\left(11.2, \frac{8.4^2}{30}\right) \hspace{2cm} & OR \hspace{2cm}  \bar{X} \sim %\mathcal{N}(11.2, 2.352) \\
+%SE(\bar{X}) &=8.4/\sqrt{30}=1.53
+%\end{align*}}
+
+
+\item  Find the probability that the mean return for the 30 sampled
+stocks is less than 10 percent.\\
+
+\red{Note that $SE(\bar{X})=8.4/\sqrt{30}=1.53$. Then,
+
+\begin{align*}
+P(\bar{X} < 10)=P\left(Z < \frac{10-11.2}{1.53}\right)=P(Z< -0.78)=\mathbf{0.2177}
+\end{align*}}
+
+\item Find the probability that the mean return for the 30 sampled
+stocks is between 10.5 and 14 percent.
+
+\red{\begin{align*}
+P(11 < \bar{X} < 14)&=P\left(\frac{10.5-11.2}{1.53} < Z < \frac{14-11.2}{1.53}\right)
+\\ &=P(-0.46 < Z <  1.83)
+\\ &=P(Z<1.83)-P(Z<-0.46)
+\\&=0.9664-0.3228=\mathbf{0.6436}
+\end{align*}}
+\item Companies are often concerned with the notion of worst probable case performance of their portfolios. One figure a company might be interested in is what mean return will 99\% of these portfolios of 30 stocks perform better than. Compute this value and report the answer to two decimal places.
+
+\red{This is asking about the 1st percentile, so the appropriate Z-score is -2.33. Then we have the following for $X$:
+\begin{align*}
+x &= z * \frac{\sigma}{\sqrt{n}} + \mu \\
+&= -2.33 * \frac{8.4}{\sqrt{30}} + 11.2= -2.33 * 1.53 + 11.2 \\
+&= 7.64
+\end{align*}}
+\end{enumerate}
+\end{enumerate}

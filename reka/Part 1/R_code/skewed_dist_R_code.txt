@@ -1,0 +1,11 @@
+#Generate 1000 random samples from a normal distribution with mean 60 and standard deviation of 10
+
+a<-rnorm(1000,60,10)
+hist(a)
+summary(a)
+
+#Now let's create a "skewed" distribution
+
+b<-c(a,2000,2000,2000,2000,2000)
+hist(b)
+summary(b)

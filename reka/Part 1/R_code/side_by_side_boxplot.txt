@@ -1,0 +1,3 @@
+#setwd("C:/Users/howardr/Documents/Stat801/Fall_2016/Part 1")
+data<-read.csv("epilepsy_data.csv")
+boxplot(data,main="Box Plots of Baseline Seizure Count by Treatment",ylab="Baseline Seizure Count")

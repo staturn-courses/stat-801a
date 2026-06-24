@@ -1,0 +1,26 @@
+# One sample t-test
+
+
+data1<-c(2560,2660,2760,2850,2490,2700,2680,2500,2940,2760,2590,2600,2450,2550,2700,2900,2300,2520,3000,2200,2840,2710,2690,2490,2580,2600,2350,2380,2370,2700)
+data2<-data1+10
+a1<-t.test(data,alternative="two.sided",mu=2800,conf.level=0.95)
+
+a2<-t.test(data,alternative="less",mu=2800)
+a2<-t.test(data,alternative="greater",mu=2800)
+
+#Two sample t-test
+
+b1<-t.test(data1,data2,mu=0,alternative="two.sided",var.equal=TRUE)
+b2<-t.test(data1,data2,mu=0,alternative="less")
+
+#Welch test
+
+b1<-t.test(data1,data2,mu=0,alternative="two.sided",paired=T)
+b2<-t.test(data1,data2,mu=0,alternative="less",paired=T)
+
+
+#chisq.test
+
+obs<-c(8,9,13,7,15,8)
+
+chisq.test(obs)

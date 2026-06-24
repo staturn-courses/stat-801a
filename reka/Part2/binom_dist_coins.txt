@@ -1,0 +1,4 @@
+x<-seq(1,10)
+y<-dbinom(size=10,x,prob=0.5)
+plot(x,y)
+plot(x,y,type="l")

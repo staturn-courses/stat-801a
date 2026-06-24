@@ -1,0 +1,26 @@
+#Problem 1
+x<-c(16,16,16,16,24,24,24,24,32,32,32,32,40,40,40,40)
+y<-c(199,205,196,200,218,220,215,223,237,234,235,230,250,248,253,245)
+plot(x,y)
+result<-lm(y~x)
+
+Reduced=lm(y~x)#fit reduced model
+Full=lm(y~0+as.factor(x)) #fit full model
+anova(Reduced, Full) #get lack-of-fit test
+
+predicted_y<-predict(lm(y~x))
+predicted_y
+residual<-y-predicted_y
+residual
+
+plot(residual~x)
+plot(residual~predicted_y)
+
+#Problem 3
+
+setwd("C:\\Users\\howardr\\Documents\\Stat801\\Fall_2016\\Assignments\\Homework\\hw7")
+data<-read.csv("problem3_data.csv")
+attach(data)
+
+fit<-lm(Seedlings~as.factor(Plot)+as.factor(Insecticide))
+anova(fit)

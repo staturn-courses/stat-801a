@@ -1,0 +1,99 @@
+---
+title: "Project 1"
+date: today
+author:
+  - name: "Your Name"
+date-format: long
+format: 
+  pdf:
+    include-in-header:
+      text: '\pagenumbering{gobble}'
+---
+
+## Problems
+
+Complete each problem using the attached Quarto template. Your code must be reproducible and include brief written answers where requested. Submit your completed Quarto file and the rendered PDF file to Canvas.
+
+## Problem 1
+
+```{r}
+#| echo: true
+# Your solution here
+```
+
+## Problem 2
+
+```{r}
+#| echo: true
+# Your solution here
+```
+
+## Problem 3
+
+```{r}
+#| echo: true
+# Your solution here
+```
+
+## Problem 4
+
+```{r}
+#| echo: true
+# Your solution here
+```
+
+## Problem 5
+
+```{r}
+#| echo: true
+# Your solution here
+```
+
+## Problem 6
+
+```{r}
+#| echo: true
+# Your solution here
+```
+
+## Problem 7
+
+```{r}
+#| echo: true
+# Your solution here
+```
+
+## Problem 8
+
+```{r}
+#| echo: true
+# Your solution here
+```
+
+## Problem 9
+
+```{r}
+#| echo: true
+# Your solution here
+```
+
+## Problem 10
+
+```{r}
+#| echo: true
+# Your solution here
+```
+
+## Problem 11
+
+```{r}
+#| echo: true
+# Your solution here
+```
+
+## Problem 12
+
+```{r}
+#| echo: true
+# Your solution here
+```

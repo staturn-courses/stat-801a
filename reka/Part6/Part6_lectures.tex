@@ -1,0 +1,591 @@
+\documentclass[xcolor=dvipsnames,12pt]{beamer}
+\usecolortheme[named=RoyalPurple]{structure}
+\useoutertheme{infolines}
+\usetheme{CambridgeUS}
+%\usetheme[height=14mm]{Rochester}
+%\hypersetup{colorlinks=true,linkcolor=yellow}
+\setbeamertemplate{items}[ball]
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamertemplate{navigation symbols}{}
+\usepackage{color}
+%\usefonttheme{structuresmallcapsserif}
+%\usefonttheme{professionalfonts}
+%\useoutertheme{default}
+%\useoutertheme{infolines}
+
+
+%\documentclass{beamer}
+%\usecolortheme{structure}
+\usepackage{graphicx}
+%\usetheme{PaloAlto}
+%\setbeamertemplate{items}[ball]
+%\setbeamertemplate{blocks}[rounded][shadow=true]
+%\useoutertheme{umbcfootline}
+\newtheorem{assume}{\rlap{A}\hskip .1in}
+%\newtheorem{result}{Result}[chapter]
+\newcommand{\Var}  {\mbox{Var}}
+\newcommand{\V} {\mbox{V}}
+\newcommand{\E}  {\mbox{E}}
+\newcommand{\PR}  {\mbox{P}}
+\newcommand{\diag} {\operatorname*{diag}}
+\newcommand{\tr} {\mbox{tr}}
+\newcommand{\bmw}[1]{{\mbox{$#1$}}}
+\newcommand{\MSE}{\mbox{MSE}}
+\newcommand{\MSPE}{\mbox{MSPE}}
+
+
+\def\bmh{{\hat \mathbf m}}
+\def\bm{{\mathbf m}}
+\def\bn{{\mathbf n}}
+\def\mh{{\hat m}}
+\def\bOmega{{\mathbf \Omega}}
+\def\be{{\mathbf e}}
+\def\bs{{\mathbf s}}
+\def\by{{\mathbf y}}
+\def\b1{{\mathbf 1}}
+\def\bx{{\mathbf x}}
+\def\bw{{\mathbf w}}
+\def\bzero{{\mathbf 0}}
+
+\def\bP{{\mathbf P}}
+\def\bI{{\mathbf I}}
+\def\bM{{\mathbf M}}
+\def\bH{{\mathbf H}}
+\def\bN{{\mathbf N}}
+\def\bW{{\mathbf W}}
+\def\bX{{\mathbf X}}
+\def\bZ{{\mathbf Z}}
+\def\bT{{\mathbf T}}
+\def\bV{{\mathbf V}}
+\def\bC{{\mathbf C}}
+\def\bG{{\mathbf G}}
+\def\bY{{\mathbf Y}}
+\def\bD{{\mathbf D}}
+\def\bS{{\mathbf S}}
+\def\bR{{\mathbf R}}
+
+\def\bbeta{\mbox{\boldmath $\beta$}}
+\def\bepsilon{\mbox{\boldmath $\varepsilon$}}
+
+% items enclosed in square brackets are optional; explanation below
+\title[]{Part 6}
+%\subtitle[ttt]{}
+\author[Stat 801]{Inferences about more than two population central values\\
+Analysis of Variance and F-test\\
+Completely Randomized Design\\}
+\date{}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Inference about more than Two Population Central Values}
+\begin{itemize}
+\item In Part 3 we studied inferences about a population mean $\mu$
+using a single sample from the population.
+\item In Part 4 we studied inferences about the difference between two
+population means $\mu_1 - \mu_2$ based on a random sample from each
+population.
+\item Part 6 deals with inferences about means 
+$\mu_1, \mu_2,$ $ \ldots, \mu_t$ from $t > 2$ 
+populations. 
+\item The first and foremost question
+that we ask is whether the  \textcolor{magenta}{populations have different means?}  
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Inference about more than Two Population Central Values - cont.}
+\begin{itemize}
+\item A natural approach to think of when faced with the task of
+determining whether evidence points to $\mu_1 = \mu_2 = \mu_3 =
+\cdots = \mu_t$ or not, is to draw on knowledge acquired in Part 4 and
+perform $t$-tests of $H_0: \mu_i = \mu_j$ for all pairs of means.
+\item If  \textcolor{magenta}{all pairwise tests of means} fail to reject the null hypotheses, then one
+may conclude that all means $\mu_i$ are equal. 
+\item This procedure has
+a serious flaw which will now be described.
+\item Take the case $t=3$, so that we have three populations with means
+$\mu_1, \mu_2, \mu_3$. 
+\item A sample from each population yields
+sample means and variances $\bar{y}_1, \bar{y}_2, \bar{y}_3,
+s_1^2, s_2^2, s_3^2$.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Inference about more than Two Population Central Values - cont.}
+\begin{itemize}
+\item All possible differences $\mu_i-\mu_j$ are:
+$$
+  \mu_1 - \mu_2, \ \mu_1 - \mu_3, \ \mu_2 - \mu_3 \ .
+$$
+\item To test each $H_0: \mu_i - \mu_j = 0$, a $t$-statistic used is of the 
+form
+$$
+  t_{ij} = \frac{\bar{y}_i-\bar{y}_j}{s_p\sqrt{\frac{1}{n_i} +
+  \frac{1}{n_j}}}, \quad s_p^2 = \frac{(n_i-1)s_i^2 +
+(n_j-1)s_j^2}{n_i + n_j - 2}
+$$
+\item Suppose each test is made at the same level $\alpha$.  Thus for each
+pair ($i,j$)\\[.1in]
+\hspace*{.5in}$P(|t_{ij}| > t_{\alpha/2}$ $|$ when $H_0$ is true) = $\alpha$.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Inference about more than Two Population Central Values - cont.}
+\begin{itemize}
+\item In other words, the Type I  error probability \textcolor{magenta}{for each test} is
+$\alpha$.   We shall call $\alpha$ \textcolor{magenta}{the
+per-comparison error rate}.
+\item Now let us ask the question -- What is the probability of making one
+or more Type I errors when we make all three tests?  ( We shall call
+this the \textcolor{magenta}{overall error rate.})
+\item Theory says that if the three $t$ random variables were statistically independent
+then the overall error rate is $1 - (1-\alpha)^3$ [this works out to 0.14 if
+$\alpha$ = 0.05, much larger than .05]
+\item The three test statistics are not independent.  For example
+$t_{12}$ and   $t_{13}$  both involve $\bar{y}_1$. Furthermore, all three have the same denominator.
+So they are not statistically independent.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Inference about more than Two Population Central Values - cont.}
+\begin{itemize}
+\item Thus the overall error rate is not exactly 0.14 for
+our three test situation, and computing its exact value is
+difficult in theory.
+\item In general, for $c$ tests made at level $\alpha$,  \textcolor{magenta}{the overall error
+rate} is larger than $1-(1-\alpha)^c$.
+\item This is the \textcolor{magenta} {flaw in the multiple testing} approach to testing 
+$H_0: \mu_1 = \mu_2 = \cdots = \mu_t$.
+\item  One solution is to use 
+a \textcolor{magenta}{very small} $\alpha$  for each test in order to have a
+reasonably small overall error rate.
+\item For example, in the previous
+situation, if we had $\alpha=.01$ then the overall error rate would
+be less than $.03$. 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Inference about more than Two Population Central Values - cont.}
+\begin{itemize}
+\item We would like to avoid doing
+this if possible, because  \textcolor{magenta}{we will lose power} by using small $\alpha$ for each test.
+\item The alternative to making multiple $t$-tests is to make a single
+$F$-test of $H_0: \mu_1 = \mu_2 = \cdots = \mu_t$ versus $H_a:$
+at least one $\mu_j$ is different in value.  
+\item This is called the \textcolor{magenta}{analysis of variance $F$-test}. 
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{The Analysis of Variance and the $F$-test}
+\begin{itemize}
+\item We can, at this point, begin talking in terms of experiments and
+their outcome. An experiment is a planned data
+collection activity. 
+\item  A simplistic view is that an experiment is a
+planned way to observe the effect of \textcolor{magenta}{treatments} that are
+applied to \textcolor{magenta}{experimental units}.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Examples}
+\begin{itemize}
+%\setlength{\itemsep}{-.1in}
+\item Different amounts of a headache drug (treatments) are
+      given to people with headache (experimental units) to
+      observe the effect.
+\item Different furnace temperatures (treatments) are used
+      to temper steel rods (experimental units) to see the
+      extent of tempering for each temperature.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{itemize}
+\item In this context we can imagine theoretically a \textcolor{magenta}{parent}
+\textcolor{magenta}{population of} \textcolor{magenta}{ experimental units} whose measure of
+interest has mean $\mu$ and variance $\sigma_{\epsilon}^2$.
+\item We imagine applying each treatment $i$  to all elements in
+the parent population to obtain a \textcolor{magenta}{ treated population},
+say $T_i$. 
+\item We will assume the treated population $T_i$ has mean
+$\mu_i$, possibly different than $\mu$, but its variance is
+$\sigma_\epsilon^2$, i.e., the treatment doesn't affect
+the variance among experimental units, $\sigma_\epsilon^2$.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\begin{itemize}
+\item In the past we have talked about populations without worrying
+about how they might have materialized.  Here we are simply
+saying that we can imagine some populations as arising 
+through experimentation.
+\item The simplest experimental design is named the \textcolor{magenta}{ completely}
+\textcolor{magenta}{ randomized} \textcolor{magenta}{ design} (CRD). 
+\item  Here we have (say) $t$ treatments
+and (say) $nt$ experimental units.  These experimental units
+are divided into $t$ sets of $n$ and the sets are assigned
+\textcolor{magenta}{ at random}, each to a treatment.
+\item We can, equivalently, characterize this design as one that
+acquires a simple random sample of size $n$ from each of $t$
+different treated populations $T_1, T_2, \ldots, T_t$. 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\begin{itemize}
+\item Each
+of these populations has mean $\mu_i$ and variance
+$\sigma_\epsilon^2, \ i = 1, 2, \ldots, t$.
+\item If all of the treatments have the population mean $\mu$ then  
+$\mu_1 = \mu_2 = \cdots = \mu_t = \mu$.
+\item If this were the case,  \textcolor{magenta}{the variation among $n$ samples} taken from each 
+treated population $T_1, T_2, \ldots, T_t$ (called the within sample
+variance) would be the same as the variation among all  $nt$
+sample values.
+\item If some of the $\mu_j$ are different,  then  \textcolor{magenta}{the variance in the 
+overall sample} will be inflated due to differences in population means, while the within sample
+variances would remain the same for each sample.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\setlength{\unitlength}{0.8mm}
+\begin{picture}(120,60)
+\put(5,5){
+\begin{picture}(50,50)(0,10)
+\put(5,5){\vector(1,0){50}}
+\put(5,5){\vector(0,1){50}}
+\put(50,-2){x}
+\put(-4,50){y}
+\put(-3,20){\normalsize{$\mu_1$}}
+\put(4,20){\line(1,0){2}}
+\put(-3,38){\normalsize{$\mu_2$}}
+\put(4,39){\line(1,0){2}}
+\put(-3,28){\normalsize{$\mu_3$}}
+\put(4,29){\line(1,0){2}}
+\put(10,4){\line(0,1){2}}
+\put(25,4){\line(0,1){2}}
+\put(40,4){\line(0,1){2}}
+\put(9,-1){\small{$T_1$}}
+\put(24,-1){\small{$T_2$}}
+\put(39,-1){\small{$T_3$}}
+\multiput(10,10)(0,3){8}{\circle*{1}}
+\multiput(25,30)(0,3){7}{\circle*{1}}
+\multiput(40,20)(0,3){6}{\circle*{1}}
+\end{picture}}
+\put(75,5){
+\begin{picture}(50,50)(-20,10)
+\put(5,5){\vector(1,0){50}}
+\put(5,5){\vector(0,1){50}}
+\put(50,-2){x}
+\put(-4,50){y}
+\put(-20,25){\normalsize{$\mu_1=\mu_2=\mu_3$}}
+\put(4,25){\line(1,0){2}}
+\put(10,4){\line(0,1){2}}
+\put(25,4){\line(0,1){2}}
+\put(40,4){\line(0,1){2}}
+\put(9,-1){\small{$T_1$}}
+\put(24,-1){\small{$T_2$}}
+\put(39,-1){\small{$T_3$}}
+\multiput(10,15)(0,3){8}{\circle*{1}}
+\multiput(25,13)(0,3){7}{\circle*{1}}
+\multiput(40,17)(0,3){6}{\circle*{1}}
+\end{picture}}
+\end{picture}
+\vspace*{.5in}
+\begin{itemize}
+\item This suggests that to investigate whether $\mu_1 = \mu_2 = \cdots =
+\mu_t$ we may wish to compare the observed variation within
+samples from the populations $T_i$ to the variation among (or
+between) samples.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\begin{itemize}
+\item This is the motivation for analyzing variances when looking for
+differences in population means. 
+\item Note that the  \textcolor{magenta}{expected value of the mean square} among
+ treatment groups is $\sigma_\epsilon^2$ when
+$\mu_1 = \mu_2 = \cdots = \mu_t$.
+\item This expectation gets larger than $\sigma_\epsilon^2$ as the $\mu_i$'s 
+get further apart in value.
+\item Thus the ratio:\\[-.5in]
+\begin{small}
+\begin{center}
+\underline{ Square between treatment groups}\\
+Mean Square within treatment groups
+\end{center}
+\end{small}
+has expected (average) value 1 when $\mu_1 = \mu_2 = \cdots = \mu_t$
+and greater than one otherwise.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{itemize}
+\item It will be difficult for us to decide how much larger than 1 the
+ratio must be before we declare that at least one $\mu_i$ is
+different from the others.
+\item The solution to  this problem is to \textcolor{magenta}{ assume the} 
+\textcolor{magenta}{ treated populations} \textcolor{magenta}{ are Normally distributed}.  
+\item Then the
+above ratio is an $F$ random variable whenever 
+$\mu_1 = \mu_2 = \cdots = \mu_t$.
+\item When the $\mu_i$ are not all equal, the distribution of this ratio
+ will be shifted to the right. 
+\item Thus the observed value of the above ratio
+will be larger than the  \textcolor{magenta}{percentile value from the F-table}
+at a specified level $\alpha$.  
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{itemize}
+\item Thus we may test the hypothesis\\[.1in]
+\hspace*{.2in} $H_0: \mu_1 = \mu_2 = \cdots \mu_t$\ \ vs.\ \ $H_a:$ at least one $\mu_i$ different, \\[.1in]
+using the statistic $F$ = $\frac{\rm{Mean~ Square~ Between~ Groups~}}{\rm{Mean~ Square~ Within~ Groups}}$ 
+\item Since our test involves essentially all mean values
+$\bar{y}$'s,  \textcolor{magenta}{the central limit theorem} tells us that we will have
+approximately an $F$ random variable if the treated populations
+are not dramatically different than normal populations.
+\item The F-test is carried out by constructing an analysis of variance table discussed below.
+\item  Handout gives details
+about \textcolor{magenta}{computation of a relevant analysis of variance table} for this case. Here we summarize the results.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{The Analysis of Variance (AOV) Table for a CRD}
+\begin{itemize}
+\item \textcolor{magenta}{Data}: (Note: the sample sizes in the $t$ treatment groups need not be the same.)
+  \begin{center}
+  \begin{tabular}{cc|r}
+  \textcolor{magenta}{Treatment 1}: & $y_{11},\ y_{12}, \ldots,\ y_{1n_{1}}$ & $\bar{y}_{1.}$\\
+  \textcolor{magenta}{Treatment 2}: & $y_{21},\ y_{22}, \ldots,\ y_{2n_{2}}$ & $\bar{y}_{2.}$\\
+   \vdots  &     $\vdots$ & $\vdots$\\
+  \textcolor{magenta}{Treatment  t}: & $y_{t1},\ y_{t2}, \ldots,\ y_{tn_{t}}$& $\bar{y}_{t.}$
+  \end{tabular}
+  \end{center}
+  Let $n_T = n_1 + n_2 + \cdots n_t$ denote total number
+  of observations.
+\end{itemize}
+\end{frame}
+ 
+
+\begin{frame}
+\frametitle{The Analysis of Variance (AOV) Table for a CRD}
+\begin{itemize}  
+\item The \textcolor{magenta}{AOV table} in this case is:\\[.1in]
+%\begin{center}
+%\begin{small}
+  \begin{footnotesize}
+  \begin{tabular}{l@{\extracolsep{.1in}}llll}
+  \multicolumn{1}{c}{Source} &
+  \multicolumn{1}{c}{df}     &
+  \multicolumn{1}{c}{SS}     &
+  \multicolumn{1}{c}{MS}  &
+ \multicolumn{1}{c}{F} 
+ \\ \hline
+  Treatment & $t-1$ & SSB=$\displaystyle\sum_{i=1}^t n_i (\bar{y}_{i.} - 
+  \bar{y}_{..})^2$ & SSB/$(t-1)$ & MSB/MSE\\[.1in]
+  Error & $n_T-t$ & SSW=$\displaystyle\sum_{i=1}^t \displaystyle\sum_{j=1}^{n_i}
+  (y_{ij} - \bar{y}_{i.})^2$ & SSW/($n_T - t$)$\equiv$ MSE \\[.1in] \hline
+\\
+  Total & $n_T-1$ & $\displaystyle\sum_i \displaystyle\sum_j (y_{ij} - \bar{y}_{..})^2$
+  \end{tabular}
+  \end{footnotesize}
+%  \end{small}
+%  \end{center}
+\item where\\[-.3in]
+\begin{footnotesize}
+\begin{eqnarray*}
+  \rm{SSW} &=& \sum_i^t \sum_j^{n_i} (y_{ij} - \bar{y}_{i.})^2 =
+     (n_1-1)s_1^2 + (n_2-1)s_2^2 + \cdots + (n_t-1)s_t^2\\[.1in]
+  \rm{MSE} &=& \rm{SSW}/[(n_1-1) + (n_2-1) + \cdots + (n_t - 1)] = s^2
+\end{eqnarray*}
+\end{footnotesize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\begin{itemize}
+\item SSW is simply the familiar \textcolor{magenta}{pooled SS} that we saw for the 
+2 sample case back in Chapter 6, extended to the  $t > 2$ case.
+\item MSE is the \textcolor{magenta}{pooled estimator of the population variance}, $\sigma^2_{\epsilon}$.
+
+\item \textcolor{magenta}{Model for data from a CRD}\\[.1in]
+The model of the CRD  which we will use is:
+  $$y_{ij} = \mu + \alpha_i + \epsilon_{ij},\ \  i=1,2,\ldots,t; \ \
+              j=1,2,\ldots,n$$
+where $E(\epsilon_{ij}) = 0,\ \  Var(\epsilon_{ij}) = \sigma_\epsilon^2,$
+and the $\epsilon_{ij}$'s are all independent.
+\item Here  $ \alpha_i$ is the \textcolor{magenta}{ effect} due to
+treatment $i$.  
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{itemize}
+\item Thus the treated population means are $\mu_i = \mu +
+\alpha_i$ in this notation.
+\item If  none of the treatments has an effect then $\alpha_1, \alpha_2, \cdots \alpha_t$ are all zero which
+is equivalent to $\mu_1 = \mu_2 = \cdots = \mu_t = \mu$ for some $\mu$.
+\item We may talk of \textcolor{magenta}{treatment means} or \textcolor{magenta}{treatment effects} in the single
+treatment factor CRD experiments irrespective of sample size.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Example 8.1 - Handout}
+\begin{itemize}
+\item \textcolor{magenta}{Data:}\\[.1in]
+A horticulturist was investigating the phosphorous content of tree leaves from three different varieties of apple trees(1,2, and 3). Random samples of five leaves from each of the three varieties were analyzed for 
+phosphorous content. The data are:\\[.1in]
+\begin{small}
+\begin{center}
+ \begin{tabular}{crrrrrrrr} \hline
+ &  &  & & & &  \multicolumn{1}{c}{Sample} &  \multicolumn{1}{c}{Sample} &  \multicolumn{1}{c}{Sample}\\
+ \multicolumn{1}{c}{Variety} & \multicolumn{5}{c}{Phosphorous Content} &
+ \multicolumn{1}{c}{Size} &  \multicolumn{1}{c}{Mean} &  \multicolumn{1}{c}{Variance}\\ \hline
+ 1 & .35 & .40 & .58 & .50 & .47 & 5 & 0.460 & .00795 \\
+ 2 & .65 & .70 & .90 & .84 & .79 & 5 & 0.776 & .01033 \\
+ 3 & .60 & .80 & .75 & .73 & .66 & 5 & 0.798 & .00617 \\ \hline
+\end{tabular}
+\end{center}
+\end{small}
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Example 8.1 - Handout - cont.}
+\begin{itemize}
+\item \textcolor{magenta} {Analysis of Variance Table:}
+\begin{small}
+\begin{center}
+\begin{tabular}{lrrrc} 
+Source of Variation & d.f. & S.S. & M.S. & F \\ \hline
+Variety & 2& .277  & .138 & 17.25 \\
+Error & 12 & .0978 & .008 & \\ \hline
+Total & 14 & .3748
+\end{tabular}
+\end{center}
+\end{small}
+\item Since the computed $F$ value exceeds
+$F_{.05,2,12} = 3.89$, the null hypothesis that the  mean phosphorus content for the three varieties
+are all equal is rejected. 
+\item It appears that the mean phosphorus content for Variety 1 is smaller than those for Varieties 2 and 3.
+Techniques for testing such  hypotheses will be discussed in the Chapter 9.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{{Checking the Equal Variance Assumption}}
+\begin{itemize}
+\item To summarize, our model for the multiple population case is
+(possibly unequal sample size)
+$$
+  y_{ij} = \mu + \alpha_i + \epsilon_j \quad i=1,2,\ldots,t; \ j=1,2,\ldots,n_i
+$$
+where $\epsilon_{ij}$'s are independent, normally distributed and
+for each $i$ the population parameters are ($\mu_i,
+\sigma_\epsilon^2$).
+\item A problem occurs if there is textcolor{magenta}{heterogeneity of variance}.  
+$$
+  H_0: \sigma_1^2 = \sigma_2^2 = \cdots = \sigma_t^2 \rm{\ vs.\ }  H_a: \rm{~not~all~} \sigma_i^2 \rm{'s~are~equal}
+$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+\item A test of this hypothesis, proposed by Hartley (1940) was discussed in Chapter 7.
+ The test is the $F$-max test
+$$
+  F_{\rm{max}} = \frac{\rm{{max}}(S_i^2)}{\rm{min}(S_i^2)}
+$$
+\item This uses the largest and smallest of the population sample variances.
+\item The test statistic presumes equal sample sizes.  Recall that Table 12
+gives critical values, for $\alpha$ = 0.05 and
+$\alpha$ = 0.01  for $df = n-1$. 
+\item  If sample sizes are not equal
+use the largest $n_i$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+\item When sample sizes are nearly equal, heterogeneity of variance is not
+as great a problem unless variances are severely different.  Such 
+cases are usually detectable by simply looking at the sample
+variances. 
+\item Hartley's test is very sensitive to
+departures from normality. An \textcolor{magenta}{alternative test, Levine's test} was also briefly
+discussed in a handout.
+\item When heterogeneity appears to be present, a \textcolor{magenta}{variance stabilizing
+transformation} can sometimes be found. 
+\item  Look at handout for variance stabilizing transformations.
+\item Finding a useful variance stabilizing transformation is not, in
+general, easy.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+\item If an approximate relationship between $\sigma^2$ and $\mu$  is found by examining the sample means $\bar{y}_i$'s and
+the corresponding sample variances $S_i^2$, then it is possible to 
+determine an appropriate transformation using theoretical arguments.
+\item For example, if this relationship is of the form $\sigma^2=k\mu$ for some constant $k$, 
+ then the transformations $y_T = \sqrt{y}$ is suggested.
+\item  Or, if the relationship is of the form $\sigma^2=k\mu^2$ for some constant $k$, then
+the transformation $y_T = \log(y+1)$ is recommended. (See Table 8.15 for other possibilities).
+\item Then the transformed data are analyzed using the usual method.
+ \textcolor{magenta}{See Example 8.4}.
+\end{itemize}
+\end{frame}
+\end{document}
+
