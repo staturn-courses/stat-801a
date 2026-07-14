@@ -1,0 +1,50 @@
+---
+title: "Project 2"
+date: '2026-01-01 21:00:00'
+author: STAT 801A, Fall 2026
+date-format: "[Due on] MMMM D, YYYY [at] h:mm a"
+format: 
+  pdf:
+    include-in-header:
+      text: '\pagenumbering{gobble}'
+---
+
+## Overview
+
+In this project, you
+
+## Scenario 1
+
+The Traffic Engineering Division in Lincoln, NE is investigating the signal timing of a stoplight near one of the fire stations. If too many cars are lined up at a red light, the driveway to the fire station gets blocked by traffic, which increases the delay of emergency responders. This occurs when there are seven or more cars stopped at the intersection. 
+
+You and your peers designed a study to investigate this intersection. For 20 consecutive cycles, you record the number of cars that lined up at the light. 
+
+```{r}
+#| echo: false
+#| eval: true
+set.seed(311)
+cars <- rpois(n=20, lambda = 5)
+```
+
+
+```{r}
+#| echo: true
+#| eval: true
+print(cars)
+```
+
+1. What is the observational unit of this study?
+2. Is it reasonable to assume that all observations are independent? 
+3. Write the null and alternative hypothesis in words.
+4. Write the null and alternative hypothesis in mathematical notation.
+
+
+- One of your peers suggests that you use the Binomial distribution by recoding all instances where there were seven or more cars as 1 and other values as zero. 
+
+```{r}
+binom.test(8, 20)
+```
+
+
+## Scenario 2
+

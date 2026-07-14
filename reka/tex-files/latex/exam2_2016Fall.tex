@@ -1,0 +1,144 @@
+%1/2 inch left/right margins, 1in top, 1/2 bottom
+\documentclass[12pt]{article}
+\hbadness=10000
+\tolerance=10000
+\textheight 9.8in
+\textwidth 7.4in
+\oddsidemargin -.5in
+\topmargin -1in
+\headsep 0in  
+\headheight 0in
+\begin{document}
+\begin{flushright}
+\textbf{Fall 2016}\\[1.1in]
+\end{flushright}
+
+\begin{center}
+\textbf{\Huge STATISTICS 801}\\[.1in]
+\textbf{\large{Exam 2 (100 points)}}\\[.2in]
+\end{center}
+\raggedleft Name \rule{3.5in}{.01in}\\[1.1in]
+\raggedright  Instructions: 
+\begin{itemize}
+\item	You are allowed 110 minutes for this exam. Please pace yourself accordingly. 
+\item	You may use a calculator and your formula sheet on this exam. However, you are not allowed to use your cell phone AT ALL! It is a "closed book" exam.
+\item	The t-table and the Studentized range q-table are attached to your exam so you DON'T need to use your own tables.
+\item	In order to receive full credit, you must show your work and carefully justify your answers. The correct answer without any work will receive little or no credit.
+\item	If you need more room, use the backs of the pages AND INDICATE that you have done so. 
+\item	Please write neatly. 
+\item	GOOD LUCK!!
+\end{itemize}
+\newpage
+\setlength{\headsep}{0.2in}
+\begin{enumerate}
+\item An experiment is conducted to compare a revolutionary
+    new method of teaching reading to ``\textit{slow
+    learners}'' to the current standard method.  Of a random
+    sample of 20 slow learners, 8 are taught by the new
+    method and 12 are taught by the standard method.  Both
+    groups were taught by qualified instructors and under similar
+    conditions for a 6-month period.  The scores obtained by the 
+participants in a reading test given at the end of this period, and 
+some relevant statistics computed for the two samples,
+respectively,  are given below:\\
+
+\vspace*{-.3in}
+
+    \begin{center}
+    \begin{tabular}{rrrr|rrrr} \\ \hline
+    \multicolumn{4}{c}{New Method} & \multicolumn{4}{c}{Standard Method} \\ \hline
+    80 & 80 & 79 & 81 &  79 & 62 & 70 & 68 \\
+    76 & 66 & 79 & 76 &  73 & 76 & 86  & 73 \\ 
+       &    &    &    &  72 & 68 & 75 & 66 \\ \hline
+     \multicolumn{4}{c}{$n = 8$} & \multicolumn{4}{|c}{$n = 12$} \\ 
+        \multicolumn{4}{c}{$\bar{y}_1=77.125$} & \multicolumn{4}{|c}{$\bar{y}_2=72.333$}\\
+     \multicolumn{4}{c}{$s_1^2=23.55$} & \multicolumn{4}{|c}{$s_2^2=40.24$} \\  \hline
+    \end{tabular}
+    \end{center}
+ Let $\mu_1$ and $\mu_2$ represent
+mean reading scores of slow learners taught using the new method 
+and the standard method, respectively. Assume that a larger score 
+implies an improvement.
+  \begin{enumerate}
+  \item (10) \parbox[t]{6in}{Is there a reason to believe that
+the assumption of equal population variances is justified? Explain.  
+Perform a statistical test to verify this assumption, stating the hypotheses and
+the rejection region clearly. Use
+$\alpha=.05$.}\\
+For making your decision use the appropriate $F$-value(s). Circle the one(s) you are using!\\
+$F_{0.025,7,11}=3.76$ or $F_{0.025,8,12}=3.51$ or $F_{0.025,1,8}=7.57$ or \\
+$F_{0.025,11,7}=4.7$ or $F_{0.025,12,8}=4.2$ or $F_{0.025,8,1}=956.7$.  
+  
+  
+\newpage
+\setlength{\headsep}{0.2in}
+
+\item (10) \parbox[t]{6in}{State the appropriate
+    hypotheses to determine if the scores indicate that the new
+    method is an improvement over the standard method.  Compute the test statistic
+    and  an approximate p-value and use it to make your decision.}\\[2.8in]
+  \item (10) \parbox[t]{6in}{Construct a 95\% confidence interval
+    for $\mu_1 - \mu_2$.  Show work. Explain what the experimenter
+    needs to have done to make this estimate more accurate (i.e., to obtain a 
+    narrower interval)? Use the the standard error of the difference in means
+to explain.}\\[2.8in]
+
+  
+  \end{enumerate}
+\newpage  
+\setlength{\headsep}{0.2in}
+ \item A consumer protection magazine was interested in comparing tires
+purchased from four different companies that each claimed their tires
+would last 40,000 miles. A random sample of 10 tires of each brand
+was obtained and tested under simulated road conditions. The number
+of miles until the tread thickness reached a specified depth was
+recorded for all tires. The data are given (in 1,000 miles) below:
+\begin{center}
+\begin{tabular}{c|rrrrrrrrrr|rr}
+\hline 
+ \multicolumn{1}{c|}{\textit{Brand}} & \multicolumn{10}{c|}{\textit{Miles(in thousands)}} & 
+     \multicolumn{1}{c}{$\sum{y}$} &
+     \multicolumn{1}{c}{$\bar{y}$}  \\ \hline
+I  &38.9 &39.7 &42.3 &39.5 &39.6 &35.6 &36.0 &39.2 &37.6 &39.5 & 387.9 & 38.79\\
+II &44.6 &46.9 &48.7 &41.5 &37.5 &33.1 &43.4 &36.5 &32.5 &42.0 & 406.7 & 40.67 \\ 
+III &51.3 &53.6 &58.2 &52.1 &51.2 &53.1 &51.8 &55.8 &52.1 &51.4 & 530.6 & 53.06 \\ 
+IV &39.1 &38.7 &40.4 &41.9 &39.4 &36.1 &40.5 &35.2 &32.3 &36.0 & 379.6 & 37.96 \\ \hline
+\end{tabular}
+\end{center}
+
+
+Part of the ANOVA table is shown below:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+Source & \,\,\,\,\,\,df \,\,\,\,\,\,& SS & \,\,\,\,\,\,\,\,MS\,\,\,\,\,\,\,\, &\,\,\,\,\,\,\,\, F\,\,\,\,\,\,\,\, & p-value\\ \hline
+Treatment &  & 1491.81 & & & $1.188\times 10^{-11}$\\ \hline
+Error &&440.28&&---&---\\ \hline
+Total &&&---&---&---\\ \hline
+\end{tabular}
+\end{center}
+\begin{enumerate}
+\item (10) \parbox[t]{6in}{Fill in the missing values in the ANOVA table (include both equations and actual number).}
+\item (10) \parbox[t]{6in}{Write out the linear statistical model and describe it, including \textbf{all} assumptions. Be specific! Use mathematical notations AND word explanations too.}\\[2.8in]
+\item (3) \parbox[t]{6in}{What type of experimental design is it? How do you know? Justify your answer.}\\[2.8in]
+\item (2) \parbox[t]{6in}{What hypothesis can you test with the F and p-values found in the ANOVA table? Write down the null and alternative hypotheses.}\\[2.8in]
+\item (5) \parbox[t]{6in}{Using the p-value given in the ANOVA table, state your decision and conclusion in terms of the problem. $\alpha=0.05$.} \\[2.8in]
+\item (3) \parbox[t]{6in}{The company producing $Brand I$ is located in Nebraska. We are interested in comparing the Nebraska tires with all of the other tires. Write a single linear contrast that describes the comparison described above.} \\[1.8in]
+\item (3) \parbox[t]{6in}{Show that the linear combination you specified in part (f) is a linear contrast.}\\[2.8in]
+\item (10) \parbox[t]{6in}{Using the t-distribution, test whether the linear contrast described in part (f) is significant. Make sure you include every step of the test.$\alpha=0.05$.}\\[3.6in]
+\item (10) \parbox[t]{6in}{Perform Tukey's procedure to perform every pairwise comparison.$\alpha=0.05$. Give a conclusion.} 
+\end{enumerate}
+\newpage
+\item \textbf{TRUE/FALSE}. Circle your answer. (2 points each.)
+\begin{enumerate}
+\item \textbf{T / F} Sampling error is the only cause two sample means are different.
+\item \textbf{T / F} The number of mutually orthogonal contrasts is the same as the number of means.
+\item \textbf{T / F} A significant F-test from a one-way ANOVA tells us that there is a significant difference somewhere among the means, but it doesn't tell us where it is.
+\item \textbf{T / F} Within-group variance is caused by sampling error and treatment effects.
+\item \textbf{T / F} The F statistic in the ANOVA table compares the ratio of between-group variance to within-group variance.
+\item \textbf{T / F} The paired t-test assumes that the data in each group are normally distributed.
+\item \textbf{T / F} The paired t-test is appropriate for comparing the means of independent groups of observations.
+\end{enumerate}
+\end{enumerate}
+\end{document}

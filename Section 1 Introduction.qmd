@@ -4,7 +4,7 @@ Sound scientific conclusions require evidence from data. Statistics is the scien
 
 The **scientific method** has been used for hundreds of years for discovering new knowledge, and can be summarized with the following diagram:
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/The_Scientific_Method.svg/960px-The_Scientific_Method.svg.png)
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/The_Scientific_Method.svg/960px-The_Scientific_Method.svg.png){height=20em fig-align=center}
 
 It's not coincidental that the steps in the scientific method are closely related to the steps in a statistical investigation. These steps appear in Tintle et al. (2021), but are not at all unique to this textbook.
 
@@ -23,40 +23,10 @@ Each of these steps has a lot of moving parts, so we'll look at each step in mor
 
 Step 1 boils down to
 
-\
-\
-\
 
 This may involve
 
--   
 
-\
-\
-\
-\
-\
-\
-\
-
--   
-
-\
-\
-\
-\
-\
-
--   
-
-\
-\
-\
-\
-\
-\
-
-\newpage
 
 Let's consider the baby example.
 

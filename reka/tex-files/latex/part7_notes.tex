@@ -1,0 +1,750 @@
+\documentclass[xcolor=dvipsnames,12pt]{beamer}
+\usecolortheme[named=RoyalPurple]{structure}
+\useoutertheme{infolines}
+\usetheme{CambridgeUS}
+%\usetheme[height=14mm]{Rochester}
+%\hypersetup{colorlinks=true,linkcolor=yellow}
+\setbeamertemplate{items}[ball]
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamertemplate{navigation symbols}{}
+\usepackage{color}
+%\usefonttheme{structuresmallcapsserif}
+%\usefonttheme{professionalfonts}
+%\useoutertheme{default}
+%\useoutertheme{infolines}
+
+
+%\documentclass{beamer}
+%\usecolortheme{structure}
+\usepackage{graphicx}
+%\usetheme{PaloAlto}
+%\setbeamertemplate{items}[ball]
+%\setbeamertemplate{blocks}[rounded][shadow=true]
+%\useoutertheme{umbcfootline}
+\newtheorem{assume}{\rlap{A}\hskip .1in}
+%\newtheorem{result}{Result}[chapter]
+\newcommand{\Var}  {\mbox{Var}}
+\newcommand{\V} {\mbox{V}}
+\newcommand{\E}  {\mbox{E}}
+\newcommand{\PR}  {\mbox{P}}
+\newcommand{\diag} {\operatorname*{diag}}
+\newcommand{\tr} {\mbox{tr}}
+\newcommand{\bmw}[1]{{\mbox{$#1$}}}
+\newcommand{\MSE}{\mbox{MSE}}
+\newcommand{\MSPE}{\mbox{MSPE}}
+
+
+\def\bmh{{\hat \mathbf m}}
+\def\bm{{\mathbf m}}
+\def\bn{{\mathbf n}}
+\def\mh{{\hat m}}
+\def\bOmega{{\mathbf \Omega}}
+\def\be{{\mathbf e}}
+\def\bs{{\mathbf s}}
+\def\by{{\mathbf y}}
+\def\b1{{\mathbf 1}}
+\def\bx{{\mathbf x}}
+\def\bw{{\mathbf w}}
+\def\bzero{{\mathbf 0}}
+
+\def\bP{{\mathbf P}}
+\def\bI{{\mathbf I}}
+\def\bM{{\mathbf M}}
+\def\bH{{\mathbf H}}
+\def\bN{{\mathbf N}}
+\def\bW{{\mathbf W}}
+\def\bX{{\mathbf X}}
+\def\bZ{{\mathbf Z}}
+\def\bT{{\mathbf T}}
+\def\bV{{\mathbf V}}
+\def\bC{{\mathbf C}}
+\def\bG{{\mathbf G}}
+\def\bY{{\mathbf Y}}
+\def\bD{{\mathbf D}}
+\def\bS{{\mathbf S}}
+\def\bR{{\mathbf R}}
+
+\def\bbeta{\mbox{\boldmath $\beta$}}
+\def\bepsilon{\mbox{\boldmath $\varepsilon$}}
+
+% items enclosed in square brackets are optional; explanation below
+\title[]{Part 7}
+%\subtitle[ttt]{}
+\author[Stat 801]{Comparison of Means\\
+Linear Contrasts, Orthogonal Contrasts\\
+Multiple Comparison Procedures\\}
+\date{}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Comparison of Means}
+\begin{itemize}
+\item In Part 6, when the hypothesis $H_0: \mu_1 = \mu_2 = \cdots = \mu_t$ was
+rejected, the inference is that at least one of the $t$
+population means differs from the rest. 
+\item  The next question is
+which means are different from others?  
+\item Is $\mu_1 \neq \mu_2$? Is $\mu_6 \neq \mu_7$?
+\item Is the average ($\mu_1 + \mu_2 + \mu_3)/3$
+different from ($\mu_4 + \mu_5 + \mu_6)/3$? - etc.
+\item  Many times our question  will not result in a simple comparison
+of whether a difference like $\mu_2 - \mu_3 = 0$ or not. 
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Comparison of Means - cont.}
+\begin{itemize}
+\item It may be a  more complicated question that requires a comparison like 
+$\mu_1 - (\mu_2 + \mu_3)/2 = 0$ to  be made.
+\item Not all questions can be formulated as comparisons. 
+\item To enable us  to understand what kinds of questions  can be formulated as 
+comparisons, we define a special linear function of the means.
+\item A {\textcolor{magenta}{comparison}} among $t$ population
+means $\mu_1,\,\mu_2, \cdots \mu_t$ can be written as the linear combination:\\[.05in]
+\hspace*{1in}$\ell = a_1\mu_1 + a_2\mu_2 + \cdots + a_t\mu_t$\\[.05in]
+ for given numbers $a_1, a_2, \ldots, a_t$ which satisfy
+$\sum_{i=1}^t a_i = 0$.
+\item Let us look at some specific examples.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Examples:} 
+Suppose $t=5$ i.e., we consider the means 
+$\mu_1,\, \mu_2,\, \mu_3,\, \mu_4$, and $\mu_5$.\\[.15in]
+\begin{itemize}
+\item {The linear combination $\ell = \mu_2 - \mu_3$ 
+has $a_i$ values\\[.2in]
+ \hspace*{.7in}     $a_1 = 0,\, a_2 = 1,\, a_3 = -1,\, a_4 = 0,\, a_5 = 0.$\\[.25in]  
+      Note that $\sum a_i = 0$ as required for a comparison.}\\[.25in]
+\item{ The linear combination  $\ell = (\mu_1 + \mu_2)/2 - (\mu_3 + \mu_4)/2$
+    has $a_i$ values\\[.18in]
+\hspace*{.4in}$ a_1 = 1/2,\, a_2 = 1/2,\, a_3 = -1/2,\, a_4 = - 1/2,a_5 = 0.$\\[.25in]
+Again, $\sum a_i = 0$, so it is a comparison.}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Linear Contrasts}
+\begin{itemize}
+\item {A point estimate of a linear combination of population means is called a   {\textcolor{magenta}{linear contrast}}, and is given by\\[.05in]
+\hspace*{1in}$\hat{\ell} = a_1 \bar{y}_{1.} + a_2 \bar{y}_{2.} + a_3\bar{y}_{3.} + \cdots + a_t \bar{y}_{t.}$\\[.05in]
+ with $\sum a_i = 0$.}\\[.1in] 
+\item {The estimated variance of $\hat{\ell}$ is\\[.05in]
+\hspace*{1in}$\hat{V}(\hat{\ell}) = s_W^2 \sum_{i=1}^t \frac{a_i^2}{n_i}$\\[.05in]
+ where $n_i$ is the number of observations taken from the $i$-th
+population.} \\[.1in] 
+\item {To test the hypothesis $H_0: \ell = 0$ we can use the $t$ statistic\\[.05in]
+\hspace*{1in}$ t = \frac{\hat{\ell}}{\sqrt{\hat{V}(\hat{\ell})}}$\\[.05in]
+ with degrees of freedom = d.f. for $s_W^2$}.
+ \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Orthogonal Contrasts}
+\begin{itemize}
+\item Two contrasts $\hat{\ell}_1 = \sum_i a_i \bar{y}_{i.}$ and
+$\hat{\ell}_2 = \sum_i b_i \bar{y}_{i.}$ are {\textcolor{magenta}{orthogonal}}
+whenever $\sum_i a_i b_i = 0$.  This is only defined when
+$n_1 = n_2 = \cdots = n_t = n$ i.e., equal sample sizes.  
+\item If all linear contrasts in a set $\hat{\ell}_1, \hat{\ell}_2, \ldots, \hat{\ell}_{t-1}$
+ are pairwise orthogonal, then the set is said to be  {\textcolor{magenta}{mutually orthogonal}} set of linear contrasts.
+\item Given $t$ means $\mu_1, \mu_2, \ldots, \mu_t$, and sample means
+$\bar{y}_{1.}, \bar{y}_{2.}, \ldots, \bar{y}_{t.}$ (all based on
+the same number $n$ of observations), the
+{\textcolor{magenta}{maximum number of mutually orthogonal contrasts that exist is $(t-1)$}}. 
+ \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Orthogonal Contrasts - cont.}
+\begin{itemize}
+\item Among $t$ means there are many  $(t-1)$ sets of
+contrasts that are  mutually orthogonal.
+\item In a maximum mutually orthogonal set \\[.05in]
+\hspace*{1in} $\hat{\ell}_1,\hat{\ell}_2, \ldots, \hat{\ell}_{t-1}$,\\[.05in]
+ the linear contrasts are random variables which are statistically independent.
+
+\item Also, the treatment sum of squares SSB is equal to the sum of the
+$(\hat{\ell}_i)^2$ for any mutually orthogonal set of $(t-1)$
+contrasts:
+$$
+  \mbox{SSB } = \sum_{i=1}^{t-1} (\hat{\ell}_i)^2.
+$$
+ SSB has  $(t-1)\ d.f.$ corresponding the $(t-1)$
+contrasts. 
+ \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+Handout - Example 9.3
+\end{frame}
+
+
+
+\begin{frame}
+ Consider testing the {\textcolor{magenta}{Control vs. Agents}} comparison:
+$$H_0:\,\ell = 0 \quad \mbox{vs.} \quad H_a:\, \ell \neq 0$$
+where $\ell = 4\mu_1-\mu_2-\mu_3-\mu_4-\mu_5$. The 
+coefficients of the corresponding contrast are therefore:
+\begin{center}
+\begin{tabular*}{3in}{@{\extracolsep{\fill}}lllll}
+$a_1$ & $a_2$ & $a_3$ & $a_4$ & $a_5$\\
+4 & -1 & -1 & -1 & -1 
+\end{tabular*}
+\end{center}
+ Thus \\[-.3in]
+\begin{eqnarray*}
+\hat{\ell} & = & 4\bar{y_1}-\bar{y_2}-\bar{y_3}-\bar{y_4}-\bar{y_5}\\
+ & = & 4\times1.175 -1.293 -1.328 -1.415 -1.5=-.836\\[.1in]
+ V(\hat{\ell}) & = & s^2_W\cdot\sum^5_{i=1}
+\frac{a^2_i}{n_i}=(0.153)\left(\frac{20}{6}\right)=.051
+\end{eqnarray*}
+\end{frame}
+ 
+ 
+\begin{frame} 
+where 
+$$\sum^5_{i=1}\frac{a^2_i}{n_i}=\frac{4^2}{6}+\frac{1^2}{6}+\frac{1^2}{6}+\frac{1^2}{6}+\frac{1^2}{6}=\frac{20}{6}$$
+Thus 
+$$
+t_c=\frac{\hat{\ell}}{\sqrt{V(\hat{\ell})}}=\frac{-.836}{\sqrt{.051}}=-3.702$$
+From Table the t-table, $t_{.025,\,25}=2.06$; thus we reject $H_0$ at
+$\alpha=.05$ since $|t_c|>2.06$ is in the R.R.
+\end{frame}
+
+
+
+\begin{frame}
+ We also note that\\[-.3in]
+$$\mbox{SSC}_1=\frac{(\hat{\ell})^2}{\sum\frac{a^2_i}{n_i}}=\frac{(-.836)^2}{20/6}=.2097$$
+and therefore \\[-.3in]
+$$ F_c= \frac{\mbox{SSC}_1}{s^2_W}=\frac{.2097}{.0153}=13.71$$
+Since $F_{.05,\,1,\,25}=4.24$, we reject  $H_0$ at
+$\alpha=.05$, the same result as above. \\[.01in]
+ {\textcolor{red}{Note carefully that this sum of squares and F-test can be computed instead of the t-test.}}
+ \end{frame}
+
+
+\begin{frame}
+Now consider testing the {\textcolor{magenta}{Biological vs. Chemical}} comparison:
+$$H_0:\,\frac{\mu_2+\mu_3}{2} = \frac{\mu_4+\mu_5}{2} \quad
+\mbox{vs.} \quad H_a:\, \frac{\mu_2+\mu_3}{2} \neq \frac{\mu_4+\mu_5}{2} $$
+Since $H_0$ is equivalent to $.5\mu_2+.5\mu_3-.5\mu_4-.5\mu_5=0$
+which is equivalent to $\mu_2+\mu_3-\mu_4-\mu_5=0$, the problem is
+equivalent to testing
+$$H_0:\,\ell = 0 \quad \mbox{vs.} \quad H_a:\, \ell \neq 0$$
+where $\ell = \mu_2+\mu_3-\mu_4-\mu_5$. Here the contrast
+coefficients are
+\begin{center} 
+\begin{tabular*}{3in}{@{\extracolsep{\fill}}lllll}
+$a_1$ & $a_2$ & $a_3$ & $a_4$ & $a_5$\\ 
+0 & 1 & 1 & -1 & -1 
+\end{tabular*}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+giving $\hat{\ell}=1.293+1.328 -1.415 -1.5=-.294$ and\\ 
+$$ V(\hat{\ell})=s^2_W\cdot\sum^5_{i=1}
+\sum^5_{i=1}\frac{a^2_i}{n_i}=(0.153)\left(\frac{4}{6}\right)=.0102$$
+where \\
+$$\frac{a^2_i}{n_i}=\frac{0^2}{6}+\frac{1^2}{6}+\frac{1^2}{6}+\frac{1^2}{6}+\frac{1^2}{6}=\frac{4}{6}$$
+Thus \\[-.3in]
+$$
+t_c=\frac{\hat{\ell}}{\sqrt{V(\hat{\ell})}}=\frac{-.294}{\sqrt{.0102}}=-2.91$$
+Since $t_{.025,\,25}=2.06$; thus we reject $H_0$ at
+$\alpha=.05$ since $|t_c|>2.06$ is in the R.R. 
+\end{frame}
+
+
+\begin{frame}
+Similar to the previous comparison we may use an F-test:
+$$\mbox{SSC}_2=\frac{\hat{\ell}}{\sum\frac{a^2_i}{n_i}}=\frac{(-.294)^2}{4/6}=.1297$$
+and therefore 
+$$ F_c= \frac{\mbox{SSC}_2}{s^2_W}=\frac{.1297}{.0153}=8.47$$ which
+leads us to the same result as the t-test as  $F_{.05,\,1,\,25}=4.24$.\\[.05in]
+{\textcolor{red}{The computatons for testing the other two  comparisons are similar and are not included here.}}
+\end{frame}
+
+%***************************** End new insert *****************************
+
+\begin{frame}
+\frametitle{Multiple Comparison Procedures}
+\begin{itemize} 
+\item We know, of course, that the
+{\textcolor{magenta}{overall error rate}} when we make multiple tests is
+larger than $\alpha$ (and possibly much larger). \\[.1in]
+\item To compensate
+for this, several different multiple comparison procedures
+have been proposed to control various error rates related to
+the overall error rate. \\[.1in] 
+\item There are several of these; we will consider the 
+following:\\[.2in]
+\begin{itemize}
+\item Fisher's LSD Procedure\\[.1in]
+\item Tukey's W Procedure\\[.1in]
+\item Scheffe's Procedure
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Multiple Comparison Procedures - cont.}
+\begin{itemize} 
+\item These are different procedures that each controls a different
+kind of error rate and each is more or less conservative than others.  
+Each has its set of fans among researchers.\\[.1in]
+\item Each procedure is constructed to control a certain kind of
+error rate and it is important for a user to be aware of what error
+rate is controlled by a procedure before using it.  We will try to 
+state how conservative each one is as we discuss it.
+\end{itemize}
+
+\noindent \textbf{\textcolor{blue}{Fisher's Protected LSD Procedure}}\\[.1in]
+ The procedure is used for making all possible comparisons between
+pairs of means $H_0: \mu_i - \mu_j = 0$ \ vs. \ $H_a: \mu_i - \mu_j
+\neq 0$.  It presumes we rejected $H_0: \mu_1 = \mu_2 = \cdots =
+\mu_t$.\\[.1in]
+\end{frame}
+
+
+
+\begin{frame}
+\begin{itemize}
+\item For equal sample sizes $n_1 = n_2 = \cdots = n_t = n$, consider
+the $t$-test of the hypothesis above.
+$$
+  t = \frac{(\bar{y}_{i.} - \bar{y}_{j.})}{ (s_W \sqrt{2/n} \;)}
+$$
+\item We reject $H_0$ when $|t| \geq t_{\alpha/2}$,
+ This is equivalent to rejecting $H_0$, for a pair of ($i,j$)
+whenever
+$$
+  |\bar{y}_{i.} - \bar{y}_{j.}| \geq t_{\alpha/2} \,
+  s_W \, \sqrt{2/n } \ .
+$$
+\item The right hand member of this inequality is not a function of $i$ or $j$.
+It is constant for a specified $\alpha$ and $n$, and is called the {\textcolor{magenta}{Least Significant
+Difference or LSD}}.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{itemize}
+\item  Once the LSD is calculated,  doing the tests for the pairs of differences of the
+form $H_0: \mu_i - \mu_j = 0$ is simple:  Form all possible
+absolute differences $|\bar{y}_{i.} - \bar{y}_{j.}|$ and reject
+the corresponding $H_0$ if this difference exceeds or  equals the LSD.
+%************************************************************************
+\item Testing the hypotheses is thus easy, but {\textcolor{magenta}{reporting the
+results}} of all those tests can be messy. For $t$ means, there
+are $t(t-1)/2$ differences to test.
+\item To minimize the number of comparisons we need to make, first 
+arrange  the $\bar{y}_{i.}$'s  {\textcolor{magenta}{ordered smallest to largest}}
+in value.  If we use the notation $\bar{y}_{(i)}$
+for the $i$-th smallest $\bar{y}$, the ranked means may be
+represented as 
+$
+  \bar{y}_{(1)} \leq  \bar{y}_{(2)} \leq  \bar{y}_{(3)}
+  \leq \cdots \leq  \bar{y}_{(t)}
+$
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{itemize}
+\item For e.g., $\bar{y}_{(1)}$ might be $\bar{y}_7$ if $\bar{y}_{7}$ is
+the smallest;  Now note that if the  difference  $\bar{y}_{(t)}- \bar{y}_{(1)}$,
+for example, does not exceed the LSD, then all the  differences
+$\bar{y}_{(t)}- \bar{y}_{(2)}$,  $\bar{y}_{(t)}- \bar{y}_{(3)}\ldots$,
+$\bar{y}_{(t)}- \bar{y}_{(t-1)}$ will not exceed the LSD.
+\item It follows that in this case we are spared from computing all the 
+above differences and comparing them to the LSD. The following 
+procedure is based on this idea:
+\item First write the
+ordered  means on a line identified by their corresponding treatment names
+above them.
+\item For Example -- we might have\\[.1in]
+\hspace*{1in}\begin{tabular}{lllll}
+       trt5 & trt3 & trt1 & trt4 & trt2 \\[.1in]
+  9.5 & 10.5 & 11.6 & 12.2 & 13.5\\
+       \end{tabular}
+       
+\end{itemize}
+\end{frame}
+
+
+  
+\begin{frame}
+\begin{itemize}
+\item Take each column in turn, and on a
+separate line below the list, starting from column 1 connect the
+means by underlining those pairs of means that are not significantly 
+different from the mean in the current column, in the following way.
+\item Start the comparison of the mean $\bar{y}_{(1)}$
+with the mean on the last column $\bar{y}_{(t)}$. We know that if this pair is 
+{\tt less than the LSD value}, then none of the differences $|\bar{y}_{(1)}-\bar{y}_{(t-1)}|$
+will exceed the LSD value. If so, underline the means connecting $\bar{y}_{(1)}$ with $\bar{y}_{(t)}$
+\item Otherwise, move left to the next largest mean $\bar{y}_{(t-1)}$ and compare
+ $\bar{y}_{(1)}$ with $\bar{y}_{(t-1)}$, and so on.
+\end{itemize}
+\end{frame}
+
+ 
+\begin{frame}
+\begin{itemize} 
+\item Begin underlining at that  column the the difference is found
+to be {\tt less than the LSD value} and extend all the way 
+to the left to column 1 (or the column where you started) 
+\item This line 
+implies that those means that are connected with this line are 
+not  significantly different from the mean in column 1 and all means between.
+\item Now restart at column 2 (i.e., $\bar{y}_{(2)}$ and repeat the procedure 
+the same way as above. The new set of underlines will be displayed in a separate line.
+ For Example -- we might have\\[.1in]
+\hspace*{2in}\begin{tabular}{lllll}
+       trt5 & trt3 & trt1 & trt4 & trt2 \\[.1in]
+  9.5 & 10.5 & 11.6 & 12.2 & 13.5\\[-0.2in]
+       \\ \cline{1-4}\\[.0001in]
+        \cline{2-4}\\[.0002in]
+        \cline{3-4}\\[.0003in]
+        \cline{4-5}
+       \end{tabular}
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Example}
+\begin{itemize}
+\item Supposed that the computed sample means of six treatments with equal
+sample size 5 (i.e. $n=5$) are:\\[-.3in]
+$$\bar{y}_{1.} = 505, \ \bar{y}_{2.} = 528, \ \bar{y}_{3.} = 564, \
+\bar{y}_{4.} = 498, \ \bar{y}_{5.} = 600, \ \bar{y}_{6.} = 470
+$$
+\item Since MSE $=s^2_W=2,451$ with 24 d.f. Thus the LSD is: \\[.15in]
+\hspace*{1.5in}LSD $=2.064\sqrt{2(2451)/5}=64.63$.
+\item Ordered smallest to largest, the means are:\\[.1in]
+$
+ \bar{y}_{6.},\,\bar{y}_{4.},\,\bar{y}_{1.},\,\bar{y}_{2.},\,\bar{y}_{3.},\,\bar{y}_{5.},\equiv 470,\, 498,\, 505,\, 528,\, 564,\, 600
+$
+\item Prepare table to be used in the underlining procedure:
+\begin{center}
+\begin{tabular}{lllllll}
+& trt6 & trt4 & trt1 & trt2 & trt3 & trt5 \\
+&  470 & 498 & 505 & 528 & 564 & 600\\[.5in]
+\end{tabular}
+\end{center}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Example - cont.}
+\begin{itemize}
+\item Using LSD $ = 64.63$,
+underlining procedure  is done as follows:
+\hspace*{1in}\begin{tabular}{llllll}
+       trt6 & trt4 & trt1 & trt2 & trt3 & trt5 \\[.1in]
+  470 & 498 & 505 & 528 & 564 & 600 \\[-0.2in]
+       \\ \cline{1-4}\\[.0001in]
+        \cline{2-4}\\[.0002in]
+        \cline{3-5}\\[.0003in]
+        \cline{4-5}\\[.0004in]
+        \cline{5-6}\\
+       \end{tabular}
+\item Deleting the superfluous lines we have:
+\hspace*{1in}\begin{tabular}{llllll}
+       trt6 & trt4 & trt1 & trt2 & trt3 & trt5 \\[.1in]
+  470 & 498 & 505 & 528 & 564 & 600 \\[-0.2in]
+       \\ \cline{1-4}\\[.0001in]
+        \cline{3-5}\\[.0002in]
+        \cline{5-6}\\[.0003in]
+       \end{tabular}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Example - cont.}
+These may lead to one or more of the following conclusions:\\[.1in]
+\begin{itemize}
+\item $\mu_6, \mu_4, \mu_1, \mu_2$ are significantly different from
+         $\mu_5$.
+\item $\mu_6, \mu_4$ are significantly different from $\mu_3$.
+\item  None of $\mu_6, \mu_4, \mu_1$ is significantly different from $\mu_2$.
+\item None of $\mu_6, \mu_4$ is significantly different from
+           $\mu_1$.
+\item $\mu_6$ is not significantly different from $\mu_4$.
+\end{itemize}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+ When sample sizes are not equal the above procedure is not feasible.
+In this case, we may construct confidence intervals for all pairs of
+differences $\mu_i - \mu_j $ using
+$$
+ \bar{y}_{i.} - \bar{y}_{j.} \pm  t_{\alpha/2} \, s_W \, \sqrt{\frac{1}{n_i} + \frac{1}{n_j}}
+$$
+where $  t_{\alpha/2}$ is again the percentile from the 
+t-table with degrees of freedom same as that of the within mean square
+$s_W^2$.
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Important comments regarding Multiple Comparison procedures}
+\begin{itemize}
+\item The protected LSD has a {\textcolor{magenta}{per-comparison error rate}} 
+of $\alpha$, i.e., the probability of a Type I error is $\alpha$ 
+for any single comparison (or test).  However, as we already
+discussed, the overall error rate when multiple tests are made 
+can be much larger than $\alpha$, i.e.,  the probability of making 
+one or more Type I errors exceeds $\alpha$.
+\item The {\textcolor{magenta}{protected}} part involves making sure that 
+$H_0: \mu_1 = \mu_2 = \cdots = \mu_t$ is tested using the 
+analysis of variance F-test prior to using the multiple comparison
+procedure. 
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Important comments regarding Multiple Comparison procedures - cont.}
+\begin{itemize}
+\item The LSD analysis is carried out only when $H_0$ is
+rejected.  There is some evidence, based on 
+simulation studies that the {\textcolor{magenta}{experimentwise error rate}} 
+for protected LSD may be near $\alpha$.  
+\item {\textcolor{magenta}{The experimentwise error
+rate}} is the probability of observing an experiment with one or more 
+pairwise comparisons falsely declared significant.
+\item Protected LSD is not a very conservative method.  We would not be
+surprised to see it falsely declare several pairwise comparisons
+significant in an experiment involving several treatments when all
+possible differences are tested.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Important comments regarding Multiple Comparison procedures - cont.}
+\begin{itemize}
+\item This procedure should not be used to make tests suggested after
+the experiment has been conducted and the sample means computed.
+At the planning stage of an experiment, the experimenter must
+state all questions that needs to  be answered in terms of
+possible comparisons. These comparisons are called 
+{\textcolor{magenta}{pre-planned or apriori comparisons}}. 
+\item Instead of pre-planned
+comparisons, a part of the plan for the experiment may require 
+testing all differences or only some of them.  The intent of LSD is to 
+not to perform all  paiwise comparisons routinely.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Important comments regarding Multiple Comparison procedures - cont.}
+\begin{itemize}
+\item In any case, it is not recommended that any kind of comparisons 
+be devised after first looking at the $\bar{y}$'s.
+The problem with testing based on comparisons suggested by looking
+at the data is that it changes the $\alpha$ level of the test i.e,
+Type I error rate is not controlled at the specified  $\alpha$
+level anymore.
+\item For example --- an extreme case --- say you look at the sample
+means and see that the largest is much greater than the smallest,
+so you decide to test their difference for significance.  On
+average --- across experiments --- you will seldom fail to
+reject $H_0$ when you do this, so the Type I error rate is
+probably not $\alpha$.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Tukey's W Procedure} 
+\begin{itemize}
+\item This method for comparing all possible pairs is {\textcolor{magenta}{more conservative
+than LSD}} (i.e., it tends to be more resistant to falsely declaring
+significance.)
+\item The method is based on comparisons of
+$|\bar{y}_{i.} - \bar{y}_{j.}|$ to the value
+$$
+  W = q_\alpha(t,\nu) \sqrt{\frac{s_W^2}{n}}
+$$
+where $s_W^2$ is the mean square within samples all of size $n$,
+$\nu$  is the degrees of freedom for $s_W^2$, $t$ is number of
+population means, $\mu_i$ compared, and $\alpha$ is the chosen 
+significance level.
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Tukey's W Procedure - cont.} 
+\begin{itemize}
+\item Then if
+$$
+  |\bar{y}_{i.} - \bar{y}_{j.}| \geq W 
+$$
+we declare that the mean pair $\mu_i$ and $\mu_j$ are
+significantly different.  
+\item The value of $q_\alpha(t,\nu)$ is found in 
+Table 10 (Handout).  The table gives $q_\alpha(t,\nu)$ for
+either $\alpha=0.05$ or $\alpha=0.01$. 
+\item  The the sample means are ordered smallest to largest as before. 
+Then make all possible pairwise comparisons using
+the value of $W$ and underlining method may then be used to display results. 
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Example} 
+\begin{itemize}
+\item The ANOVA table resulting from an experiment involving 6 treatments and $n=5$
+per treatment is:\\[.1in]
+\begin{tabular}{lrrrr}
+Source of Variation & DF &
+\multicolumn{1}{c}{SS} &
+\multicolumn{1}{c}{MS} &
+\multicolumn{1}{c}{F} \\ \hline
+Between Treatments & 5 & 847.05 & 169.41 & 14.37 \\
+Within Treatments & 24 & 282.93 & 11.79 \\ \hline
+Total & 29 & 1129.98
+\end{tabular}
+\vspace*{.05in}
+
+\item The sample treatment means are:
+$\bar{y}_{1.}= 28.8, \bar{y}_{2.} = 24.0, \bar{y}_{3.} = 14.6, \bar{y}_{4.} = 19.9, \bar{y}_{5.} = 13.3, \bar{y}_{6.} =18.7 $\\[.1in]
+\item The ordered means table: \\[-.5in]
+\begin{center}
+\begin{tabular}{lllllll}
+& trt5 & trt3 & trt6 & trt4 & trt2 & trt1 \\
+& 13.3 & 14.6 & 18.7 &  19.9 & 24.0 & 28.8\\
+\end{tabular}
+\end{center}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Example - cont.} 
+\begin{itemize}
+\item From Table 10, $q_{.05}(6,24) = 4.37$, so 
+$$W = 4.37 \sqrt{\frac{11.79}{5}} = 6.7$$
+\item The underlining procedure gives:\\[.01in]
+\hspace*{1in}\begin{tabular}{llllll}
+       trt5 & trt3 & trt6 & trt4 & trt2 & trt1 \\[.1in]
+  13.3 & 14.6 & 18.7 & 19.9 & 24.0 & 28.8 \\[-0.2in]
+       \\ \cline{1-4}\\[.0001in]
+        \cline{2-4}\\[.0002in]
+        \cline{3-5}\\[.0003in]
+        \cline{4-5}\\[.0004in]
+        \cline{5-6}\\
+       \end{tabular}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Example - cont.} 
+\begin{itemize}
+\item  Means that have an underline in common  are declared 
+not significantly different from each other.
+\item Thus we find that $\mu_5,\, \mu_3,\, \mu_6,$ and $ \mu_4 $ are not
+different from $\mu_1$, and $\mu_5$ and $ \mu_3 $ are not different 
+from $\mu_2$.
+\item Just as with LSD, Tukey's method can be used when sample sizes are
+not all the same, but the above procedure is not feasible.  In this 
+case we may construct confidence intervals for all pairs of 
+comparisons $\mu_i - \mu_j $.  Its form is
+$$
+\bar{y}_{i.} - \bar{y}_{j.} \pm q_\alpha (t,v) \sqrt{\frac{s_W^2}{2}
+\left(\frac{1}{n_i} + \frac{1}{n_j} \right)        }
+$$
+The value of $q_\alpha (t,\nu)$ from Table 10 is obviously the same for 
+all comparisons as well as $s_W^2$. \\[.1in]
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Scheffe's Procedure}
+\begin{itemize}
+\item This procedure is ultra conservative.  It controls experimentwise 
+error rate.  The probability of observing an experiment 
+with one or more contrasts (from the set of all possible 
+contrasts) falsely declared significant is the selected
+$\alpha$. 
+\item Scheffe's method can be used to test all possible differences of
+means (recall that simple differences are contrasts).  However it
+is usually used where contrasts that are not all
+simple differences are to be tested together with any pairwise
+differences.
+\item  To test $
+  H_0: \ell = \sum_i a_i\mu_i = 0 \ \rm{vs.}~ H_a: \ell \neq 0$\\[.1in]
+ we base the test statistic on the estimate $\hat{\ell} = \sum a_i \bar{y}_{i.}$
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Scheffe's Procedure - cont.}
+\begin{itemize}
+\item Compute the quantity $S$ based on a $F$-distribution as
+$$  S = \sqrt{\hat{V}(\hat{\ell})} \ \sqrt{(t-1)F_{\alpha,df_1,df_2}}$$
+\item Here $ df_1 = t-1$, and  $df_2 = \nu$ 
+\item The variance estimate of $\hat{\ell}$ is  $\hat{V}(\hat{\ell}) = s_W^2 \sum_i \frac{a_i^2}{n_i}$
+where $s_W^2$ has $\nu$ degrees of freedom.
+\item We reject 
+$H_0$ when $|\hat{\ell}| > S$.  
+\item Now the underlining procedure is applied in the same way as described for the LSD or
+Tukey procedures.
+\end{itemize}
+\end{frame}
+\end{document}
+ 
+
+
+
+
+
+

@@ -1,5 +1,7 @@
 project: 
   type: website
+  resources:
+    - notes/
   
 website:
   title: "STAT 801A"
@@ -7,6 +9,7 @@ website:
     left:
       - href: index.qmd
         text: Home
+
   announcement: 
     content: "This course is under active development" 
     type: warning
@@ -18,19 +21,13 @@ website:
           - index.qmd
       - section: "Notes"
         contents:
-          - Section 1 Introduction.qmd
-          - Section 2 Probability.qmd
-          - Section 3 Sampling Distributions.qmd
-          - Section 4 One Pred Two Levels.qmd
-          - Section5-One-Pred-More-Than-Two-Levels.qmd
+          - text: Handout 1
+            href: notes/1-descriptive-statistics/part1_lectures.pdf
+
       - section: "Slide Notes"
         contents:
           - notes/index.qmd
           - notes/section-1-introduction.qmd
-          - notes/section-2-probability.qmd
-          - notes/section-3-sampling-distributions.qmd
-          - notes/section-4-two-levels.qmd
-          - notes/section-5-more-than-two-levels.qmd
       - section: "Labs"
       - section: "Assignments"
         contents:

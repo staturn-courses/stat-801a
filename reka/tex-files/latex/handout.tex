@@ -1,0 +1,136 @@
+%1/2in left/right margins, 1in top, 1/2 bottom
+\documentclass[11pt]{article}
+\hbadness=10000
+\tolerance=10000
+\textheight 9.7in
+\textwidth 7.4in
+\oddsidemargin -.5in
+\topmargin -1in
+\headsep 0in
+\headheight 0in
+\begin{document}
+\hrule
+\medskip
+\centerline{\textbf{STATISTICS 801}}\hfill \textbf{Fall 2016}
+\centerline{\textbf{Extra problems for paired data and inference about the population variance}}
+\smallskip
+\hrule
+\smallskip
+\begin{enumerate}
+\item Consider the following study in which standing and supine systolic blood pressures were compared. To eliminate the variation in blood pressure among subjects affecting the accuracy of the conclusions drawn, the blood pressures were measured on twelve subjects, each measured in both positions. It is therefore, a paired samples design. \\[-.2in]
+\begin{center}
+\begin{tabular}{l|@{\extracolsep{2mm}}rrrrrrrrrrrr}\hline
+Subject & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12  \\ \hline
+Standing & 132 & 146 & 135 & 141  & 139 & 162 & 128 & 137 & 145 & 151 & 131 & 143 \\
+Supine   & 136 & 145 & 140 & 147  & 142 & 160 & 137 & 136 & 149 & 158 & 120 & 150 \\ \hline
+\multicolumn{1}{c|}{$d$}  \\ \hline
+\multicolumn{1}{c|}{$d^2$} \\ \hline
+\end{tabular}
+\end{center}
+
+
+\texttt{Note:} Do all computations for parts (b),(c), and (d) using hand calculation. 
+Use the output from your analysis using the data
+ to provide answers to parts (a),(e) and (f). \\[-.2in] 
+\begin{enumerate}
+
+\item Do the Normal probability plot and the boxplot from the output indicate that a
+paired t-test could be used? Explain. Obtain a plot of the data that shows the two variables are positively correlated.
+What does this say about this this design compaired to a two-independent samples study? \\[1.5in]
+
+\item
+Compute the paired t-statistic to test the research hypotheses that 
+there is no difference in mean blood pressure in the two positions. Use $\alpha = .05$.
+State your hypotheses clearly. Define the symbols you use carefully.\\[1.5in]
+\item Explain what is meant by the p-value in words by defining it for the above test.  
+Show how to find bounds for the p-value of the above test using the t-table. 
+
+\newpage
+\item
+Use a 95\% confidence interval to estimate the difference in mean blood pressure in the two positions. 
+Test the hypothesis in part (b) using this
+interval stating the $\alpha$ level used for this test clearly.
+State your conclusion.\\[2in]
+
+\item Extract the t-statistic from the your output for testing the
+hypothesis you stated in part (b). 
+State the p-value associated with this test extracted from the output.\\[.8in]
+
+\item  Extract the  95\% confidence interval for the  difference in mean blood pressure in the two positions  from the output. 
+\\[.8in]
+
+\end{enumerate}
+
+\item The times of first sprinkler activation for a series of tests
+with fire prevention sprinkler systems using an aqueous film-forming
+foam were (in sec)
+$ 27, 32, 22, 27, 23, 35, 30, 33, 24, 27, 21, 22, 24 $.\\
+The system has been manufactured under the design specification 
+that the true standard deviation of the activation time will not  exceed 5 sec under 
+normal conditions. Given $\sum{y}=347$ and $\sum{y^2}=9515$\\
+{\tt Note:}  Use hand calculation for parts (b) and (c) and show
+work. Use a computer analysis of the data for answering parts (a),(d) and (e).
+
+
+\begin{enumerate}
+\item Do the box plot or the normal probability plot indicate any violation of the conditions
+underlying the use of the chi-square procedures for constructing
+confidence intervals or testing hypotheses about $\sigma$?
+\newpage
+\item  Is there sufficient evidence in the data to determine that the standard deviation of the sprinkler activation time meets the design specification? State appropriate hypotheses and perform a test with $\alpha=.05$.\\[2in]
+
+\item Estimate the standard deviation  of the sprinkler activation time
+using a 95\% confidence interval.\\[2in]
+
+
+\item Extract the statistic from the your output for testing the
+hypothesis you stated in part (b).
+State the p-value associated with this test extracted from the  output.\\[1in]
+
+\item  Extract the  95\% confidence interval for the standard deviation 
+of the sprinkler activation time from the output. 
+\end{enumerate}
+
+
+
+
+
+
+\newpage
+\item Twenty plants of the same variety were grown from cuttings. Ten plants, selected randomly,
+were grown in soil type A and the others in soil type B. In all respects, other than
+soil type, the cuttings were cared for in the same way. At the end of the experiment the
+plants were uprooted and dried. The values in the table below are their dry weights (in grams).
+Note that one cutting (in soil type A) died at an early stage in the experiment.
+\begin{center}
+\begin{tabular}{c|rrrrrrrrrr|rr}
+\hline 
+ \multicolumn{1}{c|}{\textit{Soil Type}} & \multicolumn{10}{c|}{\textit{Dry Weight(in grams)}} & 
+     \multicolumn{1}{c}{$\sum{y}$} &
+     \multicolumn{1}{c}{$\sum{y^2}$}  \\ \hline
+A & 25.5 &  22.3 &  24.7 &  28.1 &  26.5 &  19.0 &  23.0 &  25.3 &  29.2 & &223.6  & 5632.22     \\
+B & 31.8 &  30.3 &  26.4 &  24.2 &  27.8 &  29.1 &  25.5 &  28.9 &  26.9 &  29.7 & 280.6 & 7922.74 \\ \hline
+\end{tabular}
+\end{center}
+\begin{enumerate}
+\item Use the boxplot and the normal probabilty plot produced in the computer output
+to comment on whether the assumption of normality of the two populations
+is reasonable. Do these plots also support the assumption that
+the population variances are the same for the two populations? 
+Explain\\[1in]
+
+
+\item Compute the sample variances $s_A^2$ and $s_B^2$, respectively, of the two samples using the above summary statistics.\\[.8in]
+\item Compute a statistic to test the research hypothesis that the two 
+population variances of dry weights for the two soil types are different using 
+$\alpha=.05$ by hand. State your hypotheses, the rejection region and 
+your conclusion.\\[1.8in]
+
+
+\item  Find the statistic for testing the hypothesis you stated in part (c) in the computer output. State the p-value associated with this test extracted from the output here. \\[1in]
+ \end{enumerate}
+
+\end{enumerate}
+\end{document}
+
+

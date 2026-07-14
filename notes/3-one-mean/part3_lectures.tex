@@ -1,0 +1,1306 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Part 3},
+  pdfauthor={Inferences about \textbackslash mu Confidence Intervals Type I and II Error p-value t-distribution},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Part 3}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\subsection{\texorpdfstring{Inferences about
+\(\mu\)}{Inferences about \textbackslash mu}}\label{inferences-about-mu}
+
+\begin{itemize}
+\item
+  One of the major objectives of statistics is to make inferences about
+  the distribution of the elements in a {\emph{population}} based on
+  information contained in a {\emph{sample}}.
+\item
+  Numerical summaries that characterize the population distribution are
+  called {\emph{parameters}}.
+\item
+  The {\emph{population mean}} \(\mu\) and {\emph{population variance}}
+  \(\sigma^2\) are two important parameters. Others are median, range,
+  mode, etc.
+\end{itemize}
+
+\subsection{\texorpdfstring{Inferences about \(\mu\) -
+cont.}{Inferences about \textbackslash mu - cont.}}\label{inferences-about-mu---cont.}
+
+\begin{itemize}
+\item
+  Methods for {making inferences} are basically designed to answer one
+  of two types of questions:
+
+  \begin{itemize}
+  \item
+    Approximately what is the value of the parameter?\\
+    or
+  \item
+    Is the value of the parameter less than (say) 6?
+  \end{itemize}
+\item
+  Statisticians answer the first question by {estimating} the parameter
+  using the sample.
+\item
+  The second case might require a {test of a hypothesis}.
+\end{itemize}
+
+\subsection{\texorpdfstring{Point and Interval Estimation of \(\mu\)
+when \(\sigma\) is known and \(n\) is
+large}{Point and Interval Estimation of \textbackslash mu when \textbackslash sigma is known and n is large}}\label{point-and-interval-estimation-of-mu-when-sigma-is-known-and-n-is-large}
+
+\begin{itemize}
+\item
+  Point estimation of \(\mu\) does not require that \(\sigma\) be known
+  or a large \(n\)
+\item
+  The point estimate of \(\mu\) is the sample mean \(\bar{y}\)
+\item
+  Point estimates by themselves do not tell how much \(\bar{y}\) might
+  differ from \(\mu\), that is, the accuracy or precision of the
+  estimate
+\item
+  A measure of accuracy is the difference between sample mean
+  \(\bar{y}\) and population mean \(\mu\) is called {sampling error}
+\end{itemize}
+
+\subsection{\texorpdfstring{A Confidence Interval for
+\(\mu\)}{A Confidence Interval for \textbackslash mu}}\label{a-confidence-interval-for-mu}
+
+\begin{itemize}
+\item
+  An interval estimate, called a {\emph{confidence interval}},
+  incorporates information about the amount of sampling error in
+  \(\bar{y}\)
+\item
+  A {confidence interval} for \(\mu\) takes the form
+  \[(\bar{y} - E,\, \bar{y} + E),\] for a number \(E\)
+\item
+  An associated number called the {\emph{confidence coefficient}} helps
+  assess how likely it is for \(\mu\) to be in the interval.
+\end{itemize}
+
+\subsection{\texorpdfstring{A Confidence Interval for \(\mu\) -
+cont.}{A Confidence Interval for \textbackslash mu - cont.}}\label{a-confidence-interval-for-mu---cont.}
+
+\begin{itemize}
+\item
+  To derive the specific form of the confidence interval for \(\mu\),
+  for the case {when \(\sigma\) is known and \(n\) is large}, the CLT
+  result must be used.
+\item
+  By the CLT, \(Z = (\bar{Y} - \mu)/\sigma_{\bar{y}}\) is approximately
+  \(\sim N(0, 1)\).
+\item
+  Let \(Z\) have a \(N(0, 1)\) distribution (exactly).
+\item
+  Let \(z_{\alpha/2}\) denote the \(1 - \alpha/2\) quantile of the
+  standard normal distribution, for a given number \(\alpha\),
+  \(0 < \alpha < 1\).
+\item
+  Then the following probability statement is true:
+  \[P\left (-z_{\alpha/2}\, \leq\, \frac{(\bar{Y} - \mu)}{
+            \sigma_{\bar{y}}}\, \leq\, z_{\alpha/2}\right ) = 1 - \alpha\]
+\end{itemize}
+
+\subsection{\texorpdfstring{A Confidence Interval for \(\mu\) -
+cont.}{A Confidence Interval for \textbackslash mu - cont.}}\label{a-confidence-interval-for-mu---cont.-1}
+
+\begin{itemize}
+\item
+  Manipulating the inequalities, without changing values, we have
+
+  \(P(\sigma_{\bar{y}} \, z_{\alpha/2} \geq \mu - \bar{Y}
+    \geq - \sigma_{\bar{y}} \, z_{\alpha/2}) = 1 - \alpha\)
+
+  \(P(\bar{Y} - \sigma_{\bar{y}} \, z_{\alpha/2}\, \leq\,
+    \mu\, \leq\, \bar{Y} + \sigma_{\bar{y}} \, z_{\alpha/2}) = 1 - \alpha\)
+\item
+  If, for example, \(\alpha\) = 0.05 then
+
+  \(P(\bar{Y} - \frac{\sigma}{\sqrt{n}} \, z_{.025}\, \leq
+  \,  \mu\, \leq\, \bar{Y} + \frac{\sigma}{\sqrt{n}} \, z_{.025}) =0.95\)
+
+  and, since \(z_{0.025} = 1.96\),\\
+  \[P(\bar{Y} - 1.96\, \frac{\sigma}{\sqrt{n}}\, \leq\, \mu \leq \bar{Y} +
+    1.96\, \frac{\sigma}{\sqrt{n}}) = 0.95\]
+\end{itemize}
+
+\subsection{\texorpdfstring{A Confidence Interval for \(\mu\) -
+cont.}{A Confidence Interval for \textbackslash mu - cont.}}\label{a-confidence-interval-for-mu---cont.-2}
+
+\begin{itemize}
+\item
+  Using this statement, a {(1-\(\alpha\))100\% confidence interval for
+  \(\mu\), with confidence coefficient \(1-\alpha\)} can be calculated
+  using a random sample of data \(y_1,y_2,\ldots,y_n\)
+\item
+  It is usually written in the form
+  \[\left( \bar{y} - \frac{\sigma}{\sqrt{n}} \, z_{\alpha/2}, \
+           \bar{y} + \frac{\sigma}{\sqrt{n}} \, z_{\alpha/2}\right) \ .\]
+\item
+  \textbf{Example:} Suppose ~\(n\) = 36, \(\sigma=12\),
+  \(\bar{y} = 24.8\)\\
+  And for \(\alpha=0.05\), \(z_{\alpha/2} \equiv z_{0.025} = 1.96\)
+\end{itemize}
+
+\subsection{\texorpdfstring{A Confidence Interval for \(\mu\) -
+cont.}{A Confidence Interval for \textbackslash mu - cont.}}\label{a-confidence-interval-for-mu---cont.-3}
+
+\begin{itemize}
+\item
+  Thus a 95\% C.I. for \(\mu\) is
+  \[\left( 24.8 - \frac{12}{\sqrt{36}} \times 1.96, \quad
+           24.8 + \frac{12}{\sqrt{36}} \times  1.96 \right)\]
+\item
+  The interval for \(\mu\) is: (20.88, 28.72) with confidence
+  coefficient 0.95.
+\item
+  We might say that we are {95\% \emph{confident}} that the population
+  mean \(\mu\) is between 20.88 and 28.72.
+\item
+  But what do we actually mean when we say that we are {95\%
+  \emph{confident}}?
+\end{itemize}
+
+\subsection{Interpretation of a Confidence
+Interval}\label{interpretation-of-a-confidence-interval}
+
+\begin{itemize}
+\item
+  Before the sample is drawn, the probability is (\(1-\alpha\)) that the
+  {random interval}
+  \((\bar{Y} - \frac{\sigma}{\sqrt{n}} \, z_{\alpha/2}\),
+  ~\(\bar{Y} + \frac{\sigma}{\sqrt{n}} \, z_{\alpha/2}\)) will contain
+  \(\mu\) (because \(\bar{Y}\) is a random variable).
+\item
+  However, once the sample is drawn, and \(\bar{y}\) is calculated, the
+  interval ceases to be random. It is a numerical interval
+  \((\bar{y} - \frac{\sigma}{\sqrt{n}} \, z_{\alpha/2}\),
+  ~\(\bar{y} + \frac{\sigma}{\sqrt{n}} \, z_{\alpha/2}\)), calculated
+  specifically for the drawn sample; thus we cannot associate a
+  {probability} with it.
+\item
+  We may say that the process which led us to this interval will, on the
+  average, produce an interval containing \(\mu,\  100 (1-\alpha)\)\% of
+  the time.
+\end{itemize}
+
+\subsection{Interpretation of a Confidence Interval -
+cont.}\label{interpretation-of-a-confidence-interval---cont.}
+
+\begin{itemize}
+\item
+  {\emph{It is not correct to say that the interval}}
+  \((\bar{y} - \frac{\sigma}{\sqrt{n}} \, z_{\alpha/2},\,
+  \bar{y} + \frac{\sigma}{\sqrt{n}} \, z_{\alpha/2})\) {\emph{contains
+  \(\mu\) with a specified probability}}.
+\item
+  If the process of sampling is repeated many times and
+  100(1-\(\alpha\))\% confidence intervals calculated for each sample,
+  then we are confident that 100(1-\(\alpha\))\% of those intervals will
+  contain \(\mu\).
+\end{itemize}
+
+\subsection{Notes:}\label{notes}
+
+\begin{itemize}
+\item
+  As the confidence coefficient increases the confidence interval
+  becomes wider. A wider interval estimates \(\mu\) less precisely. Thus
+  a 99\% confidence interval is {less accurate} than a 95\% confidence
+  interval but one has {more confidence} that \(\mu\) is in the first
+  interval.
+\item
+  Also note that increasing the sample size \(n\) results in a narrower
+  interval (more accurate estimate) for the same confidence coefficient.
+\end{itemize}
+
+\subsection{Example:}\label{example}
+
+The caffeine content (in mg) was examined for a random sample of 50 cups
+of black coffee dispensed by a new machine. The mean and standard
+deviation were 110 mg and 7.1 mg, respectively. Use these data to
+construct a 98\% confidence interval for \(\mu\), the mean caffeine
+content for cups dispensed by the machine.\\
+As the sample size is large we can use the CLT and also approximate
+\(\sigma\), the sample standard deviation of the population by \(s=7.1\)
+
+\subsection{Example - cont.}\label{example---cont.}
+
+\(\left[\bar{y} - z_{0.01} \frac{\sigma}{\sqrt{n}}, \
+\bar{y} + z_{0.01} \frac{\sigma}{\sqrt{n}}\right]\)\\
+\(\left[110 - (2.33)\left(\frac{7.1}{\sqrt{50}}\right), \
+   110 + (2.33)\left(\frac{7.1}{\sqrt{50}}\right)  \right]\)\\
+\((107.66,\ 112.34)\)\\
+We are \(98\%\) confident that the mean caffeine content for cups
+dispensed by the machine is between 107.66 and 112.34 mg.
+
+\subsection{Choosing the Sample Size}\label{choosing-the-sample-size}
+
+\begin{itemize}
+\item
+  The {width} of a confidence interval is
+  (\(2 \times \sigma \times z_{\alpha/2})/\sqrt{n}\).
+\item
+  The width of the confidence interval can be made smaller by changing
+  to a larger \(\alpha\) or increasing sample size \(n\).
+\item
+  Let us consider selection of \(n\) to achieve a desired width
+  \(2 \cdot E\) for a fixed \(\alpha\)
+\item
+  We want \(E\) to at least equal to
+  \(\sigma \times z_{\alpha/2}/\sqrt{n}\)
+\item
+  Thus we need to select a sample so that
+  \[n \geq \frac{(z_{\alpha/2})^2\sigma^2}{E^2}\]
+\end{itemize}
+
+\subsection{Choosing the Sample Size -
+cont.}\label{choosing-the-sample-size---cont.}
+
+\begin{itemize}
+\tightlist
+\item
+  This will result in an interval no wider than\\
+  \((\bar{y} - E,\ \bar{y} + E)\).
+\end{itemize}
+
+{\textbf{Example}:}\\
+Given \(\sigma = 12\), \(\alpha = 0.05\), \(z_{0.025} = 1.96\)\\
+What sample size \(n\) will give an interval no wider that 5.6?\\
+We set \(E = 2.8\) so
+\[n \geq \frac{(1.96)^2 \cdot 144}{(2.8)^2} = 70.56\] Thus the
+experimenter must choose a sample size \(n = 71\) at least.
+
+\subsection{Choosing the Sample Size -
+cont.}\label{choosing-the-sample-size---cont.-1}
+
+Would the sample size \(n = 71\) ensure the width to be \(\leq 5.6\) if
+the population has a larger variance? Would \(n = 71\) be enough?
+
+The answer is \textbf{NO} since the formula
+\[\frac{(z_{\alpha/2})^2\sigma^2}{E^2}\] involves the population
+variance \(\sigma^2\).
+
+Precision in estimation depends on both \(\alpha\) and \(\sigma^2\). If
+the variance of population elements is very small, i.e., the elements
+are tightly clustered about the population mean \(\mu\), then only a
+small sample is needed for the estimate \(\bar{y}\) to be very near
+\(\mu\).
+
+\subsection{\texorpdfstring{Statistical Tests for
+\(\mu\)}{Statistical Tests for \textbackslash mu}}\label{statistical-tests-for-mu}
+
+\begin{itemize}
+\item
+  Estimation (either point or interval estimation) was used to help
+  answer a question like ``Approximately what is the value of \(\mu\)?''
+\item
+  The other kind of question mentioned earlier is ``Is it likely that
+  \(\mu\) is less than (or greater than) the value \(\mu_0\) (a
+  pre-determined value)?''.
+\item
+  A {Test of Hypothesis} is used to answer this kind of question. As in
+  estimation, the sample mean \(\bar{y}\) of a random sample of \(n\)
+  elements from the population is used to answer this question.
+\end{itemize}
+
+\subsection{\texorpdfstring{Statistical Tests for \(\mu\) -
+cont.}{Statistical Tests for \textbackslash mu - cont.}}\label{statistical-tests-for-mu---cont.}
+
+\begin{itemize}
+\item
+  Every test of hypothesis features
+
+  \begin{itemize}
+  \item
+    a {Null Hypothesis} {\(H_0\)} which describes a characteristic of
+    the population (it is believed to be) as it currently exists,\\
+  \item
+    a {Research Hypothesis} (or {Alternative Hypothesis}) {\(H_a\)},
+    which is a proposal about this characteristic, by the person(s)
+    conducting the statistical study.
+  \end{itemize}
+\item
+  The idea is that the null hypothesis is presumed to hold unless there
+  is overwhelming evidence in the data in support of the research
+  hypothesis.
+\end{itemize}
+
+\subsection{Example:}\label{example-1}
+
+\begin{itemize}
+\item
+  To determine whether the mean yield per acre (in bushels), \(\mu\), of
+  a variety of soybeans increased the current year over the last two
+  years when \(\mu\) is believed to be 520 bushels per acre, the
+  following might be tested.
+  \[H_0: \mu \leq 520 \ \ \ \mbox{vs.}\ \ \ H_a: \mu > 520\]
+\item
+  The fact that \(\mu\) may equal a specific value is always included in
+  the null hypothesis. The decision to state whether the data supports
+  the research hypothesis or not is based on a quantity computed from
+  the data called the {test statistic}.
+\end{itemize}
+
+\subsection{}\label{section}
+
+\begin{itemize}
+\item
+  If \(\bar{y}\) is in the rejection region then reject \(H_0\) and say
+  the evidence favors \(H_a\).
+\item
+  Basically, the test amounts to computing \(\bar{y}\) and looking at
+  its value relative to \(\mu_0\) and the \(\mu\) values in \(H_a\).
+\item
+  For example, in the above example if \(\bar{y} < 520\) we will say
+  {there is not sufficient evidence to reject \(H_0\)}.
+\item
+  Even if \(\bar{y} > 520\), we might still say {there is not sufficient
+  evidence to reject \(H_0\)}
+\item
+  This is ok {as long as \(\bar{y}\) is not too much greater than
+  \(520\).}
+\item
+  {``How much is too large?''} To decide this, use the probability
+  distribution of \(\bar{Y}\). Begin by picking a small probability
+  \(\alpha\) like \(\alpha\) = 0.05, or \(\alpha = 0.01\), or
+  \(\alpha =0.001\).
+\end{itemize}
+
+\subsection{}\label{section-1}
+
+\begin{itemize}
+\item
+  Then reject \(H_0\) only when the probability of obtaining a value of
+  \(\bar{y}\) larger than the observed value \(\bar{y}\) is
+  \(\leq \alpha\) {when \(\mu\) is indeed \(\leq 520\), i.e., when
+  \(H_0\) is true.}
+\item
+  That is, if \(H_0\) is true, {the chance of observing a sample that
+  results in a \(\bar{y}\) as large as the one calculated should be very
+  small}.
+\end{itemize}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{fig57.pdf}
+
+}
+
+\caption{image}
+
+\end{figure}%
+
+\subsection{How to determine the rejection
+region}\label{how-to-determine-the-rejection-region}
+
+\begin{itemize}
+\item
+  By the CLT, \(\bar{Y}\) is approximately a normal random variable.
+\item
+  We will ignore the approximation and assume
+  \(\bar{Y} \sim N(\mu, \frac{\sigma^2}{n})\).
+\item
+  Then, for a given \(\alpha\),
+  \[P \left( \frac{\bar{Y}-\mu}{\sigma/\sqrt{n}} > z_{\alpha} \right) = \alpha\]
+  where \(z_\alpha\) is the \(1-\alpha\) quantile of the standard normal
+  distribution.
+\item
+  So when \(H_0: \mu \leq \mu_0\) is true ,
+  \[P \left( \frac{\bar{Y}-\mu_0}{\sigma/\sqrt{n}} > z_{\alpha} \right) \leq \alpha\]
+\end{itemize}
+
+\subsection{How to determine the rejection region -
+cont.}\label{how-to-determine-the-rejection-region---cont.}
+
+\begin{itemize}
+\item
+  That is,
+  \(P(\bar{Y} > \mu_0 + z_\alpha \frac{\sigma}{\sqrt{n}})\leq \alpha.\)
+  This suggests that we reject \(H_0: \mu \leq \mu_0\) in favor of, say
+  \(H_a: \mu > \mu_0\) when
+  \[\bar{y} > \mu_0 + z_\alpha \frac{\sigma}{\sqrt{n}}\] (i.e.,
+  \(\bar{y}\) is {too much} when \(\bar{y}\) exceeds the number
+  \(\mu_0 +
+   z_\alpha \frac{\sigma}{\sqrt{n}})\)\\
+\item
+  All possible \(\bar{y}\) values satisfying
+  \(\bar{y} > \mu_0 + z_\alpha
+  \frac{\sigma}{\sqrt{n}}\) constitute the {rejection} {region}.
+\item
+  Instead of comparing \(\bar{y}\) to \(\mu_0 + z_\alpha
+  \frac{\sigma}{\sqrt{n}}\), it is easier to first calculate
+  \[z_c=\frac{\bar{y}-\mu_0}{\sigma/\sqrt{n}}\]
+\end{itemize}
+
+\subsection{How to determine the rejection region -
+cont.}\label{how-to-determine-the-rejection-region---cont.-1}
+
+\begin{itemize}
+\item
+  We see that comparing \(\bar{y}\) to
+  \(\mu_0 + z_\alpha \frac{\sigma}{\sqrt{n}}\) is the same as comparing
+  \(z_c\) to \(z_\alpha\).
+\item
+  That is, we reject the null hypothesis if \(z_c > z_\alpha\) whis is
+  the same thing as doing so if
+  \(\bar{y} > \mu_0 + z_\alpha \frac{\sigma}{\sqrt{n}}\)
+\item
+  This quantity \(z\) is called the {test statistic} and it's value can
+  be calculated using the data and the value \(\mu_0\) specified in the
+  null hypothesis \(H_0\).
+\item
+  The notation \(z_c\) is used denote the ``computed value'' of the test
+  statistic, that is when we plug in the observed value of \(\bar{y}\)
+  and obtain a numerical value for \(z\).
+\end{itemize}
+
+\subsection{Type I Error}\label{type-i-error}
+
+\begin{itemize}
+\item
+  The \(\alpha\) corresponds to the probability that the null hypothesis
+  is rejected when actually it is true and is called the probability of
+  committing a {Type I error}.
+\item
+  Since the experimenter selects the value of \(\alpha\) used in the
+  test procedure, she is able to specify or {control} the Type I error
+  rate or ``how much'' of this type of error is permitted in the testing
+  procedure.
+\end{itemize}
+
+\subsection{Example}\label{example-2}
+
+Suppose from a sample of 36 1-acre plots, the yield of corn this year
+was measured and \(\bar{y}=573\) and \(s=124\) calculated. Can we
+conclude that the mean yield of corn for all farms exceeded 520
+bushels/acre this year ? Here we are going to assume that \(\sigma\) can
+be approximated by \(s\). Use \(\alpha=.025\)\\
+
+\subsection{Solution to the Example}\label{solution-to-the-example}
+
+{Set-up five parts of the testing procedure:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(H_0: \mu \leq 520\)
+\item
+  \(H_a: \mu > 520\)
+\item
+  T.S.: \(z  =  \frac{\bar{y}-\mu_0}{\sigma/\sqrt{n}}\)
+\item
+  R.R: Reject \(H_0:\) in favor of \(H_a:\) if \(z > z_{.025}\)\\
+  i.e.~the R.R. is \(z>1.96\) since \(z_{.025}=1.96\)
+\item
+  Compute the observed value of the test statistic:\\
+  \(z_c =\frac{573-520}{124/{\sqrt{36}}}= 2.56\)
+\end{enumerate}
+
+\subsection{Decision:}\label{decision}
+
+Since \(z_c> 1.96\), \(z_c\) is in the R.R. Thus \(H_0:\mu \leq 520\) is
+rejected in favor of the research hypothesis \(H_a: \mu > 520\). It is
+concluded that the mean yield this year exceeds 520 bushels/acre.\\
+Note that the above test procedure is equivalent to determining that the
+observed value for \(\bar{y}\) lies more than 1.96 standard deviations
+above the mean \(\mu_0=520\).
+
+\subsection{\texorpdfstring{Summary of Test Procedures - Assume \(n\)
+large, and \(\sigma\)
+known}{Summary of Test Procedures - Assume n large, and \textbackslash sigma known}}\label{summary-of-test-procedures---assume-n-large-and-sigma-known}
+
+{Hypotheses:}\\
+{Case 1:} \(H_0: \mu \leq \mu_0\ \mbox{vs.}\ H_a: \mu >\mu_0\)
+(\emph{right-tailed test})\\
+{Case 2:} \(H_0: \mu \geq \mu_0\ \mbox{vs.}\ H_a: \mu <\mu_0\)
+(\emph{left-tailed test})\\
+{Case 3:} \(H_0: \mu = \mu_0\ \mbox{vs.}\ H_a: \mu \not =\mu_0\)
+(\emph{two-tailed test})\\
+{T.S:} \(z_c  =  \frac{\bar{y}-\mu_0}{\sigma/\sqrt{n}}\)\\
+{R.R:} For Type I error probability of \(\alpha\):\\
+{Case 1:} Reject \(H_0:\) if \(z \geq z_{\alpha}\)\\
+{Case 2:} Reject \(H_0:\) if \(z \leq -z_{\alpha}\)\\
+{Case 3:} Reject \(H_0:\) if \(|z| \geq  z_{\alpha/2}\)
+
+\subsection{Decision:}\label{decision-1}
+
+If the computed value of the test statistic, \(z_c\), is in the R.R.,
+then we will reject the null hypothesis \(H_0:\) at the specified
+\(\alpha\) value. Otherwise, we say we fail to reject \(H_0:\) at the
+specified \(\alpha\) value.\\
+{Example} A corporation maintains a large fleet of company cars for its
+salespeople. To check the average number of miles driven per month per
+car, a random sample of \(n = 40\) cars is examined. The mean and
+standard deviation for the sample are 2,752 miles and 350 miles,
+respectively. Records for previous years indicate that the average
+number of miles driven per car per month was 2,600. Use the sample data
+to test the research hypothesis that the current mean \(\mu\) differs
+from 2,600. Set \(\alpha\) = .05 and assume that \(\sigma\) can be
+replaced by \(s\).
+
+\subsection{Solution}\label{solution}
+
+The null hypothesis for this statistical test is \(H_0: \mu\) = 2,600
+and the research hypothesis is \(H_a: \mu \neq\) 2,600. Using \(\alpha\)
+= .05, the two-tailed rejection region for this test is
+\(|z|> z_{.025}\) or \(|z|> 1.96\) and is located as shown below.
+
+\begin{figure}[H]
+
+{\centering \includegraphics{fig511.pdf}
+
+}
+
+\caption{image}
+
+\end{figure}%
+
+\subsection{Solution - cont.}\label{solution---cont.}
+
+To determine how many standard errors our test statistics \(\bar{y}\)
+lies away from \(\mu\) = 2,600, compute
+\[z_c = \frac{\bar{y}-\mu_0}{\sigma/\sqrt{n}} =
+  \frac{2,752 - 2,600}{350/\sqrt{40}} = 2.75 \, .\] Thus
+\(|z_c|=2.75>1.96\) and therefore we reject \(H_0: \mu = 2,600\) at
+\(\alpha=.05\). It follows that the observed value for \(\bar{y}\) lies
+more than 1.96 standard errors above the mean \(\mu = 2,600\), so we
+reject the null hypothesis in favor of the alternative \(H_a: \mu \neq
+2,600\).\\
+Since \(\bar{y}>2,600\) we conclude that the mean number of miles driven
+is greater than \(2,600\).
+
+\subsection{Level of Significance or the p-value of a Statistical
+Test}\label{level-of-significance-or-the-p-value-of-a-statistical-test}
+
+\begin{itemize}
+\item
+  As an alternative to the formal test where one uses a rejection region
+  based on a specified the Type I error rate \(\alpha\), many
+  researchers compute and report the {level of significance} or the
+  {p-value} for the test.
+\item
+  This is the probability, when \(H_0\) is true, of observing a
+  statistic as extreme as the one actually observed. Here ``extreme'' is
+  means ``large'' or ``small'' according to the alternative hypothesis
+  \(H_a\).
+\end{itemize}
+
+\subsection{Level of Significance or the p-value of a Statistical Test -
+cont.}\label{level-of-significance-or-the-p-value-of-a-statistical-test---cont.}
+
+\begin{itemize}
+\item
+  Specifically, for a given \(\sigma^2\) and \(\mu_0\) we find the
+  p-value by:
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \item
+    First computing the test statistic, \(z_c\),
+    \[z_c = (\bar{y} - \mu_0)/(\sigma/\sqrt{n})\]
+  \item
+    a) ~If \(H_a: \mu > \mu_0\), then \(p = P(Z > z_c\)).\\
+
+    \begin{enumerate}
+    \def\labelenumii{\alph{enumii})}
+    \setcounter{enumii}{1}
+    \tightlist
+    \item
+      ~If \(H_a: \mu < \mu_0\), then \(p = P(Z < z_c\)).\\
+    \item
+      ~If \(H_a: \mu \neq \mu_0\), then \(p=2P(Z > |z_c|)\).
+    \end{enumerate}
+  \end{enumerate}
+\item
+  A p-value smaller than the pre-specified \(\alpha\) value is evidence
+  in favor of rejecting \(H_0\).
+\end{itemize}
+
+\subsection{Example:}\label{example-3}
+
+\begin{itemize}
+\item
+  In the earlier example we tested
+  \(H_0: \mu \leq 380\ \mbox{vs.}\ H_a: \mu > 380\) Calculating the
+  \(z-\)statistic,
+  \[z_c = \frac{\bar{y}-380}{\sigma/\sqrt{n}}= \frac{390-380}{35.2/\sqrt{50}} = 2.01\]
+\item
+  The {level of significance}, or {p-value} for this test is
+  \[p= P(Z > 2.01)= 1- P(Z < 2.01)= 0.0222\]
+\item
+  We {fail to reject} \(H_0: \mu \leq 380\) at \(\alpha=.01\) since
+  p-value is not less than \(.01\)
+\end{itemize}
+
+\subsection{\texorpdfstring{Inferences About when \(\sigma\) is
+unknown}{Inferences About when \textbackslash sigma is unknown}}\label{inferences-about-when-sigma-is-unknown}
+
+\begin{itemize}
+\item
+  For large sample sizes, it follows from the CLT that \(\bar{Y}\) is
+  approximately Normally distributed i.e., \(\bar{Y} \dot{\sim}
+  N(\mu,\frac{\sigma^2}{n})\).
+\item
+  It follows that the random variable
+  \[T_{n-1} =\Big( \bar{Y} - \mu \Big) / \Big( S/\sqrt{n} \Big)\] has
+  approximately the {Student's \(t\)} {distribution} with \(n-1\)
+  {degrees of freedom}.
+\item
+  Here \(Y_1, Y_2, \ldots,Y_n\) are sampling random variables and
+  \(\bar{Y} =
+  \frac{1}{n} \displaystyle\sum_i Y_i\) is thus a random variable.
+\end{itemize}
+
+\subsection{\texorpdfstring{Inferences About when \(\sigma\) is unknown
+-
+cont.}{Inferences About when \textbackslash sigma is unknown - cont.}}\label{inferences-about-when-sigma-is-unknown---cont.}
+
+\begin{itemize}
+\item
+  The denominator of \(T_{n-1}\) is the random variable
+  \[S = \sqrt{\frac{1}{n-1} \sum_{i=1}^n (Y_i - \bar{Y})^2}.\]
+\item
+  If sampling from a Normal distribution, the sample mean \(\bar{Y}\)
+  has a Normal distribution (exactly) and therefore
+  \((\bar{Y}-\mu)/(S/\sqrt{n})\) will have a Student's \(t\)
+  distribution (exactly), regardless of sample size.
+\end{itemize}
+
+\subsection{}\label{section-2}
+
+\begin{itemize}
+\item
+  Until now, we have assumed that \(n\) is large and \(\sigma\) is
+  known, or \(n\) is large and \(n\) is large enough also to use \(s\)
+  as an approximation to \(\sigma\).
+\item
+  Since we used the CLT to derive confidence limits and tests of
+  hypotheses, the exact nature of the sampled population was not
+  required to be specified.
+\item
+  Now we require that the population distribution to be Normal. We don't
+  need to know \(\sigma\) or have a large sample, i.e.~\(n\) to be
+  large.
+\item
+  In this situation, for any \(n\), (\(\bar{Y} - \mu)/(S/\sqrt{n})\)
+  will have a Student's t-distribution with d.f.\(= n-1.\)
+\item
+  Using this fact we can obtain confidence intervals and conduct tests
+  of hypotheses even though \(\sigma\) is unknown.
+\item
+  Note the difference between \(Z\) and \(T_{n-1}\) is that the
+  parameter \(\sigma\) is in the denominator of \(Z\).
+\item
+  That is, the point estimator of \(\sigma\), \(S\) is in the
+  denominator of \(T_{n-1}\).
+\end{itemize}
+
+\subsection{Properties of the Student's
+distribution}\label{properties-of-the-students-distribution}
+
+\begin{itemize}
+\item
+  There are many t-distributions each specified by a single parameter
+  called {degrees of freedom (\(df\))}.
+\item
+  Like the standard normal population, the distribution is {symmetric}
+  about 0 and has mean equal to 0.
+\item
+  The t-distribution has variance \(df/(df-1)\), and hence is more
+  variable than the standard normal distribution which has variance
+  equal to 1.
+\item
+  We say that the t-distribution has {heavier tails} than the standard
+  normal distribution.
+\item
+  As the degrees of freedom \(df\) increases, the t-distribution
+  approaches that of the standard normal distribution.
+\item
+  Thus as the sample size \(n\) increases the distribution of the
+  \(T_{n-1}\) random variable approaches the standard normal
+  distribution.
+\end{itemize}
+
+\subsection{Properties of the Student's distribution
+cont.}\label{properties-of-the-students-distribution-cont.}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{fig516.pdf}
+
+}
+
+\caption{image}
+
+\end{figure}%
+
+\subsection{}\label{section-3}
+
+The \(t\) table gives quantiles 0.90, 0.95, 0.975, 0.99, 0.995, and
+0.999 for \(t\) distributions with selected \emph{df}.\\
+\textbf{Examples: For \(df = 10\)}\\
+\(P(T_{10} > 1.372) = 0.10\)\\
+\(P(T_{10} < 1.372) = 0.90\)\\
+\(P(T_{10} > 1.812) = 0.05\)\\
+If \(\alpha\) = 0.05, then \(t_\alpha\) satisfies
+\(P(T_{10} > t_{.05}) = 0.05\) and from the t table ,
+\(t_{.05} = 1.812\). If \(\alpha\) = 0.05, then
+\(t_{\alpha/2} \, \equiv t_{0.025}= 2.228\)\\
+{Comparison of Normal and \(t\) Quantiles}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1222}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1444}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1111}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1111}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1111}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1111}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1111}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1111}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\multicolumn{8}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.9333} + 14\tabcolsep}@{}}{%
+\(t_\alpha\) with indicated df} \\
+\(\alpha\) & \(z_\alpha\) & 10 & 20 & 30 & 40 & 60 & 240 \\
+0.1 & 1.28 & 1.37 & 1.32 & 1.31 & 1.30 & 1.30 & 1.28 \\
+0.05 & 1.65 & 1.81 & 1.72 & 1.70 & 1.68 & 1.67 & 1.65 \\
+0.01 & 2.33 & 2.76 & 2.53 & 2.46 & 2.42 & 2.39 & 2.34 \\
+\end{longtable}
+
+\subsection{\texorpdfstring{Confidence Interval for \(\mu\) based on the
+t-distribution}{Confidence Interval for \textbackslash mu based on the t-distribution}}\label{confidence-interval-for-mu-based-on-the-t-distribution}
+
+\begin{itemize}
+\item
+  Let the sample size be \(n\), and for \(\alpha\) be a specified value,
+  say, for e.g.~\(.05\).
+\item
+  A \((1-\alpha)100\%\) confidence interval for \(\mu\) is given by
+  \[\left(\bar{y} - t_{\alpha/2} \, \frac{s}{\sqrt{n}}, \quad
+          \bar{y} + t_{\alpha/2} \, \frac{s}{\sqrt{n}}\right)\]
+\item
+  This may also be written as
+  \(\left(\bar{y} - t_{\alpha/2} s_{\bar{y}}, \quad \bar{y} +
+           t_{\alpha/2} s_{\bar{y}} \right)\)
+\item
+  Here, \(t_{\alpha/2}\) is the \(1-\alpha/2\) percentile of the
+  t-distribution with \(n-1\) degrees of freedom and \(s_{\bar{y}}\) is
+  the {standard error of the mean}.
+\end{itemize}
+
+\subsection{}\label{section-4}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{ex517.pdf}
+
+}
+
+\caption{image}
+
+\end{figure}%
+
+\subsection{Test Procedures based on the
+t-distribution:}\label{test-procedures-based-on-the-t-distribution}
+
+{Hypotheses:}\\
+{Case 1:}\(H_0: \mu \leq \mu_0\ \mbox{vs.}\ H_a: \mu >\mu_0\)
+(right-tailed test)\\
+{Case 2:} \(H_0: \mu \geq \mu_0\ \mbox{vs.}\ H_a: \mu <\mu_0\)
+(left-tailed test)\\
+{Case 3} \(H_0: \mu = \mu_0\ \mbox{vs.}\ H_a: \mu \not =\mu_0\)
+(two-tailed test)\\
+{T.S:} \(t_c  =  \frac{\bar{y}-\mu_0}{s/\sqrt{n}}\)\\
+{R.R:} For Type I error probability of \(\alpha\):\\
+{Case 1:} Reject \(H_0:\) if \(t \geq t_{\alpha,(n-1)}\)\\
+{Case 2:} Reject \(H_0:\) if \(t \leq -t_{\alpha,(n-1)}\)\\
+{Case 3:} Reject \(H_0:\) if \(|t| \geq t_{\alpha/2,(n-1)}\)
+
+\subsection{Test Procedures based on the t-distribution -
+cont.:}\label{test-procedures-based-on-the-t-distribution---cont.}
+
+{Level of Significance (p-value):}\\
+{Case 1:} \(p = P(T_{n-1} > t_c\)).\\
+{Case 2:} \(p = P(T_{n-1} < t_c\)).\\
+{Case 3:} \(p= 2P(T_{n-1} > |t_c|)\).\\
+{Exercise}\\
+A massive multistate outbreak of food-borne illness was attributed to
+\emph{Salmonella enteritidis}. Epidimiologists determined that the
+source of the illness was ice cream. They sampled nine production
+runsfrom the company that produced the ice cream to determine the level
+of \emph{Salmonella enteritidis} in the ice cream.
+
+\subsection{Exercise - cont.}\label{exercise---cont.}
+
+These levels (MPN/g) are as follows\\
+\(.593\quad .142\quad .329\quad .691\quad .231\quad .793\quad .519\quad .392\quad .418\)\\
+Use the data to determine whether the mean level of \emph{Salmonella
+enteritidis} in the ice cream is greater than .3 MPN/g with
+\(\alpha=.01\)\\
+{Solution:}\\
+Need to test \(H_0: \mu \leq .3\) vs.~\(H_a: \mu > .3\)\\
+Because of the small sample size, we need to examine whether the data
+have been sampled from a normal distribution. To do this a {normal
+probability plot} is a good tool.
+
+\subsection{Exercise - cont.}\label{exercise---cont.-1}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{fig518.pdf}
+
+}
+
+\caption{image}
+
+\end{figure}%
+
+From the data \(\bar{y}=.456\) and \(s= .2128\) are computed, giving
+\[t_c=  \frac{\bar{y}-\mu_0}{s/\sqrt{n}}=\frac{.456-.3}{.2128/\sqrt{9}}=2.21\]
+Because for the one-tailed test we need \(t_{\alpha,(n-1)}\);\\
+we look up \(t_{.01}\) with \(df=9-1=8\). It is \(2.896\)\\
+Thus the rejection region is: \(t>2.896\)
+
+\subsection{Exercise - cont.}\label{exercise---cont.-2}
+
+Since \(t_c= 2.214\) does not exceed \(2.896\) it is not in the R.R.\\
+Thus, there is insufficient evidence in the data to reject \(H_0\) i.e
+to say that the mean level of \emph{Salmonella enteritidis} exceeds the
+dangerous level of .3 MPN/g.\\
+The {p-value} to be computed is \(P(T_8>2.21)\)\\
+To calculate this exactly using the t-table is not possible since it is
+tabulated for only a few values of \(a\).\\
+However, we can bound the p-value by noting that, for \((df=8)\), 2.21
+lies between 1.86 and 2.306.\\
+This gives {\(.025<\mbox{p-value}<.05\)} showing that the {p-value is
+not less than our \(\alpha\) of \(.01\)}. Thus we fail to reject
+\(H_0\).
+
+\subsection{OC Curve and the Power of a
+test}\label{oc-curve-and-the-power-of-a-test}
+
+The probabilities of the four possible outcomes of a statistical test
+are:\\
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2323}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3737}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3838}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} &
+\multicolumn{2}{>{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.7576} + 2\tabcolsep}@{}}{%
+\begin{minipage}[b]{\linewidth}\centering
+Null Hypothesis
+\end{minipage}} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+2-3 Decision & True & False \\
+Reject \(H_0\) & {Type I Error} & Correct Decision \\
+& \(\alpha\) & \(1-\beta\) \\
+Fail to reject \(H_0\) & Correct Decision & {Type II Error} \\
+& \(1-\alpha\) & \(\beta\) \\
+\end{longtable}
+
+\begin{itemize}
+\tightlist
+\item
+  The probabilities of Type I and II error are \(\alpha\) and \(\beta\),
+  respectively.
+\end{itemize}
+
+\subsection{Type I Error and Type II
+Error}\label{type-i-error-and-type-ii-error}
+
+\begin{itemize}
+\item
+  The experimenter can control only the Type I error probability. We do
+  this by specifying an \(\alpha\) for an experiment (before the data
+  values are measured).
+\item
+  When we are testing an hypothesis about \(\mu\) using \(\alpha\) for
+  the test, the value of {Type II error probability \(\beta\)} depends
+  on the actual value \(\mu\) which is not known.
+\item
+  This is because \(\beta\) is the {probability of incorrectly failing
+  to reject \(H_0\) when \(H_a\) is true}.
+\item
+  When \(H_a\) is true, the actual value of \(\mu\) may be any value
+  under \(H_a\), i.e, a value not specified under \(H_0\). Since this
+  value of \(\mu\) is unknown, \(\beta\) cannot be calculated.
+\end{itemize}
+
+\subsection{Type I Error and Type II
+Error}\label{type-i-error-and-type-ii-error-1}
+
+\begin{itemize}
+\item
+  The implication of this is that when, based on a test, we find that we
+  cannot reject \(H_0\), \emph{we will not say that we accept \(H_0\)}.
+\item
+  Because if we say we accept \(H_0\) and \(\beta\) turns out to be
+  large, then the probability is large that we will be committing a Type
+  II error.
+\item
+  Thus the correct way to state the decision is to say, that {we fail to
+  reject \(H_0\)}.
+\item
+  In practice, \(\beta\) probabilities for several choices of \(\mu\)
+  (call them \(\beta(\mu)\)) are calculated and plotted in a graph
+  called the {OC curve}.
+\item
+  The OC curve can be used to read-off the {Type II error probability}
+  for a specified set of values sample size \(n\) and \(\alpha\).
+\end{itemize}
+
+\subsection{OC Curve}\label{oc-curve}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{fig514.pdf}
+
+}
+
+\caption{image}
+
+\end{figure}%
+
+The figure shows the OC curve for the test of
+\(H_0: \mu \leq 84, \quad H_a: \mu > 84\) for a population with
+\(\sigma=1.4\). For example, for \(\alpha=.05,\,n=10\), it can be seen
+that \(\beta(84.8)\approx .4\) and that \(\beta(84.8)\) decreases as
+sample size goes from 10 to 25. A conclusion that can be made about this
+test from the OC curve is that Type II error probability would be
+\(< .1\) for an actual \(\mu > 84.8\) for \(n=25\).
+
+\subsection{Power Curve}\label{power-curve}
+
+\begin{itemize}
+\item
+  Another quantity that may be calculated for a test procedure for a
+  specified value of \(\mu\) is called the {Power of the test} and is
+  defined as \(1-\beta(\mu)\).
+\item
+  The corresponding plot of power against a set of \(\mu\) values is
+  called the {power curve}.
+\end{itemize}
+
+\subsection{Power of the Test}\label{power-of-the-test}
+
+\begin{itemize}
+\item
+  By definition, power of a test is the probability of rejecting \(H_0\)
+  for a specified value of \(\mu\) under \(H_a\).
+\item
+  In practice, tests are designed to have large power for some \(\mu\)
+  values of interest so that they have small Type II error
+  probabilities.
+\item
+  We can relate to this idea by thinking of a test as having very good
+  power if it has {a very good chance of detecting whether a change in
+  \(\mu\) has actually occured}.
+\item
+  This is usually done by selecting a sample size \(n\) to be used for
+  the experiment so that the desired power is achieved for a specified
+  \(\mu\) and \(\alpha\).
+\end{itemize}
+
+\subsection{\texorpdfstring{Using Type II Error Probability \(\beta\)
+Curves}{Using Type II Error Probability \textbackslash beta Curves}}\label{using-type-ii-error-probability-beta-curves}
+
+\begin{itemize}
+\item
+  Consider the Salmonella example again. We have \(n=9,\) and
+  \(\alpha=.01\). Thus \(df=8\) and we estimate \(\sigma \approx .25\)
+\item
+  We can compute the values of \(d\) for several values of \(\mu_a\).
+  Then we'll read \(\beta\) for those values of \(d\) using the graph on
+  next slide for the curves for \(\alpha=.01\).
+\item
+  As an example, for \(\mu_a=.45\),
+  \(d=\frac{|\mu_a-\mu_0|}{\sigma}=\frac{|.45-.3|}{.25}=.6\)
+\item
+  Corresponding to \(d=.6\) on the horizontal axis, using the curve for
+  \(df=8\) we see that \(\beta(.45)=.79\), approx.
+\item
+  Similarly, for \(\mu_a=.45\ d=1.0\), and thus \(\beta(.55)=.43\),
+  approx. We can construct a table as shown (next slide).
+\end{itemize}
+
+\subsection{\texorpdfstring{Using Type II Error Probability \(\beta\)
+Curves}{Using Type II Error Probability \textbackslash beta Curves}}\label{using-type-ii-error-probability-beta-curves-1}
+
+\includegraphics{fig517.pdf}\\
+\includegraphics{table55.pdf}
+
+\subsection{Departures from Normality}\label{departures-from-normality}
+
+\begin{itemize}
+\item
+  When \(\bar{Y}\) is a Normal random variable, i.e., when sampling from
+  a Normal population with mean \(\mu_0\),
+  \(\frac{\bar{Y}-\mu_0}{S/\sqrt{n}}\) is a \(T_{n-1}\) random variable.
+\item
+  This is a theoretical fact. In practice, however, we never sample
+  exactly from a Normal population, so (\(\bar{Y}- \mu_0)/S/\sqrt{n}\)
+  will be only approximately \(T_{n-1}\).
+\item
+  How much effect can this have on C.I.'s and tests we construct?
+\item
+  For symmetrically distributed populations and not too small \(n\)
+  there is little to worry about.
+\item
+  For highly skewed population distributions the approximation can be
+  terrible especially for small \(n\).
+\end{itemize}
+
+\subsection{}\label{section-5}
+
+\begin{figure}[H]
+
+{\centering \includegraphics{table56.pdf}
+
+}
+
+\caption{image}
+
+\end{figure}%
+
+\begin{itemize}
+\tightlist
+\item
+  It is recommended that one look at a boxplot, Normal plot, and/or
+  other graphics to see whether severe skewness of the sampling
+  population is indicated. If not, proceed to use the
+  \(t\)-distribution. If yes, one can use a nonparametric procedure or
+  use a transformation. We will look at some of these later.
+\end{itemize}
+
+\subsection{Using Confidence Intervals to Test
+Hypotheses}\label{using-confidence-intervals-to-test-hypotheses}
+
+\begin{itemize}
+\item
+  We can always look at a (1-\(\alpha\))100\% confidence interval and
+  see what the result of a test would be if we carry out the test.
+\item
+  For example, consider the (1-\(\alpha\))100\% confidence interval for
+  \(\mu\) \[\left(\bar{y} - t_{\alpha/2} \, \frac{s}{\sqrt{n}}, \quad
+          \bar{y} + t_{\alpha/2} \, \frac{s}{\sqrt{n}}\right)\]
+\item
+  Suppose that \(\mu_0\) is {not included} in the above confidence
+  interval because
+  \[\bar{y} - t_{\alpha/2} \, \frac{s}{\sqrt{n}}>\mu_0\]
+\end{itemize}
+
+\subsection{Using Confidence Intervals to Test Hypotheses -
+cont.}\label{using-confidence-intervals-to-test-hypotheses---cont.}
+
+\begin{itemize}
+\item
+  By rearranging this we see that this is equivalent to \(t_c\) being in
+  the rejection region, i.e.,\\
+  \[\frac{\bar{y}-\mu_0}{s/\sqrt{n}} > t_{\alpha/2,(n-1)}\]
+\item
+  Observe carefully that this is the same rejection region for the test
+  of \(H_0: \mu \leq  \mu_0\) vs.~\(H_a: \mu >
+  \mu_0\) at level \(\alpha/2\).
+\item
+  That is, we will be rejecting \(H_0\) {at level \(\alpha/2\)} if\\
+  \[\frac{\bar{y}-\mu_0}{s/\sqrt{n}} > t_{\alpha/2,(n-1)}\]
+\item
+  This is equivalent to saying that {if \(\mu_0\) was not included in a
+  100(1-\(\alpha\))\% interval, then \(H_0\) will be rejected if the
+  test is carried out at \(\alpha/2\) level}.
+\end{itemize}
+
+\subsection{Using Confidence Intervals to Test Hypotheses -
+cont.}\label{using-confidence-intervals-to-test-hypotheses---cont.-1}
+
+\begin{itemize}
+\tightlist
+\item
+  For {a two-tailed test}, the confidence interval should be based on
+  the same \(\alpha\) as the test to make this inference.
+\end{itemize}
+
+{\textbf{In summary,}}
+
+\begin{itemize}
+\item
+  To test \(H_0: \mu \leq \mu_0, \quad H_a: \mu > \mu_0\), at level
+  \(\alpha/2\), use a 100(1-\(\alpha\))\% confidence interval.
+\item
+  To test \(H_0: \mu \geq \mu_0, \quad H_a: \mu < \mu_0\), at level
+  \(\alpha/2\), use a 100(1-\(\alpha\))\% confidence interval.
+\item
+  \(H_0: \mu = \mu_0, \quad H_a: \mu \neq \mu_0\), at level \(\alpha\),
+  use a 100(1-\(\alpha\))\% confidence interval.
+\end{itemize}
+
+
+
+
+\end{document}

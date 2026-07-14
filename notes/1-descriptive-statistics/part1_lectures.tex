@@ -1,0 +1,1180 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\pagenumbering{gobble}
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={What is Statistics?},
+  pdfauthor={Stat 801a},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{What is Statistics?}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Summarizing Data}
+\author{Stat 801a}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\subsection{What is statistics?}\label{what-is-statistics}
+
+\begin{itemize}
+\item
+  Statistics is the science of {\emph{learning from data}}. It uses the
+  theory of probability to make inferences about populations or
+  processes using data
+\item
+  For example, we would like to know the mean of a characteristic of a
+  set of elements of a population
+\item
+  But we can't observe or measure each one because there are too many
+  elements or not all are available.
+\end{itemize}
+
+\subsection{Examples}\label{examples}
+
+\begin{itemize}
+\item
+  Mean blood pressure of 40 year old pregnant females.
+\item
+  Mean lifetime of 60-watt bulbs being made at the G.E. plant in
+  Cleveland.
+\item
+  Mean potency of an antibiotic after storage for 20 months on store
+  shelves.
+\end{itemize}
+
+\subsection{Statistics is Useful in}\label{statistics-is-useful-in}
+
+\begin{itemize}
+\item
+  Data collection
+
+  \begin{itemize}
+  \item
+    Sample survey design
+  \item
+    Experimental design
+  \end{itemize}
+\item
+  Drawing conclusion from data
+
+  \begin{itemize}
+  \item
+    {Descriptive} methods - summarization and presentation of data
+  \item
+    {Statistical} inference - make statements about an entire population
+    based on a sample
+  \end{itemize}
+\end{itemize}
+
+\subsection{Population versus Sample}\label{population-versus-sample}
+
+Since we can't obtain the average exactly, we do the next best thing
+
+\begin{itemize}
+\item
+  approximate it by finding the average for a {\emph{selected subset}}
+  of the elements
+\item
+  we do a statistical study to estimate the population mean
+\item
+  usually, there are many objectives of a {\emph{statistical study}},
+  than just estimating the mean of the population.
+\end{itemize}
+
+\subsection{Steps in a Statistical
+Study}\label{steps-in-a-statistical-study}
+
+\begin{itemize}
+\item
+  {Collecting data} - by making observations or taking measurements on
+  some sample or process of interest, possibly as a part of a
+  statistically designed experiment or a survey.
+\item
+  {Summarizing the data} - using statistical summary methods
+  (calculating means or constructing a histogram, for example).
+\item
+  {Analyzing the data and making inferences} - using models and
+  statistical methods for drawing conclusions about the situation being
+  considered.
+\end{itemize}
+
+\subsection{Terminology and
+definitions}\label{terminology-and-definitions}
+
+\begin{itemize}
+\item
+  {Population} - The set of all objects (or measurements) of interest;
+  they are called elements of the population.
+\item
+  {Sample} - Any subset of elements from a population.
+\item
+  A statistical study is made using a sample obtained from a population.
+\item
+  Sample represents the population.
+\end{itemize}
+
+\subsection{How to Select a Sample?}\label{how-to-select-a-sample}
+
+Theoretically we can get a random sample of \(n\) elements by
+
+\begin{itemize}
+\item
+  making n draws, one at a time
+\item
+  on each draw, each remaining element in the population is {equally
+  likely} to be the one drawn.
+\end{itemize}
+
+Practically we can seldom satisfy the theoretical requirements, so we do
+the best we can to introduce randomness into our sample selection
+process.
+
+\subsection{How to Select a Sample?
+(continued)}\label{how-to-select-a-sample-continued}
+
+\begin{itemize}
+\item
+  Can the result of a statistical study of population mean (average) be
+  far away from the true mean? - sure, sometimes. A statistical study
+  provides evidence. It doesn't prove anything\\
+\item
+  A random sample selected using the method described earlier ensures
+  that each sample of size \(n\) drawn from a population has the same
+  chance of being selected
+\item
+  Methods that ensure this property are called {simple random sampling}
+\item
+  We shall use a method for selecting a simple random sample from a
+  population in a one of our labs using random digit tables
+\end{itemize}
+
+\subsection{Some Important
+Definitions}\label{some-important-definitions}
+
+\begin{itemize}
+\item
+  {Data value:} measurement
+\item
+  {Observation:} Row of data values
+\item
+  {Variable:} Set of data values for the same type of measurement
+\item
+  {Data set:} The entire collection of data values
+\end{itemize}
+
+\subsection{Example: Measurements on
+Mice}\label{example-measurements-on-mice}
+
+\begin{longtable}[]{@{}cccc@{}}
+\toprule\noalign{}
+Animal id & Cage & Weight & Length \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & 1 & 22.5 & 5.3 \\
+2 & 1 & 27.3 & 4.8 \\
+3 & 1 & 32.2 & 4.5 \\
+4 & 2 & 23.7 & 4.9 \\
+5 & 2 & 30.9 & 5.7 \\
+6 & 2 & 22.6 & 5.2 \\
+\end{longtable}
+
+\subsection{Data Description}\label{data-description}
+
+\begin{itemize}
+\item
+  {Two broad applications of Statistics}\\
+
+  \begin{itemize}
+  \item
+    descriptive statistics
+  \item
+    inferential statistics
+  \end{itemize}
+\item
+  When measurements from an entire population is available to us data
+  description will be a major objective.
+\item
+  In this case, methods for organizing, summarizing, and describing data
+  are needed.
+\item
+  Good descriptive statistics enable us to make sense of the data by
+  reducing large amounts of data to a few summary measures and graphical
+  displays.
+\end{itemize}
+
+\subsection{Data Description - cont.}\label{data-description---cont.}
+
+\begin{itemize}
+\item
+  When only a random sample is available from a large population (or a
+  process), inferential statistics becomes the major focus.
+\item
+  However, even in this case, descriptive statistics of the sample data
+  is still important as they can be used to draw conclusions about the
+  population from which the sample was taken.
+\item
+  Data descriptions are of two types:\\
+
+  \begin{itemize}
+  \item
+    graphical methods
+  \item
+    numerical summaries
+  \end{itemize}
+\end{itemize}
+
+\subsection{Graphical Methods}\label{graphical-methods}
+
+\begin{itemize}
+\item
+  Bar Chart
+\item
+  Histogram
+\item
+  Stem-and-Leaf plot
+\item
+  Time Series plot
+\item
+  Boxplot
+\item
+  Normal Probability Plot
+\end{itemize}
+
+\subsection{Numerical Summaries}\label{numerical-summaries}
+
+\begin{itemize}
+\item
+  Measures of Center or Location
+
+  \begin{itemize}
+  \item
+    Mode
+  \item
+    Median
+  \item
+    Mean
+  \end{itemize}
+\item
+  Measures of Variability or Spread
+
+  \begin{itemize}
+  \item
+    Range
+  \item
+    Percentile (Quantile, Quartile)
+  \item
+    Interquartile Range
+  \item
+    Variance
+  \item
+    Standard Deviation
+  \item
+    Coefficient of Variation
+  \end{itemize}
+\end{itemize}
+
+\subsection{Histograms}\label{histograms}
+
+\begin{itemize}
+\item
+  To plot a histogram, a {\emph{frequency table}} must first be
+  constructed
+\item
+  The range of the data is divided into {\emph{class intervals}} or
+  {\emph{bins}}
+\item
+  The number of such intervals is determined by the end-points of the
+  intervals {\emph{number of observations}} in the data set
+\item
+  The larger the number of observations the more the number of class
+  intervals we may use
+\item
+  Divide the range of data values by the number of class intervals to
+  determine an approximate {\emph{class width}}
+\end{itemize}
+
+\subsection{Weight gains of chicks fed an antibiotic -
+Data}\label{weight-gains-of-chicks-fed-an-antibiotic---data}
+
+An animal scientist is carrying out an experiment to investigate whether
+adding an antibiotic to the diet of chicks will promote growth over the
+standard diet without the antibiotic. The scientist determines that 100
+chicks will provide sufficient information to validate the results of
+the experiment. From previous research studies, the average weight gain
+of chicks fed the standard diet over an 8-week period is 3.9 grams. The
+scientist wants to compare the weight gain of the chicks in the study to
+the standard value of 3.9 grams. The weight gains for the 100 chicks are
+recorded the the table shown on the next slide.
+
+\subsection{Example: Weight gains of chicks fed an
+antibiotic}\label{example-weight-gains-of-chicks-fed-an-antibiotic}
+
+\begin{longtable}[]{@{}rrrrrrrrrr@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+3.7 & 4.2 & 4.4 & 4.4 & 4.3 & 4.2 & 4.4 & 4.8 & 4.9 & 4.4 \\
+4.2 & 3.8 & 4.2 & 4.4 & 4.6 & 3.9 & 4.1 & 4.5 & 4.8 & 3.9 \\
+4.7 & 4.2 & 4.2 & 4.8 & 4.5 & 3.6 & 4.1 & 4.3 & 3.9 & 4.2 \\
+4.0 & 4.2 & 4.0 & 4.5 & 4.4 & 4.1 & 4.0 & 4.0 & 3.8 & 4.6 \\
+4.9 & 3.8 & 4.3 & 4.3 & 3.9 & 3.8 & 4.7 & 3.9 & 4.0 & 4.2 \\
+4.3 & 4.7 & 4.1 & 4.0 & 4.6 & 4.4 & 4.6 & 4.4 & 4.9 & 4.4 \\
+4.0 & 3.9 & 4.5 & 4.3 & 3.8 & 4.1 & 4.3 & 4.2 & 4.5 & 4.4 \\
+4.2 & 4.7 & 3.8 & 4.5 & 4.0 & 4.2 & 4.1 & 4.0 & 4.7 & 4.1 \\
+4.7 & 4.1 & 4.8 & 4.1 & 4.3 & 4.7 & 4.2 & 4.1 & 4.4 & 4.8 \\
+4.1 & 4.9 & 4.3 & 4.4 & 4.4 & 4.3 & 4.6 & 4.5 & 4.6 & 4.0 \\
+\end{longtable}
+
+\subsection{Creating a Histogram}\label{creating-a-histogram}
+
+\begin{itemize}
+\item
+  It was decided to have 10 class intervals
+\item
+  Since the range is \(4.9-3.6=1.3\), a class interval width of
+  \(1.3/10  \approx .1\) was used
+\item
+  The end-points of the intervals are incremented by one-half the unit
+  of measurement (i.e., .05 gram, here)
+\item
+  This is so that no observation falls on any end-point
+\item
+  Since the smallest observation is 3.6 we start with the interval
+  \(3.55-3.65\)
+\item
+  Once the class intervals have been determined observations in the data
+  set falling into each of these classes are tallied
+\end{itemize}
+
+\subsection{Reading in the chick data}\label{reading-in-the-chick-data}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{chick.tbl }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{(}\AttributeTok{text =} \StringTok{"}
+\StringTok{               3.7   4.2   4.4   4.4   4.3   4.2   4.4   4.8   4.9   4.4}
+\StringTok{    4.2   3.8   4.2   4.4   4.6   3.9   4.1   4.5   4.8   3.9}
+\StringTok{    4.7   4.2   4.2   4.8   4.5   3.6   4.1   4.3   3.9   4.2}
+\StringTok{    4.0   4.2   4.0   4.5   4.4   4.1   4.0   4.0   3.8   4.6}
+\StringTok{    4.9   3.8   4.3   4.3   3.9   3.8   4.7   3.9   4.0   4.2}
+\StringTok{    4.3   4.7   4.1   4.0   4.6   4.4   4.6   4.4   4.9   4.4}
+\StringTok{    4.0   3.9   4.5   4.3   3.8   4.1   4.3   4.2   4.5   4.4}
+\StringTok{    4.2   4.7   3.8   4.5   4.0   4.2   4.1   4.0   4.7   4.1}
+\StringTok{    4.7   4.1   4.8   4.1   4.3   4.7   4.2   4.1   4.4   4.8}
+\StringTok{    4.1   4.9   4.3   4.4   4.4   4.3   4.6   4.5   4.6   4.0"}\NormalTok{)}
+\NormalTok{chick }\OtherTok{\textless{}{-}} \FunctionTok{unlist}\NormalTok{(chick.tbl, }\AttributeTok{use.names =}\NormalTok{ F)}
+\FunctionTok{head}\NormalTok{(chick, }\AttributeTok{n =} \DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+ [1] 3.7 4.2 4.7 4.0 4.9 4.3 4.0 4.2 4.7 4.1
+\end{verbatim}
+
+\subsection{Frequency table for the chick
+data}\label{frequency-table-for-the-chick-data}
+
+\textbf{Frequency Table}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cuts }\OtherTok{\textless{}{-}} \FunctionTok{cut}\NormalTok{(chick, }\AttributeTok{breaks =} \FunctionTok{seq}\NormalTok{(}\FloatTok{3.55}\NormalTok{, }\FloatTok{4.95}\NormalTok{, }\AttributeTok{by =} \FloatTok{0.1}\NormalTok{))}
+\NormalTok{freq }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(cuts)}
+\NormalTok{freq}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+cuts
+(3.55,3.65] (3.65,3.75] (3.75,3.85] (3.85,3.95] (3.95,4.05] (4.05,4.15] 
+          1           1           6           6          10          11 
+(4.15,4.25] (4.25,4.35] (4.35,4.45] (4.45,4.55] (4.55,4.65] (4.65,4.75] 
+         13          10          13           7           6           7 
+(4.75,4.85] (4.85,4.95] 
+          5           4 
+\end{verbatim}
+
+\textbf{Relative Frequency Table}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rel\_freq }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(cuts)}\SpecialCharTok{/}\FunctionTok{length}\NormalTok{(chick)}
+\NormalTok{rel\_freq}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+cuts
+(3.55,3.65] (3.65,3.75] (3.75,3.85] (3.85,3.95] (3.95,4.05] (4.05,4.15] 
+       0.01        0.01        0.06        0.06        0.10        0.11 
+(4.15,4.25] (4.25,4.35] (4.35,4.45] (4.45,4.55] (4.55,4.65] (4.65,4.75] 
+       0.13        0.10        0.13        0.07        0.06        0.07 
+(4.75,4.85] (4.85,4.95] 
+       0.05        0.04 
+\end{verbatim}
+
+\subsection{Creating a Histogram (base
+R)}\label{creating-a-histogram-base-r}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(chick, }\AttributeTok{breaks =} \FunctionTok{seq}\NormalTok{(}\FloatTok{3.55}\NormalTok{, }\FloatTok{4.95}\NormalTok{, }\AttributeTok{by =} \FloatTok{0.1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{part1_lectures_files/figure-pdf/unnamed-chunk-4-1.pdf}
+
+\subsection{Creating a Histogram
+(ggplot2)}\label{creating-a-histogram-ggplot2}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# install.packages(tidyverse)}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ chick)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \FloatTok{0.1}\NormalTok{, }\AttributeTok{color =} \StringTok{\textquotesingle{}black\textquotesingle{}}\NormalTok{, }\AttributeTok{fill =} \StringTok{\textquotesingle{}\#1a80bb\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}
+\includegraphics{part1_lectures_files/figure-pdf/unnamed-chunk-5-1.pdf}
+\end{center}
+
+\subsection{Quantiles and Percentiles}\label{quantiles-and-percentiles}
+
+\begin{itemize}
+\item
+  The \(80^{\rm th}\) {percentile} is a data value such that
+  approximately 80\% of the data values in the data set are less, and
+  approximately 20\% are larger, than that value.
+\item
+  For a theoretical distribution (e.g.~normal distribution) the .8
+  {quantile} is a value such that 80\% of the probability mass of the
+  distribution lies to the left and 20\% lies to the right of the value
+  of the quantile.
+\item
+  For an empirical distribution (i.e., the distribution of a data set)
+  we need another definition. Suppose we have 10 values in a
+  dataset:~\(52, 63, 67, 71, 75, 76, 76, 82, 87, 94\)
+\end{itemize}
+
+\subsection{Quantiles and
+Percentiles}\label{quantiles-and-percentiles-1}
+
+\begin{itemize}
+\item
+  What is the 80th percentile? i.e., what value is such that
+  approximately 80\% are less and 20\% are greater?
+\item
+  Since there are 10 values, need to find a number such that 8 values
+  are less, and 2 values greater than that number.
+\item
+  There isn't a value in the data set that satisfies both conditions.
+\item
+  A number half way between 82 and 87, i.e., 84.5, might be reasonably
+  chosen as the \(80^{\rm th}\) percentile.
+\item
+  It satisfies the definition approximately.
+\end{itemize}
+
+\subsection{Quantiles and
+Percentiles}\label{quantiles-and-percentiles-2}
+
+\begin{itemize}
+\item
+  A definition that will give unambiguous percentiles for any set of
+  data is needed.
+\item
+  Let \(p\ (0 < p < 100)\) denote the desired percentile, \(n\) the
+  number of data values, and let \(y_{(1)}, y_{(2)}, \ldots y_{(n)}\)
+  denote the ordered observations so that
+  \[y_{(1)} \le y_{(2)} \le \ldots  \le y_{(n)}\]
+\end{itemize}
+
+\subsection{Definition: Percentiles and
+Quantiles}\label{definition-percentiles-and-quantiles}
+
+\begin{itemize}
+\item
+  If \(p\) is one of the numbers \(100(i-.5)/n\) then \(y_{(i)}\) is the
+  \(p^{\rm th}\) {percentile}, for i = 1, 2, 3, ..., n-1 or n.
+\item
+  If \(p\) is between \(100(0.5/n)\) and \(100(n-.5)/n\), and \(p\) is
+  not one of the numbers \(100(i-.5)/n\) then the percentile is obtained
+  by linear interpolation between the two percentiles that bracket
+  \(p\).
+\item
+  \texttt{Quantiles} are a generalization of percentiles. The
+  \(p^{\rm th}\) quantile of a dataset is the \(100p^{\rm th}\)
+  percentile.
+\end{itemize}
+
+\subsection{Quantiles and
+Percentiles}\label{quantiles-and-percentiles-3}
+
+Thus the \(p^{\rm th}\) {quantile} of the dataset
+\(y_{(1)}, y_{(2)}, \ldots y_{(n)}\) is obtained as follows:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  If \(p\) is one of the numbers \((i-.5)/n\) then \(y_{(i)}\) is the
+  \(p^{\rm th}\) quantile, for i = 1, 2, 3, ..., n-1 or n.
+\item
+  If \(p\) is between \((0.5/n)\) and \((n-.5)/n\), and \(p\) is not one
+  of the numbers \((i-.5)/n\) then the quantile is obtained by linear
+  interpolation between the two quantiles that bracket p.
+\item
+  The \(p_i^{\rm th}\) quantile of a dataset is denoted by \(Q(p_i)\)
+\end{enumerate}
+
+\subsection{Quantiles and Percentiles:
+Example}\label{quantiles-and-percentiles-example}
+
+Suppose we have a dataset consisting of the 10 observations:
+\(9.614,  9.614,  10.688,  7.583,  8.572,  8.527,  8.577,  9.471,
+9.165,  9.011\) The following table shows the ordered data values as the
+specified {quantiles}:
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule\noalign{}
+\(i\) & \(p_i=(i-.5)/10\) & \(Q(p_i)\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & 0.05 & 7.583 \\
+2 & 0.15 & 8.527 \\
+3 & 0.25 & 8.572 \\
+4 & 0.35 & 8.577 \\
+5 & 0.45 & 9.011 \\
+6 & 0.55 & 9.165 \\
+7 & 0.65 & 9.471 \\
+8 & 0.75 & 9.614 \\
+9 & 0.85 & 9.614 \\
+10 & 0.95 & 10.688 \\
+\end{longtable}
+
+\subsection{Quantiles by Linear
+Interpolation}\label{quantiles-by-linear-interpolation}
+
+\begin{itemize}
+\item
+  \(Q(p)\) for values of \(p = (i-.5)/n\) correspond to the ordered
+  observations for \(i = 1, 2, \ldots, n\). For example
+  \(Q(.55)=9.165\).
+\item
+  How is, say, \(Q(.525)\) determined? This is obtained by linear
+  interpolation between the two quantiles that bracket \(.525\) i.e,
+  \(Q(.45)\) and \(Q(.55)\).
+\item
+  For a \(p\) such that \(p_i < p < p_{i+1},\ Q(p)\) is computed as the
+  weighted average \(Q(p) = (1-f)Q(p_i) + fQ(p_{i+1})\) where
+  \(f =(p-p_i)/(p_{i+1}-p_i) = n(p-p_i)\)
+\end{itemize}
+
+\subsection{Quantiles by Linear Interpolation:
+Example}\label{quantiles-by-linear-interpolation-example}
+
+\begin{itemize}
+\item
+  Suppose \(n = 10\) and one needs to compute \(Q(.525)\).
+\item
+  Since \(.45 < p < .55, \ f = 10 (.525 - .45)  = .75\).
+\item
+  Thus \(Q(.525)=.25Q(.45) +
+  .75Q(.55)\).
+\item
+  In the above example, therefore
+  \[Q(.525)= .25(9.011)+.75(9.165)=9.1265\]
+\end{itemize}
+
+\subsection{Box Plots (Tukey, 1977)}\label{box-plots-tukey-1977}
+
+The boxplot is a summary display of a set of data, that is useful for
+studying the shape of the distribution including its symmetry or
+asymmetry around the central location, based on the quantiles
+\(Q_1,\ M\), and \(Q_3\) as defined below:
+
+\begin{itemize}
+\item
+  Upper Quartile = \(75^{ th} { percentile} =Q(.75)=Q_3\)
+\item
+  Median = \(50^{ th} { percentile} =Q(.50)=M\)
+\item
+  Lower Quartile = \(25^{ th} {percentile} =Q(.25)= Q_1\)
+\item
+  Interquartile Range (IQR) =\\
+  Upper Quartile - Lower Quartile =\(Q_3- Q_1\)
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Box Plots (continued)}\label{box-plots-continued}
+
+The following quantities also need to be computed for constructing a box
+plot:
+
+\begin{itemize}
+\item
+  Upper Fence = \(Q_3 + 1.5\) IQR.
+\item
+  Lower Fence = \(Q_1 - 1.5\) IQR.
+\item
+  Upper Adjacent Value: the largest observation below the upper fence
+\item
+  Lower Adjacent Value: the smallest observation above the lower fence
+\item
+  Outside Values: Observations that fall outside adjacent values.
+\end{itemize}
+
+\subsection{Box Plots: Example}\label{box-plots-example}
+
+\subsection{Creating a Box Plot (base
+R)}\label{creating-a-box-plot-base-r}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(chick)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{part1_lectures_files/figure-pdf/unnamed-chunk-6-1.pdf}
+
+\subsection{Creating a Box Plot
+(ggplot2)}\label{creating-a-box-plot-ggplot2}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ chick)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_boxplot}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{part1_lectures_files/figure-pdf/unnamed-chunk-7-1.pdf}
+
+\subsection{Normal Probability Plot}\label{normal-probability-plot}
+
+\begin{itemize}
+\item
+  Consider a sample \(y_1, y_2, \ldots, y_n\) of size \(n\).
+\item
+  The data are first ordered in increasing order of magnitude.
+\item
+  Then a value \(p\) is assigned to each data value using the formula
+  \(p = (i -0.5)/n\).
+\item
+  Thus the ordered data values will be the \(p_i^{\rm th}\) quantile
+  \(Q(p_i)\) for \(i=1,2,\ldots,n.\)
+\item
+  Example: Quantiles for a data set with \(n = 18\)
+\end{itemize}
+
+\subsection{Summation Notation}\label{summation-notation}
+
+\url{http://www.columbia.edu/itc/sipa/math/summation.html}
+
+\subsection{Quantiles}\label{quantiles}
+
+\subsection{Normal Probability Plot:
+Example}\label{normal-probability-plot-example}
+
+\begin{itemize}
+\item
+  The quantile of the standard normal distribution, \(z_p\),
+  corresponding to each \(p\) value, is then computed using the table of
+  Normal percentiles (i.e.~the \(z\)-table).
+\item
+  The Normal Probability plot is the plot of the quantiles \(Q(p)\) of
+  the data vs.~\(z_p\), the corresponding standard normal quantiles.
+\item
+  Thus this plot is also called the quantile-quantile plot or the Q-Q
+  plot, in general.
+\end{itemize}
+
+\subsection{Normal Probability Plot:
+Example}\label{normal-probability-plot-example-1}
+
+\includegraphics{part1_lectures_files/figure-pdf/unnamed-chunk-8-1.pdf}
+
+\subsection{Normal Probability Plot
+(continued)}\label{normal-probability-plot-continued}
+
+\begin{itemize}
+\item
+  If the data is a random sample from a normal population the plotted
+  points will lie approximately in a {straight-line}.
+\item
+  {Departures} from a straight-line may indicate that the population
+  distribution is different from a Normal distribution.
+\item
+  Specific types of departures can be used to identify how the
+  population distribution differs from a Normal distribution.
+\item
+  The following pages contains normal probability plots of computer
+  generated data from populations that resemble distributions that are
+  as described.
+\end{itemize}
+
+\subsection{Normal Probability Plot
+(continued)}\label{normal-probability-plot-continued-1}
+
+\begin{figure}
+
+\begin{minipage}{0.50\linewidth}
+\includegraphics{part1_lectures_files/figure-pdf/unnamed-chunk-9-1.pdf}\end{minipage}%
+%
+\begin{minipage}{0.50\linewidth}
+\includegraphics{part1_lectures_files/figure-pdf/unnamed-chunk-9-2.pdf}\end{minipage}%
+\newline
+\begin{minipage}{0.50\linewidth}
+\includegraphics{part1_lectures_files/figure-pdf/unnamed-chunk-9-3.pdf}\end{minipage}%
+%
+\begin{minipage}{0.50\linewidth}
+\includegraphics{part1_lectures_files/figure-pdf/unnamed-chunk-9-4.pdf}\end{minipage}%
+
+\end{figure}%
+
+\subsection{Normal Probability Plot
+(continued)}\label{normal-probability-plot-continued-2}
+
+\begin{itemize}
+\item
+  The top set of plots are from normal populations with different mean
+  and variance parameters
+\item
+  The bottom two are from populations that differ in shape from the
+  normal distribution.
+\item
+  Notice that the bottom two plots show specific patterns (the left
+  graph shows a bowl-shape while the other shows an inverted S-shaped
+  pattern).
+\item
+  These are markedly different from the deviation from a straight line
+  shown in the top graphs which are only due to random variation.
+\end{itemize}
+
+\subsection{Sample Statistics
+vs.~Parameters}\label{sample-statistics-vs.-parameters}
+
+\begin{itemize}
+\item
+  A {parameter} is a descriptive statistic of a population.
+\item
+  A {sample statistic} is a descriptive statistic of a sample.
+\item
+  Take a {census} of a population recording values of a variable as
+  \(x_1, x_2,\ldots,x_N\), where \(N\) is the population size, then
+
+  \begin{itemize}
+  \item
+    Population mean, \(\mu=\frac{\textstyle\sum x}{N}\)
+  \item
+    Population variance, \(\sigma^2=\frac{\textstyle\sum (x-\mu)^2}{N}\)
+  \item
+    Population standard deviation, \(\sigma=\sqrt{\sigma^2}\)
+  \end{itemize}
+\end{itemize}
+
+\subsection{Sample Statistics
+vs.~Parameters}\label{sample-statistics-vs.-parameters-1}
+
+\begin{itemize}
+\item
+  Since censuses cannot be taken for every population we wish to study,
+  parameters cannot be exactly calculated and thus are usually unknown.
+\item
+  Instead, a {random sample} of a population is taken recording values
+  of a variable as \(x_1, x_2,\ldots,x_n\), where \(n\) is the sample
+  size, then
+
+  \begin{itemize}
+  \item
+    sample mean (average, arithmetic mean),
+    \(\bar{x}= \frac{\textstyle \sum x}{n}\)
+  \item
+    sample variance, \(s^2=\frac{\textstyle \sum (x-\bar{x})^2}{n-1}\)
+  \item
+    sample standard deviation, \(s=\sqrt{s^2}\)
+  \end{itemize}
+\end{itemize}
+
+\subsection{Sample Statistics
+vs.~Parameters}\label{sample-statistics-vs.-parameters-2}
+
+\begin{itemize}
+\item
+  \(\mu\), \(\sigma^2\), and \(\sigma\) are {parameters}.
+\item
+  \(\bar{x}\), \(s^2\), and \(s\) are {sample statistics}.
+\end{itemize}
+
+\subsection{Sample Statistics vs.~Parameters:
+Example}\label{sample-statistics-vs.-parameters-example}
+
+Calculate the sample mean, variance, and standard deviation for data: 2,
+3, 3, 4, 3.
+
+\begin{longtable}[]{@{}lrr@{}}
+\toprule\noalign{}
+\(i\) & \(x\) & \(x^2\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & 2 & 4 \\
+2 & 3 & 9 \\
+3 & 3 & 9 \\
+4 & 4 & 16 \\
+5 & 3 & 9 \\
+& \(\sum x=15\) & \(\sum x^2= 47\) \\
+\end{longtable}
+
+\subsection{Sample Statistics
+vs.~Parameters}\label{sample-statistics-vs.-parameters-3}
+
+Compute sample variance \(s^2\) and sample standard deviation \(s\).
+\[\begin{eqnarray*}
+s^2 & = &\frac{\textstyle\sum x^2 - \frac{(\textstyle\sum
+x)^2}{n}}{n-1}=\frac{47-\frac{(15)^2}{5}}{5-1}=2/4=0.5\\[.1in]
+ s & = & \sqrt{(s^2)}=\sqrt{0.5}=0.71
+\end{eqnarray*}\]
+
+\subsection{Summary Statistics}\label{summary-statistics}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Data}
+\NormalTok{vals }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{3}\NormalTok{)}
+
+\CommentTok{\# Mean}
+\FunctionTok{mean}\NormalTok{(vals)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Variance}
+\FunctionTok{var}\NormalTok{(vals)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Standard deviation}
+\FunctionTok{sd}\NormalTok{(vals); }\FunctionTok{sqrt}\NormalTok{(}\FunctionTok{var}\NormalTok{(vals))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.7071068
+\end{verbatim}
+
+\begin{verbatim}
+[1] 0.7071068
+\end{verbatim}
+
+\subsection{Numerical Summary
+Measures}\label{numerical-summary-measures}
+
+\begin{itemize}
+\item
+  The sample mean and the sample median are examples of {numerical
+  descriptive measures} of the {central tendency} of a sample and
+  describes the center or location around which the data are
+  distributed.
+\item
+  The sample variance and standard deviation are examples of {numerical
+  descriptive measures} of the {variability} or the {spread} of the
+  sample around the center.
+\item
+  These numerical descriptive measures are used both to describe a
+  population, if the entire population of measurements is available,
+  (e.g., census) or, to draw inferences about a population from the
+  statistics calculated on a random sample drawn from the population.
+\end{itemize}
+
+\subsection{Other Numerical Summary Measures -
+Median}\label{other-numerical-summary-measures---median}
+
+{Median:} Value at which \(50\%\) of the observations are above and
+\(50\%\) below.\\
+Computation of the sample median from a sample of size n:
+
+\begin{itemize}
+\item
+  Arrange observations in ascending order
+\item
+  The value of the \(\left(\frac{n+1}{2}\right)^{th}\) ordered
+  observation is the median
+\end{itemize}
+
+What is the median of \(2,4,6,8,10\)?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{median}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{10}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 6
+\end{verbatim}
+
+What is the median of \(2,4,6,10\)?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{median}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{10}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 5
+\end{verbatim}
+
+\subsection{Which measure of location should be
+used?}\label{which-measure-of-location-should-be-used}
+
+\begin{itemize}
+\item
+  When the data are symmetric?
+\item
+  When data are skewed? Which means that there are some very large or
+  very small values?
+\end{itemize}
+
+\subsection{Example - Which measure of location should be
+used?}\label{example---which-measure-of-location-should-be-used}
+
+\includegraphics{part1_lectures_files/figure-pdf/unnamed-chunk-13-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1.177316
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{median}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.9064152
+\end{verbatim}
+
+
+
+
+\end{document}

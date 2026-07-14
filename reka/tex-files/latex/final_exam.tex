@@ -1,0 +1,158 @@
+%1/2 inch left/right margins, 1in top, 1/2 bottom
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\hbadness=10000
+\tolerance=10000
+\textheight 9.7in
+\textwidth 7.4in
+\oddsidemargin -.5in
+\topmargin -.5in
+\headsep 0in
+\headheight 0in
+\baselineskip .25in
+\begin{document}
+\flushright{\textbf {Fall 2016}}
+\begin{center}
+  \textbf{\large Statistics 801\\
+  Final Examination (100 points)}
+\end{center}
+\flushright{\textbf{Name} \rule{4in}{.01in}}\\[.1in]
+\begin{enumerate}
+\item  The price of a  laptop of a particular make and configuration among
+dealers nationwide is assumed to have a Normal
+distribution with mean $\mu =\$1200$ with standard deviation
+$\sigma =\$50$.
+\begin{enumerate}  
+\item(6)  What is the  probability that a laptop of the same make, chosen 
+randomly from a dealer, will cost between \$1136 and  \$1308 ?  (Show your work).\\[2in]
+\item(6) What is the  probability that the average price of 25 laptops of the same make, chosen  randomly from a dealer, will be greater than \$1225?  (Show your work). \\[2in]
+ \end{enumerate}
+ \item To estimate the mean potency  $\mu$ of an antibiotic in a production batch, a manufacturer takes potency readings of 14 random samples, giving $\bar{y}=8.67$ , and $s^2=0.56$.
+ \begin{enumerate}
+  \item (6) \parbox[t]{6in}{Estimate the mean potency for the batch using a 95\% confidence interval.}
+\newpage
+  \item (6) \parbox[t]{6in}{According to the industry standard, the standard deviation of the potency for this drug, $\sigma$, must not  exceed $0.7$. \emph{State and test} the hypotheses that this batch does not meet the industry standard. Use $\alpha = .05$. Don't forget your conclusion and decision.}\\[2in]
+  \end{enumerate}
+
+
+\item Brands of a type of electrical wire produced by two different manufacturers are being studied to compare their resistivity characteristics. The  values of resistivity measurements obtained by the experimenter suggests that they can be considered to be samples from normal distributions and are used to calculate the following  statistics:
+\vspace*{-.2in}
+\begin{center}
+      \begin{tabular}{lll|lll} \hline
+      \multicolumn{3}{c|}{Brand A} & \multicolumn{3}{c}{Brand B} \\ \hline
+        $n_1 = 8$ & $\bar{y}_{1.} = 0.140 $ & $s_1^2 = 0.000007$ & $n_2 = 9$  & $\bar{y}_{2.} =0.145 $ & $s_2^2 = 0.00002$\\ \hline 
+      \end{tabular}
+      \end{center}
+\vspace*{-.1in}
+Assuming that the population means are $\mu_1$ and $\mu_2$ and the population variances are $\sigma_1^2$ and $\sigma_2^2$, respectively, answer the following questions:\\[-.1in]
+  \begin{enumerate}
+\item (6) Test the hypothesis $H_0: \sigma_1^2 =
+ \sigma_2^2$ vs. $H_a: \sigma_1^2 \neq \sigma_2^2$.  Use $\alpha = .05$ and show work.\\[2in]
+\item (4) Now assume $\sigma_1^2 = \sigma_2^2$. Compute the standard error of the
+ difference in the sample means $\bar{y}_{1.} - \bar{y}_{2.}$.
+ \newpage
+\item (6) Use the standard error from part (b) to construct a statistic to test the research hypothesis that 
+Brand B wires have larger mean resistivity. State the null and alternative, the rejection 
+region, and your decision using $\alpha =.05$. Show work.\\[2in]
+\item (6) Use the standard error from part (b) to compute a 90\% confidence
+interval for $\mu_1 - \mu_2$.  Test the hypothesis in part (c) using this interval, stating the 
+$\alpha$-level of the test.\\[2in]
+
+ 
+ 
+  \end{enumerate}
+\item An experiment was conducted to determine the relationship
+between the  amount of warping in thin strips, ($y$), made from a particular alloy and
+temperature, ($x$) . A simple linear regression model of the form
+ $y = \beta_0 + \beta_1\,x + \epsilon$ was first fitted to the data.\\[.1in]
+% \begin{center}
+  \begin{tabular}{c@{\extracolsep{.3in}}ccccc}
+  Temperature  &  Amount of  & \\
+  ($^\circ{C}$ )  ($x$)& Warping ($y$)& $\bar{y}_{i.}$ &$y_i-\bar{y_i}$& $\sum(y_i-\bar{y_i})^2$ & df\\[.05in] \hline
+    15 & 11, 11, 14 & 12 \\[.05in]
+    20 & 14, 12, 13 & 13  \\[.05in]
+    25 & 14, 12, 16 & 14 \\[.05in]
+    30 & 18, 14, 16 & 16 \\[.05in]
+    35 & 21, 19, 17 & 19 \\[.05in]
+    40 & 24, 20, 22 & 22  \\[.05in]
+    45 & 24, 23, 28 & 25  \\[.05in]
+    50 & 31, 30, 32 & 31  \\[.05in] \hline
+  \end{tabular}
+
+\noindent The following statistics have also  been computed from the above data:
+  $$
+    S_{xx} = 3150.0\hspace{.3in} S_{yy} = 980.0\hspace{.3in} S_{xy} = 1650.0
+  $$
+  \begin{enumerate}
+  \newpage
+  \item (10) Complete the analysis of variance table
+ for the regression below.  Use the {\tt F-ratio} from the
+ anova table to test $H_0: \beta_1 = 0$ vs. $H_a: \beta_1 \neq 0$, at
+  $\alpha = .05$.  Show work and state your conclusion.\\
+  
+  \begin{tabbing}
+xxxxxxx\=xxxxxxxxxxxxx\=xxxxxxxxxxxxxx\=xxxxxxxxxxxx\=xxxxxxxxxxxxxx\= \kill 
+ \>\underline{Source} \>\underline{d.f.}\>\underline{SS}  \>
+\underline{MS}  \> \underline{F} \\[.1in] 
+ \> Regression  \>  \>   \\[.1in]
+ \>Error \\[.1in]
+ \>Total \>  23 \> \\
+  \end{tabbing} 
+\vspace{1in}
+ \item (6) Compute the t-statistic to test the hypothesis that 
+ $H_0: \beta_1 = 0$ vs. $H_a: \beta_1 \neq 0$. Test this hypothesis using $\alpha=.05$. State the rejection region and your decision clearly. Show work.\\[2.5in]
+
+  
+
+  \item (10) Perform the lack of fit test by completing the
+  following table and state your conclusion.  Use $\alpha = .05$.\\
+  \begin{tabbing}
+xxxxxxx\=xxxxxxxxxxxxx\=xxxxxxxxxxxxxx\=xxxxxxxxxxxx\=xxxxxxxxxxxxxx\= \kill 
+ \>\underline{Source} \>\underline{d.f.}\>\underline{SS}  \>\underline{MS}  \> \underline{F} \\[.1in] 
+ \>Lack of Fit \>  \>   \\[.1in]
+ \>Pure Error \\[.1in]
+ \>Total Error \\[1in]
+  \end{tabbing}  
+
+ 
+
+
+
+
+\item (3) Calculate the coefficient of determination.\\[1.5in]
+\item (3) Interpret the coefficient of determination in terms of the problem.\\[1.5in]
+
+\end{enumerate}
+\item	An agronomist wanted to see whether four chemical treatments were different in the number of soybean seeds that fail to emerge out of 100 seeds planted.  She uniformly planted 100 soybean seeds treated with one of the four treatments in a randomly assigned plot in 5 different fields. She then counted the number of seeds that failed to emerge out of 100 seeds.
+\begin{enumerate}
+\item (3) Write out the linear additive model for this study and define the terms. State the assumptions.\\[2in]
+\item (2) What type of experimental design is it? How do you know? Justify your answer.\\[1.5in]
+\item (7) Part of the ANOVA table is shown below. Fill in the missing values in the ANOVA table.
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|} \hline
+Source & degree of freedom & Sum of Squares & Mean of Squares & F-value & p-value \\ \hline
+Field & &&21.925&&0.0001\\ \hline
+Chemical Treatment &&&21.7833&&0.0001\\ \hline
+Error &12&&2.325&-&-\\ \hline
+Total &&&-&-&-\\ \hline
+\end{tabular}
+\end{center}
+\item (2) Based on the p-value and $\alpha=0.05$, what can you conclude about the original research question?\\[1in]
+\item (2) Does it appear that blocking by field was effective? Support your answer. $\alpha=0.05$. \\[1in]
+\end{enumerate}
+\item What type of analyses (Contingency Table/Chi-square test or ANOVA or Regression) would you use for the following set of variables. Give an example for each.
+\begin{enumerate}
+\item (2) Quantitative dependent, categorical independent\\[1.5in]
+\item (2) Categorical dependent, categorical independent \\[1.5in]
+\item (2) Quantitative dependent, quantitative independent\\[1.5in]
+\end{enumerate} 
+\item \textbf{BONUS QUESTIONS.} Each question is 1 point.
+\begin{enumerate}
+\item \textbf{(T/F)} In the analysis of covariance we compare the sum of squares of a full model with the sum of squares of a reduced model.
+\item \textbf{(T/F)} The analysis of a factorial design is a better way to look at the interaction among treatments than the completely randomized design.
+\item \textbf{(T/F)} The advantage of random forest over the linear regression is that the involving model is much simpler.
+\item \textbf{(T/F)} The permutation test is different than the randomization test because in the permutation test we sample without replacement, and in the randomization test we sample with replacement.
+\item \textbf{(T/F)} The Mann-Whitney test can only be used when the data are continuous.
+\end{enumerate}
+\end{enumerate}
+\end{document}

@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Stat 801a">
+
+<title>What is Statistics? – STAT 801A</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <div id="quarto-announcement" data-announcement-id="5baa15d4f3ba2343b03e365d390cad3a" class="alert alert-warning hidden"><div class="quarto-announcement-content">
+<p>This course is under active development</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">STAT 801A</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../../index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">What is Statistics?</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Course Overview</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Goals for STAT 801A</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notes/1-descriptive-statistics/part1_lectures.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Slide Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+ <span class="menu-text">notes/index.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">notes/section-1-introduction.qmd</span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Labs</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Assignments</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../project1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project 1</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="part1_lectures.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">What is Statistics?</h1>
+<p class="subtitle lead">Summarizing Data</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Stat 801a </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use the version in the notes folder. This version is depreciated.</p>
+</div>
+</div>
+<section id="what-is-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-statistics">What is statistics?</h2>
+<ul>
+<li><p>Statistics is the science of <span style="color: magenta"><em>learning from data</em></span>. It uses the theory of probability to make inferences about populations or processes using data</p></li>
+<li><p>For example, we would like to know the mean of a characteristic of a set of elements of a population</p></li>
+<li><p>But we can’t observe or measure each one because there are too many elements or not all are available.</p></li>
+</ul>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<ul>
+<li><p>Mean blood pressure of 40 year old pregnant females.</p></li>
+<li><p>Mean lifetime of 60-watt bulbs being made at the G.E. plant in Cleveland.</p></li>
+<li><p>Mean potency of an antibiotic after storage for 20 months on store shelves.</p></li>
+</ul>
+</section>
+<section id="statistics-is-useful-in" class="level2">
+<h2 class="anchored" data-anchor-id="statistics-is-useful-in">Statistics is Useful in</h2>
+<ul>
+<li><p>Data collection</p>
+<ul>
+<li><p>Sample survey design</p></li>
+<li><p>Experimental design</p></li>
+</ul></li>
+<li><p>Drawing conclusion from data</p>
+<ul>
+<li><p><span style="color: magenta">Descriptive</span> methods - summarization and presentation of data</p></li>
+<li><p><span style="color: magenta">Statistical</span> inference - make statements about an entire population based on a sample</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="population-versus-sample" class="level2">
+<h2 class="anchored" data-anchor-id="population-versus-sample">Population versus Sample</h2>
+<p>Since we can’t obtain the average exactly, we do the next best thing</p>
+<ul>
+<li><p>approximate it by finding the average for a <span style="color: magenta"><em>selected subset</em></span> of the elements</p></li>
+<li><p>we do a statistical study to estimate the population mean</p></li>
+<li><p>usually, there are many objectives of a <span style="color: magenta"><em>statistical study</em></span>, than just estimating the mean of the population.</p></li>
+</ul>
+</section>
+<section id="steps-in-a-statistical-study" class="level2">
+<h2 class="anchored" data-anchor-id="steps-in-a-statistical-study">Steps in a Statistical Study</h2>
+<ul>
+<li><p><span style="color: magenta">Collecting data</span> - by making observations or taking measurements on some sample or process of interest, possibly as a part of a statistically designed experiment or a survey.</p></li>
+<li><p><span style="color: magenta">Summarizing the data</span> - using statistical summary methods (calculating means or constructing a histogram, for example).</p></li>
+<li><p><span style="color: magenta">Analyzing the data and making inferences</span> - using models and statistical methods for drawing conclusions about the situation being considered.</p></li>
+</ul>
+</section>
+<section id="terminology-and-definitions" class="level2">
+<h2 class="anchored" data-anchor-id="terminology-and-definitions">Terminology and definitions</h2>
+<ul>
+<li><p><span style="color: magenta">Population</span> - The set of all objects (or measurements) of interest; they are called elements of the population.</p></li>
+<li><p><span style="color: magenta">Sample</span> - Any subset of elements from a population.</p></li>
+<li><p>A statistical study is made using a sample obtained from a population.</p></li>
+<li><p>Sample represents the population.</p></li>
+</ul>
+</section>
+<section id="how-to-select-a-sample" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-select-a-sample">How to Select a Sample?</h2>
+<p>Theoretically we can get a random sample of <span class="math inline">\(n\)</span> elements by</p>
+<ul>
+<li><p>making n draws, one at a time</p></li>
+<li><p>on each draw, each remaining element in the population is <span style="color: magenta">equally likely</span> to be the one drawn.</p></li>
+</ul>
+<p>Practically we can seldom satisfy the theoretical requirements, so we do the best we can to introduce randomness into our sample selection process.</p>
+</section>
+<section id="how-to-select-a-sample-continued" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-select-a-sample-continued">How to Select a Sample? (continued)</h2>
+<ul>
+<li><p>Can the result of a statistical study of population mean (average) be far away from the true mean? - sure, sometimes. A statistical study provides evidence. It doesn’t prove anything<br>
+</p></li>
+<li><p>A random sample selected using the method described earlier ensures that each sample of size <span class="math inline">\(n\)</span> drawn from a population has the same chance of being selected</p></li>
+<li><p>Methods that ensure this property are called <span style="color: magenta">simple random sampling</span></p></li>
+<li><p>We shall use a method for selecting a simple random sample from a population in a one of our labs using random digit tables</p></li>
+</ul>
+</section>
+<section id="some-important-definitions" class="level2">
+<h2 class="anchored" data-anchor-id="some-important-definitions">Some Important Definitions</h2>
+<ul>
+<li><p><span style="color: magenta">Data value:</span> measurement</p></li>
+<li><p><span style="color: magenta">Observation:</span> Row of data values</p></li>
+<li><p><span style="color: magenta">Variable:</span> Set of data values for the same type of measurement</p></li>
+<li><p><span style="color: magenta">Data set:</span> The entire collection of data values</p></li>
+</ul>
+</section>
+<section id="example-measurements-on-mice" class="level2">
+<h2 class="anchored" data-anchor-id="example-measurements-on-mice">Example: Measurements on Mice</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Animal id</th>
+<th style="text-align: center;">Cage</th>
+<th style="text-align: center;">Weight</th>
+<th style="text-align: center;">Length</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">22.5</td>
+<td style="text-align: center;">5.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">27.3</td>
+<td style="text-align: center;">4.8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">32.2</td>
+<td style="text-align: center;">4.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">23.7</td>
+<td style="text-align: center;">4.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">30.9</td>
+<td style="text-align: center;">5.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">22.6</td>
+<td style="text-align: center;">5.2</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data-description" class="level2">
+<h2 class="anchored" data-anchor-id="data-description">Data Description</h2>
+<ul>
+<li><p><span style="color: magenta">Two broad applications of Statistics</span><br>
+</p>
+<ul>
+<li><p>descriptive statistics</p></li>
+<li><p>inferential statistics</p></li>
+</ul></li>
+<li><p>When measurements from an entire population is available to us data description will be a major objective.</p></li>
+<li><p>In this case, methods for organizing, summarizing, and describing data are needed.</p></li>
+<li><p>Good descriptive statistics enable us to make sense of the data by reducing large amounts of data to a few summary measures and graphical displays.</p></li>
+</ul>
+</section>
+<section id="data-description---cont." class="level2">
+<h2 class="anchored" data-anchor-id="data-description---cont.">Data Description - cont.</h2>
+<ul>
+<li><p>When only a random sample is available from a large population (or a process), inferential statistics becomes the major focus.</p></li>
+<li><p>However, even in this case, descriptive statistics of the sample data is still important as they can be used to draw conclusions about the population from which the sample was taken.</p></li>
+<li><p>Data descriptions are of two types:<br>
+</p>
+<ul>
+<li><p>graphical methods</p></li>
+<li><p>numerical summaries</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="graphical-methods" class="level2">
+<h2 class="anchored" data-anchor-id="graphical-methods">Graphical Methods</h2>
+<ul>
+<li><p>Bar Chart</p></li>
+<li><p>Histogram</p></li>
+<li><p>Stem-and-Leaf plot</p></li>
+<li><p>Time Series plot</p></li>
+<li><p>Boxplot</p></li>
+<li><p>Normal Probability Plot</p></li>
+</ul>
+</section>
+<section id="numerical-summaries" class="level2">
+<h2 class="anchored" data-anchor-id="numerical-summaries">Numerical Summaries</h2>
+<ul>
+<li><p>Measures of Center or Location</p>
+<ul>
+<li><p>Mode</p></li>
+<li><p>Median</p></li>
+<li><p>Mean</p></li>
+</ul></li>
+<li><p>Measures of Variability or Spread</p>
+<ul>
+<li><p>Range</p></li>
+<li><p>Percentile (Quantile, Quartile)</p></li>
+<li><p>Interquartile Range</p></li>
+<li><p>Variance</p></li>
+<li><p>Standard Deviation</p></li>
+<li><p>Coefficient of Variation</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="histograms" class="level2">
+<h2 class="anchored" data-anchor-id="histograms">Histograms</h2>
+<ul>
+<li><p>To plot a histogram, a <span style="color: magenta"><em>frequency table</em></span> must first be constructed</p></li>
+<li><p>The range of the data is divided into <span style="color: magenta"><em>class intervals</em></span> or <span style="color: magenta"><em>bins</em></span></p></li>
+<li><p>The number of such intervals is determined by the end-points of the intervals <span style="color: magenta"><em>number of observations</em></span> in the data set</p></li>
+<li><p>The larger the number of observations the more the number of class intervals we may use</p></li>
+<li><p>Divide the range of data values by the number of class intervals to determine an approximate <span style="color: magenta"><em>class width</em></span></p></li>
+</ul>
+</section>
+<section id="weight-gains-of-chicks-fed-an-antibiotic---data" class="level2">
+<h2 class="anchored" data-anchor-id="weight-gains-of-chicks-fed-an-antibiotic---data">Weight gains of chicks fed an antibiotic - Data</h2>
+<p>An animal scientist is carrying out an experiment to investigate whether adding an antibiotic to the diet of chicks will promote growth over the standard diet without the antibiotic. The scientist determines that 100 chicks will provide sufficient information to validate the results of the experiment. From previous research studies, the average weight gain of chicks fed the standard diet over an 8-week period is 3.9 grams. The scientist wants to compare the weight gain of the chicks in the study to the standard value of 3.9 grams. The weight gains for the 100 chicks are recorded the the table shown on the next slide.</p>
+</section>
+<section id="example-weight-gains-of-chicks-fed-an-antibiotic" class="level2">
+<h2 class="anchored" data-anchor-id="example-weight-gains-of-chicks-fed-an-antibiotic">Example: Weight gains of chicks fed an antibiotic</h2>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">3.7</td>
+<td style="text-align: right;">4.2</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">4.2</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">4.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.2</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: right;">4.2</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">3.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">4.2</td>
+<td style="text-align: right;">4.2</td>
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">4.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">4.2</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: right;">4.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">4.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">4.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">4.2</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">4.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.2</td>
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">4.2</td>
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">4.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">4.7</td>
+<td style="text-align: right;">4.2</td>
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">4.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">4.9</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">4.0</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="creating-a-histogram" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-histogram">Creating a Histogram</h2>
+<ul>
+<li><p>It was decided to have 10 class intervals</p></li>
+<li><p>Since the range is <span class="math inline">\(4.9-3.6=1.3\)</span>, a class interval width of <span class="math inline">\(1.3/10  \approx .1\)</span> was used</p></li>
+<li><p>The end-points of the intervals are incremented by one-half the unit of measurement (i.e., .05 gram, here)</p></li>
+<li><p>This is so that no observation falls on any end-point</p></li>
+<li><p>Since the smallest observation is 3.6 we start with the interval <span class="math inline">\(3.55-3.65\)</span></p></li>
+<li><p>Once the class intervals have been determined observations in the data set falling into each of these classes are tallied</p></li>
+</ul>
+</section>
+<section id="reading-in-the-chick-data" class="level2">
+<h2 class="anchored" data-anchor-id="reading-in-the-chick-data">Reading in the chick data</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>chick.tbl <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">text =</span> <span class="st">"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="st">               3.7   4.2   4.4   4.4   4.3   4.2   4.4   4.8   4.9   4.4</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="st">    4.2   3.8   4.2   4.4   4.6   3.9   4.1   4.5   4.8   3.9</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="st">    4.7   4.2   4.2   4.8   4.5   3.6   4.1   4.3   3.9   4.2</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="st">    4.0   4.2   4.0   4.5   4.4   4.1   4.0   4.0   3.8   4.6</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="st">    4.9   3.8   4.3   4.3   3.9   3.8   4.7   3.9   4.0   4.2</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="st">    4.3   4.7   4.1   4.0   4.6   4.4   4.6   4.4   4.9   4.4</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="st">    4.0   3.9   4.5   4.3   3.8   4.1   4.3   4.2   4.5   4.4</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="st">    4.2   4.7   3.8   4.5   4.0   4.2   4.1   4.0   4.7   4.1</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="st">    4.7   4.1   4.8   4.1   4.3   4.7   4.2   4.1   4.4   4.8</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="st">    4.1   4.9   4.3   4.4   4.4   4.3   4.6   4.5   4.6   4.0"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>chick <span class="ot">&lt;-</span> <span class="fu">unlist</span>(chick.tbl, <span class="at">use.names =</span> F)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(chick, <span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="frequency-table-for-the-chick-data" class="level2">
+<h2 class="anchored" data-anchor-id="frequency-table-for-the-chick-data">Frequency table for the chick data</h2>
+<p><strong>Frequency Table</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cuts <span class="ot">&lt;-</span> <span class="fu">cut</span>(chick, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="fl">3.55</span>, <span class="fl">4.95</span>, <span class="at">by =</span> <span class="fl">0.1</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>freq <span class="ot">&lt;-</span> <span class="fu">table</span>(cuts)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>freq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Relative Frequency Table</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rel_freq <span class="ot">&lt;-</span> <span class="fu">table</span>(cuts)<span class="sc">/</span><span class="fu">length</span>(chick)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="creating-a-histogram-base-r" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-histogram-base-r">Creating a Histogram (base R)</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(chick, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="fl">3.55</span>, <span class="fl">4.95</span>, <span class="at">by =</span> <span class="fl">0.1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="creating-a-histogram-ggplot2" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-histogram-ggplot2">Creating a Histogram (ggplot2)</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(tidyverse)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> chick)) <span class="sc">+</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">'black'</span>, <span class="at">fill =</span> <span class="st">'#1a80bb'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="quantiles-and-percentiles" class="level2">
+<h2 class="anchored" data-anchor-id="quantiles-and-percentiles">Quantiles and Percentiles</h2>
+<ul>
+<li><p>The <span class="math inline">\(80^{\rm th}\)</span> <span style="color: magenta">percentile</span> is a data value such that approximately 80% of the data values in the data set are less, and approximately 20% are larger, than that value.</p></li>
+<li><p>For a theoretical distribution (e.g.&nbsp;normal distribution) the .8 <span style="color: magenta">quantile</span> is a value such that 80% of the probability mass of the distribution lies to the left and 20% lies to the right of the value of the quantile.</p></li>
+<li><p>For an empirical distribution (i.e., the distribution of a data set) we need another definition. Suppose we have 10 values in a dataset:&nbsp;<span class="math inline">\(52, 63, 67, 71, 75, 76, 76, 82, 87, 94\)</span></p></li>
+</ul>
+</section>
+<section id="quantiles-and-percentiles-1" class="level2">
+<h2 class="anchored" data-anchor-id="quantiles-and-percentiles-1">Quantiles and Percentiles</h2>
+<ul>
+<li><p>What is the 80th percentile? i.e., what value is such that approximately 80% are less and 20% are greater?</p></li>
+<li><p>Since there are 10 values, need to find a number such that 8 values are less, and 2 values greater than that number.</p></li>
+<li><p>There isn’t a value in the data set that satisfies both conditions.</p></li>
+<li><p>A number half way between 82 and 87, i.e., 84.5, might be reasonably chosen as the <span class="math inline">\(80^{\rm th}\)</span> percentile.</p></li>
+<li><p>It satisfies the definition approximately.</p></li>
+</ul>
+</section>
+<section id="quantiles-and-percentiles-2" class="level2">
+<h2 class="anchored" data-anchor-id="quantiles-and-percentiles-2">Quantiles and Percentiles</h2>
+<ul>
+<li><p>A definition that will give unambiguous percentiles for any set of data is needed.</p></li>
+<li><p>Let <span class="math inline">\(p\ (0 &lt; p &lt; 100)\)</span> denote the desired percentile, <span class="math inline">\(n\)</span> the number of data values, and let <span class="math inline">\(y_{(1)}, y_{(2)}, \ldots y_{(n)}\)</span> denote the ordered observations so that <span class="math display">\[y_{(1)} \le y_{(2)} \le \ldots  \le y_{(n)}\]</span></p></li>
+</ul>
+</section>
+<section id="definition-percentiles-and-quantiles" class="level2">
+<h2 class="anchored" data-anchor-id="definition-percentiles-and-quantiles">Definition: Percentiles and Quantiles</h2>
+<ul>
+<li><p>If <span class="math inline">\(p\)</span> is one of the numbers <span class="math inline">\(100(i-.5)/n\)</span> then <span class="math inline">\(y_{(i)}\)</span> is the <span class="math inline">\(p^{\rm th}\)</span> <span style="color: magenta">percentile</span>, for i = 1, 2, 3, ..., n-1 or n.</p></li>
+<li><p>If <span class="math inline">\(p\)</span> is between <span class="math inline">\(100(0.5/n)\)</span> and <span class="math inline">\(100(n-.5)/n\)</span>, and <span class="math inline">\(p\)</span> is not one of the numbers <span class="math inline">\(100(i-.5)/n\)</span> then the percentile is obtained by linear interpolation between the two percentiles that bracket <span class="math inline">\(p\)</span>.</p></li>
+<li><p><code>Quantiles</code> are a generalization of percentiles. The <span class="math inline">\(p^{\rm th}\)</span> quantile of a dataset is the <span class="math inline">\(100p^{\rm th}\)</span> percentile.</p></li>
+</ul>
+</section>
+<section id="quantiles-and-percentiles-3" class="level2">
+<h2 class="anchored" data-anchor-id="quantiles-and-percentiles-3">Quantiles and Percentiles</h2>
+<p>Thus the <span class="math inline">\(p^{\rm th}\)</span> <span style="color: magenta">quantile</span> of the dataset <span class="math inline">\(y_{(1)}, y_{(2)}, \ldots y_{(n)}\)</span> is obtained as follows:</p>
+<ol type="1">
+<li><p>If <span class="math inline">\(p\)</span> is one of the numbers <span class="math inline">\((i-.5)/n\)</span> then <span class="math inline">\(y_{(i)}\)</span> is the <span class="math inline">\(p^{\rm th}\)</span> quantile, for i = 1, 2, 3, ..., n-1 or n.</p></li>
+<li><p>If <span class="math inline">\(p\)</span> is between <span class="math inline">\((0.5/n)\)</span> and <span class="math inline">\((n-.5)/n\)</span>, and <span class="math inline">\(p\)</span> is not one of the numbers <span class="math inline">\((i-.5)/n\)</span> then the quantile is obtained by linear interpolation between the two quantiles that bracket p.</p></li>
+<li><p>The <span class="math inline">\(p_i^{\rm th}\)</span> quantile of a dataset is denoted by <span class="math inline">\(Q(p_i)\)</span></p></li>
+</ol>
+</section>
+<section id="quantiles-and-percentiles-example" class="level2">
+<h2 class="anchored" data-anchor-id="quantiles-and-percentiles-example">Quantiles and Percentiles: Example</h2>
+<p>Suppose we have a dataset consisting of the 10 observations: <span class="math inline">\(9.614,  9.614,  10.688,  7.583,  8.572,  8.527,  8.577,  9.471,
+9.165,  9.011\)</span> The following table shows the ordered data values as the specified <span style="color: magenta">quantiles</span>:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(p_i=(i-.5)/10\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q(p_i)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0.05</td>
+<td style="text-align: center;">7.583</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.15</td>
+<td style="text-align: center;">8.527</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0.25</td>
+<td style="text-align: center;">8.572</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.35</td>
+<td style="text-align: center;">8.577</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0.45</td>
+<td style="text-align: center;">9.011</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.55</td>
+<td style="text-align: center;">9.165</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">0.65</td>
+<td style="text-align: center;">9.471</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">0.75</td>
+<td style="text-align: center;">9.614</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">0.85</td>
+<td style="text-align: center;">9.614</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">0.95</td>
+<td style="text-align: center;">10.688</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="quantiles-by-linear-interpolation" class="level2">
+<h2 class="anchored" data-anchor-id="quantiles-by-linear-interpolation">Quantiles by Linear Interpolation</h2>
+<ul>
+<li><p><span class="math inline">\(Q(p)\)</span> for values of <span class="math inline">\(p = (i-.5)/n\)</span> correspond to the ordered observations for <span class="math inline">\(i = 1, 2, \ldots, n\)</span>. For example <span class="math inline">\(Q(.55)=9.165\)</span>.</p></li>
+<li><p>How is, say, <span class="math inline">\(Q(.525)\)</span> determined? This is obtained by linear interpolation between the two quantiles that bracket <span class="math inline">\(.525\)</span> i.e, <span class="math inline">\(Q(.45)\)</span> and <span class="math inline">\(Q(.55)\)</span>.</p></li>
+<li><p>For a <span class="math inline">\(p\)</span> such that <span class="math inline">\(p_i &lt; p &lt; p_{i+1},\ Q(p)\)</span> is computed as the weighted average <span class="math inline">\(Q(p) = (1-f)Q(p_i) + fQ(p_{i+1})\)</span> where <span class="math inline">\(f =(p-p_i)/(p_{i+1}-p_i) = n(p-p_i)\)</span></p></li>
+</ul>
+</section>
+<section id="quantiles-by-linear-interpolation-example" class="level2">
+<h2 class="anchored" data-anchor-id="quantiles-by-linear-interpolation-example">Quantiles by Linear Interpolation: Example</h2>
+<ul>
+<li><p>Suppose <span class="math inline">\(n = 10\)</span> and one needs to compute <span class="math inline">\(Q(.525)\)</span>.</p></li>
+<li><p>Since <span class="math inline">\(.45 &lt; p &lt; .55, \ f = 10 (.525 - .45)  = .75\)</span>.</p></li>
+<li><p>Thus <span class="math inline">\(Q(.525)=.25Q(.45) +
+.75Q(.55)\)</span>.</p></li>
+<li><p>In the above example, therefore <span class="math display">\[Q(.525)= .25(9.011)+.75(9.165)=9.1265\]</span></p></li>
+</ul>
+</section>
+<section id="box-plots-tukey-1977" class="level2">
+<h2 class="anchored" data-anchor-id="box-plots-tukey-1977">Box Plots (Tukey, 1977)</h2>
+<p>The boxplot is a summary display of a set of data, that is useful for studying the shape of the distribution including its symmetry or asymmetry around the central location, based on the quantiles <span class="math inline">\(Q_1,\ M\)</span>, and <span class="math inline">\(Q_3\)</span> as defined below:</p>
+<ul>
+<li><p>Upper Quartile = <span class="math inline">\(75^{ th} { percentile} =Q(.75)=Q_3\)</span></p></li>
+<li><p>Median = <span class="math inline">\(50^{ th} { percentile} =Q(.50)=M\)</span></p></li>
+<li><p>Lower Quartile = <span class="math inline">\(25^{ th} {percentile} =Q(.25)= Q_1\)</span></p></li>
+<li><p>Interquartile Range (IQR) =<br>
+Upper Quartile - Lower Quartile =<span class="math inline">\(Q_3- Q_1\)</span></p></li>
+</ul>
+</section>
+<section id="box-plots-continued" class="level2">
+<h2 class="anchored" data-anchor-id="box-plots-continued">Box Plots (continued)</h2>
+<p>The following quantities also need to be computed for constructing a box plot:</p>
+<ul>
+<li><p>Upper Fence = <span class="math inline">\(Q_3 + 1.5\)</span> IQR.</p></li>
+<li><p>Lower Fence = <span class="math inline">\(Q_1 - 1.5\)</span> IQR.</p></li>
+<li><p>Upper Adjacent Value: the largest observation below the upper fence</p></li>
+<li><p>Lower Adjacent Value: the smallest observation above the lower fence</p></li>
+<li><p>Outside Values: Observations that fall outside adjacent values.</p></li>
+</ul>
+</section>
+<section id="box-plots-example" class="level2">
+<h2 class="anchored" data-anchor-id="box-plots-example">Box Plots: Example</h2>
+</section>
+<section id="creating-a-box-plot-base-r" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-box-plot-base-r">Creating a Box Plot (base R)</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(chick)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="creating-a-box-plot-ggplot2" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-box-plot-ggplot2">Creating a Box Plot (ggplot2)</h2>
+</section>
+<section id="side-by-side-box-plots" class="level2">
+<h2 class="anchored" data-anchor-id="side-by-side-box-plots">Side-by-side box plots</h2>
+<ul>
+<li><p>Useful comparing distributions of variables across subsamples defined by values of a categorical variable.</p></li>
+<li><p>Example</p>
+<ul>
+<li><p>Side-by-side box plots for an epilepsy study</p></li>
+<li><p>59 patients</p></li>
+<li><p>The patients were randomly assigned to receive the anti-epileptic drug <span style="color: magenta">Progabide</span> or a <span style="color: magenta">placebo</span>.</p></li>
+<li><p>The side-by-side boxplots of <span style="color: magenta">baseline seizure rates</span> for each of the two groups are shown below</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="side-by-side-box-plots-of-epilepsy-data" class="level2">
+<h2 class="anchored" data-anchor-id="side-by-side-box-plots-of-epilepsy-data">Side-by-side box plots of epilepsy data</h2>
+</section>
+<section id="normal-probability-plot" class="level2">
+<h2 class="anchored" data-anchor-id="normal-probability-plot">Normal Probability Plot</h2>
+<ul>
+<li><p>Consider a sample <span class="math inline">\(y_1, y_2, \ldots, y_n\)</span> of size <span class="math inline">\(n\)</span>.</p></li>
+<li><p>The data are first ordered in increasing order of magnitude.</p></li>
+<li><p>Then a value <span class="math inline">\(p\)</span> is assigned to each data value using the formula <span class="math inline">\(p = (i -
+0.5)/n\)</span>.</p></li>
+<li><p>Thus the ordered data values will be the <span class="math inline">\(p_i^{\rm th}\)</span> quantile <span class="math inline">\(Q(p_i)\)</span> for <span class="math inline">\(i=1,2,\ldots,n.\)</span></p></li>
+<li><p>Example: Quantiles for a data set with <span class="math inline">\(n = 18\)</span></p></li>
+</ul>
+</section>
+<section id="summation-notation" class="level2">
+<h2 class="anchored" data-anchor-id="summation-notation">Summation Notation</h2>
+<p>http://www.columbia.edu/itc/sipa/math/summation.html</p>
+</section>
+<section id="quantiles" class="level2">
+<h2 class="anchored" data-anchor-id="quantiles">Quantiles</h2>
+</section>
+<section id="normal-probability-plotexample" class="level2">
+<h2 class="anchored" data-anchor-id="normal-probability-plotexample">Normal Probability Plot:Example</h2>
+<ul>
+<li><p>The quantile of the standard normal distribution, <span class="math inline">\(z_p\)</span>, corresponding to each <span class="math inline">\(p\)</span> value, is then computed using the table of Normal percentiles (i.e.&nbsp;the <span class="math inline">\(z\)</span>-table).</p></li>
+<li><p>The Normal Probability plot is the plot of the quantiles <span class="math inline">\(Q(p)\)</span> of the data vs.&nbsp;<span class="math inline">\(z_p\)</span>, the corresponding standard normal quantiles.</p></li>
+<li><p>Thus this plot is also called the quantile-quantile plot or the Q-Q plot, in general.</p></li>
+</ul>
+</section>
+<section id="normal-probability-plot-example" class="level2">
+<h2 class="anchored" data-anchor-id="normal-probability-plot-example">Normal Probability Plot: Example</h2>
+</section>
+<section id="normal-probability-plot-continued" class="level2">
+<h2 class="anchored" data-anchor-id="normal-probability-plot-continued">Normal Probability Plot (continued)</h2>
+<ul>
+<li><p>If the data is a random sample from a normal population the plotted points will lie approximately in a <span style="color: magenta">straight-line</span>.</p></li>
+<li><p><span style="color: magenta">Departures</span> from a straight-line may indicate that the population distribution is different from a Normal distribution.</p></li>
+<li><p>Specific types of departures can be used to identify how the population distribution differs from a Normal distribution.</p></li>
+<li><p>The following pages contains normal robability plots of computer generated data from populations that resemble distributions that are as described.</p></li>
+</ul>
+</section>
+<section id="normal-probability-plot-continued-1" class="level2">
+<h2 class="anchored" data-anchor-id="normal-probability-plot-continued-1">Normal Probability Plot (continued)</h2>
+</section>
+<section id="normal-probability-plot-continued-2" class="level2">
+<h2 class="anchored" data-anchor-id="normal-probability-plot-continued-2">Normal Probability Plot (continued)</h2>
+<ul>
+<li><p>The top set of plots are from normal populations with different mean and variance parameters</p></li>
+<li><p>The bottom two are from populations that differ in shape from the normal distribution.</p></li>
+<li><p>Notice that the bottom two plots show specific patterns (the left graph shows a bowl-shape while the other shows an inverted S-shaped pattern).</p></li>
+<li><p>These are markedly different from the deviation from a straight line shown in the top graphs which are only due to random variation.</p></li>
+</ul>
+</section>
+<section id="sample-statistics-vs.-parameters" class="level2">
+<h2 class="anchored" data-anchor-id="sample-statistics-vs.-parameters">Sample Statistics vs.&nbsp;Parameters</h2>
+<ul>
+<li><p>A <span style="color: magenta">parameter</span> is a descriptive statistic of a population.</p></li>
+<li><p>A <span style="color: magenta">sample statistic</span> is a descriptive statistic of a sample.</p></li>
+<li><p>Take a <span style="color: magenta">census</span> of a population recording values of a variable as <span class="math inline">\(x_1, x_2,\ldots,x_N\)</span>, where <span class="math inline">\(N\)</span> is the population size, then</p>
+<ul>
+<li><p>Population mean, <span class="math inline">\(\mu=\frac{\textstyle\sum x}{N}\)</span></p></li>
+<li><p>Population variance, <span class="math inline">\(\sigma^2=\frac{\textstyle\sum (x-\mu)^2}{N}\)</span></p></li>
+<li><p>Population standard deviation, <span class="math inline">\(\sigma=\sqrt{\sigma^2}\)</span></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="sample-statistics-vs.-parameters-1" class="level2">
+<h2 class="anchored" data-anchor-id="sample-statistics-vs.-parameters-1">Sample Statistics vs.&nbsp;Parameters</h2>
+<ul>
+<li><p>Since censuses cannot be taken for every population we wish to study, parameters cannot be exactly calculated and thus are usually unknown.</p></li>
+<li><p>Instead, a <span style="color: magenta">random sample</span> of a population is taken recording values of a variable as <span class="math inline">\(x_1, x_2,\ldots,x_n\)</span>, where <span class="math inline">\(n\)</span> is the sample size, then</p>
+<ul>
+<li><p>sample mean (average, arithmetic mean), <span class="math inline">\(\bar{x}= \frac{\textstyle \sum x}{n}\)</span></p></li>
+<li><p>sample variance, <span class="math inline">\(s^2=\frac{\textstyle \sum (x-\bar{x})^2}{n-1}\)</span></p></li>
+<li><p>sample standard deviation, <span class="math inline">\(s=\sqrt{s^2}\)</span></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="sample-statistics-vs.-parameters-2" class="level2">
+<h2 class="anchored" data-anchor-id="sample-statistics-vs.-parameters-2">Sample Statistics vs.&nbsp;Parameters</h2>
+<ul>
+<li><p><span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma^2\)</span>, and <span class="math inline">\(\sigma\)</span> are <span style="color: magenta">parameters</span>.</p></li>
+<li><p><span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(s^2\)</span>, and <span class="math inline">\(s\)</span> are <span style="color: magenta">sample statistics</span>.</p></li>
+</ul>
+</section>
+<section id="sample-statistics-vs.-parameters-example" class="level2">
+<h2 class="anchored" data-anchor-id="sample-statistics-vs.-parameters-example">Sample Statistics vs.&nbsp;Parameters: Example</h2>
+<p>Calculate the sample mean, variance, and standard deviation for data: 2, 3, 3, 4, 3.</p>
+<div class="center">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">\(i\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(x^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: right;"><span class="math inline">\(\sum x=15\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\sum x^2= 47\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sample-statistics-vs.-parameters-3" class="level2">
+<h2 class="anchored" data-anchor-id="sample-statistics-vs.-parameters-3">Sample Statistics vs.&nbsp;Parameters</h2>
+<p>Compute sample variance <span class="math inline">\(s^2\)</span> and sample standard deviation <span class="math inline">\(s\)</span>. <span class="math display">\[\begin{eqnarray*}
+s^2 &amp; = &amp;\frac{\textstyle\sum x^2 - \frac{(\textstyle\sum
+x)^2}{n}}{n-1}=\frac{47-\frac{(15)^2}{5}}{5-1}=2/4=0.5\\[.1in]
+s &amp; = &amp; \sqrt{(s^2)}=\sqrt{0.5}=0.71
+\end{eqnarray*}\]</span></p>
+</section>
+<section id="problems-with-the-variance-and-standard-deviation" class="level2">
+<h2 class="anchored" data-anchor-id="problems-with-the-variance-and-standard-deviation">Problems with the Variance and Standard Deviation</h2>
+<ul>
+<li><p>The units of the variance are squared</p></li>
+<li><p>The standard deviation has the same units as the data</p></li>
+<li><p>Both <span class="math inline">\(s\)</span> and <span class="math inline">\(s^2\)</span> are absolute measures of variation, and many times the <span class="math inline">\(s\)</span> and <span class="math inline">\(s^2\)</span> cannot be compared for two different variables</p></li>
+</ul>
+</section>
+<section id="problems-with-the-variance-and-standard-deviation---example" class="level2">
+<h2 class="anchored" data-anchor-id="problems-with-the-variance-and-standard-deviation---example">Problems with the Variance and Standard Deviation - Example</h2>
+<ul>
+<li>We would like to compare the standard deviation of auto speeds on I-80 with the German Autobahn, but speeds on I-80 are in MPH while speeds on the Autobahn are in km per hour.</li>
+</ul>
+<p>center I-80 Autobahn ———– —— ———- <span class="math inline">\(s^2\)</span> 144 625 <span class="math inline">\(\bar{x}\)</span> 63 120</p>
+</section>
+<section id="coefficient-of-variation" class="level2">
+<h2 class="anchored" data-anchor-id="coefficient-of-variation">Coefficient of Variation</h2>
+<ul>
+<li><p>It is a relative measure of variability.</p></li>
+<li><p><span style="color: magenta">Coefficient of Variation:</span> <span class="math inline">\(\frac{s}{\bar{x}}\times 100\)</span></p></li>
+</ul>
+</section>
+<section id="coefficient-of-variation---example" class="level2">
+<h2 class="anchored" data-anchor-id="coefficient-of-variation---example">Coefficient of Variation - Example</h2>
+<div class="center">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">I-80</th>
+<th style="text-align: center;">Autobahn</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(s^2\)</span></td>
+<td style="text-align: center;">144</td>
+<td style="text-align: center;">625</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\bar{x}\)</span></td>
+<td style="text-align: center;">63</td>
+<td style="text-align: center;">120</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\frac{s}{\bar{x}}\times 100\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(19\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20\%\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="numerical-summary-measures" class="level2">
+<h2 class="anchored" data-anchor-id="numerical-summary-measures">Numerical Summary Measures</h2>
+<ul>
+<li><p>The sample mean and the sample median are examples of <span style="color: magenta">numerical descriptive measures</span> of the <span style="color: magenta">central tendency</span> of a sample and describes the center or location around which the data are distributed.</p></li>
+<li><p>The sample variance and standard deviation are examples of <span style="color: magenta">numerical descriptive measures</span> of the <span style="color: magenta">variability</span> or the <span style="color: magenta">spread</span> of the sample around the center.</p></li>
+<li><p>These numerical descriptive measures are used both to describe a population, if the entire population of measurements is available, (e.g., census) or, to draw inferences about a population from the statistics calculated on a random sample drawn from the population.</p></li>
+</ul>
+</section>
+<section id="other-numerical-summary-measures---median" class="level2">
+<h2 class="anchored" data-anchor-id="other-numerical-summary-measures---median">Other Numerical Summary Measures - Median</h2>
+<p><span style="color: magenta">Median:</span> Value at which <span class="math inline">\(50\%\)</span> of the observations are above and <span class="math inline">\(50\%\)</span> below.<br>
+Computation of the sample median from a sample of size n:</p>
+<ul>
+<li><p>Arrange observations in ascending order</p></li>
+<li><p>The value of the <span class="math inline">\(\left(\frac{n+1}{2}\right)^{th}\)</span> ordered observation is the median</p></li>
+</ul>
+<p>What is the median of <span class="math inline">\(2,4,6,8,10\)</span>?<br>
+What is the median of <span class="math inline">\(2,4,6,10\)</span>?<br>
+Location or spread?</p>
+</section>
+<section id="other-numerical-summary-measures---mode" class="level2">
+<h2 class="anchored" data-anchor-id="other-numerical-summary-measures---mode">Other Numerical Summary Measures - Mode</h2>
+<p><span style="color: magenta">Mode:</span> Value which appears the most frequently.<br>
+What is the mode?</p>
+<ul>
+<li><p>We count beetles on 12 plants, and 6 of them do not have any, but the other 6 has <span class="math inline">\(3,2,6,1,5,6\)</span>.</p></li>
+<li><p>We count beetles on 12 plants, and 4 of them do not have any, 4 of them have 2 and 4 of them have 5.</p></li>
+</ul>
+<p>Location or spread?</p>
+</section>
+<section id="which-measure-of-location-should-be-used" class="level2">
+<h2 class="anchored" data-anchor-id="which-measure-of-location-should-be-used">Which measure of location should be used?</h2>
+<ul>
+<li><p>When the data are symmetric?</p></li>
+<li><p>When data are skewed? Which means that there are some very large or very small values?</p></li>
+</ul>
+</section>
+<section id="example---which-measure-of-location-should-be-used" class="level2">
+<h2 class="anchored" data-anchor-id="example---which-measure-of-location-should-be-used">Example - Which measure of location should be used?</h2>
+<p>Skewed distribution R code</p>
+</section>
+<section id="estimate-of-the-standard-error-of-the-sample-mean" class="level2">
+<h2 class="anchored" data-anchor-id="estimate-of-the-standard-error-of-the-sample-mean">Estimate of the Standard Error of the Sample Mean</h2>
+<p><span class="math inline">\(\frac{s}{\sqrt{n}}\)</span></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

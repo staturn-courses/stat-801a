@@ -134,7 +134,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Section 1 Introduction.html">Notes</a></li><li class="breadcrumb-item"><a href="./Section 1 Introduction.html">Introduction to Data and the Scientific Method</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -174,34 +174,27 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Section 1 Introduction.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Introduction to Data and the Scientific Method</span></a>
+  <a href="./notes/1-descriptive-statistics/part1_lectures.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Slide Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Section 2 Probability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Probability Basics and Probability Distributions</span></a>
-  </div>
-</li>
+ <span class="menu-text">notes/index.qmd</span>
+  </li>
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Section 3 Sampling Distributions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sampling Distributions and Foundations of Statistical Inference</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Section 4 One Pred Two Levels.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">One Predictor/Explanatory Variable, Two Levels</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Section5-One-Pred-More-Than-Two-Levels.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">One Predictor/Explanatory Variable, More Than Two Levels</span></a>
-  </div>
-</li>
+ <span class="menu-text">notes/section-1-introduction.qmd</span>
+  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -210,13 +203,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Assignments</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./project1.html" class="sidebar-item-text sidebar-link">
@@ -241,7 +234,11 @@ window.Quarto = {
 <h1>Introduction to Data and the Scientific Method</h1>
 <p>Sound scientific conclusions require evidence from data. Statistics is the science of collecting, analyzing, and drawing conclusions from data. The goal of STAT 801A is to introduce you to the statistical methods used to answer research questions.</p>
 <p>The <strong>scientific method</strong> has been used for hundreds of years for discovering new knowledge, and can be summarized with the following diagram:</p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/The_Scientific_Method.svg/960px-The_Scientific_Method.svg.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/The_Scientific_Method.svg/960px-The_Scientific_Method.svg.png" class="quarto-figure quarto-figure-center figure-img" style="height:20em"></p>
+</figure>
+</div>
 <p>It’s not coincidental that the steps in the scientific method are closely related to the steps in a statistical investigation. These steps appear in Tintle et al.&nbsp;(2021), but are not at all unique to this textbook.</p>
 <ul>
 <li>Step 1: Ask a research question</li>
@@ -256,41 +253,7 @@ window.Quarto = {
 <section id="step-1-ask-a-research-question" class="level2">
 <h2 class="anchored" data-anchor-id="step-1-ask-a-research-question">Step 1: Ask a research question</h2>
 <p>Step 1 boils down to</p>
-<p><br>
-<br>
-<br>
-</p>
 <p>This may involve</p>
-<ul>
-<li></li>
-</ul>
-<p><br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-</p>
-<ul>
-<li></li>
-</ul>
-<p><br>
-<br>
-<br>
-<br>
-<br>
-</p>
-<ul>
-<li></li>
-</ul>
-<p><br>
-<br>
-<br>
-<br>
-<br>
-<br>
-</p>
 <p>Let’s consider the baby example.</p>
 <p><br>
 <br>
