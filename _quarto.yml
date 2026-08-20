@@ -2,6 +2,10 @@ project:
   type: website
   resources:
     - notes/
+  render:
+    - '!reka/'
+    - '!erin'
+    - '*.qmd'
   
 website:
   title: "STAT 801A"

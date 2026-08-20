@@ -2,5 +2,10 @@
 .Rhistory
 .RData
 .Ruserdata
+reka/
+erin/
 
 /.quarto/
+.posit/assistant
+
+**/*.quarto_ipynb

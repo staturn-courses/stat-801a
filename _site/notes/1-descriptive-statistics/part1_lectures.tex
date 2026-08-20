@@ -1,4 +1,5 @@
 % Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
@@ -7,21 +8,22 @@
   letterpaper,
   DIV=11,
   numbers=noendperiod]{scrartcl}
-
+\usepackage{xcolor}
 \usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
 \usepackage{lmodern}
-\ifPDFTeX\else  
-    % xetex/luatex font selection
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -39,9 +41,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{xcolor}
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % Make \paragraph and \subparagraph free-standing
 \makeatletter
 \ifx\paragraph\undefined\else
@@ -107,8 +106,8 @@
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -120,17 +119,33 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
 
 \pagenumbering{gobble}
 \KOMAoption{captions}{tableheading}
@@ -175,14 +190,13 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
-
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 \usepackage{bookmark}
-
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
+% fallback for those not using the hyperref driver hyperxmp:
+\makeatletter
+\@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
+\makeatother
 \hypersetup{
   pdftitle={What is Statistics?},
   pdfauthor={Stat 801a},
@@ -204,7 +218,6 @@
 \subtitle{Summarizing Data}
 \author{Stat 801a}
 \date{}
-
 \begin{document}
 \maketitle
 
@@ -360,6 +373,7 @@ Definitions}\label{some-important-definitions}
 \subsection{Example: Measurements on
 Mice}\label{example-measurements-on-mice}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}cccc@{}}
 \toprule\noalign{}
 Animal id & Cage & Weight & Length \\
@@ -374,6 +388,7 @@ Animal id & Cage & Weight & Length \\
 5 & 2 & 30.9 & 5.7 \\
 6 & 2 & 22.6 & 5.2 \\
 \end{longtable}
+}
 
 \subsection{Data Description}\label{data-description}
 
@@ -506,6 +521,7 @@ recorded the the table shown on the next slide.
 \subsection{Example: Weight gains of chicks fed an
 antibiotic}\label{example-weight-gains-of-chicks-fed-an-antibiotic}
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}rrrrrrrrrr@{}}
 \toprule\noalign{}
 \endhead
@@ -522,6 +538,7 @@ antibiotic}\label{example-weight-gains-of-chicks-fed-an-antibiotic}
 4.7 & 4.1 & 4.8 & 4.1 & 4.3 & 4.7 & 4.2 & 4.1 & 4.4 & 4.8 \\
 4.1 & 4.9 & 4.3 & 4.4 & 4.4 & 4.3 & 4.6 & 4.5 & 4.6 & 4.0 \\
 \end{longtable}
+}
 
 \subsection{Creating a Histogram}\label{creating-a-histogram}
 
@@ -619,7 +636,7 @@ R)}\label{creating-a-histogram-base-r}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{part1_lectures_files/figure-pdf/unnamed-chunk-4-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{part1_lectures_files/figure-pdf/unnamed-chunk-4-1.pdf}}
 
 \subsection{Creating a Histogram
 (ggplot2)}\label{creating-a-histogram-ggplot2}
@@ -634,7 +651,7 @@ R)}\label{creating-a-histogram-base-r}
 \end{Shaded}
 
 \begin{center}
-\includegraphics{part1_lectures_files/figure-pdf/unnamed-chunk-5-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{part1_lectures_files/figure-pdf/unnamed-chunk-5-1.pdf}}
 \end{center}
 
 \subsection{Quantiles and Percentiles}\label{quantiles-and-percentiles}
@@ -733,6 +750,7 @@ Suppose we have a dataset consisting of the 10 observations:
 9.165,  9.011\) The following table shows the ordered data values as the
 specified {quantiles}:
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}ccc@{}}
 \toprule\noalign{}
 \(i\) & \(p_i=(i-.5)/10\) & \(Q(p_i)\) \\
@@ -751,6 +769,7 @@ specified {quantiles}:
 9 & 0.85 & 9.614 \\
 10 & 0.95 & 10.688 \\
 \end{longtable}
+}
 
 \subsection{Quantiles by Linear
 Interpolation}\label{quantiles-by-linear-interpolation}
@@ -836,7 +855,7 @@ R)}\label{creating-a-box-plot-base-r}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{part1_lectures_files/figure-pdf/unnamed-chunk-6-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{part1_lectures_files/figure-pdf/unnamed-chunk-6-1.pdf}}
 
 \subsection{Creating a Box Plot
 (ggplot2)}\label{creating-a-box-plot-ggplot2}
@@ -848,7 +867,7 @@ R)}\label{creating-a-box-plot-base-r}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{part1_lectures_files/figure-pdf/unnamed-chunk-7-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{part1_lectures_files/figure-pdf/unnamed-chunk-7-1.pdf}}
 
 \subsection{Normal Probability Plot}\label{normal-probability-plot}
 
@@ -892,7 +911,7 @@ Example}\label{normal-probability-plot-example}
 \subsection{Normal Probability Plot:
 Example}\label{normal-probability-plot-example-1}
 
-\includegraphics{part1_lectures_files/figure-pdf/unnamed-chunk-8-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{part1_lectures_files/figure-pdf/unnamed-chunk-8-1.pdf}}
 
 \subsection{Normal Probability Plot
 (continued)}\label{normal-probability-plot-continued}
@@ -918,17 +937,45 @@ Example}\label{normal-probability-plot-example-1}
 
 \begin{figure}
 
-\begin{minipage}{0.50\linewidth}
-\includegraphics{part1_lectures_files/figure-pdf/unnamed-chunk-9-1.pdf}\end{minipage}%
+\begin{minipage}[t]{0.50\linewidth}
+
+\raisebox{-\height}{
+
+\pandocbounded{\includegraphics[keepaspectratio]{part1_lectures_files/figure-pdf/unnamed-chunk-9-1.pdf}}
+
+}
+
+\end{minipage}%
 %
-\begin{minipage}{0.50\linewidth}
-\includegraphics{part1_lectures_files/figure-pdf/unnamed-chunk-9-2.pdf}\end{minipage}%
+\begin{minipage}[t]{0.50\linewidth}
+
+\raisebox{-\height}{
+
+\pandocbounded{\includegraphics[keepaspectratio]{part1_lectures_files/figure-pdf/unnamed-chunk-9-2.pdf}}
+
+}
+
+\end{minipage}%
 \newline
-\begin{minipage}{0.50\linewidth}
-\includegraphics{part1_lectures_files/figure-pdf/unnamed-chunk-9-3.pdf}\end{minipage}%
+\begin{minipage}[t]{0.50\linewidth}
+
+\raisebox{-\height}{
+
+\pandocbounded{\includegraphics[keepaspectratio]{part1_lectures_files/figure-pdf/unnamed-chunk-9-3.pdf}}
+
+}
+
+\end{minipage}%
 %
-\begin{minipage}{0.50\linewidth}
-\includegraphics{part1_lectures_files/figure-pdf/unnamed-chunk-9-4.pdf}\end{minipage}%
+\begin{minipage}[t]{0.50\linewidth}
+
+\raisebox{-\height}{
+
+\pandocbounded{\includegraphics[keepaspectratio]{part1_lectures_files/figure-pdf/unnamed-chunk-9-4.pdf}}
+
+}
+
+\end{minipage}%
 
 \end{figure}%
 
@@ -1012,6 +1059,7 @@ Example}\label{sample-statistics-vs.-parameters-example}
 Calculate the sample mean, variance, and standard deviation for data: 2,
 3, 3, 4, 3.
 
+{\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lrr@{}}
 \toprule\noalign{}
 \(i\) & \(x\) & \(x^2\) \\
@@ -1026,6 +1074,7 @@ Calculate the sample mean, variance, and standard deviation for data: 2,
 5 & 3 & 9 \\
 & \(\sum x=15\) & \(\sum x^2= 47\) \\
 \end{longtable}
+}
 
 \subsection{Sample Statistics
 vs.~Parameters}\label{sample-statistics-vs.-parameters-3}
@@ -1152,7 +1201,7 @@ used?}\label{which-measure-of-location-should-be-used}
 \subsection{Example - Which measure of location should be
 used?}\label{example---which-measure-of-location-should-be-used}
 
-\includegraphics{part1_lectures_files/figure-pdf/unnamed-chunk-13-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{part1_lectures_files/figure-pdf/unnamed-chunk-13-1.pdf}}
 
 \begin{Shaded}
 \begin{Highlighting}[]

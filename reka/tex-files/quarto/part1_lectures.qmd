@@ -1,36 +1,36 @@
 ---
-title: What is Statistics?
-subtitle: Summarizing Data
-author: Stat 801a
-format: 
-  revealjs:
-    smaller: true
-  
+author:
+- |
+  What is Statistics?\
+  Summarizing Data
+title: Part 1
 ---
 
-:::{.callout-warning}
-
-Use the version in the notes folder. This version is depreciated.
-
+::: frame
 :::
 
-## What is statistics?
+::: frame
+### What is statistics?
 
 - Statistics is the science of [*learning from data*]{style="color: magenta"}. It uses the theory of probability to make inferences about populations or processes using data
 
 - For example, we would like to know the mean of a characteristic of a set of elements of a population
 
 - But we can't observe or measure each one because there are too many elements or not all are available.
+:::
 
-## Examples
+::: frame
+### Examples
 
 - Mean blood pressure of 40 year old pregnant females.
 
 - Mean lifetime of 60-watt bulbs being made at the G.E. plant in Cleveland.
 
 - Mean potency of an antibiotic after storage for 20 months on store shelves.
+:::
 
-## Statistics is Useful in
+::: frame
+### Statistics is Useful in
 
 - Data collection
 
@@ -40,11 +40,13 @@ Use the version in the notes folder. This version is depreciated.
 
 - Drawing conclusion from data
 
-  - [Descriptive]{style="color: magenta"} methods - summarization and presentation of data
+  - Descriptive methods - summarization and presentation of data
 
-  - [Statistical]{style="color: magenta"} inference - make statements about an entire population based on a sample
+  - Statistical inference - make statements about an entire population based on a sample
+:::
 
-## Population versus Sample
+::: frame
+### Population versus Sample
 
 Since we can't obtain the average exactly, we do the next best thing
 
@@ -53,16 +55,20 @@ Since we can't obtain the average exactly, we do the next best thing
 - we do a statistical study to estimate the population mean
 
 - usually, there are many objectives of a [*statistical study*]{style="color: magenta"}, than just estimating the mean of the population.
+:::
 
-## Steps in a Statistical Study
+::: frame
+### Steps in a Statistical Study
 
 - [Collecting data]{style="color: magenta"} - by making observations or taking measurements on some sample or process of interest, possibly as a part of a statistically designed experiment or a survey.
 
 - [Summarizing the data]{style="color: magenta"} - using statistical summary methods (calculating means or constructing a histogram, for example).
 
 - [Analyzing the data and making inferences]{style="color: magenta"} - using models and statistical methods for drawing conclusions about the situation being considered.
+:::
 
-## Terminology and definitions
+::: frame
+### Terminology and definitions
 
 - [Population]{style="color: magenta"} - The set of all objects (or measurements) of interest; they are called elements of the population.
 
@@ -71,8 +77,10 @@ Since we can't obtain the average exactly, we do the next best thing
 - A statistical study is made using a sample obtained from a population.
 
 - Sample represents the population.
+:::
 
-## How to Select a Sample?
+::: frame
+### How to Select a Sample?
 
 Theoretically we can get a random sample of $n$ elements by
 
@@ -81,8 +89,10 @@ Theoretically we can get a random sample of $n$ elements by
 - on each draw, each remaining element in the population is [equally likely]{style="color: magenta"} to be the one drawn.
 
 Practically we can seldom satisfy the theoretical requirements, so we do the best we can to introduce randomness into our sample selection process.
+:::
 
-## How to Select a Sample? (continued)
+::: frame
+### How to Select a Sample? (continued)
 
 - Can the result of a statistical study of population mean (average) be far away from the true mean? - sure, sometimes. A statistical study provides evidence. It doesn't prove anything\
 
@@ -91,8 +101,10 @@ Practically we can seldom satisfy the theoretical requirements, so we do the bes
 - Methods that ensure this property are called [simple random sampling]{style="color: magenta"}
 
 - We shall use a method for selecting a simple random sample from a population in a one of our labs using random digit tables
+:::
 
-## Some Important Definitions
+::: frame
+### Some Important Definitions
 
 - [Data value:]{style="color: magenta"} measurement
 
@@ -101,8 +113,10 @@ Practically we can seldom satisfy the theoretical requirements, so we do the bes
 - [Variable:]{style="color: magenta"} Set of data values for the same type of measurement
 
 - [Data set:]{style="color: magenta"} The entire collection of data values
+:::
 
-## Example: Measurements on Mice
+::: frame
+### Example: Measurements on Mice
 
    Animal id   Cage   Weight   Length
   ----------- ------ -------- --------
@@ -112,8 +126,10 @@ Practically we can seldom satisfy the theoretical requirements, so we do the bes
        4        2      23.7     4.9
        5        2      30.9     5.7
        6        2      22.6     5.2
+:::
 
-## Data Description
+::: frame
+### Data Description
 
 - [Two broad applications of Statistics]{style="color: magenta"}\
 
@@ -126,8 +142,10 @@ Practically we can seldom satisfy the theoretical requirements, so we do the bes
 - In this case, methods for organizing, summarizing, and describing data are needed.
 
 - Good descriptive statistics enable us to make sense of the data by reducing large amounts of data to a few summary measures and graphical displays.
+:::
 
-## Data Description - cont.
+::: frame
+### Data Description - cont.
 
 - When only a random sample is available from a large population (or a process), inferential statistics becomes the major focus.
 
@@ -138,8 +156,10 @@ Practically we can seldom satisfy the theoretical requirements, so we do the bes
   - graphical methods
 
   - numerical summaries
+:::
 
-## Graphical Methods
+::: frame
+### Graphical Methods
 
 - Bar Chart
 
@@ -152,8 +172,10 @@ Practically we can seldom satisfy the theoretical requirements, so we do the bes
 - Boxplot
 
 - Normal Probability Plot
+:::
 
-## Numerical Summaries
+::: frame
+### Numerical Summaries
 
 - Measures of Center or Location
 
@@ -176,8 +198,10 @@ Practically we can seldom satisfy the theoretical requirements, so we do the bes
   - Standard Deviation
 
   - Coefficient of Variation
+:::
 
-## Histograms
+::: frame
+### Histograms
 
 - To plot a histogram, a [*frequency table*]{style="color: magenta"} must first be constructed
 
@@ -188,12 +212,16 @@ Practically we can seldom satisfy the theoretical requirements, so we do the bes
 - The larger the number of observations the more the number of class intervals we may use
 
 - Divide the range of data values by the number of class intervals to determine an approximate [*class width*]{style="color: magenta"}
+:::
 
-## Weight gains of chicks fed an antibiotic - Data
+::: frame
+### Weight gains of chicks fed an antibiotic - Data
 
 An animal scientist is carrying out an experiment to investigate whether adding an antibiotic to the diet of chicks will promote growth over the standard diet without the antibiotic. The scientist determines that 100 chicks will provide sufficient information to validate the results of the experiment. From previous research studies, the average weight gain of chicks fed the standard diet over an 8-week period is 3.9 grams. The scientist wants to compare the weight gain of the chicks in the study to the standard value of 3.9 grams. The weight gains for the 100 chicks are recorded the the table shown on the next slide.
+:::
 
-## Example: Weight gains of chicks fed an antibiotic 
+::: frame
+### Example:Weight gains of chicks fed an antibiotic 
 
   ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     3.7   4.2   4.4   4.4   4.3   4.2   4.4   4.8   4.9   4.4
@@ -207,8 +235,10 @@ An animal scientist is carrying out an experiment to investigate whether adding 
     4.7   4.1   4.8   4.1   4.3   4.7   4.2   4.1   4.4   4.8
     4.1   4.9   4.3   4.4   4.4   4.3   4.6   4.5   4.6   4.0
   ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+:::
 
-## Creating a Histogram
+::: frame
+### Creating a Histogram
 
 - It was decided to have 10 class intervals
 
@@ -221,72 +251,177 @@ An animal scientist is carrying out an experiment to investigate whether adding 
 - Since the smallest observation is 3.6 we start with the interval $3.55-3.65$
 
 - Once the class intervals have been determined observations in the data set falling into each of these classes are tallied
+:::
 
+::: frame
+### Frequency table for the chick data
+:::
 
-## Reading in the chick data
+:::: frame
+### Creating a Histogram
 
-```{r}
-#| echo: true
-chick.tbl <- read.table(text = "
-               3.7   4.2   4.4   4.4   4.3   4.2   4.4   4.8   4.9   4.4
-    4.2   3.8   4.2   4.4   4.6   3.9   4.1   4.5   4.8   3.9
-    4.7   4.2   4.2   4.8   4.5   3.6   4.1   4.3   3.9   4.2
-    4.0   4.2   4.0   4.5   4.4   4.1   4.0   4.0   3.8   4.6
-    4.9   3.8   4.3   4.3   3.9   3.8   4.7   3.9   4.0   4.2
-    4.3   4.7   4.1   4.0   4.6   4.4   4.6   4.4   4.9   4.4
-    4.0   3.9   4.5   4.3   3.8   4.1   4.3   4.2   4.5   4.4
-    4.2   4.7   3.8   4.5   4.0   4.2   4.1   4.0   4.7   4.1
-    4.7   4.1   4.8   4.1   4.3   4.7   4.2   4.1   4.4   4.8
-    4.1   4.9   4.3   4.4   4.4   4.3   4.6   4.5   4.6   4.0")
-chick <- unlist(chick.tbl, use.names = F)
-head(chick, n = 10)
-```
+::: center
+![image](chick_hist.pdf)
+:::
+::::
 
+::: frame
+### Creating a Histogram
 
-## Frequency table for the chick data
+Chick R code
+:::
 
-**Frequency Table**
+::: frame
+### Stem-and-Leaf Plots
 
-```{r}
-cuts <- cut(chick, breaks = seq(3.55, 4.95, by = 0.1))
-freq <- table(cuts)
-freq
-```
+- These are useful as an alternative to histograms or frequency tables.
 
-**Relative Frequency Table**
+- The idea is to substitute digits for frequency counts used in constructing histograms and thereby convey more information.
 
-```{r}
-rel_freq <- table(cuts)/length(chick)
-```
-## Creating a Histogram (base R)
+- Its profile is much like that of a histogram but it shows the numerical values of all observations.
 
-```{r}
-hist(chick, breaks = seq(3.55, 4.95, by = 0.1))
-```
+- To construct a stem-and-leaf diagram, group each data value into two parts:
 
+  - a set of [leading digits]{style="color: magenta"}, and
 
+  - a set of [trailing digits]{style="color: magenta"}.
+:::
 
-## Creating a Histogram (ggplot2)
+::: frame
+### Stem-and-Leaf Plots (continued)
 
-```{r}
-#| fig-align: center
-# install.packages(tidyverse)
-library(ggplot2)
-ggplot(mapping = aes(x = chick)) + 
-  geom_histogram(binwidth = 0.1, color = 'black', fill = '#1a80bb')
-```
+- First write down, to the left of a vertical line, all possible values of the leading digits, in increasing order.
 
+- Then we represent each data value by writing its trailing digits in the appropriate row to the right of the line.
 
+- The column of digits on the left of the vertical line represents the [stem]{style="color: magenta"} and the digits on the right the [leaves]{style="color: magenta"} of the stem-and-leaf plot.
 
-## Quantiles and Percentiles
+- Thus each data value can be reconstructed by combining its stem part and its leaf part.
+
+- The leaves in each stem are usually written successively (and usually contiguously) in the increasing order of magnitude.
+:::
+
+:::: frame
+### Stem-and-Leaf Plots (continued)
+
+In those cases where the data values may not be adequately represented by just taking the last digits as leaves the data values must be appropriately rounded before a stem-and-leaf diagram can be constructed.\
+**Example**\
+Below are the measured manganese content (in points or .01%'s) for 20 heats of 1045 steel)
+
+::: center
+  ---- ---- ---- ---- ---- ---- ---- ----
+    74   79   77   81   68   79   81   76
+    81   80   80   78   88   83   79   91
+    79   75   74   73                
+  ---- ---- ---- ---- ---- ---- ---- ----
+:::
+::::
+
+:::: frame
+### Stem-and-Leaf Plots: Example
+
+A stem and leaf diagram for these data is:\
+
+::: center
+  --- ----------
+      
+    6 8
+    7 344
+    7 56789999
+    8 001113
+    8 8
+    9 1
+  --- ----------
+:::
+::::
+
+::: frame
+### Stem-and-Leaf Plots (continued)
+
+- Some sets of observations have a very narrow range that the stem and leaf has only 2 or 3 stems.
+
+- Such a plot is not useful for studying the distribution of the data.
+
+- One solution is to attempt to increase the number of stems, by dividing the data into subgroups within each original stems i.e., to use each stem value twice or more.
+:::
+
+::: frame
+### Stem-and-Leaf Plots: Example
+
+- As an example, consider the following data of height in inches of students in a statistics class.
+
+- The simplest stem-and-leaf plot is:
+
+  ::: center
+    --- ----------------------------
+    5   47
+    6   02333444555556666677777889
+    7   00112223
+    --- ----------------------------
+  :::
+
+- Obviously, this does not represent a satisfactory visual display of the distribution of the data.
+:::
+
+::: frame
+### Stem-and-Leaf Plots: Example
+
+- Suppose each stem is divided into two parts: one to represent the leaves from 0 through 4 and the other for the leaves from 5 through 9.
+
+- The following stem-and-leaf plot is the result:
+
+  ::: center
+    ---- --------------------
+      5a 4
+      5b 7
+      6a 02333444
+      6b 555556666677777889
+      7a 00112223
+    ---- --------------------
+  :::
+:::
+
+::: frame
+### Stem-and-Leaf Plots: Example
+
+- This may even be further improved by repeating each stem
+
+  ::: center
+    -------- ------------
+       5(01) 
+      \(23\) 
+      \(45\) 4
+      \(67\) 7
+      \(89\) 
+       6(01) 0
+      \(23\) 2333
+      \(45\) 44455555
+      \(67\) 6666677777
+      \(89\) 889
+       7(01) 0011
+       7(23) 2223
+    -------- ------------
+  :::
+:::
+
+::: frame
+### Creating a Stem-and-Leaf Plot
+
+Stem and leaf R code
+:::
+
+::: frame
+### Quantiles and Percentiles
 
 - The $80^{\rm th}$ [percentile]{style="color: magenta"} is a data value such that approximately 80% of the data values in the data set are less, and approximately 20% are larger, than that value.
 
 - For a theoretical distribution (e.g. normal distribution) the .8 [quantile]{style="color: magenta"} is a value such that 80% of the probability mass of the distribution lies to the left and 20% lies to the right of the value of the quantile.
 
 - For an empirical distribution (i.e., the distribution of a data set) we need another definition. Suppose we have 10 values in a dataset: $52, 63, 67, 71, 75, 76, 76, 82, 87, 94$
+:::
 
-## Quantiles and Percentiles
+::: frame
+### Quantiles and Percentiles
 
 - What is the 80th percentile? i.e., what value is such that approximately 80% are less and 20% are greater?
 
@@ -297,26 +432,28 @@ ggplot(mapping = aes(x = chick)) +
 - A number half way between 82 and 87, i.e., 84.5, might be reasonably chosen as the $80^{\rm th}$ percentile.
 
 - It satisfies the definition approximately.
+:::
 
-## Quantiles and Percentiles
+::: frame
+### Quantiles and Percentiles
 
 - A definition that will give unambiguous percentiles for any set of data is needed.
 
 - Let $p\ (0 < p < 100)$ denote the desired percentile, $n$ the number of data values, and let $y_{(1)}, y_{(2)}, \ldots y_{(n)}$ denote the ordered observations so that $$y_{(1)} \le y_{(2)} \le \ldots  \le y_{(n)}$$
+:::
 
-
-
-## Definition: Percentiles and Quantiles
+::: frame
+### Definition: Percentiles and Quantiles
 
 - If $p$ is one of the numbers $100(i-.5)/n$ then $y_{(i)}$ is the $p^{\rm th}$ [percentile]{style="color: magenta"}, for i = 1, 2, 3, \..., n-1 or n.
 
 - If $p$ is between $100(0.5/n)$ and $100(n-.5)/n$, and $p$ is not one of the numbers $100(i-.5)/n$ then the percentile is obtained by linear interpolation between the two percentiles that bracket $p$.
 
 - `Quantiles` are a generalization of percentiles. The $p^{\rm th}$ quantile of a dataset is the $100p^{\rm th}$ percentile.
+:::
 
-
-
-## Quantiles and Percentiles
+::: frame
+### Quantiles and Percentiles
 
 Thus the $p^{\rm th}$ [quantile]{style="color: magenta"} of the dataset $y_{(1)}, y_{(2)}, \ldots y_{(n)}$ is obtained as follows:
 
@@ -325,14 +462,15 @@ Thus the $p^{\rm th}$ [quantile]{style="color: magenta"} of the dataset $y_{(1)}
 2.  If $p$ is between $(0.5/n)$ and $(n-.5)/n$, and $p$ is not one of the numbers $(i-.5)/n$ then the quantile is obtained by linear interpolation between the two quantiles that bracket p.
 
 3.  The $p_i^{\rm th}$ quantile of a dataset is denoted by $Q(p_i)$
+:::
 
-
-## Quantiles and Percentiles: Example
+:::: frame
+### Quantiles and Percentiles: Example
 
 Suppose we have a dataset consisting of the 10 observations: $9.614,  9.614,  10.688,  7.583,  8.572,  8.527,  8.577,  9.471,
 9.165,  9.011$ The following table shows the ordered data values as the specified [quantiles]{style="color: magenta"}:
 
-
+::: center
    $i$   $p_i=(i-.5)/10$   $Q(p_i)$
   ----- ----------------- ----------
     1         0.05          7.583
@@ -345,21 +483,21 @@ Suppose we have a dataset consisting of the 10 observations: $9.614,  9.614,  10
     8         0.75          9.614
     9         0.85          9.614
    10         0.95          10.688
+:::
+::::
 
-
-
-
-## Quantiles by Linear Interpolation
+::: frame
+### Quantiles by Linear Interpolation
 
 - $Q(p)$ for values of $p = (i-.5)/n$ correspond to the ordered observations for $i = 1, 2, \ldots, n$. For example $Q(.55)=9.165$.
 
 - How is, say, $Q(.525)$ determined? This is obtained by linear interpolation between the two quantiles that bracket $.525$ i.e, $Q(.45)$ and $Q(.55)$.
 
 - For a $p$ such that $p_i < p < p_{i+1},\ Q(p)$ is computed as the weighted average $Q(p) = (1-f)Q(p_i) + fQ(p_{i+1})$ where $f =(p-p_i)/(p_{i+1}-p_i) = n(p-p_i)$
+:::
 
-
-
-## Quantiles by Linear Interpolation: Example
+::: frame
+### Quantiles by Linear Interpolation: Example
 
 - Suppose $n = 10$ and one needs to compute $Q(.525)$.
 
@@ -369,10 +507,10 @@ Suppose we have a dataset consisting of the 10 observations: $9.614,  9.614,  10
   .75Q(.55)$.
 
 - In the above example, therefore $$Q(.525)= .25(9.011)+.75(9.165)=9.1265$$
+:::
 
-
-
-## Box Plots (Tukey, 1977)
+::: frame
+### Box Plots (Tukey, 1977)
 
 The boxplot is a summary display of a set of data, that is useful for studying the shape of the distribution including its symmetry or asymmetry around the central location, based on the quantiles $Q_1,\ M$, and $Q_3$ as defined below:
 
@@ -384,10 +522,10 @@ The boxplot is a summary display of a set of data, that is useful for studying t
 
 - Interquartile Range (IQR) =\
   Upper Quartile - Lower Quartile =$Q_3- Q_1$
+:::
 
-
-
-## Box Plots (continued)
+::: frame
+### Box Plots (continued)
 
 The following quantities also need to be computed for constructing a box plot:
 
@@ -400,30 +538,20 @@ The following quantities also need to be computed for constructing a box plot:
 - Lower Adjacent Value: the smallest observation above the lower fence
 
 - Outside Values: Observations that fall outside adjacent values.
+:::
 
+::: frame
+### Box Plots: Example
+:::
 
+::: frame
+### Creating a Stem-and-Leaf Plot
 
-## Box Plots: Example
+boxplot R code
+:::
 
-
-
-## Creating a Box Plot (base R)
-
-
-```{r}
-boxplot(chick)
-```
-
-
-## Creating a Box Plot (ggplot2)
-
-```{r}
-
-```
-
-
-
-## Side-by-side box plots
+::: frame
+### Side-by-side box plots
 
 - Useful comparing distributions of variables across subsamples defined by values of a categorical variable.
 
@@ -436,15 +564,18 @@ boxplot(chick)
   - The patients were randomly assigned to receive the anti-epileptic drug [Progabide]{style="color: magenta"} or a [placebo]{style="color: magenta"}.
 
   - The side-by-side boxplots of [baseline seizure rates]{style="color: magenta"} for each of the two groups are shown below
+:::
 
+:::: frame
+### Side-by-side box plots of epilepsy data
 
+::: center
+![image](epilepsy_boxplot.pdf)
+:::
+::::
 
-## Side-by-side box plots of epilepsy data
-
-
-
-
-## Normal Probability Plot
+::: frame
+### Normal Probability Plot
 
 - Consider a sample $y_1, y_2, \ldots, y_n$ of size $n$.
 
@@ -456,35 +587,41 @@ boxplot(chick)
 - Thus the ordered data values will be the $p_i^{\rm th}$ quantile $Q(p_i)$ for $i=1,2,\ldots,n.$
 
 - Example: Quantiles for a data set with $n = 18$
+:::
 
-
-
-## Summation Notation
+::: frame
+### Summation Notation
 
 http://www.columbia.edu/itc/sipa/math/summation.html
+:::
 
+:::: frame
+### Quantiles
 
+::: center
+:::
+::::
 
-## Quantiles
-
-
-
-## Normal Probability Plot:Example
+::: frame
+### Normal Probability Plot:Example
 
 - The quantile of the standard normal distribution, $z_p$, corresponding to each $p$ value, is then computed using the table of Normal percentiles (i.e. the $z$-table).
 
 - The Normal Probability plot is the plot of the quantiles $Q(p)$ of the data vs. $z_p$, the corresponding standard normal quantiles.
 
 - Thus this plot is also called the quantile-quantile plot or the Q-Q plot, in general.
+:::
 
+:::: frame
+### Normal Probability Plot: Example
 
+::: center
+![image](normplot.pdf)
+:::
+::::
 
-## Normal Probability Plot: Example
-
-
-
-
-## Normal Probability Plot (continued)
+::: frame
+### Normal Probability Plot (continued)
 
 - If the data is a random sample from a normal population the plotted points will lie approximately in a [straight-line]{style="color: magenta"}.
 
@@ -493,15 +630,18 @@ http://www.columbia.edu/itc/sipa/math/summation.html
 - Specific types of departures can be used to identify how the population distribution differs from a Normal distribution.
 
 - The following pages contains normal robability plots of computer generated data from populations that resemble distributions that are as described.
+:::
 
+:::: frame
+### Normal Probability Plot (continued)
 
+::: center
+![image](normplot2.pdf)
+:::
+::::
 
-## Normal Probability Plot (continued)
-
-
-
-
-## Normal Probability Plot (continued)
+::: frame
+### Normal Probability Plot (continued)
 
 - The top set of plots are from normal populations with different mean and variance parameters
 
@@ -510,10 +650,10 @@ http://www.columbia.edu/itc/sipa/math/summation.html
 - Notice that the bottom two plots show specific patterns (the left graph shows a bowl-shape while the other shows an inverted S-shaped pattern).
 
 - These are markedly different from the deviation from a straight line shown in the top graphs which are only due to random variation.
+:::
 
-
-
-## Sample Statistics vs. Parameters
+::: frame
+### Sample Statistics vs. Parameters
 
 - A [parameter]{style="color: magenta"} is a descriptive statistic of a population.
 
@@ -526,10 +666,10 @@ http://www.columbia.edu/itc/sipa/math/summation.html
   - Population variance, $\sigma^2=\frac{\textstyle\sum (x-\mu)^2}{N}$
 
   - Population standard deviation, $\sigma=\sqrt{\sigma^2}$
+:::
 
-
-
-## Sample Statistics vs. Parameters
+::: frame
+### Sample Statistics vs. Parameters
 
 - Since censuses cannot be taken for every population we wish to study, parameters cannot be exactly calculated and thus are usually unknown.
 
@@ -540,18 +680,18 @@ http://www.columbia.edu/itc/sipa/math/summation.html
   - sample variance, $s^2=\frac{\textstyle \sum (x-\bar{x})^2}{n-1}$
 
   - sample standard deviation, $s=\sqrt{s^2}$
+:::
 
-
-
-## Sample Statistics vs. Parameters
+::: frame
+### Sample Statistics vs. Parameters
 
 - $\mu$, $\sigma^2$, and $\sigma$ are [parameters]{style="color: magenta"}.
 
 - $\bar{x}$, $s^2$, and $s$ are [sample statistics]{style="color: magenta"}.
+:::
 
-
-
-## Sample Statistics vs. Parameters: Example
+:::: frame
+### Sample Statistics vs. Parameters: Example
 
 Calculate the sample mean, variance, and standard deviation for data: 2, 3, 3, 4, 3.
 
@@ -564,51 +704,52 @@ Calculate the sample mean, variance, and standard deviation for data: 2, 3, 3, 4
   4                 4               16
   5                 3                9
           $\sum x=15$   $\sum x^2= 47$
-
 :::
+::::
 
-
-## Sample Statistics vs. Parameters
+::: frame
+### Sample Statistics vs. Parameters
 
 Compute sample variance $s^2$ and sample standard deviation $s$. $$\begin{eqnarray*}
 s^2 & = &\frac{\textstyle\sum x^2 - \frac{(\textstyle\sum
 x)^2}{n}}{n-1}=\frac{47-\frac{(15)^2}{5}}{5-1}=2/4=0.5\\[.1in]
  s & = & \sqrt{(s^2)}=\sqrt{0.5}=0.71
 \end{eqnarray*}$$
+:::
 
-
-
-## Problems with the Variance and Standard Deviation
+::: frame
+### Problems with the Variance and Standard Deviation
 
 - The units of the variance are squared
 
 - The standard deviation has the same units as the data
 
 - Both $s$ and $s^2$ are absolute measures of variation, and many times the $s$ and $s^2$ cannot be compared for two different variables
+:::
 
-
-
-## Problems with the Variance and Standard Deviation - Example
+:::: frame
+### Problems with the Variance and Standard Deviation - Example
 
 - We would like to compare the standard deviation of auto speeds on I-80 with the German Autobahn, but speeds on I-80 are in MPH while speeds on the Autobahn are in km per hour.
 
- center
+::: center
                I-80   Autobahn
   ----------- ------ ----------
   $s^2$        144      625
   $\bar{x}$     63      120
+:::
+::::
 
-
-
-## Coefficient of Variation
+::: frame
+### Coefficient of Variation
 
 - It is a relative measure of variability.
 
 - [Coefficient of Variation:]{style="color: magenta"} $\frac{s}{\bar{x}}\times 100$
+:::
 
-
-
-## Coefficient of Variation - Example
+:::: frame
+### Coefficient of Variation - Example
 
 ::: center
                                     I-80    Autobahn
@@ -616,21 +757,21 @@ x)^2}{n}}{n-1}=\frac{47-\frac{(15)^2}{5}}{5-1}=2/4=0.5\\[.1in]
   $s^2$                             144       625
   $\bar{x}$                          63       120
   $\frac{s}{\bar{x}}\times 100$    $19\%$    $20\%$
-
 :::
+::::
 
-
-## Numerical Summary Measures
+::: frame
+### Numerical Summary Measures
 
 - The sample mean and the sample median are examples of [numerical descriptive measures]{style="color: magenta"} of the [central tendency]{style="color: magenta"} of a sample and describes the center or location around which the data are distributed.
 
 - The sample variance and standard deviation are examples of [numerical descriptive measures]{style="color: magenta"} of the [variability]{style="color: magenta"} or the [spread]{style="color: magenta"} of the sample around the center.
 
 - These numerical descriptive measures are used both to describe a population, if the entire population of measurements is available, (e.g., census) or, to draw inferences about a population from the statistics calculated on a random sample drawn from the population.
+:::
 
-
-
-## Other Numerical Summary Measures - Median
+::: frame
+### Other Numerical Summary Measures - Median
 
 [Median:]{style="color: magenta"} Value at which $50\%$ of the observations are above and $50\%$ below.\
 Computation of the sample median from a sample of size n:
@@ -642,10 +783,10 @@ Computation of the sample median from a sample of size n:
 What is the median of $2,4,6,8,10$?\
 What is the median of $2,4,6,10$?\
 Location or spread?
+:::
 
-
-
-## Other Numerical Summary Measures - Mode
+::: frame
+### Other Numerical Summary Measures - Mode
 
 [Mode:]{style="color: magenta"} Value which appears the most frequently.\
 What is the mode?
@@ -655,24 +796,24 @@ What is the mode?
 - We count beetles on 12 plants, and 4 of them do not have any, 4 of them have 2 and 4 of them have 5.
 
 Location or spread?
+:::
 
-
-
-## Which measure of location should be used?
+::: frame
+### Which measure of location should be used?
 
 - When the data are symmetric?
 
 - When data are skewed? Which means that there are some very large or very small values?
+:::
 
-
-
-## Example - Which measure of location should be used?
+::: frame
+### Example - Which measure of location should be used?
 
 Skewed distribution R code
+:::
 
-
-
-## Estimate of the Standard Error of the Sample Mean
+::: frame
+### Estimate of the Standard Error of the Sample Mean
 
 $\frac{s}{\sqrt{n}}$
-
+:::

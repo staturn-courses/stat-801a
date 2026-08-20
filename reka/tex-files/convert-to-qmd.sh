@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
-for file in latex/*
-do
-    filename=$(basename "$file" .tex)
-    pandoc "$file" -t markdown -o "quarto/$filename.qmd"
+for file in latex/*.tex; do
+    base=$(basename "$file" .tex)
+    pandoc \
+        "$file" \
+        -f latex \
+        -t markdown \
+        -s \
+        --wrap=none \
+        -o "quarto/${base}.qmd"
 done
-
-echo "Conversion complete!"
