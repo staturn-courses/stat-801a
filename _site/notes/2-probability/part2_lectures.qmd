@@ -5,8 +5,6 @@ author: Stat 801a
 format: 
   revealjs:
     smaller: true
-  pdf: 
-    documentclass: book
 ---
 
 

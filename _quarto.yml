@@ -4,44 +4,26 @@ project:
     - notes/
   render:
     - '!reka/'
-    - '!erin'
+    - '!erin/'
     - '*.qmd'
-  
+
 website:
   title: "STAT 801A"
   navbar:
     left:
       - href: index.qmd
-        text: Home
-
-  announcement: 
-    content: "This course is under active development" 
-    type: warning
-
-  sidebar:
-    contents:
-      - section: "Course Overview"
-        contents:
-          - index.qmd
-      - section: "Notes"
-        contents:
-          - text: Handout 1
-            href: notes/1-descriptive-statistics/part1_lectures.pdf
-
-      - section: "Slide Notes"
-        contents:
-          - notes/index.qmd
-          - notes/section-1-introduction.qmd
-      - section: "Labs"
-      - section: "Assignments"
-        contents:
-          - project1.qmd
+        text: Course Home
+      - href: canvas.qmd
+        text: Canvas
+      - href: assignments.qmd
+        text: Assignments
+      - href: notes.qmd
+        text: Notes
         
-
 format: 
   html:
-    theme: cosmo
-    toc: false
-
+    theme: flatly
+    toc: true
+    
 execute:
-  eval: false
+  freeze: true

@@ -1,0 +1,16 @@
+---
+format: docx
+---
+
+## Final exam -- pre-experiment worksheet
+
+Prior to meeting with your instructor, answer all of the following fields.
+
+1. List all member of your group.
+2. In 2-4 sentences, describe your experiment.
+3. What is the experimental unit?
+4. What is the explanatory variable (if applicable)?
+5. How will randomization occur?
+6. What is the response variable?
+7. Is your response variable categorical or numeric?
+8. What test do you plan to use to analyze the collected data?

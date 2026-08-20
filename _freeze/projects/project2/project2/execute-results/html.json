@@ -1,0 +1,17 @@
+{
+  "hash": "c9ddd4e77afd999af9351e7726f9c163",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Project 2\"\ndate: '2026-01-01 21:00:00'\nauthor: STAT 801A, Fall 2026\ndate-format: \"[Due on] MMMM D, YYYY [at] h:mm a\"\nformat: \n  pdf:\n    include-in-header:\n      text: '\\pagenumbering{gobble}'\n---\n\n## Overview\n\nIn this project, you\n\n## Scenario 1\n\nThe Traffic Engineering Division in Lincoln, NE is investigating the signal timing of a stoplight near one of the fire stations. If too many cars are lined up at a red light, the driveway to the fire station gets blocked by traffic, which increases the delay of emergency responders. This occurs when there are seven or more cars stopped at the intersection. \n\nYou and your peers designed a study to investigate this intersection. For 20 consecutive cycles, you record the number of cars that lined up at the light. \n\n\n::: {.cell}\n\n:::\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nprint(cars)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n [1] 7 7 6 9 4 7 2 9 5 6 9 7 5 6 3 3 8 1 9 3\n```\n\n\n:::\n:::\n\n\n1. What is the observational unit of this study?\n2. Is it reasonable to assume that all observations are independent? \n3. Write the null and alternative hypothesis in words.\n4. Write the null and alternative hypothesis in mathematical notation.\n\n\n- One of your peers suggests that you use the Binomial distribution by recoding all instances where there were seven or more cars as 1 and other values as zero. \n\n\n::: {.cell}\n\n```{.r .cell-code}\nbinom.test(8, 20)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n\n\tExact binomial test\n\ndata:  8 and 20\nnumber of successes = 8, number of trials = 20, p-value = 0.5034\nalternative hypothesis: true probability of success is not equal to 0.5\n95 percent confidence interval:\n 0.1911901 0.6394574\nsample estimates:\nprobability of success \n                   0.4 \n```\n\n\n:::\n:::\n\n\n\n## Scenario 2\n\n",
+    "supporting": [
+      "project2_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

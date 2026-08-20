@@ -1,0 +1,94 @@
+---
+title: "Final"
+format: html
+---
+
+Instead of a final exam, you (in groups of 3-4) are tasked with designing and conducting an experiment using one of the methods discussed in class. There is a written and presented component of the final, where each part is equally weighted. Details of the experiment and assessments are below.
+
+## Description of Experiment
+
+The purpose of the experiment is to demonstrate your knowledge of the topics taught in our course. The following criteria **must** be met:
+
+- Experiment does not involve living subjects.
+- Outcomes occur due to a random process (no observational data).
+- Hypothesis is reasonable with respect to the subject matter.
+- Experiment can be ethically conducted.
+- Large enough sample size to meet the assumptions of the test.
+
+Once you and your group have designed an experiment, schedule a time to meet with your instructor to finalize the details of your experiment. Prior to our meeting, fill out the Pre-experiment worksheet form. 
+
+Your experiment does not need to be complicated or have an associated cost. The goal of this project is to connect the theory we discussed with real applications. Some examples of potential experiments are below:
+
+- Does shoe brand A help one jump higher than shoe brand B? (Gaussian)
+- When tasked to randomly choose a dog or cat, does a LLM show preference toward selecting cats? (Binomial)
+- Do heavier bowling balls help you knock down more pins than lighter bowling balls? (Binomial)
+- When dropped from the top of a flight of stairs, how many times does a tennis ball bounce before coming to rest? (Poisson)
+
+## Written Component
+
+**Due date**: end of the scheduled final exam
+
+The written component of the exam includes writing up your experiment in the style of academic research. Your paper should be around 4-6 pages. 
+
+The following sections are required:
+
+- **Introduction**: describe what is currently known about your topic and your hypothesis/objective. If testing one group/process, what value is reasonable to test against? For two groups/processes, what difference provides practical significance? Include at least three sources. 
+- **Methods**: describe how you designed the experiment and the statistical test associated with the analysis. If appropriate, a diagram of your study would be helpful. If the data violates the assumption of the test (e.g., nonnormality), how to you proceed with the analysis (e.g., log transformation, use non-parametric test, etc.).
+- **Results**: discuss your findings using descriptive statistics and statistical tests. Include at least one visualization. Provide the results of the experiment, but not a discussion of them (save for the next section).
+- **Discussion/Conclusion**: connect your results to the real world implications, as well as limitations of your study. What could future research explore?
+- **References**: cite your sources
+
+It may be helpful to consult online articles for writing research articles, such as this one: <https://pmc.ncbi.nlm.nih.gov/articles/PMC3178846/>.
+
+In addition to your paper, you must format it using a journal template. If you are using Quarto to write your paper, some templates can be found here: <https://github.com/quarto-journals/>. 
+
+
+## Presentation
+
+**Date**: last week of classes (Tuesday, Thursday)
+
+Your presentation should mirror your written paper (introduction, methods, results, discussion). Each group will have 7-10 minutes to present, and up to 5 minutes for questions. While you may omit some details to stay within the time constraints, your presentation should be able to capture the essence of your experiment and its results. 
+
+
+
+## Rubric
+
+Each component listed below will be graded with following scale.
+
+| Full credit | 80% | Half Credit | 20% | No credit |
+| --- | --- | --- | --- | --- |
+| Fully sufficient | Some errors | Major errors  | Critical errors | No effort was made | 
+
+**Pre-experiment meeting** (20%)
+
+- Met with instructor by the deadline
+- Pre-experiment worksheet is filled out prior to the meeting
+
+**Written component** (40%)
+
+- Introduction: sufficient background knowledge is provided on the subject matter; hypothesis is clearly stated
+- Methods: experiment and analysis can be fully replicated 
+- Results: descriptive and inferential statistics clearly given and arranged neatly; at least one visualization of the data is provided
+- Discussion: results are clearly connected back to the intended hypothesis; limitations are discussed; future research areas are included based on your research
+- References: at least 3 references are used and cited correctly
+
+**Presentation** (40%)
+
+- Introduction: motivation is clearly given; hypothesis is stated
+- Methods: describe the setup of your experiment
+- Results: describe the results of your experiment; at least one visualization is included
+- Discussion: connect your results back to they hypothesis (what is the main takeaway?)
+- Attendance: attended and listed to your peers present their findings
+
+## Notes
+
+This final was designed to combine the theory and application of statistics. While there are many components that we have not discussed in class (such as academic writing), I am here to help! 
+
+
+
+
+
+
+
+
+

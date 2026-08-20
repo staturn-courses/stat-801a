@@ -1,0 +1,13 @@
+---
+title: "Assignments"
+format: 
+  html:
+    toc: false
+---
+
+Unless otherwise stated, all assignments are due by 9 p.m. on Canvas. 
+
+| Project | Due date | Data | Solutions | Notes |
+| :---: | :---: | :---: | :---: | :---: |
+| Project 1 |
+<!-- | [Project 1](_site/projects/project1/project1.pdf) | XXX | [travel-time-31109.csv](projects/project1/travel-time-31109.csv) | | Quarto template available on Canvas | -->

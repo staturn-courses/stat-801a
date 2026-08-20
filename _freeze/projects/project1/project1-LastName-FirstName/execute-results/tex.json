@@ -1,0 +1,15 @@
+{
+  "hash": "9312536f67654ce9dfc0517465dc4312",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Project 1\"\ndate: today\nauthor:\n  - name: \"Your Name\"\ndate-format: long\nformat: \n  pdf:\n    include-in-header:\n      text: '\\pagenumbering{gobble}'\n---\n\n## Problems\n\nComplete each problem using the attached Quarto template. Your code must be reproducible and include brief written answers where requested. Submit your completed Quarto file and the rendered PDF file to Canvas.\n\n## Problem 1\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Your solution here\n```\n:::\n\n\n## Problem 2\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Your solution here\n```\n:::\n\n\n## Problem 3\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Your solution here\n```\n:::\n\n\n## Problem 4\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Your solution here\n```\n:::\n\n\n## Problem 5\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Your solution here\n```\n:::\n\n\n## Problem 6\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Your solution here\n```\n:::\n\n\n## Problem 7\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Your solution here\n```\n:::\n\n\n## Problem 8\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Your solution here\n```\n:::\n\n\n## Problem 9\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Your solution here\n```\n:::\n\n\n## Problem 10\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Your solution here\n```\n:::\n\n\n## Problem 11\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Your solution here\n```\n:::\n\n\n## Problem 12\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Your solution here\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": null,
+    "postProcess": false
+  }
+}

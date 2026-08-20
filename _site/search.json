@@ -1,5 +1,530 @@
 [
   {
+    "objectID": "stat801a-syllabus-f26.html",
+    "href": "stat801a-syllabus-f26.html",
+    "title": "STAT 801A Syllabus (Fall 2026)",
+    "section": "",
+    "text": "Instructor\nName: Tyler Wiederich, Ph.D.\nOffice: Hardin Hall 343A\nOffice hours: W 1-3, and by appointment\nE-mail: twiederich2@unl.edu\n\nLab Instructor: Ryan\nOffice: XXX\nOffice hours XXX\nE-mail: XXX\n\nAll office hours are guaranteed for the first 30 minutes. If no students are present after 30 minutes, office hours are ended.\n\n\nCourse Description\nPrerequisites: Introductory course in statistics.\nStatistical concepts and statistical methodology useful in descriptive, experimental, and analytical study of biological and other natural phenomena. Practical application of statistics rather than on statistical theory.\n\n\nStatistical Software\nThe statistical computing software package R will be used extensively to perform calculations in this class. Additionally, we will make use of RStudio (GUI for R) and Quarto (document creation).\n\nDownload R: https://cran.r-project.org\nDownload RStudio: https://posit.co/downloads\nDownload Quarto: https://quarto.org/docs/download/\n\n\n\nAssessments\nThis course consists of projects/quizzes, a midterm, and a final.\nProjects/Quizzes: Projects and quizzes will be assigned periodically throughout the semester. You will have at least one week to complete the assessment.\nMidterm: There will be one midterm approximately halfway through the semester. Details will be provided in class.\nFinal: To be announced in class.\nThese assessments are weighted as follows:\n\n\n\n\nProjects/quizzes*\nMidterm\nFinal\n\n\n\n\n% of grade\n20%\n30%\n50%\n\n\n\n*All projects need to be turned electronically via PDF documents. A project completed in an unreadable or unprofessional manner will be returned for a zero grade. Quizzes will be assigned on Canvas. No late projects or quizzes are accepted.\nIf projects allow for group work, all group members are expected to participate equally and have a complete understanding of all components for it. I will lower a student’s project grade if he/she/they do not abide by this group work policy.\n\n\nGrades\nYour overall course grade percentage guarantees the following grade for the course.\n\n\n\nLetter Grade\n+\n\n-\n\n\n\n\n\nA\n\n93\n90\n\n\n\nB\n87\n83\n80\n\n\n\nC\n77\n73\n70\n\n\n\nD\n67\n63\n60\n\n\n\nF\n\n&lt;60\n\n\n\n\n\n\n\nContinuity of Instruction Policy\nIn the event that the university is closed during our regular class hours, please check the Canvas announcements for alternative class arrangements.\n\n\nAI Disclaimer\nThe recent popularity of large language models and other artificial intelligence tools introduces a unique challenge in the academic community. As an instructor, my goal is to promote critical thinking for the topics taught in this course. Unless otherwise stated, the use of AI tools is not permitted. If you are suspected of using AI, I reserve the right to give a zero grade.\n\n\nTentative Topics\n\nIntro to R\nData summaries\nProbability\nInference for one mean\nInference for two means\nInference for proportions\nInference for variances\nANOVA\nRegression\n\n\n\nImportant Dates\n\nNo lab on 8/24\nNo lab on 9/7 (Labor Day)\nNo class on 10/19 (Fall Break)\nNo class or lab on the week of 11/23\nFinal: Monday, Dec. 14 from 10:00 to noon\n\n\n\nUNL Course Policies and Resources\nStudents are responsible for knowing the university policies and resources found on this page: https://go.unl.edu/coursepolicies\n\nUniversity-wide Attendance Policy\nAcademic Honesty Policy\nServices for Students with Disabilities\nMental Health and Well-Being Resources\nFinal Exam Schedule\nFifteenth Week Policy\nEmergency Procedures\nDiversity & Inclusiveness\nTitle IX Policy\nOther Relevant University-Wide Policies"
+  },
+  {
+    "objectID": "projects/final/final.html",
+    "href": "projects/final/final.html",
+    "title": "Final",
+    "section": "",
+    "text": "Instead of a final exam, you (in groups of 3-4) are tasked with designing and conducting an experiment using one of the methods discussed in class. There is a written and presented component of the final, where each part is equally weighted. Details of the experiment and assessments are below."
+  },
+  {
+    "objectID": "projects/final/final.html#description-of-experiment",
+    "href": "projects/final/final.html#description-of-experiment",
+    "title": "Final",
+    "section": "Description of Experiment",
+    "text": "Description of Experiment\nThe purpose of the experiment is to demonstrate your knowledge of the topics taught in our course. The following criteria must be met:\n\nExperiment does not involve living subjects.\nOutcomes occur due to a random process (no observational data).\nHypothesis is reasonable with respect to the subject matter.\nExperiment can be ethically conducted.\nLarge enough sample size to meet the assumptions of the test.\n\nOnce you and your group have designed an experiment, schedule a time to meet with your instructor to finalize the details of your experiment. Prior to our meeting, fill out the Pre-experiment worksheet form.\nYour experiment does not need to be complicated or have an associated cost. The goal of this project is to connect the theory we discussed with real applications. Some examples of potential experiments are below:\n\nDoes shoe brand A help one jump higher than shoe brand B? (Gaussian)\nWhen tasked to randomly choose a dog or cat, does a LLM show preference toward selecting cats? (Binomial)\nDo heavier bowling balls help you knock down more pins than lighter bowling balls? (Binomial)\nWhen dropped from the top of a flight of stairs, how many times does a tennis ball bounce before coming to rest? (Poisson)"
+  },
+  {
+    "objectID": "projects/final/final.html#written-component",
+    "href": "projects/final/final.html#written-component",
+    "title": "Final",
+    "section": "Written Component",
+    "text": "Written Component\nDue date: end of the scheduled final exam\nThe written component of the exam includes writing up your experiment in the style of academic research. Your paper should be around 4-6 pages.\nThe following sections are required:\n\nIntroduction: describe what is currently known about your topic and your hypothesis/objective. If testing one group/process, what value is reasonable to test against? For two groups/processes, what difference provides practical significance? Include at least three sources.\nMethods: describe how you designed the experiment and the statistical test associated with the analysis. If appropriate, a diagram of your study would be helpful. If the data violates the assumption of the test (e.g., nonnormality), how to you proceed with the analysis (e.g., log transformation, use non-parametric test, etc.).\nResults: discuss your findings using descriptive statistics and statistical tests. Include at least one visualization. Provide the results of the experiment, but not a discussion of them (save for the next section).\nDiscussion/Conclusion: connect your results to the real world implications, as well as limitations of your study. What could future research explore?\nReferences: cite your sources\n\nIt may be helpful to consult online articles for writing research articles, such as this one: https://pmc.ncbi.nlm.nih.gov/articles/PMC3178846/.\nIn addition to your paper, you must format it using a journal template. If you are using Quarto to write your paper, some templates can be found here: https://github.com/quarto-journals/."
+  },
+  {
+    "objectID": "projects/final/final.html#presentation",
+    "href": "projects/final/final.html#presentation",
+    "title": "Final",
+    "section": "Presentation",
+    "text": "Presentation\nDate: last week of classes (Tuesday, Thursday)\nYour presentation should mirror your written paper (introduction, methods, results, discussion). Each group will have 7-10 minutes to present, and up to 5 minutes for questions. While you may omit some details to stay within the time constraints, your presentation should be able to capture the essence of your experiment and its results."
+  },
+  {
+    "objectID": "projects/final/final.html#rubric",
+    "href": "projects/final/final.html#rubric",
+    "title": "Final",
+    "section": "Rubric",
+    "text": "Rubric\nEach component listed below will be graded with following scale.\n\n\n\n\n\n\n\n\n\n\nFull credit\n80%\nHalf Credit\n20%\nNo credit\n\n\n\n\nFully sufficient\nSome errors\nMajor errors\nCritical errors\nNo effort was made\n\n\n\nPre-experiment meeting (20%)\n\nMet with instructor by the deadline\nPre-experiment worksheet is filled out prior to the meeting\n\nWritten component (40%)\n\nIntroduction: sufficient background knowledge is provided on the subject matter; hypothesis is clearly stated\nMethods: experiment and analysis can be fully replicated\nResults: descriptive and inferential statistics clearly given and arranged neatly; at least one visualization of the data is provided\nDiscussion: results are clearly connected back to the intended hypothesis; limitations are discussed; future research areas are included based on your research\nReferences: at least 3 references are used and cited correctly\n\nPresentation (40%)\n\nIntroduction: motivation is clearly given; hypothesis is stated\nMethods: describe the setup of your experiment\nResults: describe the results of your experiment; at least one visualization is included\nDiscussion: connect your results back to they hypothesis (what is the main takeaway?)\nAttendance: attended and listed to your peers present their findings"
+  },
+  {
+    "objectID": "projects/final/final.html#notes",
+    "href": "projects/final/final.html#notes",
+    "title": "Final",
+    "section": "Notes",
+    "text": "Notes\nThis final was designed to combine the theory and application of statistics. While there are many components that we have not discussed in class (such as academic writing), I am here to help!"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#population-versus-sample",
+    "href": "notes/2-probability/part2_lectures.html#population-versus-sample",
+    "title": "Probability",
+    "section": "Population versus Sample",
+    "text": "Population versus Sample\nPopulation – The set of all objects under consideration. Objects in a population are called elements.\nExamples\n\nBoxes of a particular brand of corn flakes.\nNewly made light bulbs in a warehouse at a given time."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#another-definition-of-population",
+    "href": "notes/2-probability/part2_lectures.html#another-definition-of-population",
+    "title": "Probability",
+    "section": "Another Definition of Population",
+    "text": "Another Definition of Population\n\nAll possible outcomes of an experiment can also be values in a population.\nFlipping a coin twice. Possible outcomes are:\nHH, HT, TH, TT. Could make the outcomes numeric using 3, 2, 1, 0 to be the elements corresponding to the above events.\nIf the experiment is repeated many times, the resulting values constitute a population: \\(2,\\ 0,\\ 3,\\ 1,\\ 0,\\ 2,\\ \\dots\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#random-sampling",
+    "href": "notes/2-probability/part2_lectures.html#random-sampling",
+    "title": "Probability",
+    "section": "Random Sampling",
+    "text": "Random Sampling\n\nSample – A subset of the elements from a population.\nSimple Random Sample of size \\(n\\) from a finite population is a subset selected in such a way that every subset of \\(n\\) elements is equally likely to be the one selected. (Abbreviation: SRS)\nA random sample from a small finite population can be obtained using the Random Numbers - using code or random number table.\n\nsample(1:100,3) or sample(3)\n\nComputer programs are used to draw samples from large populations."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#probability-random-variables-and-probability-distributions",
+    "href": "notes/2-probability/part2_lectures.html#probability-random-variables-and-probability-distributions",
+    "title": "Probability",
+    "section": "Probability, Random Variables, and Probability Distributions",
+    "text": "Probability, Random Variables, and Probability Distributions\n\nAssume a numeric finite population of \\(N\\) elements, and suppose \\(n_1\\) of the elements are the number \\(k\\).\nSuppose a SRS of size 1 is taken from this population.\nThe probability that the number \\(k\\) is selected is \\(n_1/N\\).\nThat is, we define this probability to be the relative frequency of occurrence of \\(k\\) in the population."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#probability-example",
+    "href": "notes/2-probability/part2_lectures.html#probability-example",
+    "title": "Probability",
+    "section": "Probability: Example",
+    "text": "Probability: Example\n\nExample:   \\(N = 10\\)\nPopulation: 1, 1, 1, 3, 7, 7, 9, 9, 9, 9\nDenote by \\(P(k)\\), the probabilty of the number k being selected\n\\(P(1) = 3/10\\),  \\(P(3) = 1/10\\),  \\(P(7) = 2/10\\),\n\\(P(9) = 4/10\\),  \\(P(2) = 0/10\\),  \\(P(1~\\mbox{or}~3) = 4/10\\),\n\\(P(\\mbox{not}~7) = 1-2/10\\)."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#random-variables",
+    "href": "notes/2-probability/part2_lectures.html#random-variables",
+    "title": "Probability",
+    "section": "Random Variables",
+    "text": "Random Variables\nA random variable is a function defined on a numeric population. We will often say that this function value is the value assumed by the random variable.\n\nExample: \\(N = 10\\)\nPopulation: 1, 1, 1, 3, 7, 7, 9, 9, 9, 9\nLet \\(X\\) be a random variable defined on this population.\n\\(X\\) can assume any of the values 1, 3, 7, or 9."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#random-variables-continued",
+    "href": "notes/2-probability/part2_lectures.html#random-variables-continued",
+    "title": "Probability",
+    "section": "Random Variables (continued)",
+    "text": "Random Variables (continued)\n\nA Random variables are different from ordinary variables because they assume values from the population with associated probabilities.\nFor e.g., we will say\n   \\(P(X=1)=3/10\\),   \\(P(X=7)=2/10\\),\n   \\(P(X=2)=0/10\\),   \\(P(X=-6)=0/10\\),\n   \\(P(1 \\leq X \\leq 3)=4/10\\),   \\(P(1 \\leq X \\leq 9)=1\\). etc.\nA probability distribution specifies the probabilities associated with all possible values the random variable \\(X\\) can assume."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#the-m-m-example",
+    "href": "notes/2-probability/part2_lectures.html#the-m-m-example",
+    "title": "Probability",
+    "section": "The M & M Example",
+    "text": "The M & M Example\nExample:\nIf X represents the number of RED \\(M\\&Ms\\) in a vending machine size package, then perhaps the probability distribution of \\(X\\) is something like the following:\n\n\n\n\n\\(x\\)\n5\n6\n7\n8\n9\n10\n11\n\n\n\n\n\\(P(X=x)\\)\n\\(\\frac{2}{28}\\)\n\\(\\frac{2}{28}\\)\n\\(\\frac{5}{28}\\)\n\\(\\frac{7}{28}\\)\n\\(\\frac{5}{28}\\)\n\\(\\frac{4}{28}\\)\n\\(\\frac{3}{28}\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#the-m-m-example-continued",
+    "href": "notes/2-probability/part2_lectures.html#the-m-m-example-continued",
+    "title": "Probability",
+    "section": "The M \\(\\&\\) M Example (continued)",
+    "text": "The M \\(\\&\\) M Example (continued)\nWe read this table by finding a value of X, say 8, then reading the probability below it:\n\nThe probability of observing 8 M\\(\\&\\)Ms in a package is \\(\\frac{7}{28}\\), meaning, if we open many many packages of M\\(\\&\\)Ms, about 7 out of 28 will have exactly 8 M&Ms within.\n\nThis is an example of a discrete random variable."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#discrete-random-variables",
+    "href": "notes/2-probability/part2_lectures.html#discrete-random-variables",
+    "title": "Probability",
+    "section": "Discrete Random Variables",
+    "text": "Discrete Random Variables\n\nWhen the elements of a population consists of a countable discrete set of values the random variable defined on that population is called discrete random variable.\nFor discrete random variables the probability distribution can be displayed using a histogram or a table of values and associated probabilities as shown above."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#properties-of-probability-distributions-of-discrete-random-variable-x",
+    "href": "notes/2-probability/part2_lectures.html#properties-of-probability-distributions-of-discrete-random-variable-x",
+    "title": "Probability",
+    "section": "Properties of Probability Distributions of Discrete Random Variable X",
+    "text": "Properties of Probability Distributions of Discrete Random Variable X\n\n\\(0\\leq P(X=x)\\leq 1\\) for all x\n\\(\\sum_{x}P(X=x)=1\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#the-m-m-probability-distribution",
+    "href": "notes/2-probability/part2_lectures.html#the-m-m-probability-distribution",
+    "title": "Probability",
+    "section": "The M & M Probability Distribution",
+    "text": "The M & M Probability Distribution"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#continuous-random-variables",
+    "href": "notes/2-probability/part2_lectures.html#continuous-random-variables",
+    "title": "Probability",
+    "section": "Continuous Random Variables",
+    "text": "Continuous Random Variables\n\nWhen the population consists of an uncountable number of values in a line interval use integration to calculate proportions of the population that exist in any given subinterval of a continuum.\nFor a random variable defined on such a population we will deal with the probability that the random variable assumes a value in a given interval, not that it assumes a specific numeric value."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#continuous-random-variables-contd.",
+    "href": "notes/2-probability/part2_lectures.html#continuous-random-variables-contd.",
+    "title": "Probability",
+    "section": "Continuous Random Variables (contd.)",
+    "text": "Continuous Random Variables (contd.)\n\nWhen the population consists of a set of values in a continuous range the random variable defined on that population is called continuous random variable.\nThe probability distribution of a continuous random variable is a smooth curve.\nThe area under the curve between specified values of the random variable correspond to a probability.\nThe probability that a continuous random variable assumes a specific numeric value is zero."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#continuous-random-variables-contd.-1",
+    "href": "notes/2-probability/part2_lectures.html#continuous-random-variables-contd.-1",
+    "title": "Probability",
+    "section": "Continuous Random Variables (contd.)",
+    "text": "Continuous Random Variables (contd.)\n\nExample: A Continuous Random Variable \\(X\\) defined on\na Population: all numbers in the interval (0,2) occurring with various frequencies (that we won’t specify here).\nBy Definition\n\\(P(1/2 \\leq X \\leq 1/2) \\equiv P(X = 1/2) = 0\\)\n\\(P(0 \\leq X \\leq 2) = 1,\\ \\ \\ P(X &lt; 0) = P(X \\leq 0) = 0\\)\nWe could possibly calculate the following probability\n\\(P(1 \\leq X \\leq 2) = ?\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#binomial-random-variable",
+    "href": "notes/2-probability/part2_lectures.html#binomial-random-variable",
+    "title": "Probability",
+    "section": "Binomial Random Variable",
+    "text": "Binomial Random Variable\n\nFor some interesting populations that occur naturally, theoretical probability distributions and associated random variables, have been defined.\nOne such population features elements that are only one of two kinds (Yes or No;  Good or Defective;  Below or Above;, etc.).\nLet us use Success(S) and Failure(F) to designate population elements, in general\nConsider a typical population of this kind consisting of \\(m\\) S’s and \\(N-m\\) F’s, where \\(N\\) is the total number of elements in the population."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#binomial-experiment",
+    "href": "notes/2-probability/part2_lectures.html#binomial-experiment",
+    "title": "Probability",
+    "section": "Binomial Experiment",
+    "text": "Binomial Experiment\n\nA binomial experiment consists of taking \\(n\\) successive SRS, each of size 1, replacing elements between draws, and counting the number of S’s obtained.\nThe binomial experiment is conducted by sampling from the population of S’s and F’s.\nThe proportion of S’s in the population is \\(\\pi = m/N\\) so the proportion of F’s is \\(1 - \\pi \\equiv (N-m)/N\\).\nLet \\(X_i\\) be the random variable that assumes the value of the outcome of the \\(i\\)-th draw for each \\(i=1,2,\\ldots,n\\)."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#binomial-distribution",
+    "href": "notes/2-probability/part2_lectures.html#binomial-distribution",
+    "title": "Probability",
+    "section": "Binomial Distribution",
+    "text": "Binomial Distribution\n\nLet the random variable \\(X_i\\) assume the value 1 if the outcome of the \\(i\\)-th draw is S or the value 0 if the outcome is F.\n\nThus we imagine \\(n\\) random variables, \\(X_1, X_2, X_3, \\ldots, X_n\\) each assuming a value S with probability \\(\\pi\\), or F with probability \\(1 - \\pi\\).\n\nThat is, the probability distribution of each of the \\(n\\) random variables \\(X_1, X_2, X_3, \\ldots, X_n\\) is given by:\n\n\n\n\n\\(x\\)\n0\n1\n\n\n\n\n\\(P(X=x)\\)\n\\(1-\\pi\\)\n\\(\\pi\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#binomial-distribution-contd.",
+    "href": "notes/2-probability/part2_lectures.html#binomial-distribution-contd.",
+    "title": "Probability",
+    "section": "Binomial Distribution (contd.)",
+    "text": "Binomial Distribution (contd.)\n\nNow define a new random variable \\(Y\\) so that \\[Y = X_1 + X_2 + X_3 + \\cdots + X_n \\,\\]\n\\(Y\\) represents the number of Success(S)’s in the set of values assumed by \\(X_1,\\ X_2, \\ldots,X_n\\).\n\nThis is because each \\(X_i=1\\) when an S is drawn, and \\(X_i=0\\) otherwise, we can see that \\(Y\\) represents the total number of S’s in the experiment.\n\n\\(Y\\) is said to be a binomial random variable."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#binomial-distribution-contd.-1",
+    "href": "notes/2-probability/part2_lectures.html#binomial-distribution-contd.-1",
+    "title": "Probability",
+    "section": "Binomial Distribution (contd.)",
+    "text": "Binomial Distribution (contd.)\n\nThat is, a binomial random variable assumes the value of the total number of successful outcomes in a binomial experiment.\n\nThe random variable \\(Y\\) can assume any one of the values 0, 1, 2, \\(\\ldots, n\\) with a probability that will depend on \\(n\\), the number of samples taken and \\(\\pi\\).\n\n\\(Y\\) is said to be the Binomial (\\(n,\\pi\\)) random variable.\n\nA population on which \\(Y\\) is defined consists of the unique elements \\(0,1,2,\\ldots,n\\).\n\nWhat is the proportion of each element in the population? i.e., What is the probability that \\(Y\\) assumes each value?"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#binomial-distribution-contd.-2",
+    "href": "notes/2-probability/part2_lectures.html#binomial-distribution-contd.-2",
+    "title": "Probability",
+    "section": "Binomial Distribution (contd.)",
+    "text": "Binomial Distribution (contd.)\nTheoretically, for any finite \\(n\\), the probability that a\nbinomial random variable \\(Y\\) takes on values 0, 1, 2, \\(\\dots, n\\)\nis given by\n\\[\\begin{eqnarray*}\nP(Y=y) & = & \\frac{n!}{y!(n-y)!}\\pi^y\\,(1 - \\pi)^{n-y}, \\\\\n\\mbox{where} & & \\\\\n        y & = & 0, 1, 2, \\ldots, n \\mbox {(number of successes in n trials)}\\\\\n\\pi & = &  \\mbox{ probability of success in a single trial}\\\\\n1-\\pi & = &  \\mbox{ probability of failure in a single trial}\\\\\nn! & = & n(n-1)(n-2) \\ldots (3)(2)(1)\n\\end{eqnarray*}\\]"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#binomial-distribution-contd.-3",
+    "href": "notes/2-probability/part2_lectures.html#binomial-distribution-contd.-3",
+    "title": "Probability",
+    "section": "Binomial Distribution (contd.)",
+    "text": "Binomial Distribution (contd.)\n\nIn applications, we won’t know \\(\\pi\\) and our objective will usually be to sample the population in order to estimate \\(\\pi\\), and get an idea about the error in that estimate.\nWhat is the mean \\(\\mu\\) and variance \\(\\sigma^2\\) (or the standard deviation) \\(\\sigma\\) of a binomial random variable?\nIn general, for a discrete random variable, these are defined is as follows."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#computing-the-mean-and-variance-of-a-discrete-random-variable",
+    "href": "notes/2-probability/part2_lectures.html#computing-the-mean-and-variance-of-a-discrete-random-variable",
+    "title": "Probability",
+    "section": "Computing the Mean and Variance of a Discrete Random Variable",
+    "text": "Computing the Mean and Variance of a Discrete Random Variable\n\nThe mean of a discrete random variable \\(X\\) is: \\[E(X) = \\mu = \\sum_x\\,x \\cdot P(X=x)\\]\nThe variance of a discrete random variable \\(X\\) is: \\[V(X) = \\sigma^2= \\sum_x\\,(x - E(X))^2\\cdot \\ P(X=x)\\]\nThe standard deviation of a random variable \\(X\\) is \\[\\sqrt{V(X)}=\\sigma\\]"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#computing-the-mean-and-variance-of-a-binomial-random-variable",
+    "href": "notes/2-probability/part2_lectures.html#computing-the-mean-and-variance-of-a-binomial-random-variable",
+    "title": "Probability",
+    "section": "Computing the Mean and Variance of a Binomial Random Variable",
+    "text": "Computing the Mean and Variance of a Binomial Random Variable\n\nUsing the above formula, the mean of a Binomial random variable  \\(Y\\), is shown to be \\(E(Y)=\\mu = n \\, \\pi\\)\nThe variance is shown to be \\(V(Y) =\\sigma^2= n\\,\\pi(1 - \\pi)\\).\nThus the standard deviation of a Binomial random variable is \\(\\sigma= \\sqrt{n\\,\\pi(1 - \\pi)}\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#binomial-distribution-example",
+    "href": "notes/2-probability/part2_lectures.html#binomial-distribution-example",
+    "title": "Probability",
+    "section": "Binomial Distribution: Example",
+    "text": "Binomial Distribution: Example\nConsider a Binomial population with \\(n=3,\\ \\pi = \\frac13\\),\ni.e., \\(Y\\ \\sim\\ \\mbox{Bin}(3,\\,\\frac13)\\), The corresponding Binomial distribution is\n\\[\\begin{eqnarray*}\n  P(0) &=& \\frac{3!}{0!3!} \\left(\\frac13 \\right)^0 \\left( \\frac23\n           \\right)^3 = 8/27\\\\[.1in]\n  P(1) &=&  \\frac{3!}{1!2!} \\left(\\frac13 \\right)^1 \\left( \\frac23\n           \\right)^2 = 3 \\cdot \\left( \\frac13\n           \\right)\\, \\left(\\frac49 \\right) = 12/27 \\\\[.1in]    \n  P(2) &=&  \\frac{3!}{2!1!} \\left(\\frac13 \\right)^2 \\left( \\frac23\n           \\right) = 3 \\cdot \\left( \\frac19\n           \\right)\\, \\left(\\frac23 \\right) = 6/27 \\\\[.2in]\n  P(3) &=& 1 - P(0) - P(1) - P(2) = 1/27\n\\end{eqnarray*}\\]"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#binomial-distribution-example-contd.",
+    "href": "notes/2-probability/part2_lectures.html#binomial-distribution-example-contd.",
+    "title": "Probability",
+    "section": "Binomial Distribution: Example (contd.)",
+    "text": "Binomial Distribution: Example (contd.)\nThe mean and variance of a Bin(\\(3,\\frac{1}{3}\\)) population is:\n\nMean \\(= n \\, \\pi =  3 \\times\\frac{1}{3} = 1\\)\nVariance \\(=  n\\,\\pi(1 - \\pi) =  3 \\times\\frac{1}{3}\\times\\frac{2}{3} =\n\\frac{2}{3}\\)\nStandard Deviation \\(= \\sqrt{.66667} = .8165\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#using-the-binomial-distribution",
+    "href": "notes/2-probability/part2_lectures.html#using-the-binomial-distribution",
+    "title": "Probability",
+    "section": "Using the Binomial Distribution",
+    "text": "Using the Binomial Distribution\n\nSo how can this Binomial probability distribution benefit us?\nWhen sampling situation fits the requirements of a Binomial experiment, (at least approximately) we can view the results we obtain as the values assumed by a binomial random variable.\nThis permits us to find probabilities of various possible outcomes, and use these and other properties of a binomial random variable to make inferences.\nTo assume the Binomial Model, we need to determine whether the values of the population elements are obtained as a result of a Binomial Experiment."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#the-binomial-model",
+    "href": "notes/2-probability/part2_lectures.html#the-binomial-model",
+    "title": "Probability",
+    "section": "The Binomial Model",
+    "text": "The Binomial Model\n\n\\(n\\) identical trials are made.\nEach trial results in either Success(\\(S\\)) or Failure(\\(F\\)). (only two possible outcomes).\nThe probability of success (\\(\\pi\\)) remains the same from trial to trial.\nThe trials are independent.\nInterest is in the number of successes obtained in the \\(n\\) trials. The number is viewed as being the value assumed by a Binomial (\\(n,\\ \\pi\\)) random variable \\(Y\\)."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#the-binomial-model-1",
+    "href": "notes/2-probability/part2_lectures.html#the-binomial-model-1",
+    "title": "Probability",
+    "section": "The Binomial Model",
+    "text": "The Binomial Model\n\nRequirement Number 3 in the definition of a binomial experiment is usually the most difficult to satisfy in practical applications.\nAs trials are made, if selected elements are not replaced in the sampled population, \\(\\pi\\) changes in value.\nIf the population is very large, the change is very small and can be ignored."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#binomial-model-are-requirements-satisfied---example-1",
+    "href": "notes/2-probability/part2_lectures.html#binomial-model-are-requirements-satisfied---example-1",
+    "title": "Probability",
+    "section": "Binomial Model: Are requirements satisfied? - Example 1",
+    "text": "Binomial Model: Are requirements satisfied? - Example 1\nAn article in the March 5, 1998, issue of The New England Journal of Medicine discussed a large outbreak of tuberculosis. One person, called the index patient, was diagnosed with tuberculosis in 1995. The 232 co-workers of the index patient were given a tuberculin screening test. The number of co-workers recording a positive reading on the test was the random variable of interest. Did this study satisfy the properties of a binomial experiment?"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#binomial-model-are-requirements-satisfied---example-1-1",
+    "href": "notes/2-probability/part2_lectures.html#binomial-model-are-requirements-satisfied---example-1-1",
+    "title": "Probability",
+    "section": "Binomial Model: Are requirements satisfied? - Example 1",
+    "text": "Binomial Model: Are requirements satisfied? - Example 1\n\n\\(n\\) identical trials? Yes, \\(n=232\\) workers\nPopulation of only \\(S\\)’s and \\(F\\)’s? Yes.\nIs probability of success same in each trial? Yes if we assume the co-workers had the same risk factors as the index patient.\nIndependent trials? Yes, the outcome of one screening was unaffected by the outcome of the other tests.\nWas the random variable of interest to the experimenter the number of successes \\(y\\) in the 232 screening tests? Yes, the number of co-workers who received a positive result."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#binomial-model-are-requirements-satisfied---example-2",
+    "href": "notes/2-probability/part2_lectures.html#binomial-model-are-requirements-satisfied---example-2",
+    "title": "Probability",
+    "section": "Binomial Model: Are requirements satisfied? - Example 2",
+    "text": "Binomial Model: Are requirements satisfied? - Example 2\nAn economist interviews 75 students in a class of 100 to estimate the proportion of student who expect to obtain a C or better in the course. Is this a binomial experiment?"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#binomial-model-are-requirements-satisfied---example-2-1",
+    "href": "notes/2-probability/part2_lectures.html#binomial-model-are-requirements-satisfied---example-2-1",
+    "title": "Probability",
+    "section": "Binomial Model: Are requirements satisfied? - Example 2",
+    "text": "Binomial Model: Are requirements satisfied? - Example 2\n\nPopulation of only \\(S\\)’s and \\(F\\)’s? Yes.\nIs probability of success same in each trial? This may change from trial to trial as we may not assume sampling with replacement."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#binomial-example",
+    "href": "notes/2-probability/part2_lectures.html#binomial-example",
+    "title": "Probability",
+    "section": "Binomial Example",
+    "text": "Binomial Example\nA labor union’s examining board for the selection of apprentices has a record of admitting 70% of all applicants who satisfy a basic set of requirements. Five members of a minority group, all satisfying the requirements, recently came before the board, and four of the five were rejected. Find the probability that 1 or fewer would be accepted if the admission rate is really 0.70."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#binomial-example---cont.",
+    "href": "notes/2-probability/part2_lectures.html#binomial-example---cont.",
+    "title": "Probability",
+    "section": "Binomial Example - cont.",
+    "text": "Binomial Example - cont.\n\nBoard decisions are viewed as random draws from a population consisting of \\(70\\%\\) Accepts (S) and \\(30\\%\\) Rejects (F).\nWe can assume a large population so that the probability of being accepted remains constant across draws.\nThen the Binomial (5,0.7) distribution is applicable to the number of Accepts in \\(n=5\\) trials with \\(\\pi=0.7\\)."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#binomial-example---cont.-1",
+    "href": "notes/2-probability/part2_lectures.html#binomial-example---cont.-1",
+    "title": "Probability",
+    "section": "Binomial Example - cont.",
+    "text": "Binomial Example - cont.\n\nLet \\(X\\) be the random variable representing the number of Accepts, and assume that \\(X\\) has a Binomial (5, 0.7) distribution. Then P(X=0) + P(X=1) =\n\\({5}\\choose{0}\\) \\((0.7)^0(0.3)^5+\\) \\({5}\\choose{1}\\) \\((0.7)(0.3)^4=0.03078\\)\nThe probability that the board will accept fewer than 2 applicants from a group of 5 is 0.03078 (which is a small probability) if indeed the true acceptance rate is 0.7."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#binomial-example---cont.-2",
+    "href": "notes/2-probability/part2_lectures.html#binomial-example---cont.-2",
+    "title": "Probability",
+    "section": "Binomial Example - cont.",
+    "text": "Binomial Example - cont.\n\nBut in fact the board DID accept fewer than 2 of the group of 5 so .......….\nConclusion: Either the board was operating to admit at its historical 70% rate and we have simply witnessed an extremely rare event, or\nthe board has changed policy and is currently admitting at a rate less than 70%.\nOne would tend to favor the latter conclusion."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#normal-random-variable",
+    "href": "notes/2-probability/part2_lectures.html#normal-random-variable",
+    "title": "Probability",
+    "section": "Normal Random Variable",
+    "text": "Normal Random Variable\n\nThe Normal probability distribution is an example of a continuous distribution.\nThe associated random variable is defined in the interval (-\\(\\infty,\\infty)\\).\nTo model the probability distribution of many populations we often use the Normal distribution.\nMost population distributions are bell-shaped and can be modeled by the Normal distribution.\nWe say that the associated random variable \\(X\\), say,\n\nHere \\(\\mu\\) and \\(\\sigma\\), are parameters of the population."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#properties-of-the-normal-distribution",
+    "href": "notes/2-probability/part2_lectures.html#properties-of-the-normal-distribution",
+    "title": "Probability",
+    "section": "Properties of the Normal Distribution",
+    "text": "Properties of the Normal Distribution\n\nProbability function (or curve) of a Normal random variable \\(X\\) is \\[\\begin{equation*}\n  f(x) = \\frac{1}{\\sigma \\sqrt{2\\pi}} \\, e^{- \\frac{1}{2} \\left(\\frac{x-\\mu}{\\sigma}\\right)^2}\n\\end{equation*}\\] where\n\\(E(X)= \\mu\\) = mean : measures the center of the distribution.\n\\(V(X)= \\sigma^2\\) = variance : measures the spread.\n\\(\\sqrt{V(X)}= \\sigma\\) = standard deviation : measures the spread in same units as the mean.\n\\(\\pi\\) = 3.1415… \\(e\\) = 2.71828…"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#properties-of-the-normal-distribution-contd.",
+    "href": "notes/2-probability/part2_lectures.html#properties-of-the-normal-distribution-contd.",
+    "title": "Probability",
+    "section": "Properties of the Normal Distribution (contd.)",
+    "text": "Properties of the Normal Distribution (contd.)\n\nThe Normal distribution is symmetric about the mean \\(\\mu\\).\nThere are infinitely many Normal curves, one for each pair of values of \\(\\mu\\) and \\(\\sigma\\).\nWe need to compute the areas under the curve for many of these for statistical inference.\nMathematically speaking, proportions of a Normal\\((\\mu, \\sigma^2)\\) population which fall in various intervals (say (\\(a,b\\)) is one such interval) are obtained by evaluating the following integral (for specified values of \\(\\mu, \\sigma^2\\), \\(a\\) and \\(b\\)). \\[\\begin{equation*}\n  P(a \\leq X \\leq b) = \\frac{1}{\\sqrt{2\\pi}\\sigma}\n  \\int_a^b \\, e^{-\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2} dx\n\\end{equation*}\\]"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#the-standard-normal-distribution",
+    "href": "notes/2-probability/part2_lectures.html#the-standard-normal-distribution",
+    "title": "Probability",
+    "section": "The Standard Normal Distribution",
+    "text": "The Standard Normal Distribution\n\nTable 1 lists the computed areas for the Normal distribution with \\(\\mu = 0\\), \\(\\sigma = 1\\).\nWe call this the standard normal distribution and denote it by \\(N(0,1)\\). \nThe relationship between a standard normal random variable \\(Z\\) and a normal random variable \\(X \\sim N(\\mu, \\sigma^2)\\) is \\[Z = \\frac{X-\\mu}{\\sigma}.\\]"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#the-standard-normal-distribution-contd.",
+    "href": "notes/2-probability/part2_lectures.html#the-standard-normal-distribution-contd.",
+    "title": "Probability",
+    "section": "The Standard Normal Distribution (contd.)",
+    "text": "The Standard Normal Distribution (contd.)\n\nThus (since \\(\\sigma &gt; 0\\)) for any pair of numbers \\(a \\leq b\\), \\[\\begin{eqnarray*}\n     P(a \\leq X \\leq b) & = & P(\\frac{a-\\mu}{\\sigma} \\leq\n\\frac{X-\\mu}{\\sigma} \\leq \\frac{b-\\mu}{\\sigma})\\\\\n           & = & P(\\frac{a-\\mu}{\\sigma} \\leq\nZ \\leq \\frac{b-\\mu}{\\sigma})\n\\end{eqnarray*}\\]\nThus we can compute probabilities for \\(X\\) for any member of the normal family using the probabilities associated with \\(Z\\) which are available from the Standard Normal Probabilities table."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#the-standard-normal-distribution-contd.-1",
+    "href": "notes/2-probability/part2_lectures.html#the-standard-normal-distribution-contd.-1",
+    "title": "Probability",
+    "section": "The Standard Normal Distribution (contd.)",
+    "text": "The Standard Normal Distribution (contd.)\n\nThe \\(p\\) quantiles of a Normal (\\(\\mu,\\sigma^2\\)) population are real numbers (use \\(x_p\\) to denote the \\(p\\) quantile) such that \\[p = \\int_{-\\infty}^{x_p} \\;\n\\frac{1}{\\sqrt{2\\pi}\\sigma} \\, \\,e^{-\\frac12(\\frac{x-\\mu}{\\sigma})^2} \\; dx\\]\nIf you can find a value \\(x\\) that satisfies the above equation then that value will be the \\(p^{th}\\) quantile of the \\(N(\\mu,\\sigma^2)\\) population i.e., \\(x = Q(p)\\).\nThe standard normal quantiles are the \\(z\\)-values found from the Standard Normal Probabilities table for specified \\(p\\) values that are in the body of the table."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#examples-using-the-standard-normal-probabilities-table",
+    "href": "notes/2-probability/part2_lectures.html#examples-using-the-standard-normal-probabilities-table",
+    "title": "Probability",
+    "section": "Examples: Using the Standard Normal Probabilities table",
+    "text": "Examples: Using the Standard Normal Probabilities table\n\n\\(P(Z \\geq 0) = P(Z \\leq 0) = 0.50\\)\n\\(P(0 \\leq Z \\leq 0.12) \\equiv P(0 &lt; Z &lt; 0.12) \\hspace*{1.5in}=P(Z&lt;0.12)-P(Z&lt;0)=0.5478-0.5 = 0.0478\\)\n\\(P(-0.12 \\leq Z \\leq 0) =P(Z&lt;0)-P(Z&lt;-0.12)\n= 0.5-.4522=0.0478\\)\n\\(P(-0.12 \\leq Z \\leq 0.12) = 2 \\cdot P(0 \\leq Z \\leq 0.12) = 0.0956\\)\n\\(P(0 \\leq Z \\leq 3) = 0.9987-0.5=0.4987\\)\n\\(P(1 \\leq Z \\leq 3 ) = P(Z \\leq 3)- P(Z \\leq 1) = 0.9987 - 0.8413 \\hspace*{1in}=0.1574\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#examples-using-the-standard-normal-probabilities-table-1",
+    "href": "notes/2-probability/part2_lectures.html#examples-using-the-standard-normal-probabilities-table-1",
+    "title": "Probability",
+    "section": "Examples: Using the Standard Normal Probabilities table",
+    "text": "Examples: Using the Standard Normal Probabilities table\n\nFind \\(z\\) such that \\(P(0 \\leq Z \\leq z) = 0.4846\\) Equivalent to finding \\(z\\) such that \\(P(Z \\leq z) = 0.9846\\) which gives \\(z = 2.16\\)\nFind \\(z\\) such that \\(P(z \\leq Z \\leq 0) = 0.2257\\)\nEquivalent to finding \\(z\\) such that \\(P(Z \\leq z) = 0.2743\\) which gives \\(z = -0.60\\)\nFind \\(z\\) such that \\(P(Z \\geq z) = 0.011\\)\nEquivalent to finding \\(z\\) such that \\(P(Z \\leq z) = 0.9890\\) which gives \\(z = 2.29\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#examples-for-x-sim-nmu-sigma2",
+    "href": "notes/2-probability/part2_lectures.html#examples-for-x-sim-nmu-sigma2",
+    "title": "Probability",
+    "section": "Examples for \\(X \\sim N(\\mu, \\sigma^2)\\)",
+    "text": "Examples for \\(X \\sim N(\\mu, \\sigma^2)\\)\n\nWhen \\(\\mu = 1\\), \\(\\sigma = 2\\), calculate \\(P(0 \\leq X \\leq 1)\\) = \\(P(\\frac{0-1}{2} \\leq Z \\leq \\frac{1-1}{2})= P(-0.5 \\leq Z \\leq 0) = 0.5-0.3085=0.1915\\)\nWhen \\(\\mu = 3\\), \\(\\sigma=4\\),calculate \\(P(2 \\leq X \\leq 4)\\) = \\(P(\\frac{2-3}{4} \\leq Z \\leq \\frac{4-3}{4})\\) = \\(P(- 0.25 \\leq Z \\leq 0.25)\\) \\(= 0.5987-0.4013=0.1974\\)\nFind the 0.25 quantile of the normal population having \\(\\mu = 3\\), \\(\\sigma = 4\\). Find x so that \\(P(X \\leq x) = 0.25,\\) or \\(P(Z \\leq \\frac{x-3}{4}) = 0.25\\) \\(\\frac{x-3}{4} \\doteq -0.67 \\Rightarrow x \\doteq 3+ 4 \\times (-0.67)= 0.32\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#sampling-distribution-of-sample-mean-bary.",
+    "href": "notes/2-probability/part2_lectures.html#sampling-distribution-of-sample-mean-bary.",
+    "title": "Probability",
+    "section": "Sampling Distribution of Sample Mean \\(\\bar{Y}\\).",
+    "text": "Sampling Distribution of Sample Mean \\(\\bar{Y}\\).\n\nThe outcome of drawing a random sample of size \\(n\\) can be characterized as the value realized by each of \\(n\\) random variables \\(Y_1, Y_2, \\ldots, Y_n\\), each defined independently on the population.\nThus the Sample Mean \\[\\overline{Y} = \\frac1n \\sum_{i=1}^n Y_i\\] (or any other function of \\(Y_1, Y_2, \\ldots, Y_n\\)) is a random variable."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#sampling-distribution-of-sample-mean-bary.-1",
+    "href": "notes/2-probability/part2_lectures.html#sampling-distribution-of-sample-mean-bary.-1",
+    "title": "Probability",
+    "section": "Sampling Distribution of Sample Mean \\(\\bar{Y}\\).",
+    "text": "Sampling Distribution of Sample Mean \\(\\bar{Y}\\).\n\nThe probability distribution of \\(\\overline{Y}\\) is said to be the Sampling Distribution of \\(\\overline{Y}\\).\nIt is the derived population of means of all possible samples of size \\(n\\) taken from the sampled population.\nProperties of \\(\\overline{Y}\\) include \\(E(\\overline{Y}) = \\mu\\), and \\(V(\\overline{Y}) = \\sigma^2/n,\\) where \\(\\mu\\) and \\(\\sigma^2\\) are the population mean and variance of the original sampled population.\nThe standard deviation of \\(\\overline{Y}\\) is called Standard Error of the Mean and is written \\(\\sigma_{\\overline{Y}}\\)."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#the-central-limit-theorem",
+    "href": "notes/2-probability/part2_lectures.html#the-central-limit-theorem",
+    "title": "Probability",
+    "section": "The Central Limit Theorem",
+    "text": "The Central Limit Theorem\n\nThe following theorem shows why the normal family of distributions is so important.\nAssume sampling is from some finite or infinite population with parameters \\((\\mu,\\,\\sigma^2)\\). Let \\(Y_1, Y_2, \\ldots, Y_n\\) denote the random variables corresponding to a sample of size \\(n\\)\nLet \\(\\overline{Y} = \\frac1n \\displaystyle\\sum_{i=1}^n Y_i\\).\nCentral Limit Theorem (CLT)\nWhen sample size \\(n\\) is large, the random variable \\(\\bar{Y}\\) is approximately normally distributed with mean \\(\\mu\\) and variance \\(\\sigma^2/n\\). (i.e., \\(\\overline{Y} \\approx N (\\mu, \\sigma^2/n\\)))"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#using-the-central-limit-theorem",
+    "href": "notes/2-probability/part2_lectures.html#using-the-central-limit-theorem",
+    "title": "Probability",
+    "section": "Using the Central Limit Theorem",
+    "text": "Using the Central Limit Theorem\n\nThe approximation can be very close for \\(n\\) as small as 10 if the sampled population elements are symmetrically distributed around \\(\\mu\\).\nFor mildly skewed sampled populations, \\(n=30\\) can give a close approximation. For higher skewed populations larger \\(n\\) will be needed for a better approximation.\nSo, the CLT says that regardless of the distribution of the sampled population, the derived population of the sample means is approximately a normal population and the approximation gets better as \\(n\\) gets larger."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#central-limit-theorem-example",
+    "href": "notes/2-probability/part2_lectures.html#central-limit-theorem-example",
+    "title": "Probability",
+    "section": "Central Limit Theorem: Example",
+    "text": "Central Limit Theorem: Example\nEstimating average weight of sheep in a large herd. Random sample of size \\(n=50\\). Assume \\(\\sigma^2=4\\). but \\(\\mu\\), population mean animal weight in the herd is unknown.\n\nWhat is the approximate probability distribution of the sample mean random variable?\nIf \\(\\mu=40\\) what is the probability that the sample mean will be within 0.1 pounds of \\(\\mu\\)?\n\nAnswer:\n\nBy the CLT, \\(\\overline{Y} \\approx N (\\mu, 4/50)\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#example-continued",
+    "href": "notes/2-probability/part2_lectures.html#example-continued",
+    "title": "Probability",
+    "section": "Example continued",
+    "text": "Example continued\n\\[\\begin{eqnarray*}\n  {P(39.9 \\leq \\bar{Y} \\leq 40.1)  \\doteq }\\\\[.1in]\n  & & P\\left(\\frac{39.9-40}{\\sqrt{4/50}}\\right.\n   \\left.\\leq z \\leq \\frac{40.1-40}{\\sqrt{4/50}}\\right) \\\\[.2in]\n     & = & P\\left(\\frac{-\\sqrt{50}}{20} \\leq z \\leq\n         \\frac{\\sqrt{50}}{20}\\right) \\\\[.3in]\n     & = & P\\left(-0.35 \\leq z \\leq 0.35\\right) \\\\[.3in]\n        & = & 0.6368-0.3632=0.2736\n  \\end{eqnarray*}\\]"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#exercise",
+    "href": "notes/2-probability/part2_lectures.html#exercise",
+    "title": "Probability",
+    "section": "Exercise",
+    "text": "Exercise\nA random sample of 16 measurements is drawn from a population with a mean of 60 and a standard deviation of 5. Describe the sampling distribution of \\(\\bar{y}\\), the sample mean. Within what interval,symmetric about 60, would you expect \\(\\bar{y}\\) to lie approximately 95% of the time?\nSolution to Exercise:\n\n\\(\\bar{Y} \\approx N(60, \\frac{25}{16})\\)\n\\(Z = \\frac{\\bar{Y}-60}{5/4} \\approx N(0,1)\\)\nWe know \\(P(-z_{\\frac{0.05}{2}} \\leq Z \\leq z_{\\frac{0.05}{2}}) =\n         0.95\\) and \\(z_{0.025} = 1.96\\) from the Standard Normal Probabilities Table"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#solution-to-exercise-cont.",
+    "href": "notes/2-probability/part2_lectures.html#solution-to-exercise-cont.",
+    "title": "Probability",
+    "section": "Solution to Exercise (cont.)",
+    "text": "Solution to Exercise (cont.)\n\nThus \\(P(-1.96 \\leq Z \\leq 1.96) =.95\\) which implies that a value of \\(Z\\) is expected to lie in the interval \\([-1.96, \\, 1.96]\\) approximately 95% of the time\n\\(-1.96 \\leq \\frac{\\bar{y}-60}{5/4} \\leq 1.96\\)\n\\(60 - 1.96 \\times \\frac54 \\leq \\bar{y} \\leq 60 +\n             1.96 \\times \\frac54\\) giving \\(57.55 \\leq \\bar{y} \\leq 62.45\\)\nThus \\([57.55, \\, 62.45]\\) is the interval in which \\(\\bar{y}\\), the is expected to lie approximately 95% of the time"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#exercise-2",
+    "href": "notes/2-probability/part2_lectures.html#exercise-2",
+    "title": "Probability",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nPsychomotor retardation scores for a large group of manic-depressive patients were found to be approximately normal with a mean of 930 and a standard deviation of 130.\n\nWhat fraction of the patients scored between 800 and 1,100?\nLess than 800?\nGreater than 1200?\nFind the 90th percentile for the distribution of manic-depressive scores.\nFind the interquartile range."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#solution-to-exercise-2",
+    "href": "notes/2-probability/part2_lectures.html#solution-to-exercise-2",
+    "title": "Probability",
+    "section": "Solution to Exercise 2:",
+    "text": "Solution to Exercise 2:\nd.) \\(P(Z &lt; a) = 0.90\\) From the Standard Normal Probabilities Table, a = 1.28\nSet \\(\\frac{y - 930}{130} = 1.28\\) and solving for \\(y\\) gives \\(y = 930 + 166.4\\)\nThus \\(= 1096.4\\) is the 90th percentile; or the 0.9 quantile.\ne.) \\(\\begin{array}{l|l}\n            P(Z &lt; a) = 0.75 & P(Z &lt; a) = 0.25\\\\\n            \\mbox{gives } a = 0.675 & \\mbox{gives } a = -0.675\\\\[.1in]\n            \\mbox{Set } \\frac{y-930}{130} = 0.675 & \\mbox{Set } \\frac{y-930}{130} = -0.675\\\\[.1in]\n            \\mbox{Thus } Q(0.75) = 930. + 87.75 & \\mbox{Thus } Q(0.25)= 930 -87.75  \\\\\n            = 1017.25 & = 842.25\n            \\end{array}\\)\nThus  IQR \\(= 1017.25- 842.25 = 175.50\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#another-exercise",
+    "href": "notes/2-probability/part2_lectures.html#another-exercise",
+    "title": "Probability",
+    "section": "Another Exercise",
+    "text": "Another Exercise\nThe breaking strengths for 1-foot-square samples of a particular synthetic fabric are approximately normally distributed with a mean of 2,250 pounds per square inch (psi) and a standard deviation of 10.2 psi.\n\n\nFind the probability of selecting a 1-foot-square sample of material at random that on testing would have a breaking strength in excess of 2,265 psi.\nDescribe the sampling distribution for \\(\\bar{y}\\) based on random samples of 15 one-foot sections."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#another-exercise---solution",
+    "href": "notes/2-probability/part2_lectures.html#another-exercise---solution",
+    "title": "Probability",
+    "section": "Another Exercise - Solution",
+    "text": "Another Exercise - Solution\n\n\\(Y \\sim N(2250, (10.2)^2)\\)\n\\[\\begin{eqnarray*}\n            P(Y &gt; 2265) & = & P\\left(Z &gt; \\frac{2265-2250}{10.2}\\right)\\\\[.2in]\n            & = & P(Z &gt; 1.47) =  0.07078\n\\end{eqnarray*}\\]\n\\(\\overline{Y} \\approx N\\left(2250, \\frac{(10.2)^2}{15}\\right)\\)\ni.e., \\(\\overline{Y}\\) is approximately distributed as Normal with mean=\\(\\mu_{\\bar{y}}=2250\\) and standard deviation=\\(\\sigma_{\\bar{y}} = 2.63\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#poisson-distribution",
+    "href": "notes/2-probability/part2_lectures.html#poisson-distribution",
+    "title": "Probability",
+    "section": "Poisson Distribution",
+    "text": "Poisson Distribution\n\nPoisson distribution is used to model the number of occurrences of “rare” events in certain intervals of time and space.\nCertain conditions must be met regarding the occurrence of these events and the definition of the period of time or region of space in which they occur for a Poisson random variable to represent the number of events.\nA Poisson random variable is a discrete random variable as it represents a count."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#poisson-distribution---examples",
+    "href": "notes/2-probability/part2_lectures.html#poisson-distribution---examples",
+    "title": "Probability",
+    "section": "Poisson Distribution - Examples",
+    "text": "Poisson Distribution - Examples\n\n\\(X\\) = # of alpha particles emitted from a polonium bar in an 8 minute period\n\n\\(Y\\) = # of flaws on a standard size piece of manufactured product (e.g., 100m coaxial cable, 100 sq.meter plastic sheeting)\n\n\\(Z\\) = # of hits on a web page in a 24h period\n\nDefinition: The Poisson probability mass function is defined as:\n\\(p(x) = \\frac{e^{-\\lambda}\\lambda^{x}}{x!} \\hspace{1cm} \\rm{ for }\\ x = 0,1,2,3,\\ldots\\)\n\\(\\lambda\\) is called the mean parameter, and represents the expected number of events occuring in the interval of interest."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#computing-mean-and-variance-of-a-poisson-random-variable",
+    "href": "notes/2-probability/part2_lectures.html#computing-mean-and-variance-of-a-poisson-random-variable",
+    "title": "Probability",
+    "section": "Computing Mean and Variance of a Poisson Random Variable",
+    "text": "Computing Mean and Variance of a Poisson Random Variable\n\nExpected Value of \\(X \\sim Poi({\\lambda})\\) is:\n\n\\(E[X]= \\sum_{x=0}^{\\infty} x\\frac{e^{-\\lambda}\\lambda^{x}}{x!} = e^{-\\lambda}\\sum\\limits_{x=0}^\\infty\\frac{\\lambda^x}{(x-1)!}=e^{-\\lambda}\\lambda\\sum\\limits_{x=1}^\\infty x\\frac{\\lambda^{x-1}}{(x-1)!}= e^{-\\lambda}\\lambda\\sum\\limits_{x=0}^\\infty x\\frac{\\lambda^x}{x!}=\\lambda\\)\n\nVariance of \\(X \\sim Poi({\\lambda})\\) is:\n\n\\(\\rm{Var}[X] =\\sum_{x=0}^{\\infty} (x-\\lambda)^2 \\{\\frac{e^{-\\lambda}\\lambda^{x}}{x!}\\} =\\ldots = \\lambda\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#poisson-distribution-example",
+    "href": "notes/2-probability/part2_lectures.html#poisson-distribution-example",
+    "title": "Probability",
+    "section": "Poisson distribution: Example",
+    "text": "Poisson distribution: Example\nA manufacturer of chips produces 1% defectives. What is the probability that in a box of 100 chips no defectives are found?\nSolution: A defective chip can be considered to be a rare event, since \\(p\\) is small (\\(p = 0.01\\)). So, model \\(X\\) as Poisson random variable.\nWe need to obtain a value for \\(\\lambda\\)! Look at the expected value!\nNote that we expect \\(100 \\cdot 0.01\\) = 1 chip out of the box to be defective.\nWe know that the expected value of \\(X\\) is \\(\\lambda\\). In this example, therefore, we take \\(\\lambda = 1\\).\nThen \\(P(X=0) = \\frac{e^{-1}1^{0}}{0!} = 0.3679.\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#poisson-distribution-example-cont.",
+    "href": "notes/2-probability/part2_lectures.html#poisson-distribution-example-cont.",
+    "title": "Probability",
+    "section": "Poisson distribution: Example (cont.)",
+    "text": "Poisson distribution: Example (cont.)\nFor the same product, what is the probability that, in a box of 200 chips, no defectives are found?\nSolution: The number of defectives in a box of 200 chips \\(Y\\) has a Poisson distribution with parameter \\(\\lambda=2\\) (since the expected number of defectives in 200 chips is 2.)\nThen, we have \\(P(Y=0)= .1353\\)\nNote that \\(X\\) and \\(Y\\) are random variables with different Poisson distributions because the events they represent occur in different regions (two different boxes here)."
+  },
+  {
+    "objectID": "notes/2-probability/part2_lectures.html#poisson-to-approximate-binomial",
+    "href": "notes/2-probability/part2_lectures.html#poisson-to-approximate-binomial",
+    "title": "Probability",
+    "section": "Poisson to approximate Binomial",
+    "text": "Poisson to approximate Binomial\nResult (not a theorem): For large \\(n\\), the Binomial distribution can be approximated by the Poisson distribution, where \\(\\lambda\\) is taken as \\(n\\pi\\): \\[{n \\choose k} \\pi^{k}(1-\\pi)^{n-k} \\approx e^{-n\\pi}\\frac{(n)^{k}}{k!}\\] Rule of thumb: use Poisson approximation if \\(n \\ge 100,\\ \\pi \\le 0.01\\) and \\(n\\pi \\leq 20\\)"
+  },
+  {
+    "objectID": "notes.html",
+    "href": "notes.html",
+    "title": "Notes",
+    "section": "",
+    "text": "8/27/26\n\nSlides"
+  },
+  {
+    "objectID": "canvas.html",
+    "href": "canvas.html",
+    "title": "Canvas",
+    "section": "",
+    "text": "Canvas is used for the following:\n\nDiscussion/message board\nOnline quizzes\nSubmitting assignments/projects/tests\nChecking final course grades\n\nAll other material can be found on this webpage. If you wish to email me instead of using Canvas, please include your course number in the subject line."
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Unless otherwise stated, all assignments are due by 9 p.m. on Canvas.\n\n\n\nProject\nDue date\nData\nSolutions\nNotes\n\n\n\n\nProject 1"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STAT 801A",
+    "section": "",
+    "text": "This website is open to my students in the University of Nebraska-Lincoln’s STAT 801A course.\nCourse description: Statistical concepts and statistical methodology useful in descriptive, experimental, and analytical study of biological and other natural phenomena. Practical application of statistics rather than on statistical theory."
+  },
+  {
     "objectID": "notes/1-descriptive-statistics/part1_lectures.html#what-is-statistics",
     "href": "notes/1-descriptive-statistics/part1_lectures.html#what-is-statistics",
     "title": "What is Statistics?",
@@ -369,5 +894,432 @@
     "title": "What is Statistics?",
     "section": "Example - Which measure of location should be used?",
     "text": "Example - Which measure of location should be used?\n\n\nmean(x)\n\n[1] 1.177316\n\nmedian(x)\n\n[1] 0.9064152"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#inferences-about-mu",
+    "href": "notes/3-one-mean/part3_lectures.html#inferences-about-mu",
+    "title": "Part 3",
+    "section": "Inferences about \\(\\mu\\)",
+    "text": "Inferences about \\(\\mu\\)\n\nOne of the major objectives of statistics is to make inferences about the distribution of the elements in a population based on information contained in a sample.\nNumerical summaries that characterize the population distribution are called parameters.\nThe population mean \\(\\mu\\) and population variance \\(\\sigma^2\\) are two important parameters. Others are median, range, mode, etc."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#inferences-about-mu---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#inferences-about-mu---cont.",
+    "title": "Part 3",
+    "section": "Inferences about \\(\\mu\\) - cont.",
+    "text": "Inferences about \\(\\mu\\) - cont.\n\nMethods for making inferences are basically designed to answer one of two types of questions:\n\nApproximately what is the value of the parameter?\nor\nIs the value of the parameter less than (say) 6?\n\nStatisticians answer the first question by estimating the parameter using the sample.\nThe second case might require a test of a hypothesis."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#point-and-interval-estimation-of-mu-when-sigma-is-known-and-n-is-large",
+    "href": "notes/3-one-mean/part3_lectures.html#point-and-interval-estimation-of-mu-when-sigma-is-known-and-n-is-large",
+    "title": "Part 3",
+    "section": "Point and Interval Estimation of \\(\\mu\\) when \\(\\sigma\\) is known and \\(n\\) is large",
+    "text": "Point and Interval Estimation of \\(\\mu\\) when \\(\\sigma\\) is known and \\(n\\) is large\n\nPoint estimation of \\(\\mu\\) does not require that \\(\\sigma\\) be known or a large \\(n\\)\nThe point estimate of \\(\\mu\\) is the sample mean \\(\\bar{y}\\)\nPoint estimates by themselves do not tell how much \\(\\bar{y}\\) might differ from \\(\\mu\\), that is, the accuracy or precision of the estimate\nA measure of accuracy is the difference between sample mean \\(\\bar{y}\\) and population mean \\(\\mu\\) is called sampling error"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu",
+    "href": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu",
+    "title": "Part 3",
+    "section": "A Confidence Interval for \\(\\mu\\)",
+    "text": "A Confidence Interval for \\(\\mu\\)\n\nAn interval estimate, called a confidence interval, incorporates information about the amount of sampling error in \\(\\bar{y}\\)\nA confidence interval for \\(\\mu\\) takes the form \\[(\\bar{y} - E,\\, \\bar{y} + E),\\] for a number \\(E\\)\nAn associated number called the confidence coefficient helps assess how likely it is for \\(\\mu\\) to be in the interval."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.",
+    "title": "Part 3",
+    "section": "A Confidence Interval for \\(\\mu\\) - cont.",
+    "text": "A Confidence Interval for \\(\\mu\\) - cont.\n\nTo derive the specific form of the confidence interval for \\(\\mu\\), for the case when \\(\\sigma\\) is known and \\(n\\) is large, the CLT result must be used.\nBy the CLT, \\(Z = (\\bar{Y} - \\mu)/\\sigma_{\\bar{y}}\\) is approximately \\(\\sim N(0, 1)\\).\nLet \\(Z\\) have a \\(N(0, 1)\\) distribution (exactly).\nLet \\(z_{\\alpha/2}\\) denote the \\(1 - \\alpha/2\\) quantile of the standard normal distribution, for a given number \\(\\alpha\\), \\(0 &lt; \\alpha &lt; 1\\).\nThen the following probability statement is true: \\[P\\left (-z_{\\alpha/2}\\, \\leq\\, \\frac{(\\bar{Y} - \\mu)}{\n          \\sigma_{\\bar{y}}}\\, \\leq\\, z_{\\alpha/2}\\right ) = 1 - \\alpha\\]"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.-1",
+    "href": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.-1",
+    "title": "Part 3",
+    "section": "A Confidence Interval for \\(\\mu\\) - cont.",
+    "text": "A Confidence Interval for \\(\\mu\\) - cont.\n\nManipulating the inequalities, without changing values, we have\n\\(P(\\sigma_{\\bar{y}} \\, z_{\\alpha/2} \\geq \\mu - \\bar{Y}\n  \\geq - \\sigma_{\\bar{y}} \\, z_{\\alpha/2}) = 1 - \\alpha\\)\n\\(P(\\bar{Y} - \\sigma_{\\bar{y}} \\, z_{\\alpha/2}\\, \\leq\\,\n  \\mu\\, \\leq\\, \\bar{Y} + \\sigma_{\\bar{y}} \\, z_{\\alpha/2}) = 1 - \\alpha\\)\nIf, for example, \\(\\alpha\\) = 0.05 then\n\\(P(\\bar{Y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{.025}\\, \\leq\n\\,  \\mu\\, \\leq\\, \\bar{Y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{.025}) =0.95\\)\nand, since \\(z_{0.025} = 1.96\\),\n\\[P(\\bar{Y} - 1.96\\, \\frac{\\sigma}{\\sqrt{n}}\\, \\leq\\, \\mu \\leq \\bar{Y} +\n  1.96\\, \\frac{\\sigma}{\\sqrt{n}}) = 0.95\\]"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.-2",
+    "href": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.-2",
+    "title": "Part 3",
+    "section": "A Confidence Interval for \\(\\mu\\) - cont.",
+    "text": "A Confidence Interval for \\(\\mu\\) - cont.\n\nUsing this statement, a (1-\\(\\alpha\\))100% confidence interval for \\(\\mu\\), with confidence coefficient \\(1-\\alpha\\) can be calculated using a random sample of data \\(y_1,y_2,\\ldots,y_n\\)\nIt is usually written in the form \\[\\left( \\bar{y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}, \\\n         \\bar{y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\right) \\ .\\]\nExample: Suppose  \\(n\\) = 36, \\(\\sigma=12\\), \\(\\bar{y} = 24.8\\)\nAnd for \\(\\alpha=0.05\\), \\(z_{\\alpha/2} \\equiv z_{0.025} = 1.96\\)"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.-3",
+    "href": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.-3",
+    "title": "Part 3",
+    "section": "A Confidence Interval for \\(\\mu\\) - cont.",
+    "text": "A Confidence Interval for \\(\\mu\\) - cont.\n\nThus a 95% C.I. for \\(\\mu\\) is \\[\\left( 24.8 - \\frac{12}{\\sqrt{36}} \\times 1.96, \\quad\n         24.8 + \\frac{12}{\\sqrt{36}} \\times  1.96 \\right)\\]\nThe interval for \\(\\mu\\) is: (20.88, 28.72) with confidence coefficient 0.95.\nWe might say that we are 95% confident that the population mean \\(\\mu\\) is between 20.88 and 28.72.\nBut what do we actually mean when we say that we are 95% confident?"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#interpretation-of-a-confidence-interval",
+    "href": "notes/3-one-mean/part3_lectures.html#interpretation-of-a-confidence-interval",
+    "title": "Part 3",
+    "section": "Interpretation of a Confidence Interval",
+    "text": "Interpretation of a Confidence Interval\n\nBefore the sample is drawn, the probability is (\\(1-\\alpha\\)) that the random interval \\((\\bar{Y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\),  \\(\\bar{Y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\)) will contain \\(\\mu\\) (because \\(\\bar{Y}\\) is a random variable).\nHowever, once the sample is drawn, and \\(\\bar{y}\\) is calculated, the interval ceases to be random. It is a numerical interval \\((\\bar{y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\),  \\(\\bar{y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\)), calculated specifically for the drawn sample; thus we cannot associate a probability with it.\nWe may say that the process which led us to this interval will, on the average, produce an interval containing \\(\\mu,\\  100 (1-\\alpha)\\)% of the time."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#interpretation-of-a-confidence-interval---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#interpretation-of-a-confidence-interval---cont.",
+    "title": "Part 3",
+    "section": "Interpretation of a Confidence Interval - cont.",
+    "text": "Interpretation of a Confidence Interval - cont.\n\nIt is not correct to say that the interval \\((\\bar{y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2},\\,\n\\bar{y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2})\\) contains \\(\\mu\\) with a specified probability.\nIf the process of sampling is repeated many times and 100(1-\\(\\alpha\\))% confidence intervals calculated for each sample, then we are confident that 100(1-\\(\\alpha\\))% of those intervals will contain \\(\\mu\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#notes",
+    "href": "notes/3-one-mean/part3_lectures.html#notes",
+    "title": "Part 3",
+    "section": "Notes:",
+    "text": "Notes:\n\nAs the confidence coefficient increases the confidence interval becomes wider. A wider interval estimates \\(\\mu\\) less precisely. Thus a 99% confidence interval is less accurate than a 95% confidence interval but one has more confidence that \\(\\mu\\) is in the first interval.\nAlso note that increasing the sample size \\(n\\) results in a narrower interval (more accurate estimate) for the same confidence coefficient."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#example",
+    "href": "notes/3-one-mean/part3_lectures.html#example",
+    "title": "Part 3",
+    "section": "Example:",
+    "text": "Example:\nThe caffeine content (in mg) was examined for a random sample of 50 cups of black coffee dispensed by a new machine. The mean and standard deviation were 110 mg and 7.1 mg, respectively. Use these data to construct a 98% confidence interval for \\(\\mu\\), the mean caffeine content for cups dispensed by the machine.\nAs the sample size is large we can use the CLT and also approximate \\(\\sigma\\), the sample standard deviation of the population by \\(s=7.1\\)"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#example---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#example---cont.",
+    "title": "Part 3",
+    "section": "Example - cont.",
+    "text": "Example - cont.\n\\(\\left[\\bar{y} - z_{0.01} \\frac{\\sigma}{\\sqrt{n}}, \\\n\\bar{y} + z_{0.01} \\frac{\\sigma}{\\sqrt{n}}\\right]\\)\n\\(\\left[110 - (2.33)\\left(\\frac{7.1}{\\sqrt{50}}\\right), \\\n   110 + (2.33)\\left(\\frac{7.1}{\\sqrt{50}}\\right)  \\right]\\)\n\\((107.66,\\ 112.34)\\)\nWe are \\(98\\%\\) confident that the mean caffeine content for cups dispensed by the machine is between 107.66 and 112.34 mg."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#choosing-the-sample-size",
+    "href": "notes/3-one-mean/part3_lectures.html#choosing-the-sample-size",
+    "title": "Part 3",
+    "section": "Choosing the Sample Size",
+    "text": "Choosing the Sample Size\n\nThe width of a confidence interval is (\\(2 \\times \\sigma \\times z_{\\alpha/2})/\\sqrt{n}\\).\nThe width of the confidence interval can be made smaller by changing to a larger \\(\\alpha\\) or increasing sample size \\(n\\).\nLet us consider selection of \\(n\\) to achieve a desired width \\(2 \\cdot E\\) for a fixed \\(\\alpha\\)\nWe want \\(E\\) to at least equal to \\(\\sigma \\times z_{\\alpha/2}/\\sqrt{n}\\)\nThus we need to select a sample so that \\[n \\geq \\frac{(z_{\\alpha/2})^2\\sigma^2}{E^2}\\]"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#choosing-the-sample-size---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#choosing-the-sample-size---cont.",
+    "title": "Part 3",
+    "section": "Choosing the Sample Size - cont.",
+    "text": "Choosing the Sample Size - cont.\n\nThis will result in an interval no wider than\n\\((\\bar{y} - E,\\ \\bar{y} + E)\\).\n\nExample:\nGiven \\(\\sigma = 12\\), \\(\\alpha = 0.05\\), \\(z_{0.025} = 1.96\\)\nWhat sample size \\(n\\) will give an interval no wider that 5.6?\nWe set \\(E = 2.8\\) so \\[n \\geq \\frac{(1.96)^2 \\cdot 144}{(2.8)^2} = 70.56\\] Thus the experimenter must choose a sample size \\(n = 71\\) at least."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#choosing-the-sample-size---cont.-1",
+    "href": "notes/3-one-mean/part3_lectures.html#choosing-the-sample-size---cont.-1",
+    "title": "Part 3",
+    "section": "Choosing the Sample Size - cont.",
+    "text": "Choosing the Sample Size - cont.\nWould the sample size \\(n = 71\\) ensure the width to be \\(\\leq 5.6\\) if the population has a larger variance? Would \\(n = 71\\) be enough?\nThe answer is NO since the formula \\[\\frac{(z_{\\alpha/2})^2\\sigma^2}{E^2}\\] involves the population variance \\(\\sigma^2\\).\nPrecision in estimation depends on both \\(\\alpha\\) and \\(\\sigma^2\\). If the variance of population elements is very small, i.e., the elements are tightly clustered about the population mean \\(\\mu\\), then only a small sample is needed for the estimate \\(\\bar{y}\\) to be very near \\(\\mu\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#statistical-tests-for-mu",
+    "href": "notes/3-one-mean/part3_lectures.html#statistical-tests-for-mu",
+    "title": "Part 3",
+    "section": "Statistical Tests for \\(\\mu\\)",
+    "text": "Statistical Tests for \\(\\mu\\)\n\nEstimation (either point or interval estimation) was used to help answer a question like “Approximately what is the value of \\(\\mu\\)?”\nThe other kind of question mentioned earlier is “Is it likely that \\(\\mu\\) is less than (or greater than) the value \\(\\mu_0\\) (a pre-determined value)?”.\nA Test of Hypothesis is used to answer this kind of question. As in estimation, the sample mean \\(\\bar{y}\\) of a random sample of \\(n\\) elements from the population is used to answer this question."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#statistical-tests-for-mu---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#statistical-tests-for-mu---cont.",
+    "title": "Part 3",
+    "section": "Statistical Tests for \\(\\mu\\) - cont.",
+    "text": "Statistical Tests for \\(\\mu\\) - cont.\n\nEvery test of hypothesis features\n\na Null Hypothesis \\(H_0\\) which describes a characteristic of the population (it is believed to be) as it currently exists,\n\na Research Hypothesis (or Alternative Hypothesis) \\(H_a\\), which is a proposal about this characteristic, by the person(s) conducting the statistical study.\n\nThe idea is that the null hypothesis is presumed to hold unless there is overwhelming evidence in the data in support of the research hypothesis."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#example-1",
+    "href": "notes/3-one-mean/part3_lectures.html#example-1",
+    "title": "Part 3",
+    "section": "Example:",
+    "text": "Example:\n\nTo determine whether the mean yield per acre (in bushels), \\(\\mu\\), of a variety of soybeans increased the current year over the last two years when \\(\\mu\\) is believed to be 520 bushels per acre, the following might be tested. \\[H_0: \\mu \\leq 520 \\ \\ \\ \\mbox{vs.}\\ \\ \\ H_a: \\mu &gt; 520\\]\nThe fact that \\(\\mu\\) may equal a specific value is always included in the null hypothesis. The decision to state whether the data supports the research hypothesis or not is based on a quantity computed from the data called the test statistic."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#section",
+    "href": "notes/3-one-mean/part3_lectures.html#section",
+    "title": "Part 3",
+    "section": "",
+    "text": "If \\(\\bar{y}\\) is in the rejection region then reject \\(H_0\\) and say the evidence favors \\(H_a\\).\nBasically, the test amounts to computing \\(\\bar{y}\\) and looking at its value relative to \\(\\mu_0\\) and the \\(\\mu\\) values in \\(H_a\\).\nFor example, in the above example if \\(\\bar{y} &lt; 520\\) we will say there is not sufficient evidence to reject \\(H_0\\).\nEven if \\(\\bar{y} &gt; 520\\), we might still say there is not sufficient evidence to reject \\(H_0\\)\nThis is ok as long as \\(\\bar{y}\\) is not too much greater than \\(520\\).\n“How much is too large?” To decide this, use the probability distribution of \\(\\bar{Y}\\). Begin by picking a small probability \\(\\alpha\\) like \\(\\alpha\\) = 0.05, or \\(\\alpha = 0.01\\), or \\(\\alpha =0.001\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#section-1",
+    "href": "notes/3-one-mean/part3_lectures.html#section-1",
+    "title": "Part 3",
+    "section": "",
+    "text": "Then reject \\(H_0\\) only when the probability of obtaining a value of \\(\\bar{y}\\) larger than the observed value \\(\\bar{y}\\) is \\(\\leq \\alpha\\) when \\(\\mu\\) is indeed \\(\\leq 520\\), i.e., when \\(H_0\\) is true.\nThat is, if \\(H_0\\) is true, the chance of observing a sample that results in a \\(\\bar{y}\\) as large as the one calculated should be very small.\n\n\n\n\n\nimage"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#how-to-determine-the-rejection-region",
+    "href": "notes/3-one-mean/part3_lectures.html#how-to-determine-the-rejection-region",
+    "title": "Part 3",
+    "section": "How to determine the rejection region",
+    "text": "How to determine the rejection region\n\nBy the CLT, \\(\\bar{Y}\\) is approximately a normal random variable.\nWe will ignore the approximation and assume \\(\\bar{Y} \\sim N(\\mu, \\frac{\\sigma^2}{n})\\).\nThen, for a given \\(\\alpha\\), \\[P \\left( \\frac{\\bar{Y}-\\mu}{\\sigma/\\sqrt{n}} &gt; z_{\\alpha} \\right) = \\alpha\\] where \\(z_\\alpha\\) is the \\(1-\\alpha\\) quantile of the standard normal distribution.\nSo when \\(H_0: \\mu \\leq \\mu_0\\) is true , \\[P \\left( \\frac{\\bar{Y}-\\mu_0}{\\sigma/\\sqrt{n}} &gt; z_{\\alpha} \\right) \\leq \\alpha\\]"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#how-to-determine-the-rejection-region---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#how-to-determine-the-rejection-region---cont.",
+    "title": "Part 3",
+    "section": "How to determine the rejection region - cont.",
+    "text": "How to determine the rejection region - cont.\n\nThat is, \\(P(\\bar{Y} &gt; \\mu_0 + z_\\alpha \\frac{\\sigma}{\\sqrt{n}})\\leq \\alpha.\\) This suggests that we reject \\(H_0: \\mu \\leq \\mu_0\\) in favor of, say \\(H_a: \\mu &gt; \\mu_0\\) when \\[\\bar{y} &gt; \\mu_0 + z_\\alpha \\frac{\\sigma}{\\sqrt{n}}\\] (i.e., \\(\\bar{y}\\) is too much when \\(\\bar{y}\\) exceeds the number \\(\\mu_0 +\nz_\\alpha \\frac{\\sigma}{\\sqrt{n}})\\)\n\nAll possible \\(\\bar{y}\\) values satisfying \\(\\bar{y} &gt; \\mu_0 + z_\\alpha\n\\frac{\\sigma}{\\sqrt{n}}\\) constitute the rejection region.\nInstead of comparing \\(\\bar{y}\\) to \\(\\mu_0 + z_\\alpha\n\\frac{\\sigma}{\\sqrt{n}}\\), it is easier to first calculate \\[z_c=\\frac{\\bar{y}-\\mu_0}{\\sigma/\\sqrt{n}}\\]"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#how-to-determine-the-rejection-region---cont.-1",
+    "href": "notes/3-one-mean/part3_lectures.html#how-to-determine-the-rejection-region---cont.-1",
+    "title": "Part 3",
+    "section": "How to determine the rejection region - cont.",
+    "text": "How to determine the rejection region - cont.\n\nWe see that comparing \\(\\bar{y}\\) to \\(\\mu_0 + z_\\alpha \\frac{\\sigma}{\\sqrt{n}}\\) is the same as comparing \\(z_c\\) to \\(z_\\alpha\\).\nThat is, we reject the null hypothesis if \\(z_c &gt; z_\\alpha\\) whis is the same thing as doing so if \\(\\bar{y} &gt; \\mu_0 + z_\\alpha \\frac{\\sigma}{\\sqrt{n}}\\)\nThis quantity \\(z\\) is called the test statistic and it’s value can be calculated using the data and the value \\(\\mu_0\\) specified in the null hypothesis \\(H_0\\).\nThe notation \\(z_c\\) is used denote the “computed value” of the test statistic, that is when we plug in the observed value of \\(\\bar{y}\\) and obtain a numerical value for \\(z\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#type-i-error",
+    "href": "notes/3-one-mean/part3_lectures.html#type-i-error",
+    "title": "Part 3",
+    "section": "Type I Error",
+    "text": "Type I Error\n\nThe \\(\\alpha\\) corresponds to the probability that the null hypothesis is rejected when actually it is true and is called the probability of committing a Type I error.\nSince the experimenter selects the value of \\(\\alpha\\) used in the test procedure, she is able to specify or control the Type I error rate or “how much” of this type of error is permitted in the testing procedure."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#example-2",
+    "href": "notes/3-one-mean/part3_lectures.html#example-2",
+    "title": "Part 3",
+    "section": "Example",
+    "text": "Example\nSuppose from a sample of 36 1-acre plots, the yield of corn this year was measured and \\(\\bar{y}=573\\) and \\(s=124\\) calculated. Can we conclude that the mean yield of corn for all farms exceeded 520 bushels/acre this year ? Here we are going to assume that \\(\\sigma\\) can be approximated by \\(s\\). Use \\(\\alpha=.025\\)"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#solution-to-the-example",
+    "href": "notes/3-one-mean/part3_lectures.html#solution-to-the-example",
+    "title": "Part 3",
+    "section": "Solution to the Example",
+    "text": "Solution to the Example\nSet-up five parts of the testing procedure:\n\n\\(H_0: \\mu \\leq 520\\)\n\\(H_a: \\mu &gt; 520\\)\nT.S.: \\(z  =  \\frac{\\bar{y}-\\mu_0}{\\sigma/\\sqrt{n}}\\)\nR.R: Reject \\(H_0:\\) in favor of \\(H_a:\\) if \\(z &gt; z_{.025}\\)\ni.e. the R.R. is \\(z&gt;1.96\\) since \\(z_{.025}=1.96\\)\nCompute the observed value of the test statistic:\n\\(z_c =\\frac{573-520}{124/{\\sqrt{36}}}= 2.56\\)"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#decision",
+    "href": "notes/3-one-mean/part3_lectures.html#decision",
+    "title": "Part 3",
+    "section": "Decision:",
+    "text": "Decision:\nSince \\(z_c&gt; 1.96\\), \\(z_c\\) is in the R.R. Thus \\(H_0:\\mu \\leq 520\\) is rejected in favor of the research hypothesis \\(H_a: \\mu &gt; 520\\). It is concluded that the mean yield this year exceeds 520 bushels/acre.\nNote that the above test procedure is equivalent to determining that the observed value for \\(\\bar{y}\\) lies more than 1.96 standard deviations above the mean \\(\\mu_0=520\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#summary-of-test-procedures---assume-n-large-and-sigma-known",
+    "href": "notes/3-one-mean/part3_lectures.html#summary-of-test-procedures---assume-n-large-and-sigma-known",
+    "title": "Part 3",
+    "section": "Summary of Test Procedures - Assume \\(n\\) large, and \\(\\sigma\\) known",
+    "text": "Summary of Test Procedures - Assume \\(n\\) large, and \\(\\sigma\\) known\nHypotheses:\nCase 1: \\(H_0: \\mu \\leq \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu &gt;\\mu_0\\) (right-tailed test)\nCase 2: \\(H_0: \\mu \\geq \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu &lt;\\mu_0\\) (left-tailed test)\nCase 3: \\(H_0: \\mu = \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu \\not =\\mu_0\\) (two-tailed test)\nT.S: \\(z_c  =  \\frac{\\bar{y}-\\mu_0}{\\sigma/\\sqrt{n}}\\)\nR.R: For Type I error probability of \\(\\alpha\\):\nCase 1: Reject \\(H_0:\\) if \\(z \\geq z_{\\alpha}\\)\nCase 2: Reject \\(H_0:\\) if \\(z \\leq -z_{\\alpha}\\)\nCase 3: Reject \\(H_0:\\) if \\(|z| \\geq  z_{\\alpha/2}\\)"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#decision-1",
+    "href": "notes/3-one-mean/part3_lectures.html#decision-1",
+    "title": "Part 3",
+    "section": "Decision:",
+    "text": "Decision:\nIf the computed value of the test statistic, \\(z_c\\), is in the R.R., then we will reject the null hypothesis \\(H_0:\\) at the specified \\(\\alpha\\) value. Otherwise, we say we fail to reject \\(H_0:\\) at the specified \\(\\alpha\\) value.\nExample A corporation maintains a large fleet of company cars for its salespeople. To check the average number of miles driven per month per car, a random sample of \\(n = 40\\) cars is examined. The mean and standard deviation for the sample are 2,752 miles and 350 miles, respectively. Records for previous years indicate that the average number of miles driven per car per month was 2,600. Use the sample data to test the research hypothesis that the current mean \\(\\mu\\) differs from 2,600. Set \\(\\alpha\\) = .05 and assume that \\(\\sigma\\) can be replaced by \\(s\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#solution",
+    "href": "notes/3-one-mean/part3_lectures.html#solution",
+    "title": "Part 3",
+    "section": "Solution",
+    "text": "Solution\nThe null hypothesis for this statistical test is \\(H_0: \\mu\\) = 2,600 and the research hypothesis is \\(H_a: \\mu \\neq\\) 2,600. Using \\(\\alpha\\) = .05, the two-tailed rejection region for this test is \\(|z|&gt; z_{.025}\\) or \\(|z|&gt; 1.96\\) and is located as shown below.\n\n\n\n\nimage"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#solution---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#solution---cont.",
+    "title": "Part 3",
+    "section": "Solution - cont.",
+    "text": "Solution - cont.\nTo determine how many standard errors our test statistics \\(\\bar{y}\\) lies away from \\(\\mu\\) = 2,600, compute \\[z_c = \\frac{\\bar{y}-\\mu_0}{\\sigma/\\sqrt{n}} =\n  \\frac{2,752 - 2,600}{350/\\sqrt{40}} = 2.75 \\, .\\] Thus \\(|z_c|=2.75&gt;1.96\\) and therefore we reject \\(H_0: \\mu = 2,600\\) at \\(\\alpha=.05\\). It follows that the observed value for \\(\\bar{y}\\) lies more than 1.96 standard errors above the mean \\(\\mu = 2,600\\), so we reject the null hypothesis in favor of the alternative \\(H_a: \\mu \\neq\n2,600\\).\nSince \\(\\bar{y}&gt;2,600\\) we conclude that the mean number of miles driven is greater than \\(2,600\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#level-of-significance-or-the-p-value-of-a-statistical-test",
+    "href": "notes/3-one-mean/part3_lectures.html#level-of-significance-or-the-p-value-of-a-statistical-test",
+    "title": "Part 3",
+    "section": "Level of Significance or the p-value of a Statistical Test",
+    "text": "Level of Significance or the p-value of a Statistical Test\n\nAs an alternative to the formal test where one uses a rejection region based on a specified the Type I error rate \\(\\alpha\\), many researchers compute and report the level of significance or the p-value for the test.\nThis is the probability, when \\(H_0\\) is true, of observing a statistic as extreme as the one actually observed. Here “extreme” is means “large” or “small” according to the alternative hypothesis \\(H_a\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#level-of-significance-or-the-p-value-of-a-statistical-test---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#level-of-significance-or-the-p-value-of-a-statistical-test---cont.",
+    "title": "Part 3",
+    "section": "Level of Significance or the p-value of a Statistical Test - cont.",
+    "text": "Level of Significance or the p-value of a Statistical Test - cont.\n\nSpecifically, for a given \\(\\sigma^2\\) and \\(\\mu_0\\) we find the p-value by:\n\nFirst computing the test statistic, \\(z_c\\), \\[z_c = (\\bar{y} - \\mu_0)/(\\sigma/\\sqrt{n})\\]\na)  If \\(H_a: \\mu &gt; \\mu_0\\), then \\(p = P(Z &gt; z_c\\)).\n\n\n If \\(H_a: \\mu &lt; \\mu_0\\), then \\(p = P(Z &lt; z_c\\)).\n\n If \\(H_a: \\mu \\neq \\mu_0\\), then \\(p=2P(Z &gt; |z_c|)\\).\n\n\nA p-value smaller than the pre-specified \\(\\alpha\\) value is evidence in favor of rejecting \\(H_0\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#example-3",
+    "href": "notes/3-one-mean/part3_lectures.html#example-3",
+    "title": "Part 3",
+    "section": "Example:",
+    "text": "Example:\n\nIn the earlier example we tested \\(H_0: \\mu \\leq 380\\ \\mbox{vs.}\\ H_a: \\mu &gt; 380\\) Calculating the \\(z-\\)statistic, \\[z_c = \\frac{\\bar{y}-380}{\\sigma/\\sqrt{n}}= \\frac{390-380}{35.2/\\sqrt{50}} = 2.01\\]\nThe level of significance, or p-value for this test is \\[p= P(Z &gt; 2.01)= 1- P(Z &lt; 2.01)= 0.0222\\]\nWe fail to reject \\(H_0: \\mu \\leq 380\\) at \\(\\alpha=.01\\) since p-value is not less than \\(.01\\)"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#inferences-about-when-sigma-is-unknown",
+    "href": "notes/3-one-mean/part3_lectures.html#inferences-about-when-sigma-is-unknown",
+    "title": "Part 3",
+    "section": "Inferences About when \\(\\sigma\\) is unknown",
+    "text": "Inferences About when \\(\\sigma\\) is unknown\n\nFor large sample sizes, it follows from the CLT that \\(\\bar{Y}\\) is approximately Normally distributed i.e., \\(\\bar{Y} \\dot{\\sim}\nN(\\mu,\\frac{\\sigma^2}{n})\\).\nIt follows that the random variable \\[T_{n-1} =\\Big( \\bar{Y} - \\mu \\Big) / \\Big( S/\\sqrt{n} \\Big)\\] has approximately the Student’s \\(t\\) distribution with \\(n-1\\) degrees of freedom.\nHere \\(Y_1, Y_2, \\ldots,Y_n\\) are sampling random variables and \\(\\bar{Y} =\n\\frac{1}{n} \\displaystyle\\sum_i Y_i\\) is thus a random variable."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#inferences-about-when-sigma-is-unknown---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#inferences-about-when-sigma-is-unknown---cont.",
+    "title": "Part 3",
+    "section": "Inferences About when \\(\\sigma\\) is unknown - cont.",
+    "text": "Inferences About when \\(\\sigma\\) is unknown - cont.\n\nThe denominator of \\(T_{n-1}\\) is the random variable \\[S = \\sqrt{\\frac{1}{n-1} \\sum_{i=1}^n (Y_i - \\bar{Y})^2}.\\]\nIf sampling from a Normal distribution, the sample mean \\(\\bar{Y}\\) has a Normal distribution (exactly) and therefore \\((\\bar{Y}-\\mu)/(S/\\sqrt{n})\\) will have a Student’s \\(t\\) distribution (exactly), regardless of sample size."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#section-2",
+    "href": "notes/3-one-mean/part3_lectures.html#section-2",
+    "title": "Part 3",
+    "section": "",
+    "text": "Until now, we have assumed that \\(n\\) is large and \\(\\sigma\\) is known, or \\(n\\) is large and \\(n\\) is large enough also to use \\(s\\) as an approximation to \\(\\sigma\\).\nSince we used the CLT to derive confidence limits and tests of hypotheses, the exact nature of the sampled population was not required to be specified.\nNow we require that the population distribution to be Normal. We don’t need to know \\(\\sigma\\) or have a large sample, i.e. \\(n\\) to be large.\nIn this situation, for any \\(n\\), (\\(\\bar{Y} - \\mu)/(S/\\sqrt{n})\\) will have a Student’s t-distribution with d.f.\\(= n-1.\\)\nUsing this fact we can obtain confidence intervals and conduct tests of hypotheses even though \\(\\sigma\\) is unknown.\nNote the difference between \\(Z\\) and \\(T_{n-1}\\) is that the parameter \\(\\sigma\\) is in the denominator of \\(Z\\).\nThat is, the point estimator of \\(\\sigma\\), \\(S\\) is in the denominator of \\(T_{n-1}\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#properties-of-the-students-distribution",
+    "href": "notes/3-one-mean/part3_lectures.html#properties-of-the-students-distribution",
+    "title": "Part 3",
+    "section": "Properties of the Student’s distribution",
+    "text": "Properties of the Student’s distribution\n\nThere are many t-distributions each specified by a single parameter called degrees of freedom (\\(df\\)).\nLike the standard normal population, the distribution is symmetric about 0 and has mean equal to 0.\nThe t-distribution has variance \\(df/(df-1)\\), and hence is more variable than the standard normal distribution which has variance equal to 1.\nWe say that the t-distribution has heavier tails than the standard normal distribution.\nAs the degrees of freedom \\(df\\) increases, the t-distribution approaches that of the standard normal distribution.\nThus as the sample size \\(n\\) increases the distribution of the \\(T_{n-1}\\) random variable approaches the standard normal distribution."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#properties-of-the-students-distribution-cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#properties-of-the-students-distribution-cont.",
+    "title": "Part 3",
+    "section": "Properties of the Student’s distribution cont.",
+    "text": "Properties of the Student’s distribution cont.\n\n\n\n\nimage"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#section-3",
+    "href": "notes/3-one-mean/part3_lectures.html#section-3",
+    "title": "Part 3",
+    "section": "",
+    "text": "The \\(t\\) table gives quantiles 0.90, 0.95, 0.975, 0.99, 0.995, and 0.999 for \\(t\\) distributions with selected df.\nExamples: For \\(df = 10\\)\n\\(P(T_{10} &gt; 1.372) = 0.10\\)\n\\(P(T_{10} &lt; 1.372) = 0.90\\)\n\\(P(T_{10} &gt; 1.812) = 0.05\\)\nIf \\(\\alpha\\) = 0.05, then \\(t_\\alpha\\) satisfies \\(P(T_{10} &gt; t_{.05}) = 0.05\\) and from the t table , \\(t_{.05} = 1.812\\). If \\(\\alpha\\) = 0.05, then \\(t_{\\alpha/2} \\, \\equiv t_{0.025}= 2.228\\)\nComparison of Normal and \\(t\\) Quantiles\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(t_\\alpha\\) with indicated df\n\n\n\\(\\alpha\\)\n\\(z_\\alpha\\)\n10\n20\n30\n40\n60\n240\n\n\n0.1\n1.28\n1.37\n1.32\n1.31\n1.30\n1.30\n1.28\n\n\n0.05\n1.65\n1.81\n1.72\n1.70\n1.68\n1.67\n1.65\n\n\n0.01\n2.33\n2.76\n2.53\n2.46\n2.42\n2.39\n2.34"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#confidence-interval-for-mu-based-on-the-t-distribution",
+    "href": "notes/3-one-mean/part3_lectures.html#confidence-interval-for-mu-based-on-the-t-distribution",
+    "title": "Part 3",
+    "section": "Confidence Interval for \\(\\mu\\) based on the t-distribution",
+    "text": "Confidence Interval for \\(\\mu\\) based on the t-distribution\n\nLet the sample size be \\(n\\), and for \\(\\alpha\\) be a specified value, say, for e.g. \\(.05\\).\nA \\((1-\\alpha)100\\%\\) confidence interval for \\(\\mu\\) is given by \\[\\left(\\bar{y} - t_{\\alpha/2} \\, \\frac{s}{\\sqrt{n}}, \\quad\n        \\bar{y} + t_{\\alpha/2} \\, \\frac{s}{\\sqrt{n}}\\right)\\]\nThis may also be written as \\(\\left(\\bar{y} - t_{\\alpha/2} s_{\\bar{y}}, \\quad \\bar{y} +\n         t_{\\alpha/2} s_{\\bar{y}} \\right)\\)\nHere, \\(t_{\\alpha/2}\\) is the \\(1-\\alpha/2\\) percentile of the t-distribution with \\(n-1\\) degrees of freedom and \\(s_{\\bar{y}}\\) is the standard error of the mean."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#section-4",
+    "href": "notes/3-one-mean/part3_lectures.html#section-4",
+    "title": "Part 3",
+    "section": "",
+    "text": "image"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#test-procedures-based-on-the-t-distribution",
+    "href": "notes/3-one-mean/part3_lectures.html#test-procedures-based-on-the-t-distribution",
+    "title": "Part 3",
+    "section": "Test Procedures based on the t-distribution:",
+    "text": "Test Procedures based on the t-distribution:\nHypotheses:\nCase 1:\\(H_0: \\mu \\leq \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu &gt;\\mu_0\\) (right-tailed test)\nCase 2: \\(H_0: \\mu \\geq \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu &lt;\\mu_0\\) (left-tailed test)\nCase 3 \\(H_0: \\mu = \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu \\not =\\mu_0\\) (two-tailed test)\nT.S: \\(t_c  =  \\frac{\\bar{y}-\\mu_0}{s/\\sqrt{n}}\\)\nR.R: For Type I error probability of \\(\\alpha\\):\nCase 1: Reject \\(H_0:\\) if \\(t \\geq t_{\\alpha,(n-1)}\\)\nCase 2: Reject \\(H_0:\\) if \\(t \\leq -t_{\\alpha,(n-1)}\\)\nCase 3: Reject \\(H_0:\\) if \\(|t| \\geq t_{\\alpha/2,(n-1)}\\)"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#test-procedures-based-on-the-t-distribution---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#test-procedures-based-on-the-t-distribution---cont.",
+    "title": "Part 3",
+    "section": "Test Procedures based on the t-distribution - cont.:",
+    "text": "Test Procedures based on the t-distribution - cont.:\nLevel of Significance (p-value):\nCase 1: \\(p = P(T_{n-1} &gt; t_c\\)).\nCase 2: \\(p = P(T_{n-1} &lt; t_c\\)).\nCase 3: \\(p= 2P(T_{n-1} &gt; |t_c|)\\).\nExercise\nA massive multistate outbreak of food-borne illness was attributed to Salmonella enteritidis. Epidimiologists determined that the source of the illness was ice cream. They sampled nine production runsfrom the company that produced the ice cream to determine the level of Salmonella enteritidis in the ice cream."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#exercise---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#exercise---cont.",
+    "title": "Part 3",
+    "section": "Exercise - cont.",
+    "text": "Exercise - cont.\nThese levels (MPN/g) are as follows\n\\(.593\\quad .142\\quad .329\\quad .691\\quad .231\\quad .793\\quad .519\\quad .392\\quad .418\\)\nUse the data to determine whether the mean level of Salmonella enteritidis in the ice cream is greater than .3 MPN/g with \\(\\alpha=.01\\)\nSolution:\nNeed to test \\(H_0: \\mu \\leq .3\\) vs. \\(H_a: \\mu &gt; .3\\)\nBecause of the small sample size, we need to examine whether the data have been sampled from a normal distribution. To do this a normal probability plot is a good tool."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#exercise---cont.-1",
+    "href": "notes/3-one-mean/part3_lectures.html#exercise---cont.-1",
+    "title": "Part 3",
+    "section": "Exercise - cont.",
+    "text": "Exercise - cont.\n\n\n\n\nimage\n\n\n\nFrom the data \\(\\bar{y}=.456\\) and \\(s= .2128\\) are computed, giving \\[t_c=  \\frac{\\bar{y}-\\mu_0}{s/\\sqrt{n}}=\\frac{.456-.3}{.2128/\\sqrt{9}}=2.21\\] Because for the one-tailed test we need \\(t_{\\alpha,(n-1)}\\);\nwe look up \\(t_{.01}\\) with \\(df=9-1=8\\). It is \\(2.896\\)\nThus the rejection region is: \\(t&gt;2.896\\)"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#exercise---cont.-2",
+    "href": "notes/3-one-mean/part3_lectures.html#exercise---cont.-2",
+    "title": "Part 3",
+    "section": "Exercise - cont.",
+    "text": "Exercise - cont.\nSince \\(t_c= 2.214\\) does not exceed \\(2.896\\) it is not in the R.R.\nThus, there is insufficient evidence in the data to reject \\(H_0\\) i.e to say that the mean level of Salmonella enteritidis exceeds the dangerous level of .3 MPN/g.\nThe p-value to be computed is \\(P(T_8&gt;2.21)\\)\nTo calculate this exactly using the t-table is not possible since it is tabulated for only a few values of \\(a\\).\nHowever, we can bound the p-value by noting that, for \\((df=8)\\), 2.21 lies between 1.86 and 2.306.\nThis gives \\(.025&lt;\\mbox{p-value}&lt;.05\\) showing that the p-value is not less than our \\(\\alpha\\) of \\(.01\\). Thus we fail to reject \\(H_0\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#oc-curve-and-the-power-of-a-test",
+    "href": "notes/3-one-mean/part3_lectures.html#oc-curve-and-the-power-of-a-test",
+    "title": "Part 3",
+    "section": "OC Curve and the Power of a test",
+    "text": "OC Curve and the Power of a test\nThe probabilities of the four possible outcomes of a statistical test are:\n\n\n\n\n\n\n\n\n\n\nNull Hypothesis\n\n\n\n\n2-3 Decision\nTrue\nFalse\n\n\nReject \\(H_0\\)\nType I Error\nCorrect Decision\n\n\n\n\\(\\alpha\\)\n\\(1-\\beta\\)\n\n\nFail to reject \\(H_0\\)\nCorrect Decision\nType II Error\n\n\n\n\\(1-\\alpha\\)\n\\(\\beta\\)\n\n\n\n\nThe probabilities of Type I and II error are \\(\\alpha\\) and \\(\\beta\\), respectively."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#type-i-error-and-type-ii-error",
+    "href": "notes/3-one-mean/part3_lectures.html#type-i-error-and-type-ii-error",
+    "title": "Part 3",
+    "section": "Type I Error and Type II Error",
+    "text": "Type I Error and Type II Error\n\nThe experimenter can control only the Type I error probability. We do this by specifying an \\(\\alpha\\) for an experiment (before the data values are measured).\nWhen we are testing an hypothesis about \\(\\mu\\) using \\(\\alpha\\) for the test, the value of Type II error probability \\(\\beta\\) depends on the actual value \\(\\mu\\) which is not known.\nThis is because \\(\\beta\\) is the probability of incorrectly failing to reject \\(H_0\\) when \\(H_a\\) is true.\nWhen \\(H_a\\) is true, the actual value of \\(\\mu\\) may be any value under \\(H_a\\), i.e, a value not specified under \\(H_0\\). Since this value of \\(\\mu\\) is unknown, \\(\\beta\\) cannot be calculated."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#type-i-error-and-type-ii-error-1",
+    "href": "notes/3-one-mean/part3_lectures.html#type-i-error-and-type-ii-error-1",
+    "title": "Part 3",
+    "section": "Type I Error and Type II Error",
+    "text": "Type I Error and Type II Error\n\nThe implication of this is that when, based on a test, we find that we cannot reject \\(H_0\\), we will not say that we accept \\(H_0\\).\nBecause if we say we accept \\(H_0\\) and \\(\\beta\\) turns out to be large, then the probability is large that we will be committing a Type II error.\nThus the correct way to state the decision is to say, that we fail to reject \\(H_0\\).\nIn practice, \\(\\beta\\) probabilities for several choices of \\(\\mu\\) (call them \\(\\beta(\\mu)\\)) are calculated and plotted in a graph called the OC curve.\nThe OC curve can be used to read-off the Type II error probability for a specified set of values sample size \\(n\\) and \\(\\alpha\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#oc-curve",
+    "href": "notes/3-one-mean/part3_lectures.html#oc-curve",
+    "title": "Part 3",
+    "section": "OC Curve",
+    "text": "OC Curve\n\n\n\n\nimage\n\n\n\nThe figure shows the OC curve for the test of \\(H_0: \\mu \\leq 84, \\quad H_a: \\mu &gt; 84\\) for a population with \\(\\sigma=1.4\\). For example, for \\(\\alpha=.05,\\,n=10\\), it can be seen that \\(\\beta(84.8)\\approx .4\\) and that \\(\\beta(84.8)\\) decreases as sample size goes from 10 to 25. A conclusion that can be made about this test from the OC curve is that Type II error probability would be \\(&lt; .1\\) for an actual \\(\\mu &gt; 84.8\\) for \\(n=25\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#power-curve",
+    "href": "notes/3-one-mean/part3_lectures.html#power-curve",
+    "title": "Part 3",
+    "section": "Power Curve",
+    "text": "Power Curve\n\nAnother quantity that may be calculated for a test procedure for a specified value of \\(\\mu\\) is called the Power of the test and is defined as \\(1-\\beta(\\mu)\\).\nThe corresponding plot of power against a set of \\(\\mu\\) values is called the power curve."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#power-of-the-test",
+    "href": "notes/3-one-mean/part3_lectures.html#power-of-the-test",
+    "title": "Part 3",
+    "section": "Power of the Test",
+    "text": "Power of the Test\n\nBy definition, power of a test is the probability of rejecting \\(H_0\\) for a specified value of \\(\\mu\\) under \\(H_a\\).\nIn practice, tests are designed to have large power for some \\(\\mu\\) values of interest so that they have small Type II error probabilities.\nWe can relate to this idea by thinking of a test as having very good power if it has a very good chance of detecting whether a change in \\(\\mu\\) has actually occured.\nThis is usually done by selecting a sample size \\(n\\) to be used for the experiment so that the desired power is achieved for a specified \\(\\mu\\) and \\(\\alpha\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#using-type-ii-error-probability-beta-curves",
+    "href": "notes/3-one-mean/part3_lectures.html#using-type-ii-error-probability-beta-curves",
+    "title": "Part 3",
+    "section": "Using Type II Error Probability \\(\\beta\\) Curves",
+    "text": "Using Type II Error Probability \\(\\beta\\) Curves\n\nConsider the Salmonella example again. We have \\(n=9,\\) and \\(\\alpha=.01\\). Thus \\(df=8\\) and we estimate \\(\\sigma \\approx .25\\)\nWe can compute the values of \\(d\\) for several values of \\(\\mu_a\\). Then we’ll read \\(\\beta\\) for those values of \\(d\\) using the graph on next slide for the curves for \\(\\alpha=.01\\).\nAs an example, for \\(\\mu_a=.45\\), \\(d=\\frac{|\\mu_a-\\mu_0|}{\\sigma}=\\frac{|.45-.3|}{.25}=.6\\)\nCorresponding to \\(d=.6\\) on the horizontal axis, using the curve for \\(df=8\\) we see that \\(\\beta(.45)=.79\\), approx.\nSimilarly, for \\(\\mu_a=.45\\ d=1.0\\), and thus \\(\\beta(.55)=.43\\), approx. We can construct a table as shown (next slide)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#using-type-ii-error-probability-beta-curves-1",
+    "href": "notes/3-one-mean/part3_lectures.html#using-type-ii-error-probability-beta-curves-1",
+    "title": "Part 3",
+    "section": "Using Type II Error Probability \\(\\beta\\) Curves",
+    "text": "Using Type II Error Probability \\(\\beta\\) Curves"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#departures-from-normality",
+    "href": "notes/3-one-mean/part3_lectures.html#departures-from-normality",
+    "title": "Part 3",
+    "section": "Departures from Normality",
+    "text": "Departures from Normality\n\nWhen \\(\\bar{Y}\\) is a Normal random variable, i.e., when sampling from a Normal population with mean \\(\\mu_0\\), \\(\\frac{\\bar{Y}-\\mu_0}{S/\\sqrt{n}}\\) is a \\(T_{n-1}\\) random variable.\nThis is a theoretical fact. In practice, however, we never sample exactly from a Normal population, so (\\(\\bar{Y}- \\mu_0)/S/\\sqrt{n}\\) will be only approximately \\(T_{n-1}\\).\nHow much effect can this have on C.I.’s and tests we construct?\nFor symmetrically distributed populations and not too small \\(n\\) there is little to worry about.\nFor highly skewed population distributions the approximation can be terrible especially for small \\(n\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#section-5",
+    "href": "notes/3-one-mean/part3_lectures.html#section-5",
+    "title": "Part 3",
+    "section": "",
+    "text": "image\n\n\n\n\nIt is recommended that one look at a boxplot, Normal plot, and/or other graphics to see whether severe skewness of the sampling population is indicated. If not, proceed to use the \\(t\\)-distribution. If yes, one can use a nonparametric procedure or use a transformation. We will look at some of these later."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#using-confidence-intervals-to-test-hypotheses",
+    "href": "notes/3-one-mean/part3_lectures.html#using-confidence-intervals-to-test-hypotheses",
+    "title": "Part 3",
+    "section": "Using Confidence Intervals to Test Hypotheses",
+    "text": "Using Confidence Intervals to Test Hypotheses\n\nWe can always look at a (1-\\(\\alpha\\))100% confidence interval and see what the result of a test would be if we carry out the test.\nFor example, consider the (1-\\(\\alpha\\))100% confidence interval for \\(\\mu\\) \\[\\left(\\bar{y} - t_{\\alpha/2} \\, \\frac{s}{\\sqrt{n}}, \\quad\n        \\bar{y} + t_{\\alpha/2} \\, \\frac{s}{\\sqrt{n}}\\right)\\]\nSuppose that \\(\\mu_0\\) is not included in the above confidence interval because \\[\\bar{y} - t_{\\alpha/2} \\, \\frac{s}{\\sqrt{n}}&gt;\\mu_0\\]"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#using-confidence-intervals-to-test-hypotheses---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#using-confidence-intervals-to-test-hypotheses---cont.",
+    "title": "Part 3",
+    "section": "Using Confidence Intervals to Test Hypotheses - cont.",
+    "text": "Using Confidence Intervals to Test Hypotheses - cont.\n\nBy rearranging this we see that this is equivalent to \\(t_c\\) being in the rejection region, i.e.,\n\\[\\frac{\\bar{y}-\\mu_0}{s/\\sqrt{n}} &gt; t_{\\alpha/2,(n-1)}\\]\nObserve carefully that this is the same rejection region for the test of \\(H_0: \\mu \\leq  \\mu_0\\) vs. \\(H_a: \\mu &gt;\n\\mu_0\\) at level \\(\\alpha/2\\).\nThat is, we will be rejecting \\(H_0\\) at level \\(\\alpha/2\\) if\n\\[\\frac{\\bar{y}-\\mu_0}{s/\\sqrt{n}} &gt; t_{\\alpha/2,(n-1)}\\]\nThis is equivalent to saying that if \\(\\mu_0\\) was not included in a 100(1-\\(\\alpha\\))% interval, then \\(H_0\\) will be rejected if the test is carried out at \\(\\alpha/2\\) level."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#using-confidence-intervals-to-test-hypotheses---cont.-1",
+    "href": "notes/3-one-mean/part3_lectures.html#using-confidence-intervals-to-test-hypotheses---cont.-1",
+    "title": "Part 3",
+    "section": "Using Confidence Intervals to Test Hypotheses - cont.",
+    "text": "Using Confidence Intervals to Test Hypotheses - cont.\n\nFor a two-tailed test, the confidence interval should be based on the same \\(\\alpha\\) as the test to make this inference.\n\nIn summary,\n\nTo test \\(H_0: \\mu \\leq \\mu_0, \\quad H_a: \\mu &gt; \\mu_0\\), at level \\(\\alpha/2\\), use a 100(1-\\(\\alpha\\))% confidence interval.\nTo test \\(H_0: \\mu \\geq \\mu_0, \\quad H_a: \\mu &lt; \\mu_0\\), at level \\(\\alpha/2\\), use a 100(1-\\(\\alpha\\))% confidence interval.\n\\(H_0: \\mu = \\mu_0, \\quad H_a: \\mu \\neq \\mu_0\\), at level \\(\\alpha\\), use a 100(1-\\(\\alpha\\))% confidence interval."
   }
 ]

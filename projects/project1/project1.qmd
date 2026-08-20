@@ -50,7 +50,7 @@ hist(ne$TRANTIME)
 
 ## Problems
 
-Complete each of the following problems using the provided Quarto template. Your code must be reproducible, but you are free to use any R packages that you would like (i.e., I can get the same output file by rendering your Quarto file). For each problem, include your code, output, and a brief written interpretation of your results. Submit your completed Quarto file and the rendered PDF file to Canvas.
+Complete each of the following problems using the provided Quarto template (on Canvas). Your code must be reproducible, but you are free to use any R packages that you would like (i.e., I can get the same output file by rendering your Quarto file). For each problem, include your code, output, and a brief written interpretation of your results. Submit your completed Quarto file and the rendered PDF file to Canvas.
 
 1. Read in the data into an object called `ne_work_commute` and use the `head()` function to print out the first 10 observations.
 2. Use the `dim()` function to get the dimensions of the dataset. In writing (1 sentence), state the number of rows and columns of `ne_work_commute`.

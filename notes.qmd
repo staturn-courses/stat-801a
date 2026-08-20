@@ -1,0 +1,8 @@
+---
+title: "Notes"
+format: html
+---
+
+8/27/26
+
+- [Slides](notes/1-descriptive-statistics/part1_lectures.qmd)

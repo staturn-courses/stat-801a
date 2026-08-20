@@ -1,23 +1,11 @@
-# Goals for STAT 801A {.unnumbered}
+---
+title: "STAT 801A"
+subtitle: Tyler Wiederich, Ph.D.
+about:
+  template: jolla
+  image: "https://ggplot2.tidyverse.org/logo.png"
+---
 
-STAT 801A is an introduction to research methods, and how statistical methods may be used to answer research questions. By the end of the course, you will:
+This website is open to my students in the University of Nebraska-Lincoln's STAT 801A course. 
 
--   understand the role statistics plays in the research process, and how a statistical investigation works.
-
--   understand statistical evidence, and what conclusions may be drawn based on the evidence and study design.
-
--   be able to make simple probability calculations, and be able to differentiate a few different probability distributions based on the scenario.
-
--   understand that variability is natural, and commonly used statistics such as the mean, variance, and others have their own probability distributions. Such a probability distribution is called a sampling distribution.
-
--   understand the underlying logic behind commonly used statistical inference techniques (hypothesis tests and confidence intervals).
-
--   realize that the most appropriate statistical inference method changes based on the explanatory variable(s), response variable, and goals of the study.
-
--   be able to calculate and interpret statistical analyses for studies in which there is one (or fewer) explanatory variables.
-
--   be able to sketch a skeleton ANOVA table from a description of the study.
-
--   use statistical software appropriately.
-
--   be able to clearly write up the results of an analysis.
+**Course description:** Statistical concepts and statistical methodology useful in descriptive, experimental, and analytical study of biological and other natural phenomena. Practical application of statistics rather than on statistical theory.

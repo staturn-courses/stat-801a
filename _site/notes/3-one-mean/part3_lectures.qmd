@@ -10,7 +10,6 @@ title: Part 3
 format: 
   revealjs:
     smaller: true
-  pdf: default
 ---
 
 ::: frame
