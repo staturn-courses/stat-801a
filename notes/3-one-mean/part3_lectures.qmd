@@ -1,12 +1,6 @@
 ---
-author:
-- |
-  Inferences about $\mu$\
-  Confidence Intervals\
-  Type I and II Error\
-  p-value\
-  t-distribution
-title: Part 3
+title: Inferences about $\mu$
+footer: STAT 801A
 format: 
   revealjs:
     smaller: true
