@@ -4,6 +4,7 @@
 .Ruserdata
 reka/
 erin/
+.DS_Store
 
 /.quarto/
 .posit/assistant
