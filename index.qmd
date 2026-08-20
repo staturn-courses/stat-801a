@@ -4,6 +4,10 @@ subtitle: Tyler Wiederich, Ph.D.
 about:
   template: jolla
   image: "https://ggplot2.tidyverse.org/logo.png"
+  links:
+    - icon: house
+      text: All courses
+      href: https://staturn-courses.github.io/
 ---
 
 This website is open to my students in the University of Nebraska-Lincoln's STAT 801A course. 

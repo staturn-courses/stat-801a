@@ -1,11 +1,10 @@
 ---
 title: What is Statistics?
 subtitle: Summarizing Data
-author: Stat 801a
 format: 
   revealjs:
     smaller: true
-    footer: "Fall 2026"
+    footer: "Stat 801A"
     
 execute:
   echo: true

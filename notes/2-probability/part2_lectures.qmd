@@ -1,7 +1,7 @@
 ---
 title: Probability
 subtitle: "Random Variables, Probability Distributions"
-author: Stat 801a
+footer: Stat 801A
 format: 
   revealjs:
     smaller: true

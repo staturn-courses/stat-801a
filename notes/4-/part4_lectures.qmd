@@ -1,0 +1,610 @@
+---
+title: Inferences about $\mu_1-\mu_2$
+subtitle: Confidence Intervals for $\mu_1 - \mu_2$, Welch's t test, Inferences about $\mu_1-\mu_2$ for Paired Data
+footer: STAT 801A
+format: 
+  revealjs:
+    smaller: true
+---
+
+
+::: frame
+## Inferences about $\mu_1$ - $\mu_2$
+
+- In many situations one wishes to [*compare*]{style="color: magenta"} the means of two different populations.
+
+- Let $\mu_1$ and $\mu_2$ denote means two populations.
+
+- Most often, the comparison of interest is the difference $\mu_1 - \mu_2$.
+
+- We will make the comparison based on a random sample from each population. Suppose samples of sizes $n_1$ and $n_2$ are drawn.
+:::
+
+---
+
+::: frame
+- Let $\bar{Y}_1$ and $\bar{Y}_2$ denote sample mean random variables and $S_1$ and $S_2$ be the sample standard deviation random variables computed from each sample.
+
+- Also assume that the samples are drawn [*independently*]{style="color: magenta"} from each population, and that the populations have the same variance $\sigma^2$.
+
+- For large sample sizes, the random variables $\bar{Y}_1$ and $\bar{Y}_2$ are [*approximately normal*]{style="color: magenta"}.
+
+- Thus the random variable $\bar{Y}_1 - \bar{Y}_2$ is also approximately normal.
+:::
+
+::: frame
+- The mean of the random variable $\bar{Y}_1 - \bar{Y}_2$ is $\mu_1 - \mu_2$ and standard deviation is $$\sigma_{\bar{Y}_1 - \bar{Y}_2} =
+    \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}$$ where $\sigma_1^2$ and $\sigma_2^2$ are the variances of each of each population.
+
+- However, under the assumption that $\sigma_1^2 = \sigma_2^2 \equiv \sigma^2$, the standard deviation becomes $$\sigma_{\bar{Y}_1 - \bar{Y}_2} =
+    \sqrt{\frac{\sigma^2}{n_1} + \frac{\sigma^2}{n_2}} =\sigma\sqrt{\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}$$
+:::
+
+::: frame
+- An estimator of $\sigma_{\bar{Y}_1 - \bar{Y}_2}$ is $$S_{\bar{Y}_1 - \bar{Y}_2} = S_p \sqrt{\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}$$
+
+- $S_p^2$ is the [*pooled estimator*]{style="color: magenta"} of the common variance $\sigma^2$ of the two populations.
+
+- This is obtained under the assumption that $\sigma_1^2 = \sigma_2^2 \equiv \sigma^2$, the common variance .
+
+- Later we will talk about what to do if we can't reasonably make this assumption in a given situation.
+:::
+
+::: frame
+- Consider the random variable defined as: $$T_{n_1 + n_2 - 2} = \frac{(\bar{Y}_1 - \bar{Y}_2) - (\mu_1 -
+  \mu_2)}{S_{\bar{Y}_1 - \bar{Y}_2}}$$
+
+- When sampling is from Normal distributions, the distribution of the above statistic is distributed exactly as Student's $t$ with $df=n_1 + n_2 - 2$.
+
+- For large samples we may use the CLT and say that $T_{n_1 + n_2 -
+  2}$ will be approximately distributed as Student's $t$ with $df=n_1 + n_2 - 2$
+
+- For small samples, however, we must verify if the samples were actually drawn from Normal distributions, using tools such as boxplots and normal probability plots
+:::
+
+::: frame
+- We shall do that before calculating confidence intervals for $\mu_1 - \mu_2$, and for testing hypotheses using the $t$ distribution.
+
+- The [*pooled estimator*]{style="color: magenta"} of the common variance $\sigma^2$, $S_p^2$, is obtained using the weighted average $$S_p^2 = \frac{(n_1-1)S_1^2 + (n_2-1)S_2^2}{n_1+n_2 - 2}$$
+:::
+
+::: frame
+- Here $S_1^2$ and $S_2^2$ are sample variance random variables. $S_1^2  = \frac{1}{n_1-1} \sum_{j=1}^{n_1} (Y_{1j} - \bar{Y}_1)^2$ $S_2^2 =  \frac{1}{n_2-1} \sum_{j=1}^{n_1} (Y_{2j} - \bar{Y}_2)^2$\
+
+- Thus a [*100(1-$\alpha$)% Confidence Interval for $\mu_1 - \mu_2$*]{style="color: magenta"} is $\bar{y}_1 - \bar{y}_2 \pm t_{\alpha/2,df}\cdot \, s_p$ $\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}$
+
+- Here $df= n_1 + n_2 - 2$ and $$s_p = \sqrt{\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1 + n_2 - 2}}$$
+:::
+
+:::: frame
+### Example
+
+Company officials, concernerned about potency of a product retained after storage, drew a random sample of $n_1=10$ bottles from the production line and tested for potency. Another random sample of $n_2=10$ bottles was drawn and stored in a regulated environment for 1 year and then tested. The data obtained are:\
+
+::: center
++---------------+---+---------------+
+| **Fresh**     |   | **Stored**    |
++======:+======:+==:+======:+======:+
+| 10.2  | 10.6  |   | 9.8   | 9.7   |
++-------+-------+---+-------+-------+
+| 10.5  | 10.7  |   | 9.6   | 9.5   |
++-------+-------+---+-------+-------+
+| 10.3  | 10.2  |   | 10.1  | 9.6   |
++-------+-------+---+-------+-------+
+| 10.8  | 10.0  |   | 10.2  | 9.8   |
++-------+-------+---+-------+-------+
+| 9.8   | 10.6  |   | 10.1  | 9.9   |
++-------+-------+---+-------+-------+
+:::
+::::
+
+::: frame
+### Solution
+
+$n_1 =10 \hspace*{1in} n_2 = 10$\
+$\ \bar{y}_1 =103.7/10= 10.37 \quad \quad   \bar{y}_2 =98.3/10= 9.83$\
+$s_1^2 = [1076.31-\frac{(103.7)^2}{10}]/9=0.105$\
+$s_2^2 =[966.81-\frac{(98.3)^2}{10}]/9= .058$ $$\begin{eqnarray*}
+ s_p & = & \sqrt{\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1 + n_2 - 2}}=\sqrt{\frac{9}{18} (s_1^2 + s_2^2)}\\[.15in]
+& = &  \sqrt{\frac{.105+.058}{2}} = 0.285
+\end{eqnarray*}$$
+:::
+
+::: frame
+### Solution - cont.
+
+The t-percentile based on $df= n_1+n_2-2= 10+ 10 -2= 18$ and $\alpha=.025$ is $t_{.025,18}=2.101$\
+Thus a 95% confidence interval for the difference in the mean potencies $\mu_1-\mu_2$ is:\
+$(10.37-9.83) \pm2.102 (.285)\sqrt{\frac{1}{10}+\frac{1}{10}}$\
+$.54\pm .268$ or $(.272,\,.808)$\
+Thus, the difference in mean potencies for bottles from the production line and those stored for one year, $\mu_1-\mu_2$, is estimated to be between .272 and .808 with [*95% confidence*]{style="color: magenta"}.\
+It is important understand what we mean by the above statement.
+:::
+
+:::: frame
+### Example
+
+::: center
+![image](ex6_2.pdf)\
+:::
+::::
+
+:::: frame
+### Tests of Hypotheses about $\mu_1-\mu_2$
+
+The types of hypothesis that may be tested are similar to those on the mean of a single population. These are:
+
+::: tabbing
+xxxxx x̄xxxxxxxxxxxxxxxxxxxx ̄ . $H_0:$ $\mu_1 - \mu_2 \leq  D_0$ $H_a:$ $\mu_1 - \mu_2 > D_0$\
+. $H_0:$ $\mu_1 - \mu_2 \geq  D_0$ $H_a:$ $\mu_1 - \mu_2 < D_0$\
+. $H_0:$ $\mu_1 - \mu_2 =  D_0$ $H_a:$ $\mu_1 - \mu_2 \neq D_0$
+:::
+
+(where $D_0$ is a specified number, often zero.)\
+The test statistic for testing each of the above hypotheses is $$T = \frac{\bar{Y}_1 - \bar{Y}_2 - D_0}{S_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}$$
+::::
+
+::: frame
+The [*two-sample t-statistic*]{style="color: magenta"} is calculated using the sample statistics: $\bar{y}_1, \bar{y}_2$ and $s_p$:\
+$t =\frac{\bar{y}_1 - \bar{y}_2 - D_0}{s_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}$\
+The rejection regions for each test, respectively, are:
+
+1.  Reject $H_0$ if $t > t_{\alpha,\,df}$
+
+2.  Reject $H_0$ if $t < -t_{\alpha,\,df}$
+
+3.  Reject $H_0$ if $|t| > t_{\alpha/2,\,df}$
+
+Note that the degrees of freedom is $df=n_1+n_2-2$
+:::
+
+::: frame
+Handout - Example 6.3
+:::
+
+::: frame
+### Exercise
+
+Two different emission-control devices were being tested to determine the average amount of nitric oxide being emitted by an automobile over a 1-hour period of time. Twenty cars of the same model and year were selected for the study. Ten cars were randomly selected and equipped with a Type 1 emission-control device, and the remaining cars were equipped with Type II devices. Each of the 20 cars was then monitored for a 1-hour period to determine the amount of nitric oxide emitted.\
+Use the following data to test the research hypothesis that the mean level of emission for Type 1 devices ($\mu_1$) is greater than the mean emission level for Type II devices ($\mu_2$). Use $\alpha=.01$.\
+:::
+
+:::: frame
+### Exercise - cont.
+
+::: center
++-----------------------+---+-----------------------+
+| **Type 1 Device**     |   | **Type II Device**    |
++==========:+==========:+==:+==========:+==========:+
+| 1.35      | 1.28      |   | 1.01      | 0.96      |
++-----------+-----------+---+-----------+-----------+
+| 1.16      | 1.21      |   | 0.98      | 0.99      |
++-----------+-----------+---+-----------+-----------+
+| 1.23      | 1.25      |   | 0.95      | 0.98      |
++-----------+-----------+---+-----------+-----------+
+| 1.20      | 1.17      |   | 1.02      | 1.01      |
++-----------+-----------+---+-----------+-----------+
+| 1.32      | 1.19      |   | 1.05      | 1.02      |
++-----------+-----------+---+-----------+-----------+
+:::
+::::
+
+::: frame
+### Exercise - cont.
+
+$n_1 = n_2 = 10$\
+$\ \bar{y}_1 = 1.236 \quad \quad   \bar{y}_2 = 0.997$\
+$s_1^2 = 0.004096 \quad s_2^2 = 0.0009$\
+$s_p^2 = \frac{9}{18} (s_1^2 + s_2^2) = 0.0025 \quad \quad s_p$ = 0.05\
+$H_0: \mu_1 - \mu_2 \leq 0$  vs. $H_a: \mu_1 - \mu_2 > 0$\
+$t_c = \frac{1.236-0.997}{0.05\sqrt{0.2}} = 10.71$\
+$t_{0.01,18} = 2.552$ implying R.R. is $t>2.552$\
+Therefore reject $H_0$ at $\alpha=.01$ as $t_c$ is in the R.R.\
+Thus it appears that the mean level of emission for the Type I device is greater than for Type II.
+:::
+
+::: frame
+### The above confidence interval and test formulae are based on several assumptions
+
+1.  The two samples are drawn independently from the two populations.
+
+2.  The two populations are such that $\bar{Y}_1$ and $\bar{Y}_2$ are approximately normal. (We make use of the CLT if the size of samples $n_1$ and $n_2$ are sufficiently large.)
+
+3.  The two populations have the same variance $\sigma^2$ (in order to see if this assumption may not hold one looks at $s_1^2$ and $s_2^2$.)
+:::
+
+::: frame
+### About Assumptions
+
+Assumption 3. is the unusual. When $n_1 = n_2 = n$, unless studies indicate that $\sigma_1^2$ and $\sigma_2^2$ can differ by as much as a factor of 3, it won't make a difference in the inference about $\mu_1 - \mu_2$ based on the use of given formulae for C.I.'s and tests.\
+When we find ourselves in a situation where Assumption 3. seems to be seriously violated, we can use an [*an approximate $t$ test*]{style="color: magenta"} described below.\
+Assumption 1. requires that the samples from the two populations are obtained in such a way that the elements of the two samples are [*statistically independent*]{style="color: magenta"}.
+:::
+
+:::: frame
+### Welch's $t$ test
+
+The hypotheses to be tested are as usual:
+
+::: tabbing
+xxxxx x̄xxxxxxxxxxxxxxxxxxxx ̄ . $H_0:$ $\mu_1 - \mu_2 \leq  D_0$ $H_a:$ $\mu_1 - \mu_2 > D_0$\
+. $H_0:$ $\mu_1 - \mu_2 \geq  D_0$ $H_a:$ $\mu_1 - \mu_2 < D_0$\
+. $H_0:$ $\mu_1 - \mu_2 =  D_0$ $H_a:$ $\mu_1 - \mu_2 \neq D_0$
+:::
+
+The test statistic is : $$t' = \frac{(\bar{y}_1 - \bar{y}_2) - D_0}
+  {\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$$ Note that the two sample variances are NOT pooled to obtain a pooled sample variance estimate.
+::::
+
+:::: frame
+### Welch's $t$ test - cont.
+
+The percentile points of the $t'$-statistic are approximated by using the t-table with an [*adjusted degrees of freedom*]{style="color: magenta"} given by: $$df = \frac{(n_1-1)(n_2-1)}{(n_2-1)c^2 + (1-c)^2(n_1-1)}$$
+
+::: flushright
+(round down to an integer)
+:::
+
+where $$c = \frac{s_1^2/n_1}{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}$$
+::::
+
+:::: frame
+### Welch's $t$ test - cont.
+
+For specified $\alpha$ the rejection regions for the three hypotheses, respectively, are given by:
+
+::: tabbing
+xxxxx x̄xxxxxxxxxxxxxxxxxxxx ̄ .  Reject $H_0$  if  $t' > t_{\alpha,\,df}$\
+.  Reject $H_0$  if  $t' < -t_{\alpha,\,df}$\
+.  Reject $H_0$  if  $|t'| > t_{\alpha/2,\,df}$
+:::
+
+An approximate $100(1-\alpha)\%$ confidence interval for $\mu_1 - \mu_2$ is: $$(\bar{y}_1 - \bar{y}_2) \pm t_{\alpha/2,\,df}\cdot \sqrt{\frac{s_1^2}{n_1} +
+\frac{s_2^2}{n_2}}$$ where $t_{\alpha/2}$ is the $t$ quantile found from the t-table for $df$ computed using the above formula.
+::::
+
+::: frame
+Handout - Oil spill data
+:::
+
+::: frame
+### Inferences about $\mbox{\boldmath$\mu_1 - \mu_2$}$ for Independent Samples
+
+- Consider [*independent samples*]{style="color: magenta"} from two populations having means and variances ($\mu_1, \sigma_1^2$) and ($\mu_2, \sigma_2^2$), respectively.
+
+- The mean and variance of the sampling random variable $\bar{Y}_1 - \bar{Y}_2$ are: $$E(\bar{Y}_1 - \bar{Y}_2) = \mu_1 - \mu_2 \quad
+    V(\bar{Y}_1 - \bar{Y}_2) = \frac{\sigma_1^2}{n_1} + 
+    \frac{\sigma_2^2}{n_2}$$
+
+- Point estimates of these we know are: $$\bar{y}_1 - \bar{y}_2 \quad \rm{and} \quad \quad
+    \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2} \ .$$
+:::
+
+::: frame
+### Inferences about $\mbox{\boldmath$\mu_1 - \mu_2$}$ for Independent Samples - cont.
+
+- If the two populations have the same variances, so that $\sigma_1^2 = \sigma_2^2 = \sigma^2$ then $$V(\bar{Y}_1 - \bar{Y}_2) = \sigma^2
+    \left( \frac{1}{n_1} + \frac{1}{n_2} \right)$$
+
+- Then we estimate $\sigma^2$ by pooling the two sample estimates of $\sigma^2$ as $$s_p^2 = \frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1 + n_2 - 2}$$
+
+- If $n_1 = n_2 = n$ then $s_p^2 = \frac{s_1^2 + s_2^2}{2}$
+:::
+
+::: frame
+### Why variance is reduced by pairing data?
+
+- In either case, what this means is that if the variances of the two populations is [*small*]{style="color: magenta"}, we can expect the variance of $\bar{Y}_1 - \bar{Y}_2$ to be small.
+
+- If this is true, we can expect the sample values to be close to the sample means and $\bar{y}_1 - \bar{y}_2$ to be [*very close*]{style="color: magenta"} to $\mu_1 - \mu_2$.
+
+- Thus even a small sample will be sufficient to get a [*good*]{style="color: magenta"} estimate of $\mu_1 - \mu_2$ if the variances are small.
+
+- But many times the population variances $\sigma^2$ are large, so that we cannot estimate $\mu_1 - \mu_2$ accurately with a small sample.
+:::
+
+::: frame
+### Why variance is reduced by pairing data? - cont.
+
+- Instead of using [*independent samples*]{style="color: magenta"} from the two populations, we form pairs of elements -- one element from each population, in an effort to achieve smaller variance for $\bar{Y}_1 - \bar{Y}_2$
+
+- Then the random sample of $n$ pairs of elements can be viewed as having come from a population of pairs.
+
+- The random variable representing the difference in sample means $\bar{Y}_1 - \bar{Y}_2$ defined on this population has $$E(\bar{Y}_1 - \bar{Y}_2) = \mu_1 - \mu_2 \quad \quad
+    V(\bar{Y}_1 - \bar{Y}_2) = \frac{\sigma_1^2}{n} + 
+    \frac{\sigma_2^2}{n} - \frac{2\sigma_{12}}{n}$$
+:::
+
+::: frame
+- The quantity $\sigma_{12}$ is called the [*covariance*]{style="color: magenta"} of the two populations.
+
+- We see from the variance of $\bar{Y}_1 - \bar{Y}_2$ that if $\sigma_{12} > 0$ then $V(\bar{Y}_1 - \bar{Y}_2)$ is less than $\frac{\sigma_1^2}{n} + 
+    \frac{\sigma_2^2}{n}$
+
+- That is, the variance of $\bar{Y}_1 - \bar{Y}_2$ for paired data is less than it is for two independent samples, each of sample size $n$.
+
+- Thus we expect the differences of means for paired data to have a smaller variance than when the difference of means is from two independent samples.
+
+- For this to occur we need to pair the elements so that the covariance of the observed data is positive. That is, the two samples are [*positively correlated*]{style="color: magenta"}.
+:::
+
+::: frame
+- If pairing is done so that paired elements respond more alike when $\mu_1 = \mu_2$ than do two randomly selected elements (one from each population), then $\sigma_{12} > 0$, i.e, we will have achieved our goal of smaller variance when estimating $\mu_1 - \mu_2$
+
+- So far we looked at methods for hypothesis tests and confidence intervals when [independent samples]{style="color: magenta"} were taken from the two populations.
+
+- Those methods cannot be used when each measurement in one sample is somehow [ matched or paired]{style="color: magenta"} with a particular measurement in the other sample.
+:::
+
+::: frame
+### Examples: Paired Experiments
+
+- Let's assume 15 wrecked cars were taken to each of two garages to get an estimate of the cost of repair. The study was to see if the two facilities gave different average estimates. Independent samples of estimates would not have involved the same wrecked cars. That is, to get 2 independent samples of sample size 15, we would have to take 30 wrecks to the 2 garages. The variance of estimates for repairs would be large because of the types of repair involved would be very different for each car.
+
+- Studies of response to a treatment vs. a control are often done using siblings, or sometimes the same individual.
+:::
+
+::: frame
+### Examples: Paired Experiments - cont.
+
+- Suppose a consumer testing organization wants to study whether there is a difference in the wear rates of two brands of work shoes.
+
+  1.  Suppose that workers selected for the experiment were divided into two groups randomly. Members of one group were assigned to wear Brand X to work while the members of the other group wear Brand Y shoes.
+
+  2.  Population 1 consists of the wear rates for persons assigned Brand X with the mean wear rate $\mu_1$, and Population 2, wear rates for those assigned Brand Y with the mean wear rate $\mu_2$.
+
+  3.  We are interested in estimating $\mu_1 - \mu_2$ and trying to test whether $\mu_1 - \mu_2 \neq 0$.
+:::
+
+::: frame
+- [*Independent Samples Kind of Study*]{style="color: magenta"}:(2 groups of size $n$) Take a random sample of workers, randomly divide them into two groups, one to receive each Brand, and measure the wear rate for each person after 100 workdays. Then $\bar{y}_1 - \bar{y}_2$ estimates $\mu_1 - \mu_2$.
+
+- [*A Paired Data Kind of Study*]{style="color: magenta"}:(1 group of size $n$) Take a random sample of workers. Assign Brand X to all workers in the group and measure the wear rates following 100 workdays. Now assign the same workers Brand Y and measure wear rate after the next 100 workdays. $\bar{y}_1 - \bar{y}_2$ estimates $\mu_1 - \mu_2$.
+:::
+
+:::: frame
+### Why is variance less for paired data?
+
+Consider data from the independent samples experiment:\
+
+::: small
+     Brand X       Brand Y       Difference in Wear
+  ------------- ------------- -------------------------
+    $y_{11}$      $y_{21}$         $y_{11}-y_{21}$
+    $y_{12}$      $y_{22}$         $y_{12}-y_{22}$
+    $y_{13}$      $y_{23}$            $\vdots$
+    $\vdots$      $\vdots$    
+    $y_{1n}$      $y_{2n}$         $y_{1n}-y_{2n}$
+   $\bar{y}_1$   $\bar{y}_2$   $\bar{y}_1 - \bar{y}_2$
+:::
+
+\
+Note carefully that the difference $\bar{y}_1 - \bar{y}_2$. rates also include differences in the workers (weight, kind of work, walking habits etc.) who wore those particular shoes.
+::::
+
+::: frame
+### Why is variance less for paired data? - cont.
+
+- Note carefully that the difference $\bar{y}_1 - \bar{y}_2$. rates also include differences in the workers (weight, kind of work, walking habits etc.) who wore those particular shoes.
+
+- Thus the variance of $\bar{y}_1 - \bar{y}_2$ is inflated by the variance among the workers.
+
+- For the paired data case, differences in changes are also computed and averaged as above. However, the worker is the same in each pairs so in taking the difference we have eliminated any effect due to each worker.
+
+- Members of a pair are selected so they respond more alike than two arbitrarily selected individuals if the treatment had no effect.
+
+- This reduces variation in the differences in response, hence it allows us to better detect differences between $\mu_1$ and $\mu_2$.
+:::
+
+::: frame
+### Paired t test for n pairs of data
+
+- Suppose $\mu_d\equiv \mu_1-\mu_2$ denote the mean of the population of differences.
+
+- Denote the differences in pairs of observations by $d_i=y_{1i}-y_{2i}$
+
+- $\bar{d}=(\sum d_i)/n$ be the sample mean of the differences of pairs of data.
+
+- $s_d$ be standard deviation of the differences of pairs of data where $$s_d^2 = \left(\sum{d_i^2} - \frac{(\sum{d_i})^2}{n}\right)/(n-1)$$
+:::
+
+:::: frame
+### Tests of Hypotheses about $\mu_d$
+
+The types of hypothesis that may be tested are similar to those on the mean of a single population. These are:\
+
+::: tabbing
+xxxxx x̄xxxxxxxxxxxxxxxxxxxx ̄ . $H_0: \mu_d \leq D_0$  vs.  $H_a: \mu_d > D_0$\
+. $H_0: \mu_d \geq D_0$  vs.  $H_a: \mu_d < D_0$\
+. $H_0: \mu_d = D_0$  vs.  $H_a: \mu_d \neq D_0$
+:::
+
+The test statistic for testing each of the above hypotheses is the [*paired t-statistic*]{style="color: magenta"}: $$t = \frac{\bar{d}-D_0}{s_d/\sqrt{n}}$$
+::::
+
+:::: frame
+Choosing Type I error rate to be $\alpha$, the rejection regions are, respectively,\
+
+::: tabbing
+xxxxx x̄xxxxxxxxxxxxxxxxxxxx ̄ . Reject if: $t > t_{\alpha,(n-1)}$\
+. Reject if: $t < -t_{\alpha,(n-1)}$\
+. Reject if: $|t| > t_{\alpha/2,(n-1)}$
+:::
+
+**[Confidence Interval for $\mbox{\boldmath$\mu_d$}$]{style="color: blue"}**\
+A $100(1-\alpha)\%$ confidence interval for $\mu_d$ is: $$\bar{d}\ \pm\ t_{\alpha/2}\, \cdot s_d \, /\sqrt{n}$$ where $t_{\alpha/2}$ is the tabulated $t$ percentile based on $n-1$ df.
+::::
+
+::::: frame
+### Example
+
+Pairs are animals from the same litter are randomly assigned two different rations. Observed weight gain for each animal is recorded. Test whether the population mean weight gains for the two rations are different. Use $\alpha=.01$.\
+
+:::: center
+::: footnotesize
+    $R1$   $R2$     $d=R1-R2$                    $d^2$
+  ------ ------ ----------------- --------------------
+    10.6    9.9        0.7                        0.49
+    11.0   10.2        0.8                        0.64
+    10.6    9.3        1.3                        1.69
+     9.8    9.6        0.2                        0.04
+     9.2    8.8        0.4                        0.16
+     8.6    7.8        0.8                        0.64
+     6.6    6.4        0.2                        0.04
+    10.0    8.3        1.7                        2.89
+     7.9    8.0       -0.1                        0.01
+     8.4    7.8        0.6                        0.36
+                 $\sum{d_i}=6.6$    $\sum{d_i^2}=6.96$
+:::
+::::
+:::::
+
+::: frame
+- Let $\mu_d=\mu_1-\mu_2$ where $\mu_1$ and $\mu_2$ are the population means for the two rations.\
+
+- Test $H_0: \mu_d = 0$ vs. $H_a: \mu_d \neq 0$ using $\alpha=.01$\
+  $s_d^2 = [\sum{d_i^2} - \frac{(\sum{d_i})^2}{n}]/(n-1)=(6.96-6.6^2/10)/9 = 0.2893$\
+  The paired t-statistic is:\
+  $t_c = \bar{d}/(s_d/\sqrt{10}) = .66/0.1701= 3.88$\
+  Since $t_{.005,9} = 3.25$, R.R. is $|t|> 3.25$; Reject $H_0:$ at $\alpha=.01$.\
+
+- The p-value is obtained by looking up Table 2 with $t_c=3.88$ with $df=9$. It is seen that $.001<p< 0.005$\
+
+- A 99% confidence interval for $\mu_d$ is:\
+  $\bar{d} \pm  t_{.005} \, \cdot s_d \, /\sqrt{n}  = 0.66  \pm 
+  (3.25)(0.1701)$ giving $(.10, 1.21)$
+:::
+
+::: frame
+### Example
+
+An agricultural experiment station was interested in comparing the yields for two new varieties of corn. Because the investigators thought that there might be a great deal of variability in yield from one farm to another, each variety was randomly assigned to a different 1-acre plot on each of seven farms. The 1-acre plots were planted; the corn was harvested at maturity. The results of the experiment (in bushels of corn) are listed here.
+:::
+
+:::: frame
+### Data for example
+
+::: center
+  Farm           1      2      3      4      5      6      7
+  ------------ ------ ------ ------ ------ ------ ------ ------
+  Variety A     48.2   44.6   49.7   40.5   54.6   47.1   51.4
+  Variety B     41.5   40.1   44.0   41.2   49.8   41.7   46.8
+  Difference    6.7    4.5    5.7    -0.7   4.8    5.4    4.6
+:::
+
+Use these data to test the null hypothesis that there is no difference in mean yields for the two varieties of corn. Use $\alpha=.05$.
+::::
+
+::: frame
+### Example - cont.
+
+Test $H_0: \mu_d = 0 \quad \mbox{vs.} \quad H_a: \mu_d \neq 0$\
+Calculate paired t-statistic: $\bar{d} = 4.43$\
+$s_d^2 = [\sum{d_i^2} - (\sum{d_i})^2/n]/(n-1)= (171.48-31.0^2/7)/6=5.7$\
+Thus $s_d = 2.39$\
+Thus $t_c = \frac{\bar{d}}{s_d/\sqrt{n}} = \frac{4.43}{2.39/\sqrt{7}} = 4.90$\
+with $\alpha  =  0.05,\ df = 6 \rightarrow t_{\alpha/2,df}= t_{0.025,6} = 2.447$\
+Thus the R.R. is: $|t| > 2.447$,\
+So $H_0$ is rejected at $\alpha= 0.05$ since $4.9$ is in R.R.\
+The mean yields of the two varieties are different based on this evidence.
+:::
+
+::: frame
+### Another example
+
+A study was designed to measure the effect of home environment on academic achievement of 12-year old students. Because genetic differences may also contribute tp academic achievement, the researcher wanted to control for this factor. Thirty sets of identical twins were identified who had been adopted prior to their first birthday, with one twin placed in a home in which academics were emphasized (Academic) and the other twin placed in a home in which academics were not emphasized (Nonacademic). The final grades (based on 100 points) for the 60 students are given below.
+:::
+
+::: frame
+### Another example - cont.
+
+- Plot the sample differences. Do the conditions for using the paired $t$ procedure appear to be satisfied for this data.
+
+- Estimate the size of the difference in the mean final grades of the students in academic and nonacademic home environments.
+
+- Examine whether there is a difference in the mean final grade between students in an academically oriented home environment and those in a nonacademic home environment. That is, test the null hypothesis $H_0:$   $\mu_1 - \mu_2 = 0$ against the alternative $H_a:$   $\mu_1 - \mu_2 \neq 0$. Use $\alpha = .05.$ Also compute the p-value for this test.
+:::
+
+::::: frame
+### Another example - data
+
+:::: tiny
+::: center
+  -------- -------------- -------------- ------------
+              Academic     Nonacademic   
+   Set of   Environment,   Environment,  
+   Twins       $y_1$          $y_2$       Difference
+      1          78             71             7
+      2          75             70             5
+      3          68             66             2
+      4          92             85             7
+      5          55             60            -5
+      6          74             72             2
+      7          65             57             8
+      8          80             75             5
+      9          98             92             6
+     10          52             56            -4
+     11          67             63             4
+     12          55             52             3
+     13          49             48             1
+  -------- -------------- -------------- ------------
+:::
+::::
+
+Continued on the next page
+:::::
+
+::::: frame
+### Another example - data
+
+:::: tiny
+::: center
+  -------- -------------- -------------- ------------
+              Academic     Nonacademic   
+   Set of   Environment,   Environment,  
+   Twins       $y_1$          $y_2$       Difference
+     14          66             67            -1
+     15          75             70             5
+     16          90             88             2
+     17          89             80             9
+     18          73             65             8
+     19          61             60             1
+     20          76             74             2
+     21          81             76             5
+     22          89             78            11
+     23          82             78             4
+     24          70             62             8
+     25          68             73            -5
+     26          74             73             1
+     27          85             75            10
+     28          97             88             9
+     29          95             94             1
+     30          78             75             3
+  -------- -------------- -------------- ------------
+:::
+::::
+:::::
+
+::: frame
+###  Solution
+
+- The assumption on which the paired $t$ is based is that the population of differences is approximately normal. To investigate this you look at the sample differences. We need, as always, large $n$ and not severe skewness, or indication of approximate normality of differences. When differences are highly skewed, one may use the nonparametric test.\
+
+- $\bar{d}  = 3.8$ $s_d=4.205$\
+  Thus a $95\%$ confidence interval for $\mu_d$ is\
+  $\bar{d}\ \pm\ t_{.025,29} \cdot \frac{s_d}{\sqrt{n}}$\
+  $3.8  \pm 2.045 \cdot \frac{4.205}{\sqrt{30}}$\
+  giving $(2.23,\ 5.37)$ as the required estimate.
+:::
+
+::: frame
+###  Solution
+
+- The test statistic is:\
+  $t =\frac{ 3.8-0}{(4.205/\sqrt{30}} = 4.95$\
+  Since $t_{.025,29} = 2.045,\quad R.R.: |t|>2.045$\
+  Reject $H_0$ because $t_c= 4.95$ exceeds 2.045.\
+  From t-table, p-value = $2 \cdot P(T_{29}>4.95) <<2 \cdot .0001$\
+  Since the p-value is less than $.005$, which is certainly\
+  less than $.05$, we reject $H_0$ at $\alpha =.05$\
+:::
