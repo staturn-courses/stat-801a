@@ -3,7 +3,7 @@ title: "STAT 801A"
 subtitle: Tyler Wiederich, Ph.D.
 about:
   template: jolla
-  image: "https://ggplot2.tidyverse.org/logo.png"
+  image: "icon801-2-edited.png"
   links:
     - icon: house
       text: All courses
