@@ -5,8 +5,6 @@
 reka/
 erin/
 .DS_Store
-
 /.quarto/
 .posit/assistant
-
 **/*.quarto_ipynb

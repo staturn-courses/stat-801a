@@ -36,7 +36,7 @@ The statistical computing software package R will be used extensively to perform
 
 # Assessments
 
-This course consists of projects/quizzes, a midterm, and a final. 
+This course consists of quizzes, projects, and exams. 
 
 **Projects/Quizzes**: Projects and quizzes will be assigned periodically throughout the semester. You will have at least one week to complete the assessment.
 

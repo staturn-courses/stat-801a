@@ -4,7 +4,7 @@
     "href": "stat801a-syllabus-f26.html",
     "title": "STAT 801A Syllabus (Fall 2026)",
     "section": "",
-    "text": "Instructor\nName: Tyler Wiederich, Ph.D.\nOffice: Hardin Hall 343A\nOffice hours: W 1-3, and by appointment\nE-mail: twiederich2@unl.edu\n\nLab Instructor: Ryan\nOffice: XXX\nOffice hours XXX\nE-mail: XXX\n\nAll office hours are guaranteed for the first 30 minutes. If no students are present after 30 minutes, office hours are ended.\n\n\nCourse Description\nPrerequisites: Introductory course in statistics.\nStatistical concepts and statistical methodology useful in descriptive, experimental, and analytical study of biological and other natural phenomena. Practical application of statistics rather than on statistical theory.\n\n\nStatistical Software\nThe statistical computing software package R will be used extensively to perform calculations in this class. Additionally, we will make use of RStudio (GUI for R) and Quarto (document creation).\n\nDownload R: https://cran.r-project.org\nDownload RStudio: https://posit.co/downloads\nDownload Quarto: https://quarto.org/docs/download/\n\n\n\nAssessments\nThis course consists of projects/quizzes, a midterm, and a final.\nProjects/Quizzes: Projects and quizzes will be assigned periodically throughout the semester. You will have at least one week to complete the assessment.\nMidterm: There will be one midterm approximately halfway through the semester. Details will be provided in class.\nFinal: To be announced in class.\nThese assessments are weighted as follows:\n\n\n\n\nProjects/quizzes*\nMidterm\nFinal\n\n\n\n\n% of grade\n20%\n30%\n50%\n\n\n\n*All projects need to be turned electronically via PDF documents. A project completed in an unreadable or unprofessional manner will be returned for a zero grade. Quizzes will be assigned on Canvas. No late projects or quizzes are accepted.\nIf projects allow for group work, all group members are expected to participate equally and have a complete understanding of all components for it. I will lower a student’s project grade if he/she/they do not abide by this group work policy.\n\n\nGrades\nYour overall course grade percentage guarantees the following grade for the course.\n\n\n\nLetter Grade\n+\n\n-\n\n\n\n\n\nA\n\n93\n90\n\n\n\nB\n87\n83\n80\n\n\n\nC\n77\n73\n70\n\n\n\nD\n67\n63\n60\n\n\n\nF\n\n&lt;60\n\n\n\n\n\n\n\nContinuity of Instruction Policy\nIn the event that the university is closed during our regular class hours, please check the Canvas announcements for alternative class arrangements.\n\n\nAI Disclaimer\nThe recent popularity of large language models and other artificial intelligence tools introduces a unique challenge in the academic community. As an instructor, my goal is to promote critical thinking for the topics taught in this course. Unless otherwise stated, the use of AI tools is not permitted. If you are suspected of using AI, I reserve the right to give a zero grade.\n\n\nTentative Topics\n\nIntro to R\nData summaries\nProbability\nInference for one mean\nInference for two means\nInference for proportions\nInference for variances\nANOVA\nRegression\n\n\n\nImportant Dates\n\nNo lab on 8/24\nNo lab on 9/7 (Labor Day)\nNo class on 10/19 (Fall Break)\nNo class or lab on the week of 11/23\nFinal: Monday, Dec. 14 from 10:00 to noon\n\n\n\nUNL Course Policies and Resources\nStudents are responsible for knowing the university policies and resources found on this page: https://go.unl.edu/coursepolicies\n\nUniversity-wide Attendance Policy\nAcademic Honesty Policy\nServices for Students with Disabilities\nMental Health and Well-Being Resources\nFinal Exam Schedule\nFifteenth Week Policy\nEmergency Procedures\nDiversity & Inclusiveness\nTitle IX Policy\nOther Relevant University-Wide Policies"
+    "text": "Instructor\nName: Tyler Wiederich, Ph.D.\nOffice: Hardin Hall 343A\nOffice hours: W 1-3, and by appointment\nE-mail: twiederich2@unl.edu\n\nLab Instructor: Ryan\nOffice: XXX\nOffice hours XXX\nE-mail: XXX\n\nAll office hours are guaranteed for the first 30 minutes. If no students are present after 30 minutes, office hours are ended.\n\n\nCourse Description\nPrerequisites: Introductory course in statistics.\nStatistical concepts and statistical methodology useful in descriptive, experimental, and analytical study of biological and other natural phenomena. Practical application of statistics rather than on statistical theory.\n\n\nStatistical Software\nThe statistical computing software package R will be used extensively to perform calculations in this class. Additionally, we will make use of RStudio (GUI for R) and Quarto (document creation).\n\nDownload R: https://cran.r-project.org\nDownload RStudio: https://posit.co/downloads\nDownload Quarto: https://quarto.org/docs/download/\n\n\n\nAssessments\nThis course consists of quizzes, projects, and exams.\nProjects/Quizzes: Projects and quizzes will be assigned periodically throughout the semester. You will have at least one week to complete the assessment.\nMidterm: There will be one midterm approximately halfway through the semester. Details will be provided in class.\nFinal: To be announced in class.\nThese assessments are weighted as follows:\n\n\n\n\nProjects/quizzes*\nMidterm\nFinal\n\n\n\n\n% of grade\n20%\n30%\n50%\n\n\n\n*All projects need to be turned electronically via PDF documents. A project completed in an unreadable or unprofessional manner will be returned for a zero grade. Quizzes will be assigned on Canvas. No late projects or quizzes are accepted.\nIf projects allow for group work, all group members are expected to participate equally and have a complete understanding of all components for it. I will lower a student’s project grade if he/she/they do not abide by this group work policy.\n\n\nGrades\nYour overall course grade percentage guarantees the following grade for the course.\n\n\n\nLetter Grade\n+\n\n-\n\n\n\n\n\nA\n\n93\n90\n\n\n\nB\n87\n83\n80\n\n\n\nC\n77\n73\n70\n\n\n\nD\n67\n63\n60\n\n\n\nF\n\n&lt;60\n\n\n\n\n\n\n\nContinuity of Instruction Policy\nIn the event that the university is closed during our regular class hours, please check the Canvas announcements for alternative class arrangements.\n\n\nAI Disclaimer\nThe recent popularity of large language models and other artificial intelligence tools introduces a unique challenge in the academic community. As an instructor, my goal is to promote critical thinking for the topics taught in this course. Unless otherwise stated, the use of AI tools is not permitted. If you are suspected of using AI, I reserve the right to give a zero grade.\n\n\nTentative Topics\n\nIntro to R\nData summaries\nProbability\nInference for one mean\nInference for two means\nInference for proportions\nInference for variances\nANOVA\nRegression\n\n\n\nImportant Dates\n\nNo lab on 8/24\nNo lab on 9/7 (Labor Day)\nNo class on 10/19 (Fall Break)\nNo class or lab on the week of 11/23\nFinal: Monday, Dec. 14 from 10:00 to noon\n\n\n\nUNL Course Policies and Resources\nStudents are responsible for knowing the university policies and resources found on this page: https://go.unl.edu/coursepolicies\n\nUniversity-wide Attendance Policy\nAcademic Honesty Policy\nServices for Students with Disabilities\nMental Health and Well-Being Resources\nFinal Exam Schedule\nFifteenth Week Policy\nEmergency Procedures\nDiversity & Inclusiveness\nTitle IX Policy\nOther Relevant University-Wide Policies"
   },
   {
     "objectID": "projects/final/final.html",
@@ -18,7 +18,7 @@
     "href": "projects/final/final.html#description-of-experiment",
     "title": "Final",
     "section": "Description of Experiment",
-    "text": "Description of Experiment\nThe purpose of the experiment is to demonstrate your knowledge of the topics taught in our course. The following criteria must be met:\n\nExperiment does not involve living subjects.\nOutcomes occur due to a random process (no observational data).\nHypothesis is reasonable with respect to the subject matter.\nExperiment can be ethically conducted.\nLarge enough sample size to meet the assumptions of the test.\n\nOnce you and your group have designed an experiment, schedule a time to meet with your instructor to finalize the details of your experiment. Prior to our meeting, fill out the Pre-experiment worksheet form.\nYour experiment does not need to be complicated or have an associated cost. The goal of this project is to connect the theory we discussed with real applications. Some examples of potential experiments are below:\n\nDoes shoe brand A help one jump higher than shoe brand B? (Gaussian)\nWhen tasked to randomly choose a dog or cat, does a LLM show preference toward selecting cats? (Binomial)\nDo heavier bowling balls help you knock down more pins than lighter bowling balls? (Binomial)\nWhen dropped from the top of a flight of stairs, how many times does a tennis ball bounce before coming to rest? (Poisson)"
+    "text": "Description of Experiment\nThe purpose of the experiment is to demonstrate your knowledge of the topics taught in our course. The following criteria must be met:\n\nExperiment does not involve living subjects.\nOutcomes occur due to a random (stochastic) process (no observational data).\nHypothesis is reasonable with respect to the subject matter.\nExperiment can be ethically conducted.\nLarge enough sample size to meet the assumptions of the test.\n\nOnce you and your group have designed an experiment, schedule a time to meet with your instructor to finalize the details of your experiment. Prior to our meeting, fill out the Pre-experiment worksheet form.\nYour experiment does not need to be complicated or have an associated cost. The goal of this project is to connect the theory we discussed with real applications. Some examples of potential experiments are below:\n\nDoes shoe brand A help one jump higher than shoe brand B? (Gaussian)\nWhen tasked to randomly choose a dog or cat, does a LLM show preference toward selecting cats? (Binomial)\nDo heavier bowling balls help you knock down more pins than lighter bowling balls? (Binomial)\nWhen dropped from the top of a flight of stairs, how many times does a tennis ball bounce before coming to rest? (Poisson)"
   },
   {
     "objectID": "projects/final/final.html#written-component",
@@ -49,11 +49,837 @@
     "text": "Notes\nThis final was designed to combine the theory and application of statistics. While there are many components that we have not discussed in class (such as applying journal templates), I am here to help! Please don’t hesitate to ask questions if you get stuck."
   },
   {
+    "objectID": "notes/3-one-mean/part3_lectures.html#inferences-about-mu",
+    "href": "notes/3-one-mean/part3_lectures.html#inferences-about-mu",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Inferences about \\(\\mu\\)",
+    "text": "Inferences about \\(\\mu\\)\n\nOne of the major objectives of statistics is to make inferences about the distribution of the elements in a population based on information contained in a sample.\nNumerical summaries that characterize the population distribution are called parameters.\nThe population mean \\(\\mu\\) and population variance \\(\\sigma^2\\) are two important parameters. Others are median, range, mode, etc."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#inferences-about-mu---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#inferences-about-mu---cont.",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Inferences about \\(\\mu\\) - cont.",
+    "text": "Inferences about \\(\\mu\\) - cont.\n\nMethods for making inferences are basically designed to answer one of two types of questions:\n\nApproximately what is the value of the parameter?\nIs the value of the parameter less than (say) 6?\n\nStatisticians answer the first question by estimating the parameter using the sample.\nThe second case might require a test of a hypothesis."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#point-and-interval-estimation-of-mu-when-sigma-is-known-and-n-is-large",
+    "href": "notes/3-one-mean/part3_lectures.html#point-and-interval-estimation-of-mu-when-sigma-is-known-and-n-is-large",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Point and Interval Estimation of \\(\\mu\\) when \\(\\sigma\\) is known and \\(n\\) is large",
+    "text": "Point and Interval Estimation of \\(\\mu\\) when \\(\\sigma\\) is known and \\(n\\) is large\n\nPoint estimation of \\(\\mu\\) does not require that \\(\\sigma\\) be known or a large \\(n\\)\nThe point estimate of \\(\\mu\\) is the sample mean \\(\\bar{y}\\)\nPoint estimates by themselves do not tell how much \\(\\bar{y}\\) might differ from \\(\\mu\\), that is, the accuracy or precision of the estimate\nA measure of accuracy is the difference between sample mean \\(\\bar{y}\\) and population mean \\(\\mu\\) is called sampling error"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu",
+    "href": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "A Confidence Interval for \\(\\mu\\)",
+    "text": "A Confidence Interval for \\(\\mu\\)\n\nAn interval estimate, called a confidence interval, incorporates information about the amount of sampling error in \\(\\bar{y}\\)\nA confidence interval for \\(\\mu\\) takes the form \\[(\\bar{y} - E,\\, \\bar{y} + E),\\] for a number \\(E\\)\nAn associated number called the confidence coefficient helps assess how likely it is for \\(\\mu\\) to be in the interval."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "A Confidence Interval for \\(\\mu\\) - cont.",
+    "text": "A Confidence Interval for \\(\\mu\\) - cont.\n\nTo derive the specific form of the confidence interval for \\(\\mu\\), for the case when \\(\\sigma\\) is known and \\(n\\) is large, the CLT result must be used.\nBy the CLT, \\(Z = (\\bar{Y} - \\mu)/\\sigma_{\\bar{y}}\\) is approximately \\(\\sim N(0, 1)\\).\nLet \\(Z\\) have a \\(N(0, 1)\\) distribution (exactly).\nLet \\(z_{\\alpha/2}\\) denote the \\(1 - \\alpha/2\\) quantile of the standard normal distribution, for a given number \\(\\alpha\\), \\(0 &lt; \\alpha &lt; 1\\).\nThen the following probability statement is true: \\[P\\left (-z_{\\alpha/2}\\, \\leq\\, \\frac{(\\bar{Y} - \\mu)}{\n          \\sigma_{\\bar{y}}}\\, \\leq\\, z_{\\alpha/2}\\right ) = 1 - \\alpha\\]"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.-1",
+    "href": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.-1",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "A Confidence Interval for \\(\\mu\\) - cont.",
+    "text": "A Confidence Interval for \\(\\mu\\) - cont.\n\nManipulating the inequalities, without changing values, we have\n\\(P(\\sigma_{\\bar{y}} \\, z_{\\alpha/2} \\geq \\mu - \\bar{Y}\n  \\geq - \\sigma_{\\bar{y}} \\, z_{\\alpha/2}) = 1 - \\alpha\\)\n\\(P(\\bar{Y} - \\sigma_{\\bar{y}} \\, z_{\\alpha/2}\\, \\leq\\,\n  \\mu\\, \\leq\\, \\bar{Y} + \\sigma_{\\bar{y}} \\, z_{\\alpha/2}) = 1 - \\alpha\\)\nIf, for example, \\(\\alpha\\) = 0.05 then\n\\(P(\\bar{Y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{.025}\\, \\leq\n\\,  \\mu\\, \\leq\\, \\bar{Y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{.025}) =0.95\\)\nand, since \\(z_{0.025} = 1.96\\),\n\\[P(\\bar{Y} - 1.96\\, \\frac{\\sigma}{\\sqrt{n}}\\, \\leq\\, \\mu \\leq \\bar{Y} +\n  1.96\\, \\frac{\\sigma}{\\sqrt{n}}) = 0.95\\]"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.-2",
+    "href": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.-2",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "A Confidence Interval for \\(\\mu\\) - cont.",
+    "text": "A Confidence Interval for \\(\\mu\\) - cont.\n\nUsing this statement, a (1-\\(\\alpha\\))100% confidence interval for \\(\\mu\\), with confidence coefficient \\(1-\\alpha\\) can be calculated using a random sample of data \\(y_1,y_2,\\ldots,y_n\\)\nIt is usually written in the form \\[\\left( \\bar{y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}, \\\n         \\bar{y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\right) \\ .\\]\nExample: Suppose  \\(n\\) = 36, \\(\\sigma=12\\), \\(\\bar{y} = 24.8\\)\nAnd for \\(\\alpha=0.05\\), \\(z_{\\alpha/2} \\equiv z_{0.025} = 1.96\\)"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.-3",
+    "href": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.-3",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "A Confidence Interval for \\(\\mu\\) - cont.",
+    "text": "A Confidence Interval for \\(\\mu\\) - cont.\n\nThus a 95% C.I. for \\(\\mu\\) is \\[\\left( 24.8 - \\frac{12}{\\sqrt{36}} \\times 1.96, \\quad\n         24.8 + \\frac{12}{\\sqrt{36}} \\times  1.96 \\right)\\]\nThe interval for \\(\\mu\\) is: (20.88, 28.72) with confidence coefficient 0.95.\nWe might say that we are 95% confident that the population mean \\(\\mu\\) is between 20.88 and 28.72.\nBut what do we actually mean when we say that we are 95% confident?"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#interpretation-of-a-confidence-interval",
+    "href": "notes/3-one-mean/part3_lectures.html#interpretation-of-a-confidence-interval",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Interpretation of a Confidence Interval",
+    "text": "Interpretation of a Confidence Interval\n\nBefore the sample is drawn, the probability is (\\(1-\\alpha\\)) that the random interval \\((\\bar{Y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\),  \\(\\bar{Y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\)) will contain \\(\\mu\\) (because \\(\\bar{Y}\\) is a random variable).\nHowever, once the sample is drawn, and \\(\\bar{y}\\) is calculated, the interval ceases to be random. It is a numerical interval \\((\\bar{y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\),  \\(\\bar{y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\)), calculated specifically for the drawn sample; thus we cannot associate a probability with it.\nWe may say that the process which led us to this interval will, on the average, produce an interval containing \\(\\mu,\\  100 (1-\\alpha)\\)% of the time."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#interpretation-of-a-confidence-interval---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#interpretation-of-a-confidence-interval---cont.",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Interpretation of a Confidence Interval - cont.",
+    "text": "Interpretation of a Confidence Interval - cont.\n\nIt is not correct to say that the interval \\((\\bar{y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2},\\,\n\\bar{y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2})\\) contains \\(\\mu\\) with a specified probability.\nIf the process of sampling is repeated many times and 100(1-\\(\\alpha\\))% confidence intervals calculated for each sample, then we are confident that 100(1-\\(\\alpha\\))% of those intervals will contain \\(\\mu\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#notes",
+    "href": "notes/3-one-mean/part3_lectures.html#notes",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Notes:",
+    "text": "Notes:\n\nAs the confidence coefficient increases the confidence interval becomes wider. A wider interval estimates \\(\\mu\\) less precisely. Thus a 99% confidence interval is less accurate than a 95% confidence interval but one has more confidence that \\(\\mu\\) is in the first interval.\nAlso note that increasing the sample size \\(n\\) results in a narrower interval (more accurate estimate) for the same confidence coefficient."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#example",
+    "href": "notes/3-one-mean/part3_lectures.html#example",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Example:",
+    "text": "Example:\nThe caffeine content (in mg) was examined for a random sample of 50 cups of black coffee dispensed by a new machine. The mean and standard deviation were 110 mg and 7.1 mg, respectively. Use these data to construct a 98% confidence interval for \\(\\mu\\), the mean caffeine content for cups dispensed by the machine.\nAs the sample size is large we can use the CLT and also approximate \\(\\sigma\\), the sample standard deviation of the population by \\(s=7.1\\)"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#example---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#example---cont.",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Example - cont.",
+    "text": "Example - cont.\n\\(\\left[\\bar{y} - z_{0.01} \\frac{\\sigma}{\\sqrt{n}}, \\\n\\bar{y} + z_{0.01} \\frac{\\sigma}{\\sqrt{n}}\\right]\\)\n\n\n\n\\(\\left[110 - (2.33)\\left(\\frac{7.1}{\\sqrt{50}}\\right), \\\n   110 + (2.33)\\left(\\frac{7.1}{\\sqrt{50}}\\right)  \\right]\\)\n\n\n\n\\((107.66,\\ 112.34)\\)\n\n\n\nWe are \\(98\\%\\) confident that the mean caffeine content for cups dispensed by the machine is between 107.66 and 112.34 mg."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#choosing-the-sample-size",
+    "href": "notes/3-one-mean/part3_lectures.html#choosing-the-sample-size",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Choosing the Sample Size",
+    "text": "Choosing the Sample Size\n\nThe width of a confidence interval is (\\(2 \\times \\sigma \\times z_{\\alpha/2})/\\sqrt{n}\\).\nThe width of the confidence interval can be made smaller by changing to a larger \\(\\alpha\\) or increasing sample size \\(n\\).\nLet us consider selection of \\(n\\) to achieve a desired width \\(2 \\cdot E\\) for a fixed \\(\\alpha\\)\nWe want \\(E\\) to at least equal to \\(\\sigma \\times z_{\\alpha/2}/\\sqrt{n}\\)\nThus we need to select a sample so that \\[n \\geq \\frac{(z_{\\alpha/2})^2\\sigma^2}{E^2}\\]"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#choosing-the-sample-size---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#choosing-the-sample-size---cont.",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Choosing the Sample Size - cont.",
+    "text": "Choosing the Sample Size - cont.\n\nThis will result in an interval no wider than\n\\((\\bar{y} - E,\\ \\bar{y} + E)\\).\n\nExample:\nGiven \\(\\sigma = 12\\), \\(\\alpha = 0.05\\), \\(z_{0.025} = 1.96\\)\nWhat sample size \\(n\\) will give an interval no wider that 5.6?\nWe set \\(E = 2.8\\) so \\[n \\geq \\frac{(1.96)^2 \\cdot 144}{(2.8)^2} = 70.56\\] Thus the experimenter must choose a sample size \\(n = 71\\) at least."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#choosing-the-sample-size---cont.-1",
+    "href": "notes/3-one-mean/part3_lectures.html#choosing-the-sample-size---cont.-1",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Choosing the Sample Size - cont.",
+    "text": "Choosing the Sample Size - cont.\nWould the sample size \\(n = 71\\) ensure the width to be \\(\\leq 5.6\\) if the population has a larger variance? Would \\(n = 71\\) be enough?\nThe answer is NO since the formula \\[\\frac{(z_{\\alpha/2})^2\\sigma^2}{E^2}\\] involves the population variance \\(\\sigma^2\\).\nPrecision in estimation depends on both \\(\\alpha\\) and \\(\\sigma^2\\). If the variance of population elements is very small, i.e., the elements are tightly clustered about the population mean \\(\\mu\\), then only a small sample is needed for the estimate \\(\\bar{y}\\) to be very near \\(\\mu\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#statistical-tests-for-mu",
+    "href": "notes/3-one-mean/part3_lectures.html#statistical-tests-for-mu",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Statistical Tests for \\(\\mu\\)",
+    "text": "Statistical Tests for \\(\\mu\\)\n\nEstimation (either point or interval estimation) was used to help answer a question like “Approximately what is the value of \\(\\mu\\)?”\nThe other kind of question mentioned earlier is “Is it likely that \\(\\mu\\) is less than (or greater than) the value \\(\\mu_0\\) (a pre-determined value)?”.\nA Test of Hypothesis is used to answer this kind of question. As in estimation, the sample mean \\(\\bar{y}\\) of a random sample of \\(n\\) elements from the population is used to answer this question."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#statistical-tests-for-mu---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#statistical-tests-for-mu---cont.",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Statistical Tests for \\(\\mu\\) - cont.",
+    "text": "Statistical Tests for \\(\\mu\\) - cont.\n\nEvery test of hypothesis features\n\na Null Hypothesis \\(H_0\\) which describes a characteristic of the population (it is believed to be) as it currently exists,\n\na Research Hypothesis (or Alternative Hypothesis) \\(H_a\\), which is a proposal about this characteristic, by the person(s) conducting the statistical study.\n\nThe idea is that the null hypothesis is presumed to hold unless there is overwhelming evidence in the data in support of the research hypothesis."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#example-1",
+    "href": "notes/3-one-mean/part3_lectures.html#example-1",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Example:",
+    "text": "Example:\n\nTo determine whether the mean yield per acre (in bushels), \\(\\mu\\), of a variety of soybeans increased the current year over the last two years when \\(\\mu\\) is believed to be 520 bushels per acre, the following might be tested. \\[H_0: \\mu \\leq 520 \\ \\ \\ \\mbox{vs.}\\ \\ \\ H_a: \\mu &gt; 520\\]\nThe fact that \\(\\mu\\) may equal a specific value is always included in the null hypothesis. The decision to state whether the data supports the research hypothesis or not is based on a quantity computed from the data called the test statistic."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#section",
+    "href": "notes/3-one-mean/part3_lectures.html#section",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "",
+    "text": "If \\(\\bar{y}\\) is in the rejection region then reject \\(H_0\\) and say the evidence favors \\(H_a\\).\nBasically, the test amounts to computing \\(\\bar{y}\\) and looking at its value relative to \\(\\mu_0\\) and the \\(\\mu\\) values in \\(H_a\\).\nFor example, in the above example if \\(\\bar{y} &lt; 520\\) we will say there is not sufficient evidence to reject \\(H_0\\).\nEven if \\(\\bar{y} &gt; 520\\), we might still say there is not sufficient evidence to reject \\(H_0\\)\nThis is ok as long as \\(\\bar{y}\\) is not too much greater than \\(520\\).\n“How much is too large?” To decide this, use the probability distribution of \\(\\bar{Y}\\). Begin by picking a small probability \\(\\alpha\\) like \\(\\alpha\\) = 0.05, or \\(\\alpha = 0.01\\), or \\(\\alpha =0.001\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#section-1",
+    "href": "notes/3-one-mean/part3_lectures.html#section-1",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "",
+    "text": "Then reject \\(H_0\\) only when the probability of obtaining a value of \\(\\bar{y}\\) larger than the observed value \\(\\bar{y}\\) is \\(\\leq \\alpha\\) when \\(\\mu\\) is indeed \\(\\leq 520\\), i.e., when \\(H_0\\) is true.\nThat is, if \\(H_0\\) is true, the chance of observing a sample that results in a \\(\\bar{y}\\) as large as the one calculated should be very small.\n\n\n\n\n\nimage"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#how-to-determine-the-rejection-region",
+    "href": "notes/3-one-mean/part3_lectures.html#how-to-determine-the-rejection-region",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "How to determine the rejection region",
+    "text": "How to determine the rejection region\n\nBy the CLT, \\(\\bar{Y}\\) is approximately a normal random variable.\nWe will ignore the approximation and assume \\(\\bar{Y} \\sim N(\\mu, \\frac{\\sigma^2}{n})\\).\nThen, for a given \\(\\alpha\\), \\[P \\left( \\frac{\\bar{Y}-\\mu}{\\sigma/\\sqrt{n}} &gt; z_{\\alpha} \\right) = \\alpha\\] where \\(z_\\alpha\\) is the \\(1-\\alpha\\) quantile of the standard normal distribution.\nSo when \\(H_0: \\mu \\leq \\mu_0\\) is true , \\[P \\left( \\frac{\\bar{Y}-\\mu_0}{\\sigma/\\sqrt{n}} &gt; z_{\\alpha} \\right) \\leq \\alpha\\]"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#how-to-determine-the-rejection-region---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#how-to-determine-the-rejection-region---cont.",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "How to determine the rejection region - cont.",
+    "text": "How to determine the rejection region - cont.\n\nThat is, \\(P(\\bar{Y} &gt; \\mu_0 + z_\\alpha \\frac{\\sigma}{\\sqrt{n}})\\leq \\alpha.\\) This suggests that we reject \\(H_0: \\mu \\leq \\mu_0\\) in favor of, say \\(H_a: \\mu &gt; \\mu_0\\) when \\[\\bar{y} &gt; \\mu_0 + z_\\alpha \\frac{\\sigma}{\\sqrt{n}}\\] (i.e., \\(\\bar{y}\\) is too much when \\(\\bar{y}\\) exceeds the number \\(\\mu_0 +\nz_\\alpha \\frac{\\sigma}{\\sqrt{n}})\\)\n\nAll possible \\(\\bar{y}\\) values satisfying \\(\\bar{y} &gt; \\mu_0 + z_\\alpha\n\\frac{\\sigma}{\\sqrt{n}}\\) constitute the rejection region.\nInstead of comparing \\(\\bar{y}\\) to \\(\\mu_0 + z_\\alpha\n\\frac{\\sigma}{\\sqrt{n}}\\), it is easier to first calculate \\[z_c=\\frac{\\bar{y}-\\mu_0}{\\sigma/\\sqrt{n}}\\]"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#how-to-determine-the-rejection-region---cont.-1",
+    "href": "notes/3-one-mean/part3_lectures.html#how-to-determine-the-rejection-region---cont.-1",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "How to determine the rejection region - cont.",
+    "text": "How to determine the rejection region - cont.\n\nWe see that comparing \\(\\bar{y}\\) to \\(\\mu_0 + z_\\alpha \\frac{\\sigma}{\\sqrt{n}}\\) is the same as comparing \\(z_c\\) to \\(z_\\alpha\\).\nThat is, we reject the null hypothesis if \\(z_c &gt; z_\\alpha\\) whis is the same thing as doing so if \\(\\bar{y} &gt; \\mu_0 + z_\\alpha \\frac{\\sigma}{\\sqrt{n}}\\)\nThis quantity \\(z\\) is called the test statistic and it’s value can be calculated using the data and the value \\(\\mu_0\\) specified in the null hypothesis \\(H_0\\).\nThe notation \\(z_c\\) is used denote the “computed value” of the test statistic, that is when we plug in the observed value of \\(\\bar{y}\\) and obtain a numerical value for \\(z\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#type-i-error",
+    "href": "notes/3-one-mean/part3_lectures.html#type-i-error",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Type I Error",
+    "text": "Type I Error\n\nThe \\(\\alpha\\) corresponds to the probability that the null hypothesis is rejected when actually it is true and is called the probability of committing a Type I error.\nSince the experimenter selects the value of \\(\\alpha\\) used in the test procedure, she is able to specify or control the Type I error rate or “how much” of this type of error is permitted in the testing procedure."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#example-2",
+    "href": "notes/3-one-mean/part3_lectures.html#example-2",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Example",
+    "text": "Example\nSuppose from a sample of 36 1-acre plots, the yield of corn this year was measured and \\(\\bar{y}=573\\) and \\(s=124\\) calculated. Can we conclude that the mean yield of corn for all farms exceeded 520 bushels/acre this year ? Here we are going to assume that \\(\\sigma\\) can be approximated by \\(s\\). Use \\(\\alpha=.025\\)"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#solution-to-the-example",
+    "href": "notes/3-one-mean/part3_lectures.html#solution-to-the-example",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Solution to the Example",
+    "text": "Solution to the Example\nSet-up five parts of the testing procedure:\n\n\\(H_0: \\mu \\leq 520\\)\n\\(H_a: \\mu &gt; 520\\)\nT.S.: \\(z  =  \\frac{\\bar{y}-\\mu_0}{\\sigma/\\sqrt{n}}\\)\nR.R: Reject \\(H_0:\\) in favor of \\(H_a:\\) if \\(z &gt; z_{.025}\\)\ni.e. the R.R. is \\(z&gt;1.96\\) since \\(z_{.025}=1.96\\)\nCompute the observed value of the test statistic:\n\\(z_c =\\frac{573-520}{124/{\\sqrt{36}}}= 2.56\\)"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#decision",
+    "href": "notes/3-one-mean/part3_lectures.html#decision",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Decision:",
+    "text": "Decision:\nSince \\(z_c&gt; 1.96\\), \\(z_c\\) is in the R.R. Thus \\(H_0:\\mu \\leq 520\\) is rejected in favor of the research hypothesis \\(H_a: \\mu &gt; 520\\). It is concluded that the mean yield this year exceeds 520 bushels/acre.\nNote that the above test procedure is equivalent to determining that the observed value for \\(\\bar{y}\\) lies more than 1.96 standard deviations above the mean \\(\\mu_0=520\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#summary-of-test-procedures---assume-n-large-and-sigma-known",
+    "href": "notes/3-one-mean/part3_lectures.html#summary-of-test-procedures---assume-n-large-and-sigma-known",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Summary of Test Procedures - Assume \\(n\\) large, and \\(\\sigma\\) known",
+    "text": "Summary of Test Procedures - Assume \\(n\\) large, and \\(\\sigma\\) known\nHypotheses:\nCase 1: \\(H_0: \\mu \\leq \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu &gt;\\mu_0\\) (right-tailed test)\nCase 2: \\(H_0: \\mu \\geq \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu &lt;\\mu_0\\) (left-tailed test)\nCase 3: \\(H_0: \\mu = \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu \\not =\\mu_0\\) (two-tailed test)\nT.S: \\(z_c  =  \\frac{\\bar{y}-\\mu_0}{\\sigma/\\sqrt{n}}\\)\nR.R: For Type I error probability of \\(\\alpha\\):\nCase 1: Reject \\(H_0:\\) if \\(z \\geq z_{\\alpha}\\)\nCase 2: Reject \\(H_0:\\) if \\(z \\leq -z_{\\alpha}\\)\nCase 3: Reject \\(H_0:\\) if \\(|z| \\geq  z_{\\alpha/2}\\)"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#decision-1",
+    "href": "notes/3-one-mean/part3_lectures.html#decision-1",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Decision:",
+    "text": "Decision:\nIf the computed value of the test statistic, \\(z_c\\), is in the R.R., then we will reject the null hypothesis \\(H_0:\\) at the specified \\(\\alpha\\) value. Otherwise, we say we fail to reject \\(H_0:\\) at the specified \\(\\alpha\\) value.\nExample A corporation maintains a large fleet of company cars for its salespeople. To check the average number of miles driven per month per car, a random sample of \\(n = 40\\) cars is examined. The mean and standard deviation for the sample are 2,752 miles and 350 miles, respectively. Records for previous years indicate that the average number of miles driven per car per month was 2,600. Use the sample data to test the research hypothesis that the current mean \\(\\mu\\) differs from 2,600. Set \\(\\alpha\\) = .05 and assume that \\(\\sigma\\) can be replaced by \\(s\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#solution",
+    "href": "notes/3-one-mean/part3_lectures.html#solution",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Solution",
+    "text": "Solution\nThe null hypothesis for this statistical test is \\(H_0: \\mu\\) = 2,600 and the research hypothesis is \\(H_a: \\mu \\neq\\) 2,600. Using \\(\\alpha\\) = .05, the two-tailed rejection region for this test is \\(|z|&gt; z_{.025}\\) or \\(|z|&gt; 1.96\\) and is located as shown below.\n\n\n\n\nimage"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#solution---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#solution---cont.",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Solution - cont.",
+    "text": "Solution - cont.\nTo determine how many standard errors our test statistics \\(\\bar{y}\\) lies away from \\(\\mu\\) = 2,600, compute \\[z_c = \\frac{\\bar{y}-\\mu_0}{\\sigma/\\sqrt{n}} =\n  \\frac{2,752 - 2,600}{350/\\sqrt{40}} = 2.75 \\, .\\] Thus \\(|z_c|=2.75&gt;1.96\\) and therefore we reject \\(H_0: \\mu = 2,600\\) at \\(\\alpha=.05\\). It follows that the observed value for \\(\\bar{y}\\) lies more than 1.96 standard errors above the mean \\(\\mu = 2,600\\), so we reject the null hypothesis in favor of the alternative \\(H_a: \\mu \\neq\n2,600\\).\nSince \\(\\bar{y}&gt;2,600\\) we conclude that the mean number of miles driven is greater than \\(2,600\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#level-of-significance-or-the-p-value-of-a-statistical-test",
+    "href": "notes/3-one-mean/part3_lectures.html#level-of-significance-or-the-p-value-of-a-statistical-test",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Level of Significance or the p-value of a Statistical Test",
+    "text": "Level of Significance or the p-value of a Statistical Test\n\nAs an alternative to the formal test where one uses a rejection region based on a specified the Type I error rate \\(\\alpha\\), many researchers compute and report the level of significance or the p-value for the test.\nThis is the probability, when \\(H_0\\) is true, of observing a statistic as extreme as the one actually observed. Here “extreme” is means “large” or “small” according to the alternative hypothesis \\(H_a\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#level-of-significance-or-the-p-value-of-a-statistical-test---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#level-of-significance-or-the-p-value-of-a-statistical-test---cont.",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Level of Significance or the p-value of a Statistical Test - cont.",
+    "text": "Level of Significance or the p-value of a Statistical Test - cont.\n\nSpecifically, for a given \\(\\sigma^2\\) and \\(\\mu_0\\) we find the p-value by:\n\nFirst computing the test statistic, \\(z_c\\), \\[z_c = (\\bar{y} - \\mu_0)/(\\sigma/\\sqrt{n})\\]\na)  If \\(H_a: \\mu &gt; \\mu_0\\), then \\(p = P(Z &gt; z_c\\)).\n\n\n If \\(H_a: \\mu &lt; \\mu_0\\), then \\(p = P(Z &lt; z_c\\)).\n\n If \\(H_a: \\mu \\neq \\mu_0\\), then \\(p=2P(Z &gt; |z_c|)\\).\n\n\nA p-value smaller than the pre-specified \\(\\alpha\\) value is evidence in favor of rejecting \\(H_0\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#example-3",
+    "href": "notes/3-one-mean/part3_lectures.html#example-3",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Example:",
+    "text": "Example:\n\nIn the earlier example we tested \\(H_0: \\mu \\leq 380\\ \\mbox{vs.}\\ H_a: \\mu &gt; 380\\) Calculating the \\(z-\\)statistic, \\[z_c = \\frac{\\bar{y}-380}{\\sigma/\\sqrt{n}}= \\frac{390-380}{35.2/\\sqrt{50}} = 2.01\\]\nThe level of significance, or p-value for this test is \\[p= P(Z &gt; 2.01)= 1- P(Z &lt; 2.01)= 0.0222\\]\nWe fail to reject \\(H_0: \\mu \\leq 380\\) at \\(\\alpha=.01\\) since p-value is not less than \\(.01\\)"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#inferences-about-when-sigma-is-unknown",
+    "href": "notes/3-one-mean/part3_lectures.html#inferences-about-when-sigma-is-unknown",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Inferences About when \\(\\sigma\\) is unknown",
+    "text": "Inferences About when \\(\\sigma\\) is unknown\n\nFor large sample sizes, it follows from the CLT that \\(\\bar{Y}\\) is approximately Normally distributed i.e., \\(\\bar{Y} \\dot{\\sim}\nN(\\mu,\\frac{\\sigma^2}{n})\\).\nIt follows that the random variable \\[T_{n-1} =\\Big( \\bar{Y} - \\mu \\Big) / \\Big( S/\\sqrt{n} \\Big)\\] has approximately the Student’s \\(t\\) distribution with \\(n-1\\) degrees of freedom.\nHere \\(Y_1, Y_2, \\ldots,Y_n\\) are sampling random variables and \\(\\bar{Y} =\n\\frac{1}{n} \\displaystyle\\sum_i Y_i\\) is thus a random variable."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#inferences-about-when-sigma-is-unknown---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#inferences-about-when-sigma-is-unknown---cont.",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Inferences About when \\(\\sigma\\) is unknown - cont.",
+    "text": "Inferences About when \\(\\sigma\\) is unknown - cont.\n\nThe denominator of \\(T_{n-1}\\) is the random variable \\[S = \\sqrt{\\frac{1}{n-1} \\sum_{i=1}^n (Y_i - \\bar{Y})^2}.\\]\nIf sampling from a Normal distribution, the sample mean \\(\\bar{Y}\\) has a Normal distribution (exactly) and therefore \\((\\bar{Y}-\\mu)/(S/\\sqrt{n})\\) will have a Student’s \\(t\\) distribution (exactly), regardless of sample size."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#section-2",
+    "href": "notes/3-one-mean/part3_lectures.html#section-2",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "",
+    "text": "Until now, we have assumed that \\(n\\) is large and \\(\\sigma\\) is known, or \\(n\\) is large and \\(n\\) is large enough also to use \\(s\\) as an approximation to \\(\\sigma\\).\nSince we used the CLT to derive confidence limits and tests of hypotheses, the exact nature of the sampled population was not required to be specified.\nNow we require that the population distribution to be Normal. We don’t need to know \\(\\sigma\\) or have a large sample, i.e. \\(n\\) to be large.\nIn this situation, for any \\(n\\), (\\(\\bar{Y} - \\mu)/(S/\\sqrt{n})\\) will have a Student’s t-distribution with d.f.\\(= n-1.\\)\nUsing this fact we can obtain confidence intervals and conduct tests of hypotheses even though \\(\\sigma\\) is unknown.\nNote the difference between \\(Z\\) and \\(T_{n-1}\\) is that the parameter \\(\\sigma\\) is in the denominator of \\(Z\\).\nThat is, the point estimator of \\(\\sigma\\), \\(S\\) is in the denominator of \\(T_{n-1}\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#properties-of-the-students-distribution",
+    "href": "notes/3-one-mean/part3_lectures.html#properties-of-the-students-distribution",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Properties of the Student’s distribution",
+    "text": "Properties of the Student’s distribution\n\nThere are many t-distributions each specified by a single parameter called degrees of freedom (\\(df\\)).\nLike the standard normal population, the distribution is symmetric about 0 and has mean equal to 0.\nThe t-distribution has variance \\(df/(df-1)\\), and hence is more variable than the standard normal distribution which has variance equal to 1.\nWe say that the t-distribution has heavier tails than the standard normal distribution.\nAs the degrees of freedom \\(df\\) increases, the t-distribution approaches that of the standard normal distribution.\nThus as the sample size \\(n\\) increases the distribution of the \\(T_{n-1}\\) random variable approaches the standard normal distribution."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#properties-of-the-students-distribution-cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#properties-of-the-students-distribution-cont.",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Properties of the Student’s distribution cont.",
+    "text": "Properties of the Student’s distribution cont.\n\n\n\n\nimage"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#section-3",
+    "href": "notes/3-one-mean/part3_lectures.html#section-3",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "",
+    "text": "The \\(t\\) table gives quantiles 0.90, 0.95, 0.975, 0.99, 0.995, and 0.999 for \\(t\\) distributions with selected df.\nExamples: For \\(df = 10\\)\n\\(P(T_{10} &gt; 1.372) = 0.10\\)\n\\(P(T_{10} &lt; 1.372) = 0.90\\)\n\\(P(T_{10} &gt; 1.812) = 0.05\\)\nIf \\(\\alpha\\) = 0.05, then \\(t_\\alpha\\) satisfies \\(P(T_{10} &gt; t_{.05}) = 0.05\\) and from the t table , \\(t_{.05} = 1.812\\). If \\(\\alpha\\) = 0.05, then \\(t_{\\alpha/2} \\, \\equiv t_{0.025}= 2.228\\)\nComparison of Normal and \\(t\\) Quantiles\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(t_\\alpha\\) with indicated df\n\n\n\\(\\alpha\\)\n\\(z_\\alpha\\)\n10\n20\n30\n40\n60\n240\n\n\n0.1\n1.28\n1.37\n1.32\n1.31\n1.30\n1.30\n1.28\n\n\n0.05\n1.65\n1.81\n1.72\n1.70\n1.68\n1.67\n1.65\n\n\n0.01\n2.33\n2.76\n2.53\n2.46\n2.42\n2.39\n2.34"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#confidence-interval-for-mu-based-on-the-t-distribution",
+    "href": "notes/3-one-mean/part3_lectures.html#confidence-interval-for-mu-based-on-the-t-distribution",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Confidence Interval for \\(\\mu\\) based on the t-distribution",
+    "text": "Confidence Interval for \\(\\mu\\) based on the t-distribution\n\nLet the sample size be \\(n\\), and for \\(\\alpha\\) be a specified value, say, for e.g. \\(.05\\).\nA \\((1-\\alpha)100\\%\\) confidence interval for \\(\\mu\\) is given by \\[\\left(\\bar{y} - t_{\\alpha/2} \\, \\frac{s}{\\sqrt{n}}, \\quad\n        \\bar{y} + t_{\\alpha/2} \\, \\frac{s}{\\sqrt{n}}\\right)\\]\nThis may also be written as \\(\\left(\\bar{y} - t_{\\alpha/2} s_{\\bar{y}}, \\quad \\bar{y} +\n         t_{\\alpha/2} s_{\\bar{y}} \\right)\\)\nHere, \\(t_{\\alpha/2}\\) is the \\(1-\\alpha/2\\) percentile of the t-distribution with \\(n-1\\) degrees of freedom and \\(s_{\\bar{y}}\\) is the standard error of the mean."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#section-4",
+    "href": "notes/3-one-mean/part3_lectures.html#section-4",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "",
+    "text": "image"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#test-procedures-based-on-the-t-distribution",
+    "href": "notes/3-one-mean/part3_lectures.html#test-procedures-based-on-the-t-distribution",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Test Procedures based on the t-distribution:",
+    "text": "Test Procedures based on the t-distribution:\nHypotheses:\nCase 1:\\(H_0: \\mu \\leq \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu &gt;\\mu_0\\) (right-tailed test)\nCase 2: \\(H_0: \\mu \\geq \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu &lt;\\mu_0\\) (left-tailed test)\nCase 3 \\(H_0: \\mu = \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu \\not =\\mu_0\\) (two-tailed test)\nT.S: \\(t_c  =  \\frac{\\bar{y}-\\mu_0}{s/\\sqrt{n}}\\)\nR.R: For Type I error probability of \\(\\alpha\\):\nCase 1: Reject \\(H_0:\\) if \\(t \\geq t_{\\alpha,(n-1)}\\)\nCase 2: Reject \\(H_0:\\) if \\(t \\leq -t_{\\alpha,(n-1)}\\)\nCase 3: Reject \\(H_0:\\) if \\(|t| \\geq t_{\\alpha/2,(n-1)}\\)"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#test-procedures-based-on-the-t-distribution---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#test-procedures-based-on-the-t-distribution---cont.",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Test Procedures based on the t-distribution - cont.:",
+    "text": "Test Procedures based on the t-distribution - cont.:\nLevel of Significance (p-value):\nCase 1: \\(p = P(T_{n-1} &gt; t_c\\)).\nCase 2: \\(p = P(T_{n-1} &lt; t_c\\)).\nCase 3: \\(p= 2P(T_{n-1} &gt; |t_c|)\\).\nExercise\nA massive multistate outbreak of food-borne illness was attributed to Salmonella enteritidis. Epidimiologists determined that the source of the illness was ice cream. They sampled nine production runsfrom the company that produced the ice cream to determine the level of Salmonella enteritidis in the ice cream."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#exercise---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#exercise---cont.",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Exercise - cont.",
+    "text": "Exercise - cont.\nThese levels (MPN/g) are as follows\n\\(.593\\quad .142\\quad .329\\quad .691\\quad .231\\quad .793\\quad .519\\quad .392\\quad .418\\)\nUse the data to determine whether the mean level of Salmonella enteritidis in the ice cream is greater than .3 MPN/g with \\(\\alpha=.01\\)\nSolution:\nNeed to test \\(H_0: \\mu \\leq .3\\) vs. \\(H_a: \\mu &gt; .3\\)\nBecause of the small sample size, we need to examine whether the data have been sampled from a normal distribution. To do this a normal probability plot is a good tool."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#exercise---cont.-1",
+    "href": "notes/3-one-mean/part3_lectures.html#exercise---cont.-1",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Exercise - cont.",
+    "text": "Exercise - cont.\n\n\n\n\nimage\n\n\n\nFrom the data \\(\\bar{y}=.456\\) and \\(s= .2128\\) are computed, giving \\[t_c=  \\frac{\\bar{y}-\\mu_0}{s/\\sqrt{n}}=\\frac{.456-.3}{.2128/\\sqrt{9}}=2.21\\] Because for the one-tailed test we need \\(t_{\\alpha,(n-1)}\\);\nwe look up \\(t_{.01}\\) with \\(df=9-1=8\\). It is \\(2.896\\)\nThus the rejection region is: \\(t&gt;2.896\\)"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#exercise---cont.-2",
+    "href": "notes/3-one-mean/part3_lectures.html#exercise---cont.-2",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Exercise - cont.",
+    "text": "Exercise - cont.\nSince \\(t_c= 2.214\\) does not exceed \\(2.896\\) it is not in the R.R.\nThus, there is insufficient evidence in the data to reject \\(H_0\\) i.e to say that the mean level of Salmonella enteritidis exceeds the dangerous level of .3 MPN/g.\nThe p-value to be computed is \\(P(T_8&gt;2.21)\\)\nTo calculate this exactly using the t-table is not possible since it is tabulated for only a few values of \\(a\\).\nHowever, we can bound the p-value by noting that, for \\((df=8)\\), 2.21 lies between 1.86 and 2.306.\nThis gives \\(.025&lt;\\mbox{p-value}&lt;.05\\) showing that the p-value is not less than our \\(\\alpha\\) of \\(.01\\). Thus we fail to reject \\(H_0\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#oc-curve-and-the-power-of-a-test",
+    "href": "notes/3-one-mean/part3_lectures.html#oc-curve-and-the-power-of-a-test",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "OC Curve and the Power of a test",
+    "text": "OC Curve and the Power of a test\nThe probabilities of the four possible outcomes of a statistical test are:\n\n\n\n\n\n\n\n\n\n\nNull Hypothesis\n\n\n\n\n2-3 Decision\nTrue\nFalse\n\n\nReject \\(H_0\\)\nType I Error\nCorrect Decision\n\n\n\n\\(\\alpha\\)\n\\(1-\\beta\\)\n\n\nFail to reject \\(H_0\\)\nCorrect Decision\nType II Error\n\n\n\n\\(1-\\alpha\\)\n\\(\\beta\\)\n\n\n\n\nThe probabilities of Type I and II error are \\(\\alpha\\) and \\(\\beta\\), respectively."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#type-i-error-and-type-ii-error",
+    "href": "notes/3-one-mean/part3_lectures.html#type-i-error-and-type-ii-error",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Type I Error and Type II Error",
+    "text": "Type I Error and Type II Error\n\nThe experimenter can control only the Type I error probability. We do this by specifying an \\(\\alpha\\) for an experiment (before the data values are measured).\nWhen we are testing an hypothesis about \\(\\mu\\) using \\(\\alpha\\) for the test, the value of Type II error probability \\(\\beta\\) depends on the actual value \\(\\mu\\) which is not known.\nThis is because \\(\\beta\\) is the probability of incorrectly failing to reject \\(H_0\\) when \\(H_a\\) is true.\nWhen \\(H_a\\) is true, the actual value of \\(\\mu\\) may be any value under \\(H_a\\), i.e, a value not specified under \\(H_0\\). Since this value of \\(\\mu\\) is unknown, \\(\\beta\\) cannot be calculated."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#type-i-error-and-type-ii-error-1",
+    "href": "notes/3-one-mean/part3_lectures.html#type-i-error-and-type-ii-error-1",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Type I Error and Type II Error",
+    "text": "Type I Error and Type II Error\n\nThe implication of this is that when, based on a test, we find that we cannot reject \\(H_0\\), we will not say that we accept \\(H_0\\).\nBecause if we say we accept \\(H_0\\) and \\(\\beta\\) turns out to be large, then the probability is large that we will be committing a Type II error.\nThus the correct way to state the decision is to say, that we fail to reject \\(H_0\\).\nIn practice, \\(\\beta\\) probabilities for several choices of \\(\\mu\\) (call them \\(\\beta(\\mu)\\)) are calculated and plotted in a graph called the OC curve.\nThe OC curve can be used to read-off the Type II error probability for a specified set of values sample size \\(n\\) and \\(\\alpha\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#oc-curve",
+    "href": "notes/3-one-mean/part3_lectures.html#oc-curve",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "OC Curve",
+    "text": "OC Curve\n\n\n\n\nimage\n\n\n\nThe figure shows the OC curve for the test of \\(H_0: \\mu \\leq 84, \\quad H_a: \\mu &gt; 84\\) for a population with \\(\\sigma=1.4\\). For example, for \\(\\alpha=.05,\\,n=10\\), it can be seen that \\(\\beta(84.8)\\approx .4\\) and that \\(\\beta(84.8)\\) decreases as sample size goes from 10 to 25. A conclusion that can be made about this test from the OC curve is that Type II error probability would be \\(&lt; .1\\) for an actual \\(\\mu &gt; 84.8\\) for \\(n=25\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#power-curve",
+    "href": "notes/3-one-mean/part3_lectures.html#power-curve",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Power Curve",
+    "text": "Power Curve\n\nAnother quantity that may be calculated for a test procedure for a specified value of \\(\\mu\\) is called the Power of the test and is defined as \\(1-\\beta(\\mu)\\).\nThe corresponding plot of power against a set of \\(\\mu\\) values is called the power curve."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#power-of-the-test",
+    "href": "notes/3-one-mean/part3_lectures.html#power-of-the-test",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Power of the Test",
+    "text": "Power of the Test\n\nBy definition, power of a test is the probability of rejecting \\(H_0\\) for a specified value of \\(\\mu\\) under \\(H_a\\).\nIn practice, tests are designed to have large power for some \\(\\mu\\) values of interest so that they have small Type II error probabilities.\nWe can relate to this idea by thinking of a test as having very good power if it has a very good chance of detecting whether a change in \\(\\mu\\) has actually occured.\nThis is usually done by selecting a sample size \\(n\\) to be used for the experiment so that the desired power is achieved for a specified \\(\\mu\\) and \\(\\alpha\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#using-type-ii-error-probability-beta-curves",
+    "href": "notes/3-one-mean/part3_lectures.html#using-type-ii-error-probability-beta-curves",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Using Type II Error Probability \\(\\beta\\) Curves",
+    "text": "Using Type II Error Probability \\(\\beta\\) Curves\n\nConsider the Salmonella example again. We have \\(n=9,\\) and \\(\\alpha=.01\\). Thus \\(df=8\\) and we estimate \\(\\sigma \\approx .25\\)\nWe can compute the values of \\(d\\) for several values of \\(\\mu_a\\). Then we’ll read \\(\\beta\\) for those values of \\(d\\) using the graph on next slide for the curves for \\(\\alpha=.01\\).\nAs an example, for \\(\\mu_a=.45\\), \\(d=\\frac{|\\mu_a-\\mu_0|}{\\sigma}=\\frac{|.45-.3|}{.25}=.6\\)\nCorresponding to \\(d=.6\\) on the horizontal axis, using the curve for \\(df=8\\) we see that \\(\\beta(.45)=.79\\), approx.\nSimilarly, for \\(\\mu_a=.45\\ d=1.0\\), and thus \\(\\beta(.55)=.43\\), approx. We can construct a table as shown (next slide)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#using-type-ii-error-probability-beta-curves-1",
+    "href": "notes/3-one-mean/part3_lectures.html#using-type-ii-error-probability-beta-curves-1",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Using Type II Error Probability \\(\\beta\\) Curves",
+    "text": "Using Type II Error Probability \\(\\beta\\) Curves"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#departures-from-normality",
+    "href": "notes/3-one-mean/part3_lectures.html#departures-from-normality",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Departures from Normality",
+    "text": "Departures from Normality\n\nWhen \\(\\bar{Y}\\) is a Normal random variable, i.e., when sampling from a Normal population with mean \\(\\mu_0\\), \\(\\frac{\\bar{Y}-\\mu_0}{S/\\sqrt{n}}\\) is a \\(T_{n-1}\\) random variable.\nThis is a theoretical fact. In practice, however, we never sample exactly from a Normal population, so (\\(\\bar{Y}- \\mu_0)/S/\\sqrt{n}\\) will be only approximately \\(T_{n-1}\\).\nHow much effect can this have on C.I.’s and tests we construct?\nFor symmetrically distributed populations and not too small \\(n\\) there is little to worry about.\nFor highly skewed population distributions the approximation can be terrible especially for small \\(n\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#section-5",
+    "href": "notes/3-one-mean/part3_lectures.html#section-5",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "",
+    "text": "image\n\n\n\n\nIt is recommended that one look at a boxplot, Normal plot, and/or other graphics to see whether severe skewness of the sampling population is indicated. If not, proceed to use the \\(t\\)-distribution. If yes, one can use a nonparametric procedure or use a transformation. We will look at some of these later."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#using-confidence-intervals-to-test-hypotheses",
+    "href": "notes/3-one-mean/part3_lectures.html#using-confidence-intervals-to-test-hypotheses",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Using Confidence Intervals to Test Hypotheses",
+    "text": "Using Confidence Intervals to Test Hypotheses\n\nWe can always look at a (1-\\(\\alpha\\))100% confidence interval and see what the result of a test would be if we carry out the test.\nFor example, consider the (1-\\(\\alpha\\))100% confidence interval for \\(\\mu\\) \\[\\left(\\bar{y} - t_{\\alpha/2} \\, \\frac{s}{\\sqrt{n}}, \\quad\n        \\bar{y} + t_{\\alpha/2} \\, \\frac{s}{\\sqrt{n}}\\right)\\]\nSuppose that \\(\\mu_0\\) is not included in the above confidence interval because \\[\\bar{y} - t_{\\alpha/2} \\, \\frac{s}{\\sqrt{n}}&gt;\\mu_0\\]"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#using-confidence-intervals-to-test-hypotheses---cont.",
+    "href": "notes/3-one-mean/part3_lectures.html#using-confidence-intervals-to-test-hypotheses---cont.",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Using Confidence Intervals to Test Hypotheses - cont.",
+    "text": "Using Confidence Intervals to Test Hypotheses - cont.\n\nBy rearranging this we see that this is equivalent to \\(t_c\\) being in the rejection region, i.e.,\n\\[\\frac{\\bar{y}-\\mu_0}{s/\\sqrt{n}} &gt; t_{\\alpha/2,(n-1)}\\]\nObserve carefully that this is the same rejection region for the test of \\(H_0: \\mu \\leq  \\mu_0\\) vs. \\(H_a: \\mu &gt;\n\\mu_0\\) at level \\(\\alpha/2\\).\nThat is, we will be rejecting \\(H_0\\) at level \\(\\alpha/2\\) if\n\\[\\frac{\\bar{y}-\\mu_0}{s/\\sqrt{n}} &gt; t_{\\alpha/2,(n-1)}\\]\nThis is equivalent to saying that if \\(\\mu_0\\) was not included in a 100(1-\\(\\alpha\\))% interval, then \\(H_0\\) will be rejected if the test is carried out at \\(\\alpha/2\\) level."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#using-confidence-intervals-to-test-hypotheses---cont.-1",
+    "href": "notes/3-one-mean/part3_lectures.html#using-confidence-intervals-to-test-hypotheses---cont.-1",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Using Confidence Intervals to Test Hypotheses - cont.",
+    "text": "Using Confidence Intervals to Test Hypotheses - cont.\n\nFor a two-tailed test, the confidence interval should be based on the same \\(\\alpha\\) as the test to make this inference.\n\nIn summary,\n\nTo test \\(H_0: \\mu \\leq \\mu_0, \\quad H_a: \\mu &gt; \\mu_0\\), at level \\(\\alpha/2\\), use a 100(1-\\(\\alpha\\))% confidence interval.\nTo test \\(H_0: \\mu \\geq \\mu_0, \\quad H_a: \\mu &lt; \\mu_0\\), at level \\(\\alpha/2\\), use a 100(1-\\(\\alpha\\))% confidence interval.\n\\(H_0: \\mu = \\mu_0, \\quad H_a: \\mu \\neq \\mu_0\\), at level \\(\\alpha\\), use a 100(1-\\(\\alpha\\))% confidence interval."
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#what-is-statistics",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#what-is-statistics",
+    "title": "What is Statistics?",
+    "section": "What is statistics?",
+    "text": "What is statistics?\n\nStatistics is the science of learning from data. It uses the theory of probability to make inferences about populations or processes using data\nFor example, we would like to know the mean of a characteristic of a set of elements of a population\nBut we can’t observe or measure each one because there are too many elements or not all are available."
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#examples",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#examples",
+    "title": "What is Statistics?",
+    "section": "Examples",
+    "text": "Examples\n\nMean blood pressure of 40 year old pregnant females.\nMean lifetime of 60-watt bulbs being made at the G.E. plant in Cleveland.\nMean potency of an antibiotic after storage for 20 months on store shelves."
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#statistics-is-useful-in",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#statistics-is-useful-in",
+    "title": "What is Statistics?",
+    "section": "Statistics is Useful in",
+    "text": "Statistics is Useful in\n\nData collection\n\nSample survey design\nExperimental design\n\nDrawing conclusion from data\n\nDescriptive methods - summarization and presentation of data\nStatistical inference - make statements about an entire population based on a sample"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#population-versus-sample",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#population-versus-sample",
+    "title": "What is Statistics?",
+    "section": "Population versus Sample",
+    "text": "Population versus Sample\nSince we can’t obtain the average exactly, we do the next best thing\n\napproximate it by finding the average for a selected subset of the elements\nwe do a statistical study to estimate the population mean\nusually, there are many objectives of a statistical study, than just estimating the mean of the population."
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#steps-in-a-statistical-study",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#steps-in-a-statistical-study",
+    "title": "What is Statistics?",
+    "section": "Steps in a Statistical Study",
+    "text": "Steps in a Statistical Study\n\nCollecting data - by making observations or taking measurements on some sample or process of interest, possibly as a part of a statistically designed experiment or a survey.\nSummarizing the data - using statistical summary methods (calculating means or constructing a histogram, for example).\nAnalyzing the data and making inferences - using models and statistical methods for drawing conclusions about the situation being considered."
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#terminology-and-definitions",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#terminology-and-definitions",
+    "title": "What is Statistics?",
+    "section": "Terminology and definitions",
+    "text": "Terminology and definitions\n\nPopulation - The set of all objects (or measurements) of interest; they are called elements of the population.\nSample - Any subset of elements from a population.\nA statistical study is made using a sample obtained from a population.\nSample represents the population."
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#how-to-select-a-sample",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#how-to-select-a-sample",
+    "title": "What is Statistics?",
+    "section": "How to Select a Sample?",
+    "text": "How to Select a Sample?\nTheoretically we can get a random sample of \\(n\\) elements by\n\nmaking n draws, one at a time\non each draw, each remaining element in the population is equally likely to be the one drawn.\n\nPractically we can seldom satisfy the theoretical requirements, so we do the best we can to introduce randomness into our sample selection process."
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#how-to-select-a-sample-continued",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#how-to-select-a-sample-continued",
+    "title": "What is Statistics?",
+    "section": "How to Select a Sample? (continued)",
+    "text": "How to Select a Sample? (continued)\n\nCan the result of a statistical study of population mean (average) be far away from the true mean? - sure, sometimes. A statistical study provides evidence. It doesn’t prove anything\n\nA random sample selected using the method described earlier ensures that each sample of size \\(n\\) drawn from a population has the same chance of being selected\nMethods that ensure this property are called simple random sampling\nWe shall use a method for selecting a simple random sample from a population in a one of our labs using random digit tables"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#some-important-definitions",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#some-important-definitions",
+    "title": "What is Statistics?",
+    "section": "Some Important Definitions",
+    "text": "Some Important Definitions\n\nData value: measurement\nObservation: Row of data values\nVariable: Set of data values for the same type of measurement\nData set: The entire collection of data values"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#example-measurements-on-mice",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#example-measurements-on-mice",
+    "title": "What is Statistics?",
+    "section": "Example: Measurements on Mice",
+    "text": "Example: Measurements on Mice\n\n\n\nAnimal id\nCage\nWeight\nLength\n\n\n\n\n1\n1\n22.5\n5.3\n\n\n2\n1\n27.3\n4.8\n\n\n3\n1\n32.2\n4.5\n\n\n4\n2\n23.7\n4.9\n\n\n5\n2\n30.9\n5.7\n\n\n6\n2\n22.6\n5.2"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#data-description",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#data-description",
+    "title": "What is Statistics?",
+    "section": "Data Description",
+    "text": "Data Description\n\nTwo broad applications of Statistics\n\n\ndescriptive statistics\ninferential statistics\n\nWhen measurements from an entire population is available to us data description will be a major objective.\nIn this case, methods for organizing, summarizing, and describing data are needed.\nGood descriptive statistics enable us to make sense of the data by reducing large amounts of data to a few summary measures and graphical displays."
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#data-description---cont.",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#data-description---cont.",
+    "title": "What is Statistics?",
+    "section": "Data Description - cont.",
+    "text": "Data Description - cont.\n\nWhen only a random sample is available from a large population (or a process), inferential statistics becomes the major focus.\nHowever, even in this case, descriptive statistics of the sample data is still important as they can be used to draw conclusions about the population from which the sample was taken.\nData descriptions are of two types:\n\n\ngraphical methods\nnumerical summaries"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#graphical-methods",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#graphical-methods",
+    "title": "What is Statistics?",
+    "section": "Graphical Methods",
+    "text": "Graphical Methods\n\nBar Chart\nHistogram\nStem-and-Leaf plot\nTime Series plot\nBoxplot\nNormal Probability Plot"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#numerical-summaries",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#numerical-summaries",
+    "title": "What is Statistics?",
+    "section": "Numerical Summaries",
+    "text": "Numerical Summaries\n\nMeasures of Center or Location\n\nMode\nMedian\nMean\n\nMeasures of Variability or Spread\n\nRange\nPercentile (Quantile, Quartile)\nInterquartile Range\nVariance\nStandard Deviation\nCoefficient of Variation"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#histograms",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#histograms",
+    "title": "What is Statistics?",
+    "section": "Histograms",
+    "text": "Histograms\n\nTo plot a histogram, a frequency table must first be constructed\nThe range of the data is divided into class intervals or bins\nThe number of such intervals is determined by the end-points of the intervals number of observations in the data set\nThe larger the number of observations the more the number of class intervals we may use\nDivide the range of data values by the number of class intervals to determine an approximate class width"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#weight-gains-of-chicks-fed-an-antibiotic---data",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#weight-gains-of-chicks-fed-an-antibiotic---data",
+    "title": "What is Statistics?",
+    "section": "Weight gains of chicks fed an antibiotic - Data",
+    "text": "Weight gains of chicks fed an antibiotic - Data\nAn animal scientist is carrying out an experiment to investigate whether adding an antibiotic to the diet of chicks will promote growth over the standard diet without the antibiotic. The scientist determines that 100 chicks will provide sufficient information to validate the results of the experiment. From previous research studies, the average weight gain of chicks fed the standard diet over an 8-week period is 3.9 grams. The scientist wants to compare the weight gain of the chicks in the study to the standard value of 3.9 grams. The weight gains for the 100 chicks are recorded the the table shown on the next slide."
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#example-weight-gains-of-chicks-fed-an-antibiotic",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#example-weight-gains-of-chicks-fed-an-antibiotic",
+    "title": "What is Statistics?",
+    "section": "Example: Weight gains of chicks fed an antibiotic",
+    "text": "Example: Weight gains of chicks fed an antibiotic\n\n\n\n3.7\n4.2\n4.4\n4.4\n4.3\n4.2\n4.4\n4.8\n4.9\n4.4\n\n\n4.2\n3.8\n4.2\n4.4\n4.6\n3.9\n4.1\n4.5\n4.8\n3.9\n\n\n4.7\n4.2\n4.2\n4.8\n4.5\n3.6\n4.1\n4.3\n3.9\n4.2\n\n\n4.0\n4.2\n4.0\n4.5\n4.4\n4.1\n4.0\n4.0\n3.8\n4.6\n\n\n4.9\n3.8\n4.3\n4.3\n3.9\n3.8\n4.7\n3.9\n4.0\n4.2\n\n\n4.3\n4.7\n4.1\n4.0\n4.6\n4.4\n4.6\n4.4\n4.9\n4.4\n\n\n4.0\n3.9\n4.5\n4.3\n3.8\n4.1\n4.3\n4.2\n4.5\n4.4\n\n\n4.2\n4.7\n3.8\n4.5\n4.0\n4.2\n4.1\n4.0\n4.7\n4.1\n\n\n4.7\n4.1\n4.8\n4.1\n4.3\n4.7\n4.2\n4.1\n4.4\n4.8\n\n\n4.1\n4.9\n4.3\n4.4\n4.4\n4.3\n4.6\n4.5\n4.6\n4.0"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#creating-a-histogram",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#creating-a-histogram",
+    "title": "What is Statistics?",
+    "section": "Creating a Histogram",
+    "text": "Creating a Histogram\n\nIt was decided to have 10 class intervals\nSince the range is \\(4.9-3.6=1.3\\), a class interval width of \\(1.3/10  \\approx .1\\) was used\nThe end-points of the intervals are incremented by one-half the unit of measurement (i.e., .05 gram, here)\nThis is so that no observation falls on any end-point\nSince the smallest observation is 3.6 we start with the interval \\(3.55-3.65\\)\nOnce the class intervals have been determined observations in the data set falling into each of these classes are tallied"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#reading-in-the-chick-data",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#reading-in-the-chick-data",
+    "title": "What is Statistics?",
+    "section": "Reading in the chick data",
+    "text": "Reading in the chick data\n\nchick.tbl &lt;- read.table(text = \"\n               3.7   4.2   4.4   4.4   4.3   4.2   4.4   4.8   4.9   4.4\n    4.2   3.8   4.2   4.4   4.6   3.9   4.1   4.5   4.8   3.9\n    4.7   4.2   4.2   4.8   4.5   3.6   4.1   4.3   3.9   4.2\n    4.0   4.2   4.0   4.5   4.4   4.1   4.0   4.0   3.8   4.6\n    4.9   3.8   4.3   4.3   3.9   3.8   4.7   3.9   4.0   4.2\n    4.3   4.7   4.1   4.0   4.6   4.4   4.6   4.4   4.9   4.4\n    4.0   3.9   4.5   4.3   3.8   4.1   4.3   4.2   4.5   4.4\n    4.2   4.7   3.8   4.5   4.0   4.2   4.1   4.0   4.7   4.1\n    4.7   4.1   4.8   4.1   4.3   4.7   4.2   4.1   4.4   4.8\n    4.1   4.9   4.3   4.4   4.4   4.3   4.6   4.5   4.6   4.0\")\nchick &lt;- unlist(chick.tbl, use.names = F)\nhead(chick, n = 10)\n\n [1] 3.7 4.2 4.7 4.0 4.9 4.3 4.0 4.2 4.7 4.1"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#frequency-table-for-the-chick-data",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#frequency-table-for-the-chick-data",
+    "title": "What is Statistics?",
+    "section": "Frequency table for the chick data",
+    "text": "Frequency table for the chick data\nFrequency Table\n\ncuts &lt;- cut(chick, breaks = seq(3.55, 4.95, by = 0.1))\nfreq &lt;- table(cuts)\nfreq\n\ncuts\n(3.55,3.65] (3.65,3.75] (3.75,3.85] (3.85,3.95] (3.95,4.05] (4.05,4.15] \n          1           1           6           6          10          11 \n(4.15,4.25] (4.25,4.35] (4.35,4.45] (4.45,4.55] (4.55,4.65] (4.65,4.75] \n         13          10          13           7           6           7 \n(4.75,4.85] (4.85,4.95] \n          5           4 \n\n\nRelative Frequency Table\n\nrel_freq &lt;- table(cuts)/length(chick)\nrel_freq\n\ncuts\n(3.55,3.65] (3.65,3.75] (3.75,3.85] (3.85,3.95] (3.95,4.05] (4.05,4.15] \n       0.01        0.01        0.06        0.06        0.10        0.11 \n(4.15,4.25] (4.25,4.35] (4.35,4.45] (4.45,4.55] (4.55,4.65] (4.65,4.75] \n       0.13        0.10        0.13        0.07        0.06        0.07 \n(4.75,4.85] (4.85,4.95] \n       0.05        0.04"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#creating-a-histogram-base-r",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#creating-a-histogram-base-r",
+    "title": "What is Statistics?",
+    "section": "Creating a Histogram (base R)",
+    "text": "Creating a Histogram (base R)\n\nhist(chick, breaks = seq(3.55, 4.95, by = 0.1))"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#creating-a-histogram-ggplot2",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#creating-a-histogram-ggplot2",
+    "title": "What is Statistics?",
+    "section": "Creating a Histogram (ggplot2)",
+    "text": "Creating a Histogram (ggplot2)\n\n# install.packages(tidyverse)\nlibrary(ggplot2)\nggplot(mapping = aes(x = chick)) + \n  geom_histogram(binwidth = 0.1, color = 'black', fill = '#1a80bb')"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-and-percentiles",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-and-percentiles",
+    "title": "What is Statistics?",
+    "section": "Quantiles and Percentiles",
+    "text": "Quantiles and Percentiles\n\nThe \\(80^{th}\\) percentile is a data value such that approximately 80% of the data values in the data set are less, and approximately 20% are larger, than that value.\nFor a theoretical distribution (e.g. normal distribution) the .8 quantile is a value such that 80% of the probability mass of the distribution lies to the left and 20% lies to the right of the value of the quantile.\nFor an empirical distribution (i.e., the distribution of a data set) we need another definition. Suppose we have 10 values in a dataset: \\(52, 63, 67, 71, 75, 76, 76, 82, 87, 94\\)"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-and-percentiles-1",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-and-percentiles-1",
+    "title": "What is Statistics?",
+    "section": "Quantiles and Percentiles",
+    "text": "Quantiles and Percentiles\n\nWhat is the 80th percentile? i.e., what value is such that approximately 80% are less and 20% are greater?\nSince there are 10 values, need to find a number such that 8 values are less, and 2 values greater than that number.\nThere isn’t a value in the data set that satisfies both conditions.\nA number half way between 82 and 87, i.e., 84.5, might be reasonably chosen as the \\(80^{th}\\) percentile.\nIt satisfies the definition approximately."
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-and-percentiles-2",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-and-percentiles-2",
+    "title": "What is Statistics?",
+    "section": "Quantiles and Percentiles",
+    "text": "Quantiles and Percentiles\n\nA definition that will give unambiguous percentiles for any set of data is needed.\nLet \\(p\\ (0 &lt; p &lt; 100)\\) denote the desired percentile, \\(n\\) the number of data values, and let \\(y_{(1)}, y_{(2)}, \\ldots y_{(n)}\\) denote the ordered observations so that \\[y_{(1)} \\le y_{(2)} \\le \\ldots  \\le y_{(n)}\\]"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#definition-percentiles-and-quantiles",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#definition-percentiles-and-quantiles",
+    "title": "What is Statistics?",
+    "section": "Definition: Percentiles and Quantiles",
+    "text": "Definition: Percentiles and Quantiles\n\nIf \\(p\\) is one of the numbers \\(100(i-.5)/n\\) then \\(y_{(i)}\\) is the \\(p^{th}\\) percentile, for i = 1, 2, 3, ..., n-1 or n.\nIf \\(p\\) is between \\(100(0.5/n)\\) and \\(100(n-.5)/n\\), and \\(p\\) is not one of the numbers \\(100(i-.5)/n\\) then the percentile is obtained by linear interpolation between the two percentiles that bracket \\(p\\).\nQuantiles are a generalization of percentiles. The \\(p^{th}\\) quantile of a dataset is the \\(100p^{th}\\) percentile."
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-and-percentiles-3",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-and-percentiles-3",
+    "title": "What is Statistics?",
+    "section": "Quantiles and Percentiles",
+    "text": "Quantiles and Percentiles\nThus the \\(p^{th}\\) quantile of the dataset \\(y_{(1)}, y_{(2)}, \\ldots y_{(n)}\\) is obtained as follows:\n\nIf \\(p\\) is one of the numbers \\((i-.5)/n\\) then \\(y_{(i)}\\) is the \\(p^{th}\\) quantile, for i = 1, 2, 3, ..., n-1 or n.\nIf \\(p\\) is between \\((0.5/n)\\) and \\((n-.5)/n\\), and \\(p\\) is not one of the numbers \\((i-.5)/n\\) then the quantile is obtained by linear interpolation between the two quantiles that bracket p.\nThe \\(p_i^{th}\\) quantile of a dataset is denoted by \\(Q(p_i)\\)"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-and-percentiles-example",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-and-percentiles-example",
+    "title": "What is Statistics?",
+    "section": "Quantiles and Percentiles: Example",
+    "text": "Quantiles and Percentiles: Example\nSuppose we have a dataset consisting of the 10 observations: \\(9.614,  9.614,  10.688,  7.583,  8.572,  8.527,  8.577,  9.471,\n9.165,  9.011\\) The following table shows the ordered data values as the specified quantiles:\n\n\n\n\\(i\\)\n\\(p_i=(i-.5)/10\\)\n\\(Q(p_i)\\)\n\n\n\n\n1\n0.05\n7.583\n\n\n2\n0.15\n8.527\n\n\n3\n0.25\n8.572\n\n\n4\n0.35\n8.577\n\n\n5\n0.45\n9.011\n\n\n6\n0.55\n9.165\n\n\n7\n0.65\n9.471\n\n\n8\n0.75\n9.614\n\n\n9\n0.85\n9.614\n\n\n10\n0.95\n10.688"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-by-linear-interpolation",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-by-linear-interpolation",
+    "title": "What is Statistics?",
+    "section": "Quantiles by Linear Interpolation",
+    "text": "Quantiles by Linear Interpolation\n\n\\(Q(p)\\) for values of \\(p = (i-.5)/n\\) correspond to the ordered observations for \\(i = 1, 2, \\ldots, n\\). For example \\(Q(.55)=9.165\\).\nHow is, say, \\(Q(.525)\\) determined? This is obtained by linear interpolation between the two quantiles that bracket \\(.525\\) i.e, \\(Q(.45)\\) and \\(Q(.55)\\).\nFor a \\(p\\) such that \\(p_i &lt; p &lt; p_{i+1},\\ Q(p)\\) is computed as the weighted average \\(Q(p) = (1-f)Q(p_i) + fQ(p_{i+1})\\) where \\(f =(p-p_i)/(p_{i+1}-p_i) = n(p-p_i)\\)"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-by-linear-interpolation-example",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-by-linear-interpolation-example",
+    "title": "What is Statistics?",
+    "section": "Quantiles by Linear Interpolation: Example",
+    "text": "Quantiles by Linear Interpolation: Example\n\nSuppose \\(n = 10\\) and one needs to compute \\(Q(.525)\\).\nSince \\(.45 &lt; p &lt; .55, \\ f = 10 (.525 - .45)  = .75\\).\nThus \\(Q(.525)=.25Q(.45) +\n.75Q(.55)\\).\nIn the above example, therefore \\[Q(.525)= .25(9.011)+.75(9.165)=9.1265\\]"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#box-plots-tukey-1977",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#box-plots-tukey-1977",
+    "title": "What is Statistics?",
+    "section": "Box Plots (Tukey, 1977)",
+    "text": "Box Plots (Tukey, 1977)\nThe boxplot is a summary display of a set of data, that is useful for studying the shape of the distribution including its symmetry or asymmetry around the central location, based on the quantiles \\(Q_1,\\ M\\), and \\(Q_3\\) as defined below:\n\nUpper Quartile = \\(75^{ th} { percentile} =Q(.75)=Q_3\\)\nMedian = \\(50^{ th} { percentile} =Q(.50)=M\\)\nLower Quartile = \\(25^{ th} {percentile} =Q(.25)= Q_1\\)\nInterquartile Range (IQR) =\nUpper Quartile - Lower Quartile =\\(Q_3- Q_1\\)"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#box-plots-continued",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#box-plots-continued",
+    "title": "What is Statistics?",
+    "section": "Box Plots (continued)",
+    "text": "Box Plots (continued)\nThe following quantities also need to be computed for constructing a box plot:\n\nUpper Fence = \\(Q_3 + 1.5\\) IQR.\nLower Fence = \\(Q_1 - 1.5\\) IQR.\nUpper Adjacent Value: the largest observation below the upper fence\nLower Adjacent Value: the smallest observation above the lower fence\nOutside Values: Observations that fall outside adjacent values."
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#box-plots-example",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#box-plots-example",
+    "title": "What is Statistics?",
+    "section": "Box Plots: Example",
+    "text": "Box Plots: Example"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#creating-a-box-plot-base-r",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#creating-a-box-plot-base-r",
+    "title": "What is Statistics?",
+    "section": "Creating a Box Plot (base R)",
+    "text": "Creating a Box Plot (base R)\n\nboxplot(chick)"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#creating-a-box-plot-ggplot2",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#creating-a-box-plot-ggplot2",
+    "title": "What is Statistics?",
+    "section": "Creating a Box Plot (ggplot2)",
+    "text": "Creating a Box Plot (ggplot2)\n\nggplot(mapping = aes(x = chick)) + \n  geom_boxplot()"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot",
+    "title": "What is Statistics?",
+    "section": "Normal Probability Plot",
+    "text": "Normal Probability Plot\n\nConsider a sample \\(y_1, y_2, \\ldots, y_n\\) of size \\(n\\).\nThe data are first ordered in increasing order of magnitude.\nThen a value \\(p\\) is assigned to each data value using the formula \\(p = (i -0.5)/n\\).\nThus the ordered data values will be the \\(p_i^{th}\\) quantile \\(Q(p_i)\\) for \\(i=1,2,\\ldots,n.\\)\nExample: Quantiles for a data set with \\(n = 18\\)"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#summation-notation",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#summation-notation",
+    "title": "What is Statistics?",
+    "section": "Summation Notation",
+    "text": "Summation Notation\nhttp://www.columbia.edu/itc/sipa/math/summation.html"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#quantiles",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#quantiles",
+    "title": "What is Statistics?",
+    "section": "Quantiles",
+    "text": "Quantiles"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot-example",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot-example",
+    "title": "What is Statistics?",
+    "section": "Normal Probability Plot: Example",
+    "text": "Normal Probability Plot: Example\n\nThe quantile of the standard normal distribution, \\(z_p\\), corresponding to each \\(p\\) value, is then computed using the table of Normal percentiles (i.e. the \\(z\\)-table).\nThe Normal Probability plot is the plot of the quantiles \\(Q(p)\\) of the data vs. \\(z_p\\), the corresponding standard normal quantiles.\nThus this plot is also called the quantile-quantile plot or the Q-Q plot, in general."
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot-example-1",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot-example-1",
+    "title": "What is Statistics?",
+    "section": "Normal Probability Plot: Example",
+    "text": "Normal Probability Plot: Example"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot-continued",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot-continued",
+    "title": "What is Statistics?",
+    "section": "Normal Probability Plot (continued)",
+    "text": "Normal Probability Plot (continued)\n\nIf the data is a random sample from a normal population the plotted points will lie approximately in a straight-line.\nDepartures from a straight-line may indicate that the population distribution is different from a Normal distribution.\nSpecific types of departures can be used to identify how the population distribution differs from a Normal distribution.\nThe following pages contains normal probability plots of computer generated data from populations that resemble distributions that are as described."
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot-continued-1",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot-continued-1",
+    "title": "What is Statistics?",
+    "section": "Normal Probability Plot (continued)",
+    "text": "Normal Probability Plot (continued)"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot-continued-2",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot-continued-2",
+    "title": "What is Statistics?",
+    "section": "Normal Probability Plot (continued)",
+    "text": "Normal Probability Plot (continued)\n\nThe top set of plots are from normal populations with different mean and variance parameters\nThe bottom two are from populations that differ in shape from the normal distribution.\nNotice that the bottom two plots show specific patterns (the left graph shows a bowl-shape while the other shows an inverted S-shaped pattern).\nThese are markedly different from the deviation from a straight line shown in the top graphs which are only due to random variation."
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#sample-statistics-vs.-parameters",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#sample-statistics-vs.-parameters",
+    "title": "What is Statistics?",
+    "section": "Sample Statistics vs. Parameters",
+    "text": "Sample Statistics vs. Parameters\n\nA parameter is a descriptive statistic of a population.\nA sample statistic is a descriptive statistic of a sample.\nTake a census of a population recording values of a variable as \\(x_1, x_2,\\ldots,x_N\\), where \\(N\\) is the population size, then\n\nPopulation mean, \\(\\mu=\\frac{\\textstyle\\sum x}{N}\\)\nPopulation variance, \\(\\sigma^2=\\frac{\\textstyle\\sum (x-\\mu)^2}{N}\\)\nPopulation standard deviation, \\(\\sigma=\\sqrt{\\sigma^2}\\)"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#sample-statistics-vs.-parameters-1",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#sample-statistics-vs.-parameters-1",
+    "title": "What is Statistics?",
+    "section": "Sample Statistics vs. Parameters",
+    "text": "Sample Statistics vs. Parameters\n\nSince censuses cannot be taken for every population we wish to study, parameters cannot be exactly calculated and thus are usually unknown.\nInstead, a random sample of a population is taken recording values of a variable as \\(x_1, x_2,\\ldots,x_n\\), where \\(n\\) is the sample size, then\n\nsample mean (average, arithmetic mean), \\(\\bar{x}= \\frac{\\textstyle \\sum x}{n}\\)\nsample variance, \\(s^2=\\frac{\\textstyle \\sum (x-\\bar{x})^2}{n-1}\\)\nsample standard deviation, \\(s=\\sqrt{s^2}\\)"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#sample-statistics-vs.-parameters-2",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#sample-statistics-vs.-parameters-2",
+    "title": "What is Statistics?",
+    "section": "Sample Statistics vs. Parameters",
+    "text": "Sample Statistics vs. Parameters\n\n\\(\\mu\\), \\(\\sigma^2\\), and \\(\\sigma\\) are parameters.\n\\(\\bar{x}\\), \\(s^2\\), and \\(s\\) are sample statistics."
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#sample-statistics-vs.-parameters-example",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#sample-statistics-vs.-parameters-example",
+    "title": "What is Statistics?",
+    "section": "Sample Statistics vs. Parameters: Example",
+    "text": "Sample Statistics vs. Parameters: Example\nCalculate the sample mean, variance, and standard deviation for data: 2, 3, 3, 4, 3.\n\n\n\n\n\\(i\\)\n\\(x\\)\n\\(x^2\\)\n\n\n\n\n1\n2\n4\n\n\n2\n3\n9\n\n\n3\n3\n9\n\n\n4\n4\n16\n\n\n5\n3\n9\n\n\n\n\\(\\sum x=15\\)\n\\(\\sum x^2= 47\\)"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#sample-statistics-vs.-parameters-3",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#sample-statistics-vs.-parameters-3",
+    "title": "What is Statistics?",
+    "section": "Sample Statistics vs. Parameters",
+    "text": "Sample Statistics vs. Parameters\nCompute sample variance \\(s^2\\) and sample standard deviation \\(s\\). \\[\\begin{eqnarray*}\ns^2 & = &\\frac{\\textstyle\\sum x^2 - \\frac{(\\textstyle\\sum\nx)^2}{n}}{n-1}=\\frac{47-\\frac{(15)^2}{5}}{5-1}=2/4=0.5\\\\[.1in]\ns & = & \\sqrt{(s^2)}=\\sqrt{0.5}=0.71\n\\end{eqnarray*}\\]"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#summary-statistics",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#summary-statistics",
+    "title": "What is Statistics?",
+    "section": "Summary Statistics",
+    "text": "Summary Statistics\n\n# Data\nvals &lt;- c(2,3,3,4,3)\n\n# Mean\nmean(vals)\n\n[1] 3\n\n# Variance\nvar(vals)\n\n[1] 0.5\n\n# Standard deviation\nsd(vals); sqrt(var(vals))\n\n[1] 0.7071068\n\n\n[1] 0.7071068"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#numerical-summary-measures",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#numerical-summary-measures",
+    "title": "What is Statistics?",
+    "section": "Numerical Summary Measures",
+    "text": "Numerical Summary Measures\n\nThe sample mean and the sample median are examples of numerical descriptive measures of the central tendency of a sample and describes the center or location around which the data are distributed.\nThe sample variance and standard deviation are examples of numerical descriptive measures of the variability or the spread of the sample around the center.\nThese numerical descriptive measures are used both to describe a population, if the entire population of measurements is available, (e.g., census) or, to draw inferences about a population from the statistics calculated on a random sample drawn from the population."
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#other-numerical-summary-measures---median",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#other-numerical-summary-measures---median",
+    "title": "What is Statistics?",
+    "section": "Other Numerical Summary Measures - Median",
+    "text": "Other Numerical Summary Measures - Median\nMedian: Value at which \\(50\\%\\) of the observations are above and \\(50\\%\\) below.\nComputation of the sample median from a sample of size n:\n\nArrange observations in ascending order\nThe value of the \\(\\left(\\frac{n+1}{2}\\right)^{th}\\) ordered observation is the median\n\nWhat is the median of \\(2,4,6,8,10\\)?\n\nmedian(c(2,4,6,8,10))\n\n[1] 6\n\n\nWhat is the median of \\(2,4,6,10\\)?\n\nmedian(c(2,4,6,10))\n\n[1] 5"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#which-measure-of-location-should-be-used",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#which-measure-of-location-should-be-used",
+    "title": "What is Statistics?",
+    "section": "Which measure of location should be used?",
+    "text": "Which measure of location should be used?\n\nWhen the data are symmetric?\nWhen data are skewed? Which means that there are some very large or very small values?"
+  },
+  {
+    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#example---which-measure-of-location-should-be-used",
+    "href": "notes/1-descriptive-statistics/part1_lectures.html#example---which-measure-of-location-should-be-used",
+    "title": "What is Statistics?",
+    "section": "Example - Which measure of location should be used?",
+    "text": "Example - Which measure of location should be used?\n\n\nmean(x)\n\n[1] 1.177316\n\nmedian(x)\n\n[1] 0.9064152"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STAT 801A",
+    "section": "",
+    "text": "This website is open to my students in the University of Nebraska-Lincoln’s STAT 801A course.\nCourse description: Statistical concepts and statistical methodology useful in descriptive, experimental, and analytical study of biological and other natural phenomena. Practical application of statistics rather than on statistical theory."
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Unless otherwise stated, all assignments are due by 9 p.m. on Canvas.\n\n\n\nProject\nDue date\nData\nSolutions\nNotes\n\n\n\n\nProject 1"
+  },
+  {
+    "objectID": "canvas.html",
+    "href": "canvas.html",
+    "title": "Canvas",
+    "section": "",
+    "text": "Canvas is used for the following:\n\nDiscussion/message board\nOnline quizzes\nSubmitting assignments/projects/tests\nChecking final course grades\n\nAll other material can be found on this webpage. If you wish to email me instead of using Canvas, please include your course number in the subject line."
+  },
+  {
+    "objectID": "notes.html",
+    "href": "notes.html",
+    "title": "Notes",
+    "section": "",
+    "text": "8/27/26\n\nSlides"
+  },
+  {
     "objectID": "notes/2-probability/part2_lectures.html#population-versus-sample",
     "href": "notes/2-probability/part2_lectures.html#population-versus-sample",
     "title": "Probability",
-    "section": "",
-    "text": "Population – The set of all objects under consideration. Objects in a population are called elements.\nExamples\n\nBoxes of a particular brand of corn flakes.\nNewly made light bulbs in a warehouse at a given time."
+    "section": "Population versus Sample",
+    "text": "Population versus Sample\nPopulation – The set of all objects under consideration. Objects in a population are called elements.\nExamples\n\nBoxes of a particular brand of corn flakes.\nNewly made light bulbs in a warehouse at a given time."
   },
   {
     "objectID": "notes/2-probability/part2_lectures.html#another-definition-of-population",
@@ -497,850 +1323,10 @@
     "text": "Poisson to approximate Binomial\nResult (not a theorem): For large \\(n\\), the Binomial distribution can be approximated by the Poisson distribution, where \\(\\lambda\\) is taken as \\(n\\pi\\): \\[{n \\choose k} \\pi^{k}(1-\\pi)^{n-k} \\approx e^{-n\\pi}\\frac{(n)^{k}}{k!}\\] Rule of thumb: use Poisson approximation if \\(n \\ge 100,\\ \\pi \\le 0.01\\) and \\(n\\pi \\leq 20\\)"
   },
   {
-    "objectID": "notes.html",
-    "href": "notes.html",
-    "title": "Notes",
-    "section": "",
-    "text": "8/27/26\n\nSlides"
-  },
-  {
-    "objectID": "canvas.html",
-    "href": "canvas.html",
-    "title": "Canvas",
-    "section": "",
-    "text": "Canvas is used for the following:\n\nDiscussion/message board\nOnline quizzes\nSubmitting assignments/projects/tests\nChecking final course grades\n\nAll other material can be found on this webpage. If you wish to email me instead of using Canvas, please include your course number in the subject line."
-  },
-  {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "Assignments",
-    "section": "",
-    "text": "Unless otherwise stated, all assignments are due by 9 p.m. on Canvas.\n\n\n\nProject\nDue date\nData\nSolutions\nNotes\n\n\n\n\nProject 1"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "STAT 801A",
-    "section": "",
-    "text": "This website is open to my students in the University of Nebraska-Lincoln’s STAT 801A course.\nCourse description: Statistical concepts and statistical methodology useful in descriptive, experimental, and analytical study of biological and other natural phenomena. Practical application of statistics rather than on statistical theory."
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#what-is-statistics",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#what-is-statistics",
-    "title": "What is Statistics?",
-    "section": "",
-    "text": "Statistics is the science of learning from data. It uses the theory of probability to make inferences about populations or processes using data\nFor example, we would like to know the mean of a characteristic of a set of elements of a population\nBut we can’t observe or measure each one because there are too many elements or not all are available."
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#examples",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#examples",
-    "title": "What is Statistics?",
-    "section": "Examples",
-    "text": "Examples\n\nMean blood pressure of 40 year old pregnant females.\nMean lifetime of 60-watt bulbs being made at the G.E. plant in Cleveland.\nMean potency of an antibiotic after storage for 20 months on store shelves."
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#statistics-is-useful-in",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#statistics-is-useful-in",
-    "title": "What is Statistics?",
-    "section": "Statistics is Useful in",
-    "text": "Statistics is Useful in\n\nData collection\n\nSample survey design\nExperimental design\n\nDrawing conclusion from data\n\nDescriptive methods - summarization and presentation of data\nStatistical inference - make statements about an entire population based on a sample"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#population-versus-sample",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#population-versus-sample",
-    "title": "What is Statistics?",
-    "section": "Population versus Sample",
-    "text": "Population versus Sample\nSince we can’t obtain the average exactly, we do the next best thing\n\napproximate it by finding the average for a selected subset of the elements\nwe do a statistical study to estimate the population mean\nusually, there are many objectives of a statistical study, than just estimating the mean of the population."
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#steps-in-a-statistical-study",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#steps-in-a-statistical-study",
-    "title": "What is Statistics?",
-    "section": "Steps in a Statistical Study",
-    "text": "Steps in a Statistical Study\n\nCollecting data - by making observations or taking measurements on some sample or process of interest, possibly as a part of a statistically designed experiment or a survey.\nSummarizing the data - using statistical summary methods (calculating means or constructing a histogram, for example).\nAnalyzing the data and making inferences - using models and statistical methods for drawing conclusions about the situation being considered."
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#terminology-and-definitions",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#terminology-and-definitions",
-    "title": "What is Statistics?",
-    "section": "Terminology and definitions",
-    "text": "Terminology and definitions\n\nPopulation - The set of all objects (or measurements) of interest; they are called elements of the population.\nSample - Any subset of elements from a population.\nA statistical study is made using a sample obtained from a population.\nSample represents the population."
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#how-to-select-a-sample",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#how-to-select-a-sample",
-    "title": "What is Statistics?",
-    "section": "How to Select a Sample?",
-    "text": "How to Select a Sample?\nTheoretically we can get a random sample of \\(n\\) elements by\n\nmaking n draws, one at a time\non each draw, each remaining element in the population is equally likely to be the one drawn.\n\nPractically we can seldom satisfy the theoretical requirements, so we do the best we can to introduce randomness into our sample selection process."
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#how-to-select-a-sample-continued",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#how-to-select-a-sample-continued",
-    "title": "What is Statistics?",
-    "section": "How to Select a Sample? (continued)",
-    "text": "How to Select a Sample? (continued)\n\nCan the result of a statistical study of population mean (average) be far away from the true mean? - sure, sometimes. A statistical study provides evidence. It doesn’t prove anything\n\nA random sample selected using the method described earlier ensures that each sample of size \\(n\\) drawn from a population has the same chance of being selected\nMethods that ensure this property are called simple random sampling\nWe shall use a method for selecting a simple random sample from a population in a one of our labs using random digit tables"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#some-important-definitions",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#some-important-definitions",
-    "title": "What is Statistics?",
-    "section": "Some Important Definitions",
-    "text": "Some Important Definitions\n\nData value: measurement\nObservation: Row of data values\nVariable: Set of data values for the same type of measurement\nData set: The entire collection of data values"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#example-measurements-on-mice",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#example-measurements-on-mice",
-    "title": "What is Statistics?",
-    "section": "Example: Measurements on Mice",
-    "text": "Example: Measurements on Mice\n\n\n\nAnimal id\nCage\nWeight\nLength\n\n\n\n\n1\n1\n22.5\n5.3\n\n\n2\n1\n27.3\n4.8\n\n\n3\n1\n32.2\n4.5\n\n\n4\n2\n23.7\n4.9\n\n\n5\n2\n30.9\n5.7\n\n\n6\n2\n22.6\n5.2"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#data-description",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#data-description",
-    "title": "What is Statistics?",
-    "section": "Data Description",
-    "text": "Data Description\n\nTwo broad applications of Statistics\n\n\ndescriptive statistics\ninferential statistics\n\nWhen measurements from an entire population is available to us data description will be a major objective.\nIn this case, methods for organizing, summarizing, and describing data are needed.\nGood descriptive statistics enable us to make sense of the data by reducing large amounts of data to a few summary measures and graphical displays."
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#data-description---cont.",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#data-description---cont.",
-    "title": "What is Statistics?",
-    "section": "Data Description - cont.",
-    "text": "Data Description - cont.\n\nWhen only a random sample is available from a large population (or a process), inferential statistics becomes the major focus.\nHowever, even in this case, descriptive statistics of the sample data is still important as they can be used to draw conclusions about the population from which the sample was taken.\nData descriptions are of two types:\n\n\ngraphical methods\nnumerical summaries"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#graphical-methods",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#graphical-methods",
-    "title": "What is Statistics?",
-    "section": "Graphical Methods",
-    "text": "Graphical Methods\n\nBar Chart\nHistogram\nStem-and-Leaf plot\nTime Series plot\nBoxplot\nNormal Probability Plot"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#numerical-summaries",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#numerical-summaries",
-    "title": "What is Statistics?",
-    "section": "Numerical Summaries",
-    "text": "Numerical Summaries\n\nMeasures of Center or Location\n\nMode\nMedian\nMean\n\nMeasures of Variability or Spread\n\nRange\nPercentile (Quantile, Quartile)\nInterquartile Range\nVariance\nStandard Deviation\nCoefficient of Variation"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#histograms",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#histograms",
-    "title": "What is Statistics?",
-    "section": "Histograms",
-    "text": "Histograms\n\nTo plot a histogram, a frequency table must first be constructed\nThe range of the data is divided into class intervals or bins\nThe number of such intervals is determined by the end-points of the intervals number of observations in the data set\nThe larger the number of observations the more the number of class intervals we may use\nDivide the range of data values by the number of class intervals to determine an approximate class width"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#weight-gains-of-chicks-fed-an-antibiotic---data",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#weight-gains-of-chicks-fed-an-antibiotic---data",
-    "title": "What is Statistics?",
-    "section": "Weight gains of chicks fed an antibiotic - Data",
-    "text": "Weight gains of chicks fed an antibiotic - Data\nAn animal scientist is carrying out an experiment to investigate whether adding an antibiotic to the diet of chicks will promote growth over the standard diet without the antibiotic. The scientist determines that 100 chicks will provide sufficient information to validate the results of the experiment. From previous research studies, the average weight gain of chicks fed the standard diet over an 8-week period is 3.9 grams. The scientist wants to compare the weight gain of the chicks in the study to the standard value of 3.9 grams. The weight gains for the 100 chicks are recorded the the table shown on the next slide."
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#example-weight-gains-of-chicks-fed-an-antibiotic",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#example-weight-gains-of-chicks-fed-an-antibiotic",
-    "title": "What is Statistics?",
-    "section": "Example: Weight gains of chicks fed an antibiotic",
-    "text": "Example: Weight gains of chicks fed an antibiotic\n\n\n\n3.7\n4.2\n4.4\n4.4\n4.3\n4.2\n4.4\n4.8\n4.9\n4.4\n\n\n4.2\n3.8\n4.2\n4.4\n4.6\n3.9\n4.1\n4.5\n4.8\n3.9\n\n\n4.7\n4.2\n4.2\n4.8\n4.5\n3.6\n4.1\n4.3\n3.9\n4.2\n\n\n4.0\n4.2\n4.0\n4.5\n4.4\n4.1\n4.0\n4.0\n3.8\n4.6\n\n\n4.9\n3.8\n4.3\n4.3\n3.9\n3.8\n4.7\n3.9\n4.0\n4.2\n\n\n4.3\n4.7\n4.1\n4.0\n4.6\n4.4\n4.6\n4.4\n4.9\n4.4\n\n\n4.0\n3.9\n4.5\n4.3\n3.8\n4.1\n4.3\n4.2\n4.5\n4.4\n\n\n4.2\n4.7\n3.8\n4.5\n4.0\n4.2\n4.1\n4.0\n4.7\n4.1\n\n\n4.7\n4.1\n4.8\n4.1\n4.3\n4.7\n4.2\n4.1\n4.4\n4.8\n\n\n4.1\n4.9\n4.3\n4.4\n4.4\n4.3\n4.6\n4.5\n4.6\n4.0"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#creating-a-histogram",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#creating-a-histogram",
-    "title": "What is Statistics?",
-    "section": "Creating a Histogram",
-    "text": "Creating a Histogram\n\nIt was decided to have 10 class intervals\nSince the range is \\(4.9-3.6=1.3\\), a class interval width of \\(1.3/10  \\approx .1\\) was used\nThe end-points of the intervals are incremented by one-half the unit of measurement (i.e., .05 gram, here)\nThis is so that no observation falls on any end-point\nSince the smallest observation is 3.6 we start with the interval \\(3.55-3.65\\)\nOnce the class intervals have been determined observations in the data set falling into each of these classes are tallied"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#reading-in-the-chick-data",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#reading-in-the-chick-data",
-    "title": "What is Statistics?",
-    "section": "Reading in the chick data",
-    "text": "Reading in the chick data\n\nchick.tbl &lt;- read.table(text = \"\n               3.7   4.2   4.4   4.4   4.3   4.2   4.4   4.8   4.9   4.4\n    4.2   3.8   4.2   4.4   4.6   3.9   4.1   4.5   4.8   3.9\n    4.7   4.2   4.2   4.8   4.5   3.6   4.1   4.3   3.9   4.2\n    4.0   4.2   4.0   4.5   4.4   4.1   4.0   4.0   3.8   4.6\n    4.9   3.8   4.3   4.3   3.9   3.8   4.7   3.9   4.0   4.2\n    4.3   4.7   4.1   4.0   4.6   4.4   4.6   4.4   4.9   4.4\n    4.0   3.9   4.5   4.3   3.8   4.1   4.3   4.2   4.5   4.4\n    4.2   4.7   3.8   4.5   4.0   4.2   4.1   4.0   4.7   4.1\n    4.7   4.1   4.8   4.1   4.3   4.7   4.2   4.1   4.4   4.8\n    4.1   4.9   4.3   4.4   4.4   4.3   4.6   4.5   4.6   4.0\")\nchick &lt;- unlist(chick.tbl, use.names = F)\nhead(chick, n = 10)\n\n [1] 3.7 4.2 4.7 4.0 4.9 4.3 4.0 4.2 4.7 4.1"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#frequency-table-for-the-chick-data",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#frequency-table-for-the-chick-data",
-    "title": "What is Statistics?",
-    "section": "Frequency table for the chick data",
-    "text": "Frequency table for the chick data\nFrequency Table\n\ncuts &lt;- cut(chick, breaks = seq(3.55, 4.95, by = 0.1))\nfreq &lt;- table(cuts)\nfreq\n\ncuts\n(3.55,3.65] (3.65,3.75] (3.75,3.85] (3.85,3.95] (3.95,4.05] (4.05,4.15] \n          1           1           6           6          10          11 \n(4.15,4.25] (4.25,4.35] (4.35,4.45] (4.45,4.55] (4.55,4.65] (4.65,4.75] \n         13          10          13           7           6           7 \n(4.75,4.85] (4.85,4.95] \n          5           4 \n\n\nRelative Frequency Table\n\nrel_freq &lt;- table(cuts)/length(chick)\nrel_freq\n\ncuts\n(3.55,3.65] (3.65,3.75] (3.75,3.85] (3.85,3.95] (3.95,4.05] (4.05,4.15] \n       0.01        0.01        0.06        0.06        0.10        0.11 \n(4.15,4.25] (4.25,4.35] (4.35,4.45] (4.45,4.55] (4.55,4.65] (4.65,4.75] \n       0.13        0.10        0.13        0.07        0.06        0.07 \n(4.75,4.85] (4.85,4.95] \n       0.05        0.04"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#creating-a-histogram-base-r",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#creating-a-histogram-base-r",
-    "title": "What is Statistics?",
-    "section": "Creating a Histogram (base R)",
-    "text": "Creating a Histogram (base R)\n\nhist(chick, breaks = seq(3.55, 4.95, by = 0.1))"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#creating-a-histogram-ggplot2",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#creating-a-histogram-ggplot2",
-    "title": "What is Statistics?",
-    "section": "Creating a Histogram (ggplot2)",
-    "text": "Creating a Histogram (ggplot2)\n\n# install.packages(tidyverse)\nlibrary(ggplot2)\nggplot(mapping = aes(x = chick)) + \n  geom_histogram(binwidth = 0.1, color = 'black', fill = '#1a80bb')"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-and-percentiles",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-and-percentiles",
-    "title": "What is Statistics?",
-    "section": "Quantiles and Percentiles",
-    "text": "Quantiles and Percentiles\n\nThe \\(80^{th}\\) percentile is a data value such that approximately 80% of the data values in the data set are less, and approximately 20% are larger, than that value.\nFor a theoretical distribution (e.g. normal distribution) the .8 quantile is a value such that 80% of the probability mass of the distribution lies to the left and 20% lies to the right of the value of the quantile.\nFor an empirical distribution (i.e., the distribution of a data set) we need another definition. Suppose we have 10 values in a dataset: \\(52, 63, 67, 71, 75, 76, 76, 82, 87, 94\\)"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-and-percentiles-1",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-and-percentiles-1",
-    "title": "What is Statistics?",
-    "section": "Quantiles and Percentiles",
-    "text": "Quantiles and Percentiles\n\nWhat is the 80th percentile? i.e., what value is such that approximately 80% are less and 20% are greater?\nSince there are 10 values, need to find a number such that 8 values are less, and 2 values greater than that number.\nThere isn’t a value in the data set that satisfies both conditions.\nA number half way between 82 and 87, i.e., 84.5, might be reasonably chosen as the \\(80^{th}\\) percentile.\nIt satisfies the definition approximately."
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-and-percentiles-2",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-and-percentiles-2",
-    "title": "What is Statistics?",
-    "section": "Quantiles and Percentiles",
-    "text": "Quantiles and Percentiles\n\nA definition that will give unambiguous percentiles for any set of data is needed.\nLet \\(p\\ (0 &lt; p &lt; 100)\\) denote the desired percentile, \\(n\\) the number of data values, and let \\(y_{(1)}, y_{(2)}, \\ldots y_{(n)}\\) denote the ordered observations so that \\[y_{(1)} \\le y_{(2)} \\le \\ldots  \\le y_{(n)}\\]"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#definition-percentiles-and-quantiles",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#definition-percentiles-and-quantiles",
-    "title": "What is Statistics?",
-    "section": "Definition: Percentiles and Quantiles",
-    "text": "Definition: Percentiles and Quantiles\n\nIf \\(p\\) is one of the numbers \\(100(i-.5)/n\\) then \\(y_{(i)}\\) is the \\(p^{th}\\) percentile, for i = 1, 2, 3, ..., n-1 or n.\nIf \\(p\\) is between \\(100(0.5/n)\\) and \\(100(n-.5)/n\\), and \\(p\\) is not one of the numbers \\(100(i-.5)/n\\) then the percentile is obtained by linear interpolation between the two percentiles that bracket \\(p\\).\nQuantiles are a generalization of percentiles. The \\(p^{th}\\) quantile of a dataset is the \\(100p^{th}\\) percentile."
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-and-percentiles-3",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-and-percentiles-3",
-    "title": "What is Statistics?",
-    "section": "Quantiles and Percentiles",
-    "text": "Quantiles and Percentiles\nThus the \\(p^{th}\\) quantile of the dataset \\(y_{(1)}, y_{(2)}, \\ldots y_{(n)}\\) is obtained as follows:\n\nIf \\(p\\) is one of the numbers \\((i-.5)/n\\) then \\(y_{(i)}\\) is the \\(p^{th}\\) quantile, for i = 1, 2, 3, ..., n-1 or n.\nIf \\(p\\) is between \\((0.5/n)\\) and \\((n-.5)/n\\), and \\(p\\) is not one of the numbers \\((i-.5)/n\\) then the quantile is obtained by linear interpolation between the two quantiles that bracket p.\nThe \\(p_i^{th}\\) quantile of a dataset is denoted by \\(Q(p_i)\\)"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-and-percentiles-example",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-and-percentiles-example",
-    "title": "What is Statistics?",
-    "section": "Quantiles and Percentiles: Example",
-    "text": "Quantiles and Percentiles: Example\nSuppose we have a dataset consisting of the 10 observations: \\(9.614,  9.614,  10.688,  7.583,  8.572,  8.527,  8.577,  9.471,\n9.165,  9.011\\) The following table shows the ordered data values as the specified quantiles:\n\n\n\n\\(i\\)\n\\(p_i=(i-.5)/10\\)\n\\(Q(p_i)\\)\n\n\n\n\n1\n0.05\n7.583\n\n\n2\n0.15\n8.527\n\n\n3\n0.25\n8.572\n\n\n4\n0.35\n8.577\n\n\n5\n0.45\n9.011\n\n\n6\n0.55\n9.165\n\n\n7\n0.65\n9.471\n\n\n8\n0.75\n9.614\n\n\n9\n0.85\n9.614\n\n\n10\n0.95\n10.688"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-by-linear-interpolation",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-by-linear-interpolation",
-    "title": "What is Statistics?",
-    "section": "Quantiles by Linear Interpolation",
-    "text": "Quantiles by Linear Interpolation\n\n\\(Q(p)\\) for values of \\(p = (i-.5)/n\\) correspond to the ordered observations for \\(i = 1, 2, \\ldots, n\\). For example \\(Q(.55)=9.165\\).\nHow is, say, \\(Q(.525)\\) determined? This is obtained by linear interpolation between the two quantiles that bracket \\(.525\\) i.e, \\(Q(.45)\\) and \\(Q(.55)\\).\nFor a \\(p\\) such that \\(p_i &lt; p &lt; p_{i+1},\\ Q(p)\\) is computed as the weighted average \\(Q(p) = (1-f)Q(p_i) + fQ(p_{i+1})\\) where \\(f =(p-p_i)/(p_{i+1}-p_i) = n(p-p_i)\\)"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-by-linear-interpolation-example",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#quantiles-by-linear-interpolation-example",
-    "title": "What is Statistics?",
-    "section": "Quantiles by Linear Interpolation: Example",
-    "text": "Quantiles by Linear Interpolation: Example\n\nSuppose \\(n = 10\\) and one needs to compute \\(Q(.525)\\).\nSince \\(.45 &lt; p &lt; .55, \\ f = 10 (.525 - .45)  = .75\\).\nThus \\(Q(.525)=.25Q(.45) +\n.75Q(.55)\\).\nIn the above example, therefore \\[Q(.525)= .25(9.011)+.75(9.165)=9.1265\\]"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#box-plots-tukey-1977",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#box-plots-tukey-1977",
-    "title": "What is Statistics?",
-    "section": "Box Plots (Tukey, 1977)",
-    "text": "Box Plots (Tukey, 1977)\nThe boxplot is a summary display of a set of data, that is useful for studying the shape of the distribution including its symmetry or asymmetry around the central location, based on the quantiles \\(Q_1,\\ M\\), and \\(Q_3\\) as defined below:\n\nUpper Quartile = \\(75^{ th} { percentile} =Q(.75)=Q_3\\)\nMedian = \\(50^{ th} { percentile} =Q(.50)=M\\)\nLower Quartile = \\(25^{ th} {percentile} =Q(.25)= Q_1\\)\nInterquartile Range (IQR) =\nUpper Quartile - Lower Quartile =\\(Q_3- Q_1\\)"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#box-plots-continued",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#box-plots-continued",
-    "title": "What is Statistics?",
-    "section": "Box Plots (continued)",
-    "text": "Box Plots (continued)\nThe following quantities also need to be computed for constructing a box plot:\n\nUpper Fence = \\(Q_3 + 1.5\\) IQR.\nLower Fence = \\(Q_1 - 1.5\\) IQR.\nUpper Adjacent Value: the largest observation below the upper fence\nLower Adjacent Value: the smallest observation above the lower fence\nOutside Values: Observations that fall outside adjacent values."
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#box-plots-example",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#box-plots-example",
-    "title": "What is Statistics?",
-    "section": "Box Plots: Example",
-    "text": "Box Plots: Example"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#creating-a-box-plot-base-r",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#creating-a-box-plot-base-r",
-    "title": "What is Statistics?",
-    "section": "Creating a Box Plot (base R)",
-    "text": "Creating a Box Plot (base R)\n\nboxplot(chick)"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#creating-a-box-plot-ggplot2",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#creating-a-box-plot-ggplot2",
-    "title": "What is Statistics?",
-    "section": "Creating a Box Plot (ggplot2)",
-    "text": "Creating a Box Plot (ggplot2)\n\nggplot(mapping = aes(x = chick)) + \n  geom_boxplot()"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot",
-    "title": "What is Statistics?",
-    "section": "Normal Probability Plot",
-    "text": "Normal Probability Plot\n\nConsider a sample \\(y_1, y_2, \\ldots, y_n\\) of size \\(n\\).\nThe data are first ordered in increasing order of magnitude.\nThen a value \\(p\\) is assigned to each data value using the formula \\(p = (i -0.5)/n\\).\nThus the ordered data values will be the \\(p_i^{th}\\) quantile \\(Q(p_i)\\) for \\(i=1,2,\\ldots,n.\\)\nExample: Quantiles for a data set with \\(n = 18\\)"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#summation-notation",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#summation-notation",
-    "title": "What is Statistics?",
-    "section": "Summation Notation",
-    "text": "Summation Notation\nhttp://www.columbia.edu/itc/sipa/math/summation.html"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#quantiles",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#quantiles",
-    "title": "What is Statistics?",
-    "section": "Quantiles",
-    "text": "Quantiles"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot-example",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot-example",
-    "title": "What is Statistics?",
-    "section": "Normal Probability Plot: Example",
-    "text": "Normal Probability Plot: Example\n\nThe quantile of the standard normal distribution, \\(z_p\\), corresponding to each \\(p\\) value, is then computed using the table of Normal percentiles (i.e. the \\(z\\)-table).\nThe Normal Probability plot is the plot of the quantiles \\(Q(p)\\) of the data vs. \\(z_p\\), the corresponding standard normal quantiles.\nThus this plot is also called the quantile-quantile plot or the Q-Q plot, in general."
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot-example-1",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot-example-1",
-    "title": "What is Statistics?",
-    "section": "Normal Probability Plot: Example",
-    "text": "Normal Probability Plot: Example"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot-continued",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot-continued",
-    "title": "What is Statistics?",
-    "section": "Normal Probability Plot (continued)",
-    "text": "Normal Probability Plot (continued)\n\nIf the data is a random sample from a normal population the plotted points will lie approximately in a straight-line.\nDepartures from a straight-line may indicate that the population distribution is different from a Normal distribution.\nSpecific types of departures can be used to identify how the population distribution differs from a Normal distribution.\nThe following pages contains normal probability plots of computer generated data from populations that resemble distributions that are as described."
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot-continued-1",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot-continued-1",
-    "title": "What is Statistics?",
-    "section": "Normal Probability Plot (continued)",
-    "text": "Normal Probability Plot (continued)"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot-continued-2",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#normal-probability-plot-continued-2",
-    "title": "What is Statistics?",
-    "section": "Normal Probability Plot (continued)",
-    "text": "Normal Probability Plot (continued)\n\nThe top set of plots are from normal populations with different mean and variance parameters\nThe bottom two are from populations that differ in shape from the normal distribution.\nNotice that the bottom two plots show specific patterns (the left graph shows a bowl-shape while the other shows an inverted S-shaped pattern).\nThese are markedly different from the deviation from a straight line shown in the top graphs which are only due to random variation."
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#sample-statistics-vs.-parameters",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#sample-statistics-vs.-parameters",
-    "title": "What is Statistics?",
-    "section": "Sample Statistics vs. Parameters",
-    "text": "Sample Statistics vs. Parameters\n\nA parameter is a descriptive statistic of a population.\nA sample statistic is a descriptive statistic of a sample.\nTake a census of a population recording values of a variable as \\(x_1, x_2,\\ldots,x_N\\), where \\(N\\) is the population size, then\n\nPopulation mean, \\(\\mu=\\frac{\\textstyle\\sum x}{N}\\)\nPopulation variance, \\(\\sigma^2=\\frac{\\textstyle\\sum (x-\\mu)^2}{N}\\)\nPopulation standard deviation, \\(\\sigma=\\sqrt{\\sigma^2}\\)"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#sample-statistics-vs.-parameters-1",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#sample-statistics-vs.-parameters-1",
-    "title": "What is Statistics?",
-    "section": "Sample Statistics vs. Parameters",
-    "text": "Sample Statistics vs. Parameters\n\nSince censuses cannot be taken for every population we wish to study, parameters cannot be exactly calculated and thus are usually unknown.\nInstead, a random sample of a population is taken recording values of a variable as \\(x_1, x_2,\\ldots,x_n\\), where \\(n\\) is the sample size, then\n\nsample mean (average, arithmetic mean), \\(\\bar{x}= \\frac{\\textstyle \\sum x}{n}\\)\nsample variance, \\(s^2=\\frac{\\textstyle \\sum (x-\\bar{x})^2}{n-1}\\)\nsample standard deviation, \\(s=\\sqrt{s^2}\\)"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#sample-statistics-vs.-parameters-2",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#sample-statistics-vs.-parameters-2",
-    "title": "What is Statistics?",
-    "section": "Sample Statistics vs. Parameters",
-    "text": "Sample Statistics vs. Parameters\n\n\\(\\mu\\), \\(\\sigma^2\\), and \\(\\sigma\\) are parameters.\n\\(\\bar{x}\\), \\(s^2\\), and \\(s\\) are sample statistics."
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#sample-statistics-vs.-parameters-example",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#sample-statistics-vs.-parameters-example",
-    "title": "What is Statistics?",
-    "section": "Sample Statistics vs. Parameters: Example",
-    "text": "Sample Statistics vs. Parameters: Example\nCalculate the sample mean, variance, and standard deviation for data: 2, 3, 3, 4, 3.\n\n\n\n\n\\(i\\)\n\\(x\\)\n\\(x^2\\)\n\n\n\n\n1\n2\n4\n\n\n2\n3\n9\n\n\n3\n3\n9\n\n\n4\n4\n16\n\n\n5\n3\n9\n\n\n\n\\(\\sum x=15\\)\n\\(\\sum x^2= 47\\)"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#sample-statistics-vs.-parameters-3",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#sample-statistics-vs.-parameters-3",
-    "title": "What is Statistics?",
-    "section": "Sample Statistics vs. Parameters",
-    "text": "Sample Statistics vs. Parameters\nCompute sample variance \\(s^2\\) and sample standard deviation \\(s\\). \\[\\begin{eqnarray*}\ns^2 & = &\\frac{\\textstyle\\sum x^2 - \\frac{(\\textstyle\\sum\nx)^2}{n}}{n-1}=\\frac{47-\\frac{(15)^2}{5}}{5-1}=2/4=0.5\\\\[.1in]\ns & = & \\sqrt{(s^2)}=\\sqrt{0.5}=0.71\n\\end{eqnarray*}\\]"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#summary-statistics",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#summary-statistics",
-    "title": "What is Statistics?",
-    "section": "Summary Statistics",
-    "text": "Summary Statistics\n\n# Data\nvals &lt;- c(2,3,3,4,3)\n\n# Mean\nmean(vals)\n\n[1] 3\n\n# Variance\nvar(vals)\n\n[1] 0.5\n\n# Standard deviation\nsd(vals); sqrt(var(vals))\n\n[1] 0.7071068\n\n\n[1] 0.7071068"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#numerical-summary-measures",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#numerical-summary-measures",
-    "title": "What is Statistics?",
-    "section": "Numerical Summary Measures",
-    "text": "Numerical Summary Measures\n\nThe sample mean and the sample median are examples of numerical descriptive measures of the central tendency of a sample and describes the center or location around which the data are distributed.\nThe sample variance and standard deviation are examples of numerical descriptive measures of the variability or the spread of the sample around the center.\nThese numerical descriptive measures are used both to describe a population, if the entire population of measurements is available, (e.g., census) or, to draw inferences about a population from the statistics calculated on a random sample drawn from the population."
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#other-numerical-summary-measures---median",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#other-numerical-summary-measures---median",
-    "title": "What is Statistics?",
-    "section": "Other Numerical Summary Measures - Median",
-    "text": "Other Numerical Summary Measures - Median\nMedian: Value at which \\(50\\%\\) of the observations are above and \\(50\\%\\) below.\nComputation of the sample median from a sample of size n:\n\nArrange observations in ascending order\nThe value of the \\(\\left(\\frac{n+1}{2}\\right)^{th}\\) ordered observation is the median\n\nWhat is the median of \\(2,4,6,8,10\\)?\n\nmedian(c(2,4,6,8,10))\n\n[1] 6\n\n\nWhat is the median of \\(2,4,6,10\\)?\n\nmedian(c(2,4,6,10))\n\n[1] 5"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#which-measure-of-location-should-be-used",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#which-measure-of-location-should-be-used",
-    "title": "What is Statistics?",
-    "section": "Which measure of location should be used?",
-    "text": "Which measure of location should be used?\n\nWhen the data are symmetric?\nWhen data are skewed? Which means that there are some very large or very small values?"
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html#example---which-measure-of-location-should-be-used",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html#example---which-measure-of-location-should-be-used",
-    "title": "What is Statistics?",
-    "section": "Example - Which measure of location should be used?",
-    "text": "Example - Which measure of location should be used?\n\n\n\n\n\n\n\n\n\n\nmean(x)\n\n[1] 1.177316\n\nmedian(x)\n\n[1] 0.9064152"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#inferences-about-mu",
-    "href": "notes/3-one-mean/part3_lectures.html#inferences-about-mu",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Inferences about \\(\\mu\\)",
-    "text": "Inferences about \\(\\mu\\)\n\nOne of the major objectives of statistics is to make inferences about the distribution of the elements in a population based on information contained in a sample.\nNumerical summaries that characterize the population distribution are called parameters.\nThe population mean \\(\\mu\\) and population variance \\(\\sigma^2\\) are two important parameters. Others are median, range, mode, etc."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#inferences-about-mu---cont.",
-    "href": "notes/3-one-mean/part3_lectures.html#inferences-about-mu---cont.",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Inferences about \\(\\mu\\) - cont.",
-    "text": "Inferences about \\(\\mu\\) - cont.\n\nMethods for making inferences are basically designed to answer one of two types of questions:\n\nApproximately what is the value of the parameter?\nIs the value of the parameter less than (say) 6?\n\nStatisticians answer the first question by estimating the parameter using the sample.\nThe second case might require a test of a hypothesis."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#point-and-interval-estimation-of-mu-when-sigma-is-known-and-n-is-large",
-    "href": "notes/3-one-mean/part3_lectures.html#point-and-interval-estimation-of-mu-when-sigma-is-known-and-n-is-large",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Point and Interval Estimation of \\(\\mu\\) when \\(\\sigma\\) is known and \\(n\\) is large",
-    "text": "Point and Interval Estimation of \\(\\mu\\) when \\(\\sigma\\) is known and \\(n\\) is large\n\nPoint estimation of \\(\\mu\\) does not require that \\(\\sigma\\) be known or a large \\(n\\)\nThe point estimate of \\(\\mu\\) is the sample mean \\(\\bar{y}\\)\nPoint estimates by themselves do not tell how much \\(\\bar{y}\\) might differ from \\(\\mu\\), that is, the accuracy or precision of the estimate\nA measure of accuracy is the difference between sample mean \\(\\bar{y}\\) and population mean \\(\\mu\\) is called sampling error"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu",
-    "href": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "A Confidence Interval for \\(\\mu\\)",
-    "text": "A Confidence Interval for \\(\\mu\\)\n\nAn interval estimate, called a confidence interval, incorporates information about the amount of sampling error in \\(\\bar{y}\\)\nA confidence interval for \\(\\mu\\) takes the form \\[(\\bar{y} - E,\\, \\bar{y} + E),\\] for a number \\(E\\)\nAn associated number called the confidence coefficient helps assess how likely it is for \\(\\mu\\) to be in the interval."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.",
-    "href": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "A Confidence Interval for \\(\\mu\\) - cont.",
-    "text": "A Confidence Interval for \\(\\mu\\) - cont.\n\nTo derive the specific form of the confidence interval for \\(\\mu\\), for the case when \\(\\sigma\\) is known and \\(n\\) is large, the CLT result must be used.\nBy the CLT, \\(Z = (\\bar{Y} - \\mu)/\\sigma_{\\bar{y}}\\) is approximately \\(\\sim N(0, 1)\\).\nLet \\(Z\\) have a \\(N(0, 1)\\) distribution (exactly).\nLet \\(z_{\\alpha/2}\\) denote the \\(1 - \\alpha/2\\) quantile of the standard normal distribution, for a given number \\(\\alpha\\), \\(0 &lt; \\alpha &lt; 1\\).\nThen the following probability statement is true: \\[P\\left (-z_{\\alpha/2}\\, \\leq\\, \\frac{(\\bar{Y} - \\mu)}{\n          \\sigma_{\\bar{y}}}\\, \\leq\\, z_{\\alpha/2}\\right ) = 1 - \\alpha\\]"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.-1",
-    "href": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.-1",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "A Confidence Interval for \\(\\mu\\) - cont.",
-    "text": "A Confidence Interval for \\(\\mu\\) - cont.\n\nManipulating the inequalities, without changing values, we have\n\\(P(\\sigma_{\\bar{y}} \\, z_{\\alpha/2} \\geq \\mu - \\bar{Y}\n  \\geq - \\sigma_{\\bar{y}} \\, z_{\\alpha/2}) = 1 - \\alpha\\)\n\\(P(\\bar{Y} - \\sigma_{\\bar{y}} \\, z_{\\alpha/2}\\, \\leq\\,\n  \\mu\\, \\leq\\, \\bar{Y} + \\sigma_{\\bar{y}} \\, z_{\\alpha/2}) = 1 - \\alpha\\)\nIf, for example, \\(\\alpha\\) = 0.05 then\n\\(P(\\bar{Y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{.025}\\, \\leq\n\\,  \\mu\\, \\leq\\, \\bar{Y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{.025}) =0.95\\)\nand, since \\(z_{0.025} = 1.96\\),\n\\[P(\\bar{Y} - 1.96\\, \\frac{\\sigma}{\\sqrt{n}}\\, \\leq\\, \\mu \\leq \\bar{Y} +\n  1.96\\, \\frac{\\sigma}{\\sqrt{n}}) = 0.95\\]"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.-2",
-    "href": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.-2",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "A Confidence Interval for \\(\\mu\\) - cont.",
-    "text": "A Confidence Interval for \\(\\mu\\) - cont.\n\nUsing this statement, a (1-\\(\\alpha\\))100% confidence interval for \\(\\mu\\), with confidence coefficient \\(1-\\alpha\\) can be calculated using a random sample of data \\(y_1,y_2,\\ldots,y_n\\)\nIt is usually written in the form \\[\\left( \\bar{y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}, \\\n         \\bar{y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\right) \\ .\\]\nExample: Suppose  \\(n\\) = 36, \\(\\sigma=12\\), \\(\\bar{y} = 24.8\\)\nAnd for \\(\\alpha=0.05\\), \\(z_{\\alpha/2} \\equiv z_{0.025} = 1.96\\)"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.-3",
-    "href": "notes/3-one-mean/part3_lectures.html#a-confidence-interval-for-mu---cont.-3",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "A Confidence Interval for \\(\\mu\\) - cont.",
-    "text": "A Confidence Interval for \\(\\mu\\) - cont.\n\nThus a 95% C.I. for \\(\\mu\\) is \\[\\left( 24.8 - \\frac{12}{\\sqrt{36}} \\times 1.96, \\quad\n         24.8 + \\frac{12}{\\sqrt{36}} \\times  1.96 \\right)\\]\nThe interval for \\(\\mu\\) is: (20.88, 28.72) with confidence coefficient 0.95.\nWe might say that we are 95% confident that the population mean \\(\\mu\\) is between 20.88 and 28.72.\nBut what do we actually mean when we say that we are 95% confident?"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#interpretation-of-a-confidence-interval",
-    "href": "notes/3-one-mean/part3_lectures.html#interpretation-of-a-confidence-interval",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Interpretation of a Confidence Interval",
-    "text": "Interpretation of a Confidence Interval\n\nBefore the sample is drawn, the probability is (\\(1-\\alpha\\)) that the random interval \\((\\bar{Y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\),  \\(\\bar{Y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\)) will contain \\(\\mu\\) (because \\(\\bar{Y}\\) is a random variable).\nHowever, once the sample is drawn, and \\(\\bar{y}\\) is calculated, the interval ceases to be random. It is a numerical interval \\((\\bar{y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\),  \\(\\bar{y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\)), calculated specifically for the drawn sample; thus we cannot associate a probability with it.\nWe may say that the process which led us to this interval will, on the average, produce an interval containing \\(\\mu,\\  100 (1-\\alpha)\\)% of the time."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#interpretation-of-a-confidence-interval---cont.",
-    "href": "notes/3-one-mean/part3_lectures.html#interpretation-of-a-confidence-interval---cont.",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Interpretation of a Confidence Interval - cont.",
-    "text": "Interpretation of a Confidence Interval - cont.\n\nIt is not correct to say that the interval \\((\\bar{y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2},\\,\n\\bar{y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2})\\) contains \\(\\mu\\) with a specified probability.\nIf the process of sampling is repeated many times and 100(1-\\(\\alpha\\))% confidence intervals calculated for each sample, then we are confident that 100(1-\\(\\alpha\\))% of those intervals will contain \\(\\mu\\)."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#notes",
-    "href": "notes/3-one-mean/part3_lectures.html#notes",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Notes:",
-    "text": "Notes:\n\nAs the confidence coefficient increases the confidence interval becomes wider. A wider interval estimates \\(\\mu\\) less precisely. Thus a 99% confidence interval is less accurate than a 95% confidence interval but one has more confidence that \\(\\mu\\) is in the first interval.\nAlso note that increasing the sample size \\(n\\) results in a narrower interval (more accurate estimate) for the same confidence coefficient."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#example",
-    "href": "notes/3-one-mean/part3_lectures.html#example",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Example:",
-    "text": "Example:\nThe caffeine content (in mg) was examined for a random sample of 50 cups of black coffee dispensed by a new machine. The mean and standard deviation were 110 mg and 7.1 mg, respectively. Use these data to construct a 98% confidence interval for \\(\\mu\\), the mean caffeine content for cups dispensed by the machine.\nAs the sample size is large we can use the CLT and also approximate \\(\\sigma\\), the sample standard deviation of the population by \\(s=7.1\\)"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#example---cont.",
-    "href": "notes/3-one-mean/part3_lectures.html#example---cont.",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Example - cont.",
-    "text": "Example - cont.\n\\(\\left[\\bar{y} - z_{0.01} \\frac{\\sigma}{\\sqrt{n}}, \\\n\\bar{y} + z_{0.01} \\frac{\\sigma}{\\sqrt{n}}\\right]\\)\n\n\n\n\\(\\left[110 - (2.33)\\left(\\frac{7.1}{\\sqrt{50}}\\right), \\\n   110 + (2.33)\\left(\\frac{7.1}{\\sqrt{50}}\\right)  \\right]\\)\n\n\n\n\\((107.66,\\ 112.34)\\)\n\n\n\nWe are \\(98\\%\\) confident that the mean caffeine content for cups dispensed by the machine is between 107.66 and 112.34 mg."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#choosing-the-sample-size",
-    "href": "notes/3-one-mean/part3_lectures.html#choosing-the-sample-size",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Choosing the Sample Size",
-    "text": "Choosing the Sample Size\n\nThe width of a confidence interval is (\\(2 \\times \\sigma \\times z_{\\alpha/2})/\\sqrt{n}\\).\nThe width of the confidence interval can be made smaller by changing to a larger \\(\\alpha\\) or increasing sample size \\(n\\).\nLet us consider selection of \\(n\\) to achieve a desired width \\(2 \\cdot E\\) for a fixed \\(\\alpha\\)\nWe want \\(E\\) to at least equal to \\(\\sigma \\times z_{\\alpha/2}/\\sqrt{n}\\)\nThus we need to select a sample so that \\[n \\geq \\frac{(z_{\\alpha/2})^2\\sigma^2}{E^2}\\]"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#choosing-the-sample-size---cont.",
-    "href": "notes/3-one-mean/part3_lectures.html#choosing-the-sample-size---cont.",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Choosing the Sample Size - cont.",
-    "text": "Choosing the Sample Size - cont.\n\nThis will result in an interval no wider than\n\\((\\bar{y} - E,\\ \\bar{y} + E)\\).\n\nExample:\nGiven \\(\\sigma = 12\\), \\(\\alpha = 0.05\\), \\(z_{0.025} = 1.96\\)\nWhat sample size \\(n\\) will give an interval no wider that 5.6?\nWe set \\(E = 2.8\\) so \\[n \\geq \\frac{(1.96)^2 \\cdot 144}{(2.8)^2} = 70.56\\] Thus the experimenter must choose a sample size \\(n = 71\\) at least."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#choosing-the-sample-size---cont.-1",
-    "href": "notes/3-one-mean/part3_lectures.html#choosing-the-sample-size---cont.-1",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Choosing the Sample Size - cont.",
-    "text": "Choosing the Sample Size - cont.\nWould the sample size \\(n = 71\\) ensure the width to be \\(\\leq 5.6\\) if the population has a larger variance? Would \\(n = 71\\) be enough?\nThe answer is NO since the formula \\[\\frac{(z_{\\alpha/2})^2\\sigma^2}{E^2}\\] involves the population variance \\(\\sigma^2\\).\nPrecision in estimation depends on both \\(\\alpha\\) and \\(\\sigma^2\\). If the variance of population elements is very small, i.e., the elements are tightly clustered about the population mean \\(\\mu\\), then only a small sample is needed for the estimate \\(\\bar{y}\\) to be very near \\(\\mu\\)."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#statistical-tests-for-mu",
-    "href": "notes/3-one-mean/part3_lectures.html#statistical-tests-for-mu",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Statistical Tests for \\(\\mu\\)",
-    "text": "Statistical Tests for \\(\\mu\\)\n\nEstimation (either point or interval estimation) was used to help answer a question like “Approximately what is the value of \\(\\mu\\)?”\nThe other kind of question mentioned earlier is “Is it likely that \\(\\mu\\) is less than (or greater than) the value \\(\\mu_0\\) (a pre-determined value)?”.\nA Test of Hypothesis is used to answer this kind of question. As in estimation, the sample mean \\(\\bar{y}\\) of a random sample of \\(n\\) elements from the population is used to answer this question."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#statistical-tests-for-mu---cont.",
-    "href": "notes/3-one-mean/part3_lectures.html#statistical-tests-for-mu---cont.",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Statistical Tests for \\(\\mu\\) - cont.",
-    "text": "Statistical Tests for \\(\\mu\\) - cont.\n\nEvery test of hypothesis features\n\na Null Hypothesis \\(H_0\\) which describes a characteristic of the population (it is believed to be) as it currently exists,\n\na Research Hypothesis (or Alternative Hypothesis) \\(H_a\\), which is a proposal about this characteristic, by the person(s) conducting the statistical study.\n\nThe idea is that the null hypothesis is presumed to hold unless there is overwhelming evidence in the data in support of the research hypothesis."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#example-1",
-    "href": "notes/3-one-mean/part3_lectures.html#example-1",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Example:",
-    "text": "Example:\n\nTo determine whether the mean yield per acre (in bushels), \\(\\mu\\), of a variety of soybeans increased the current year over the last two years when \\(\\mu\\) is believed to be 520 bushels per acre, the following might be tested. \\[H_0: \\mu \\leq 520 \\ \\ \\ \\mbox{vs.}\\ \\ \\ H_a: \\mu &gt; 520\\]\nThe fact that \\(\\mu\\) may equal a specific value is always included in the null hypothesis. The decision to state whether the data supports the research hypothesis or not is based on a quantity computed from the data called the test statistic."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#section",
-    "href": "notes/3-one-mean/part3_lectures.html#section",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "",
-    "text": "If \\(\\bar{y}\\) is in the rejection region then reject \\(H_0\\) and say the evidence favors \\(H_a\\).\nBasically, the test amounts to computing \\(\\bar{y}\\) and looking at its value relative to \\(\\mu_0\\) and the \\(\\mu\\) values in \\(H_a\\).\nFor example, in the above example if \\(\\bar{y} &lt; 520\\) we will say there is not sufficient evidence to reject \\(H_0\\).\nEven if \\(\\bar{y} &gt; 520\\), we might still say there is not sufficient evidence to reject \\(H_0\\)\nThis is ok as long as \\(\\bar{y}\\) is not too much greater than \\(520\\).\n“How much is too large?” To decide this, use the probability distribution of \\(\\bar{Y}\\). Begin by picking a small probability \\(\\alpha\\) like \\(\\alpha\\) = 0.05, or \\(\\alpha = 0.01\\), or \\(\\alpha =0.001\\)."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#section-1",
-    "href": "notes/3-one-mean/part3_lectures.html#section-1",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "",
-    "text": "Then reject \\(H_0\\) only when the probability of obtaining a value of \\(\\bar{y}\\) larger than the observed value \\(\\bar{y}\\) is \\(\\leq \\alpha\\) when \\(\\mu\\) is indeed \\(\\leq 520\\), i.e., when \\(H_0\\) is true.\nThat is, if \\(H_0\\) is true, the chance of observing a sample that results in a \\(\\bar{y}\\) as large as the one calculated should be very small.\n\n\n\n\n\nimage"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#how-to-determine-the-rejection-region",
-    "href": "notes/3-one-mean/part3_lectures.html#how-to-determine-the-rejection-region",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "How to determine the rejection region",
-    "text": "How to determine the rejection region\n\nBy the CLT, \\(\\bar{Y}\\) is approximately a normal random variable.\nWe will ignore the approximation and assume \\(\\bar{Y} \\sim N(\\mu, \\frac{\\sigma^2}{n})\\).\nThen, for a given \\(\\alpha\\), \\[P \\left( \\frac{\\bar{Y}-\\mu}{\\sigma/\\sqrt{n}} &gt; z_{\\alpha} \\right) = \\alpha\\] where \\(z_\\alpha\\) is the \\(1-\\alpha\\) quantile of the standard normal distribution.\nSo when \\(H_0: \\mu \\leq \\mu_0\\) is true , \\[P \\left( \\frac{\\bar{Y}-\\mu_0}{\\sigma/\\sqrt{n}} &gt; z_{\\alpha} \\right) \\leq \\alpha\\]"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#how-to-determine-the-rejection-region---cont.",
-    "href": "notes/3-one-mean/part3_lectures.html#how-to-determine-the-rejection-region---cont.",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "How to determine the rejection region - cont.",
-    "text": "How to determine the rejection region - cont.\n\nThat is, \\(P(\\bar{Y} &gt; \\mu_0 + z_\\alpha \\frac{\\sigma}{\\sqrt{n}})\\leq \\alpha.\\) This suggests that we reject \\(H_0: \\mu \\leq \\mu_0\\) in favor of, say \\(H_a: \\mu &gt; \\mu_0\\) when \\[\\bar{y} &gt; \\mu_0 + z_\\alpha \\frac{\\sigma}{\\sqrt{n}}\\] (i.e., \\(\\bar{y}\\) is too much when \\(\\bar{y}\\) exceeds the number \\(\\mu_0 +\nz_\\alpha \\frac{\\sigma}{\\sqrt{n}})\\)\n\nAll possible \\(\\bar{y}\\) values satisfying \\(\\bar{y} &gt; \\mu_0 + z_\\alpha\n\\frac{\\sigma}{\\sqrt{n}}\\) constitute the rejection region.\nInstead of comparing \\(\\bar{y}\\) to \\(\\mu_0 + z_\\alpha\n\\frac{\\sigma}{\\sqrt{n}}\\), it is easier to first calculate \\[z_c=\\frac{\\bar{y}-\\mu_0}{\\sigma/\\sqrt{n}}\\]"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#how-to-determine-the-rejection-region---cont.-1",
-    "href": "notes/3-one-mean/part3_lectures.html#how-to-determine-the-rejection-region---cont.-1",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "How to determine the rejection region - cont.",
-    "text": "How to determine the rejection region - cont.\n\nWe see that comparing \\(\\bar{y}\\) to \\(\\mu_0 + z_\\alpha \\frac{\\sigma}{\\sqrt{n}}\\) is the same as comparing \\(z_c\\) to \\(z_\\alpha\\).\nThat is, we reject the null hypothesis if \\(z_c &gt; z_\\alpha\\) whis is the same thing as doing so if \\(\\bar{y} &gt; \\mu_0 + z_\\alpha \\frac{\\sigma}{\\sqrt{n}}\\)\nThis quantity \\(z\\) is called the test statistic and it’s value can be calculated using the data and the value \\(\\mu_0\\) specified in the null hypothesis \\(H_0\\).\nThe notation \\(z_c\\) is used denote the “computed value” of the test statistic, that is when we plug in the observed value of \\(\\bar{y}\\) and obtain a numerical value for \\(z\\)."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#type-i-error",
-    "href": "notes/3-one-mean/part3_lectures.html#type-i-error",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Type I Error",
-    "text": "Type I Error\n\nThe \\(\\alpha\\) corresponds to the probability that the null hypothesis is rejected when actually it is true and is called the probability of committing a Type I error.\nSince the experimenter selects the value of \\(\\alpha\\) used in the test procedure, she is able to specify or control the Type I error rate or “how much” of this type of error is permitted in the testing procedure."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#example-2",
-    "href": "notes/3-one-mean/part3_lectures.html#example-2",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Example",
-    "text": "Example\nSuppose from a sample of 36 1-acre plots, the yield of corn this year was measured and \\(\\bar{y}=573\\) and \\(s=124\\) calculated. Can we conclude that the mean yield of corn for all farms exceeded 520 bushels/acre this year ? Here we are going to assume that \\(\\sigma\\) can be approximated by \\(s\\). Use \\(\\alpha=.025\\)"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#solution-to-the-example",
-    "href": "notes/3-one-mean/part3_lectures.html#solution-to-the-example",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Solution to the Example",
-    "text": "Solution to the Example\nSet-up five parts of the testing procedure:\n\n\\(H_0: \\mu \\leq 520\\)\n\\(H_a: \\mu &gt; 520\\)\nT.S.: \\(z  =  \\frac{\\bar{y}-\\mu_0}{\\sigma/\\sqrt{n}}\\)\nR.R: Reject \\(H_0:\\) in favor of \\(H_a:\\) if \\(z &gt; z_{.025}\\)\ni.e. the R.R. is \\(z&gt;1.96\\) since \\(z_{.025}=1.96\\)\nCompute the observed value of the test statistic:\n\\(z_c =\\frac{573-520}{124/{\\sqrt{36}}}= 2.56\\)"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#decision",
-    "href": "notes/3-one-mean/part3_lectures.html#decision",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Decision:",
-    "text": "Decision:\nSince \\(z_c&gt; 1.96\\), \\(z_c\\) is in the R.R. Thus \\(H_0:\\mu \\leq 520\\) is rejected in favor of the research hypothesis \\(H_a: \\mu &gt; 520\\). It is concluded that the mean yield this year exceeds 520 bushels/acre.\nNote that the above test procedure is equivalent to determining that the observed value for \\(\\bar{y}\\) lies more than 1.96 standard deviations above the mean \\(\\mu_0=520\\)."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#summary-of-test-procedures---assume-n-large-and-sigma-known",
-    "href": "notes/3-one-mean/part3_lectures.html#summary-of-test-procedures---assume-n-large-and-sigma-known",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Summary of Test Procedures - Assume \\(n\\) large, and \\(\\sigma\\) known",
-    "text": "Summary of Test Procedures - Assume \\(n\\) large, and \\(\\sigma\\) known\nHypotheses:\nCase 1: \\(H_0: \\mu \\leq \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu &gt;\\mu_0\\) (right-tailed test)\nCase 2: \\(H_0: \\mu \\geq \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu &lt;\\mu_0\\) (left-tailed test)\nCase 3: \\(H_0: \\mu = \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu \\not =\\mu_0\\) (two-tailed test)\nT.S: \\(z_c  =  \\frac{\\bar{y}-\\mu_0}{\\sigma/\\sqrt{n}}\\)\nR.R: For Type I error probability of \\(\\alpha\\):\nCase 1: Reject \\(H_0:\\) if \\(z \\geq z_{\\alpha}\\)\nCase 2: Reject \\(H_0:\\) if \\(z \\leq -z_{\\alpha}\\)\nCase 3: Reject \\(H_0:\\) if \\(|z| \\geq  z_{\\alpha/2}\\)"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#decision-1",
-    "href": "notes/3-one-mean/part3_lectures.html#decision-1",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Decision:",
-    "text": "Decision:\nIf the computed value of the test statistic, \\(z_c\\), is in the R.R., then we will reject the null hypothesis \\(H_0:\\) at the specified \\(\\alpha\\) value. Otherwise, we say we fail to reject \\(H_0:\\) at the specified \\(\\alpha\\) value.\nExample A corporation maintains a large fleet of company cars for its salespeople. To check the average number of miles driven per month per car, a random sample of \\(n = 40\\) cars is examined. The mean and standard deviation for the sample are 2,752 miles and 350 miles, respectively. Records for previous years indicate that the average number of miles driven per car per month was 2,600. Use the sample data to test the research hypothesis that the current mean \\(\\mu\\) differs from 2,600. Set \\(\\alpha\\) = .05 and assume that \\(\\sigma\\) can be replaced by \\(s\\)."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#solution",
-    "href": "notes/3-one-mean/part3_lectures.html#solution",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Solution",
-    "text": "Solution\nThe null hypothesis for this statistical test is \\(H_0: \\mu\\) = 2,600 and the research hypothesis is \\(H_a: \\mu \\neq\\) 2,600. Using \\(\\alpha\\) = .05, the two-tailed rejection region for this test is \\(|z|&gt; z_{.025}\\) or \\(|z|&gt; 1.96\\) and is located as shown below.\n\n\n\n\nimage"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#solution---cont.",
-    "href": "notes/3-one-mean/part3_lectures.html#solution---cont.",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Solution - cont.",
-    "text": "Solution - cont.\nTo determine how many standard errors our test statistics \\(\\bar{y}\\) lies away from \\(\\mu\\) = 2,600, compute \\[z_c = \\frac{\\bar{y}-\\mu_0}{\\sigma/\\sqrt{n}} =\n  \\frac{2,752 - 2,600}{350/\\sqrt{40}} = 2.75 \\, .\\] Thus \\(|z_c|=2.75&gt;1.96\\) and therefore we reject \\(H_0: \\mu = 2,600\\) at \\(\\alpha=.05\\). It follows that the observed value for \\(\\bar{y}\\) lies more than 1.96 standard errors above the mean \\(\\mu = 2,600\\), so we reject the null hypothesis in favor of the alternative \\(H_a: \\mu \\neq\n2,600\\).\nSince \\(\\bar{y}&gt;2,600\\) we conclude that the mean number of miles driven is greater than \\(2,600\\)."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#level-of-significance-or-the-p-value-of-a-statistical-test",
-    "href": "notes/3-one-mean/part3_lectures.html#level-of-significance-or-the-p-value-of-a-statistical-test",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Level of Significance or the p-value of a Statistical Test",
-    "text": "Level of Significance or the p-value of a Statistical Test\n\nAs an alternative to the formal test where one uses a rejection region based on a specified the Type I error rate \\(\\alpha\\), many researchers compute and report the level of significance or the p-value for the test.\nThis is the probability, when \\(H_0\\) is true, of observing a statistic as extreme as the one actually observed. Here “extreme” is means “large” or “small” according to the alternative hypothesis \\(H_a\\)."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#level-of-significance-or-the-p-value-of-a-statistical-test---cont.",
-    "href": "notes/3-one-mean/part3_lectures.html#level-of-significance-or-the-p-value-of-a-statistical-test---cont.",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Level of Significance or the p-value of a Statistical Test - cont.",
-    "text": "Level of Significance or the p-value of a Statistical Test - cont.\n\nSpecifically, for a given \\(\\sigma^2\\) and \\(\\mu_0\\) we find the p-value by:\n\nFirst computing the test statistic, \\(z_c\\), \\[z_c = (\\bar{y} - \\mu_0)/(\\sigma/\\sqrt{n})\\]\na)  If \\(H_a: \\mu &gt; \\mu_0\\), then \\(p = P(Z &gt; z_c\\)).\n\n\n If \\(H_a: \\mu &lt; \\mu_0\\), then \\(p = P(Z &lt; z_c\\)).\n\n If \\(H_a: \\mu \\neq \\mu_0\\), then \\(p=2P(Z &gt; |z_c|)\\).\n\n\nA p-value smaller than the pre-specified \\(\\alpha\\) value is evidence in favor of rejecting \\(H_0\\)."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#example-3",
-    "href": "notes/3-one-mean/part3_lectures.html#example-3",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Example:",
-    "text": "Example:\n\nIn the earlier example we tested \\(H_0: \\mu \\leq 380\\ \\mbox{vs.}\\ H_a: \\mu &gt; 380\\) Calculating the \\(z-\\)statistic, \\[z_c = \\frac{\\bar{y}-380}{\\sigma/\\sqrt{n}}= \\frac{390-380}{35.2/\\sqrt{50}} = 2.01\\]\nThe level of significance, or p-value for this test is \\[p= P(Z &gt; 2.01)= 1- P(Z &lt; 2.01)= 0.0222\\]\nWe fail to reject \\(H_0: \\mu \\leq 380\\) at \\(\\alpha=.01\\) since p-value is not less than \\(.01\\)"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#inferences-about-when-sigma-is-unknown",
-    "href": "notes/3-one-mean/part3_lectures.html#inferences-about-when-sigma-is-unknown",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Inferences About when \\(\\sigma\\) is unknown",
-    "text": "Inferences About when \\(\\sigma\\) is unknown\n\nFor large sample sizes, it follows from the CLT that \\(\\bar{Y}\\) is approximately Normally distributed i.e., \\(\\bar{Y} \\dot{\\sim}\nN(\\mu,\\frac{\\sigma^2}{n})\\).\nIt follows that the random variable \\[T_{n-1} =\\Big( \\bar{Y} - \\mu \\Big) / \\Big( S/\\sqrt{n} \\Big)\\] has approximately the Student’s \\(t\\) distribution with \\(n-1\\) degrees of freedom.\nHere \\(Y_1, Y_2, \\ldots,Y_n\\) are sampling random variables and \\(\\bar{Y} =\n\\frac{1}{n} \\displaystyle\\sum_i Y_i\\) is thus a random variable."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#inferences-about-when-sigma-is-unknown---cont.",
-    "href": "notes/3-one-mean/part3_lectures.html#inferences-about-when-sigma-is-unknown---cont.",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Inferences About when \\(\\sigma\\) is unknown - cont.",
-    "text": "Inferences About when \\(\\sigma\\) is unknown - cont.\n\nThe denominator of \\(T_{n-1}\\) is the random variable \\[S = \\sqrt{\\frac{1}{n-1} \\sum_{i=1}^n (Y_i - \\bar{Y})^2}.\\]\nIf sampling from a Normal distribution, the sample mean \\(\\bar{Y}\\) has a Normal distribution (exactly) and therefore \\((\\bar{Y}-\\mu)/(S/\\sqrt{n})\\) will have a Student’s \\(t\\) distribution (exactly), regardless of sample size."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#section-2",
-    "href": "notes/3-one-mean/part3_lectures.html#section-2",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "",
-    "text": "Until now, we have assumed that \\(n\\) is large and \\(\\sigma\\) is known, or \\(n\\) is large and \\(n\\) is large enough also to use \\(s\\) as an approximation to \\(\\sigma\\).\nSince we used the CLT to derive confidence limits and tests of hypotheses, the exact nature of the sampled population was not required to be specified.\nNow we require that the population distribution to be Normal. We don’t need to know \\(\\sigma\\) or have a large sample, i.e. \\(n\\) to be large.\nIn this situation, for any \\(n\\), (\\(\\bar{Y} - \\mu)/(S/\\sqrt{n})\\) will have a Student’s t-distribution with d.f.\\(= n-1.\\)\nUsing this fact we can obtain confidence intervals and conduct tests of hypotheses even though \\(\\sigma\\) is unknown.\nNote the difference between \\(Z\\) and \\(T_{n-1}\\) is that the parameter \\(\\sigma\\) is in the denominator of \\(Z\\).\nThat is, the point estimator of \\(\\sigma\\), \\(S\\) is in the denominator of \\(T_{n-1}\\)."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#properties-of-the-students-distribution",
-    "href": "notes/3-one-mean/part3_lectures.html#properties-of-the-students-distribution",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Properties of the Student’s distribution",
-    "text": "Properties of the Student’s distribution\n\nThere are many t-distributions each specified by a single parameter called degrees of freedom (\\(df\\)).\nLike the standard normal population, the distribution is symmetric about 0 and has mean equal to 0.\nThe t-distribution has variance \\(df/(df-1)\\), and hence is more variable than the standard normal distribution which has variance equal to 1.\nWe say that the t-distribution has heavier tails than the standard normal distribution.\nAs the degrees of freedom \\(df\\) increases, the t-distribution approaches that of the standard normal distribution.\nThus as the sample size \\(n\\) increases the distribution of the \\(T_{n-1}\\) random variable approaches the standard normal distribution."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#properties-of-the-students-distribution-cont.",
-    "href": "notes/3-one-mean/part3_lectures.html#properties-of-the-students-distribution-cont.",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Properties of the Student’s distribution cont.",
-    "text": "Properties of the Student’s distribution cont.\n\n\n\n\nimage"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#section-3",
-    "href": "notes/3-one-mean/part3_lectures.html#section-3",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "",
-    "text": "The \\(t\\) table gives quantiles 0.90, 0.95, 0.975, 0.99, 0.995, and 0.999 for \\(t\\) distributions with selected df.\nExamples: For \\(df = 10\\)\n\\(P(T_{10} &gt; 1.372) = 0.10\\)\n\\(P(T_{10} &lt; 1.372) = 0.90\\)\n\\(P(T_{10} &gt; 1.812) = 0.05\\)\nIf \\(\\alpha\\) = 0.05, then \\(t_\\alpha\\) satisfies \\(P(T_{10} &gt; t_{.05}) = 0.05\\) and from the t table , \\(t_{.05} = 1.812\\). If \\(\\alpha\\) = 0.05, then \\(t_{\\alpha/2} \\, \\equiv t_{0.025}= 2.228\\)\nComparison of Normal and \\(t\\) Quantiles\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(t_\\alpha\\) with indicated df\n\n\n\\(\\alpha\\)\n\\(z_\\alpha\\)\n10\n20\n30\n40\n60\n240\n\n\n0.1\n1.28\n1.37\n1.32\n1.31\n1.30\n1.30\n1.28\n\n\n0.05\n1.65\n1.81\n1.72\n1.70\n1.68\n1.67\n1.65\n\n\n0.01\n2.33\n2.76\n2.53\n2.46\n2.42\n2.39\n2.34"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#confidence-interval-for-mu-based-on-the-t-distribution",
-    "href": "notes/3-one-mean/part3_lectures.html#confidence-interval-for-mu-based-on-the-t-distribution",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Confidence Interval for \\(\\mu\\) based on the t-distribution",
-    "text": "Confidence Interval for \\(\\mu\\) based on the t-distribution\n\nLet the sample size be \\(n\\), and for \\(\\alpha\\) be a specified value, say, for e.g. \\(.05\\).\nA \\((1-\\alpha)100\\%\\) confidence interval for \\(\\mu\\) is given by \\[\\left(\\bar{y} - t_{\\alpha/2} \\, \\frac{s}{\\sqrt{n}}, \\quad\n        \\bar{y} + t_{\\alpha/2} \\, \\frac{s}{\\sqrt{n}}\\right)\\]\nThis may also be written as \\(\\left(\\bar{y} - t_{\\alpha/2} s_{\\bar{y}}, \\quad \\bar{y} +\n         t_{\\alpha/2} s_{\\bar{y}} \\right)\\)\nHere, \\(t_{\\alpha/2}\\) is the \\(1-\\alpha/2\\) percentile of the t-distribution with \\(n-1\\) degrees of freedom and \\(s_{\\bar{y}}\\) is the standard error of the mean."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#section-4",
-    "href": "notes/3-one-mean/part3_lectures.html#section-4",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "",
-    "text": "image"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#test-procedures-based-on-the-t-distribution",
-    "href": "notes/3-one-mean/part3_lectures.html#test-procedures-based-on-the-t-distribution",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Test Procedures based on the t-distribution:",
-    "text": "Test Procedures based on the t-distribution:\nHypotheses:\nCase 1:\\(H_0: \\mu \\leq \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu &gt;\\mu_0\\) (right-tailed test)\nCase 2: \\(H_0: \\mu \\geq \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu &lt;\\mu_0\\) (left-tailed test)\nCase 3 \\(H_0: \\mu = \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu \\not =\\mu_0\\) (two-tailed test)\nT.S: \\(t_c  =  \\frac{\\bar{y}-\\mu_0}{s/\\sqrt{n}}\\)\nR.R: For Type I error probability of \\(\\alpha\\):\nCase 1: Reject \\(H_0:\\) if \\(t \\geq t_{\\alpha,(n-1)}\\)\nCase 2: Reject \\(H_0:\\) if \\(t \\leq -t_{\\alpha,(n-1)}\\)\nCase 3: Reject \\(H_0:\\) if \\(|t| \\geq t_{\\alpha/2,(n-1)}\\)"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#test-procedures-based-on-the-t-distribution---cont.",
-    "href": "notes/3-one-mean/part3_lectures.html#test-procedures-based-on-the-t-distribution---cont.",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Test Procedures based on the t-distribution - cont.:",
-    "text": "Test Procedures based on the t-distribution - cont.:\nLevel of Significance (p-value):\nCase 1: \\(p = P(T_{n-1} &gt; t_c\\)).\nCase 2: \\(p = P(T_{n-1} &lt; t_c\\)).\nCase 3: \\(p= 2P(T_{n-1} &gt; |t_c|)\\).\nExercise\nA massive multistate outbreak of food-borne illness was attributed to Salmonella enteritidis. Epidimiologists determined that the source of the illness was ice cream. They sampled nine production runsfrom the company that produced the ice cream to determine the level of Salmonella enteritidis in the ice cream."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#exercise---cont.",
-    "href": "notes/3-one-mean/part3_lectures.html#exercise---cont.",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Exercise - cont.",
-    "text": "Exercise - cont.\nThese levels (MPN/g) are as follows\n\\(.593\\quad .142\\quad .329\\quad .691\\quad .231\\quad .793\\quad .519\\quad .392\\quad .418\\)\nUse the data to determine whether the mean level of Salmonella enteritidis in the ice cream is greater than .3 MPN/g with \\(\\alpha=.01\\)\nSolution:\nNeed to test \\(H_0: \\mu \\leq .3\\) vs. \\(H_a: \\mu &gt; .3\\)\nBecause of the small sample size, we need to examine whether the data have been sampled from a normal distribution. To do this a normal probability plot is a good tool."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#exercise---cont.-1",
-    "href": "notes/3-one-mean/part3_lectures.html#exercise---cont.-1",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Exercise - cont.",
-    "text": "Exercise - cont.\n\n\n\n\nimage\n\n\n\nFrom the data \\(\\bar{y}=.456\\) and \\(s= .2128\\) are computed, giving \\[t_c=  \\frac{\\bar{y}-\\mu_0}{s/\\sqrt{n}}=\\frac{.456-.3}{.2128/\\sqrt{9}}=2.21\\] Because for the one-tailed test we need \\(t_{\\alpha,(n-1)}\\);\nwe look up \\(t_{.01}\\) with \\(df=9-1=8\\). It is \\(2.896\\)\nThus the rejection region is: \\(t&gt;2.896\\)"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#exercise---cont.-2",
-    "href": "notes/3-one-mean/part3_lectures.html#exercise---cont.-2",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Exercise - cont.",
-    "text": "Exercise - cont.\nSince \\(t_c= 2.214\\) does not exceed \\(2.896\\) it is not in the R.R.\nThus, there is insufficient evidence in the data to reject \\(H_0\\) i.e to say that the mean level of Salmonella enteritidis exceeds the dangerous level of .3 MPN/g.\nThe p-value to be computed is \\(P(T_8&gt;2.21)\\)\nTo calculate this exactly using the t-table is not possible since it is tabulated for only a few values of \\(a\\).\nHowever, we can bound the p-value by noting that, for \\((df=8)\\), 2.21 lies between 1.86 and 2.306.\nThis gives \\(.025&lt;\\mbox{p-value}&lt;.05\\) showing that the p-value is not less than our \\(\\alpha\\) of \\(.01\\). Thus we fail to reject \\(H_0\\)."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#oc-curve-and-the-power-of-a-test",
-    "href": "notes/3-one-mean/part3_lectures.html#oc-curve-and-the-power-of-a-test",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "OC Curve and the Power of a test",
-    "text": "OC Curve and the Power of a test\nThe probabilities of the four possible outcomes of a statistical test are:\n\n\n\n\n\n\n\n\n\n\nNull Hypothesis\n\n\n\n\n2-3 Decision\nTrue\nFalse\n\n\nReject \\(H_0\\)\nType I Error\nCorrect Decision\n\n\n\n\\(\\alpha\\)\n\\(1-\\beta\\)\n\n\nFail to reject \\(H_0\\)\nCorrect Decision\nType II Error\n\n\n\n\\(1-\\alpha\\)\n\\(\\beta\\)\n\n\n\n\nThe probabilities of Type I and II error are \\(\\alpha\\) and \\(\\beta\\), respectively."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#type-i-error-and-type-ii-error",
-    "href": "notes/3-one-mean/part3_lectures.html#type-i-error-and-type-ii-error",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Type I Error and Type II Error",
-    "text": "Type I Error and Type II Error\n\nThe experimenter can control only the Type I error probability. We do this by specifying an \\(\\alpha\\) for an experiment (before the data values are measured).\nWhen we are testing an hypothesis about \\(\\mu\\) using \\(\\alpha\\) for the test, the value of Type II error probability \\(\\beta\\) depends on the actual value \\(\\mu\\) which is not known.\nThis is because \\(\\beta\\) is the probability of incorrectly failing to reject \\(H_0\\) when \\(H_a\\) is true.\nWhen \\(H_a\\) is true, the actual value of \\(\\mu\\) may be any value under \\(H_a\\), i.e, a value not specified under \\(H_0\\). Since this value of \\(\\mu\\) is unknown, \\(\\beta\\) cannot be calculated."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#type-i-error-and-type-ii-error-1",
-    "href": "notes/3-one-mean/part3_lectures.html#type-i-error-and-type-ii-error-1",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Type I Error and Type II Error",
-    "text": "Type I Error and Type II Error\n\nThe implication of this is that when, based on a test, we find that we cannot reject \\(H_0\\), we will not say that we accept \\(H_0\\).\nBecause if we say we accept \\(H_0\\) and \\(\\beta\\) turns out to be large, then the probability is large that we will be committing a Type II error.\nThus the correct way to state the decision is to say, that we fail to reject \\(H_0\\).\nIn practice, \\(\\beta\\) probabilities for several choices of \\(\\mu\\) (call them \\(\\beta(\\mu)\\)) are calculated and plotted in a graph called the OC curve.\nThe OC curve can be used to read-off the Type II error probability for a specified set of values sample size \\(n\\) and \\(\\alpha\\)."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#oc-curve",
-    "href": "notes/3-one-mean/part3_lectures.html#oc-curve",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "OC Curve",
-    "text": "OC Curve\n\n\n\n\nimage\n\n\n\nThe figure shows the OC curve for the test of \\(H_0: \\mu \\leq 84, \\quad H_a: \\mu &gt; 84\\) for a population with \\(\\sigma=1.4\\). For example, for \\(\\alpha=.05,\\,n=10\\), it can be seen that \\(\\beta(84.8)\\approx .4\\) and that \\(\\beta(84.8)\\) decreases as sample size goes from 10 to 25. A conclusion that can be made about this test from the OC curve is that Type II error probability would be \\(&lt; .1\\) for an actual \\(\\mu &gt; 84.8\\) for \\(n=25\\)."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#power-curve",
-    "href": "notes/3-one-mean/part3_lectures.html#power-curve",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Power Curve",
-    "text": "Power Curve\n\nAnother quantity that may be calculated for a test procedure for a specified value of \\(\\mu\\) is called the Power of the test and is defined as \\(1-\\beta(\\mu)\\).\nThe corresponding plot of power against a set of \\(\\mu\\) values is called the power curve."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#power-of-the-test",
-    "href": "notes/3-one-mean/part3_lectures.html#power-of-the-test",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Power of the Test",
-    "text": "Power of the Test\n\nBy definition, power of a test is the probability of rejecting \\(H_0\\) for a specified value of \\(\\mu\\) under \\(H_a\\).\nIn practice, tests are designed to have large power for some \\(\\mu\\) values of interest so that they have small Type II error probabilities.\nWe can relate to this idea by thinking of a test as having very good power if it has a very good chance of detecting whether a change in \\(\\mu\\) has actually occured.\nThis is usually done by selecting a sample size \\(n\\) to be used for the experiment so that the desired power is achieved for a specified \\(\\mu\\) and \\(\\alpha\\)."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#using-type-ii-error-probability-beta-curves",
-    "href": "notes/3-one-mean/part3_lectures.html#using-type-ii-error-probability-beta-curves",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Using Type II Error Probability \\(\\beta\\) Curves",
-    "text": "Using Type II Error Probability \\(\\beta\\) Curves\n\nConsider the Salmonella example again. We have \\(n=9,\\) and \\(\\alpha=.01\\). Thus \\(df=8\\) and we estimate \\(\\sigma \\approx .25\\)\nWe can compute the values of \\(d\\) for several values of \\(\\mu_a\\). Then we’ll read \\(\\beta\\) for those values of \\(d\\) using the graph on next slide for the curves for \\(\\alpha=.01\\).\nAs an example, for \\(\\mu_a=.45\\), \\(d=\\frac{|\\mu_a-\\mu_0|}{\\sigma}=\\frac{|.45-.3|}{.25}=.6\\)\nCorresponding to \\(d=.6\\) on the horizontal axis, using the curve for \\(df=8\\) we see that \\(\\beta(.45)=.79\\), approx.\nSimilarly, for \\(\\mu_a=.45\\ d=1.0\\), and thus \\(\\beta(.55)=.43\\), approx. We can construct a table as shown (next slide)."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#using-type-ii-error-probability-beta-curves-1",
-    "href": "notes/3-one-mean/part3_lectures.html#using-type-ii-error-probability-beta-curves-1",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Using Type II Error Probability \\(\\beta\\) Curves",
-    "text": "Using Type II Error Probability \\(\\beta\\) Curves"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#departures-from-normality",
-    "href": "notes/3-one-mean/part3_lectures.html#departures-from-normality",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Departures from Normality",
-    "text": "Departures from Normality\n\nWhen \\(\\bar{Y}\\) is a Normal random variable, i.e., when sampling from a Normal population with mean \\(\\mu_0\\), \\(\\frac{\\bar{Y}-\\mu_0}{S/\\sqrt{n}}\\) is a \\(T_{n-1}\\) random variable.\nThis is a theoretical fact. In practice, however, we never sample exactly from a Normal population, so (\\(\\bar{Y}- \\mu_0)/S/\\sqrt{n}\\) will be only approximately \\(T_{n-1}\\).\nHow much effect can this have on C.I.’s and tests we construct?\nFor symmetrically distributed populations and not too small \\(n\\) there is little to worry about.\nFor highly skewed population distributions the approximation can be terrible especially for small \\(n\\)."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#section-5",
-    "href": "notes/3-one-mean/part3_lectures.html#section-5",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "",
-    "text": "image\n\n\n\n\nIt is recommended that one look at a boxplot, Normal plot, and/or other graphics to see whether severe skewness of the sampling population is indicated. If not, proceed to use the \\(t\\)-distribution. If yes, one can use a nonparametric procedure or use a transformation. We will look at some of these later."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#using-confidence-intervals-to-test-hypotheses",
-    "href": "notes/3-one-mean/part3_lectures.html#using-confidence-intervals-to-test-hypotheses",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Using Confidence Intervals to Test Hypotheses",
-    "text": "Using Confidence Intervals to Test Hypotheses\n\nWe can always look at a (1-\\(\\alpha\\))100% confidence interval and see what the result of a test would be if we carry out the test.\nFor example, consider the (1-\\(\\alpha\\))100% confidence interval for \\(\\mu\\) \\[\\left(\\bar{y} - t_{\\alpha/2} \\, \\frac{s}{\\sqrt{n}}, \\quad\n        \\bar{y} + t_{\\alpha/2} \\, \\frac{s}{\\sqrt{n}}\\right)\\]\nSuppose that \\(\\mu_0\\) is not included in the above confidence interval because \\[\\bar{y} - t_{\\alpha/2} \\, \\frac{s}{\\sqrt{n}}&gt;\\mu_0\\]"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#using-confidence-intervals-to-test-hypotheses---cont.",
-    "href": "notes/3-one-mean/part3_lectures.html#using-confidence-intervals-to-test-hypotheses---cont.",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Using Confidence Intervals to Test Hypotheses - cont.",
-    "text": "Using Confidence Intervals to Test Hypotheses - cont.\n\nBy rearranging this we see that this is equivalent to \\(t_c\\) being in the rejection region, i.e.,\n\\[\\frac{\\bar{y}-\\mu_0}{s/\\sqrt{n}} &gt; t_{\\alpha/2,(n-1)}\\]\nObserve carefully that this is the same rejection region for the test of \\(H_0: \\mu \\leq  \\mu_0\\) vs. \\(H_a: \\mu &gt;\n\\mu_0\\) at level \\(\\alpha/2\\).\nThat is, we will be rejecting \\(H_0\\) at level \\(\\alpha/2\\) if\n\\[\\frac{\\bar{y}-\\mu_0}{s/\\sqrt{n}} &gt; t_{\\alpha/2,(n-1)}\\]\nThis is equivalent to saying that if \\(\\mu_0\\) was not included in a 100(1-\\(\\alpha\\))% interval, then \\(H_0\\) will be rejected if the test is carried out at \\(\\alpha/2\\) level."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#using-confidence-intervals-to-test-hypotheses---cont.-1",
-    "href": "notes/3-one-mean/part3_lectures.html#using-confidence-intervals-to-test-hypotheses---cont.-1",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Using Confidence Intervals to Test Hypotheses - cont.",
-    "text": "Using Confidence Intervals to Test Hypotheses - cont.\n\nFor a two-tailed test, the confidence interval should be based on the same \\(\\alpha\\) as the test to make this inference.\n\nIn summary,\n\nTo test \\(H_0: \\mu \\leq \\mu_0, \\quad H_a: \\mu &gt; \\mu_0\\), at level \\(\\alpha/2\\), use a 100(1-\\(\\alpha\\))% confidence interval.\nTo test \\(H_0: \\mu \\geq \\mu_0, \\quad H_a: \\mu &lt; \\mu_0\\), at level \\(\\alpha/2\\), use a 100(1-\\(\\alpha\\))% confidence interval.\n\\(H_0: \\mu = \\mu_0, \\quad H_a: \\mu \\neq \\mu_0\\), at level \\(\\alpha\\), use a 100(1-\\(\\alpha\\))% confidence interval."
-  },
-  {
     "objectID": "notes/4-/part4_lectures.html#inferences-about-mu_1---mu_2",
     "href": "notes/4-/part4_lectures.html#inferences-about-mu_1---mu_2",
     "title": "Inferences about \\(\\mu_1-\\mu_2\\)",
     "section": "Inferences about \\(\\mu_1\\) - \\(\\mu_2\\)",
     "text": "Inferences about \\(\\mu_1\\) - \\(\\mu_2\\)\n\nIn many situations one wishes to compare the means of two different populations.\nLet \\(\\mu_1\\) and \\(\\mu_2\\) denote means two populations.\nMost often, the comparison of interest is the difference \\(\\mu_1 - \\mu_2\\).\nWe will make the comparison based on a random sample from each population. Suppose samples of sizes \\(n_1\\) and \\(n_2\\) are drawn."
-  },
-  {
-    "objectID": "notes/2-probability/part2_lectures.html",
-    "href": "notes/2-probability/part2_lectures.html",
-    "title": "Probability",
-    "section": "",
-    "text": "Population – The set of all objects under consideration. Objects in a population are called elements.\nExamples\n\nBoxes of a particular brand of corn flakes.\nNewly made light bulbs in a warehouse at a given time."
-  },
-  {
-    "objectID": "notes/1-descriptive-statistics/part1_lectures.html",
-    "href": "notes/1-descriptive-statistics/part1_lectures.html",
-    "title": "What is Statistics?",
-    "section": "",
-    "text": "Statistics is the science of learning from data. It uses the theory of probability to make inferences about populations or processes using data\nFor example, we would like to know the mean of a characteristic of a set of elements of a population\nBut we can’t observe or measure each one because there are too many elements or not all are available."
   }
 ]

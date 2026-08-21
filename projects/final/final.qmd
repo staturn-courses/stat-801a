@@ -10,7 +10,7 @@ Instead of a final exam, you (in groups of 3-4) are tasked with designing and co
 The purpose of the experiment is to demonstrate your knowledge of the topics taught in our course. The following criteria **must** be met:
 
 - Experiment does not involve living subjects.
-- Outcomes occur due to a random process (no observational data).
+- Outcomes occur due to a random  (stochastic) process (no observational data).
 - Hypothesis is reasonable with respect to the subject matter.
 - Experiment can be ethically conducted.
 - Large enough sample size to meet the assumptions of the test.
