@@ -13,10 +13,10 @@ Office: Hardin Hall 343A \
 Office hours: W 1-3, and by appointment \
 E-mail: [twiederich2@unl.edu](mailto:twiederich2@unl.edu) \
 
-Lab Instructor: Ryan\
+Lab Instructor: Ryan Barent\
 Office: XXX \
-Office hours XXX \
-E-mail: XXX \
+Office hours: XXX \
+E-mail: [rbarent3@huskers.unl.edu](mailto:rbarent3@huskers.unl.edu) \
 
 All office hours are guaranteed for the first 30 minutes. If no students are present after 30 minutes, office hours are ended.
 
@@ -46,13 +46,15 @@ This course consists of quizzes, projects, and exams.
 
 These assessments are weighted as follows:
 
-| | Projects/quizzes\* | Midterm | Final | 
+| | Projects/quizzes\* | Midterm | Final\*\* | 
 | :---: | :---: | :---: | :---: |
 | % of grade | 20% | 30% | 50% |
 
 \*All projects need to be turned electronically via PDF documents. A project completed in an unreadable or unprofessional manner will be returned for a zero grade. Quizzes will be assigned on Canvas. No late projects or quizzes are accepted.
 
 If projects allow for group work, all group members are expected to participate equally and have a complete understanding of all components for it. I will lower a student's project grade if he/she/they do not abide by this group work policy.
+
+\*\*The final exam is scheduled for Monday, Dec. 14 from 10:00 to noon.
 
 # Grades
 
@@ -96,7 +98,6 @@ The recent popularity of large language models and other artificial intelligence
 - No lab on 9/7 (Labor Day)
 - No class on 10/19 (Fall Break)
 - No class or lab on the week of 11/23
-- Final: Monday, Dec. 14 from 10:00 to noon
 
 # UNL Course Policies and Resources
 
