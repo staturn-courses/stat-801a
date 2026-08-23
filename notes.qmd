@@ -1,8 +1,11 @@
 ---
-title: "Notes"
 format: html
 ---
 
-8/27/26
+[Stat 801A Syllabus](stat801a-syllabus-f26.qmd)
+
+---
+
+1 -- Descriptive Statistics
 
 - [Slides](notes/1-descriptive-statistics/part1_lectures.qmd)

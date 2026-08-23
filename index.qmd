@@ -8,9 +8,6 @@ about:
     - icon: house
       text: All courses
       href: https://staturn-courses.github.io/
-    - icon: file-text
-      text: Syllabus
-      href: stat801a-syllabus-f26.qmd
 ---
 
 This website is open to my students in the University of Nebraska-Lincoln's STAT 801A course. 

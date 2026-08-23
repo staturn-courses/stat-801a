@@ -1,11 +1,10 @@
 ---
-title: "Assignments"
 format: 
   html:
     toc: false
 ---
 
-Unless otherwise stated, all assignments are due by 9 p.m. on Canvas. 
+Unless otherwise stated, all assignments are due by 5 p.m. on Canvas. 
 
 | Project | Due date | Data | Solutions | Notes |
 | :---: | :---: | :---: | :---: | :---: |
