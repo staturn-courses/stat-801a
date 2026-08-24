@@ -193,7 +193,7 @@
     "href": "notes/3-one-mean/part3_lectures.html#section-1",
     "title": "Inferences about \\(\\mu\\)",
     "section": "",
-    "text": "Then reject \\(H_0\\) only when the probability of obtaining a value of \\(\\bar{y}\\) larger than the observed value \\(\\bar{y}\\) is \\(\\leq \\alpha\\) when \\(\\mu\\) is indeed \\(\\leq 520\\), i.e., when \\(H_0\\) is true.\nThat is, if \\(H_0\\) is true, the chance of observing a sample that results in a \\(\\bar{y}\\) as large as the one calculated should be very small.\n\n\n\n\n\nimage"
+    "text": "Then reject \\(H_0\\) only when the probability of obtaining a value of \\(\\bar{y}\\) larger than the observed value \\(\\bar{y}\\) is \\(\\leq \\alpha\\) when \\(\\mu\\) is indeed \\(\\leq 520\\), i.e., when \\(H_0\\) is true.\nThat is, if \\(H_0\\) is true, the chance of observing a sample that results in a \\(\\bar{y}\\) as large as the one calculated should be very small."
   },
   {
     "objectID": "notes/3-one-mean/part3_lectures.html#how-to-determine-the-rejection-region",
@@ -263,7 +263,7 @@
     "href": "notes/3-one-mean/part3_lectures.html#solution",
     "title": "Inferences about \\(\\mu\\)",
     "section": "Solution",
-    "text": "Solution\nThe null hypothesis for this statistical test is \\(H_0: \\mu\\) = 2,600 and the research hypothesis is \\(H_a: \\mu \\neq\\) 2,600. Using \\(\\alpha\\) = .05, the two-tailed rejection region for this test is \\(|z|&gt; z_{.025}\\) or \\(|z|&gt; 1.96\\) and is located as shown below.\n\n\n\n\nimage"
+    "text": "Solution\nThe null hypothesis for this statistical test is \\(H_0: \\mu\\) = 2,600 and the research hypothesis is \\(H_a: \\mu \\neq\\) 2,600. Using \\(\\alpha\\) = .05, the two-tailed rejection region for this test is \\(|z|&gt; z_{.025}\\) or \\(|z|&gt; 1.96\\) and is located as shown below."
   },
   {
     "objectID": "notes/3-one-mean/part3_lectures.html#solution---cont.",
@@ -452,7 +452,7 @@
     "href": "notes/3-one-mean/part3_lectures.html#section-5",
     "title": "Inferences about \\(\\mu\\)",
     "section": "",
-    "text": "image\n\n\n\n\nIt is recommended that one look at a boxplot, Normal plot, and/or other graphics to see whether severe skewness of the sampling population is indicated. If not, proceed to use the \\(t\\)-distribution. If yes, one can use a nonparametric procedure or use a transformation. We will look at some of these later."
+    "text": "It is recommended that one look at a boxplot, Normal plot, and/or other graphics to see whether severe skewness of the sampling population is indicated. If not, proceed to use the \\(t\\)-distribution. If yes, one can use a nonparametric procedure or use a transformation. We will look at some of these later."
   },
   {
     "objectID": "notes/3-one-mean/part3_lectures.html#using-confidence-intervals-to-test-hypotheses",
@@ -872,7 +872,7 @@
     "href": "notes.html",
     "title": "STAT 801A",
     "section": "",
-    "text": "Stat 801A Syllabus\n\n1 – Descriptive Statistics\n\nSlides"
+    "text": "Stat 801A Syllabus\n\n\n\nCourse Notes\n1 – Descriptive Statistics\n\nSlides\n\n\nLabs\n8/31/26 – Lab 1\n9/7/26 – No lab (Labor Day)\n9/14/26 – Lab 2\n9/28/26 – Lab 3\n10/5/26 – Lab 4\n10/12/26 – Lab 5\n10/19/26 – No lab (Fall break)\n10/26/26 – Lab 6\n11/2/26 – Lab 7\n11/9/26 – Lab 8\n11/16/26 – Lab 9\n11/23/26 – No lab\n11/30/26 – Lab 10\n12/7/26 – Lab 11\n12/14/26 – No lab"
   },
   {
     "objectID": "notes/2-probability/part2_lectures.html#population-versus-sample",
@@ -1328,5 +1328,12 @@
     "title": "Inferences about \\(\\mu_1-\\mu_2\\)",
     "section": "Inferences about \\(\\mu_1\\) - \\(\\mu_2\\)",
     "text": "Inferences about \\(\\mu_1\\) - \\(\\mu_2\\)\n\nIn many situations one wishes to compare the means of two different populations.\nLet \\(\\mu_1\\) and \\(\\mu_2\\) denote means two populations.\nMost often, the comparison of interest is the difference \\(\\mu_1 - \\mu_2\\).\nWe will make the comparison based on a random sample from each population. Suppose samples of sizes \\(n_1\\) and \\(n_2\\) are drawn."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures.html#how-do-we-get-z_alpha2",
+    "href": "notes/3-one-mean/part3_lectures.html#how-do-we-get-z_alpha2",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "How do we get \\(z_{\\alpha/2}\\)?",
+    "text": "How do we get \\(z_{\\alpha/2}\\)?\n\nReference a Z-table (example: https://archive.math.arizona.edu/rsims/ma464/standardnormaltable.pdf)\nUse R\n\n\nalpha &lt;- 0.05\nz &lt;- qnorm(alpha/2)\nprint(z)\n\n[1] -1.959964\n\n\n\nBy default, qnorm() measures \\(P(Z\\leq z)\\) when \\(Z\\sim N(0,1)\\)"
   }
 ]

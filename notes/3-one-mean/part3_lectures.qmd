@@ -5,6 +5,9 @@ footer: STAT 801A
 format: 
   revealjs:
     smaller: true
+    chalkboard:
+      board-marker-width: 1
+    incremental: false
 ---
 
 ::: frame
@@ -167,6 +170,21 @@ $(107.66,\ 112.34)$\
 We are $98\%$ confident that the mean caffeine content for cups dispensed by the machine is between 107.66 and 112.34 mg.
 :::
 
+## How do we get $z_{\alpha/2}$?
+
+- Reference a Z-table (example: <https://archive.math.arizona.edu/rsims/ma464/standardnormaltable.pdf>)
+- Use R
+
+```{r}
+#| include: true
+#| echo: true
+alpha <- 0.05
+z <- qnorm(alpha/2)
+print(z)
+```
+
+- By default, `qnorm()` measures $P(Z\leq z)$ when $Z\sim N(0,1)$
+
 ::: frame
 ## Choosing the Sample Size
 
@@ -256,9 +274,6 @@ Precision in estimation depends on both $\alpha$ and $\sigma^2$. If the variance
 
 - That is, if $H_0$ is true, [the chance of observing a sample that results in a $\bar{y}$ as large as the one calculated should be very small]{style="color: magenta"}.
 
-::: center
-![image](fig57.pdf)
-:::
 ::::
 
 ::: frame
@@ -363,9 +378,6 @@ If the computed value of the test statistic, $z_c$, is in the R.R., then we will
 
 The null hypothesis for this statistical test is $H_0: \mu$ = 2,600 and the research hypothesis is $H_a: \mu \neq$ 2,600. Using $\alpha$ = .05, the two-tailed rejection region for this test is $|z|> z_{.025}$ or $|z|> 1.96$ and is located as shown below.
 
-::: center
-![image](fig511.pdf)
-:::
 ::::
 
 ::: frame
@@ -463,13 +475,6 @@ Since $\bar{y}>2,600$ we conclude that the mean number of miles driven is greate
 - Thus as the sample size $n$ increases the distribution of the $T_{n-1}$ random variable approaches the standard normal distribution.
 :::
 
-:::: frame
-## Properties of the Student's distribution cont.
-
-::: center
-![image](fig516.pdf)
-:::
-::::
 
 :::: frame
 ## 
@@ -695,10 +700,6 @@ The figure shows the OC curve for the test of $H_0: \mu \leq 84, \quad H_a: \mu 
 
 :::: frame
 ## 
-
-::: center
-![image](table56.pdf)
-:::
 
 - It is recommended that one look at a boxplot, Normal plot, and/or other graphics to see whether severe skewness of the sampling population is indicated. If not, proceed to use the $t$-distribution. If yes, one can use a nonparametric procedure or use a transformation. We will look at some of these later.
 ::::

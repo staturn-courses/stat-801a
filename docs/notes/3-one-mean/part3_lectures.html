@@ -33,11 +33,79 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -269,6 +337,24 @@ As the sample size is large we can use the CLT and also approximate <span class=
 </p>
 <p>We are <span class="math inline">\(98\%\)</span> confident that the mean caffeine content for cups dispensed by the machine is between 107.66 and 112.34 mg.</p>
 </section>
+<section id="how-do-we-get-z_alpha2" class="slide level2">
+<h2>How do we get <span class="math inline">\(z_{\alpha/2}\)</span>?</h2>
+<ul>
+<li>Reference a Z-table (example: <a href="https://archive.math.arizona.edu/rsims/ma464/standardnormaltable.pdf" class="uri">https://archive.math.arizona.edu/rsims/ma464/standardnormaltable.pdf</a>)</li>
+<li>Use R</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb1-2"><a aria-label="2"></a>z <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(alpha<span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb1-3"><a aria-label="3"></a><span class="fu">print</span>(z)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1.959964</code></pre>
+</div>
+</div>
+<ul>
+<li>By default, <code>qnorm()</code> measures <span class="math inline">\(P(Z\leq z)\)</span> when <span class="math inline">\(Z\sim N(0,1)\)</span></li>
+</ul>
+</section>
 <section id="choosing-the-sample-size" class="slide level2 frame">
 <h2>Choosing the Sample Size</h2>
 <ul>
@@ -340,14 +426,6 @@ We set <span class="math inline">\(E = 2.8\)</span> so <span class="math display
 <li><p>Then reject <span class="math inline">\(H_0\)</span> only when the probability of obtaining a value of <span class="math inline">\(\bar{y}\)</span> larger than the observed value <span class="math inline">\(\bar{y}\)</span> is <span class="math inline">\(\leq \alpha\)</span> <span style="color: red">when <span class="math inline">\(\mu\)</span> is indeed <span class="math inline">\(\leq 520\)</span>, i.e., when <span class="math inline">\(H_0\)</span> is true.</span></p></li>
 <li><p>That is, if <span class="math inline">\(H_0\)</span> is true, <span style="color: magenta">the chance of observing a sample that results in a <span class="math inline">\(\bar{y}\)</span> as large as the one calculated should be very small</span>.</p></li>
 </ul>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><embed data-src="fig57.pdf"></p>
-<figcaption>image</figcaption>
-</figure>
-</div>
-</div>
 </section>
 <section id="how-to-determine-the-rejection-region" class="slide level2 frame">
 <h2>How to determine the rejection region</h2>
@@ -429,14 +507,6 @@ Note that the above test procedure is equivalent to determining that the observe
 <section id="solution" class="slide level2 frame">
 <h2>Solution</h2>
 <p>The null hypothesis for this statistical test is <span class="math inline">\(H_0: \mu\)</span> = 2,600 and the research hypothesis is <span class="math inline">\(H_a: \mu \neq\)</span> 2,600. Using <span class="math inline">\(\alpha\)</span> = .05, the two-tailed rejection region for this test is <span class="math inline">\(|z|&gt; z_{.025}\)</span> or <span class="math inline">\(|z|&gt; 1.96\)</span> and is located as shown below.</p>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><embed data-src="fig511.pdf"></p>
-<figcaption>image</figcaption>
-</figure>
-</div>
-</div>
 </section>
 <section id="solution---cont." class="slide level2 frame">
 <h2>Solution - cont.</h2>
@@ -516,17 +586,6 @@ N(\mu,\frac{\sigma^2}{n})\)</span>.</p></li>
 <li><p>As the degrees of freedom <span class="math inline">\(df\)</span> increases, the t-distribution approaches that of the standard normal distribution.</p></li>
 <li><p>Thus as the sample size <span class="math inline">\(n\)</span> increases the distribution of the <span class="math inline">\(T_{n-1}\)</span> random variable approaches the standard normal distribution.</p></li>
 </ul>
-</section>
-<section id="properties-of-the-students-distribution-cont." class="slide level2 frame">
-<h2>Properties of the Student’s distribution cont.</h2>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><embed data-src="fig516.pdf"></p>
-<figcaption>image</figcaption>
-</figure>
-</div>
-</div>
 </section>
 <section id="section-3" class="slide level2 frame">
 <h2></h2>
@@ -796,14 +855,6 @@ This gives <span style="color: magenta"><span class="math inline">\(.025&lt;\mbo
 </section>
 <section id="section-5" class="slide level2 frame">
 <h2></h2>
-<div class="center">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><embed data-src="table56.pdf"></p>
-<figcaption>image</figcaption>
-</figure>
-</div>
-</div>
 <ul>
 <li>It is recommended that one look at a boxplot, Normal plot, and/or other graphics to see whether severe skewness of the sampling population is indicated. If not, proceed to use the <span class="math inline">\(t\)</span>-distribution. If yes, one can use a nonparametric procedure or use a transformation. We will look at some of these later.</li>
 </ul>
@@ -857,6 +908,7 @@ This gives <span style="color: magenta"><span class="math inline">\(.025&lt;\mbo
   <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -878,7 +930,8 @@ This gives <span style="color: magenta"><span class="math inline">\(.025&lt;\mbo
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true,"board-marker-width":1},
 'smaller': true,
  
         // Display controls in the bottom right corner
@@ -1049,7 +1102,7 @@ This gives <span style="color: magenta"><span class="math inline">\(.025&lt;\mbo
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
           RevealNotes,
@@ -1058,6 +1111,44 @@ This gives <span style="color: magenta"><span class="math inline">\(.025&lt;\mbo
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

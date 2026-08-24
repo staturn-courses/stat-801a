@@ -1,11 +1,61 @@
 ---
-format: html
+format: 
+  html:
+    page-layout: full
 ---
 
 [Stat 801A Syllabus](stat801a-syllabus-f26.qmd)
 
 ---
 
+::: {.columns}
+
+
+
+::: {.column}
+
+**Course Notes**
+
 1 -- Descriptive Statistics
 
 - [Slides](notes/1-descriptive-statistics/part1_lectures.qmd)
+
+:::
+
+::: {.column}
+
+**Labs**
+
+8/31/26 -- Lab 1
+
+9/7/26 -- No lab (Labor Day)
+
+9/14/26 -- Lab 2
+
+9/28/26 -- Lab 3
+
+10/5/26 -- Lab 4
+
+10/12/26 -- Lab 5
+
+10/19/26 -- No lab (Fall break)
+
+10/26/26 -- Lab 6
+
+11/2/26 -- Lab 7
+
+11/9/26 -- Lab 8
+
+11/16/26 -- Lab 9
+
+11/23/26 -- No lab
+
+11/30/26 -- Lab 10
+
+12/7/26 -- Lab 11
+
+12/14/26 -- No lab
+
+:::
+
+:::
