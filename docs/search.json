@@ -140,6 +140,13 @@
     "text": "Example - cont.\n\\(\\left[\\bar{y} - z_{0.01} \\frac{\\sigma}{\\sqrt{n}}, \\\n\\bar{y} + z_{0.01} \\frac{\\sigma}{\\sqrt{n}}\\right]\\)\n\n\n\n\\(\\left[110 - (2.33)\\left(\\frac{7.1}{\\sqrt{50}}\\right), \\\n   110 + (2.33)\\left(\\frac{7.1}{\\sqrt{50}}\\right)  \\right]\\)\n\n\n\n\\((107.66,\\ 112.34)\\)\n\n\n\nWe are \\(98\\%\\) confident that the mean caffeine content for cups dispensed by the machine is between 107.66 and 112.34 mg."
   },
   {
+    "objectID": "notes/3-one-mean/part3_lectures.html#how-do-we-get-z_alpha2",
+    "href": "notes/3-one-mean/part3_lectures.html#how-do-we-get-z_alpha2",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "How do we get \\(z_{\\alpha/2}\\)?",
+    "text": "How do we get \\(z_{\\alpha/2}\\)?\n\nReference a Z-table (example: https://archive.math.arizona.edu/rsims/ma464/standardnormaltable.pdf)\nUse R\n\n\nalpha &lt;- 0.05\nz &lt;- qnorm(alpha/2)\nprint(z)\n\n[1] -1.959964\n\n\n\nBy default, qnorm() measures \\(P(Z\\leq z)\\) when \\(Z\\sim N(0,1)\\)"
+  },
+  {
     "objectID": "notes/3-one-mean/part3_lectures.html#choosing-the-sample-size",
     "href": "notes/3-one-mean/part3_lectures.html#choosing-the-sample-size",
     "title": "Inferences about \\(\\mu\\)",
@@ -322,13 +329,6 @@
     "text": "Properties of the Student’s distribution\n\nThere are many t-distributions each specified by a single parameter called degrees of freedom (\\(df\\)).\nLike the standard normal population, the distribution is symmetric about 0 and has mean equal to 0.\nThe t-distribution has variance \\(df/(df-1)\\), and hence is more variable than the standard normal distribution which has variance equal to 1.\nWe say that the t-distribution has heavier tails than the standard normal distribution.\nAs the degrees of freedom \\(df\\) increases, the t-distribution approaches that of the standard normal distribution.\nThus as the sample size \\(n\\) increases the distribution of the \\(T_{n-1}\\) random variable approaches the standard normal distribution."
   },
   {
-    "objectID": "notes/3-one-mean/part3_lectures.html#properties-of-the-students-distribution-cont.",
-    "href": "notes/3-one-mean/part3_lectures.html#properties-of-the-students-distribution-cont.",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Properties of the Student’s distribution cont.",
-    "text": "Properties of the Student’s distribution cont.\n\n\n\n\nimage"
-  },
-  {
     "objectID": "notes/3-one-mean/part3_lectures.html#section-3",
     "href": "notes/3-one-mean/part3_lectures.html#section-3",
     "title": "Inferences about \\(\\mu\\)",
@@ -341,13 +341,6 @@
     "title": "Inferences about \\(\\mu\\)",
     "section": "Confidence Interval for \\(\\mu\\) based on the t-distribution",
     "text": "Confidence Interval for \\(\\mu\\) based on the t-distribution\n\nLet the sample size be \\(n\\), and for \\(\\alpha\\) be a specified value, say, for e.g. \\(.05\\).\nA \\((1-\\alpha)100\\%\\) confidence interval for \\(\\mu\\) is given by \\[\\left(\\bar{y} - t_{\\alpha/2} \\, \\frac{s}{\\sqrt{n}}, \\quad\n        \\bar{y} + t_{\\alpha/2} \\, \\frac{s}{\\sqrt{n}}\\right)\\]\nThis may also be written as \\(\\left(\\bar{y} - t_{\\alpha/2} s_{\\bar{y}}, \\quad \\bar{y} +\n         t_{\\alpha/2} s_{\\bar{y}} \\right)\\)\nHere, \\(t_{\\alpha/2}\\) is the \\(1-\\alpha/2\\) percentile of the t-distribution with \\(n-1\\) degrees of freedom and \\(s_{\\bar{y}}\\) is the standard error of the mean."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures.html#section-4",
-    "href": "notes/3-one-mean/part3_lectures.html#section-4",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "",
-    "text": "image"
   },
   {
     "objectID": "notes/3-one-mean/part3_lectures.html#test-procedures-based-on-the-t-distribution",
@@ -375,7 +368,7 @@
     "href": "notes/3-one-mean/part3_lectures.html#exercise---cont.-1",
     "title": "Inferences about \\(\\mu\\)",
     "section": "Exercise - cont.",
-    "text": "Exercise - cont.\n\n\n\n\nimage\n\n\n\nFrom the data \\(\\bar{y}=.456\\) and \\(s= .2128\\) are computed, giving \\[t_c=  \\frac{\\bar{y}-\\mu_0}{s/\\sqrt{n}}=\\frac{.456-.3}{.2128/\\sqrt{9}}=2.21\\] Because for the one-tailed test we need \\(t_{\\alpha,(n-1)}\\);\nwe look up \\(t_{.01}\\) with \\(df=9-1=8\\). It is \\(2.896\\)\nThus the rejection region is: \\(t&gt;2.896\\)"
+    "text": "Exercise - cont.\n\n\n\nFrom the data \\(\\bar{y}=.456\\) and \\(s= .2128\\) are computed, giving \\[t_c=  \\frac{\\bar{y}-\\mu_0}{s/\\sqrt{n}}=\\frac{.456-.3}{.2128/\\sqrt{9}}=2.21\\] Because for the one-tailed test we need \\(t_{\\alpha,(n-1)}\\);\nwe look up \\(t_{.01}\\) with \\(df=9-1=8\\). It is \\(2.896\\)\nThus the rejection region is: \\(t&gt;2.896\\)"
   },
   {
     "objectID": "notes/3-one-mean/part3_lectures.html#exercise---cont.-2",
@@ -410,7 +403,7 @@
     "href": "notes/3-one-mean/part3_lectures.html#oc-curve",
     "title": "Inferences about \\(\\mu\\)",
     "section": "OC Curve",
-    "text": "OC Curve\n\n\n\n\nimage\n\n\n\nThe figure shows the OC curve for the test of \\(H_0: \\mu \\leq 84, \\quad H_a: \\mu &gt; 84\\) for a population with \\(\\sigma=1.4\\). For example, for \\(\\alpha=.05,\\,n=10\\), it can be seen that \\(\\beta(84.8)\\approx .4\\) and that \\(\\beta(84.8)\\) decreases as sample size goes from 10 to 25. A conclusion that can be made about this test from the OC curve is that Type II error probability would be \\(&lt; .1\\) for an actual \\(\\mu &gt; 84.8\\) for \\(n=25\\)."
+    "text": "OC Curve\n\n\n\nThe figure shows the OC curve for the test of \\(H_0: \\mu \\leq 84, \\quad H_a: \\mu &gt; 84\\) for a population with \\(\\sigma=1.4\\). For example, for \\(\\alpha=.05,\\,n=10\\), it can be seen that \\(\\beta(84.8)\\approx .4\\) and that \\(\\beta(84.8)\\) decreases as sample size goes from 10 to 25. A conclusion that can be made about this test from the OC curve is that Type II error probability would be \\(&lt; .1\\) for an actual \\(\\mu &gt; 84.8\\) for \\(n=25\\)."
   },
   {
     "objectID": "notes/3-one-mean/part3_lectures.html#power-curve",
@@ -424,7 +417,7 @@
     "href": "notes/3-one-mean/part3_lectures.html#power-of-the-test",
     "title": "Inferences about \\(\\mu\\)",
     "section": "Power of the Test",
-    "text": "Power of the Test\n\nBy definition, power of a test is the probability of rejecting \\(H_0\\) for a specified value of \\(\\mu\\) under \\(H_a\\).\nIn practice, tests are designed to have large power for some \\(\\mu\\) values of interest so that they have small Type II error probabilities.\nWe can relate to this idea by thinking of a test as having very good power if it has a very good chance of detecting whether a change in \\(\\mu\\) has actually occured.\nThis is usually done by selecting a sample size \\(n\\) to be used for the experiment so that the desired power is achieved for a specified \\(\\mu\\) and \\(\\alpha\\)."
+    "text": "Power of the Test\n\nBy definition, power of a test is the probability of rejecting \\(H_0\\) for a specified value of \\(\\mu\\) under \\(H_a\\).\nIn practice, tests are designed to have large power for some \\(\\mu\\) values of interest so that they have small Type II error probabilities.\nWe can relate to this idea by thinking of a test as having very good power if it has a very good chance of detecting whether a change in \\(\\mu\\) has actually occurred.\nThis is usually done by selecting a sample size \\(n\\) to be used for the experiment so that the desired power is achieved for a specified \\(\\mu\\) and \\(\\alpha\\)."
   },
   {
     "objectID": "notes/3-one-mean/part3_lectures.html#using-type-ii-error-probability-beta-curves",
@@ -1330,10 +1323,17 @@
     "text": "Inferences about \\(\\mu_1\\) - \\(\\mu_2\\)\n\nIn many situations one wishes to compare the means of two different populations.\nLet \\(\\mu_1\\) and \\(\\mu_2\\) denote means two populations.\nMost often, the comparison of interest is the difference \\(\\mu_1 - \\mu_2\\).\nWe will make the comparison based on a random sample from each population. Suppose samples of sizes \\(n_1\\) and \\(n_2\\) are drawn."
   },
   {
-    "objectID": "notes/3-one-mean/part3_lectures.html#how-do-we-get-z_alpha2",
-    "href": "notes/3-one-mean/part3_lectures.html#how-do-we-get-z_alpha2",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "How do we get \\(z_{\\alpha/2}\\)?",
-    "text": "How do we get \\(z_{\\alpha/2}\\)?\n\nReference a Z-table (example: https://archive.math.arizona.edu/rsims/ma464/standardnormaltable.pdf)\nUse R\n\n\nalpha &lt;- 0.05\nz &lt;- qnorm(alpha/2)\nprint(z)\n\n[1] -1.959964\n\n\n\nBy default, qnorm() measures \\(P(Z\\leq z)\\) when \\(Z\\sim N(0,1)\\)"
+    "objectID": "notes/4-/part4_lectures.html#inferences-about-mu_1---mu_2-1",
+    "href": "notes/4-/part4_lectures.html#inferences-about-mu_1---mu_2-1",
+    "title": "Inferences about \\(\\mu_1-\\mu_2\\)",
+    "section": "Inferences about \\(\\mu_1\\) - \\(\\mu_2\\)",
+    "text": "Inferences about \\(\\mu_1\\) - \\(\\mu_2\\)\n\n\nLet \\(\\bar{Y}_1\\) and \\(\\bar{Y}_2\\) denote sample mean random variables and \\(S_1\\) and \\(S_2\\) be the sample standard deviation random variables computed from each sample.\nAlso assume that the samples are drawn independently from each population, and that the populations have the same variance \\(\\sigma^2\\).\nFor large sample sizes, the random variables \\(\\bar{Y}_1\\) and \\(\\bar{Y}_2\\) are approximately normal.\nThus the random variable \\(\\bar{Y}_1 - \\bar{Y}_2\\) is also approximately normal."
+  },
+  {
+    "objectID": "notes/4-/part4_lectures.html#inferences-about-mu_1---mu_2-2",
+    "href": "notes/4-/part4_lectures.html#inferences-about-mu_1---mu_2-2",
+    "title": "Inferences about \\(\\mu_1-\\mu_2\\)",
+    "section": "Inferences about \\(\\mu_1\\) - \\(\\mu_2\\)",
+    "text": "Inferences about \\(\\mu_1\\) - \\(\\mu_2\\)\n\n\nThe mean of the random variable \\(\\bar{Y}_1 - \\bar{Y}_2\\) is \\(\\mu_1 - \\mu_2\\) and standard deviation is \\[\\sigma_{\\bar{Y}_1 - \\bar{Y}_2} =\n  \\sqrt{\\frac{\\sigma_1^2}{n_1} + \\frac{\\sigma_2^2}{n_2}}\\] where \\(\\sigma_1^2\\) and \\(\\sigma_2^2\\) are the variances of each of each population.\nHowever, under the assumption that \\(\\sigma_1^2 = \\sigma_2^2 \\equiv \\sigma^2\\), the standard deviation becomes \\[\\sigma_{\\bar{Y}_1 - \\bar{Y}_2} =\n  \\sqrt{\\frac{\\sigma^2}{n_1} + \\frac{\\sigma^2}{n_2}} =\\sigma\\sqrt{\\left(\\frac{1}{n_1}+\\frac{1}{n_2}\\right)}\\]"
   }
 ]

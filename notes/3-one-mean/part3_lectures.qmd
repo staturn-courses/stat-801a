@@ -519,9 +519,7 @@ If $\alpha$ = 0.05, then $t_\alpha$ satisfies $P(T_{10} > t_{.05}) = 0.05$ and f
 :::: frame
 ## 
 
-::: center
-![image](ex517.pdf)
-:::
+
 ::::
 
 ::: frame
@@ -564,7 +562,7 @@ Because of the small sample size, we need to examine whether the data have been 
 ## Exercise - cont.
 
 ::: center
-![image](fig518.pdf)
+
 :::
 
 From the data $\bar{y}=.456$ and $s= .2128$ are computed, giving $$t_c=  \frac{\bar{y}-\mu_0}{s/\sqrt{n}}=\frac{.456-.3}{.2128/\sqrt{9}}=2.21$$ Because for the one-tailed test we need $t_{\alpha,(n-1)}$;\
@@ -631,23 +629,7 @@ The probabilities of the four possible outcomes of a statistical test are:\
 - The OC curve can be used to read-off the [Type II error probability]{style="color: magenta"} for a specified set of values sample size $n$ and $\alpha$.
 :::
 
-:::: frame
-## OC Curve
 
-::: center
-![image](fig514.pdf)
-:::
-
-The figure shows the OC curve for the test of $H_0: \mu \leq 84, \quad H_a: \mu > 84$ for a population with $\sigma=1.4$. For example, for $\alpha=.05,\,n=10$, it can be seen that $\beta(84.8)\approx .4$ and that $\beta(84.8)$ decreases as sample size goes from 10 to 25. A conclusion that can be made about this test from the OC curve is that Type II error probability would be $< .1$ for an actual $\mu > 84.8$ for $n=25$.
-::::
-
-::: frame
-## Power Curve
-
-- Another quantity that may be calculated for a test procedure for a specified value of $\mu$ is called the [Power of the test]{style="color: magenta"} and is defined as $1-\beta(\mu)$.
-
-- The corresponding plot of power against a set of $\mu$ values is called the [power curve]{style="color: magenta"}.
-:::
 
 ::: frame
 ## Power of the Test
@@ -656,7 +638,7 @@ The figure shows the OC curve for the test of $H_0: \mu \leq 84, \quad H_a: \mu 
 
 - In practice, tests are designed to have large power for some $\mu$ values of interest so that they have small Type II error probabilities.
 
-- We can relate to this idea by thinking of a test as having very good power if it has [a very good chance of detecting whether a change in $\mu$ has actually occured]{style="color: magenta"}.
+- We can relate to this idea by thinking of a test as having very good power if it has [a very good chance of detecting whether a change in $\mu$ has actually occurred]{style="color: magenta"}.
 
 - This is usually done by selecting a sample size $n$ to be used for the experiment so that the desired power is achieved for a specified $\mu$ and $\alpha$.
 :::
@@ -679,8 +661,8 @@ The figure shows the OC curve for the test of $H_0: \mu \leq 84, \quad H_a: \mu 
 ## Using Type II Error Probability $\beta$ Curves
 
 ::: center
-![image](fig517.pdf)\
-![image](table55.pdf)
+\
+
 :::
 ::::
 

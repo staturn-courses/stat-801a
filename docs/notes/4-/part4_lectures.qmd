@@ -5,8 +5,10 @@ footer: STAT 801A
 format: 
   revealjs:
     smaller: true
+    chalkboard:
+      board-marker-width: 1
+    incremental: false
 ---
-
 
 ::: frame
 ## Inferences about $\mu_1$ - $\mu_2$
@@ -20,7 +22,7 @@ format:
 - We will make the comparison based on a random sample from each population. Suppose samples of sizes $n_1$ and $n_2$ are drawn.
 :::
 
----
+## Inferences about $\mu_1$ - $\mu_2$
 
 ::: frame
 - Let $\bar{Y}_1$ and $\bar{Y}_2$ denote sample mean random variables and $S_1$ and $S_2$ be the sample standard deviation random variables computed from each sample.
@@ -32,6 +34,8 @@ format:
 - Thus the random variable $\bar{Y}_1 - \bar{Y}_2$ is also approximately normal.
 :::
 
+## Inferences about $\mu_1$ - $\mu_2$
+
 ::: frame
 - The mean of the random variable $\bar{Y}_1 - \bar{Y}_2$ is $\mu_1 - \mu_2$ and standard deviation is $$\sigma_{\bar{Y}_1 - \bar{Y}_2} =
     \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}$$ where $\sigma_1^2$ and $\sigma_2^2$ are the variances of each of each population.
@@ -39,6 +43,8 @@ format:
 - However, under the assumption that $\sigma_1^2 = \sigma_2^2 \equiv \sigma^2$, the standard deviation becomes $$\sigma_{\bar{Y}_1 - \bar{Y}_2} =
     \sqrt{\frac{\sigma^2}{n_1} + \frac{\sigma^2}{n_2}} =\sigma\sqrt{\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}$$
 :::
+
+---
 
 ::: frame
 - An estimator of $\sigma_{\bar{Y}_1 - \bar{Y}_2}$ is $$S_{\bar{Y}_1 - \bar{Y}_2} = S_p \sqrt{\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}$$
@@ -49,6 +55,8 @@ format:
 
 - Later we will talk about what to do if we can't reasonably make this assumption in a given situation.
 :::
+
+---
 
 ::: frame
 - Consider the random variable defined as: $$T_{n_1 + n_2 - 2} = \frac{(\bar{Y}_1 - \bar{Y}_2) - (\mu_1 -
@@ -61,6 +69,8 @@ format:
 
 - For small samples, however, we must verify if the samples were actually drawn from Normal distributions, using tools such as boxplots and normal probability plots
 :::
+
+---
 
 ::: frame
 - We shall do that before calculating confidence intervals for $\mu_1 - \mu_2$, and for testing hypotheses using the $t$ distribution.
@@ -76,10 +86,12 @@ format:
 - Here $df= n_1 + n_2 - 2$ and $$s_p = \sqrt{\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1 + n_2 - 2}}$$
 :::
 
+---
+
 :::: frame
 ### Example
 
-Company officials, concernerned about potency of a product retained after storage, drew a random sample of $n_1=10$ bottles from the production line and tested for potency. Another random sample of $n_2=10$ bottles was drawn and stored in a regulated environment for 1 year and then tested. The data obtained are:\
+Company officials, concerned about potency of a product retained after storage, drew a random sample of $n_1=10$ bottles from the production line and tested for potency. Another random sample of $n_2=10$ bottles was drawn and stored in a regulated environment for 1 year and then tested. The data obtained are:\
 
 ::: center
 +---------------+---+---------------+
@@ -97,6 +109,8 @@ Company officials, concernerned about potency of a product retained after storag
 +-------+-------+---+-------+-------+
 :::
 ::::
+
+---
 
 ::: frame
 ### Solution
@@ -121,13 +135,7 @@ Thus, the difference in mean potencies for bottles from the production line and 
 It is important understand what we mean by the above statement.
 :::
 
-:::: frame
-### Example
 
-::: center
-![image](ex6_2.pdf)\
-:::
-::::
 
 :::: frame
 ### Tests of Hypotheses about $\mu_1-\mu_2$

@@ -38,6 +38,8 @@
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -148,8 +150,8 @@
 <li><p>We will make the comparison based on a random sample from each population. Suppose samples of sizes <span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_2\)</span> are drawn.</p></li>
 </ul>
 </section>
-<section class="slide level2">
-
+<section id="inferences-about-mu_1---mu_2-1" class="slide level2">
+<h2>Inferences about <span class="math inline">\(\mu_1\)</span> - <span class="math inline">\(\mu_2\)</span></h2>
 <div class="frame">
 <ul>
 <li><p>Let <span class="math inline">\(\bar{Y}_1\)</span> and <span class="math inline">\(\bar{Y}_2\)</span> denote sample mean random variables and <span class="math inline">\(S_1\)</span> and <span class="math inline">\(S_2\)</span> be the sample standard deviation random variables computed from each sample.</p></li>
@@ -158,6 +160,9 @@
 <li><p>Thus the random variable <span class="math inline">\(\bar{Y}_1 - \bar{Y}_2\)</span> is also approximately normal.</p></li>
 </ul>
 </div>
+</section>
+<section id="inferences-about-mu_1---mu_2-2" class="slide level2">
+<h2>Inferences about <span class="math inline">\(\mu_1\)</span> - <span class="math inline">\(\mu_2\)</span></h2>
 <div class="frame">
 <ul>
 <li><p>The mean of the random variable <span class="math inline">\(\bar{Y}_1 - \bar{Y}_2\)</span> is <span class="math inline">\(\mu_1 - \mu_2\)</span> and standard deviation is <span class="math display">\[\sigma_{\bar{Y}_1 - \bar{Y}_2} =
@@ -166,6 +171,9 @@
   \sqrt{\frac{\sigma^2}{n_1} + \frac{\sigma^2}{n_2}} =\sigma\sqrt{\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}\]</span></p></li>
 </ul>
 </div>
+</section>
+<section class="slide level2">
+
 <div class="frame">
 <ul>
 <li><p>An estimator of <span class="math inline">\(\sigma_{\bar{Y}_1 - \bar{Y}_2}\)</span> is <span class="math display">\[S_{\bar{Y}_1 - \bar{Y}_2} = S_p \sqrt{\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}\]</span></p></li>
@@ -174,6 +182,9 @@
 <li><p>Later we will talk about what to do if we can’t reasonably make this assumption in a given situation.</p></li>
 </ul>
 </div>
+</section>
+<section class="slide level2">
+
 <div class="frame">
 <ul>
 <li><p>Consider the random variable defined as: <span class="math display">\[T_{n_1 + n_2 - 2} = \frac{(\bar{Y}_1 - \bar{Y}_2) - (\mu_1 -
@@ -184,6 +195,9 @@
 <li><p>For small samples, however, we must verify if the samples were actually drawn from Normal distributions, using tools such as boxplots and normal probability plots</p></li>
 </ul>
 </div>
+</section>
+<section class="slide level2">
+
 <div class="frame">
 <ul>
 <li><p>We shall do that before calculating confidence intervals for <span class="math inline">\(\mu_1 - \mu_2\)</span>, and for testing hypotheses using the <span class="math inline">\(t\)</span> distribution.</p></li>
@@ -198,9 +212,12 @@
 <li><p>Here <span class="math inline">\(df= n_1 + n_2 - 2\)</span> and <span class="math display">\[s_p = \sqrt{\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1 + n_2 - 2}}\]</span></p></li>
 </ul>
 </div>
+</section>
+<section class="slide level2">
+
 <section id="example" class="frame">
 <h3>Example</h3>
-<p>Company officials, concernerned about potency of a product retained after storage, drew a random sample of <span class="math inline">\(n_1=10\)</span> bottles from the production line and tested for potency. Another random sample of <span class="math inline">\(n_2=10\)</span> bottles was drawn and stored in a regulated environment for 1 year and then tested. The data obtained are:<br>
+<p>Company officials, concerned about potency of a product retained after storage, drew a random sample of <span class="math inline">\(n_1=10\)</span> bottles from the production line and tested for potency. Another random sample of <span class="math inline">\(n_2=10\)</span> bottles was drawn and stored in a regulated environment for 1 year and then tested. The data obtained are:<br>
 </p>
 <div class="center">
 <table class="caption-top" style="width:50%;">
@@ -258,6 +275,9 @@
 </table>
 </div>
 </section>
+</section>
+<section class="slide level2">
+
 <section id="solution" class="frame">
 <h3>Solution</h3>
 <p><span class="math inline">\(n_1 =10 \hspace*{1in} n_2 = 10\)</span><br>
@@ -276,13 +296,6 @@ Thus a 95% confidence interval for the difference in the mean potencies <span cl
 <span class="math inline">\(.54\pm .268\)</span> or <span class="math inline">\((.272,\,.808)\)</span><br>
 Thus, the difference in mean potencies for bottles from the production line and those stored for one year, <span class="math inline">\(\mu_1-\mu_2\)</span>, is estimated to be between .272 and .808 with <span style="color: magenta"><em>95% confidence</em></span>.<br>
 It is important understand what we mean by the above statement.</p>
-</section>
-<section id="example-1" class="frame">
-<h3>Example</h3>
-<div class="center">
-<p><embed data-src="ex6_2.pdf"><br>
-</p>
-</div>
 </section>
 <section id="tests-of-hypotheses-about-mu_1-mu_2" class="frame">
 <h3>Tests of Hypotheses about <span class="math inline">\(\mu_1-\mu_2\)</span></h3>
@@ -603,7 +616,7 @@ Note carefully that the difference <span class="math inline">\(\bar{y}_1 - \bar{
 <p><strong><span style="color: blue">Confidence Interval for <span class="math inline">\(\mbox{\boldmath\)</span>_d<span class="math inline">\(}\)</span></span></strong><br>
 A <span class="math inline">\(100(1-\alpha)\%\)</span> confidence interval for <span class="math inline">\(\mu_d\)</span> is: <span class="math display">\[\bar{d}\ \pm\ t_{\alpha/2}\, \cdot s_d \, /\sqrt{n}\]</span> where <span class="math inline">\(t_{\alpha/2}\)</span> is the tabulated <span class="math inline">\(t\)</span> percentile based on <span class="math inline">\(n-1\)</span> df.</p>
 </div>
-<section id="example-2" class="frame">
+<section id="example-1" class="frame">
 <h3>Example</h3>
 <p>Pairs are animals from the same litter are randomly assigned two different rations. Observed weight gain for each animal is recorded. Test whether the population mean weight gains for the two rations are different. Use <span class="math inline">\(\alpha=.01\)</span>.<br>
 </p>
@@ -707,7 +720,7 @@ Since <span class="math inline">\(t_{.005,9} = 3.25\)</span>, R.R. is <span clas
 (3.25)(0.1701)\)</span> giving <span class="math inline">\((.10, 1.21)\)</span></p></li>
 </ul>
 </div>
-<section id="example-3" class="frame">
+<section id="example-2" class="frame">
 <h3>Example</h3>
 <p>An agricultural experiment station was interested in comparing the yields for two new varieties of corn. Because the investigators thought that there might be a great deal of variability in yield from one farm to another, each variety was randomly assigned to a different 1-acre plot on each of seven farms. The 1-acre plots were planted; the corn was harvested at maturity. The results of the experiment (in bushels of corn) are listed here.</p>
 </section>
@@ -1068,6 +1081,7 @@ less than <span class="math inline">\(.05\)</span>, we reject <span class="math 
   <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -1089,7 +1103,8 @@ less than <span class="math inline">\(.05\)</span>, we reject <span class="math 
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true,"board-marker-width":1},
 'smaller': true,
  
         // Display controls in the bottom right corner
@@ -1260,7 +1275,7 @@ less than <span class="math inline">\(.05\)</span>, we reject <span class="math 
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
           RevealNotes,
