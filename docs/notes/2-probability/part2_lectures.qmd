@@ -5,6 +5,9 @@ footer: Stat 801A
 format: 
   revealjs:
     smaller: true
+    chalkboard:
+      board-marker-width: 1
+  typst: default
 ---
 
 

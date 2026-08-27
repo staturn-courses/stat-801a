@@ -5,6 +5,11 @@ format:
   revealjs:
     smaller: true
     footer: "Stat 801A"
+    chalkboard:
+      board-marker-width: 1
+    incremental: true
+  typst: 
+    output-file: part1_lectures.pdf
     
 execute:
   echo: true
