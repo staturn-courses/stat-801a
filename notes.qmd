@@ -31,7 +31,7 @@ format:
 8/31/26 -- Lab 1
 
 - [R Script](labs/lab1/STAT_801A_Lab1.R)
-- Data: [cereal.xlsx](labs/lab1/cereal.xlsx) | [Student_data.csv](labs/lab1/Student_data.csv)
+- Data: [cereal.xlsx](labs/lab1/cereal.xlsx) | [Student_data.csv](https://raw.githubusercontent.com/staturn-courses/stat-801a/refs/heads/main/labs/lab1/Student_data.csv)
 
 
 9/7/26 -- No lab (Labor Day)
