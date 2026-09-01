@@ -1,0 +1,21 @@
+\frametitle{Continuous Random Variables}
+\protect\phantomsection\label{continuous-random-variables}
+When the population consists of a set of values in a continuous range
+the random variable defined on that population is called continuous
+random variable. The probability distribution of a continuous random
+variable is a smooth curve, and the area under the curve between
+specified values of the random value correspond to a probability.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{4}\NormalTok{,}\DecValTok{4}\NormalTok{, }\AttributeTok{l =} \DecValTok{1000}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x,}
+                     \AttributeTok{y =} \FunctionTok{dnorm}\NormalTok{(x))) }\SpecialCharTok{+}
+  \FunctionTok{geom\_path}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme\_void}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{part2_inclass_files/figure-beamer/unnamed-chunk-2-1.pdf}}
+\end{center}

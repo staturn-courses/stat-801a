@@ -16,6 +16,12 @@ format:
 
 **Course Notes**
 
+2 -- Probability
+
+- [Full Slides](notes/2-probability/part2_lectures.qmd)
+- [In-class Slides](notes/2-probability/part2_inclass.qmd)
+- [Z table](notes/2-probability/Ztable.pdf)
+
 1 -- Descriptive Statistics
 
 - [Slides](notes/1-descriptive-statistics/part1_lectures.qmd)

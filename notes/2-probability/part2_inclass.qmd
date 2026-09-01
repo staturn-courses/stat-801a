@@ -1,0 +1,516 @@
+---
+title: "Probability"
+subtitle: "Random Variables, Probability Distributions"
+format: 
+  revealjs:
+    smaller: true
+    footer: Stat 801A
+execute:
+  echo: true
+---
+
+## Sampling
+
+A [Simple Random Sample]{style="color: magenta"} (SRS) of size $n$ from a finite population is a subset selected in such a way that every subset of n elements is equally likely to be the one selected.
+
+## Random Variables
+
+A [random variable]{style="color: magenta"} is a function defined on a numeric population. We often say that this function value is the value assumed by the random variable. A probability distribution specifies the probabilities associated with all possible values the random variable can assume.
+
+## Example
+
+If $X$ represents the number of RED $M\&Ms$ in a vending machine size
+package, then perhaps [the probability distribution of
+$X$]{style="color: magenta"} is something like the following:\
+
+     $x$            5                6                7                8                9                10               11
+  ---------- ---------------- ---------------- ---------------- ---------------- ---------------- ---------------- ----------------
+   $P(X=x)$   $\frac{2}{28}$   $\frac{2}{28}$   $\frac{5}{28}$   $\frac{7}{28}$   $\frac{5}{28}$   $\frac{4}{28}$   $\frac{3}{28}$
+   
+---
+
+```{r}
+#| echo: false
+#| eval: true
+
+library(ggplot2)
+x <- 5:11
+tops <- c(2,2,5,7,5,4,3)/28
+ggplot(mapping = aes(x = x, y = tops)) + 
+  geom_col() + 
+  labs(x = 'x', y = 'P(X=x)') + 
+  theme_bw()
+```
+
+## Discrete Random Variables
+
+When the elements of a population consists of a countable discrete set of values the random variable defined on that population is called discrete random variable.
+
+Properties:
+
+- $0\leq P(X=x)$ for all x
+- $\sum_x P(X=x)=1$
+
+## Continuous Random Variables
+
+When the population consists of a set of values in a continuous range the random variable defined on that population is called continuous random variable. The probability distribution of a continuous random variable is a smooth curve, and the area under the curve between specified values of the random value correspond to a probability.
+
+```{r}
+#| fig-align: center
+#| echo: false
+x <- seq(-4,4, l = 1000)
+ggplot(mapping = aes(x = x,
+                     y = dnorm(x))) + 
+  geom_path() + 
+  theme_void()
+```
+
+## Continuous Random Variables
+
+Properties:
+
+- $0\leq f(x)$ for all $x$
+- $\int f(x) dx=1$
+
+## Continuous RV (example)
+
+Suppose that our population consists of all numbers in the interval (0,2) occurring with various frequencies as specified by $f(x)$.
+
+\
+\
+\
+\
+\
+
+
+- $P(1/2\leq X\leq 1/2)=$
+
+\
+\
+\
+
+- $P(0\leq X\leq 2)=$
+
+\
+\
+\
+
+
+- $P(1\leq X\leq 2)=$
+
+## Common Distributions
+
+For some interesting populations that occur naturally, theoretical probability distributions and associated random variables, have been defined.
+
+Discrete
+
+- Binomial
+- Poisson
+- Negative Binomial
+
+Continuous
+
+- Normal
+- Gamma
+- Chi squared
+- F 
+- t
+
+
+## Binomial Experiment
+
+A binomial experiment consists of taking $n$ successive SRS, each of size 1, replacing elements between draws, and counting the number of "successes" (S) obtained, $m$. The alternative is "failures" (F). 
+
+- $\pi=m/n$
+- $1-\pi=(N-m)/N$
+
+Let $X_i$ be the random variable that assumes the value of the outcome of the $i$-th draw for each $i=1,2,\dots,n$.
+
+## Binomial Distribution
+
+Let $X_i$ assume the value 1 if the outcome of the $i$-th draw is S or the value of 0 if the outcome is F. For a repeated process, $n$ random variables, $X_1,X_2,\dots,X_n$, are distributed as follows:
+
+   $x$         0        1
+---------- --------- -------
+ $P(X=x)$   $1-\pi$   $\pi$
+
+
+## Binomial Distribution (contd.)
+
+Now define a new random variable $Y$ so that 
+
+$$Y = X_1 + X_2 + X_3 + \cdots + X_n$$
+
+- $Y$ represents the number of "successes" for the $n$ random variables
+- $Y$ is said to be a binomial random variable.
+
+
+## Binomial Distribution (contd.)
+
+$$
+Y\sim \text{Binomial}(n,\pi);\quad y=1,2,\dots,n; \quad 0\lt \pi\lt 1
+$$
+
+\
+\
+\
+
+$P(Y=y)=$
+
+
+## Mean and Variance of a Discrete Random Variable
+
+- The [mean]{style="color: magenta"} of a discrete random variable $X$
+  is: $$E(X) = \mu = \sum_x\,x \cdot P(X=x)$$
+
+- The [variance]{style="color: magenta"} of a discrete random variable
+  $X$ is: $$V(X) = \sigma^2= \sum_x\,(x - E(X))^2\cdot \ P(X=x)$$
+
+- The [standard deviation]{style="color: magenta"} of a random variable
+  $X$ is $$\sqrt{V(X)}=\sigma$$
+
+## Mean and Variance of a Discrete Random Variable (contd.)
+
+- Using the previous formula, the [mean]{style="color: magenta"} of a
+  Binomial random variable $Y$, is shown to be $E(Y)=\mu = n \pi$
+
+- The [variance]{style="color: magenta"} is shown to be
+  $V(Y) =\sigma^2= n\pi(1 - \pi)$.
+
+- Thus the [standard deviation]{style="color: magenta"} of a Binomial
+  random variable is $\sigma= \sqrt{n\,\pi(1 - \pi)}$
+
+## Binomial Distribution: Example
+
+Consider a Binomial population where $Y\sim Bin(3,1/3)$. 
+
+- Mean:
+
+\
+\
+\
+
+- Variance:
+
+\
+\
+\
+
+- Standard Deviation:
+
+## Assumptions of the Binomial Model
+
+1.  $n$ identical trials are made.
+
+2.  Each trial results in either [Success($S$)]{style="color: green"} or
+    [Failure($F$)]{style="color: red"}. (only two possible outcomes).
+
+3.  The probability of success ($\pi$) remains the same from trial to
+    trial.
+
+4.  The trials are independent.
+
+5.  Interest is in the number of successes obtained in the $n$ trials.
+    The number is viewed as being the value assumed by a Binomial
+    ($n,\ \pi$) random variable $Y$.
+    
+## Binomial Distribution: R
+
+Let $Y\sim Bin(n,\pi)$
+
+- $P(Y=y)$ is given by `dbinom(x=y, size=n, prob=pi)`
+- $P(Y\leq y)$ is given by `pbinom(x=y, size=n, prob=pi)`
+    
+    
+## Mean and Variance of a Continuous Random Variable
+
+- The [mean]{style="color: magenta"} of a continuous random variable $X$
+  is: $$E(X) = \mu = \int_x\,x \cdot f(x) dx$$
+
+- The [variance]{style="color: magenta"} of a continuous random variable
+  $X$ is: $$V(X) = \sigma^2= \int_x\,(x - E(X))^2\cdot \ f(x) dx=E(X^2)-E(X)^2$$
+
+- The [standard deviation]{style="color: magenta"} of a random variable
+  $X$ is $$\sqrt{V(X)}=\sigma$$
+  
+## Normal Random Variable
+
+The Normal probability distribution is an example of a continuous distribution, and is defined in the interval $(-\infty,\infty)$. This is a bell-shaped distribution and is commonly used to model continuous data. 
+
+\
+
+$f(x)=$
+
+\
+
+where 
+
+- $E(X)=$
+
+\
+
+- $V(X)=$
+
+\
+
+- $\sqrt{V(X)}$=
+
+## Properties of the Normal Distribution
+
+- Symmetric about the mean $\mu$
+- Probabilities calculated as 
+
+$$
+P(a \leq X \leq b) = \frac{1}{\sqrt{2\pi}\sigma}\int_a^b e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2} dx
+$$
+
+## Standard Normal Distribution
+
+The standard normal distribution is a normal distribution with $\mu=0$ and $\sigma^2=1$, and is represented by the random variable $Z$. If $X\sim N(\mu,\sigma^2)$, then the following transformation converts $X$ into a standard normal random variable.
+
+$$
+Z=\frac{X-\mu}{\sigma}
+$$
+
+## Standard Normal Distribution
+
+If $X\sim N(0,1)$, then we can use a Z-table to compute areas under the curve. For example,
+
+$P(a\leq X\leq b)=$
+
+
+## Standard Normal Distribution: R
+
+We may also use R to compute probabilities for random variables that follow a normal distribution. While any $\mu$ and $\sigma$ can be selected, the default is $0$ and $1$, respectively.
+
+- `dnorm()`: computes $f(z)$
+- `pnorm()`: computes $p$ from $P(Z\leq z)=p$ for a specified $z$
+- `qnorm()`: computes $z$ from $P(Z\leq z)=p$ for a specified $p$
+
+## Standard Normal Distribution: Examples
+
+
+1.  $P(Z \geq 0) = P(Z \leq 0) = 0.50$
+
+```{r}
+1-pnorm(0); pnorm(0)
+```
+
+
+2.  $P(0 \leq Z \leq 0.12) =P(Z<0.12)-P(Z<0)=0.5478-0.5 = 0.0478$
+
+```{r}
+pnorm(0.12) - pnorm(0)
+```
+
+
+4. $P(-0.12 \leq Z \leq 0.12) = 2 \cdot P(0 \leq Z \leq 0.12) = 0.0956$
+
+```{r}
+pnorm(0.12) - pnorm(-0.12)
+```
+
+## Standard Normal Distribution: Examples
+
+1.  Find $z$ such that $P(0 \leq Z \leq z) = 0.4846$ 
+
+```{r}
+qnorm(p = (0.4846 + pnorm(0)))
+```
+
+
+2.  Find $z$ such that $P(z \leq Z \leq 0) = 0.2257$
+
+```{r}
+qnorm(p = -(0.2257 - pnorm(0)))
+```
+
+
+3.  Find $z$ such that $P(Z \geq z) = 0.011$
+
+```{r}
+qnorm(0.011, lower.tail = F)
+```
+
+## Normal Distribution
+
+Similar to the previous problems, if we know $\mu$ and $\sigma$, we can solve probability problems using the `mean` and `sd` arguments in the `xnorm()` functions.
+
+```{r}
+qnorm(0.975, mean = 5, sd = 0.2)
+```
+
+## Sampling Distribution of the Sample Mean $\bar{Y}$
+
+Define the Sample Mean as
+
+$$
+\bar{Y}=\frac1n\sum_{i=1}^n Y_i
+$$
+
+where $Y_1,Y_2,\dots,Y_n$ are taken independently from the population. That is, taking the sum of all of the values and dividing it by the count of values. Any function of $Y_1,Y_2,\dots,Y_n$ is a random variable, including $\bar{Y}$.
+
+## Properties of the Sample Mean $\bar{Y}$
+
+If $Y_1,Y_2,\dots,Y_n$ are each independently distributed from a normal distribution with mean $\mu$ and variance $\sigma^2$, then
+
+- $E(\bar{Y})=\mu$
+- $V(\bar{Y})=\sigma^2/n$
+
+Standard Error of the Mean: the standard deviation of $\bar{Y}$
+
+
+## Central Limit Theorem
+
+When sample size $n$ is large, the random variable $\bar{Y}$ is approximately normally distributed with mean $\mu$ and variance $\sigma^2/n$. That is, 
+
+$$
+\bar{Y}\approx N(\mu,\sigma^2/n)
+$$
+
+## Central Limit Theorem: Simulation
+
+Let's take $n=20$ and let $Y\sim N(50, 16)$. A single sample of size 20 from this population may look like the following:
+
+```{r}
+set.seed(313)
+y <- rnorm(n = 20, mean = 50, sd = sqrt(16))
+head(y)
+mean(y)
+var(y)
+sd(y)
+```
+
+## Central Limit Theorem: Simulation
+
+Let's say that we take many samples of size 20 from the population. We would expect $\bar{Y}$ to be approximately normal with mean 50 and variance 16/20 = 0.8.
+
+- `replicate()`: repeat an expression n times (different n from `rnorm`)
+- `apply()`: for each column (MARGIN = 2), apply the mean function
+
+```{r}
+many_samples <- replicate(n = 1000, rnorm(n = 20, mean = 50, sd = 3))
+y_bar <- apply(many_samples, MARGIN = 2, mean)
+hist(y_bar)
+```
+
+## Central Limit Theorem: Simulation
+
+Let's say that we take many samples of size 20 from the population. We would expect $\bar{Y}$ to be approximately normal with mean 50 and variance 16/20 = 0.8.
+
+- `replicate()`: repeat an expression n times (different n from `rnorm`)
+- `apply()`: for each column (MARGIN = 2), apply the mean function
+
+```{r}
+mean(y_bar)
+var(y_bar)
+sd(y_bar)
+```
+
+
+## Central Limit Theorem: Example
+
+Suppose that you are estimating the average weight of sheep in a large herd. You obtain a random sample of size $n=50$, and can assume that $\mu=40$ and $\sigma^2=4$. What is the probability that the sample mean will be within 0.1 pounds of $\mu$?
+
+$$
+\bar{Y}\approx 
+$$
+
+## Central Limit Theorem: Example
+
+$$
+P(39.9\leq \bar{Y} \leq 40.1)
+$$
+**Standard Normal Distribution**
+
+```{r}
+pnorm((40.1-40) / sqrt(4/50)) - pnorm((39.9-40) / sqrt(4/50))
+```
+
+**Normal Distribution**
+
+```{r}
+pnorm(40.1, mean = 40, sd = sqrt(4/50)) - pnorm(39.9, mean = 40, sd = sqrt(4/50)) 
+```
+
+## Poisson Distribution
+
+Poisson distribution is used to model the number of occurrences of “rare” events in certain intervals of time and space. A Poisson random variable is a discrete random variable as it represents a count.
+
+$$
+P(X=x)=\frac{e^{-\lambda}\lambda^x}{x!}; \quad x=0,1,2,3,\dots
+$$
+
+where $\lambda$ is the mean parameter and represents the expected number of events occurring in the interval of interest.
+
+## Poisson Distribution Examples
+
+- $X$ = \# of alpha particles emitted from a polonium bar in an 8 minute
+  period\
+
+- $Y$ = \# of flaws on a standard size piece of manufactured product
+  (e.g., 100m coaxial cable, 100 sq.meter plastic sheeting)\
+
+- $Z$ = \# of hits on a web page in a 24h period
+
+## Poisson Distribution Properties 
+
+Let $X\sim Poi(\lambda)$.
+
+- E(X) = 
+
+\
+\
+\
+
+- V(X) = 
+
+\
+\
+\
+
+- If $X_i\sim Poi(\lambda)$ for $i=1,2,\dots,n$, then $\sum_{i=1}^n X_i \sim Poi(n\lambda)$
+
+
+## Poisson Distribution: R
+
+Let $X\sim Poi(\lambda)$.
+
+- $P(X = x)$: `dpois(x=x, lambda=lambda)`
+
+\
+\
+\
+
+- $P(X \leq x)$: `ppois(x=x, lambda=lambda)`
+
+
+## Example problems
+
+Let $\mu=10$ and $n=30$. When required, assume that $\sigma^2=4$. Compute each of the following problems for the Binomial, Normal, and Poisson distributions, as well as for $\bar{Y}$.
+
+- $P(X\leq 4)$
+- $P(X\lt 4)$
+- $P(12\leq X \leq 24)$
+- $x$ such that $P(X\leq x)=0.025$
+- $x$ such that $P(X>x)=0.975$ 
+
+
+## Extra Mean/Variance Properties
+
+- $E(X)=\int_x x\cdotf(x) dx$
+
+\
+
+- $E(aX + B) = aE(X)+b$
+
+\
+
+- $V(X)=E((X-\mu)^2)=E(X^2)-E(X)^2$
+
+\
+
+- $V(aX + B)=a^2V(X)$ 
+
+
+

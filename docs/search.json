@@ -469,6 +469,314 @@
     "text": "Using Confidence Intervals to Test Hypotheses - cont.\n\nFor a two-tailed test, the confidence interval should be based on the same \\(\\alpha\\) as the test to make this inference.\n\nIn summary,\n\nTo test \\(H_0: \\mu \\leq \\mu_0, \\quad H_a: \\mu &gt; \\mu_0\\), at level \\(\\alpha/2\\), use a 100(1-\\(\\alpha\\))% confidence interval.\nTo test \\(H_0: \\mu \\geq \\mu_0, \\quad H_a: \\mu &lt; \\mu_0\\), at level \\(\\alpha/2\\), use a 100(1-\\(\\alpha\\))% confidence interval.\n\\(H_0: \\mu = \\mu_0, \\quad H_a: \\mu \\neq \\mu_0\\), at level \\(\\alpha\\), use a 100(1-\\(\\alpha\\))% confidence interval."
   },
   {
+    "objectID": "notes/2-probability/part2_inclass.html#sampling",
+    "href": "notes/2-probability/part2_inclass.html#sampling",
+    "title": "Probability",
+    "section": "Sampling",
+    "text": "Sampling\nA Simple Random Sample (SRS) of size \\(n\\) from a finite population is a subset selected in such a way that every subset of n elements is equally likely to be the one selected."
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#random-variables",
+    "href": "notes/2-probability/part2_inclass.html#random-variables",
+    "title": "Probability",
+    "section": "Random Variables",
+    "text": "Random Variables\nA random variable is a function defined on a numeric population. We often say that this function value is the value assumed by the random variable. A probability distribution specifies the probabilities associated with all possible values the random variable can assume."
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#example",
+    "href": "notes/2-probability/part2_inclass.html#example",
+    "title": "Probability",
+    "section": "Example",
+    "text": "Example\nIf \\(X\\) represents the number of RED \\(M\\&Ms\\) in a vending machine size package, then perhaps the probability distribution of \\(X\\) is something like the following:\n\n\n\n\n\\(x\\)\n5\n6\n7\n8\n9\n10\n11\n\n\n\n\n\\(P(X=x)\\)\n\\(\\frac{2}{28}\\)\n\\(\\frac{2}{28}\\)\n\\(\\frac{5}{28}\\)\n\\(\\frac{7}{28}\\)\n\\(\\frac{5}{28}\\)\n\\(\\frac{4}{28}\\)\n\\(\\frac{3}{28}\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#discrete-random-variables",
+    "href": "notes/2-probability/part2_inclass.html#discrete-random-variables",
+    "title": "Probability",
+    "section": "Discrete Random Variables",
+    "text": "Discrete Random Variables\nWhen the elements of a population consists of a countable discrete set of values the random variable defined on that population is called discrete random variable.\nProperties:\n\n\\(0\\leq P(X=x)\\) for all x\n\\(\\sum_x P(X=x)=1\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#continuous-random-variables",
+    "href": "notes/2-probability/part2_inclass.html#continuous-random-variables",
+    "title": "Probability",
+    "section": "Continuous Random Variables",
+    "text": "Continuous Random Variables\nWhen the population consists of a set of values in a continuous range the random variable defined on that population is called continuous random variable. The probability distribution of a continuous random variable is a smooth curve, and the area under the curve between specified values of the random value correspond to a probability."
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#continuous-random-variables-1",
+    "href": "notes/2-probability/part2_inclass.html#continuous-random-variables-1",
+    "title": "Probability",
+    "section": "Continuous Random Variables",
+    "text": "Continuous Random Variables\nProperties:\n\n\\(0\\leq f(x)\\) for all \\(x\\)\n\\(\\int f(x) dx=1\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#continuous-rv-example",
+    "href": "notes/2-probability/part2_inclass.html#continuous-rv-example",
+    "title": "Probability",
+    "section": "Continuous RV (example)",
+    "text": "Continuous RV (example)\nSuppose that our population consists of all numbers in the interval (0,2) occurring with various frequencies as specified by \\(f(x)\\).\n\n\n\n\n\n\n\n\\(P(1/2\\leq X\\leq 1/2)=\\)\n\n\n\n\n\n\n\\(P(0\\leq X\\leq 2)=\\)\n\n\n\n\n\n\n\\(P(1\\leq X\\leq 2)=\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#common-distributions",
+    "href": "notes/2-probability/part2_inclass.html#common-distributions",
+    "title": "Probability",
+    "section": "Common Distributions",
+    "text": "Common Distributions\nFor some interesting populations that occur naturally, theoretical probability distributions and associated random variables, have been defined.\nDiscrete\n\nBinomial\nPoisson\nNegative Binomial\n\nContinuous\n\nNormal\nGamma\nChi squared\nF\nt"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#binomial-experiment",
+    "href": "notes/2-probability/part2_inclass.html#binomial-experiment",
+    "title": "Probability",
+    "section": "Binomial Experiment",
+    "text": "Binomial Experiment\nA binomial experiment consists of taking \\(n\\) successive SRS, each of size 1, replacing elements between draws, and counting the number of “successes” (S) obtained, \\(m\\). The alternative is “failures” (F).\n\n\\(\\pi=m/n\\)\n\\(1-\\pi=(N-m)/N\\)\n\nLet \\(X_i\\) be the random variable that assumes the value of the outcome of the \\(i\\)-th draw for each \\(i=1,2,\\dots,n\\)."
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#binomial-distribution",
+    "href": "notes/2-probability/part2_inclass.html#binomial-distribution",
+    "title": "Probability",
+    "section": "Binomial Distribution",
+    "text": "Binomial Distribution\nLet \\(X_i\\) assume the value 1 if the outcome of the \\(i\\)-th draw is S or the value of 0 if the outcome is F. For a repeated process, \\(n\\) random variables, \\(X_1,X_2,\\dots,X_n\\), are distributed as follows:\n\n\n\n\\(x\\)\n0\n1\n\n\n\n\n\\(P(X=x)\\)\n\\(1-\\pi\\)\n\\(\\pi\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#binomial-distribution-contd.",
+    "href": "notes/2-probability/part2_inclass.html#binomial-distribution-contd.",
+    "title": "Probability",
+    "section": "Binomial Distribution (contd.)",
+    "text": "Binomial Distribution (contd.)\nNow define a new random variable \\(Y\\) so that\n\\[Y = X_1 + X_2 + X_3 + \\cdots + X_n\\]\n\n\\(Y\\) represents the number of “successes” for the \\(n\\) random variables\n\\(Y\\) is said to be a binomial random variable."
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#binomial-distribution-contd.-1",
+    "href": "notes/2-probability/part2_inclass.html#binomial-distribution-contd.-1",
+    "title": "Probability",
+    "section": "Binomial Distribution (contd.)",
+    "text": "Binomial Distribution (contd.)\n\\[\nY\\sim \\text{Binomial}(n,\\pi);\\quad y=1,2,\\dots,n; \\quad 0\\lt \\pi\\lt 1\n\\]\n\n\n\n\n\\(P(Y=y)=\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#mean-and-variance-of-a-discrete-random-variable",
+    "href": "notes/2-probability/part2_inclass.html#mean-and-variance-of-a-discrete-random-variable",
+    "title": "Probability",
+    "section": "Mean and Variance of a Discrete Random Variable",
+    "text": "Mean and Variance of a Discrete Random Variable\n\nThe mean of a discrete random variable \\(X\\) is: \\[E(X) = \\mu = \\sum_x\\,x \\cdot P(X=x)\\]\nThe variance of a discrete random variable \\(X\\) is: \\[V(X) = \\sigma^2= \\sum_x\\,(x - E(X))^2\\cdot \\ P(X=x)\\]\nThe standard deviation of a random variable \\(X\\) is \\[\\sqrt{V(X)}=\\sigma\\]"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#mean-and-variance-of-a-discrete-random-variable-contd.",
+    "href": "notes/2-probability/part2_inclass.html#mean-and-variance-of-a-discrete-random-variable-contd.",
+    "title": "Probability",
+    "section": "Mean and Variance of a Discrete Random Variable (contd.)",
+    "text": "Mean and Variance of a Discrete Random Variable (contd.)\n\nUsing the previous formula, the mean of a Binomial random variable \\(Y\\), is shown to be \\(E(Y)=\\mu = n \\pi\\)\nThe variance is shown to be \\(V(Y) =\\sigma^2= n\\pi(1 - \\pi)\\).\nThus the standard deviation of a Binomial random variable is \\(\\sigma= \\sqrt{n\\,\\pi(1 - \\pi)}\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#binomial-distribution-example",
+    "href": "notes/2-probability/part2_inclass.html#binomial-distribution-example",
+    "title": "Probability",
+    "section": "Binomial Distribution: Example",
+    "text": "Binomial Distribution: Example\nConsider a Binomial population where \\(Y\\sim Bin(3,1/3)\\).\n\nMean:\n\n\n\n\n\n\nVariance:\n\n\n\n\n\n\nStandard Deviation:"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#assumptions-of-the-binomial-model",
+    "href": "notes/2-probability/part2_inclass.html#assumptions-of-the-binomial-model",
+    "title": "Probability",
+    "section": "Assumptions of the Binomial Model",
+    "text": "Assumptions of the Binomial Model\n\n\\(n\\) identical trials are made.\nEach trial results in either Success(\\(S\\)) or Failure(\\(F\\)). (only two possible outcomes).\nThe probability of success (\\(\\pi\\)) remains the same from trial to trial.\nThe trials are independent.\nInterest is in the number of successes obtained in the \\(n\\) trials. The number is viewed as being the value assumed by a Binomial (\\(n,\\ \\pi\\)) random variable \\(Y\\)."
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#binomial-distribution-r",
+    "href": "notes/2-probability/part2_inclass.html#binomial-distribution-r",
+    "title": "Probability",
+    "section": "Binomial Distribution: R",
+    "text": "Binomial Distribution: R\nLet \\(Y\\sim Bin(n,\\pi)\\)\n\n\\(P(Y=y)\\) is given by dbinom(x=y, size=n, prob=pi)\n\\(P(Y\\leq y)\\) is given by pbinom(x=y, size=n, prob=pi)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#mean-and-variance-of-a-continuous-random-variable",
+    "href": "notes/2-probability/part2_inclass.html#mean-and-variance-of-a-continuous-random-variable",
+    "title": "Probability",
+    "section": "Mean and Variance of a Continuous Random Variable",
+    "text": "Mean and Variance of a Continuous Random Variable\n\nThe mean of a continuous random variable \\(X\\) is: \\[E(X) = \\mu = \\int_x\\,x \\cdot f(x) dx\\]\nThe variance of a continuous random variable \\(X\\) is: \\[V(X) = \\sigma^2= \\int_x\\,(x - E(X))^2\\cdot \\ f(x) dx=E(X^2)-E(X)^2\\]\nThe standard deviation of a random variable \\(X\\) is \\[\\sqrt{V(X)}=\\sigma\\]"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#normal-random-variable",
+    "href": "notes/2-probability/part2_inclass.html#normal-random-variable",
+    "title": "Probability",
+    "section": "Normal Random Variable",
+    "text": "Normal Random Variable\nThe Normal probability distribution is an example of a continuous distribution, and is defined in the interval \\((-\\infty,\\infty)\\). This is a bell-shaped distribution and is commonly used to model continuous data.\n\n\n\\(f(x)=\\)\n\n\nwhere\n\n\\(E(X)=\\)\n\n\n\n\n\\(V(X)=\\)\n\n\n\n\n\\(\\sqrt{V(X)}\\)="
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#properties-of-the-normal-distribution",
+    "href": "notes/2-probability/part2_inclass.html#properties-of-the-normal-distribution",
+    "title": "Probability",
+    "section": "Properties of the Normal Distribution",
+    "text": "Properties of the Normal Distribution\n\nSymmetric about the mean \\(\\mu\\)\nProbabilities calculated as\n\n\\[\nP(a \\leq X \\leq b) = \\frac{1}{\\sqrt{2\\pi}\\sigma}\\int_a^b e^{-\\frac{1}{2}(\\frac{x-\\mu}{\\sigma})^2} dx\n\\]"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#standard-normal-distribution",
+    "href": "notes/2-probability/part2_inclass.html#standard-normal-distribution",
+    "title": "Probability",
+    "section": "Standard Normal Distribution",
+    "text": "Standard Normal Distribution\nThe standard normal distribution is a normal distribution with \\(\\mu=0\\) and \\(\\sigma^2=1\\), and is represented by the random variable \\(Z\\). If \\(X\\sim N(\\mu,\\sigma^2)\\), then the following transformation converts \\(X\\) into a standard normal random variable.\n\\[\nZ=\\frac{X-\\mu}{\\sigma}\n\\]"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#standard-normal-distribution-1",
+    "href": "notes/2-probability/part2_inclass.html#standard-normal-distribution-1",
+    "title": "Probability",
+    "section": "Standard Normal Distribution",
+    "text": "Standard Normal Distribution\nIf \\(X\\sim N(0,\\sigma^2)\\), then we can use a Z-table to compute areas under the curve. For example,\n\\(P(a\\leq X\\leq b)=\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#standard-normal-distribution-r",
+    "href": "notes/2-probability/part2_inclass.html#standard-normal-distribution-r",
+    "title": "Probability",
+    "section": "Standard Normal Distribution: R",
+    "text": "Standard Normal Distribution: R\nWe may also use R to compute probabilities for random variables that follow a normal distribution. While any \\(\\mu\\) and \\(\\sigma\\) can be selected, the default is \\(0\\) and \\(1\\), respectively.\n\ndnorm(): computes \\(f(z)\\)\npnorm(): computes \\(p\\) from \\(P(Z\\leq z)=p\\) for a specified \\(z\\)\nqnorm(): computes \\(z\\) from \\(P(Z\\leq z)=p\\) for a specified \\(p\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#standard-normal-distribution-examples",
+    "href": "notes/2-probability/part2_inclass.html#standard-normal-distribution-examples",
+    "title": "Probability",
+    "section": "Standard Normal Distribution: Examples",
+    "text": "Standard Normal Distribution: Examples\n\n\\(P(Z \\geq 0) = P(Z \\leq 0) = 0.50\\)\n\n\n1-pnorm(0); pnorm(0)\n\n[1] 0.5\n\n\n[1] 0.5\n\n\n\n\\(P(0 \\leq Z \\leq 0.12) =P(Z&lt;0.12)-P(Z&lt;0)=0.5478-0.5 = 0.0478\\)\n\n\npnorm(0.12) - pnorm(0)\n\n[1] 0.04775843\n\n\n\n\\(P(-0.12 \\leq Z \\leq 0.12) = 2 \\cdot P(0 \\leq Z \\leq 0.12) = 0.0956\\)\n\n\npnorm(0.12) - pnorm(-0.12)\n\n[1] 0.09551685"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#standard-normal-distribution-examples-1",
+    "href": "notes/2-probability/part2_inclass.html#standard-normal-distribution-examples-1",
+    "title": "Probability",
+    "section": "Standard Normal Distribution: Examples",
+    "text": "Standard Normal Distribution: Examples\n\nFind \\(z\\) such that \\(P(0 \\leq Z \\leq z) = 0.4846\\)\n\n\nqnorm(p = (0.4846 + pnorm(0)))\n\n[1] 2.159647\n\n\n\nFind \\(z\\) such that \\(P(z \\leq Z \\leq 0) = 0.2257\\)\n\n\nqnorm(p = -(0.2257 - pnorm(0)))\n\n[1] -0.5998593\n\n\n\nFind \\(z\\) such that \\(P(Z \\geq z) = 0.011\\)\n\n\nqnorm(0.011, lower.tail = F)\n\n[1] 2.290368"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#normal-distribution",
+    "href": "notes/2-probability/part2_inclass.html#normal-distribution",
+    "title": "Probability",
+    "section": "Normal Distribution",
+    "text": "Normal Distribution\nSimilar to the previous problems, if we know \\(\\mu\\) and \\(\\sigma\\), we can solve probability problems using the mean and sd arguments in the xnorm() functions.\n\nqnorm(0.975, mean = 5, sd = 0.2)\n\n[1] 5.391993"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#sampling-distribution-of-the-sample-mean-bary",
+    "href": "notes/2-probability/part2_inclass.html#sampling-distribution-of-the-sample-mean-bary",
+    "title": "Probability",
+    "section": "Sampling Distribution of the Sample Mean \\(\\bar{Y}\\)",
+    "text": "Sampling Distribution of the Sample Mean \\(\\bar{Y}\\)\nDefine the Sample Mean as\n\\[\n\\bar{Y}=\\frac1n\\sum_{i=1}^n Y_i\n\\]\nwhere \\(Y_1,Y_2,\\dots,Y_n\\) are taken independently from the population. That is, taking the sum of all of the values and dividing it by the count of values. Any function of \\(Y_1,Y_2,\\dots,Y_n\\) is a random variable, including \\(\\bar{Y}\\)."
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#properties-of-the-sample-mean-bary",
+    "href": "notes/2-probability/part2_inclass.html#properties-of-the-sample-mean-bary",
+    "title": "Probability",
+    "section": "Properties of the Sample Mean \\(\\bar{Y}\\)",
+    "text": "Properties of the Sample Mean \\(\\bar{Y}\\)\nIf \\(Y_1,Y_2,\\dots,Y_n\\) are each independently distributed from a normal distribution with mean \\(\\mu\\) and variance \\(\\sigma^2\\), then\n\n\\(E(\\bar{Y})=\\mu\\)\n\\(V(\\bar{Y})=\\sigma^2/n\\)\n\nStandard Error of the Mean: the standard deviation of \\(\\bar{Y}\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#central-limit-theorem",
+    "href": "notes/2-probability/part2_inclass.html#central-limit-theorem",
+    "title": "Probability",
+    "section": "Central Limit Theorem",
+    "text": "Central Limit Theorem\nWhen sample size \\(n\\) is large, the random variable \\(\\bar{Y}\\) is approximately normally distributed with mean \\(\\mu\\) and variance \\(\\sigma^2/n\\). That is,\n\\[\n\\bar{Y}\\approx N(\\mu,\\sigma^2/n)\n\\]"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#central-limit-theorem-simulation",
+    "href": "notes/2-probability/part2_inclass.html#central-limit-theorem-simulation",
+    "title": "Probability",
+    "section": "Central Limit Theorem: Simulation",
+    "text": "Central Limit Theorem: Simulation\nLet’s take \\(n=20\\) and let \\(Y\\sim N(50, 16)\\). A single sample of size 20 from this population may look like the following:\n\nset.seed(313)\ny &lt;- rnorm(n = 20, mean = 50, sd = sqrt(16))\nhead(y)\n\n[1] 49.99007 52.82391 53.15559 45.64610 53.38200 51.13121\n\nmean(y)\n\n[1] 50.0067\n\nvar(y)\n\n[1] 10.63239\n\nsd(y)\n\n[1] 3.260734"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#central-limit-theorem-simulation-1",
+    "href": "notes/2-probability/part2_inclass.html#central-limit-theorem-simulation-1",
+    "title": "Probability",
+    "section": "Central Limit Theorem: Simulation",
+    "text": "Central Limit Theorem: Simulation\nLet’s say that we take many samples of size 20 from the population. We would expect \\(\\bar{Y}\\) to be approximately normal with mean 50 and variance 16/20 = 0.8.\n\nreplicate(): repeat an expression n times (different n from rnorm)\napply(): for each column (MARGIN = 2), apply the mean function\n\n\nmany_samples &lt;- replicate(n = 1000, rnorm(n = 20, mean = 50, sd = 3))\ny_bar &lt;- apply(many_samples, MARGIN = 2, mean)\nhist(y_bar)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#central-limit-theorem-simulation-2",
+    "href": "notes/2-probability/part2_inclass.html#central-limit-theorem-simulation-2",
+    "title": "Probability",
+    "section": "Central Limit Theorem: Simulation",
+    "text": "Central Limit Theorem: Simulation\nLet’s say that we take many samples of size 20 from the population. We would expect \\(\\bar{Y}\\) to be approximately normal with mean 50 and variance 16/20 = 0.8.\n\nreplicate(): repeat an expression n times (different n from rnorm)\napply(): for each column (MARGIN = 2), apply the mean function\n\n\nmean(y_bar)\n\n[1] 49.97217\n\nvar(y_bar)\n\n[1] 0.4365369\n\nsd(y_bar)\n\n[1] 0.6607094"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#central-limit-theorem-example",
+    "href": "notes/2-probability/part2_inclass.html#central-limit-theorem-example",
+    "title": "Probability",
+    "section": "Central Limit Theorem: Example",
+    "text": "Central Limit Theorem: Example\nSuppose that you are estimating the average weight of sheep in a large herd. You obtain a random sample of size \\(n=50\\), and can assume that \\(\\mu=40\\) and \\(\\sigma^2=4\\). What is the probability that the sample mean will be within 0.1 pounds of \\(\\mu\\)?\n\\[\n\\bar{Y}\\approx\n\\]"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#central-limit-theorem-example-1",
+    "href": "notes/2-probability/part2_inclass.html#central-limit-theorem-example-1",
+    "title": "Probability",
+    "section": "Central Limit Theorem: Example",
+    "text": "Central Limit Theorem: Example\n\\[\nP(39.9\\leq \\bar{Y} \\leq 40.1)\n\\] Standard Normal Distribution\n\npnorm((40.1-40) / sqrt(4/50)) - pnorm((39.9-40) / sqrt(4/50))\n\n[1] 0.2763264\n\n\nNormal Distribution\n\npnorm(40.1, mean = 40, sd = sqrt(4/50)) - pnorm(39.9, mean = 40, sd = sqrt(4/50)) \n\n[1] 0.2763264"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#poisson-distribution",
+    "href": "notes/2-probability/part2_inclass.html#poisson-distribution",
+    "title": "Probability",
+    "section": "Poisson Distribution",
+    "text": "Poisson Distribution\nPoisson distribution is used to model the number of occurrences of “rare” events in certain intervals of time and space. A Poisson random variable is a discrete random variable as it represents a count.\n\\[\nP(X=x)=\\frac{e^{-\\lambda}\\lambda^x}{x!}; \\quad x=0,1,2,3,\\dots\n\\]\nwhere \\(\\lambda\\) is the mean parameter and represents the expected number of events occurring in the interval of interest."
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#poisson-distribution-examples",
+    "href": "notes/2-probability/part2_inclass.html#poisson-distribution-examples",
+    "title": "Probability",
+    "section": "Poisson Distribution Examples",
+    "text": "Poisson Distribution Examples\n\n\\(X\\) = # of alpha particles emitted from a polonium bar in an 8 minute period\n\n\\(Y\\) = # of flaws on a standard size piece of manufactured product (e.g., 100m coaxial cable, 100 sq.meter plastic sheeting)\n\n\\(Z\\) = # of hits on a web page in a 24h period"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#poisson-distribution-properties",
+    "href": "notes/2-probability/part2_inclass.html#poisson-distribution-properties",
+    "title": "Probability",
+    "section": "Poisson Distribution Properties",
+    "text": "Poisson Distribution Properties\nLet \\(X\\sim Poi(\\lambda)\\).\n\nE(X) =\n\n\n\n\n\n\nV(X) =\n\n\n\n\n\n\nIf \\(X_i\\sim Poi(\\lambda)\\) for \\(i=1,2,\\dots,n\\), then \\(\\sum_{i=1}^n X_i \\sim Poi(n\\lambda)\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#poisson-distribution-r",
+    "href": "notes/2-probability/part2_inclass.html#poisson-distribution-r",
+    "title": "Probability",
+    "section": "Poisson Distribution: R",
+    "text": "Poisson Distribution: R\nLet \\(X\\sim Poi(\\lambda)\\).\n\n\\(P(X = x)\\): dpois(x=x, lambda=lambda)\n\n\n\n\n\n\n\\(P(X \\leq x)\\): ppois(x=x, lambda=lambda)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#example-problems",
+    "href": "notes/2-probability/part2_inclass.html#example-problems",
+    "title": "Probability",
+    "section": "Example problems",
+    "text": "Example problems\nLet \\(\\mu=10\\) and \\(n=30\\). When required, approximate \\(\\sigma^2\\) using the variance formula of the Binomial distribution. Compute each of the following problems for the Binomial, Normal, and Poisson distributions, as well as for \\(\\bar{Y}\\).\n\n\\(P(X\\leq 4)\\)\n\\(P(X\\lt 4)\\)\n\\(P(12\\leq X \\leq 24)\\)\n\\(x\\) such that \\(P(X\\leq x)=0.025\\)\n\\(x\\) such that \\(P(X&gt;x)=0.0975\\)"
+  },
+  {
+    "objectID": "notes/2-probability/part2_inclass.html#extra-meanvariance-properties",
+    "href": "notes/2-probability/part2_inclass.html#extra-meanvariance-properties",
+    "title": "Probability",
+    "section": "Extra Mean/Variance Properties",
+    "text": "Extra Mean/Variance Properties\n\n\\(E(X)=\\int_x x\\cdotf(x) dx\\)\n\n\n\n\n\\(E(aX + B) = aE(X)+b\\)\n\n\n\n\n\\(V(X)=E((X-\\mu)^2)=E(X^2)-E(X)^2\\)\n\n\n\n\n\\(V(aX + B)=a^2V(X)\\)"
+  },
+  {
+    "objectID": "notes.html",
+    "href": "notes.html",
+    "title": "STAT 801A",
+    "section": "",
+    "text": "Stat 801A Syllabus\n\n\n\nCourse Notes\n2 – Probability\n\nFull Slides\nIn-class Slides\nZ table\n\n1 – Descriptive Statistics\n\nSlides\npdf\n\n\nLabs\n8/31/26 – Lab 1\n\nR Script\nData: cereal.xlsx | Student_data.csv\n\n9/7/26 – No lab (Labor Day)\n9/14/26 – Lab 2\n9/28/26 – Lab 3\n10/5/26 – Lab 4\n10/12/26 – Lab 5\n10/19/26 – No lab (Fall break)\n10/26/26 – Lab 6\n11/2/26 – Lab 7\n11/9/26 – Lab 8\n11/16/26 – Lab 9\n11/23/26 – No lab\n11/30/26 – Lab 10\n12/7/26 – Lab 11\n12/14/26 – No lab"
+  },
+  {
+    "objectID": "canvas.html",
+    "href": "canvas.html",
+    "title": "STAT 801A",
+    "section": "",
+    "text": "Canvas is used for the following:\n\nDiscussion/message board\nOnline quizzes\nSubmitting assignments/projects/tests\nChecking final course grades\n\nAll other material can be found on this webpage. If you wish to email me instead of using Canvas, please include your course number in the subject line."
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "STAT 801A",
+    "section": "",
+    "text": "Unless otherwise stated, all assignments are due by 5 p.m. on Canvas.\n\n\n\nProject\nDue date\nData\nSolutions\nNotes\n\n\n\n\nProject 1"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STAT 801A",
+    "section": "",
+    "text": "This website is open to my students in the University of Nebraska-Lincoln’s STAT 801A course.\nCourse description: Statistical concepts and statistical methodology useful in descriptive, experimental, and analytical study of biological and other natural phenomena. Practical application of statistics rather than on statistical theory."
+  },
+  {
     "objectID": "notes/1-descriptive-statistics/part1_lectures.html#what-is-statistics",
     "href": "notes/1-descriptive-statistics/part1_lectures.html#what-is-statistics",
     "title": "What is Statistics?",
@@ -840,34 +1148,6 @@
     "text": "Example - Which measure of location should be used?\n\n\nmean(x)\n\n[1] 1.177316\n\nmedian(x)\n\n[1] 0.9064152"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "STAT 801A",
-    "section": "",
-    "text": "This website is open to my students in the University of Nebraska-Lincoln’s STAT 801A course.\nCourse description: Statistical concepts and statistical methodology useful in descriptive, experimental, and analytical study of biological and other natural phenomena. Practical application of statistics rather than on statistical theory."
-  },
-  {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "STAT 801A",
-    "section": "",
-    "text": "Unless otherwise stated, all assignments are due by 5 p.m. on Canvas.\n\n\n\nProject\nDue date\nData\nSolutions\nNotes\n\n\n\n\nProject 1"
-  },
-  {
-    "objectID": "canvas.html",
-    "href": "canvas.html",
-    "title": "STAT 801A",
-    "section": "",
-    "text": "Canvas is used for the following:\n\nDiscussion/message board\nOnline quizzes\nSubmitting assignments/projects/tests\nChecking final course grades\n\nAll other material can be found on this webpage. If you wish to email me instead of using Canvas, please include your course number in the subject line."
-  },
-  {
-    "objectID": "notes.html",
-    "href": "notes.html",
-    "title": "STAT 801A",
-    "section": "",
-    "text": "Stat 801A Syllabus\n\n\n\nCourse Notes\n1 – Descriptive Statistics\n\nSlides\npdf\n\n\nLabs\n8/31/26 – Lab 1\n\nR Script\nData: cereal.xlsx | Student_data.csv\n\n9/7/26 – No lab (Labor Day)\n9/14/26 – Lab 2\n9/28/26 – Lab 3\n10/5/26 – Lab 4\n10/12/26 – Lab 5\n10/19/26 – No lab (Fall break)\n10/26/26 – Lab 6\n11/2/26 – Lab 7\n11/9/26 – Lab 8\n11/16/26 – Lab 9\n11/23/26 – No lab\n11/30/26 – Lab 10\n12/7/26 – Lab 11\n12/14/26 – No lab"
-  },
-  {
     "objectID": "notes/2-probability/part2_lectures.html#population-versus-sample",
     "href": "notes/2-probability/part2_lectures.html#population-versus-sample",
     "title": "Probability",
@@ -1173,7 +1453,7 @@
     "href": "notes/2-probability/part2_lectures.html#examples-using-the-standard-normal-probabilities-table",
     "title": "Probability",
     "section": "Examples: Using the Standard Normal Probabilities table",
-    "text": "Examples: Using the Standard Normal Probabilities table\n\n\\(P(Z \\geq 0) = P(Z \\leq 0) = 0.50\\)\n\\(P(0 \\leq Z \\leq 0.12) \\equiv P(0 &lt; Z &lt; 0.12) \\hspace*{1.5in}=P(Z&lt;0.12)-P(Z&lt;0)=0.5478-0.5 = 0.0478\\)\n\\(P(-0.12 \\leq Z \\leq 0) =P(Z&lt;0)-P(Z&lt;-0.12)\n= 0.5-.4522=0.0478\\)\n\\(P(-0.12 \\leq Z \\leq 0.12) = 2 \\cdot P(0 \\leq Z \\leq 0.12) = 0.0956\\)\n\\(P(0 \\leq Z \\leq 3) = 0.9987-0.5=0.4987\\)\n\\(P(1 \\leq Z \\leq 3 ) = P(Z \\leq 3)- P(Z \\leq 1) = 0.9987 - 0.8413 \\hspace*{1in}=0.1574\\)"
+    "text": "Examples: Using the Standard Normal Probabilities table\n\n\\(P(Z \\geq 0) = P(Z \\leq 0) = 0.50\\)\n\\(P(0 \\leq Z \\leq 0.12) =P(Z&lt;0.12)-P(Z&lt;0)=0.5478-0.5 = 0.0478\\)\n\\(P(-0.12 \\leq Z \\leq 0) =P(Z&lt;0)-P(Z&lt;-0.12)= 0.5-.4522=0.0478\\)\n\\(P(-0.12 \\leq Z \\leq 0.12) = 2 \\cdot P(0 \\leq Z \\leq 0.12) = 0.0956\\)\n\\(P(0 \\leq Z \\leq 3) = 0.9987-0.5=0.4987\\)\n\\(P(1 \\leq Z \\leq 3 ) = P(Z \\leq 3)- P(Z \\leq 1) = 0.9987 - 0.8413=0.1574\\)"
   },
   {
     "objectID": "notes/2-probability/part2_lectures.html#examples-using-the-standard-normal-probabilities-table-1",
