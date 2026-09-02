@@ -21,6 +21,7 @@ format:
 - [Full Slides](notes/2-probability/part2_lectures.qmd)
 - [In-class Slides](notes/2-probability/part2_inclass.qmd)
 - [Z table](notes/2-probability/Ztable.pdf)
+- [Binomial problems](notes/2-probability/binomial-solutions.R)
 
 1 -- Descriptive Statistics
 
@@ -38,6 +39,7 @@ format:
 
 - [R Script](labs/lab1/STAT_801A_Lab1.R)
 - Data: [cereal.xlsx](labs/lab1/cereal.xlsx) | [Student_data.csv](https://raw.githubusercontent.com/staturn-courses/stat-801a/refs/heads/main/labs/lab1/Student_data.csv)
+- [Solutions](labs/lab1/STAT_801A_Lab1_Solutions.R)
 
 
 9/7/26 -- No lab (Labor Day)
