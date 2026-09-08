@@ -345,14 +345,14 @@ As the sample size is large we can use the CLT and also approximate <span class=
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb1-2"><a aria-label="2"></a>z <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(alpha<span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb1-2"><a aria-label="2"></a>z <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)</span>
 <span id="cb1-3"><a aria-label="3"></a><span class="fu">print</span>(z)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -1.959964</code></pre>
+<pre><code>[1] 1.959964</code></pre>
 </div>
 </div>
 <ul>
-<li>By default, <code>qnorm()</code> measures <span class="math inline">\(P(Z\leq z)\)</span> when <span class="math inline">\(Z\sim N(0,1)\)</span></li>
+<li>By default, <code>qnorm()</code> measures <span class="math inline">\(P(Z\leq z)\)</span> when <span class="math inline">\(Z\sim N(0,1)\)</span>. <span class="math inline">\(Z_{\alpha/2}\)</span> refers to the area under the curve when</li>
 </ul>
 </section>
 <section id="choosing-the-sample-size" class="slide level2 frame">
@@ -783,20 +783,6 @@ This gives <span style="color: magenta"><span class="math inline">\(.025&lt;\mbo
 <li><p>Thus the correct way to state the decision is to say, that <span style="color: magenta">we fail to reject <span class="math inline">\(H_0\)</span></span>.</p></li>
 <li><p>In practice, <span class="math inline">\(\beta\)</span> probabilities for several choices of <span class="math inline">\(\mu\)</span> (call them <span class="math inline">\(\beta(\mu)\)</span>) are calculated and plotted in a graph called the <span style="color: magenta">OC curve</span>.</p></li>
 <li><p>The OC curve can be used to read-off the <span style="color: magenta">Type II error probability</span> for a specified set of values sample size <span class="math inline">\(n\)</span> and <span class="math inline">\(\alpha\)</span>.</p></li>
-</ul>
-</section>
-<section id="oc-curve" class="slide level2 frame">
-<h2>OC Curve</h2>
-<div class="center">
-
-</div>
-<p>The figure shows the OC curve for the test of <span class="math inline">\(H_0: \mu \leq 84, \quad H_a: \mu &gt; 84\)</span> for a population with <span class="math inline">\(\sigma=1.4\)</span>. For example, for <span class="math inline">\(\alpha=.05,\,n=10\)</span>, it can be seen that <span class="math inline">\(\beta(84.8)\approx .4\)</span> and that <span class="math inline">\(\beta(84.8)\)</span> decreases as sample size goes from 10 to 25. A conclusion that can be made about this test from the OC curve is that Type II error probability would be <span class="math inline">\(&lt; .1\)</span> for an actual <span class="math inline">\(\mu &gt; 84.8\)</span> for <span class="math inline">\(n=25\)</span>.</p>
-</section>
-<section id="power-curve" class="slide level2 frame">
-<h2>Power Curve</h2>
-<ul>
-<li><p>Another quantity that may be calculated for a test procedure for a specified value of <span class="math inline">\(\mu\)</span> is called the <span style="color: magenta">Power of the test</span> and is defined as <span class="math inline">\(1-\beta(\mu)\)</span>.</p></li>
-<li><p>The corresponding plot of power against a set of <span class="math inline">\(\mu\)</span> values is called the <span style="color: magenta">power curve</span>.</p></li>
 </ul>
 </section>
 <section id="power-of-the-test" class="slide level2 frame">

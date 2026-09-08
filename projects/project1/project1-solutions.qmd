@@ -188,3 +188,5 @@ summary_table <- tibble(
 knitr::kable(summary_table, caption = "Summary statistics for filtered_travel_time (rounded to 2 decimals)")
 ```
 
+
+

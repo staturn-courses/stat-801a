@@ -180,11 +180,11 @@ We are $98\%$ confident that the mean caffeine content for cups dispensed by the
 #| include: true
 #| echo: true
 alpha <- 0.05
-z <- qnorm(alpha/2)
+z <- qnorm(1-alpha/2)
 print(z)
 ```
 
-- By default, `qnorm()` measures $P(Z\leq z)$ when $Z\sim N(0,1)$
+- By default, `qnorm()` measures $P(Z\leq z)$ when $Z\sim N(0,1)$. $Z_{\alpha/2}$ refers to the area under the curve when 
 
 ::: frame
 ## Choosing the Sample Size
