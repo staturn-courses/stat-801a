@@ -16,6 +16,10 @@ format:
 
 **Course Notes**
 
+3 -- Inference for one mean
+
+- [Slides, part 1](notes/3-one-mean/part3_lectures-inclass.qmd)
+
 2 -- Probability
 
 - [Full Slides](notes/2-probability/part2_lectures.qmd)

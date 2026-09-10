@@ -1,0 +1,17 @@
+{
+  "hash": "f1401d7b5676336fc24669f7eca5b2fc",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Introduction to Quarto\"\nsubtitle: \"In-class 801a example\"\ndate: today\nformat: html\n---\n\n# Level 1 header\n\n- New chapters\n- New slide sections\n\n## Level 2 header\n\n- Majority of content\n\nR says that 2 + 3 is 5\n\n### Level 3 header\n\n- Subsection\n\n## Using R and friends\n\n\n::: {.cell}\n\n```{.r .cell-code}\n3+2\n```\n:::\n\n\n## Tables and figures\n\n\n::: {.cell}\n\n```{.r .cell-code}\nfirst_six <- head(penguins)\nfirst_six\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n  species    island bill_len bill_dep flipper_len body_mass    sex year\n1  Adelie Torgersen     39.1     18.7         181      3750   male 2007\n2  Adelie Torgersen     39.5     17.4         186      3800 female 2007\n3  Adelie Torgersen     40.3     18.0         195      3250 female 2007\n4  Adelie Torgersen       NA       NA          NA        NA   <NA> 2007\n5  Adelie Torgersen     36.7     19.3         193      3450 female 2007\n6  Adelie Torgersen     39.3     20.6         190      3650   male 2007\n```\n\n\n:::\n:::\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nknitr::kable(first_six)\n```\n\n::: {.cell-output-display}\n\n\n|species |island    | bill_len| bill_dep| flipper_len| body_mass|sex    | year|\n|:-------|:---------|--------:|--------:|-----------:|---------:|:------|----:|\n|Adelie  |Torgersen |     39.1|     18.7|         181|      3750|male   | 2007|\n|Adelie  |Torgersen |     39.5|     17.4|         186|      3800|female | 2007|\n|Adelie  |Torgersen |     40.3|     18.0|         195|      3250|female | 2007|\n|Adelie  |Torgersen |       NA|       NA|          NA|        NA|NA     | 2007|\n|Adelie  |Torgersen |     36.7|     19.3|         193|      3450|female | 2007|\n|Adelie  |Torgersen |     39.3|     20.6|         190|      3650|male   | 2007|\n\n\n:::\n:::\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(ggplot2)\nggplot(penguins, mapping = aes(x = bill_dep)) + \n  geom_histogram()\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_bin()`).\n```\n\n\n:::\n\n::: {.cell-output-display}\n![A histogram of bill depth from the penguins data set. This is my new first figure](my-first-quarto_files/figure-html/fig-hist-of-bill-depth-1.png){#fig-hist-of-bill-depth width=672}\n:::\n:::\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(ggplot2)\nggplot(penguins, mapping = aes(x = bill_len)) + \n  geom_histogram()\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\n`stat_bin()` using `bins = 30`. Pick better value `binwidth`.\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_bin()`).\n```\n\n\n:::\n\n::: {.cell-output-display}\n![A histogram of bill lengths from the penguins data set. The distribution is bimodal and symmetric.](my-first-quarto_files/figure-html/fig-hist-of-bill-length-1.png){#fig-hist-of-bill-length width=672}\n:::\n:::\n\n\nThe image produced in @fig-hist-of-bill-length shows a histogram!\n",
+    "supporting": [
+      "my-first-quarto_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

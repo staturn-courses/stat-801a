@@ -1,0 +1,76 @@
+---
+title: "Introduction to Quarto"
+subtitle: "In-class 801a example"
+date: today
+format: html
+---
+
+# Level 1 header
+
+- New chapters
+- New slide sections
+
+## Level 2 header
+
+- Majority of content
+
+R says that 2 + 3 is `r 2+3`
+
+### Level 3 header
+
+- Subsection
+
+## Using R and friends
+
+```{r}
+#| echo: true
+#| eval: false
+3+2
+```
+
+## Tables and figures
+
+```{r}
+first_six <- head(penguins)
+first_six
+```
+
+
+```{r}
+knitr::kable(first_six)
+```
+
+```{r}
+#| label: fig-hist-of-bill-depth
+#| fig-cap: "A histogram of bill depth from the penguins data set. This is my new first figure"
+library(ggplot2)
+ggplot(penguins, mapping = aes(x = bill_dep)) + 
+  geom_histogram()
+```
+
+```{r}
+#| label: fig-hist-of-bill-length
+#| fig-cap: "A histogram of bill lengths from the penguins data set. The distribution is bimodal and symmetric."
+library(ggplot2)
+ggplot(penguins, mapping = aes(x = bill_len)) + 
+  geom_histogram()
+```
+
+The image produced in @fig-hist-of-bill-length shows a histogram!
+
+
+## Question 1
+
+```{r}
+# Your solution here
+
+```
+
+## Question 2
+
+```{r}
+# Your solution here
+
+```
+
+

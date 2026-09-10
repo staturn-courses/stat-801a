@@ -1299,7 +1299,7 @@
     "href": "notes.html",
     "title": "STAT 801A",
     "section": "",
-    "text": "Stat 801A Syllabus\n\n\n\nCourse Notes\n2 – Probability\n\nFull Slides\nIn-class Slides\nZ table\nBinomial problems\n\n1 – Descriptive Statistics\n\nSlides\npdf\n\n\nLabs\n8/31/26 – Lab 1\n\nR Script\nData: cereal.xlsx | Student_data.csv\nSolutions\n\n9/7/26 – No lab (Labor Day)\n9/14/26 – Lab 2\n9/28/26 – Lab 3\n10/5/26 – Lab 4\n10/12/26 – Lab 5\n10/19/26 – No lab (Fall break)\n10/26/26 – Lab 6\n11/2/26 – Lab 7\n11/9/26 – Lab 8\n11/16/26 – Lab 9\n11/23/26 – No lab\n11/30/26 – Lab 10\n12/7/26 – Lab 11\n12/14/26 – No lab"
+    "text": "Stat 801A Syllabus\n\n\n\nCourse Notes\n3 – Inference for one mean\n\nSlides, part 1\n\n2 – Probability\n\nFull Slides\nIn-class Slides\nZ table\nBinomial problems\n\n1 – Descriptive Statistics\n\nSlides\npdf\n\n\nLabs\n8/31/26 – Lab 1\n\nR Script\nData: cereal.xlsx | Student_data.csv\nSolutions\n\n9/7/26 – No lab (Labor Day)\n9/14/26 – Lab 2\n9/28/26 – Lab 3\n10/5/26 – Lab 4\n10/12/26 – Lab 5\n10/19/26 – No lab (Fall break)\n10/26/26 – Lab 6\n11/2/26 – Lab 7\n11/9/26 – Lab 8\n11/16/26 – Lab 9\n11/23/26 – No lab\n11/30/26 – Lab 10\n12/7/26 – Lab 11\n12/14/26 – No lab"
   },
   {
     "objectID": "notes/2-probability/part2_inclass.html#sampling",
@@ -1586,70 +1586,105 @@
     "href": "notes/3-one-mean/part3_lectures-inclass.html#inferences-about-mu",
     "title": "Inferences about \\(\\mu\\)",
     "section": "Inferences about \\(\\mu\\)",
-    "text": "Inferences about \\(\\mu\\)\nOne of the major objectives of statistics is to make inferences about the distribution of the elements in a population based on information contained in a sample.\n\nNumerical summaries that characterize the population distribution are called parameters.\nWe will first focus on the population mean \\(\\mu\\) and population variance \\(\\sigma^2\\)"
+    "text": "Inferences about \\(\\mu\\)\nOne of the major objectives of statistics is to make inferences about the distribution of the elements in a population based on information contained in a sample.\n\nNumerical summaries that characterize the population distribution are called parameters.\nThe population mean \\(\\mu\\) and population variance \\(\\sigma^2\\) are two important parameters. Others are median, range, mode, etc."
   },
   {
-    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#inferences-about-mu-1",
-    "href": "notes/3-one-mean/part3_lectures-inclass.html#inferences-about-mu-1",
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#inferences-about-mu---cont.",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#inferences-about-mu---cont.",
     "title": "Inferences about \\(\\mu\\)",
-    "section": "Inferences about \\(\\mu\\)",
-    "text": "Inferences about \\(\\mu\\)\nTwo main types of questions:\n\nEstimation: what is the value of the parameter?\n\n\n\n\n\n\nTest a hypothesis: how does the parameter compare to some value?"
+    "section": "Inferences about \\(\\mu\\) - cont.",
+    "text": "Inferences about \\(\\mu\\) - cont.\nMethods for making inferences are basically designed to answer one of two types of questions:\n\nApproximately what is the value of the parameter?\nIs the value of the parameter less than (say) 6?\n\nStatisticians answer the first question by estimating the parameter using the sample. The second case might require a test of a hypothesis."
   },
   {
-    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#estimation-of-mu",
-    "href": "notes/3-one-mean/part3_lectures-inclass.html#estimation-of-mu",
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#point-estimation-of-mu-when-sigma-is-known-and-n-is-large",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#point-estimation-of-mu-when-sigma-is-known-and-n-is-large",
     "title": "Inferences about \\(\\mu\\)",
-    "section": "Estimation of \\(\\mu\\)",
-    "text": "Estimation of \\(\\mu\\)\nThe point estimate of \\(\\mu\\) is"
+    "section": "Point Estimation of \\(\\mu\\) when \\(\\sigma\\) is known and \\(n\\) is large",
+    "text": "Point Estimation of \\(\\mu\\) when \\(\\sigma\\) is known and \\(n\\) is large\nPoint estimation of \\(\\mu\\) does not require that \\(\\sigma\\) be known or a large \\(n\\)\n\nThe point estimate of \\(\\mu\\) is the sample mean \\(\\bar{y}\\)\n\n\nmean(y)\n\n\nPoint estimates by themselves do not tell how much \\(\\bar{y}\\) might differ from \\(\\mu\\), that is, the accuracy or precision of the estimate\nA measure of accuracy is the difference between sample mean \\(\\bar{y}\\) and population mean \\(\\mu\\) is called sampling error"
   },
   {
-    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#confidence-interval-for-mu",
-    "href": "notes/3-one-mean/part3_lectures-inclass.html#confidence-interval-for-mu",
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#a-confidence-interval-for-mu",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#a-confidence-interval-for-mu",
     "title": "Inferences about \\(\\mu\\)",
-    "section": "Confidence Interval for \\(\\mu\\)",
-    "text": "Confidence Interval for \\(\\mu\\)\nAn interval estimate, called a confidence interval, incorporates information about the amount of sampling error in \\(\\bar{y}\\)\n\nA confidence interval for \\(\\mu\\) takes the form"
+    "section": "A Confidence Interval for \\(\\mu\\)",
+    "text": "A Confidence Interval for \\(\\mu\\)\nAn interval estimate, called a confidence interval, incorporates information about the amount of sampling error in \\(\\bar{y}\\)\n\nA confidence interval for \\(\\mu\\) takes the form \\[(\\bar{y} - E,\\, \\bar{y} + E),\\] for a number \\(E\\)\nAn associated number called the confidence coefficient helps assess how likely it is for \\(\\mu\\) to be in the interval."
   },
   {
-    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#confidence-interval-for-mu-1",
-    "href": "notes/3-one-mean/part3_lectures-inclass.html#confidence-interval-for-mu-1",
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#a-confidence-interval-for-mu---cont.",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#a-confidence-interval-for-mu---cont.",
     "title": "Inferences about \\(\\mu\\)",
-    "section": "Confidence Interval for \\(\\mu\\)",
-    "text": "Confidence Interval for \\(\\mu\\)\nRecall the CLT, where \\((\\bar{Y}-\\mu)/(\\sigma\\sqrt{n})\\sim N(0,1)\\). Let \\(Z\\sim N(0,1)\\) and \\(z_{\\alpha/2}\\) denote the quantile of a standard normal distribution such that \\(P(Z&gt;z)=\\alpha/2\\), \\(0\\lt\\alpha\\lt 1\\).\n\n\n\n\nThe following is a \\((1-\\alpha/2)100\\)% confidence interval:"
+    "section": "A Confidence Interval for \\(\\mu\\) - cont.",
+    "text": "A Confidence Interval for \\(\\mu\\) - cont.\nTo derive the specific form of the confidence interval for \\(\\mu\\), for the case when \\(\\sigma\\) is known and \\(n\\) is large, the CLT result must be used.\n\nBy the CLT, \\(Z = (\\bar{Y} - \\mu)/\\sigma_{\\bar{y}}\\) is approximately \\(\\sim N(0, 1)\\).\nLet \\(Z\\) have a \\(N(0, 1)\\) distribution (exactly).\nLet \\(z_{\\alpha/2}\\) denote the \\(1 - \\alpha/2\\) quantile of the standard normal distribution, for a given number \\(\\alpha\\), \\(0 &lt; \\alpha &lt; 1\\).\nThen the following probability statement is true: \\[P\\left (-z_{\\alpha/2}\\, \\leq\\, \\frac{(\\bar{Y} - \\mu)}{\n          \\sigma_{\\bar{y}}}\\, \\leq\\, z_{\\alpha/2}\\right ) = 1 - \\alpha\\]"
   },
   {
-    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#confidence-interval-for-mu-2",
-    "href": "notes/3-one-mean/part3_lectures-inclass.html#confidence-interval-for-mu-2",
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#a-confidence-interval-for-mu---cont.-1",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#a-confidence-interval-for-mu---cont.-1",
     "title": "Inferences about \\(\\mu\\)",
-    "section": "Confidence Interval for \\(\\mu\\)",
-    "text": "Confidence Interval for \\(\\mu\\)\nWe can rewrite the following statement to put the interval around \\(\\mu\\).\n\\(P(-z_{\\alpha/2}\\leq\\frac{(\\bar{Y}-\\mu)}{\\sigma/\\sqrt{n}}\\leq z_{\\alpha/2})=\\)"
+    "section": "A Confidence Interval for \\(\\mu\\) - cont.",
+    "text": "A Confidence Interval for \\(\\mu\\) - cont.\nManipulating the inequalities, without changing values, we have\n\\[P\\left (-z_{\\alpha/2}\\, \\leq\\, \\frac{(\\bar{Y} - \\mu)}{\n            \\sigma_{\\bar{y}}}\\, \\leq\\, z_{\\alpha/2}\\right ) = 1 - \\alpha\\]"
   },
   {
-    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#confidence-interval-for-mu-3",
-    "href": "notes/3-one-mean/part3_lectures-inclass.html#confidence-interval-for-mu-3",
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#a-confidence-interval-for-mu---cont.-2",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#a-confidence-interval-for-mu---cont.-2",
     "title": "Inferences about \\(\\mu\\)",
-    "section": "Confidence Interval for \\(\\mu\\)",
-    "text": "Confidence Interval for \\(\\mu\\)\nSince \\(\\bar{Y}\\) is random, it is not correct to say that the interval \\((\\bar{y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2},\\bar{y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2})\\) contains \\(\\mu\\) with a specified probability. If samples are repeatedly taken from the population, \\((1-\\alpha/2)100\\)% of the intervals would contain the true parameter.\n\nIn a future lab, we will examine this property through simulation.\nIt is usually written in the form \\[\\left( \\bar{y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}, \\\n         \\bar{y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\right) \\ .\\]\n\n“We are \\((1-\\alpha/2)100\\)% confident that the parameter … context … is between LCL and UCL.”"
+    "section": "A Confidence Interval for \\(\\mu\\) - cont.",
+    "text": "A Confidence Interval for \\(\\mu\\) - cont.\nUsing this statement, a (1-\\(\\alpha\\))100% confidence interval for \\(\\mu\\), with confidence coefficient \\(1-\\alpha\\) can be calculated using a random sample of data \\(y_1,y_2,\\ldots,y_n\\)\n\nIt is usually written in the form \\[\\left( \\bar{y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}, \\\n         \\bar{y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\right)\\]\nExample: Suppose  \\(n\\) = 36, \\(\\sigma=12\\), \\(\\bar{y} = 24.8\\)\nAnd for \\(\\alpha=0.05\\), \\(z_{\\alpha/2} \\equiv z_{0.025} = 1.96\\)"
   },
   {
-    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#how-do-we-get-z_alpha2",
-    "href": "notes/3-one-mean/part3_lectures-inclass.html#how-do-we-get-z_alpha2",
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#a-confidence-interval-for-mu---cont.-3",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#a-confidence-interval-for-mu---cont.-3",
     "title": "Inferences about \\(\\mu\\)",
-    "section": "How do we get \\(z_{\\alpha/2}\\)?",
-    "text": "How do we get \\(z_{\\alpha/2}\\)?\n\nReference a Z-table (example: https://archive.math.arizona.edu/rsims/ma464/standardnormaltable.pdf)\nUse R\n\n\nalpha &lt;- 0.05\nz &lt;- qnorm(1-alpha/2)\nprint(z)\n\n[1] 1.959964\n\n\n\nBy default, qnorm() measures \\(P(Z\\leq z)\\) when \\(Z\\sim N(0,1)\\). \\(Z_{\\alpha/2}\\) refers to the area under the curve when \\(Z\\sim N(0,1)\\)."
+    "section": "A Confidence Interval for \\(\\mu\\) - cont.",
+    "text": "A Confidence Interval for \\(\\mu\\) - cont.\nThus a 95% C.I. for \\(\\mu\\) is \\[\\left( 24.8 - \\frac{12}{\\sqrt{36}} \\times 1.96, \\quad\n           24.8 + \\frac{12}{\\sqrt{36}} \\times  1.96 \\right)\\]\n\nThe interval for \\(\\mu\\) is: (20.88, 28.72) with confidence coefficient 0.95.\nWe might say that we are 95% confident that the population mean \\(\\mu\\) is between 20.88 and 28.72."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#a-confidence-interval-for-mu---r",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#a-confidence-interval-for-mu---r",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "A Confidence Interval for \\(\\mu\\) - R",
+    "text": "A Confidence Interval for \\(\\mu\\) - R\n\n24.8 + c(-1,1) * 12/sqrt(36) * qnorm(1-0.05/2)\n\n[1] 20.88007 28.71993\n\n\n\n\n\n\nReminder: \\(z_{\\alpha/2}\\) is the value of \\(z\\) at which the \\(P(Z&gt;z)=\\alpha/2\\), so we need to flip the direction for qnorm()"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#interpretation-of-a-confidence-interval",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#interpretation-of-a-confidence-interval",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Interpretation of a Confidence Interval",
+    "text": "Interpretation of a Confidence Interval\nBefore the sample is drawn, the probability is (\\(1-\\alpha\\)) that the random interval \\((\\bar{Y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\),  \\(\\bar{Y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\)) will contain \\(\\mu\\) (because \\(\\bar{Y}\\) is a random variable).\n\nHowever, once the sample is drawn, and \\(\\bar{y}\\) is calculated, the interval ceases to be random. It is a numerical interval \\((\\bar{y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\),  \\(\\bar{y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2}\\)), calculated specifically for the drawn sample; thus we cannot associate a probability with it.\nWe may say that the process which led us to this interval will, on the average, produce an interval containing \\(\\mu,\\  100 (1-\\alpha)\\)% of the time."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#interpretation-of-a-confidence-interval---cont.",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#interpretation-of-a-confidence-interval---cont.",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Interpretation of a Confidence Interval - cont.",
+    "text": "Interpretation of a Confidence Interval - cont.\n\nIt is not correct to say that the interval \\((\\bar{y} - \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2},\\,\n\\bar{y} + \\frac{\\sigma}{\\sqrt{n}} \\, z_{\\alpha/2})\\) contains \\(\\mu\\) with a specified probability.\nIf the process of sampling is repeated many times and 100(1-\\(\\alpha\\))% confidence intervals calculated for each sample, then we are confident that 100(1-\\(\\alpha\\))% of those intervals will contain \\(\\mu\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#interpretation-of-a-confidence-interval---illustration",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#interpretation-of-a-confidence-interval---illustration",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Interpretation of a Confidence Interval - Illustration",
+    "text": "Interpretation of a Confidence Interval - Illustration"
   },
   {
     "objectID": "notes/3-one-mean/part3_lectures-inclass.html#notes",
     "href": "notes/3-one-mean/part3_lectures-inclass.html#notes",
     "title": "Inferences about \\(\\mu\\)",
-    "section": "Notes",
-    "text": "Notes\n\nAs the confidence coefficient increases the confidence interval becomes wider. A wider interval estimates \\(\\mu\\) less precisely. Thus a 99% confidence interval is less accurate than a 95% confidence interval but one has more confidence that \\(\\mu\\) is in the first interval.\nAlso note that increasing the sample size \\(n\\) results in a narrower interval (more accurate estimate) for the same confidence coefficient."
+    "section": "Notes:",
+    "text": "Notes:\nAs the confidence coefficient increases the confidence interval becomes wider. A wider interval estimates \\(\\mu\\) less precisely. Thus a 99% confidence interval is less accurate than a 95% confidence interval but one has more confidence that \\(\\mu\\) is in the first interval.\n\nybar &lt;- 40; n &lt;- 20; sigma &lt;- 7.1\nalpha &lt;- c(0.1, 0.05, 0.01)\n\nlcl &lt;- ybar - qnorm(1-alpha/2) * sigma/sqrt(n)\nucl &lt;- ybar + qnorm(1-alpha/2) * sigma/sqrt(n)\n\ndata.frame(alpha, confidence = 1-alpha, lcl, ybar, ucl)\n\n  alpha confidence      lcl ybar      ucl\n1  0.10       0.90 37.38862   40 42.61138\n2  0.05       0.95 36.88834   40 43.11166\n3  0.01       0.99 35.91059   40 44.08941"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#notes-1",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#notes-1",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Notes:",
+    "text": "Notes:\nAlso note that increasing the sample size \\(n\\) results in a narrower interval (more accurate estimate) for the same confidence coefficient.\n\nalpha = 0.05\nn &lt;- c(10, 50, 100)\nlcl &lt;- ybar - qnorm(1-alpha/2) * sigma/sqrt(n)\nucl &lt;- ybar + qnorm(1-alpha/2) * sigma/sqrt(n)\n\ndata.frame(n, lcl, ybar, ucl)\n\n    n      lcl ybar      ucl\n1  10 35.59946   40 44.40054\n2  50 38.03202   40 41.96798\n3 100 38.60843   40 41.39157"
   },
   {
     "objectID": "notes/3-one-mean/part3_lectures-inclass.html#example",
     "href": "notes/3-one-mean/part3_lectures-inclass.html#example",
     "title": "Inferences about \\(\\mu\\)",
     "section": "Example:",
-    "text": "Example:\nThe caffeine content (in mg) was examined for a random sample of 50 cups of black coffee dispensed by a new machine. The mean and standard deviation were 110 mg and 7.1 mg, respectively. Use these data to construct a 98% confidence interval for \\(\\mu\\), the mean caffeine content for cups dispensed by the machine."
+    "text": "Example:\nThe caffeine content (in mg) was examined for a random sample of 50 cups of black coffee dispensed by a new machine. The mean and standard deviation were 110 mg and 7.1 mg, respectively. Use these data to construct a 98% confidence interval for \\(\\mu\\), the mean caffeine content for cups dispensed by the machine.\nAs the sample size is large we can use the CLT and also approximate \\(\\sigma\\), the sample standard deviation of the population by \\(s=7.1\\)"
   },
   {
     "objectID": "notes/3-one-mean/part3_lectures-inclass.html#example---cont.",
@@ -1659,18 +1694,151 @@
     "text": "Example - cont.\n\\(\\left[\\bar{y} - z_{0.01} \\frac{\\sigma}{\\sqrt{n}}, \\\n\\bar{y} + z_{0.01} \\frac{\\sigma}{\\sqrt{n}}\\right]\\)\n\n\n\n\\(\\left[110 - (2.33)\\left(\\frac{7.1}{\\sqrt{50}}\\right), \\\n   110 + (2.33)\\left(\\frac{7.1}{\\sqrt{50}}\\right)  \\right]\\)\n\n\n\n\\((107.66,\\ 112.34)\\)\n\n\n\nWe are \\(98\\%\\) confident that the mean caffeine content for cups dispensed by the machine is between 107.66 and 112.34 mg."
   },
   {
-    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#hypothesis-testing",
-    "href": "notes/3-one-mean/part3_lectures-inclass.html#hypothesis-testing",
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#example---cont.-1",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#example---cont.-1",
     "title": "Inferences about \\(\\mu\\)",
-    "section": "Hypothesis Testing",
-    "text": "Hypothesis Testing\nA Null Hypothesis \\(H_0\\) describes a characteristic of the population (it is believed to be) as it currently exists\n\n\n\n\nA Research Hypothesis (or Alternative Hypothesis) \\(H_a\\), which is a proposal about this characteristic, by the person(s) conducting the statistical study.\n\n\n\n\nThe idea is that the null hypothesis is presumed to hold unless there is overwhelming evidence in the data in support of the research hypothesis."
+    "section": "Example - cont.",
+    "text": "Example - cont.\n\nn=50; ybar=110; sigma=7.1; alpha=0.02; z=2.33\nybar + c(-1,1) * 2.33 * sigma/sqrt(n)\n\n[1] 107.6605 112.3395"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#how-do-we-get-z_alpha2",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#how-do-we-get-z_alpha2",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "How do we get \\(z_{\\alpha/2}\\)?",
+    "text": "How do we get \\(z_{\\alpha/2}\\)?\n\nReference a Z-table (example: https://archive.math.arizona.edu/rsims/ma464/standardnormaltable.pdf)\nUse R\n\n\nalpha &lt;- 0.05\nz &lt;- qnorm(1-alpha/2)\nprint(z)\n\n[1] 1.959964\n\n\n\nBy default, qnorm() measures \\(P(Z\\leq z)\\) when \\(Z\\sim N(0,1)\\). \\(z_{\\alpha/2}\\) refers to the the value of \\(z\\) that produces \\(P(Z\\gt z)=\\alpha/2\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#statistical-tests-for-mu",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#statistical-tests-for-mu",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Statistical Tests for \\(\\mu\\)",
+    "text": "Statistical Tests for \\(\\mu\\)\nEstimation (either point or interval estimation) was used to help answer a question like “Approximately what is the value of \\(\\mu\\)?”\nThe other kind of question mentioned earlier is “Is it likely that \\(\\mu\\) is less than (or greater than) the value \\(\\mu_0\\) (a pre-determined value)?”.\n\nA Test of Hypothesis is used to answer this kind of question. As in estimation, the sample mean \\(\\bar{y}\\) of a random sample of \\(n\\) elements from the population is used to answer this question."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#statistical-tests-for-mu---cont.",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#statistical-tests-for-mu---cont.",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Statistical Tests for \\(\\mu\\) - cont.",
+    "text": "Statistical Tests for \\(\\mu\\) - cont.\nEvery test of hypothesis features\n\na Null Hypothesis \\(H_0\\) which describes a characteristic of the population (it is believed to be) as it currently exists,\n\na Research Hypothesis (or Alternative Hypothesis) \\(H_a\\), which is a proposal about this characteristic, by the person(s) conducting the statistical study.\nThe idea is that the null hypothesis is presumed to hold unless there is overwhelming evidence in the data in support of the research hypothesis."
   },
   {
     "objectID": "notes/3-one-mean/part3_lectures-inclass.html#example-1",
     "href": "notes/3-one-mean/part3_lectures-inclass.html#example-1",
     "title": "Inferences about \\(\\mu\\)",
+    "section": "Example:",
+    "text": "Example:\nTo determine whether the mean yield per acre (in bushels), \\(\\mu\\), of a variety of soybeans increased the current year over the last two years when \\(\\mu\\) is believed to be 520 bushels per acre, the following might be tested. \\[H_0: \\mu \\leq 520 \\ \\ \\ \\mbox{vs.}\\ \\ \\ H_a: \\mu &gt; 520\\]\n\nThe fact that \\(\\mu\\) may equal a specific value is always included in the null hypothesis. The decision to state whether the data supports the research hypothesis or not is based on a quantity computed from the data called the test statistic."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#rejection-regions",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#rejection-regions",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Rejection Regions",
+    "text": "Rejection Regions\nIf \\(\\bar{y}\\) is in the rejection region then reject \\(H_0\\) and say the evidence favors \\(H_a\\).\n\nFor example, in the above example if \\(\\bar{y} &lt; 520\\) we will say there is not sufficient evidence to reject \\(H_0\\).\nEven if \\(\\bar{y} &gt; 520\\), we might still say there is not sufficient evidence to reject \\(H_0\\)\nThis is ok as long as \\(\\bar{y}\\) is not too much greater than \\(520\\).\n“How much is too large?” To decide this, use the probability distribution of \\(\\bar{Y}\\). Begin by picking a small probability \\(\\alpha\\) like \\(\\alpha\\) = 0.05, or \\(\\alpha = 0.01\\), or \\(\\alpha =0.001\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#section",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#section",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "",
+    "text": "Then reject \\(H_0\\) only when the probability of obtaining a value of \\(\\bar{y}\\) larger than the observed value \\(\\bar{y}\\) is \\(\\leq \\alpha\\) when \\(\\mu\\) is indeed \\(\\leq 520\\), i.e., when \\(H_0\\) is true.\nThat is, if \\(H_0\\) is true, the chance of observing a sample that results in a \\(\\bar{y}\\) as large as the one calculated should be very small."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#how-to-determine-the-rejection-region",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#how-to-determine-the-rejection-region",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "How to determine the rejection region",
+    "text": "How to determine the rejection region\n\nBy the CLT, \\(\\bar{Y}\\) is approximately a normal random variable.\nWe will ignore the approximation and assume \\(\\bar{Y} \\sim N(\\mu, \\frac{\\sigma^2}{n})\\).\nThen, for a given \\(\\alpha\\), \\[P \\left( \\frac{\\bar{Y}-\\mu}{\\sigma/\\sqrt{n}} &gt; z_{\\alpha} \\right) = \\alpha\\] where \\(z_\\alpha\\) is the \\(1-\\alpha\\) quantile of the standard normal distribution.\nSo when \\(H_0: \\mu \\leq \\mu_0\\) is true , \\[P \\left( \\frac{\\bar{Y}-\\mu_0}{\\sigma/\\sqrt{n}} &gt; z_{\\alpha} \\right) \\leq \\alpha\\]"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#how-to-determine-the-rejection-region---cont.",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#how-to-determine-the-rejection-region---cont.",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "How to determine the rejection region - cont.",
+    "text": "How to determine the rejection region - cont.\n\nThat is, \\(P(\\bar{Y} &gt; \\mu_0 + z_\\alpha \\frac{\\sigma}{\\sqrt{n}})\\leq \\alpha.\\) This suggests that we reject \\(H_0: \\mu \\leq \\mu_0\\) in favor of, say \\(H_a: \\mu &gt; \\mu_0\\) when \\[\\bar{y} &gt; \\mu_0 + z_\\alpha \\frac{\\sigma}{\\sqrt{n}}\\] (i.e., \\(\\bar{y}\\) is too much when \\(\\bar{y}\\) exceeds the number \\(\\mu_0 +\nz_\\alpha \\frac{\\sigma}{\\sqrt{n}})\\)\n\nAll possible \\(\\bar{y}\\) values satisfying \\(\\bar{y} &gt; \\mu_0 + z_\\alpha\n\\frac{\\sigma}{\\sqrt{n}}\\) constitute the rejection region.\nInstead of comparing \\(\\bar{y}\\) to \\(\\mu_0 + z_\\alpha\n\\frac{\\sigma}{\\sqrt{n}}\\), it is easier to first calculate \\[z_c=\\frac{\\bar{y}-\\mu_0}{\\sigma/\\sqrt{n}}\\]"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#how-to-determine-the-rejection-region---cont.-1",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#how-to-determine-the-rejection-region---cont.-1",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "How to determine the rejection region - cont.",
+    "text": "How to determine the rejection region - cont.\n\nWe see that comparing \\(\\bar{y}\\) to \\(\\mu_0 + z_\\alpha \\frac{\\sigma}{\\sqrt{n}}\\) is the same as comparing \\(z_c\\) to \\(z_\\alpha\\).\nThat is, we reject the null hypothesis if \\(z_c &gt; z_\\alpha\\) whis is the same thing as doing so if \\(\\bar{y} &gt; \\mu_0 + z_\\alpha \\frac{\\sigma}{\\sqrt{n}}\\)\nThis quantity \\(z\\) is called the test statistic and it’s value can be calculated using the data and the value \\(\\mu_0\\) specified in the null hypothesis \\(H_0\\).\nThe notation \\(z_c\\) is used denote the “computed value” of the test statistic, that is when we plug in the observed value of \\(\\bar{y}\\) and obtain a numerical value for \\(z\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#type-i-error",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#type-i-error",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Type I Error",
+    "text": "Type I Error\n\nThe \\(\\alpha\\) corresponds to the probability that the null hypothesis is rejected when actually it is true and is called the probability of committing a Type I error.\nSince the experimenter selects the value of \\(\\alpha\\) used in the test procedure, she is able to specify or control the Type I error rate or “how much” of this type of error is permitted in the testing procedure."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#example-2",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#example-2",
+    "title": "Inferences about \\(\\mu\\)",
     "section": "Example",
-    "text": "Example\n\nTo determine whether the mean yield per acre (in bushels), \\(\\mu\\), of a variety of soybeans increased the current year over the last two years when \\(\\mu\\) is believed to be 520 bushels per acre, the following might be tested. \\[H_0: \\mu \\leq 520 \\ \\ \\ \\mbox{vs.}\\ \\ \\ H_a: \\mu &gt; 520\\]\nThe fact that \\(\\mu\\) may equal a specific value is always included in the null hypothesis. The decision to state whether the data supports the research hypothesis or not is based on a quantity computed from the data called the test statistic."
+    "text": "Example\nSuppose from a sample of 36 1-acre plots, the yield of corn this year was measured and \\(\\bar{y}=573\\) and \\(s=124\\) calculated. Can we conclude that the mean yield of corn for all farms exceeded 520 bushels/acre this year ? Here we are going to assume that \\(\\sigma\\) can be approximated by \\(s\\). Use \\(\\alpha=.025\\)"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#solution-to-the-example",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#solution-to-the-example",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Solution to the Example",
+    "text": "Solution to the Example\nSet-up five parts of the testing procedure:\n\n\\(H_0: \\mu \\leq 520\\)\n\\(H_a: \\mu &gt; 520\\)\nT.S.: \\(z  =  \\frac{\\bar{y}-\\mu_0}{\\sigma/\\sqrt{n}}\\)\nR.R: Reject \\(H_0:\\) in favor of \\(H_a:\\) if \\(z &gt; z_{.025}\\)\ni.e. the R.R. is \\(z&gt;1.96\\) since \\(z_{.025}=1.96\\)\nCompute the observed value of the test statistic:\n\\(z_c =\\frac{573-520}{124/{\\sqrt{36}}}= 2.56\\)"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#decision",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#decision",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Decision:",
+    "text": "Decision:\nSince \\(z_c&gt; 1.96\\), \\(z_c\\) is in the R.R. Thus \\(H_0:\\mu \\leq 520\\) is rejected in favor of the research hypothesis \\(H_a: \\mu &gt; 520\\). It is concluded that the mean yield this year exceeds 520 bushels/acre."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#summary-of-test-procedures---assume-n-large-and-sigma-known",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#summary-of-test-procedures---assume-n-large-and-sigma-known",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Summary of Test Procedures - Assume \\(n\\) large, and \\(\\sigma\\) known",
+    "text": "Summary of Test Procedures - Assume \\(n\\) large, and \\(\\sigma\\) known\nHypotheses:\nCase 1: \\(H_0: \\mu \\leq \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu &gt;\\mu_0\\) (right-tailed test)\nCase 2: \\(H_0: \\mu \\geq \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu &lt;\\mu_0\\) (left-tailed test)\nCase 3: \\(H_0: \\mu = \\mu_0\\ \\mbox{vs.}\\ H_a: \\mu \\not =\\mu_0\\) (two-tailed test)\nT.S: \\(z_c  =  \\frac{\\bar{y}-\\mu_0}{\\sigma/\\sqrt{n}}\\)\nR.R: For Type I error probability of \\(\\alpha\\):\nCase 1: Reject \\(H_0:\\) if \\(z \\geq z_{\\alpha}\\)\nCase 2: Reject \\(H_0:\\) if \\(z \\leq -z_{\\alpha}\\)\nCase 3: Reject \\(H_0:\\) if \\(|z| \\geq  z_{\\alpha/2}\\)"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#decision-1",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#decision-1",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Decision:",
+    "text": "Decision:\nIf the computed value of the test statistic, \\(z_c\\), is in the R.R., then we will reject the null hypothesis \\(H_0:\\) at the specified \\(\\alpha\\) value. Otherwise, we say we fail to reject \\(H_0:\\) at the specified \\(\\alpha\\) value.\n\nExample A corporation maintains a large fleet of company cars for its salespeople. To check the average number of miles driven per month per car, a random sample of \\(n = 40\\) cars is examined. The mean and standard deviation for the sample are 2,752 miles and 350 miles, respectively. Records for previous years indicate that the average number of miles driven per car per month was 2,600. Use the sample data to test the research hypothesis that the current mean \\(\\mu\\) differs from 2,600. Set \\(\\alpha\\) = .05 and assume that \\(\\sigma\\) can be replaced by \\(s\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#solution",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#solution",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Solution",
+    "text": "Solution\nThe null hypothesis for this statistical test is \\(H_0: \\mu\\) = 2,600 and the research hypothesis is \\(H_a: \\mu \\neq\\) 2,600. Using \\(\\alpha\\) = .05, the two-tailed rejection region for this test is \\(|z|&gt; z_{.025}\\) or \\(|z|&gt; 1.96\\) and is located as shown below."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#solution---cont.",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#solution---cont.",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Solution - cont.",
+    "text": "Solution - cont.\nTo determine how many standard errors our test statistics \\(\\bar{y}\\) lies away from \\(\\mu\\) = 2,600, compute \\[z_c = \\frac{\\bar{y}-\\mu_0}{\\sigma/\\sqrt{n}} =\n  \\frac{2,752 - 2,600}{350/\\sqrt{40}} = 2.75 \\, .\\] Thus \\(|z_c|=2.75&gt;1.96\\) and therefore we reject \\(H_0: \\mu = 2,600\\) at \\(\\alpha=.05\\). It follows that the observed value for \\(\\bar{y}\\) lies more than 1.96 standard errors above the mean \\(\\mu = 2,600\\), so we reject the null hypothesis in favor of the alternative \\(H_a: \\mu \\neq\n2,600\\).\nSince \\(\\bar{y}&gt;2,600\\) we conclude that the mean number of miles driven is greater than \\(2,600\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#level-of-significance-or-the-p-value-of-a-statistical-test",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#level-of-significance-or-the-p-value-of-a-statistical-test",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Level of Significance or the p-value of a Statistical Test",
+    "text": "Level of Significance or the p-value of a Statistical Test\n\nAs an alternative to the formal test where one uses a rejection region based on a specified the Type I error rate \\(\\alpha\\), many researchers compute and report the level of significance or the p-value for the test.\nThis is the probability, when \\(H_0\\) is true, of observing a statistic as extreme as the one actually observed. Here “extreme” is means “large” or “small” according to the alternative hypothesis \\(H_a\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#level-of-significance-or-the-p-value-of-a-statistical-test---cont.",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#level-of-significance-or-the-p-value-of-a-statistical-test---cont.",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Level of Significance or the p-value of a Statistical Test - cont.",
+    "text": "Level of Significance or the p-value of a Statistical Test - cont.\n\nSpecifically, for a given \\(\\sigma^2\\) and \\(\\mu_0\\) we find the p-value by:\n\nFirst computing the test statistic, \\(z_c\\), \\[z_c = (\\bar{y} - \\mu_0)/(\\sigma/\\sqrt{n})\\]\n\nIf \\(H_a: \\mu &gt; \\mu_0\\), then \\(p = P(Z &gt; z_c\\)).\n\nIf \\(H_a: \\mu &lt; \\mu_0\\), then \\(p = P(Z &lt; z_c\\)).\n\nIf \\(H_a: \\mu \\neq \\mu_0\\), then \\(p=2P(Z &gt; |z_c|)\\).\n\n\nA p-value smaller than the pre-specified \\(\\alpha\\) value is evidence in favor of rejecting \\(H_0\\)."
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass.html#example-3",
+    "href": "notes/3-one-mean/part3_lectures-inclass.html#example-3",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Example:",
+    "text": "Example:\n\nIn the earlier example we tested \\(H_0: \\mu \\leq 380\\ \\mbox{vs.}\\ H_a: \\mu &gt; 380\\) Calculating the \\(z-\\)statistic, \\[z_c = \\frac{\\bar{y}-380}{\\sigma/\\sqrt{n}}= \\frac{390-380}{35.2/\\sqrt{50}} = 2.01\\]\nThe level of significance, or p-value for this test is \\[p= P(Z &gt; 2.01)= 1- P(Z &lt; 2.01)= 0.0222\\]\nWe fail to reject \\(H_0: \\mu \\leq 380\\) at \\(\\alpha=.01\\) since p-value is not less than \\(.01\\)"
   },
   {
     "objectID": "notes/4-/part4_lectures.html#inferences-about-mu_1---mu_2",

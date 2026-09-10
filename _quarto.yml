@@ -6,10 +6,12 @@ project:
     - labs/
     - "*.xlsx"
     - "*.csv"
+    - "projects/project1/project1-LastName-FirstName.qmd"
   render:
     - '!reka/'
     - '!erin/'
     - '*.qmd'
+    - '!stat-801-class-examples/'
 
 website:
   title: "STAT 801A"
