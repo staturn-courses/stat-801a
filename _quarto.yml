@@ -10,6 +10,7 @@ project:
   render:
     - '!reka/'
     - '!erin/'
+    - '!labs/'
     - '*.qmd'
     - '!stat-801-class-examples/'
 

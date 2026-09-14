@@ -1,0 +1,650 @@
+---
+title: "STAT 801A Lab 2: Quarto and Probability Distributions"
+author: "Insert Name"
+date: today
+format: 
+  html:
+    number-sections: false
+editor: visual
+execute:
+  warning: false
+---
+
+# Quarto
+
+An R script (.R) holds only code. A Quarto document (.qmd) holds code, output, and writing in one file. You "render" the file and Quarto runs every piece of R code, captures the results, and stitches everything into a finished HTML page, PDF, or Word document.
+
+To learn more about Quarto see <https://quarto.org>.
+
+## Text Formatting
+
+\# Level 1 heading
+
+\## Level 2 heading
+
+\### Level 3 heading (and so on)
+
+\*italic\* and \*\*bold\*\* and \`code style\`
+
+\- bullet point
+
+1\. numbered item
+
+2\. another item
+
+Make sure to leave a blank line between paragraphs. Two paragraphs jammed together with no blank line will render as one.
+
+## Code chunks
+
+We can run normal R code with code chunks. You can insert one with `Ctrl + Alt + I` (`command + option + I` on macOS) or you can insert one manually
+
+```{r}
+2 + 2
+```
+
+### Chunk options
+
+Options go inside the chunk on lines starting with `#|`. The space after `#|` is required.
+
+```{r}
+#| echo: true
+#| eval: true
+
+mean(c(82, 91, 76, 88, 95))
+```
+
+## Inline code
+
+To drop a computed number into a sentence, use `r "code"` wrapped inbetween backticks.
+
+```{r}
+scores <- c(82, 91, 76, 88, 95)
+```
+
+The mean score was `r (mean(scores))`
+
+## Rendering
+
+Click the **Render** button at the top of the editor (or press `Ctrl + Shift + K`, or `Command + Shift + K` on macOS). RStudio saves the file, runs all the code from top to bottom in a fresh R session, and opens the result in whatever format is specified
+
+# Math Equations with LaTeX
+
+Quarto renders mathematical notation using LaTeX syntax.
+
+## Symbol reference
+
+| You want | You type | Result |
+|------------------------|------------------------|------------------------|
+| Greek letters | `$\mu$ $\sigma$ $\lambda$ $\alpha$ $\beta$` | $\mu$ $\sigma$ $\lambda$ $\alpha$ $\beta$ |
+| Capital Greek | `$\Sigma$ $\Delta$ $\Phi$` | $\Sigma$ $\Delta$ $\Phi$ |
+| Subscript | `$x_1$` and `$x_{10}$` | $x_1$ and $x_{10}$ |
+| Superscript | `$x^2$` and `$e^{-\lambda}$` | $x^2$ and $e^{-\lambda}$ |
+| Fraction | `$\frac{a}{b}$` | $\frac{a}{b}$ |
+| Square root | `$\sqrt{x}$` and `$\sqrt[3]{x}$` | $\sqrt{x}$ and $\sqrt[3]{x}$ |
+| Summation | `$\sum_{i=1}^{n} x_i$` | $\sum_{i=1}^{n} x_i$ |
+| Product | `$\prod_{i=1}^{n} x_i$` | $\prod_{i=1}^{n} x_i$ |
+| Integral | `$\int_{-\infty}^{\infty} f(x)\,dx$` | $\int_{-\infty}^{\infty} f(x)\,dx$ |
+| Binomial coefficient | `$\binom{n}{k}$` | $\binom{n}{k}$ |
+| Bar / hat | `$\bar{x}$` and `$\hat{p}$` | $\bar{x}$ and $\hat{p}$ |
+| Inequalities | `$\leq$ $\geq$ $\neq$ $\approx$` | $\leq$ $\geq$ $\neq$ $\approx$ |
+| Plus/minus | `$\pm$` | $\pm$ |
+| Distributed as | `$X \sim N(\mu, \sigma^2)$` | $X \sim N(\mu, \sigma^2)$ |
+
+Wrap math in single dollar signs to put it in a sentence, or double dollar signs to put it on its own centered line.
+
+# ggplot2
+
+```{r}
+#install.packages("ggplot2)
+library(ggplot2)
+```
+
+Every ggplot needs three things, and layers are joined with a +:
+
+1.  Data - a data frame.
+2.  Aesthetic mapping - which column goes on which axis, written inside aes().
+3.  A geom - what type of plot is drawn
+
+```{r}
+ggplot(data = mtcars, aes(x = wt, y = mpg)) + geom_point()
+```
+
+## Common geoms
+
+| Geom             | Draws                      | Typically needs |
+|------------------|----------------------------|-----------------|
+| geom_point()     | Scatterplot                | x and y         |
+| geom_line()      | Connected line             | x and y         |
+| geom_col()       | Bars at heights you supply | x and y         |
+| geom_histogram() | Histogram                  | x only          |
+| geom_boxplot()   | Boxplot                    | x and y         |
+| geom_smooth()    | Trend line                 | x and y         |
+
+## Labels and themes
+
+labs() sets the title and axis labels. A theme\_\*() function changes the overall look.
+
+```{r}
+ggplot(data = mtcars, aes(x = wt, y = mpg)) + 
+  geom_point() +
+  labs(x = "Weight",y = "Miles per Gallon") +
+  theme_minimal()
+
+
+```
+
+## Mapping color vs. setting color
+
+Inside aes(), a color is mapped to a variable, so it changes from point to point and a legend appears
+
+Outside aes(), a color is set to one fixed value for everything
+
+Generally, if the appearance should depend on the data, it goes inside aes(). If it is just a style choice you are making, it goes outside.
+
+```{r}
+ ggplot(data = mtcars, aes(x = mpg)) + 
+   geom_histogram(bins=10,color = "black",fill="lightblue")
+```
+
+```{r}
+ggplot(data = mtcars, aes(x = wt, y = mpg, color = factor(cyl))) + 
+  geom_point() +
+  labs(x = "Weight",y = "Miles per Gallon") +
+  theme_minimal()
+```
+
+# Probability Distributions in R
+
+A **probability distribution** is a rule that tells you how likely each possible outcome is.
+
+Discrete:
+
+- Binomial - Number of successes in a fixed number of trials
+
+- Poisson - Count of events occurring in a fixed interval of time or space
+
+Continuous
+
+- Normal - Continuous distribution with a symmetric, bell-shaped curve
+
+When we assume a random variable follows a particular probability distribution, we can calculate the probability that the random variable takes a particular value or falls within a particular range of values.
+
+| Wording                                                  | Distribution |
+|----------------------------------------------------------|--------------|
+| "out of 20 coin flips," "12 questions," "10 free throws" | Binomial     |
+| "what proportion of trials succeed"                      | Binomial     |
+| "an average of 4.5 per hour," "3.2 per month"            | Poisson      |
+| "how many arrive," "how many occur"                      | Poisson      |
+| "normally distributed," "bell-shaped"                    | Normal       |
+| "mean of 500 hours with a standard deviation of 45"      | Normal       |
+
+## Notation
+
+You will see distributions written in shorthand. The symbol $\sim$ is read as "is distributed as." The letter $X$ stands for the thing you are counting or measuring.
+
+Binomial: $X \sim \text{Bin}(n, p)$
+
+"X is distributed binomial with $n$ trials and success probability $p$."
+
+Poisson: $X \sim \text{Pois}(\lambda)$
+
+Read: "X is distributed Poisson with rate $\lambda$."
+
+Normal: $X \sim N(\mu, \sigma^2)$
+
+Read: "X is distributed normal with mean $\mu$ and variance $\sigma^2$.
+
+| Distribution | Parameters      | Meaning                                  |
+|--------------|-----------------|------------------------------------------|
+| Binomial     | $n$, $p$        | number of trials, probability of success |
+| Poisson      | $\lambda$       | average number of events per interval    |
+| Normal       | $\mu$, $\sigma$ | mean, standard deviation                 |
+
+Once we identify the parameters of interest, we can use R to make our lives easier when using these distributions
+
+## How R names these functions
+
+R uses a naming system: a prefix describing what you want, plus a root naming the distribution.
+
+The roots:
+
+| Distribution | Root  |
+|--------------|-------|
+| Binomial     | binom |
+| Poisson      | pois  |
+| Normal       | norm  |
+
+The prefixes:
+
+| Prefix | What it gives you                                           |
+|--------|-------------------------------------------------------------|
+| d      | the probability of exactly one specific value (or density for continuous random variables)               |
+| p      | the probability of that value or anything smaller           |
+| q      | works backwards: you give a probability, it returns a value |
+| r      | random values drawn from the distribution                   |
+
+Combine the prefix and distribution to get functions:
+
+|     | Binomial | Poisson | Normal |
+|-----|----------|---------|--------|
+| d   | dbinom   | dpois   | dnorm  |
+| p   | pbinom   | ppois   | pnorm  |
+| q   | qbinom   | qpois   | qnorm  |
+| r   | rbinom   | rpois   | rnorm  |
+
+------------------------------------------------------------------------
+
+## The Binomial distribution
+
+A quiz has 12 multiple-choice questions, each with 4 options. A student guesses randomly on every question.
+
+$$X \sim \text{Bin}(12, 0.25)$$
+
+```{r}
+n <- 12
+p <- 0.25
+```
+
+### dbinom - exactly one value
+
+Question: What is the probability the student gets exactly 5 correct?
+
+In symbols: $P(X = 5)$
+
+```{r}
+dbinom(5, size = n, prob = p)
+```
+
+There is about a 10.3% chance of getting exactly 5 correct.
+
+Note: R uses "size" and "prob" arguments rather than "n" and "p"
+
+You can ask for several values at once. Giving 0:12 returns the probability of every possible outcome. This gives us the probability distribution
+
+```{r}
+dbinom(0:12, size = n, prob = p)
+```
+
+### pbinom - a value or anything smaller
+
+Question: What is the probability the student gets 3 or fewer correct?
+
+In symbols: $P(X \leq 3)$
+
+```{r}
+pbinom(3, size = n, prob = p)
+```
+
+This will yield the same result:
+
+```{r}
+sum(dbinom(0:3, size = n, prob = p))
+```
+
+### Going the other direction
+
+Question: What is the probability of getting at least 6 correct?
+
+```{r}
+1 - pbinom(5, size = n, prob = p)
+```
+
+R has a shortcut for this. Adding lower.tail = FALSE as an argument flips the direction.
+
+NOTE: When lower.tail = FALSE is used, R calculates the probability of values greater than the number specified. It does not include the specified number.
+
+```{r}
+pbinom(5, size = n, prob = p, lower.tail = FALSE)
+```
+
+This will calculate the probability getting 6 or more questions correct.
+
+Alternatively, you can take the sum of probabilities over the specified interval.
+
+```{r}
+sum(dbinom(6:12, size = n, prob = p))
+```
+
+
+### Seeing the distribution
+
+Plotting dbinom for every outcome shows the shape
+
+```{r}
+
+binom_df <- data.frame(x = 0:12)
+binom_df$prob <- dbinom(binom_df$x, size = n, prob = p)
+
+ggplot(binom_df, aes(x = x, y = prob)) +
+  geom_col(fill = "lightblue") +
+  labs( x = "Number correct", y = "P(X = x)") 
+
+```
+
+### qbinom and rbinom
+
+qbinom runs backwards. Give it a probability and it returns the value
+
+```{r}
+qbinom(0.90, size = n, prob = p)
+```
+
+That says 90% of guessing students score 5 or fewer.
+
+rbinom simulates. Here are 1000 imaginary students taking the quiz
+
+```{r}
+#set.seed(90210)
+
+quizzes <- data.frame(correct = rbinom(1000, size = n, prob = p))
+
+ggplot(quizzes, aes(x = correct)) +
+  geom_bar(fill = "lightblue") +
+  labs(x = "Number correct", y = "Number of students")
+```
+
+## The Poisson distribution
+
+The parameter, $\lambda$ (lambda), the average number of events per interval.
+
+> A campus help line receives an average of 4 calls per hour.
+
+$$X \sim \text{Pois}(4)$$
+
+Note: lambda = 4 is the expected number of calls in ONE hour. If you want the number of calls in a workday (8 hours), you must multiply by 8 to get that distribution: lambda = 32.
+
+```{r}
+lambda <- 4
+```
+
+### dpois - exactly one value
+
+Question: What is the probability of exactly 3 calls in an hour?
+
+In symbols: $P(X = 3)$
+
+```{r}
+dpois(3, lambda = lambda)
+```
+
+About a 19.5% chance of exactly 3 calls
+
+### ppois - a value or anything smaller
+
+Question: What is the probability of 2 or fewer calls?
+
+In symbols: $P(X \leq 2)$
+
+```{r}
+ppois(2, lambda = lambda)
+```
+
+Question: What is the probability of more than 6 calls?
+
+```{r}
+ppois(6, lambda = lambda, lower.tail = FALSE)
+```
+
+
+
+
+### Seeing the distribution
+
+```{r}
+pois_df <- data.frame(k = 0:15)
+pois_df$prob <- dpois(pois_df$k, lambda = lambda)
+
+ggplot(pois_df, aes(x = k, y = prob)) +
+  geom_col(fill = "darkorange") +
+  labs(x = "Number of calls",y = "P(X = k)")
+```
+
+### qpois and rpois
+
+```{r}
+qpois(0.95, lambda = lambda)
+
+set.seed(801)
+calls <- rpois(1000, lambda = lambda)
+
+```
+
+------------------------------------------------------------------------
+
+## The Normal distribution
+
+The normal takes two parameters, the mean $\mu$ and the variance $\sigma^2$. In R these are the arguments mean and sd.
+
+Note: sd is the standard deviation, not the variance. If a problem tells you the variance is 25, you must take the square root and pass sd = 5
+
+### What changes for a continuous distribution
+
+Because a measurement can land on any value, the probability of hitting one exact number is zero. $P(X = 70)$ is 0
+
+Two consequences:
+
+- Every normal question is about a range, never a single value.
+
+- dnorm is not a probability. It's only the height of the curve, useful for drawing
+
+> Adult male heights are approximately normal with a mean of 70 inches and a standard deviation of 3 inches.
+
+$$X \sim N(70, 9)$$
+
+```{r}
+mu <- 70
+sigma <- 3
+```
+
+### pnorm - the area to the left
+
+Question: What proportion of men are shorter than 66 inches?
+
+In symbols: $P(X < 66)$
+
+```{r}
+pnorm(66, mean = mu, sd = sigma)
+```
+
+Answer: About 9% of men are shorter than 66 inches.
+
+Question: What proportion are taller than 74 inches?
+
+```{r}
+pnorm(74, mean = mu, sd = sigma, lower.tail = FALSE)
+```
+
+Question: What proportion are between 66 and 74 inches?
+
+Take everything below 74 and subtract off everything below 66. What remains is everything between 74 and 66
+
+```{r}
+pnorm(74, mean = mu, sd = sigma) - pnorm(66, mean = mu, sd = sigma)
+```
+
+### Seeing the distribution
+
+```{r}
+
+curve_df <- data.frame(x = seq(58, 82, length.out = 1000))
+curve_df$density <- dnorm(curve_df$x, mean = mu, sd = sigma)
+
+ggplot(curve_df, aes(x = x, y = density)) +
+  geom_line(linewidth=1) +
+  geom_area(data = subset(curve_df, x <= 66), fill = "lightblue") +
+  labs(x = "Height (inches)",y = "Density")
+
+```
+
+### qnorm - going backwards from a probability
+
+Question: How tall is a man at the 90th percentile?
+
+```{r}
+qnorm(0.90, mean = mu, sd = sigma)
+```
+
+Answer: A man at the 90th percentile is about 73.8 inches tall.
+
+### rnorm - simulation
+
+```{r}
+heights <- rnorm(1000, mean = mu, sd = sigma)
+
+mean(heights)
+sd(heights)
+```
+
+The mean and sd of the simulated normal distribution are very close to the true parameters
+
+# Practice Problems
+
+Answer each question in the code chunk provided. Where a problem asks you to state a distribution, write it in LaTeX using the notation from the lab.
+
+## Problem 1:
+
+> A seed company claims 85% of its seeds germinate. A gardener plants 20 seeds. Let $X$ be the number that germinate.
+
+(a) State the distribution of $X$.
+
+$$X \sim$$
+
+(b) What is the probability that exactly 18 seeds germinate?
+
+```{r}
+
+```
+
+(c) What is the probability that at least 18 germinate?
+
+```{r}
+
+```
+
+(d) What is the probability that 15 or fewer germinate?
+
+```{r}
+
+```
+
+(e) What is the probability that between 16 and 19 germinate?
+
+```{r}
+
+```
+
+(f) Use ggplot2 to make a bar plot of the distribution.
+
+```{r}
+
+```
+
+## Problem 2:
+
+> A busy intersection averages 3.2 accidents per month.
+
+(a) State the distribution of the monthly accident count $X$
+
+$$X \sim$$
+
+(b) What is the probability of exactly 5 accidents in a month?
+
+```{r}
+
+```
+
+(c) What is the probability of no accidents in a month?
+
+```{r}
+
+```
+
+(d) What is the probability of at least 4 accidents in a month?
+
+```{r}
+
+```
+
+(e) What is the probability of more than 40 accidents in a year? Remember to rescale $\lambda$
+
+```{r}
+
+```
+
+(f) The city wants enough emergency response capacity to handle the monthly accident count in 99% of months. What number should they plan for? (Hint: you are finding a value, not a probability)
+
+```{r}
+
+```
+
+(g) Use ggplot2 to make a plot of the distribution
+
+```{r}
+
+```
+
+## Problem 3:
+
+> A manufacturer's batteries last an average of 500 hours with a standard deviation of 45 hours, and battery life is approximately normally distributed.
+
+(a) State the distribution of battery life $X$.
+
+$$X \sim$$
+
+(b) What is the probability a battery lasts less than 425 hours?
+
+```{r}
+
+```
+
+(c) What is the probability a battery lasts more than 560 hours?
+
+```{r}
+
+```
+
+(d) What proportion of batteries last between 450 and 550 hours?
+
+```{r}
+
+```
+
+(e) The company will replace the shortest-lasting 2% of batteries under warranty. What lifetime should the warranty cover?
+
+```{r}
+
+```
+
+(f) Use ggplot2 to plot the distribution of battery life. (Hint: build a data frame of x values from 350 to 650, use dnorm for the curve height, and draw it with geom_line.)
+
+```{r}
+
+```
+
+## Problem 4: Choosing the right distribution
+
+For each scenario, name the distribution and compute the requested probability.
+
+(a) A basketball player makes 78% of her free throws. She shoots 10 in a game. What is the probability she makes exactly 9?
+
+```{r}
+
+```
+
+(b) A website receives an average of 12 visits per minute. What is the probability it receives fewer than 8 visits in a given minute?
+
+```{r}
+
+```
+
+(c) Scores on a standardized exam are normally distributed with a mean of 1050 and a variance of 40000. What score is at the 75th percentile?
+
+```{r}
+
+```
+
+# Final Step
+
+Render your document. Click the Render button at the top of the editor, or press Ctrl + Shift + K.
+
+If the render fails, read the error message. It names the chunk that caused the problem. The most common causes are a missing closing parenthesis, or an object was used before it was created.
