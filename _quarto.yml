@@ -11,6 +11,7 @@ project:
     - '!reka/'
     - '!erin/'
     - '!labs/'
+    - '!projects/project1/project1-LastName-FirstName.qmd'
     - '*.qmd'
     - '!stat-801-class-examples/'
 
