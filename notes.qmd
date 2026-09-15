@@ -51,6 +51,7 @@ format:
 9/14/26 -- Lab 2
 
 - [Quarto, ggplot2, and probability](labs/lab2/STAT_801A_Lab2.qmd)
+- Solutions: [pdf](labs/lab2/STAT_801A_Lab2-.pdf), [qmd](labs/lab2/STAT_801A_Lab2 _Solutions.qmd)
 
 9/28/26 -- Lab 3
 
