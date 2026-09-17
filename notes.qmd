@@ -19,6 +19,7 @@ format:
 3 -- Inference for one mean
 
 - [Slides, part 1](notes/3-one-mean/part3_lectures-inclass.qmd)
+- [$z_c$ code](notes/3-one-mean/z_c.R)
 - [Slides, part 2](notes/3-one-mean/part3_lectures-inclass-part2.qmd)
 
 2 -- Probability

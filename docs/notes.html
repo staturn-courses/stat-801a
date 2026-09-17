@@ -74,6 +74,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -134,6 +163,7 @@ ul.task-list li input[type="checkbox"] {
 <p>3 – Inference for one mean</p>
 <ul>
 <li><a href="./notes/3-one-mean/part3_lectures-inclass.html">Slides, part 1</a></li>
+<li><a href="notes/3-one-mean/z_c.R"><span class="math inline">\(z_c\)</span> code</a></li>
 <li><a href="./notes/3-one-mean/part3_lectures-inclass-part2.html">Slides, part 2</a></li>
 </ul>
 <p>2 – Probability</p>
