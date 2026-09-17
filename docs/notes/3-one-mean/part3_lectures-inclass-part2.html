@@ -367,7 +367,7 @@ S = \sqrt{\frac{1}{n-1} \sum_{i=1}^n (Y_i - \bar{Y})^2}
 </section>
 <section id="exercise" class="slide level2">
 <h2>Exercise</h2>
-<p><span style="color: magenta">Exercise</span> A massive multistate outbreak of food-borne illness was attributed to <em>Salmonella enteritidis</em>. Epidimiologists determined that the source of the illness was ice cream. They sampled nine production runsfrom the company that produced the ice cream to determine the level of <em>Salmonella enteritidis</em> in the ice cream.</p>
+<p>A massive multistate outbreak of food-borne illness was attributed to <em>Salmonella enteritidis</em>. Epidimiologists determined that the source of the illness was ice cream. They sampled nine production runs from the company that produced the ice cream to determine the level of <em>Salmonella enteritidis</em> in the ice cream.</p>
 <p>These levels (MPN/g) are as follows<br>
 <span class="math inline">\(.593\quad .142\quad .329\quad .691\quad .231\quad .793\quad .519\quad .392\quad .418\)</span><br>
 Use the data to determine whether the mean level of <em>Salmonella enteritidis</em> in the ice cream is greater than .3 MPN/g with <span class="math inline">\(\alpha=.01\)</span><br>
@@ -376,19 +376,10 @@ Use the data to determine whether the mean level of <em>Salmonella enteritidis</
 <section id="exercise---cont." class="slide level2 frame">
 <h2>Exercise - cont.</h2>
 <p><span style="color: magenta">Solution:</span><br>
-Need to test <span class="math inline">\(H_0: \mu \leq .3\)</span> vs.&nbsp;<span class="math inline">\(H_a: \mu &gt; .3\)</span><br>
-Because of the small sample size, we need to examine whether the data have been sampled from a normal distribution. To do this a <span style="color: magenta">normal probability plot</span> is a good tool.</p>
+Need to test <span class="math inline">\(H_0: \mu \leq .3\)</span> vs.&nbsp;<span class="math inline">\(H_a: \mu &gt; .3\)</span></p>
+<p>From the data <span class="math inline">\(\bar{y}=.456\)</span> and <span class="math inline">\(s= .2128\)</span> are computed, giving <span class="math display">\[t_c=  \frac{\bar{y}-\mu_0}{s/\sqrt{n}}=\frac{.456-.3}{.2128/\sqrt{9}}=2.21\]</span> Because for the one-tailed test we need <span class="math inline">\(t_{\alpha,(n-1)}\)</span>; we look up <span class="math inline">\(t_{.01}\)</span> with <span class="math inline">\(df=9-1=8\)</span>. It is <span class="math inline">\(2.896\)</span>. Thus the rejection region is: <span class="math inline">\(t&gt;2.896\)</span></p>
 </section>
 <section id="exercise---cont.-1" class="slide level2 frame">
-<h2>Exercise - cont.</h2>
-<div class="center">
-
-</div>
-<p>From the data <span class="math inline">\(\bar{y}=.456\)</span> and <span class="math inline">\(s= .2128\)</span> are computed, giving <span class="math display">\[t_c=  \frac{\bar{y}-\mu_0}{s/\sqrt{n}}=\frac{.456-.3}{.2128/\sqrt{9}}=2.21\]</span> Because for the one-tailed test we need <span class="math inline">\(t_{\alpha,(n-1)}\)</span>;<br>
-we look up <span class="math inline">\(t_{.01}\)</span> with <span class="math inline">\(df=9-1=8\)</span>. It is <span class="math inline">\(2.896\)</span><br>
-Thus the rejection region is: <span class="math inline">\(t&gt;2.896\)</span></p>
-</section>
-<section id="exercise---cont.-2" class="slide level2 frame">
 <h2>Exercise - cont.</h2>
 <p>Since <span class="math inline">\(t_c= 2.214\)</span> does not exceed <span class="math inline">\(2.896\)</span> it is not in the R.R.<br>
 Thus, there is insufficient evidence in the data to reject <span class="math inline">\(H_0\)</span> i.e to say that the mean level of <em>Salmonella enteritidis</em> exceeds the dangerous level of .3 MPN/g.<br>
@@ -397,53 +388,35 @@ To calculate this exactly using the t-table is not possible since it is tabulate
 However, we can bound the p-value by noting that, for <span class="math inline">\((df=8)\)</span>, 2.21 lies between 1.86 and 2.306.<br>
 This gives <span style="color: magenta"><span class="math inline">\(.025&lt;\mbox{p-value}&lt;.05\)</span></span> showing that the <span style="color: magenta">p-value is not less than our <span class="math inline">\(\alpha\)</span> of <span class="math inline">\(.01\)</span></span>. Thus we fail to reject <span class="math inline">\(H_0\)</span>.</p>
 </section>
-<section id="oc-curve-and-the-power-of-a-test" class="slide level2 frame">
-<h2>OC Curve and the Power of a test</h2>
-<p>The probabilities of the four possible outcomes of a statistical test are:<br>
-</p>
-<table class="caption-top" style="width:99%;">
-<colgroup>
-<col style="width: 23%">
-<col style="width: 37%">
-<col style="width: 38%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;"></th>
-<th colspan="2" style="text-align: center;">Null Hypothesis</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">2-3 Decision</td>
-<td style="text-align: center;">True</td>
-<td style="text-align: center;">False</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Reject <span class="math inline">\(H_0\)</span></td>
-<td style="text-align: center;"><span style="color: red">Type I Error</span></td>
-<td style="text-align: center;">Correct Decision</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: center;"><span class="math inline">\(\alpha\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(1-\beta\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Fail to reject <span class="math inline">\(H_0\)</span></td>
-<td style="text-align: center;">Correct Decision</td>
-<td style="text-align: center;"><span style="color: red">Type II Error</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: center;"><span class="math inline">\(1-\alpha\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\beta\)</span></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>The probabilities of Type I and II error are <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>, respectively.</li>
-</ul>
+<section id="exercise---r-code" class="slide level2">
+<h2>Exercise - R code</h2>
+<p>Recall that we are testing <span class="math inline">\(H_0:\mu=0.3\)</span> vs <span class="math inline">\(H_A:\mu&gt;0.3\)</span>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a><span class="co"># Data</span></span>
+<span id="cb5-2"><a aria-label="2"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">593</span>,.<span class="dv">142</span>,.<span class="dv">329</span>,.<span class="dv">691</span>,.<span class="dv">231</span>,.<span class="dv">793</span>,.<span class="dv">519</span>,.<span class="dv">392</span>,.<span class="dv">418</span>)</span>
+<span id="cb5-3"><a aria-label="3"></a></span>
+<span id="cb5-4"><a aria-label="4"></a><span class="co"># Compute statistics</span></span>
+<span id="cb5-5"><a aria-label="5"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(y)</span>
+<span id="cb5-6"><a aria-label="6"></a>ybar <span class="ot">&lt;-</span> <span class="fu">mean</span>(y); s <span class="ot">&lt;-</span> <span class="fu">sd</span>(y)</span>
+<span id="cb5-7"><a aria-label="7"></a>tc <span class="ot">&lt;-</span> (ybar<span class="fl">-0.3</span>)<span class="sc">/</span>(s<span class="sc">/</span><span class="fu">sqrt</span>(n))</span>
+<span id="cb5-8"><a aria-label="8"></a></span>
+<span id="cb5-9"><a aria-label="9"></a><span class="co"># Critical Region</span></span>
+<span id="cb5-10"><a aria-label="10"></a>critical_region <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="at">p=</span><span class="dv">1</span><span class="fl">-0.01</span>, <span class="at">df=</span>n<span class="dv">-1</span>)</span>
+<span id="cb5-11"><a aria-label="11"></a>tc <span class="sc">&gt;</span> critical_region</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-label="1"></a><span class="co"># P-value</span></span>
+<span id="cb7-2"><a aria-label="2"></a>p_value <span class="ot">&lt;-</span> <span class="fu">pt</span>(<span class="at">q=</span>tc, <span class="at">df=</span>n<span class="dv">-1</span>, <span class="at">lower.tail =</span> F)</span>
+<span id="cb7-3"><a aria-label="3"></a>p_value</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.02926516</code></pre>
+</div>
+</div>
+</section>
+<section id="type-i-and-type-ii-errors" class="slide level2 frame">
+<h2>Type I and Type II Errors</h2>
+<p>All statistical tests have a level of uncertainty. We can quantify this through Type I and Type II errors. The probabilities of Type I and II error are <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>, respectively.</p>
 </section>
 <section id="type-i-error-and-type-ii-error" class="slide level2 frame">
 <h2>Type I Error and Type II Error</h2>
@@ -454,14 +427,15 @@ This gives <span style="color: magenta"><span class="math inline">\(.025&lt;\mbo
 <li><p>When <span class="math inline">\(H_a\)</span> is true, the actual value of <span class="math inline">\(\mu\)</span> may be any value under <span class="math inline">\(H_a\)</span>, i.e, a value not specified under <span class="math inline">\(H_0\)</span>. Since this value of <span class="math inline">\(\mu\)</span> is unknown, <span class="math inline">\(\beta\)</span> cannot be calculated.</p></li>
 </ul>
 </section>
+<section id="illustration" class="slide level2">
+<h2>Illustration</h2>
+</section>
 <section id="type-i-error-and-type-ii-error-1" class="slide level2 frame">
 <h2>Type I Error and Type II Error</h2>
 <ul>
 <li><p>The implication of this is that when, based on a test, we find that we cannot reject <span class="math inline">\(H_0\)</span>, <em>we will not say that we accept <span class="math inline">\(H_0\)</span></em>.</p></li>
 <li><p>Because if we say we accept <span class="math inline">\(H_0\)</span> and <span class="math inline">\(\beta\)</span> turns out to be large, then the probability is large that we will be committing a Type II error.</p></li>
 <li><p>Thus the correct way to state the decision is to say, that <span style="color: magenta">we fail to reject <span class="math inline">\(H_0\)</span></span>.</p></li>
-<li><p>In practice, <span class="math inline">\(\beta\)</span> probabilities for several choices of <span class="math inline">\(\mu\)</span> (call them <span class="math inline">\(\beta(\mu)\)</span>) are calculated and plotted in a graph called the <span style="color: magenta">OC curve</span>.</p></li>
-<li><p>The OC curve can be used to read-off the <span style="color: magenta">Type II error probability</span> for a specified set of values sample size <span class="math inline">\(n\)</span> and <span class="math inline">\(\alpha\)</span>.</p></li>
 </ul>
 </section>
 <section id="power-of-the-test" class="slide level2 frame">
@@ -472,23 +446,6 @@ This gives <span style="color: magenta"><span class="math inline">\(.025&lt;\mbo
 <li><p>We can relate to this idea by thinking of a test as having very good power if it has <span style="color: magenta">a very good chance of detecting whether a change in <span class="math inline">\(\mu\)</span> has actually occurred</span>.</p></li>
 <li><p>This is usually done by selecting a sample size <span class="math inline">\(n\)</span> to be used for the experiment so that the desired power is achieved for a specified <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\alpha\)</span>.</p></li>
 </ul>
-</section>
-<section id="using-type-ii-error-probability-beta-curves" class="slide level2 frame">
-<h2>Using Type II Error Probability <span class="math inline">\(\beta\)</span> Curves</h2>
-<ul>
-<li><p>Consider the Salmonella example again. We have <span class="math inline">\(n=9,\)</span> and <span class="math inline">\(\alpha=.01\)</span>. Thus <span class="math inline">\(df=8\)</span> and we estimate <span class="math inline">\(\sigma \approx .25\)</span></p></li>
-<li><p>We can compute the values of <span class="math inline">\(d\)</span> for several values of <span class="math inline">\(\mu_a\)</span>. Then we’ll read <span class="math inline">\(\beta\)</span> for those values of <span class="math inline">\(d\)</span> using the graph on next slide for the curves for <span class="math inline">\(\alpha=.01\)</span>.</p></li>
-<li><p>As an example, for <span class="math inline">\(\mu_a=.45\)</span>, <span class="math inline">\(d=\frac{|\mu_a-\mu_0|}{\sigma}=\frac{|.45-.3|}{.25}=.6\)</span></p></li>
-<li><p>Corresponding to <span class="math inline">\(d=.6\)</span> on the horizontal axis, using the curve for <span class="math inline">\(df=8\)</span> we see that <span class="math inline">\(\beta(.45)=.79\)</span>, approx.</p></li>
-<li><p>Similarly, for <span class="math inline">\(\mu_a=.45\ d=1.0\)</span>, and thus <span class="math inline">\(\beta(.55)=.43\)</span>, approx. We can construct a table as shown (next slide).</p></li>
-</ul>
-</section>
-<section id="using-type-ii-error-probability-beta-curves-1" class="slide level2 frame">
-<h2>Using Type II Error Probability <span class="math inline">\(\beta\)</span> Curves</h2>
-<div class="center">
-<p><br>
-</p>
-</div>
 </section>
 <section id="departures-from-normality" class="slide level2 frame">
 <h2>Departures from Normality</h2>

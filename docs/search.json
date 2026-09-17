@@ -1488,35 +1488,35 @@
     "href": "notes/3-one-mean/part3_lectures-inclass-part2.html#exercise",
     "title": "Inferences about \\(\\mu\\)",
     "section": "Exercise",
-    "text": "Exercise\nExercise A massive multistate outbreak of food-borne illness was attributed to Salmonella enteritidis. Epidimiologists determined that the source of the illness was ice cream. They sampled nine production runsfrom the company that produced the ice cream to determine the level of Salmonella enteritidis in the ice cream.\nThese levels (MPN/g) are as follows\n\\(.593\\quad .142\\quad .329\\quad .691\\quad .231\\quad .793\\quad .519\\quad .392\\quad .418\\)\nUse the data to determine whether the mean level of Salmonella enteritidis in the ice cream is greater than .3 MPN/g with \\(\\alpha=.01\\)"
+    "text": "Exercise\nA massive multistate outbreak of food-borne illness was attributed to Salmonella enteritidis. Epidimiologists determined that the source of the illness was ice cream. They sampled nine production runs from the company that produced the ice cream to determine the level of Salmonella enteritidis in the ice cream.\nThese levels (MPN/g) are as follows\n\\(.593\\quad .142\\quad .329\\quad .691\\quad .231\\quad .793\\quad .519\\quad .392\\quad .418\\)\nUse the data to determine whether the mean level of Salmonella enteritidis in the ice cream is greater than .3 MPN/g with \\(\\alpha=.01\\)"
   },
   {
     "objectID": "notes/3-one-mean/part3_lectures-inclass-part2.html#exercise---cont.",
     "href": "notes/3-one-mean/part3_lectures-inclass-part2.html#exercise---cont.",
     "title": "Inferences about \\(\\mu\\)",
     "section": "Exercise - cont.",
-    "text": "Exercise - cont.\nSolution:\nNeed to test \\(H_0: \\mu \\leq .3\\) vs. \\(H_a: \\mu &gt; .3\\)\nBecause of the small sample size, we need to examine whether the data have been sampled from a normal distribution. To do this a normal probability plot is a good tool."
+    "text": "Exercise - cont.\nSolution:\nNeed to test \\(H_0: \\mu \\leq .3\\) vs. \\(H_a: \\mu &gt; .3\\)\nFrom the data \\(\\bar{y}=.456\\) and \\(s= .2128\\) are computed, giving \\[t_c=  \\frac{\\bar{y}-\\mu_0}{s/\\sqrt{n}}=\\frac{.456-.3}{.2128/\\sqrt{9}}=2.21\\] Because for the one-tailed test we need \\(t_{\\alpha,(n-1)}\\); we look up \\(t_{.01}\\) with \\(df=9-1=8\\). It is \\(2.896\\). Thus the rejection region is: \\(t&gt;2.896\\)"
   },
   {
     "objectID": "notes/3-one-mean/part3_lectures-inclass-part2.html#exercise---cont.-1",
     "href": "notes/3-one-mean/part3_lectures-inclass-part2.html#exercise---cont.-1",
     "title": "Inferences about \\(\\mu\\)",
     "section": "Exercise - cont.",
-    "text": "Exercise - cont.\n\n\n\nFrom the data \\(\\bar{y}=.456\\) and \\(s= .2128\\) are computed, giving \\[t_c=  \\frac{\\bar{y}-\\mu_0}{s/\\sqrt{n}}=\\frac{.456-.3}{.2128/\\sqrt{9}}=2.21\\] Because for the one-tailed test we need \\(t_{\\alpha,(n-1)}\\);\nwe look up \\(t_{.01}\\) with \\(df=9-1=8\\). It is \\(2.896\\)\nThus the rejection region is: \\(t&gt;2.896\\)"
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures-inclass-part2.html#exercise---cont.-2",
-    "href": "notes/3-one-mean/part3_lectures-inclass-part2.html#exercise---cont.-2",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Exercise - cont.",
     "text": "Exercise - cont.\nSince \\(t_c= 2.214\\) does not exceed \\(2.896\\) it is not in the R.R.\nThus, there is insufficient evidence in the data to reject \\(H_0\\) i.e to say that the mean level of Salmonella enteritidis exceeds the dangerous level of .3 MPN/g.\nThe p-value to be computed is \\(P(T_8&gt;2.21)\\)\nTo calculate this exactly using the t-table is not possible since it is tabulated for only a few values of \\(a\\).\nHowever, we can bound the p-value by noting that, for \\((df=8)\\), 2.21 lies between 1.86 and 2.306.\nThis gives \\(.025&lt;\\mbox{p-value}&lt;.05\\) showing that the p-value is not less than our \\(\\alpha\\) of \\(.01\\). Thus we fail to reject \\(H_0\\)."
   },
   {
-    "objectID": "notes/3-one-mean/part3_lectures-inclass-part2.html#oc-curve-and-the-power-of-a-test",
-    "href": "notes/3-one-mean/part3_lectures-inclass-part2.html#oc-curve-and-the-power-of-a-test",
+    "objectID": "notes/3-one-mean/part3_lectures-inclass-part2.html#exercise---r-code",
+    "href": "notes/3-one-mean/part3_lectures-inclass-part2.html#exercise---r-code",
     "title": "Inferences about \\(\\mu\\)",
-    "section": "OC Curve and the Power of a test",
-    "text": "OC Curve and the Power of a test\nThe probabilities of the four possible outcomes of a statistical test are:\n\n\n\n\n\n\n\n\n\n\nNull Hypothesis\n\n\n\n\n2-3 Decision\nTrue\nFalse\n\n\nReject \\(H_0\\)\nType I Error\nCorrect Decision\n\n\n\n\\(\\alpha\\)\n\\(1-\\beta\\)\n\n\nFail to reject \\(H_0\\)\nCorrect Decision\nType II Error\n\n\n\n\\(1-\\alpha\\)\n\\(\\beta\\)\n\n\n\n\nThe probabilities of Type I and II error are \\(\\alpha\\) and \\(\\beta\\), respectively."
+    "section": "Exercise - R code",
+    "text": "Exercise - R code\nRecall that we are testing \\(H_0:\\mu=0.3\\) vs \\(H_A:\\mu&gt;0.3\\).\n\n# Data\ny &lt;- c(.593,.142,.329,.691,.231,.793,.519,.392,.418)\n\n# Compute statistics\nn &lt;- length(y)\nybar &lt;- mean(y); s &lt;- sd(y)\ntc &lt;- (ybar-0.3)/(s/sqrt(n))\n\n# Critical Region\ncritical_region &lt;- qt(p=1-0.01, df=n-1)\ntc &gt; critical_region\n\n[1] FALSE\n\n# P-value\np_value &lt;- pt(q=tc, df=n-1, lower.tail = F)\np_value\n\n[1] 0.02926516"
+  },
+  {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass-part2.html#type-i-and-type-ii-errors",
+    "href": "notes/3-one-mean/part3_lectures-inclass-part2.html#type-i-and-type-ii-errors",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Type I and Type II Errors",
+    "text": "Type I and Type II Errors\nAll statistical tests have a level of uncertainty. We can quantify this through Type I and Type II errors. The probabilities of Type I and II error are \\(\\alpha\\) and \\(\\beta\\), respectively."
   },
   {
     "objectID": "notes/3-one-mean/part3_lectures-inclass-part2.html#type-i-error-and-type-ii-error",
@@ -1526,11 +1526,18 @@
     "text": "Type I Error and Type II Error\n\nThe experimenter can control only the Type I error probability. We do this by specifying an \\(\\alpha\\) for an experiment (before the data values are measured).\nWhen we are testing an hypothesis about \\(\\mu\\) using \\(\\alpha\\) for the test, the value of Type II error probability \\(\\beta\\) depends on the actual value \\(\\mu\\) which is not known.\nThis is because \\(\\beta\\) is the probability of incorrectly failing to reject \\(H_0\\) when \\(H_a\\) is true.\nWhen \\(H_a\\) is true, the actual value of \\(\\mu\\) may be any value under \\(H_a\\), i.e, a value not specified under \\(H_0\\). Since this value of \\(\\mu\\) is unknown, \\(\\beta\\) cannot be calculated."
   },
   {
+    "objectID": "notes/3-one-mean/part3_lectures-inclass-part2.html#illustration",
+    "href": "notes/3-one-mean/part3_lectures-inclass-part2.html#illustration",
+    "title": "Inferences about \\(\\mu\\)",
+    "section": "Illustration",
+    "text": "Illustration"
+  },
+  {
     "objectID": "notes/3-one-mean/part3_lectures-inclass-part2.html#type-i-error-and-type-ii-error-1",
     "href": "notes/3-one-mean/part3_lectures-inclass-part2.html#type-i-error-and-type-ii-error-1",
     "title": "Inferences about \\(\\mu\\)",
     "section": "Type I Error and Type II Error",
-    "text": "Type I Error and Type II Error\n\nThe implication of this is that when, based on a test, we find that we cannot reject \\(H_0\\), we will not say that we accept \\(H_0\\).\nBecause if we say we accept \\(H_0\\) and \\(\\beta\\) turns out to be large, then the probability is large that we will be committing a Type II error.\nThus the correct way to state the decision is to say, that we fail to reject \\(H_0\\).\nIn practice, \\(\\beta\\) probabilities for several choices of \\(\\mu\\) (call them \\(\\beta(\\mu)\\)) are calculated and plotted in a graph called the OC curve.\nThe OC curve can be used to read-off the Type II error probability for a specified set of values sample size \\(n\\) and \\(\\alpha\\)."
+    "text": "Type I Error and Type II Error\n\nThe implication of this is that when, based on a test, we find that we cannot reject \\(H_0\\), we will not say that we accept \\(H_0\\).\nBecause if we say we accept \\(H_0\\) and \\(\\beta\\) turns out to be large, then the probability is large that we will be committing a Type II error.\nThus the correct way to state the decision is to say, that we fail to reject \\(H_0\\)."
   },
   {
     "objectID": "notes/3-one-mean/part3_lectures-inclass-part2.html#power-of-the-test",
@@ -1538,20 +1545,6 @@
     "title": "Inferences about \\(\\mu\\)",
     "section": "Power of the Test",
     "text": "Power of the Test\n\nBy definition, power of a test is the probability of rejecting \\(H_0\\) for a specified value of \\(\\mu\\) under \\(H_a\\).\nIn practice, tests are designed to have large power for some \\(\\mu\\) values of interest so that they have small Type II error probabilities.\nWe can relate to this idea by thinking of a test as having very good power if it has a very good chance of detecting whether a change in \\(\\mu\\) has actually occurred.\nThis is usually done by selecting a sample size \\(n\\) to be used for the experiment so that the desired power is achieved for a specified \\(\\mu\\) and \\(\\alpha\\)."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures-inclass-part2.html#using-type-ii-error-probability-beta-curves",
-    "href": "notes/3-one-mean/part3_lectures-inclass-part2.html#using-type-ii-error-probability-beta-curves",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Using Type II Error Probability \\(\\beta\\) Curves",
-    "text": "Using Type II Error Probability \\(\\beta\\) Curves\n\nConsider the Salmonella example again. We have \\(n=9,\\) and \\(\\alpha=.01\\). Thus \\(df=8\\) and we estimate \\(\\sigma \\approx .25\\)\nWe can compute the values of \\(d\\) for several values of \\(\\mu_a\\). Then we’ll read \\(\\beta\\) for those values of \\(d\\) using the graph on next slide for the curves for \\(\\alpha=.01\\).\nAs an example, for \\(\\mu_a=.45\\), \\(d=\\frac{|\\mu_a-\\mu_0|}{\\sigma}=\\frac{|.45-.3|}{.25}=.6\\)\nCorresponding to \\(d=.6\\) on the horizontal axis, using the curve for \\(df=8\\) we see that \\(\\beta(.45)=.79\\), approx.\nSimilarly, for \\(\\mu_a=.45\\ d=1.0\\), and thus \\(\\beta(.55)=.43\\), approx. We can construct a table as shown (next slide)."
-  },
-  {
-    "objectID": "notes/3-one-mean/part3_lectures-inclass-part2.html#using-type-ii-error-probability-beta-curves-1",
-    "href": "notes/3-one-mean/part3_lectures-inclass-part2.html#using-type-ii-error-probability-beta-curves-1",
-    "title": "Inferences about \\(\\mu\\)",
-    "section": "Using Type II Error Probability \\(\\beta\\) Curves",
-    "text": "Using Type II Error Probability \\(\\beta\\) Curves"
   },
   {
     "objectID": "notes/3-one-mean/part3_lectures-inclass-part2.html#departures-from-normality",
