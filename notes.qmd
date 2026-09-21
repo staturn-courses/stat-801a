@@ -57,6 +57,8 @@ format:
 
 9/28/26 -- Lab 3
 
+- [Single mean, known variance](labs/lab3/STAT_801A_Lab3.qmd)
+
 10/5/26 -- Lab 4
 
 10/12/26 -- Lab 5
