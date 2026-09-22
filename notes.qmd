@@ -21,6 +21,7 @@ format:
 - [Slides, part 1](notes/3-one-mean/part3_lectures-inclass.qmd)
 - [$z_c$ code](notes/3-one-mean/z_c.R)
 - [Slides, part 2](notes/3-one-mean/part3_lectures-inclass-part2.qmd)
+- [t.test code](notes/3-one-mean/t-test-example.R)
 
 2 -- Probability
 
@@ -58,6 +59,7 @@ format:
 9/28/26 -- Lab 3
 
 - [Single mean, known variance](labs/lab3/STAT_801A_Lab3.qmd)
+- Solutions: [pdf](labs/lab3/STAT_801A_Lab3_Solutions.pdf), [qmd](labs/lab3/STAT_801A_Lab3_Solutions.qmd)
 
 10/5/26 -- Lab 4
 

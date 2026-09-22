@@ -9,42 +9,24 @@ format:
       text: '\pagenumbering{gobble}'
 ---
 
-## Overview
 
-In this project, you
 
-## Scenario 1
+## Part 1: z.test() function
 
-The Traffic Engineering Division in Lincoln, NE is investigating the signal timing of a stoplight near one of the fire stations. If too many cars are lined up at a red light, the driveway to the fire station gets blocked by traffic, which increases the delay of emergency responders. This occurs when there are seven or more cars stopped at the intersection. 
-
-You and your peers designed a study to investigate this intersection. For 20 consecutive cycles, you record the number of cars that lined up at the light. 
+R does not have a built in z.test() function. Recall that we discussed rejection regions, test statistics, and p-v
 
 ```{r}
-#| echo: false
-#| eval: true
-set.seed(311)
-cars <- rpois(n=20, lambda = 5)
+z.test <- function(y, mu = 0, sigma = 1,
+                   alternative = c('two.sided', 'less', 'greater'),
+                   conf.level = 0.95) {
+  
+  
+
+}
 ```
 
 
-```{r}
-#| echo: true
-#| eval: true
-print(cars)
-```
 
-1. What is the observational unit of this study?
-2. Is it reasonable to assume that all observations are independent? 
-3. Write the null and alternative hypothesis in words.
-4. Write the null and alternative hypothesis in mathematical notation.
+## Part 2: one sample t-test
 
-
-- One of your peers suggests that you use the Binomial distribution by recoding all instances where there were seven or more cars as 1 and other values as zero. 
-
-```{r}
-binom.test(8, 20)
-```
-
-
-## Scenario 2
-
+Here is data, do the calcs by hand and with t.test, show 
