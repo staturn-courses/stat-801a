@@ -1117,7 +1117,7 @@
     "href": "assignments.html",
     "title": "STAT 801A",
     "section": "",
-    "text": "Unless otherwise stated, all assignments are due by 5 p.m. on Canvas.\n\n\n\nProject\nDue date\nData\nSolutions\nNotes\n\n\n\n\nProject 1\n9/18/26\ntravel-time-31109.csv\n\nQuarto template"
+    "text": "Unless otherwise stated, all assignments are due by 5 p.m. on Canvas.\n\n\n\nProject\nDue date\nData\nSolutions\nNotes\n\n\n\n\nProject 1\n9/18/26\ntravel-time-31109.csv\nSolutions\nQuarto template"
   },
   {
     "objectID": "canvas.html",
@@ -2028,5 +2028,33 @@
     "title": "Final",
     "section": "Notes",
     "text": "Notes\nThis final was designed to combine the theory and application of statistics. While there are many components that we have not discussed in class (such as applying journal templates), I am here to help! Please don’t hesitate to ask questions if you get stuck."
+  },
+  {
+    "objectID": "projects/project1/project1-solutions.html",
+    "href": "projects/project1/project1-solutions.html",
+    "title": "Project 1 Solutions",
+    "section": "",
+    "text": "Read in the data and print the first 10 observations.\n\nne_work_commute &lt;- read.csv(\"travel-time-31109.csv\")\nhead(ne_work_commute, n=10)\n\n   RESPONDENT TRANTIME DEPARTS ARRIVES\n1           1        7     647     654\n2           2        8    1305    1309\n3           3       10    1445    1454\n4           4       10    1605    1614\n5           5       10    1605    1614\n6           6       15    1515    1534\n7           7       15    1435    1449\n8           8        7    1545    1554\n9           9       12    1535    1544\n10         10       15    1435    1449"
+  },
+  {
+    "objectID": "projects/project1/project1-solutions.html#a-probability-of-less-than-10-minutes",
+    "href": "projects/project1/project1-solutions.html#a-probability-of-less-than-10-minutes",
+    "title": "Project 1 Solutions",
+    "section": "(a) Probability of less than 10 minutes",
+    "text": "(a) Probability of less than 10 minutes\n\np_less_10 &lt;- pnorm(\n  10,\n  mean = mu,\n  sd = sigma\n)\n\np_less_10\n\n[1] 0.1996557"
+  },
+  {
+    "objectID": "projects/project1/project1-solutions.html#b-probability-of-between-10-and-20-minutes",
+    "href": "projects/project1/project1-solutions.html#b-probability-of-between-10-and-20-minutes",
+    "title": "Project 1 Solutions",
+    "section": "(b) Probability of between 10 and 20 minutes",
+    "text": "(b) Probability of between 10 and 20 minutes\nWe want\n\\[\nP(10 &lt; X &lt; 20).\n\\]\nUsing cumulative probabilities,\n\\[\nP(10 &lt; X &lt; 20)\n=\nP(X &lt; 20)-P(X &lt; 10).\n\\]\n\np_10_20 &lt;- pnorm(\n  20,\n  mean = mu,\n  sd = sigma\n) -\n  pnorm(\n    10,\n    mean = mu,\n    sd = sigma\n  )\n\np_10_20\n\n[1] 0.4948758"
+  },
+  {
+    "objectID": "projects/project1/project1-solutions.html#c-probability-of-greater-than-20-minutes",
+    "href": "projects/project1/project1-solutions.html#c-probability-of-greater-than-20-minutes",
+    "title": "Project 1 Solutions",
+    "section": "(c) Probability of greater than 20 minutes",
+    "text": "(c) Probability of greater than 20 minutes\nWe want\n\\[\nP(X &gt; 20).\n\\]\nUsing the complement,\n\\[\nP(X &gt; 20)=1-P(X\\leq20).\n\\]\n\np_greater_20 &lt;- 1 - pnorm(\n  20,\n  mean = mu,\n  sd = sigma\n)\n\np_greater_20\n\n[1] 0.3054685"
   }
 ]

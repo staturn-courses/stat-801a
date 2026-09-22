@@ -8,4 +8,4 @@ Unless otherwise stated, all assignments are due by 5 p.m. on Canvas.
 
 | Project | Due date | Data | Solutions | Notes |
 | :---: | :---: | :---: | :---: | :---: |
-| [Project 1](projects/project1/project1.qmd) | 9/18/26 | [travel-time-31109.csv](projects/project1/travel-time-31109.csv) | | [Quarto template](projects/project1/project1-LastName-FirstName.qmd) |
+| [Project 1](projects/project1/project1.qmd) | 9/18/26 | [travel-time-31109.csv](projects/project1/travel-time-31109.csv) | [Solutions](projects/project1/project1-solutions.qmd) | [Quarto template](projects/project1/project1-LastName-FirstName.qmd) |

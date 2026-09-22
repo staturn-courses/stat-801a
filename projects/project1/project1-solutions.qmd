@@ -1,192 +1,316 @@
 ---
-title: "Project 1"
-date: '2026-01-01'
-author: STAT 801A, Fall 2026
-date-format: "[Due on] MMMM D, YYYY at 9:00 PM"
-format: 
-  pdf:
-    include-in-header:
-      text: '\pagenumbering{gobble}'
+title: "Project 1 Solutions"
+format: html
 ---
 
-## Overview
+# Problem 1
 
-The American Community Survey is a large national survey that collects information on many aspects of life in the United States. You are tasked with analyzing a subset of the 2022 survey for people who live and work in Lancaster County, Nebraska. In this particular subset, respondents were asked how long it takes for them to commute to work and only responses for people who drive alone are included. The data is available in the file `travel-time-31109.csv`.
-
-**Variable Descriptions:**
-
-- `RESPONDENT`: Unique identifier for each respondent
-- `TRANTIME`: Travel time to work in minutes
-- `DEPARTS`: Time of day the respondent leaves for work (e.g., 7:30 AM = 730)
-- `ARRIVES`: Time of day the respondent arrives at work (e.g., 7:30 AM = 730)
+Read in the data and print the first 10 observations.
 
 ```{r}
-#| eval: false
-#| echo: false
-library(tidyverse)
-dat <- read.csv('usa_00008.csv')
-ne <- dat %>% 
-  filter(STATEFIP==31 & COUNTYFIP == 109) %>% # State and county
-  filter(TRANWORK == 10) %>%  # Travel by car, truck, or van
-  filter(CARPOOL == 1) %>%  # Does not carpool
-  filter(RIDERS == 1) %>% # Verify one rider
-  filter(PWSTATE2 == 31 & PWCOUNTY == 109) %>% # Work in Lancaster County, NE
-  mutate(RESPONDENT = row_number()) %>% # Add a unique identifier for each respondent
-  select(RESPONDENT, TRANTIME, DEPARTS, ARRIVES) # Select only the variables of interest
-write_csv(ne, 'travel-time-31109.csv')
-
-ne %>% 
-  # slice_sample(n = 100) %>% 
-  ggplot(mapping = aes(x = TRANTIME)) +
-  geom_histogram()
-
-mean(ne$TRANTIME)
-median(ne$TRANTIME)
-sd(ne$TRANTIME)
-var(ne$TRANTIME)
-summary(ne$TRANTIME)
-hist(ne$TRANTIME)
-```
-
-## Problems
-
-Complete each of the following problems; solutions and brief explanations are provided below. The solution code reads `travel-time-31109.csv` from the project folder.
-
-```{r}
-#| echo: false
-# Load packages used in the solutions
-library(tidyverse)
-library(knitr)
-```
-
-## Solution: Problem 1
-
-```{r}
-#| echo: true
-# Read the data and show the first 10 rows
 ne_work_commute <- read.csv("travel-time-31109.csv")
-head(ne_work_commute, 10)
+head(ne_work_commute, n=10)
 ```
 
-## Solution: Problem 2
+
+# Problem 2
+
+Use `dim()` to determine the dimensions of the dataset.
 
 ```{r}
-#| echo: true
-# Get dimensions and display a one-sentence summary
-dim_ne <- dim(ne_work_commute)
-dim_ne
-paste0("The dataset has ", dim_ne[1], " rows and ", dim_ne[2], " columns.")
+dim(ne_work_commute)
 ```
 
-## Solution: Problem 3
+The dataset contains `r nrow(ne_work_commute)` rows and `r ncol(ne_work_commute)` columns.
+
+# Problem 3
+
+Compute the mean of `TRANTIME`.
 
 ```{r}
-#| echo: true
-# Mean of TRANTIME
-mean_tran <- mean(ne_work_commute$TRANTIME, na.rm = TRUE)
-mean_tran
+mean(ne_work_commute$TRANTIME)
 ```
 
-## Solution: Problem 4
+The mean travel time is `r round(mean(ne_work_commute$TRANTIME), 2)` minutes.
+
+# Problem 4
+
+Compute the median of `TRANTIME`.
 
 ```{r}
-#| echo: true
-# Median of TRANTIME
-median_tran <- median(ne_work_commute$TRANTIME, na.rm = TRUE)
-median_tran
+median(ne_work_commute$TRANTIME)
 ```
 
-## Solution: Problem 5
+The median travel time is `r round(median(ne_work_commute$TRANTIME), 2)` minutes.
+
+# Problem 5
+
+Compute the variance of `TRANTIME`.
 
 ```{r}
-#| echo: true
-# Variance of TRANTIME
-var_tran <- var(ne_work_commute$TRANTIME, na.rm = TRUE)
-var_tran
+var(ne_work_commute$TRANTIME)
 ```
 
-## Solution: Problem 6
+The variance of travel time is `r round(var(ne_work_commute$TRANTIME), 2)` minutes squared.
+
+Variance measures the amount of variability in travel time using squared deviations from the mean.
+
+# Problem 6
+
+Compute the standard deviation of `TRANTIME`.
 
 ```{r}
-#| echo: true
-# Standard deviation of TRANTIME
-sd_tran <- sd(ne_work_commute$TRANTIME, na.rm = TRUE)
-sd_tran
+sd(ne_work_commute$TRANTIME)
 ```
 
-## Solution: Problem 7
+The standard deviation of travel time is `r round(sd(ne_work_commute$TRANTIME), 2)` minutes.
+
+# Problem 7
+
+Use `summary()` on `TRANTIME`.
 
 ```{r}
-#| echo: true
-# Quartiles / summary of TRANTIME
 summary(ne_work_commute$TRANTIME)
 ```
 
-## Solution: Problem 8
+The values returned by `summary()` have the following interpretations:
+
+- **Minimum:** The smallest observed travel time.
+- **1st Quartile:** The value below which approximately 25% of observations fall.
+- **Median:** The middle travel time.
+- **Mean:** The arithmetic average travel time.
+- **3rd Quartile:** The value below which approximately 75% of observations fall.
+- **Maximum:** The largest observed travel time.
+
+# Problem 8
+
+Create a histogram of `TRANTIME`.
 
 ```{r}
-#| echo: true
-# Histogram of TRANTIME using ggplot2
-ggplot(ne_work_commute, aes(x = TRANTIME)) +
-  geom_histogram(binwidth = 5, color = "black", fill = "skyblue") +
-  labs(title = "Histogram of Travel Time (minutes)", x = "TRANTIME (minutes)", y = "Count")
+hist(
+  ne_work_commute$TRANTIME,
+  main = "Distribution of Travel Time to Work",
+  xlab = "Travel Time (minutes)",
+  ylab = "Number of Respondents"
+)
 ```
 
-## Solution: Problem 9
+The data is right-skewed with large outliers.
+
+# Problem 9
+
+Would the mean or median be a better description of travel time?
+
+The median would be a better description since there are large values that would increase the mean.
+
+# Problem 10
+
+Create `filtered_travel_time` by removing outliers using the IQR method.
+
+An observation is considered an outlier if
+
+$$
+x < Q_1 - 1.5(IQR)
+$$
+
+or
+
+$$
+x > Q_3 + 1.5(IQR).
+$$
+
+First calculate the quartiles and IQR.
 
 ```{r}
-#| echo: true
-# Compare mean and median and comment on which is preferable
-mean_tran
-median_tran
+ne_summary <- summary(ne_work_commute$TRANTIME)
+
+iqr <- IQR(ne_work_commute$TRANTIME)
+
+q1 <- as.numeric(ne_summary[2])
+q3 <- as.numeric(ne_summary[5])
+iqr
 ```
 
-The mean is compared to the median above; if the mean is substantially larger than the median the distribution is right-skewed and the median is the more robust (preferred) measure of center.
-
-## Solution: Problem 10
+Calculate the lower and upper boundaries:
 
 ```{r}
-#| echo: true
-# Compute IQR-based bounds and create filtered_travel_time (non-outliers)
-q1 <- quantile(ne_work_commute$TRANTIME, 0.25, na.rm = TRUE)
-q3 <- quantile(ne_work_commute$TRANTIME, 0.75, na.rm = TRUE)
-iqr_val <- IQR(ne_work_commute$TRANTIME, na.rm = TRUE)
-lower <- q1 - 1.5 * iqr_val
-upper <- q3 + 1.5 * iqr_val
-filtered_travel_time <- ne_work_commute$TRANTIME[ne_work_commute$TRANTIME >= lower & ne_work_commute$TRANTIME <= upper]
-length(filtered_travel_time)
-head(filtered_travel_time)
+lower_bound <- q1 - 1.5 * iqr
+upper_bound <- q3 + 1.5 * iqr
+
+lower_bound
+upper_bound
 ```
 
-## Solution: Problem 11
+Now retain only observations within these boundaries:
 
 ```{r}
-#| echo: true
-# Histogram of filtered_travel_time
-filtered_df <- tibble(TRANTIME = filtered_travel_time)
-ggplot(filtered_df, aes(x = TRANTIME)) +
-  geom_histogram(binwidth = 5, color = "black", fill = "lightgreen") +
-  labs(title = "Histogram of Filtered Travel Time (no IQR outliers)", x = "TRANTIME (minutes)", y = "Count")
+filtered_travel_time <- ne_work_commute$TRANTIME[
+  ne_work_commute$TRANTIME >= lower_bound &
+  ne_work_commute$TRANTIME <= upper_bound
+]
 ```
 
-## Solution: Problem 12
+
+# Problem 11
+
+Create a histogram of `filtered_travel_time`.
 
 ```{r}
-#| echo: true
-# Summary statistics for filtered_travel_time and formatted table
-mean_f <- mean(filtered_travel_time, na.rm = TRUE)
-median_f <- median(filtered_travel_time, na.rm = TRUE)
-var_f <- var(filtered_travel_time, na.rm = TRUE)
-sd_f <- sd(filtered_travel_time, na.rm = TRUE)
+hist(
+  filtered_travel_time,
+  main = "Travel Time to Work After Removing Outliers",
+  xlab = "Travel Time (minutes)",
+  ylab = "Number of Respondents"
+)
+```
 
-summary_table <- tibble(
-  Statistic = c("Mean", "Median", "Variance", "SD"),
-  Value = c(mean_f, median_f, var_f, sd_f)
-) %>%
-  mutate(Value = round(Value, 2))
+After removing the outliers, the data is somewhat symmetrical with some right-skew.
 
-knitr::kable(summary_table, caption = "Summary statistics for filtered_travel_time (rounded to 2 decimals)")
+# Problem 12
+
+Repeat Problems 3–6 using `filtered_travel_time` and arrange the results into a formatted table.
+
+```{r}
+filtered_summary <- data.frame(
+  Statistic = c(
+    "Mean",
+    "Median",
+    "Variance",
+    "Standard Deviation"
+  ),
+  Value = c(
+    mean(filtered_travel_time),
+    median(filtered_travel_time),
+    var(filtered_travel_time),
+    sd(filtered_travel_time)
+  )
+)
+
+knitr::kable(
+  filtered_summary,
+  digits = 2,
+  col.names = c("Statistic", "Value"),
+  caption = "Summary Statistics After Removing Outliers"
+)
 ```
 
 
+# Problem 13
+
+Describe what changed after removing the outliers.
+
+Calculate the original and filtered summary statistics:
+
+```{r}
+original_stats <- c(
+  Mean = mean(ne_work_commute$TRANTIME),
+  Median = median(ne_work_commute$TRANTIME),
+  Variance = var(ne_work_commute$TRANTIME),
+  SD = sd(ne_work_commute$TRANTIME)
+)
+
+filtered_stats <- c(
+  Mean = mean(filtered_travel_time),
+  Median = median(filtered_travel_time),
+  Variance = var(filtered_travel_time),
+  SD = sd(filtered_travel_time)
+)
+
+rbind(
+  Original = original_stats,
+  Filtered = filtered_stats
+)
+```
+
+The median stayed the same. The mean slightly decreased, and the variance / standard deviation greatly decreased.
+
+# Problem 14
+
+Let $X$ be normally distributed with the mean and variance calculated from `filtered_travel_time`.
+
+Thus,
+
+$$
+X \sim N(\mu,\sigma^2),
+$$
+
+where $\mu$ and $\sigma^2$ are the mean and variance of `filtered_travel_time`.
+
+```{r}
+mu <- mean(filtered_travel_time)
+sigma <- sd(filtered_travel_time)
+
+mu
+sigma
+```
+
+Note that `pnorm()` requires the **standard deviation**, not the variance, so `sigma` is supplied to the `sd` argument.
+
+## (a) Probability of less than 10 minutes
+
+```{r}
+p_less_10 <- pnorm(
+  10,
+  mean = mu,
+  sd = sigma
+)
+
+p_less_10
+```
+
+
+## (b) Probability of between 10 and 20 minutes
+
+We want
+
+$$
+P(10 < X < 20).
+$$
+
+Using cumulative probabilities,
+
+$$
+P(10 < X < 20)
+=
+P(X < 20)-P(X < 10).
+$$
+
+```{r}
+p_10_20 <- pnorm(
+  20,
+  mean = mu,
+  sd = sigma
+) -
+  pnorm(
+    10,
+    mean = mu,
+    sd = sigma
+  )
+
+p_10_20
+```
+
+## (c) Probability of greater than 20 minutes
+
+We want
+
+$$
+P(X > 20).
+$$
+
+Using the complement,
+
+$$
+P(X > 20)=1-P(X\leq20).
+$$
+
+```{r}
+p_greater_20 <- 1 - pnorm(
+  20,
+  mean = mu,
+  sd = sigma
+)
+
+p_greater_20
+```
 
