@@ -22,6 +22,8 @@ format:
 - [$z_c$ code](notes/3-one-mean/z_c.R)
 - [Slides, part 2](notes/3-one-mean/part3_lectures-inclass-part2.qmd)
 - [t.test code](notes/3-one-mean/t-test-example.R)
+- [filtered_travel_time.csv](notes/3-one-mean/filtered_travel_time.csv)
+    - Test $H_0: \mu = 15$ vs $H_A: \mu < 15$
 
 2 -- Probability
 

@@ -1,6 +1,6 @@
 ---
 title: "Project 2"
-date: '2026-01-01 21:00:00'
+date: '2026-10-04 21:00:00'
 author: STAT 801A, Fall 2026
 date-format: "[Due on] MMMM D, YYYY [at] h:mm a"
 format: 
@@ -71,6 +71,7 @@ Each summer, Nitrogen from the Mississippi River Basin is believed to be partly 
 Data was inspired by the following article: <https://doi-org.libproxy.unl.edu/10.1016/S0048-9697(99)00532-X>
 
 ```{r}
+#| include: false
 set.seed(218)
 N_mg_l <- round(rnorm(n=30, mean = 4.3, sd = 1/6),2)
 ID <- 1:30
@@ -84,7 +85,8 @@ write.csv(mn, file = 'mn-river-n-samples.csv', row.names = F)
 4. Define the appropriate null and alternative hypotheses that satisfies the research question.
 5. Conduct a one-sample t-test without using the `t.test()`.
 6. Conduct a one-sample t-test with the `t.test()` function.
-7. Write a conclusion (1-2 sentences) that satisfies the research question.
+7. Compare the results you obtained from (5) and (6). How are they similar and how are they different?
+8. Write a conclusion (1-2 sentences) that satisfies the research question.
 
 
 
