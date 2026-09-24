@@ -9,11 +9,23 @@ format:
       text: '\pagenumbering{gobble}'
 ---
 
-
+Complete each of the following problems using a Quarto file. Your code must be reproducible, but you are free to use any R packages that you would like (i.e., I can get the same output file by rendering your Quarto file). For each problem, include your code and output. Submit your completed Quarto file and the rendered PDF file to Canvas.
 
 ## Part 1: z.test() function
 
-Although many statistical courses use a z-test, R does not have a built in z.test() function. Your task is to create and use a `z.test()` function for all three cases of hypothesis tests.
+Although many statistical courses use a z-test, R does not have a built in z.test() function. Your task is to create and use a `z.test()` function for all three cases of hypothesis tests:
+
+$$
+H_A:\mu>\mu_0
+$$
+
+$$
+H_A:\mu<\mu_0
+$$
+
+$$
+H_A:\mu\neq\mu_0
+$$
 
 1. Create a `z.test` function using the template provided below.
 
@@ -21,18 +33,24 @@ Although many statistical courses use a z-test, R does not have a built in z.tes
 z.test <- function(y, mu = 0, sigma = 1,
                    alternative = c('two.sided', 'less', 'greater'),
                    conf.level = 0.95) {
+  
+  alternative <- match.arg(alternative)
 
   # Calculations here
   
   
   # Organize results
   results <- list(
-    data = y,
-    z_c = ,
-    z_r = ,
-    z_c_in_rejection_region = ,
-    p.value = ,
-    alternative = 
+    data = y,                                      # Original data
+    sample_mean = ,                                # Mean of the data
+    standard_error = ,                             # Standard error
+    z = ,                                          # Test statistic
+    parameters = list(mu = mu, sigma = sigma),     # Parameters        
+    alternative = alternative,                     # The alternative hypothesis
+    alpha = ,                                      # Significance level
+    confidence_interval = list(lcl = , ucl = ),    # Confidence interval
+    p.value =                                      # p-value of the test
+    
   )
   
   # Output list of results
@@ -40,11 +58,15 @@ z.test <- function(y, mu = 0, sigma = 1,
 }
 ```
 
+Hint: the `if` function will be necessary for the alternative hypothesis. Here is a good tutorial on conditional statements: <https://www.w3schools.com/r/r_if_else.asp>. If you would like, you may use AI to help you figure out the `if` function. If you use AI for this situation, you must also include the model you used and the chat messages. Do not use AI for the entire problem.
+
 2. Use the data in `z-test-data.csv` and your `z.test()` function to test the following hypothesis. Use $\alpha=0.05$. For each hypothesis test, include the output of your function and a written interpretation of the conclusion (i.e., what can you conclude about the data provided the results of the test?). 
 
     a. Column prob2a -- $H_0: \mu=30 \text{ vs. } H_A: \mu > 30$
     b. Column prob2b -- $H_0: \mu=15 \text{ vs. } H_A: \mu < 15$
     c. Column prob2c -- $H_0: \mu=50 \text{ vs. } H_A: \mu \neq 50$
+    
+> Note: if your `z.test()` function is not working, compute the necessary values manually for each problem. 
     
 ```{r}
 #| include: false
@@ -66,7 +88,7 @@ write.csv(p2, file = 'z-test-data.csv', row.names = F)
 
 ## Part 2: one sample t-test
 
-Each summer, Nitrogen from the Mississippi River Basin is believed to be partly responsible for the large zone of oxygen-depleted water that develops in the Gulf of Mexico. One such river basin that drains into the Mississippi River is the Minnesota River. Between 1980 and 1996, the mean Nitrogen (in mg/L) in the Minnesota River was estimated to be 4.19. Suppose that a recent data collection effort obtained 30 samples, provided in `mn-river-n-samples.csv`. However, two samples were accidentally destroyed in transit. Researchers are interested in if Nitrogen increased in the Minnesota River.
+Each summer, Nitrogen from the Mississippi River Basin is believed to be partly responsible for the large zone of oxygen-depleted water that develops in the Gulf of Mexico. One such river basin that drains into the Mississippi River is the Minnesota River. Between 1980 and 1996, the mean Nitrogen (in mg/L) in the Minnesota River was estimated to be 4.19. Suppose that a recent data collection effort obtained 30 samples, provided in `mn-river-n-samples.csv`. However, two samples were accidentally destroyed in transit. Researchers are interested in if Nitrogen **increased** in the Minnesota River.
 
 Data was inspired by the following article: <https://doi-org.libproxy.unl.edu/10.1016/S0048-9697(99)00532-X>
 
@@ -81,9 +103,9 @@ write.csv(mn, file = 'mn-river-n-samples.csv', row.names = F)
 ```
 
 
-3. Using `qqnorm()` and `qqline()`, and one other graphical method of your choice, describe whether the 
+3. Using `qqnorm()` and `qqline()`, and one other graphical method of your choice, describe whether the appears to be normally distributed.
 4. Define the appropriate null and alternative hypotheses that satisfies the research question.
-5. Conduct a one-sample t-test without using the `t.test()`.
+5. Conduct a one-sample t-test without using the `t.test()` by calculating the test statistic, p-value, and confidence interval. 
 6. Conduct a one-sample t-test with the `t.test()` function.
 7. Compare the results you obtained from (5) and (6). How are they similar and how are they different?
 8. Write a conclusion (1-2 sentences) that satisfies the research question.
