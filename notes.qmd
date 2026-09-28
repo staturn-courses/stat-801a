@@ -65,6 +65,9 @@ format:
 
 10/5/26 -- Lab 4
 
+- [t-test, power](labs/lab4/STAT_801A_Lab4.qmd)
+- [volleyball.csv](labs/lab4/volleyball.csv)
+
 10/12/26 -- Lab 5
 
 10/19/26 -- No lab (Fall break)
