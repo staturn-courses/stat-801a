@@ -16,6 +16,11 @@ format:
 
 **Course Notes**
 
+4 -- Inference for two means
+
+- [Slides, part 1](notes/4-two-means/part4_lectures.qmd)
+    - [potency.csv](notes/4-two-means/potency.csv)
+
 3 -- Inference for one mean
 
 - [Slides, part 1](notes/3-one-mean/part3_lectures-inclass.qmd)
