@@ -1,0 +1,305 @@
+---
+title: "STAT 801A Lab 5: Comparing Two Means"
+author: "Insert Name"
+date: today
+format: html
+editor: visual
+---
+
+```{r}
+library(ggplot2)
+```
+
+# Comparing Two Means
+
+Labs 3 & 4 compared one sample mean to a fixed value. This lab compares two independent groups to each other.
+
+The parameter of interest is the difference in population means, $\mu_1 - \mu_2$. The null hypothesis is almost always no difference. The alternative depends on the question.
+
+$$H_0: \mu_1 = \mu_2 \qquad H_a: \mu_1 \neq \mu_2$$
+
+$$H_0: \mu_1 = \mu_2 \qquad H_a: \mu_1 > \mu_2$$
+
+$$H_0: \mu_1 = \mu_2 \qquad H_a: \mu_1 < \mu_2$$
+
+## Notation
+
+| Symbol                 | Meaning                    |
+|------------------------|----------------------------|
+| $\mu_1, \mu_2$         | population means           |
+| $\bar{y}_1, \bar{y}_2$ | sample means               |
+| $s_1, s_2$             | sample standard deviations |
+| $n_1, n_2$             | sample sizes               |
+
+The two-sample t test in this lab assumes:
+
+- The two samples are independent of each other.
+
+- Each population is approximately normal, or the samples are large.
+
+- The two populations have the same standard deviation/variance.
+
+# Equal Variances: The Pooled t Test
+
+If both populations have the same standard deviation, each sample is estimating the same thing. Pooling the two samples gives a better estimate than either one alone.
+
+$$s_p^2 = \frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}$$
+
+This is a weighted average of the two sample variances, with the larger sample getting more weight.
+
+The test statistic is
+
+$$t = \frac{\bar{y}_1 - \bar{y}_2}{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} \qquad df = n_1 + n_2 - 2$$
+
+and the confidence interval is
+
+$$(\bar{y}_1 - \bar{y}_2) \pm t_{\alpha/2,\, df} \cdot s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}$$
+
+## Example: feed supplement
+
+A feedlot tests whether a feed supplement changes average daily gain (ADG) in steers. Twelve steers get the standard ration and twelve get the ration with the supplement. ADG is measured in pounds per day.
+
+```{r}
+steers <- data.frame(
+  ration = rep(c("control", "supplement"), each = 12),
+  adg = c(3.12, 3.45, 2.98, 3.30, 3.61, 3.05, 3.27, 3.52, 2.89, 3.38, 3.20, 3.41,
+          3.48, 3.71, 3.25, 3.66, 3.90, 3.39, 3.58, 3.82, 3.31, 3.55, 3.74, 3.44))
+
+steers
+```
+
+### Step 1: State the hypotheses
+
+Group 1 is control and group 2 is supplement. A change in either direction matters, so the test is two-tailed.
+
+$$H_0: \mu_1 = \mu_2 \qquad H_a: \mu_1 \neq \mu_2$$
+
+### Step 2: Look at the data and check the assumptions
+
+```{r}
+ggplot(steers, aes(x = ration, y = adg)) +
+  geom_boxplot(fill = "lightblue") +
+  labs(x = "Ration", y = "Average daily gain (lb/day)")
+```
+
+```{r}
+control <- steers$adg[steers$ration == "control"]
+supplement <- steers$adg[steers$ration == "supplement"]
+
+mean(control)
+mean(supplement)
+sd(control)
+sd(supplement)
+```
+
+The boxplot also works as a rough normality check. Look for a box that is roughly symmetric around the median, whiskers of similar length, and no outlying points. Strong skew and outliers are what cause trouble for a t test.
+
+The boxes are also about the same height, so the equal standard deviation assumption looks reasonable.
+
+We can also check the Q-Q plots for normality. In the plots below, most points follow the line, which indicates that normality appears to hold. 
+
+```{r}
+ggplot(steers, mapping = aes(sample = adg)) + 
+  stat_qq() + 
+  stat_qq_line() + 
+  theme_bw() + 
+  theme(aspect.ratio = 1) + 
+  facet_wrap(~ration, scales = 'free')
+```
+
+
+### Step 3: Compute the test statistic
+
+```{r}
+n1_steer <- length(control)
+n2_steer <- length(supplement)
+ybar1_steer <- mean(control)
+ybar2_steer <- mean(supplement)
+s1_steer <- sd(control)
+s2_steer <- sd(supplement)
+
+sp_steer <- sqrt(((n1_steer - 1) * s1_steer^2 + (n2_steer - 1) * s2_steer^2) /
+                   (n1_steer + n2_steer - 2))
+
+se_steer <- sp_steer * sqrt(1 / n1_steer + 1 / n2_steer)
+
+t_steer <- (ybar1_steer - ybar2_steer) / se_steer
+
+sp_steer
+se_steer
+t_steer
+```
+
+The pooled standard deviation, 0.21, falls between the two sample standard deviations, as a weighted average should.
+
+### Step 4: Find the rejection region
+
+```{r}
+df_steer <- n1_steer + n2_steer - 2
+
+qt(0.025, df = df_steer)
+qt(0.975, df = df_steer)
+```
+
+We reject if $t < -2.07$ or $t > 2.07$. Our t of -3.49 is below -2.07, so we reject $H_0$.
+
+### Step 5: Compute the p-value
+
+```{r}
+2 * pt(abs(t_steer), df = df_steer, lower.tail = FALSE)
+```
+
+### Step 6: Confirm with t.test
+
+```{r}
+t.test(adg ~ ration, data = steers, var.equal = TRUE)
+```
+
+The argument `var.equal = TRUE` tells R to pool. Without it, R runs a different version of the test that does not assume equal variances, and the output will not match your hand calculation.
+
+Note: R puts the groups in alphabetical order, so it reports control minus supplement.
+
+### Step 7: Report a confidence interval
+
+```{r}
+margin_steer <- qt(0.975, df = df_steer) * se_steer
+
+(ybar1_steer - ybar2_steer) - margin_steer
+(ybar1_steer - ybar2_steer) + margin_steer
+```
+
+This matches the interval from `t.test`. We are 95% confident that the true difference in mean average daily gain (control minus supplement) is between -0.48 and -0.12 lb/day.
+
+### Step 8: Write the conclusion
+
+There is strong evidence that the supplement changes average daily gain ($t = -3.49$, $df = 22$, $p = 0.002$). Steers on the supplement gained an estimated 0.30 lb/day more, with a 95% confidence interval of 0.12 to 0.48 lb/day.
+
+------------------------------------------------------------------------
+
+# Non-Normal Data: The Mann-Whitney U Test
+
+The t test assumes each population is roughly normal. When samples are small and the data are strongly skewed or have outliers, the Mann-Whitney U test is an alternative. Instead of comparing means, it ranks all the observations from both groups together and checks whether one group tends to land in the higher ranks.
+
+In R the test is called `wilcox.test`, after its other name, the Wilcoxon rank-sum test. It uses the same formula setup as `t.test`.
+
+A researcher measures nitrate (mg/L) in 10 private wells near irrigated cropland and 10 wells near grassland.
+
+```{r}
+wells <- data.frame(
+  land = rep(c("cropland", "grassland"), each = 10),
+  nitrate = c(3.1, 5.8, 2.6, 8.4, 4.2, 14.7, 6.3, 3.9, 27.5, 4.8,
+              1.2, 2.8, 0.9, 3.5, 1.8, 2.1, 4.6, 1.5, 2.4, 6.9))
+
+ggplot(wells, aes(x = land, y = nitrate)) +
+  geom_boxplot(fill = "lightblue") +
+  labs(x = "Land", y = "Nitrate (mg/L")
+
+```
+
+```{r}
+wilcox.test(nitrate ~ land, data = wells)
+```
+
+There is strong evidence that nitrate levels tend to be higher in wells near cropland than in wells near grassland
+
+------------------------------------------------------------------------
+
+# Practice Problems
+
+Where a problem asks for hypotheses, write them in LaTeX.
+
+## Problem 1
+
+A seed company claims its new fungicide increases wheat yield. An agronomist treats 10 plots with the fungicide and leaves 8 plots untreated, then records the yield of each plot in bushels per acre.
+
+Run this chunk to create the data.
+
+```{r}
+wheat <- data.frame(
+  treatment = rep(c("fungicide", "untreated"), times = c(10, 8)),
+  yield = c(61.8, 66.2, 58.4, 63.5, 60.1, 67.9, 62.7, 59.3, 64.8, 61.0,
+            59.6, 56.1, 62.8, 57.4, 61.2, 55.0, 61.9, 58.7))
+```
+
+\(a\) Find the sample size, mean, and standard deviation of yield for each treatment.
+
+```{r}
+
+```
+
+\(b\) Make side-by-side boxplots of yield by treatment. Do the groups look roughly normal with similar spreads?
+
+```{r}
+
+```
+
+\(c\) State the hypotheses for testing the company's claim. Let group 1 be fungicide and group 2 be untreated.
+
+$$H_0: \qquad H_a:$$
+
+\(d\) Compute the pooled t statistic by hand.
+
+```{r}
+
+```
+
+\(e\) Find the rejection region at $\alpha = 0.05$ and state your decision.
+
+```{r}
+
+```
+
+\(f\) Compute the p-value.
+
+```{r}
+
+```
+
+\(g\) Confirm your work with `t.test`.
+
+```{r}
+
+```
+
+\(h\) Construct a 95% confidence interval for $\mu_1 - \mu_2$ by hand and interpret it.
+
+```{r}
+
+```
+
+\(i\) Write a conclusion in context.
+
+------------------------------------------------------------------------
+
+## Problem 2
+
+A plant pathologist inoculates leaves with one of two fungal strains, A or B, and measures the lesion area ($\text{mm}^2$) on each leaf after one week. Nine leaves receive each strain.
+
+Run this chunk to create the data.
+
+```{r}
+lesions <- data.frame(
+  strain = rep(c("A", "B"), each = 9),
+  area = c(12.4, 8.1, 15.7, 9.3, 41.2, 11.0, 7.6, 18.9, 10.2,
+           21.5, 34.8, 17.3, 88.6, 26.1, 19.7, 52.4, 23.9, 30.2))
+```
+
+\(a\) Make side-by-side boxplots of lesion area by strain. Why might a t test be a poor choice here?
+
+```{r}
+
+```
+
+\(b\) Run the Mann-Whitney test. Is there evidence that the two strains differ?
+
+```{r}
+
+```
+
+------------------------------------------------------------------------
+
+# Final Step
+
+Render your document. Click the Render button at the top of the editor, or press Ctrl + Shift + K.
+
+If the render fails, read the error message. It names the chunk that caused the problem. The most common causes are a missing closing parenthesis, or an object used before it was created.

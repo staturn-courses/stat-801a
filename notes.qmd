@@ -72,8 +72,11 @@ format:
 
 - [t-test, power](labs/lab4/STAT_801A_Lab4.qmd)
 - [volleyball.csv](labs/lab4/volleyball.csv)
+- Solutions: [qmd](labs/lab4/STAT_801A_Lab4_Solutions.qmd)
 
 10/12/26 -- Lab 5
+
+- [two-sample t-test](labs/lab5/STAT_801A_Lab5.qmd)
 
 10/19/26 -- No lab (Fall break)
 
