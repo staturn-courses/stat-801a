@@ -1,6 +1,11 @@
 ---
-title: "part4_lectures-part2"
-format: html
+title: Inferences about $\mu_1-\mu_2$
+subtitle: Part 2, Inferences about $\mu_1-\mu_2$ for Paired Data
+footer: STAT 801A
+format: 
+  revealjs:
+    smaller: true
+    incremental: false
 ---
 
 ## Inferences about $\mu_1 - \mu_2$ for Independent Samples
@@ -53,6 +58,8 @@ format: html
 - That is, the variance of $\bar{Y}_1 - \bar{Y}_2$ for paired data is less than it is for two independent samples, each of sample size $n$.
 
 - Thus we expect the differences of means for paired data to have a smaller variance than when the difference of means is from two independent samples.
+
+---
 
 - For this to occur we need to pair the elements so that the covariance of the observed data is positive. That is, the two samples are [*positively correlated*]{style="color: magenta"}.
 
