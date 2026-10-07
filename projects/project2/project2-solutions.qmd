@@ -1,0 +1,155 @@
+---
+title: "Project 2 Solutions"
+format: html
+---
+
+# Problem 1
+
+```{r}
+z.test <- function(y, mu = 0, sigma = 1,
+                   alternative = c('two.sided', 'less', 'greater'),
+                   conf.level = 0.95) {
+  
+  alternative <- match.arg(alternative)
+  message(paste('Number of missing values:', sum(is.na(y))))
+  y_orig <- y
+  y <- y[!is.na(y)]
+  # Calculations here
+  xbar <- mean(y)
+  n <- length(y)
+  se <- sigma / sqrt(n)
+  z <- (xbar-mu)/se
+  alpha <- 1-conf.level
+  
+  # Hypothesis tests
+  if(alternative == "two.sided") {
+    lcl <- xbar - qnorm(1-alpha/2)*se
+    ucl <- xbar + qnorm(1-alpha/2)*se
+    p.value <- 2*pnorm(abs(z), lower.tail = F)
+  } else if (alternative == 'less') {
+    lcl <- -Inf
+    ucl <- xbar + qnorm(1-alpha)*se
+    p.value <- pnorm(z)
+  } else if (alternative == 'greater') {
+    lcl <- xbar - qnorm(1-alpha)*se
+    ucl <- Inf
+    p.value <- pnorm(z, lower.tail = FALSE)
+  } else {
+    stop("Invalid alternative provided")
+  }
+  
+  
+  # Organize results
+  results <- list(
+    data = y_orig,                                      # Original data
+    sample_mean = xbar,                                # Mean of the data
+    standard_error = se,                             # Standard error
+    z = z,                                          # Test statistic
+    parameters = list(mu = mu, sigma = sigma),     # Parameters        
+    alternative = alternative,                     # The alternative hypothesis
+    alpha = alpha,                                      # Significance level
+    confidence_interval = list(lcl = lcl, ucl = ucl),    # Confidence interval
+    p.value = p.value                                     # p-value of the test
+    
+  )
+  
+  # Output list of results
+  return(results)
+}
+```
+
+# Problem 2
+
+## Part a
+
+```{r}
+z.test.data <- read.csv('z-test-data.csv')
+z.test(y=z.test.data$prob2a,
+       mu=30, sigma=sd(z.test.data$prob2a),
+       alternative = 'greater')
+```
+
+The p-value is less than 0.05, meaning that we reject the null hypothesis. There is evidence to conclude that the true mean is greater than 30. 
+
+## Part b
+
+```{r}
+z.test(y=z.test.data$prob2b,
+       mu=15, sigma=sd(z.test.data$prob2b),
+       alternative = 'less')
+```
+
+The p-value is greater than 0.05, meaning that we fail to reject the null hypothesis. There is not evidence to conclude that the true mean is less than 15. 
+
+## Part c
+
+```{r}
+z.test(y=z.test.data$prob2c,
+       mu=50, sigma=sd(z.test.data$prob2c),
+       alternative = 'two.sided')
+```
+
+The p-value is less than 0.05, meaning that we reject the null hypothesis. There is evidence to conclude that the true mean is different from 50. 
+
+# Problem 3
+
+```{r}
+mn_river <- read.csv('mn-river-n-samples.csv')
+y <- mn_river$N_mg_l
+qqnorm(y); qqline(y)
+hist(y)
+boxplot(y)
+```
+
+For the part, values tend to follow the line in the Q-Q plot. The histogram shows a little bit of skewness, but nothing out of the ordinary. The boxplot looks fairly symmetrical. The data appears to be approximately normally distributed.
+
+# Problem 4
+
+$$
+H_0: \mu=4.19
+$$
+
+$$
+H_0: \mu>4.19
+$$
+
+# Problem 5
+
+```{r}
+# Remove missing values
+y <- y[!is.na(y)]
+
+# Calculate necessary values
+n <- length(y)
+xbar <- mean(y)
+alpha <- 0.05
+se <- sd(y)/sqrt(n)
+
+test_statistic <- (xbar-4.19)/se
+p_value <- pt(test_statistic, df = n-1, lower.tail = F)
+ci <- xbar + c(-1,1)*qt(p=1-alpha, df=n-1)*se
+knitr::kable(data.frame(
+  test_statistic = test_statistic,
+  p_value = p_value,
+  lower_cl = ci[1],
+  upper_cl = Inf
+))
+```
+
+
+# Problem 6
+
+```{r}
+t.test(x=y, alternative = 'greater', mu = 4.19)
+```
+
+
+# Problem 7
+
+The results of (5) and (6) are the same, but (6) is in a more structured format. 
+
+
+# Problem 8
+
+There is evidence to conclude that the true average Nitrogen (in mg/L) in the Minnesota River is greater than the previous historical average of 0.19 (p-value=0.02614). With 95% confidence, the true average quantity of Nitrogen is greater than 4.201 mg/L.
+
