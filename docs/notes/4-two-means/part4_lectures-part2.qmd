@@ -28,17 +28,17 @@ format:
 
 - If $n_1 = n_2 = n$ then $s_p^2 = \frac{s_1^2 + s_2^2}{2}$
 
+<!-- ## Why variance is reduced by pairing data? -->
+
+<!-- - In either case, what this means is that if the variances of the two populations is [*small*]{style="color: magenta"}, we can expect the variance of $\bar{Y}_1 - \bar{Y}_2$ to be small. -->
+
+<!-- - If this is true, we can expect the sample values to be close to the sample means and $\bar{y}_1 - \bar{y}_2$ to be [*very close*]{style="color: magenta"} to $\mu_1 - \mu_2$. -->
+
+<!-- - Thus even a small sample will be sufficient to get a [*good*]{style="color: magenta"} estimate of $\mu_1 - \mu_2$ if the variances are small. -->
+
+<!-- - But many times the population variances $\sigma^2$ are large, so that we cannot estimate $\mu_1 - \mu_2$ accurately with a small sample. -->
+
 ## Why variance is reduced by pairing data?
-
-- In either case, what this means is that if the variances of the two populations is [*small*]{style="color: magenta"}, we can expect the variance of $\bar{Y}_1 - \bar{Y}_2$ to be small.
-
-- If this is true, we can expect the sample values to be close to the sample means and $\bar{y}_1 - \bar{y}_2$ to be [*very close*]{style="color: magenta"} to $\mu_1 - \mu_2$.
-
-- Thus even a small sample will be sufficient to get a [*good*]{style="color: magenta"} estimate of $\mu_1 - \mu_2$ if the variances are small.
-
-- But many times the population variances $\sigma^2$ are large, so that we cannot estimate $\mu_1 - \mu_2$ accurately with a small sample.
-
-## Why variance is reduced by pairing data? - cont.
 
 - Instead of using [*independent samples*]{style="color: magenta"} from the two populations, we form pairs of elements -- one element from each population, in an effort to achieve smaller variance for $\bar{Y}_1 - \bar{Y}_2$
 
@@ -84,6 +84,8 @@ format:
   2.  Population 1 consists of the wear rates for persons assigned Brand X with the mean wear rate $\mu_1$, and Population 2, wear rates for those assigned Brand Y with the mean wear rate $\mu_2$.
 
   3.  We are interested in estimating $\mu_1 - \mu_2$ and trying to test whether $\mu_1 - \mu_2 \neq 0$.
+  
+---
 
 - [*Independent Samples Kind of Study*]{style="color: magenta"}:(2 groups of size $n$) Take a random sample of workers, randomly divide them into two groups, one to receive each Brand, and measure the wear rate for each person after 100 workdays. Then $\bar{y}_1 - \bar{y}_2$ estimates $\mu_1 - \mu_2$.
 
@@ -133,20 +135,23 @@ Note carefully that the difference $\bar{y}_1 - \bar{y}_2$. rates also include d
 The types of hypothesis that may be tested are similar to those on the mean of a single population. These are:\
 
 
-xxxxx x̄xxxxxxxxxxxxxxxxxxxx ̄ . $H_0: \mu_d \leq D_0$  vs.  $H_a: \mu_d > D_0$\
-. $H_0: \mu_d \geq D_0$  vs.  $H_a: \mu_d < D_0$\
-. $H_0: \mu_d = D_0$  vs.  $H_a: \mu_d \neq D_0$
+- $H_0: \mu_d \leq D_0$  vs.  $H_a: \mu_d > D_0$\
+- $H_0: \mu_d \geq D_0$  vs.  $H_a: \mu_d < D_0$\
+- $H_0: \mu_d = D_0$  vs.  $H_a: \mu_d \neq D_0$
 
 The test statistic for testing each of the above hypotheses is the [*paired t-statistic*]{style="color: magenta"}: $$t = \frac{\bar{d}-D_0}{s_d/\sqrt{n}}$$
+
+
+## Tests of Hypotheses about $\mu_d$
 
 Choosing Type I error rate to be $\alpha$, the rejection regions are, respectively,\
 
 
-xxxxx x̄xxxxxxxxxxxxxxxxxxxx ̄ . Reject if: $t > t_{\alpha,(n-1)}$\
-. Reject if: $t < -t_{\alpha,(n-1)}$\
-. Reject if: $|t| > t_{\alpha/2,(n-1)}$
+- Reject if: $t > t_{\alpha,(n-1)}$\
+- Reject if: $t < -t_{\alpha,(n-1)}$\
+- Reject if: $|t| > t_{\alpha/2,(n-1)}$
 
-**[Confidence Interval for $\mbox{\boldmath$\mu_d$}$]{style="color: blue"}**\
+**[Confidence Interval for $\mu_d$]{style="color: blue"}**\
 A $100(1-\alpha)\%$ confidence interval for $\mu_d$ is: $$\bar{d}\ \pm\ t_{\alpha/2}\, \cdot s_d \, /\sqrt{n}$$ where $t_{\alpha/2}$ is the tabulated $t$ percentile based on $n-1$ df.
 
 ## Example
@@ -168,6 +173,8 @@ Pairs are animals from the same litter are randomly assigned two different ratio
      8.4    7.8        0.6                        0.36
                  $\sum{d_i}=6.6$    $\sum{d_i^2}=6.96$
 
+---
+
 
 - Let $\mu_d=\mu_1-\mu_2$ where $\mu_1$ and $\mu_2$ are the population means for the two rations.\
 
@@ -182,6 +189,21 @@ Pairs are animals from the same litter are randomly assigned two different ratio
 - A 99% confidence interval for $\mu_d$ is:\
   $\bar{d} \pm  t_{.005} \, \cdot s_d \, /\sqrt{n}  = 0.66  \pm 
   (3.25)(0.1701)$ giving $(.10, 1.21)$
+  
+## Example: R
+
+```{r}
+#| echo: true
+r1 <- c(10.6, 11.0, 10.6, 9.8, 9.2, 8.6, 6.6, 10.0, 7.9, 8.4)
+r2 <- c(9.9, 10.2, 9.3, 9.6, 8.8, 7.8, 6.4, 8.3, 8.0, 7.8)
+d <- r1-r2
+
+t.test(d, conf.level = 0.99)
+t.test(r1, r2, paired = T, conf.level = 0.99)
+
+```
+
+# Extra Practice
 
 ## Example
 

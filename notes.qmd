@@ -16,11 +16,17 @@ format:
 
 **Course Notes**
 
+4.5 -- Inference for proportions
+
+- [Slides](notes/4.5-proportions/index.qmd)
+
 4 -- Inference for two means
 
 - [Slides, part 1](notes/4-two-means/part4_lectures.qmd)
     - [potency.csv](notes/4-two-means/potency.csv)
     - [welch's t-test](notes/data/welch-t-test.csv)
+    - [t-test code](notes/4-two-means/t-test.R)
+- [Slides, part 2](notes/4-two-means/part4_lectures-part2.qmd)
 
 3 -- Inference for one mean
 

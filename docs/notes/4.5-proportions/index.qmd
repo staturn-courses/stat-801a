@@ -1,0 +1,113 @@
+---
+title: Inferences about Proportions
+subtitle: Inferences about $\pi$, $\pi_1-\pi_2$
+footer: STAT 801A
+format: 
+  revealjs:
+    smaller: true
+    incremental: false
+---
+
+## Motivation
+
+Thus far, we have discussed how to analyze continuous data. In many cases, it is necessary to analyze proportions, which are a result of categorical data. Here, categories are defined either as a "success" or "failure"
+
+$$
+\pi=\text{Population proportion of success}
+$$
+
+Examples
+
+- number of successful basketball shots out of 20 attempts
+- number of days of the year with precipitation
+- number of Petri dishes where bacteria colonies did not form
+
+## Binomial Distribution
+
+When the total number of trials is known, one can use the Binomial distribution to model the number of successes. This is given as follows:
+
+$$
+P(X=x)={n\choose x}\pi^x(1-\pi)^{n-x};\quad x=0,1,\dots,n \quad 0\lt\pi\lt1
+$$
+
+$$
+E[X]=n\pi\quad V[X]=n\pi(1-\pi)
+$$
+
+
+## Inference for $\pi$
+
+The simplest test for inferences about $\pi$ is the one-sample Z-test. Recall that we previously discussed the Z-test from the Normal distribution when $\sigma^2$ was known. Using the CLT and properties of the Binomial distribution, we can estimate $\sigma^2$ for proportions as follows:
+
+$$
+\sigma^2=\frac{\pi(1-\pi)}{n}
+$$
+
+## Inference for $\pi$, cont.
+
+Similarly to our previous tests for continuous data, we have three types of hypotheses involving inference for $\pi$. These tests are:
+
+- $H_0: \pi \leq \pi_0$  vs.  $H_a: \pi > \pi_0$\
+- $H_0: \pi \geq \pi_0$  vs.  $H_a: \pi < \pi_0$\
+- $H_0: \pi = \pi_0$  vs.  $H_a: \pi \neq \pi_0$
+
+Taking the sample proportion as $\hat{p}$, the test statistic is computed as:
+
+$$z_c=\frac{\hat{p}-\pi_0}{\sqrt{\frac{\pi_0(1-\pi_0)}{n}}}$$
+
+We would reject $H_0$ in the same manner as before:
+
+[Case 1:]{style="color: red"} Reject $H_0:$ if $z_c \geq z_\alpha$\
+[Case 2:]{style="color: red"} Reject $H_0:$ if $z_c \leq -z_\alpha$\
+[Case 3:]{style="color: red"} Reject $H_0:$ if $|z_c| \geq z_{\alpha/2}$
+
+
+## Inference for $\pi$, cont.
+
+In Project 2, you created a `z.test()` function. Using `sigma=`$\sqrt{\frac{\pi_0(1-\pi_0)}{n}}$, you would get the correct p-value for this test. However, Wald confidence intervals are calculated using $\hat{p}$ instead of $\pi_0$.
+
+Wald confidence intervals for $\pi$ are calculated as follows: 
+
+$$
+\hat{p}\pm z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+$$
+
+Notice how we only consider one case of confidence intervals. This may result in intervals going outside the range of $(0,1)$, which are often then truncated to those values (e.g., $1.2\rightarrow 1$). 
+
+## Inference for $\pi_1-\pi_2$
+
+When working with categorical data for two groups, we may be interested in making inferences about $\pi_1-\pi_2$. Again, we have our three types of hypotheses for a difference in proportions, where $D_0$ is often 0. 
+
+- $H_0: \pi_1-\pi_2 \leq D_0$  vs.  $H_a: \pi_1-\pi_2 > D_0$\
+- $H_0: \pi_1-\pi_2 \geq D_0$  vs.  $H_a: \pi_1-\pi_2 < D_0$\
+- $H_0: \pi_1-\pi_2 = D_0$  vs.  $H_a: \pi_1-\pi_2 \neq D_0$
+
+
+## Inference for $\pi_1-\pi_2$, cont.
+
+Taking the sample proportion as $\hat{p}$, the test statistic for $\pi_1-\pi_2$ is computed as:
+
+$$z_c=\frac{\hat{p_1}-\hat{p_2}-D_0}{\sqrt{\frac{\hat{p_1}(1-\hat{p_1})}{n_1}+\frac{\hat{p_2}(1-\hat{p_2})}{n_2}}}$$
+
+
+Notice that the test statistic does not rely on values given by the hypotheses. We would reject $H_0$ in the same manner as before:
+
+[Case 1:]{style="color: red"} Reject $H_0:$ if $z_c \geq z_\alpha$\
+[Case 2:]{style="color: red"} Reject $H_0:$ if $z_c \leq -z_\alpha$\
+[Case 3:]{style="color: red"} Reject $H_0:$ if $|z_c| \geq z_{\alpha/2}$
+
+## Inference for $\pi_1-\pi_2$, cont.
+
+The Wald confidence interval for $\pi_1-\pi_2$ is given by
+
+$$
+\hat{p}_1-\hat{p}_2\pm z_{\alpha/2} \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}
+$$
+
+## Notes about inferences for proportions
+
+The confidence intervals previously calculated are called Wald Confidence Intervals. These rely on the assumption that the proportions are approximately normal and that the CLT can be used. This means that these tests and confidence intervals are relatively poor for proportions near 0 and 1, and for small sample sizes. This should raise concerns, and is embodied by the following quote:
+
+> "it is tempting, if the only tool you have is a hammer, to treat everything as if it were a nail." -- Abraham Maslow
+
+There are better methods for analyzing categorical data than discussed here. I highly encourage you to check out course notes from Dr. Chris Bilder on his Categorical Data Analysis course for more information: <https://www.chrisbilder.com/stat875/>. Lab 6 will focus on some methods for inferences of $\pi$ and $\pi_1-\pi_2$.

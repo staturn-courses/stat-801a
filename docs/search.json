@@ -7,53 +7,123 @@
     "text": "Instructor\nName: Tyler Wiederich, Ph.D.\nOffice: Hardin Hall 343A\nOffice hours: W 1-3, and by appointment\nE-mail: twiederich2@unl.edu\n\nLab Instructor: Ryan Barent\nOffice: Hardin Hall 349E\nOffice hours: Th 1-3\nE-mail: rbarent3@huskers.unl.edu\n\nAll office hours are guaranteed for the first 30 minutes. If no students are present after 30 minutes, office hours are ended.\n\n\nCourse Description\nPrerequisites: Introductory course in statistics.\nStatistical concepts and statistical methodology useful in descriptive, experimental, and analytical study of biological and other natural phenomena. Practical application of statistics rather than on statistical theory.\n\n\nStatistical Software\nThe statistical computing software package R will be used extensively to perform calculations in this class. Additionally, we will make use of RStudio (GUI for R) and Quarto (document creation).\n\nDownload R: https://cran.r-project.org\nDownload RStudio: https://posit.co/downloads\nDownload Quarto: https://quarto.org/docs/download/\n\n\n\nAssessments\nThis course consists of quizzes, projects, and exams.\nProjects/Quizzes: Projects and quizzes will be assigned periodically throughout the semester. You will have at least one week to complete the assessment.\nMidterm: There will be one midterm approximately halfway through the semester. Details will be provided in class.\nFinal: To be announced in class.\nThese assessments are weighted as follows:\n\n\n\n\nProjects/quizzes*\nMidterm\nFinal**\n\n\n\n\n% of grade\n20%\n30%\n50%\n\n\n\n*All projects need to be turned electronically via PDF documents. A project completed in an unreadable or unprofessional manner will be returned for a zero grade. Quizzes will be assigned on Canvas. No late projects or quizzes are accepted.\nIf projects allow for group work, all group members are expected to participate equally and have a complete understanding of all components for it. I will lower a student’s project grade if he/she/they do not abide by this group work policy.\n**The final exam is scheduled for Monday, Dec. 14 from 10:00 to noon.\n\n\nGrades\nYour overall course grade percentage guarantees the following grade for the course.\n\n\n\nLetter Grade\n+\n\n-\n\n\n\n\n\nA\n\n93\n90\n\n\n\nB\n87\n83\n80\n\n\n\nC\n77\n73\n70\n\n\n\nD\n67\n63\n60\n\n\n\nF\n\n&lt;60\n\n\n\n\n\n\n\nContinuity of Instruction Policy\nIn the event that the university is closed during our regular class hours, please check the Canvas announcements for alternative class arrangements.\n\n\nAI Disclaimer\nThe recent popularity of large language models and other artificial intelligence tools introduces a unique challenge in the academic community. As an instructor, my goal is to promote critical thinking for the topics taught in this course. Unless otherwise stated, the use of AI tools is not permitted. If you are suspected of using AI, I reserve the right to give a zero grade.\n\n\nTentative Topics\n\nIntro to R\nData summaries\nProbability\nInference for one mean\nInference for two means\nInference for proportions\nInference for variances\nANOVA\nRegression\n\n\n\nImportant Dates\n\nNo lab on 8/24\nNo lab on 9/7 (Labor Day)\nNo class on 10/19 (Fall Break)\nNo class or lab on the week of 11/23\n\n\n\nUNL Course Policies and Resources\nStudents are responsible for knowing the university policies and resources found on this page: https://go.unl.edu/coursepolicies\n\nUniversity-wide Attendance Policy\nAcademic Honesty Policy\nServices for Students with Disabilities\nMental Health and Well-Being Resources\nFinal Exam Schedule\nFifteenth Week Policy\nEmergency Procedures\nDiversity & Inclusiveness\nTitle IX Policy\nOther Relevant University-Wide Policies"
   },
   {
-    "objectID": "projects/midterm/midterm.html",
-    "href": "projects/midterm/midterm.html",
-    "title": "midterm",
+    "objectID": "projects/project2/project2-solutions.html",
+    "href": "projects/project2/project2-solutions.html",
+    "title": "Project 2 Solutions",
     "section": "",
-    "text": "https://clinicaltrials.gov/study/NCT06037668\nA study sponsored by Sumitomo Pharma America, Inc. was designed to test two at-home self-guided virtual reality interventions for adults with social anxiety disorder."
+    "text": "z.test &lt;- function(y, mu = 0, sigma = 1,\n                   alternative = c('two.sided', 'less', 'greater'),\n                   conf.level = 0.95) {\n  \n  alternative &lt;- match.arg(alternative)\n  message(paste('Number of missing values:', sum(is.na(y))))\n  y_orig &lt;- y\n  y &lt;- y[!is.na(y)]\n  # Calculations here\n  xbar &lt;- mean(y)\n  n &lt;- length(y)\n  se &lt;- sigma / sqrt(n)\n  z &lt;- (xbar-mu)/se\n  alpha &lt;- 1-conf.level\n  \n  # Hypothesis tests\n  if(alternative == \"two.sided\") {\n    lcl &lt;- xbar - qnorm(1-alpha/2)*se\n    ucl &lt;- xbar + qnorm(1-alpha/2)*se\n    p.value &lt;- 2*pnorm(abs(z), lower.tail = F)\n  } else if (alternative == 'less') {\n    lcl &lt;- -Inf\n    ucl &lt;- xbar + qnorm(1-alpha)*se\n    p.value &lt;- pnorm(z)\n  } else if (alternative == 'greater') {\n    lcl &lt;- xbar - qnorm(1-alpha)*se\n    ucl &lt;- Inf\n    p.value &lt;- pnorm(z, lower.tail = FALSE)\n  } else {\n    stop(\"Invalid alternative provided\")\n  }\n  \n  \n  # Organize results\n  results &lt;- list(\n    data = y_orig,                                      # Original data\n    sample_mean = xbar,                                # Mean of the data\n    standard_error = se,                             # Standard error\n    z = z,                                          # Test statistic\n    parameters = list(mu = mu, sigma = sigma),     # Parameters        \n    alternative = alternative,                     # The alternative hypothesis\n    alpha = alpha,                                      # Significance level\n    confidence_interval = list(lcl = lcl, ucl = ucl),    # Confidence interval\n    p.value = p.value                                     # p-value of the test\n    \n  )\n  \n  # Output list of results\n  return(results)\n}"
   },
   {
-    "objectID": "projects/final/final.html",
-    "href": "projects/final/final.html",
-    "title": "Final",
+    "objectID": "projects/project2/project2-solutions.html#part-a",
+    "href": "projects/project2/project2-solutions.html#part-a",
+    "title": "Project 2 Solutions",
+    "section": "Part a",
+    "text": "Part a\n\nz.test.data &lt;- read.csv('z-test-data.csv')\nz.test(y=z.test.data$prob2a,\n       mu=30, sigma=sd(z.test.data$prob2a),\n       alternative = 'greater')\n\nNumber of missing values: 0\n\n\n$data\n [1] 31.3 28.8 31.0 29.8 28.8 33.6 29.5 35.6 29.8 37.4 34.1 36.3 34.9 36.4 32.7\n[16] 34.2 33.8 29.4 31.7 28.2 26.5 30.0 35.3 32.1 32.5 30.7 34.4 32.3 30.3 32.6\n[31] 29.5 32.8 38.9 31.1 31.1 24.2 26.5 30.8 29.1 31.5\n\n$sample_mean\n[1] 31.7375\n\n$standard_error\n[1] 0.4895404\n\n$z\n[1] 3.549247\n\n$parameters\n$parameters$mu\n[1] 30\n\n$parameters$sigma\n[1] 3.096126\n\n\n$alternative\n[1] \"greater\"\n\n$alpha\n[1] 0.05\n\n$confidence_interval\n$confidence_interval$lcl\n[1] 30.93228\n\n$confidence_interval$ucl\n[1] Inf\n\n\n$p.value\n[1] 0.0001931671\n\n\nThe p-value is less than 0.05, meaning that we reject the null hypothesis. There is evidence to conclude that the true mean is greater than 30."
+  },
+  {
+    "objectID": "projects/project2/project2-solutions.html#part-b",
+    "href": "projects/project2/project2-solutions.html#part-b",
+    "title": "Project 2 Solutions",
+    "section": "Part b",
+    "text": "Part b\n\nz.test(y=z.test.data$prob2b,\n       mu=15, sigma=sd(z.test.data$prob2b),\n       alternative = 'less')\n\nNumber of missing values: 0\n\n\n$data\n [1] 19.8 18.4  7.6 14.3 15.8 10.7 13.0 11.1 10.2 18.5 14.4 13.6  5.6 15.4 19.4\n[16] 17.9 12.4 21.8 18.8 23.1  8.8 22.8  8.5  8.0 20.1 15.9 14.5 21.6 20.3 14.5\n[31] 15.0 12.0 12.0 14.5 13.0 14.6  8.6  8.0 21.1  5.5\n\n$sample_mean\n[1] 14.5275\n\n$standard_error\n[1] 0.7744062\n\n$z\n[1] -0.6101449\n\n$parameters\n$parameters$mu\n[1] 15\n\n$parameters$sigma\n[1] 4.897775\n\n\n$alternative\n[1] \"less\"\n\n$alpha\n[1] 0.05\n\n$confidence_interval\n$confidence_interval$lcl\n[1] -Inf\n\n$confidence_interval$ucl\n[1] 15.80128\n\n\n$p.value\n[1] 0.2708829\n\n\nThe p-value is greater than 0.05, meaning that we fail to reject the null hypothesis. There is not evidence to conclude that the true mean is less than 15."
+  },
+  {
+    "objectID": "projects/project2/project2-solutions.html#part-c",
+    "href": "projects/project2/project2-solutions.html#part-c",
+    "title": "Project 2 Solutions",
+    "section": "Part c",
+    "text": "Part c\n\nz.test(y=z.test.data$prob2c,\n       mu=50, sigma=sd(z.test.data$prob2c),\n       alternative = 'two.sided')\n\nNumber of missing values: 0\n\n\n$data\n [1] 55.9 55.5 55.2 61.7 46.5 59.9 53.9 52.5 54.0 53.4 54.9 55.5 59.4 55.8 56.7\n[16] 48.1 52.0 54.3 61.2 54.2 49.7 57.5 60.1 51.5 50.1 53.2 52.7 54.7 60.7 48.3\n[31] 51.1 51.3 55.4 59.0 59.3 54.0 54.8 52.2 46.9 52.0\n\n$sample_mean\n[1] 54.3775\n\n$standard_error\n[1] 0.6132876\n\n$z\n[1] 7.137761\n\n$parameters\n$parameters$mu\n[1] 50\n\n$parameters$sigma\n[1] 3.878771\n\n\n$alternative\n[1] \"two.sided\"\n\n$alpha\n[1] 0.05\n\n$confidence_interval\n$confidence_interval$lcl\n[1] 53.17548\n\n$confidence_interval$ucl\n[1] 55.57952\n\n\n$p.value\n[1] 9.486344e-13\n\n\nThe p-value is less than 0.05, meaning that we reject the null hypothesis. There is evidence to conclude that the true mean is different from 50."
+  },
+  {
+    "objectID": "projects/project1/project1-solutions.html",
+    "href": "projects/project1/project1-solutions.html",
+    "title": "Project 1 Solutions",
     "section": "",
-    "text": "Instead of a final exam, you (in groups of 3-4) are tasked with designing and conducting an experiment using one of the methods discussed in class. There is a written and presented component of the final, where each part is equally weighted. Details of the experiment and assessments are below."
+    "text": "Read in the data and print the first 10 observations.\n\nne_work_commute &lt;- read.csv(\"travel-time-31109.csv\")\nhead(ne_work_commute, n=10)\n\n   RESPONDENT TRANTIME DEPARTS ARRIVES\n1           1        7     647     654\n2           2        8    1305    1309\n3           3       10    1445    1454\n4           4       10    1605    1614\n5           5       10    1605    1614\n6           6       15    1515    1534\n7           7       15    1435    1449\n8           8        7    1545    1554\n9           9       12    1535    1544\n10         10       15    1435    1449"
   },
   {
-    "objectID": "projects/final/final.html#description-of-experiment",
-    "href": "projects/final/final.html#description-of-experiment",
-    "title": "Final",
-    "section": "Description of Experiment",
-    "text": "Description of Experiment\nThe purpose of the experiment is to demonstrate your knowledge of the topics taught in our course. The following criteria must be met:\n\nExperiment does not involve living subjects.\nOutcomes occur due to a random (stochastic) process (no observational data).\nHypothesis is reasonable with respect to the subject matter.\nExperiment can be ethically conducted.\nLarge enough sample size to meet the assumptions of the test.\n\nOnce you and your group have designed an experiment, schedule a time to meet with your instructor to finalize the details of your experiment. Prior to our meeting, fill out the Pre-experiment worksheet form.\nYour experiment does not need to be complicated or have an associated cost. The goal of this project is to connect the theory we discussed with real applications. Some examples of potential experiments are below:\n\nDoes shoe brand A help one jump higher than shoe brand B? (Gaussian)\nWhen tasked to randomly choose a dog or cat, does a LLM show preference toward selecting cats? (Binomial)\nDo heavier bowling balls help you knock down more pins than lighter bowling balls? (Binomial)\nWhen dropped from the top of a flight of stairs, how many times does a tennis ball bounce before coming to rest? (Poisson)"
+    "objectID": "projects/project1/project1-solutions.html#a-probability-of-less-than-10-minutes",
+    "href": "projects/project1/project1-solutions.html#a-probability-of-less-than-10-minutes",
+    "title": "Project 1 Solutions",
+    "section": "(a) Probability of less than 10 minutes",
+    "text": "(a) Probability of less than 10 minutes\n\np_less_10 &lt;- pnorm(\n  10,\n  mean = mu,\n  sd = sigma\n)\n\np_less_10\n\n[1] 0.1996557"
   },
   {
-    "objectID": "projects/final/final.html#written-component",
-    "href": "projects/final/final.html#written-component",
-    "title": "Final",
-    "section": "Written Component",
-    "text": "Written Component\nDue date: end of the scheduled final exam\nThe written component of the exam includes writing up your experiment in the style of academic research. Your paper should be around 4-6 pages.\nThe following sections are required:\n\nIntroduction: describe what is currently known about your topic and your hypothesis/objective. If testing one group/process, what value is reasonable to test against? For two groups/processes, what difference provides practical significance? Include at least three sources.\nMethods: describe how you designed the experiment and the statistical test associated with the analysis. If appropriate, a diagram of your study would be helpful. If the data violates the assumption of the test (e.g., nonnormality), how to you proceed with the analysis (e.g., log transformation, use non-parametric test, etc.).\nResults: discuss your findings using descriptive statistics and statistical tests. Include at least one visualization. Provide the results of the experiment, but not a discussion of them (save for the next section).\nDiscussion/Conclusion: connect your results to the real world implications, as well as limitations of your study. What could future research explore?\nReferences: cite your sources\n\nIt may be helpful to consult online articles for writing research articles, such as this one: https://pmc.ncbi.nlm.nih.gov/articles/PMC3178846/.\nIn addition to your paper, you must format it using a journal template. If you are using Quarto to write your paper, some templates can be found here: https://github.com/quarto-journals/."
+    "objectID": "projects/project1/project1-solutions.html#b-probability-of-between-10-and-20-minutes",
+    "href": "projects/project1/project1-solutions.html#b-probability-of-between-10-and-20-minutes",
+    "title": "Project 1 Solutions",
+    "section": "(b) Probability of between 10 and 20 minutes",
+    "text": "(b) Probability of between 10 and 20 minutes\nWe want\n\\[\nP(10 &lt; X &lt; 20).\n\\]\nUsing cumulative probabilities,\n\\[\nP(10 &lt; X &lt; 20)\n=\nP(X &lt; 20)-P(X &lt; 10).\n\\]\n\np_10_20 &lt;- pnorm(\n  20,\n  mean = mu,\n  sd = sigma\n) -\n  pnorm(\n    10,\n    mean = mu,\n    sd = sigma\n  )\n\np_10_20\n\n[1] 0.4948758"
   },
   {
-    "objectID": "projects/final/final.html#presentation",
-    "href": "projects/final/final.html#presentation",
-    "title": "Final",
-    "section": "Presentation",
-    "text": "Presentation\nDate: last week of classes (Tuesday, Thursday)\nYour presentation should mirror your written paper (introduction, methods, results, discussion). Each group will have 7-10 minutes to present, and up to 5 minutes for questions. While you may omit some details to stay within the time constraints, your presentation should be able to capture the essence of your experiment and its results."
+    "objectID": "projects/project1/project1-solutions.html#c-probability-of-greater-than-20-minutes",
+    "href": "projects/project1/project1-solutions.html#c-probability-of-greater-than-20-minutes",
+    "title": "Project 1 Solutions",
+    "section": "(c) Probability of greater than 20 minutes",
+    "text": "(c) Probability of greater than 20 minutes\nWe want\n\\[\nP(X &gt; 20).\n\\]\nUsing the complement,\n\\[\nP(X &gt; 20)=1-P(X\\leq20).\n\\]\n\np_greater_20 &lt;- 1 - pnorm(\n  20,\n  mean = mu,\n  sd = sigma\n)\n\np_greater_20\n\n[1] 0.3054685"
   },
   {
-    "objectID": "projects/final/final.html#rubric",
-    "href": "projects/final/final.html#rubric",
-    "title": "Final",
-    "section": "Rubric",
-    "text": "Rubric\nEach component listed below will be graded with following scale.\n\n\n\n\n\n\n\n\n\n\nFull credit\n80%\nHalf Credit\n20%\nNo credit\n\n\n\n\nFully sufficient\nSome errors\nMajor errors\nCritical errors\nNo effort was made\n\n\n\nPre-experiment meeting (20%)\n\nMet with instructor by the deadline\nPre-experiment worksheet is filled out prior to the meeting\n\nWritten component (40%)\n\nIntroduction: sufficient background knowledge is provided on the subject matter; hypothesis is clearly stated\nMethods: experiment and analysis can be fully replicated\nResults: descriptive and inferential statistics clearly given and arranged neatly; at least one visualization of the data is provided\nDiscussion: results are clearly connected back to the intended hypothesis; limitations are discussed; future research areas are included based on your research\nReferences: at least 3 references are used and cited correctly\n\nPresentation (40%)\n\nIntroduction: motivation is clearly given; hypothesis is stated\nMethods: describe the setup of your experiment\nResults: describe the results of your experiment; at least one visualization is included\nDiscussion: connect your results back to they hypothesis (what is the main takeaway?)\nAttendance: attended and listed to your peers present their findings"
+    "objectID": "notes/4.5-proportions/index.html#motivation",
+    "href": "notes/4.5-proportions/index.html#motivation",
+    "title": "Inferences about Proportions",
+    "section": "Motivation",
+    "text": "Motivation\nThus far, we have discussed how to analyze continuous data. In many cases, it is necessary to analyze proportions, which are a result of categorical data. Here, categories are defined either as a “success” or “failure”\n\\[\n\\pi=\\text{Population proportion of success}\n\\]\nExamples\n\nnumber of successful basketball shots out of 20 attempts\nnumber of days of the year with precipitation\nnumber of Petri dishes where bacteria colonies did not form"
   },
   {
-    "objectID": "projects/final/final.html#notes",
-    "href": "projects/final/final.html#notes",
-    "title": "Final",
-    "section": "Notes",
-    "text": "Notes\nThis final was designed to combine the theory and application of statistics. While there are many components that we have not discussed in class (such as applying journal templates), I am here to help! Please don’t hesitate to ask questions if you get stuck."
+    "objectID": "notes/4.5-proportions/index.html#binomial-distribution",
+    "href": "notes/4.5-proportions/index.html#binomial-distribution",
+    "title": "Inferences about Proportions",
+    "section": "Binomial Distribution",
+    "text": "Binomial Distribution\nWhen the total number of trials is known, one can use the Binomial distribution to model the number of successes. This is given as follows:\n\\[\nP(X=x)={n\\choose x}\\pi^x(1-\\pi)^{n-x};\\quad x=0,1,\\dots,n \\quad 0\\lt\\pi\\lt1\n\\]\n\\[\nE[X]=n\\pi\\quad V[X]=n\\pi(1-\\pi)\n\\]"
+  },
+  {
+    "objectID": "notes/4.5-proportions/index.html#inference-for-pi",
+    "href": "notes/4.5-proportions/index.html#inference-for-pi",
+    "title": "Inferences about Proportions",
+    "section": "Inference for \\(\\pi\\)",
+    "text": "Inference for \\(\\pi\\)\nThe simplest test for inferences about \\(\\pi\\) is the one-sample Z-test. Recall that we previously discussed the Z-test from the Normal distribution when \\(\\sigma^2\\) was known. Using the CLT and properties of the Binomial distribution, we can estimate \\(\\sigma^2\\) for proportions as follows:\n\\[\n\\sigma^2=\\frac{\\pi(1-\\pi)}{n}\n\\]"
+  },
+  {
+    "objectID": "notes/4.5-proportions/index.html#inference-for-pi-cont.",
+    "href": "notes/4.5-proportions/index.html#inference-for-pi-cont.",
+    "title": "Inferences about Proportions",
+    "section": "Inference for \\(\\pi\\), cont.",
+    "text": "Inference for \\(\\pi\\), cont.\nSimilarly to our previous tests for continuous data, we have three types of hypotheses involving inference for \\(\\pi\\). These tests are:\n\n\\(H_0: \\pi \\leq \\pi_0\\)  vs.  \\(H_a: \\pi &gt; \\pi_0\\)\n\n\\(H_0: \\pi \\geq \\pi_0\\)  vs.  \\(H_a: \\pi &lt; \\pi_0\\)\n\n\\(H_0: \\pi = \\pi_0\\)  vs.  \\(H_a: \\pi \\neq \\pi_0\\)\n\nTaking the sample proportion as \\(\\hat{p}\\), the test statistic is computed as:\n\\[z_c=\\frac{\\hat{p}-\\pi_0}{\\sqrt{\\frac{\\pi_0(1-\\pi_0)}{n}}}\\]\nWe would reject \\(H_0\\) in the same manner as before:\nCase 1: Reject \\(H_0:\\) if \\(z_c \\geq z_\\alpha\\)\nCase 2: Reject \\(H_0:\\) if \\(z_c \\leq -z_\\alpha\\)\nCase 3: Reject \\(H_0:\\) if \\(|z_c| \\geq z_{\\alpha/2}\\)"
+  },
+  {
+    "objectID": "notes/4.5-proportions/index.html#inference-for-pi-cont.-1",
+    "href": "notes/4.5-proportions/index.html#inference-for-pi-cont.-1",
+    "title": "Inferences about Proportions",
+    "section": "Inference for \\(\\pi\\), cont.",
+    "text": "Inference for \\(\\pi\\), cont.\nIn Project 2, you created a z.test() function. Using sigma=\\(\\sqrt{\\frac{\\pi_0(1-\\pi_0)}{n}}\\), you would get the correct p-value for this test. However, Wald confidence intervals are calculated using \\(\\hat{p}\\) instead of \\(\\pi_0\\).\nWald confidence intervals for \\(\\pi\\) are calculated as follows:\n\\[\n\\hat{p}\\pm z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\n\\]\nNotice how we only consider one case of confidence intervals. This may result in intervals going outside the range of \\((0,1)\\), which are often then truncated to those values (e.g., \\(1.2\\rightarrow 1\\))."
+  },
+  {
+    "objectID": "notes/4.5-proportions/index.html#inference-for-pi_1-pi_2",
+    "href": "notes/4.5-proportions/index.html#inference-for-pi_1-pi_2",
+    "title": "Inferences about Proportions",
+    "section": "Inference for \\(\\pi_1-\\pi_2\\)",
+    "text": "Inference for \\(\\pi_1-\\pi_2\\)\nWhen working with categorical data for two groups, we may be interested in making inferences about \\(\\pi_1-\\pi_2\\). Again, we have our three types of hypotheses for a difference in proportions, where \\(D_0\\) is often 0.\n\n\\(H_0: \\pi_1-\\pi_2 \\leq D_0\\)  vs.  \\(H_a: \\pi_1-\\pi_2 &gt; D_0\\)\n\n\\(H_0: \\pi_1-\\pi_2 \\geq D_0\\)  vs.  \\(H_a: \\pi_1-\\pi_2 &lt; D_0\\)\n\n\\(H_0: \\pi_1-\\pi_2 = D_0\\)  vs.  \\(H_a: \\pi_1-\\pi_2 \\neq D_0\\)"
+  },
+  {
+    "objectID": "notes/4.5-proportions/index.html#inference-for-pi_1-pi_2-cont.",
+    "href": "notes/4.5-proportions/index.html#inference-for-pi_1-pi_2-cont.",
+    "title": "Inferences about Proportions",
+    "section": "Inference for \\(\\pi_1-\\pi_2\\), cont.",
+    "text": "Inference for \\(\\pi_1-\\pi_2\\), cont.\nTaking the sample proportion as \\(\\hat{p}\\), the test statistic for \\(\\pi_1-\\pi_2\\) is computed as:\n\\[z_c=\\frac{\\hat{p_1}-\\hat{p_2}-D_0}{\\sqrt{\\frac{\\hat{p_1}(1-\\hat{p_1})}{n_1}+\\frac{\\hat{p_2}(1-\\hat{p_2})}{n_2}}}\\]\nNotice that the test statistic does not rely on values given by the hypotheses. We would reject \\(H_0\\) in the same manner as before:\nCase 1: Reject \\(H_0:\\) if \\(z_c \\geq z_\\alpha\\)\nCase 2: Reject \\(H_0:\\) if \\(z_c \\leq -z_\\alpha\\)\nCase 3: Reject \\(H_0:\\) if \\(|z_c| \\geq z_{\\alpha/2}\\)"
+  },
+  {
+    "objectID": "notes/4.5-proportions/index.html#inference-for-pi_1-pi_2-cont.-1",
+    "href": "notes/4.5-proportions/index.html#inference-for-pi_1-pi_2-cont.-1",
+    "title": "Inferences about Proportions",
+    "section": "Inference for \\(\\pi_1-\\pi_2\\), cont.",
+    "text": "Inference for \\(\\pi_1-\\pi_2\\), cont.\nThe Wald confidence interval for \\(\\pi_1-\\pi_2\\) is given by\n\\[\n\\hat{p}_1-\\hat{p}_2\\pm z_{\\alpha/2} \\sqrt{\\frac{\\hat{p}_1(1-\\hat{p}_1)}{n_1}+\\frac{\\hat{p}_2(1-\\hat{p}_2)}{n_2}}\n\\]"
+  },
+  {
+    "objectID": "notes/4.5-proportions/index.html#notes-about-inferences-for-proportions",
+    "href": "notes/4.5-proportions/index.html#notes-about-inferences-for-proportions",
+    "title": "Inferences about Proportions",
+    "section": "Notes about inferences for proportions",
+    "text": "Notes about inferences for proportions\nThe confidence intervals previously calculated are called Wald Confidence Intervals. These rely on the assumption that the proportions are approximately normal and that the CLT can be used. This means that these tests and confidence intervals are relatively poor for proportions near 0 and 1, and for small sample sizes. This should raise concerns, and is embodied by the following quote:\n\n“it is tempting, if the only tool you have is a hammer, to treat everything as if it were a nail.” – Abraham Maslow\n\nThere are better methods for analyzing categorical data than discussed here. I highly encourage you to check out course notes from Dr. Chris Bilder on his Categorical Data Analysis course for more information: https://www.chrisbilder.com/stat875/. Lab 6 will focus on some methods for inferences of \\(\\pi\\) and \\(\\pi_1-\\pi_2\\)."
   },
   {
     "objectID": "notes/4-two-means/part4_lectures-part2.html#inferences-about-mu_1---mu_2-for-independent-samples",
@@ -74,14 +144,7 @@
     "href": "notes/4-two-means/part4_lectures-part2.html#why-variance-is-reduced-by-pairing-data",
     "title": "Inferences about \\(\\mu_1-\\mu_2\\)",
     "section": "Why variance is reduced by pairing data?",
-    "text": "Why variance is reduced by pairing data?\n\nIn either case, what this means is that if the variances of the two populations is small, we can expect the variance of \\(\\bar{Y}_1 - \\bar{Y}_2\\) to be small.\nIf this is true, we can expect the sample values to be close to the sample means and \\(\\bar{y}_1 - \\bar{y}_2\\) to be very close to \\(\\mu_1 - \\mu_2\\).\nThus even a small sample will be sufficient to get a good estimate of \\(\\mu_1 - \\mu_2\\) if the variances are small.\nBut many times the population variances \\(\\sigma^2\\) are large, so that we cannot estimate \\(\\mu_1 - \\mu_2\\) accurately with a small sample."
-  },
-  {
-    "objectID": "notes/4-two-means/part4_lectures-part2.html#why-variance-is-reduced-by-pairing-data---cont.",
-    "href": "notes/4-two-means/part4_lectures-part2.html#why-variance-is-reduced-by-pairing-data---cont.",
-    "title": "Inferences about \\(\\mu_1-\\mu_2\\)",
-    "section": "Why variance is reduced by pairing data? - cont.",
-    "text": "Why variance is reduced by pairing data? - cont.\n\nInstead of using independent samples from the two populations, we form pairs of elements – one element from each population, in an effort to achieve smaller variance for \\(\\bar{Y}_1 - \\bar{Y}_2\\)\nThen the random sample of \\(n\\) pairs of elements can be viewed as having come from a population of pairs.\nThe random variable representing the difference in sample means \\(\\bar{Y}_1 - \\bar{Y}_2\\) defined on this population has \\[E(\\bar{Y}_1 - \\bar{Y}_2) = \\mu_1 - \\mu_2 \\quad \\quad\n  V(\\bar{Y}_1 - \\bar{Y}_2) = \\frac{\\sigma_1^2}{n} +\n  \\frac{\\sigma_2^2}{n} - \\frac{2\\sigma_{12}}{n}\\]\nThe quantity \\(\\sigma_{12}\\) is called the covariance of the two populations."
+    "text": "Why variance is reduced by pairing data?\n\nInstead of using independent samples from the two populations, we form pairs of elements – one element from each population, in an effort to achieve smaller variance for \\(\\bar{Y}_1 - \\bar{Y}_2\\)\nThen the random sample of \\(n\\) pairs of elements can be viewed as having come from a population of pairs.\nThe random variable representing the difference in sample means \\(\\bar{Y}_1 - \\bar{Y}_2\\) defined on this population has \\[E(\\bar{Y}_1 - \\bar{Y}_2) = \\mu_1 - \\mu_2 \\quad \\quad\n  V(\\bar{Y}_1 - \\bar{Y}_2) = \\frac{\\sigma_1^2}{n} +\n  \\frac{\\sigma_2^2}{n} - \\frac{2\\sigma_{12}}{n}\\]\nThe quantity \\(\\sigma_{12}\\) is called the covariance of the two populations."
   },
   {
     "objectID": "notes/4-two-means/part4_lectures-part2.html#examples-paired-experiments",
@@ -95,7 +158,7 @@
     "href": "notes/4-two-means/part4_lectures-part2.html#examples-paired-experiments---cont.",
     "title": "Inferences about \\(\\mu_1-\\mu_2\\)",
     "section": "Examples: Paired Experiments - cont.",
-    "text": "Examples: Paired Experiments - cont.\n\nSuppose a consumer testing organization wants to study whether there is a difference in the wear rates of two brands of work shoes.\n\nSuppose that workers selected for the experiment were divided into two groups randomly. Members of one group were assigned to wear Brand X to work while the members of the other group wear Brand Y shoes.\nPopulation 1 consists of the wear rates for persons assigned Brand X with the mean wear rate \\(\\mu_1\\), and Population 2, wear rates for those assigned Brand Y with the mean wear rate \\(\\mu_2\\).\nWe are interested in estimating \\(\\mu_1 - \\mu_2\\) and trying to test whether \\(\\mu_1 - \\mu_2 \\neq 0\\).\n\nIndependent Samples Kind of Study:(2 groups of size \\(n\\)) Take a random sample of workers, randomly divide them into two groups, one to receive each Brand, and measure the wear rate for each person after 100 workdays. Then \\(\\bar{y}_1 - \\bar{y}_2\\) estimates \\(\\mu_1 - \\mu_2\\).\nA Paired Data Kind of Study:(1 group of size \\(n\\)) Take a random sample of workers. Assign Brand X to all workers in the group and measure the wear rates following 100 workdays. Now assign the same workers Brand Y and measure wear rate after the next 100 workdays. \\(\\bar{y}_1 - \\bar{y}_2\\) estimates \\(\\mu_1 - \\mu_2\\)."
+    "text": "Examples: Paired Experiments - cont.\n\nSuppose a consumer testing organization wants to study whether there is a difference in the wear rates of two brands of work shoes.\n\nSuppose that workers selected for the experiment were divided into two groups randomly. Members of one group were assigned to wear Brand X to work while the members of the other group wear Brand Y shoes.\nPopulation 1 consists of the wear rates for persons assigned Brand X with the mean wear rate \\(\\mu_1\\), and Population 2, wear rates for those assigned Brand Y with the mean wear rate \\(\\mu_2\\).\nWe are interested in estimating \\(\\mu_1 - \\mu_2\\) and trying to test whether \\(\\mu_1 - \\mu_2 \\neq 0\\)."
   },
   {
     "objectID": "notes/4-two-means/part4_lectures-part2.html#why-is-variance-less-for-paired-data",
@@ -123,14 +186,28 @@
     "href": "notes/4-two-means/part4_lectures-part2.html#tests-of-hypotheses-about-mu_d",
     "title": "Inferences about \\(\\mu_1-\\mu_2\\)",
     "section": "Tests of Hypotheses about \\(\\mu_d\\)",
-    "text": "Tests of Hypotheses about \\(\\mu_d\\)\nThe types of hypothesis that may be tested are similar to those on the mean of a single population. These are:\n\nxxxxx x̄xxxxxxxxxxxxxxxxxxxx ̄ . \\(H_0: \\mu_d \\leq D_0\\)  vs.  \\(H_a: \\mu_d &gt; D_0\\)\n. \\(H_0: \\mu_d \\geq D_0\\)  vs.  \\(H_a: \\mu_d &lt; D_0\\)\n. \\(H_0: \\mu_d = D_0\\)  vs.  \\(H_a: \\mu_d \\neq D_0\\)\nThe test statistic for testing each of the above hypotheses is the paired t-statistic: \\[t = \\frac{\\bar{d}-D_0}{s_d/\\sqrt{n}}\\]\nChoosing Type I error rate to be \\(\\alpha\\), the rejection regions are, respectively,\n\nxxxxx x̄xxxxxxxxxxxxxxxxxxxx ̄ . Reject if: \\(t &gt; t_{\\alpha,(n-1)}\\)\n. Reject if: \\(t &lt; -t_{\\alpha,(n-1)}\\)\n. Reject if: \\(|t| &gt; t_{\\alpha/2,(n-1)}\\)\nConfidence Interval for \\(\\mbox{\\boldmath\\)_d\\(}\\)\nA \\(100(1-\\alpha)\\%\\) confidence interval for \\(\\mu_d\\) is: \\[\\bar{d}\\ \\pm\\ t_{\\alpha/2}\\, \\cdot s_d \\, /\\sqrt{n}\\] where \\(t_{\\alpha/2}\\) is the tabulated \\(t\\) percentile based on \\(n-1\\) df."
+    "text": "Tests of Hypotheses about \\(\\mu_d\\)\nThe types of hypothesis that may be tested are similar to those on the mean of a single population. These are:\n\n\n\\(H_0: \\mu_d \\leq D_0\\)  vs.  \\(H_a: \\mu_d &gt; D_0\\)\n\n\\(H_0: \\mu_d \\geq D_0\\)  vs.  \\(H_a: \\mu_d &lt; D_0\\)\n\n\\(H_0: \\mu_d = D_0\\)  vs.  \\(H_a: \\mu_d \\neq D_0\\)\n\nThe test statistic for testing each of the above hypotheses is the paired t-statistic: \\[t = \\frac{\\bar{d}-D_0}{s_d/\\sqrt{n}}\\]"
+  },
+  {
+    "objectID": "notes/4-two-means/part4_lectures-part2.html#tests-of-hypotheses-about-mu_d-1",
+    "href": "notes/4-two-means/part4_lectures-part2.html#tests-of-hypotheses-about-mu_d-1",
+    "title": "Inferences about \\(\\mu_1-\\mu_2\\)",
+    "section": "Tests of Hypotheses about \\(\\mu_d\\)",
+    "text": "Tests of Hypotheses about \\(\\mu_d\\)\nChoosing Type I error rate to be \\(\\alpha\\), the rejection regions are, respectively,\n\n\nReject if: \\(t &gt; t_{\\alpha,(n-1)}\\)\n\nReject if: \\(t &lt; -t_{\\alpha,(n-1)}\\)\n\nReject if: \\(|t| &gt; t_{\\alpha/2,(n-1)}\\)\n\nConfidence Interval for \\(\\mu_d\\)\nA \\(100(1-\\alpha)\\%\\) confidence interval for \\(\\mu_d\\) is: \\[\\bar{d}\\ \\pm\\ t_{\\alpha/2}\\, \\cdot s_d \\, /\\sqrt{n}\\] where \\(t_{\\alpha/2}\\) is the tabulated \\(t\\) percentile based on \\(n-1\\) df."
   },
   {
     "objectID": "notes/4-two-means/part4_lectures-part2.html#example",
     "href": "notes/4-two-means/part4_lectures-part2.html#example",
     "title": "Inferences about \\(\\mu_1-\\mu_2\\)",
     "section": "Example",
-    "text": "Example\nPairs are animals from the same litter are randomly assigned two different rations. Observed weight gain for each animal is recorded. Test whether the population mean weight gains for the two rations are different. Use \\(\\alpha=.01\\).\n\n\n\n\n\\(R1\\)\n\\(R2\\)\n\\(d=R1-R2\\)\n\\(d^2\\)\n\n\n\n\n10.6\n9.9\n0.7\n0.49\n\n\n11.0\n10.2\n0.8\n0.64\n\n\n10.6\n9.3\n1.3\n1.69\n\n\n9.8\n9.6\n0.2\n0.04\n\n\n9.2\n8.8\n0.4\n0.16\n\n\n8.6\n7.8\n0.8\n0.64\n\n\n6.6\n6.4\n0.2\n0.04\n\n\n10.0\n8.3\n1.7\n2.89\n\n\n7.9\n8.0\n-0.1\n0.01\n\n\n8.4\n7.8\n0.6\n0.36\n\n\n\n\n\\(\\sum{d_i}=6.6\\)\n\\(\\sum{d_i^2}=6.96\\)\n\n\n\n\nLet \\(\\mu_d=\\mu_1-\\mu_2\\) where \\(\\mu_1\\) and \\(\\mu_2\\) are the population means for the two rations.\n\nTest \\(H_0: \\mu_d = 0\\) vs. \\(H_a: \\mu_d \\neq 0\\) using \\(\\alpha=.01\\)\n\\(s_d^2 = [\\sum{d_i^2} - \\frac{(\\sum{d_i})^2}{n}]/(n-1)=(6.96-6.6^2/10)/9 = 0.2893\\)\nThe paired t-statistic is:\n\\(t_c = \\bar{d}/(s_d/\\sqrt{10}) = .66/0.1701= 3.88\\)\nSince \\(t_{.005,9} = 3.25\\), R.R. is \\(|t|&gt; 3.25\\); Reject \\(H_0:\\) at \\(\\alpha=.01\\).\n\nThe p-value is obtained by looking up Table 2 with \\(t_c=3.88\\) with \\(df=9\\). It is seen that \\(.001&lt;p&lt; 0.005\\)\n\nA 99% confidence interval for \\(\\mu_d\\) is:\n\\(\\bar{d} \\pm  t_{.005} \\, \\cdot s_d \\, /\\sqrt{n}  = 0.66  \\pm\n(3.25)(0.1701)\\) giving \\((.10, 1.21)\\)"
+    "text": "Example\nPairs are animals from the same litter are randomly assigned two different rations. Observed weight gain for each animal is recorded. Test whether the population mean weight gains for the two rations are different. Use \\(\\alpha=.01\\).\n\n\n\n\n\\(R1\\)\n\\(R2\\)\n\\(d=R1-R2\\)\n\\(d^2\\)\n\n\n\n\n10.6\n9.9\n0.7\n0.49\n\n\n11.0\n10.2\n0.8\n0.64\n\n\n10.6\n9.3\n1.3\n1.69\n\n\n9.8\n9.6\n0.2\n0.04\n\n\n9.2\n8.8\n0.4\n0.16\n\n\n8.6\n7.8\n0.8\n0.64\n\n\n6.6\n6.4\n0.2\n0.04\n\n\n10.0\n8.3\n1.7\n2.89\n\n\n7.9\n8.0\n-0.1\n0.01\n\n\n8.4\n7.8\n0.6\n0.36\n\n\n\n\n\\(\\sum{d_i}=6.6\\)\n\\(\\sum{d_i^2}=6.96\\)"
+  },
+  {
+    "objectID": "notes/4-two-means/part4_lectures-part2.html#example-r",
+    "href": "notes/4-two-means/part4_lectures-part2.html#example-r",
+    "title": "Inferences about \\(\\mu_1-\\mu_2\\)",
+    "section": "Example: R",
+    "text": "Example: R\n\nr1 &lt;- c(10.6, 11.0, 10.6, 9.8, 9.2, 8.6, 6.6, 10.0, 7.9, 8.4)\nr2 &lt;- c(9.9, 10.2, 9.3, 9.6, 8.8, 7.8, 6.4, 8.3, 8.0, 7.8)\nd &lt;- r1-r2\n\nt.test(d, conf.level = 0.99)\n\n\n    One Sample t-test\n\ndata:  d\nt = 3.8801, df = 9, p-value = 0.003731\nalternative hypothesis: true mean is not equal to 0\n99 percent confidence interval:\n 0.1072094 1.2127906\nsample estimates:\nmean of x \n     0.66 \n\nt.test(r1, r2, paired = T, conf.level = 0.99)\n\n\n    Paired t-test\n\ndata:  r1 and r2\nt = 3.8801, df = 9, p-value = 0.003731\nalternative hypothesis: true mean difference is not equal to 0\n99 percent confidence interval:\n 0.1072094 1.2127906\nsample estimates:\nmean difference \n           0.66"
   },
   {
     "objectID": "notes/4-two-means/part4_lectures-part2.html#example-1",
@@ -1299,7 +1376,7 @@
     "href": "notes.html",
     "title": "STAT 801A",
     "section": "",
-    "text": "Stat 801A Syllabus\n\n\n\nCourse Notes\n4 – Inference for two means\n\nSlides, part 1\n\npotency.csv\nwelch’s t-test\n\n\n3 – Inference for one mean\n\nSlides, part 1\n\\(z_c\\) code\nSlides, part 2\nt.test code\nfiltered_travel_time.csv\n\nTest \\(H_0: \\mu = 15\\) vs \\(H_A: \\mu &lt; 15\\)\n\n\n2 – Probability\n\nFull Slides\nIn-class Slides\nZ table\nBinomial problems\n\n1 – Descriptive Statistics\n\nSlides\npdf\n\n\nLabs\n8/31/26 – Lab 1\n\nR Script\nData: cereal.xlsx | Student_data.csv\nSolutions\n\n9/7/26 – No lab (Labor Day)\n9/14/26 – Lab 2\n\nQuarto, ggplot2, and probability\nSolutions: pdf, qmd\n\n9/28/26 – Lab 3\n\nSingle mean, known variance\nSolutions: pdf, qmd\n\n10/5/26 – Lab 4\n\nt-test, power\nvolleyball.csv\nSolutions: qmd\n\n10/12/26 – Lab 5\n\ntwo-sample t-test\n\n10/19/26 – No lab (Fall break)\n10/26/26 – Lab 6\n11/2/26 – Lab 7\n11/9/26 – Lab 8\n11/16/26 – Lab 9\n11/23/26 – No lab\n11/30/26 – Lab 10\n12/7/26 – Lab 11\n12/14/26 – No lab"
+    "text": "Stat 801A Syllabus\n\n\n\nCourse Notes\n4.5 – Inference for proportions\n\nSlides\n\n4 – Inference for two means\n\nSlides, part 1\n\npotency.csv\nwelch’s t-test\nt-test code\n\nSlides, part 2\n\n3 – Inference for one mean\n\nSlides, part 1\n\\(z_c\\) code\nSlides, part 2\nt.test code\nfiltered_travel_time.csv\n\nTest \\(H_0: \\mu = 15\\) vs \\(H_A: \\mu &lt; 15\\)\n\n\n2 – Probability\n\nFull Slides\nIn-class Slides\nZ table\nBinomial problems\n\n1 – Descriptive Statistics\n\nSlides\npdf\n\n\nLabs\n8/31/26 – Lab 1\n\nR Script\nData: cereal.xlsx | Student_data.csv\nSolutions\n\n9/7/26 – No lab (Labor Day)\n9/14/26 – Lab 2\n\nQuarto, ggplot2, and probability\nSolutions: pdf, qmd\n\n9/28/26 – Lab 3\n\nSingle mean, known variance\nSolutions: pdf, qmd\n\n10/5/26 – Lab 4\n\nt-test, power\nvolleyball.csv\nSolutions: qmd\n\n10/12/26 – Lab 5\n\ntwo-sample t-test\n\n10/19/26 – No lab (Fall break)\n10/26/26 – Lab 6\n11/2/26 – Lab 7\n11/9/26 – Lab 8\n11/16/26 – Lab 9\n11/23/26 – No lab\n11/30/26 – Lab 10\n12/7/26 – Lab 11\n12/14/26 – No lab"
   },
   {
     "objectID": "notes/2-probability/part2_inclass.html#sampling",
@@ -2261,59 +2338,52 @@
     "text": "Welch’s \\(t\\) test - cont.\nFor specified \\(\\alpha\\) the rejection regions for the three hypotheses, respectively, are given by:\n\nReject \\(H_0\\) if \\(t' &gt; t_{\\alpha,\\,df}\\)\n\nReject \\(H_0\\) if \\(t' &lt; -t_{\\alpha,\\,df}\\)\n\nReject \\(H_0\\) if \\(|t'| &gt; t_{\\alpha/2,\\,df}\\)\n\nAn approximate \\(100(1-\\alpha)\\%\\) confidence interval for \\(\\mu_1 - \\mu_2\\) is: \\[(\\bar{y}_1 - \\bar{y}_2) \\pm t_{\\alpha/2,\\,df}\\cdot \\sqrt{\\frac{s_1^2}{n_1} +\n\\frac{s_2^2}{n_2}}\\] where \\(t_{\\alpha/2}\\) is the \\(t\\) quantile found from the t-table for \\(df\\) computed using the above formula."
   },
   {
-    "objectID": "projects/project1/project1-solutions.html",
-    "href": "projects/project1/project1-solutions.html",
-    "title": "Project 1 Solutions",
+    "objectID": "projects/final/final.html",
+    "href": "projects/final/final.html",
+    "title": "Final",
     "section": "",
-    "text": "Read in the data and print the first 10 observations.\n\nne_work_commute &lt;- read.csv(\"travel-time-31109.csv\")\nhead(ne_work_commute, n=10)\n\n   RESPONDENT TRANTIME DEPARTS ARRIVES\n1           1        7     647     654\n2           2        8    1305    1309\n3           3       10    1445    1454\n4           4       10    1605    1614\n5           5       10    1605    1614\n6           6       15    1515    1534\n7           7       15    1435    1449\n8           8        7    1545    1554\n9           9       12    1535    1544\n10         10       15    1435    1449"
+    "text": "Instead of a final exam, you (in groups of 3-4) are tasked with designing and conducting an experiment using one of the methods discussed in class. There is a written and presented component of the final, where each part is equally weighted. Details of the experiment and assessments are below."
   },
   {
-    "objectID": "projects/project1/project1-solutions.html#a-probability-of-less-than-10-minutes",
-    "href": "projects/project1/project1-solutions.html#a-probability-of-less-than-10-minutes",
-    "title": "Project 1 Solutions",
-    "section": "(a) Probability of less than 10 minutes",
-    "text": "(a) Probability of less than 10 minutes\n\np_less_10 &lt;- pnorm(\n  10,\n  mean = mu,\n  sd = sigma\n)\n\np_less_10\n\n[1] 0.1996557"
+    "objectID": "projects/final/final.html#description-of-experiment",
+    "href": "projects/final/final.html#description-of-experiment",
+    "title": "Final",
+    "section": "Description of Experiment",
+    "text": "Description of Experiment\nThe purpose of the experiment is to demonstrate your knowledge of the topics taught in our course. The following criteria must be met:\n\nExperiment does not involve living subjects.\nOutcomes occur due to a random (stochastic) process (no observational data).\nHypothesis is reasonable with respect to the subject matter.\nExperiment can be ethically conducted.\nLarge enough sample size to meet the assumptions of the test.\n\nOnce you and your group have designed an experiment, schedule a time to meet with your instructor to finalize the details of your experiment. Prior to our meeting, fill out the Pre-experiment worksheet form.\nYour experiment does not need to be complicated or have an associated cost. The goal of this project is to connect the theory we discussed with real applications. Some examples of potential experiments are below:\n\nDoes shoe brand A help one jump higher than shoe brand B? (Gaussian)\nWhen tasked to randomly choose a dog or cat, does a LLM show preference toward selecting cats? (Binomial)\nDo heavier bowling balls help you knock down more pins than lighter bowling balls? (Binomial)\nWhen dropped from the top of a flight of stairs, how many times does a tennis ball bounce before coming to rest? (Poisson)"
   },
   {
-    "objectID": "projects/project1/project1-solutions.html#b-probability-of-between-10-and-20-minutes",
-    "href": "projects/project1/project1-solutions.html#b-probability-of-between-10-and-20-minutes",
-    "title": "Project 1 Solutions",
-    "section": "(b) Probability of between 10 and 20 minutes",
-    "text": "(b) Probability of between 10 and 20 minutes\nWe want\n\\[\nP(10 &lt; X &lt; 20).\n\\]\nUsing cumulative probabilities,\n\\[\nP(10 &lt; X &lt; 20)\n=\nP(X &lt; 20)-P(X &lt; 10).\n\\]\n\np_10_20 &lt;- pnorm(\n  20,\n  mean = mu,\n  sd = sigma\n) -\n  pnorm(\n    10,\n    mean = mu,\n    sd = sigma\n  )\n\np_10_20\n\n[1] 0.4948758"
+    "objectID": "projects/final/final.html#written-component",
+    "href": "projects/final/final.html#written-component",
+    "title": "Final",
+    "section": "Written Component",
+    "text": "Written Component\nDue date: end of the scheduled final exam\nThe written component of the exam includes writing up your experiment in the style of academic research. Your paper should be around 4-6 pages.\nThe following sections are required:\n\nIntroduction: describe what is currently known about your topic and your hypothesis/objective. If testing one group/process, what value is reasonable to test against? For two groups/processes, what difference provides practical significance? Include at least three sources.\nMethods: describe how you designed the experiment and the statistical test associated with the analysis. If appropriate, a diagram of your study would be helpful. If the data violates the assumption of the test (e.g., nonnormality), how to you proceed with the analysis (e.g., log transformation, use non-parametric test, etc.).\nResults: discuss your findings using descriptive statistics and statistical tests. Include at least one visualization. Provide the results of the experiment, but not a discussion of them (save for the next section).\nDiscussion/Conclusion: connect your results to the real world implications, as well as limitations of your study. What could future research explore?\nReferences: cite your sources\n\nIt may be helpful to consult online articles for writing research articles, such as this one: https://pmc.ncbi.nlm.nih.gov/articles/PMC3178846/.\nIn addition to your paper, you must format it using a journal template. If you are using Quarto to write your paper, some templates can be found here: https://github.com/quarto-journals/."
   },
   {
-    "objectID": "projects/project1/project1-solutions.html#c-probability-of-greater-than-20-minutes",
-    "href": "projects/project1/project1-solutions.html#c-probability-of-greater-than-20-minutes",
-    "title": "Project 1 Solutions",
-    "section": "(c) Probability of greater than 20 minutes",
-    "text": "(c) Probability of greater than 20 minutes\nWe want\n\\[\nP(X &gt; 20).\n\\]\nUsing the complement,\n\\[\nP(X &gt; 20)=1-P(X\\leq20).\n\\]\n\np_greater_20 &lt;- 1 - pnorm(\n  20,\n  mean = mu,\n  sd = sigma\n)\n\np_greater_20\n\n[1] 0.3054685"
+    "objectID": "projects/final/final.html#presentation",
+    "href": "projects/final/final.html#presentation",
+    "title": "Final",
+    "section": "Presentation",
+    "text": "Presentation\nDate: last week of classes (Tuesday, Thursday)\nYour presentation should mirror your written paper (introduction, methods, results, discussion). Each group will have 7-10 minutes to present, and up to 5 minutes for questions. While you may omit some details to stay within the time constraints, your presentation should be able to capture the essence of your experiment and its results."
   },
   {
-    "objectID": "projects/project2/project2-solutions.html",
-    "href": "projects/project2/project2-solutions.html",
-    "title": "Project 2 Solutions",
+    "objectID": "projects/final/final.html#rubric",
+    "href": "projects/final/final.html#rubric",
+    "title": "Final",
+    "section": "Rubric",
+    "text": "Rubric\nEach component listed below will be graded with following scale.\n\n\n\n\n\n\n\n\n\n\nFull credit\n80%\nHalf Credit\n20%\nNo credit\n\n\n\n\nFully sufficient\nSome errors\nMajor errors\nCritical errors\nNo effort was made\n\n\n\nPre-experiment meeting (20%)\n\nMet with instructor by the deadline\nPre-experiment worksheet is filled out prior to the meeting\n\nWritten component (40%)\n\nIntroduction: sufficient background knowledge is provided on the subject matter; hypothesis is clearly stated\nMethods: experiment and analysis can be fully replicated\nResults: descriptive and inferential statistics clearly given and arranged neatly; at least one visualization of the data is provided\nDiscussion: results are clearly connected back to the intended hypothesis; limitations are discussed; future research areas are included based on your research\nReferences: at least 3 references are used and cited correctly\n\nPresentation (40%)\n\nIntroduction: motivation is clearly given; hypothesis is stated\nMethods: describe the setup of your experiment\nResults: describe the results of your experiment; at least one visualization is included\nDiscussion: connect your results back to they hypothesis (what is the main takeaway?)\nAttendance: attended and listed to your peers present their findings"
+  },
+  {
+    "objectID": "projects/final/final.html#notes",
+    "href": "projects/final/final.html#notes",
+    "title": "Final",
+    "section": "Notes",
+    "text": "Notes\nThis final was designed to combine the theory and application of statistics. While there are many components that we have not discussed in class (such as applying journal templates), I am here to help! Please don’t hesitate to ask questions if you get stuck."
+  },
+  {
+    "objectID": "projects/midterm/midterm.html",
+    "href": "projects/midterm/midterm.html",
+    "title": "midterm",
     "section": "",
-    "text": "z.test &lt;- function(y, mu = 0, sigma = 1,\n                   alternative = c('two.sided', 'less', 'greater'),\n                   conf.level = 0.95) {\n  \n  alternative &lt;- match.arg(alternative)\n  message(paste('Number of missing values:', sum(is.na(y))))\n  y_orig &lt;- y\n  y &lt;- y[!is.na(y)]\n  # Calculations here\n  xbar &lt;- mean(y)\n  n &lt;- length(y)\n  se &lt;- sigma / sqrt(n)\n  z &lt;- (xbar-mu)/se\n  alpha &lt;- 1-conf.level\n  \n  # Hypothesis tests\n  if(alternative == \"two.sided\") {\n    lcl &lt;- xbar - qnorm(1-alpha/2)*se\n    ucl &lt;- xbar + qnorm(1-alpha/2)*se\n    p.value &lt;- 2*pnorm(abs(z), lower.tail = F)\n  } else if (alternative == 'less') {\n    lcl &lt;- -Inf\n    ucl &lt;- xbar + qnorm(1-alpha)*se\n    p.value &lt;- pnorm(z)\n  } else if (alternative == 'greater') {\n    lcl &lt;- xbar - qnorm(1-alpha)*se\n    ucl &lt;- Inf\n    p.value &lt;- pnorm(z, lower.tail = FALSE)\n  } else {\n    stop(\"Invalid alternative provided\")\n  }\n  \n  \n  # Organize results\n  results &lt;- list(\n    data = y_orig,                                      # Original data\n    sample_mean = xbar,                                # Mean of the data\n    standard_error = se,                             # Standard error\n    z = z,                                          # Test statistic\n    parameters = list(mu = mu, sigma = sigma),     # Parameters        \n    alternative = alternative,                     # The alternative hypothesis\n    alpha = alpha,                                      # Significance level\n    confidence_interval = list(lcl = lcl, ucl = ucl),    # Confidence interval\n    p.value = p.value                                     # p-value of the test\n    \n  )\n  \n  # Output list of results\n  return(results)\n}"
-  },
-  {
-    "objectID": "projects/project2/project2-solutions.html#part-a",
-    "href": "projects/project2/project2-solutions.html#part-a",
-    "title": "Project 2 Solutions",
-    "section": "Part a",
-    "text": "Part a\n\nz.test.data &lt;- read.csv('z-test-data.csv')\nz.test(y=z.test.data$prob2a,\n       mu=30, sigma=sd(z.test.data$prob2a),\n       alternative = 'greater')\n\nNumber of missing values: 0\n\n\n$data\n [1] 31.3 28.8 31.0 29.8 28.8 33.6 29.5 35.6 29.8 37.4 34.1 36.3 34.9 36.4 32.7\n[16] 34.2 33.8 29.4 31.7 28.2 26.5 30.0 35.3 32.1 32.5 30.7 34.4 32.3 30.3 32.6\n[31] 29.5 32.8 38.9 31.1 31.1 24.2 26.5 30.8 29.1 31.5\n\n$sample_mean\n[1] 31.7375\n\n$standard_error\n[1] 0.4895404\n\n$z\n[1] 3.549247\n\n$parameters\n$parameters$mu\n[1] 30\n\n$parameters$sigma\n[1] 3.096126\n\n\n$alternative\n[1] \"greater\"\n\n$alpha\n[1] 0.05\n\n$confidence_interval\n$confidence_interval$lcl\n[1] 30.93228\n\n$confidence_interval$ucl\n[1] Inf\n\n\n$p.value\n[1] 0.0001931671\n\n\nThe p-value is less than 0.05, meaning that we reject the null hypothesis. There is evidence to conclude that the true mean is greater than 30."
-  },
-  {
-    "objectID": "projects/project2/project2-solutions.html#part-b",
-    "href": "projects/project2/project2-solutions.html#part-b",
-    "title": "Project 2 Solutions",
-    "section": "Part b",
-    "text": "Part b\n\nz.test(y=z.test.data$prob2b,\n       mu=15, sigma=sd(z.test.data$prob2b),\n       alternative = 'less')\n\nNumber of missing values: 0\n\n\n$data\n [1] 19.8 18.4  7.6 14.3 15.8 10.7 13.0 11.1 10.2 18.5 14.4 13.6  5.6 15.4 19.4\n[16] 17.9 12.4 21.8 18.8 23.1  8.8 22.8  8.5  8.0 20.1 15.9 14.5 21.6 20.3 14.5\n[31] 15.0 12.0 12.0 14.5 13.0 14.6  8.6  8.0 21.1  5.5\n\n$sample_mean\n[1] 14.5275\n\n$standard_error\n[1] 0.7744062\n\n$z\n[1] -0.6101449\n\n$parameters\n$parameters$mu\n[1] 15\n\n$parameters$sigma\n[1] 4.897775\n\n\n$alternative\n[1] \"less\"\n\n$alpha\n[1] 0.05\n\n$confidence_interval\n$confidence_interval$lcl\n[1] -Inf\n\n$confidence_interval$ucl\n[1] 15.80128\n\n\n$p.value\n[1] 0.2708829\n\n\nThe p-value is greater than 0.05, meaning that we fail to reject the null hypothesis. There is not evidence to conclude that the true mean is less than 15."
-  },
-  {
-    "objectID": "projects/project2/project2-solutions.html#part-c",
-    "href": "projects/project2/project2-solutions.html#part-c",
-    "title": "Project 2 Solutions",
-    "section": "Part c",
-    "text": "Part c\n\nz.test(y=z.test.data$prob2c,\n       mu=50, sigma=sd(z.test.data$prob2c),\n       alternative = 'two.sided')\n\nNumber of missing values: 0\n\n\n$data\n [1] 55.9 55.5 55.2 61.7 46.5 59.9 53.9 52.5 54.0 53.4 54.9 55.5 59.4 55.8 56.7\n[16] 48.1 52.0 54.3 61.2 54.2 49.7 57.5 60.1 51.5 50.1 53.2 52.7 54.7 60.7 48.3\n[31] 51.1 51.3 55.4 59.0 59.3 54.0 54.8 52.2 46.9 52.0\n\n$sample_mean\n[1] 54.3775\n\n$standard_error\n[1] 0.6132876\n\n$z\n[1] 7.137761\n\n$parameters\n$parameters$mu\n[1] 50\n\n$parameters$sigma\n[1] 3.878771\n\n\n$alternative\n[1] \"two.sided\"\n\n$alpha\n[1] 0.05\n\n$confidence_interval\n$confidence_interval$lcl\n[1] 53.17548\n\n$confidence_interval$ucl\n[1] 55.57952\n\n\n$p.value\n[1] 9.486344e-13\n\n\nThe p-value is less than 0.05, meaning that we reject the null hypothesis. There is evidence to conclude that the true mean is different from 50."
+    "text": "https://clinicaltrials.gov/study/NCT06037668\nA study sponsored by Sumitomo Pharma America, Inc. was designed to test two at-home self-guided virtual reality interventions for adults with social anxiety disorder."
   }
 ]
