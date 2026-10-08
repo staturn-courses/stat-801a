@@ -27,6 +27,7 @@ format:
     - [welch's t-test](notes/data/welch-t-test.csv)
     - [t-test code](notes/4-two-means/t-test.R)
 - [Slides, part 2](notes/4-two-means/part4_lectures-part2.qmd)
+    - [reaction-times.csv](notes/data/reaction-times.csv)
 
 3 -- Inference for one mean
 
@@ -70,36 +71,38 @@ format:
 - [Quarto, ggplot2, and probability](labs/lab2/STAT_801A_Lab2.qmd)
 - Solutions: [pdf](labs/lab2/STAT_801A_Lab2-.pdf), [qmd](labs/lab2/STAT_801A_Lab2 _Solutions.qmd)
 
-9/28/26 -- Lab 3
+9/21/26 -- Lab 3
 
 - [Single mean, known variance](labs/lab3/STAT_801A_Lab3.qmd)
 - Solutions: [pdf](labs/lab3/STAT_801A_Lab3_Solutions.pdf), [qmd](labs/lab3/STAT_801A_Lab3_Solutions.qmd)
 
-10/5/26 -- Lab 4
+9/8/26 -- Lab 4
 
 - [t-test, power](labs/lab4/STAT_801A_Lab4.qmd)
 - [volleyball.csv](labs/lab4/volleyball.csv)
 - Solutions: [qmd](labs/lab4/STAT_801A_Lab4_Solutions.qmd)
 
-10/12/26 -- Lab 5
+10/05/26 -- Lab 5
 
 - [two-sample t-test](labs/lab5/STAT_801A_Lab5.qmd)
 
+10/12/26 -- Lab 6
+
 10/19/26 -- No lab (Fall break)
 
-10/26/26 -- Lab 6
+10/26/26 -- Lab 7
 
-11/2/26 -- Lab 7
+11/2/26 -- Lab 8
 
-11/9/26 -- Lab 8
+11/9/26 -- Lab 9
 
-11/16/26 -- Lab 9
+11/16/26 -- Lab 10
 
 11/23/26 -- No lab
 
-11/30/26 -- Lab 10
+11/30/26 -- Lab 11
 
-12/7/26 -- Lab 11
+12/7/26 -- Lab 12
 
 12/14/26 -- No lab
 
