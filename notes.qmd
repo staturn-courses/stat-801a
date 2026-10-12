@@ -88,6 +88,8 @@ format:
 
 10/12/26 -- Lab 6
 
+- [Tests for categorical data](labs/lab6/STAT_801A_Lab6.qmd)
+
 10/19/26 -- No lab (Fall break)
 
 10/26/26 -- Lab 7

@@ -1,0 +1,389 @@
+---
+title: "STAT 801A Lab 6: Tests for Proportions"
+author: "Insert Name"
+date: today
+format: html
+editor: visual
+---
+
+# t.test Function Review
+
+| Test | Use when | Call |
+|------------------|----------------------|--------------------------------|
+| One-sample | comparing one mean to a fixed value | `t.test(y, mu = mu0)` |
+| Student's | two independent groups with same variance | `t.test(y ~ group, data = df, var.equal = TRUE)` |
+| Welch's | two independent groups with different variances | `t.test(y ~ group, data = df)` |
+| Paired | each value in one group has a partner in the other | `t.test(x1, x2, paired = TRUE)` |
+
+Important arguments:
+
+- `mu`: the value in $H_0$. For one sample it is $\mu_0$. For two samples it is the hypothesized difference. The default is 0.
+
+- `alternative`: `"two.sided"` (the default), `"less"`, or `"greater"`.
+
+- `var.equal`: `TRUE` gives Student's pooled test. The default, `FALSE`, gives Welch's test.
+
+- `paired`: `TRUE` gives a paired test. Paired data must go in as two vectors in matching order.
+
+- `conf.level`: the confidence level for the interval. The default is 0.95.
+
+Student's and Welch's tests also accept two vectors in place of a formula, as in `t.test(x1, x2)`.
+
+------------------------------------------------------------------------
+
+# Testing a Single Proportion
+
+So far the response has been numerical and summarized by a mean. When the response is categorical, we summarize it with a proportion instead.
+
+A proportion is the fraction of a population with some characteristic, such as seeds that germinate or plants that are diseased. The population proportion is $p$. In a sample of size $n$ with $x$ successes, the sample proportion is $\hat{p} = x/n$.
+
+To test $H_0: p = p_0$, the test statistic is
+
+$$z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}}$$
+
+This uses the normal distribution, so the sample has to be large enough: $np_0 \geq 10$ and $n(1 - p_0) \geq 10$.
+
+## Example: flower color
+
+Mendel's laws predict that 3/4 of the offspring from a cross of two heterozygous pea plants will have purple flowers. A student makes this cross and grows 400 offspring. 288 have purple flowers.
+
+### Step 1: State the hypotheses
+
+A departure in either direction would be evidence against the 3/4 ratio, so the test is two-tailed.
+
+$$H_0: p = 0.75 \qquad H_a: p \neq 0.75$$
+
+### Step 2: Check the validity conditions
+
+```{r}
+n_pea <- 400
+x_pea <- 288
+p0_pea <- 0.75
+
+n_pea * p0_pea
+n_pea * (1 - p0_pea)
+
+```
+
+We have 300 expected successes and 100 expected failures, both well above 10, so we can use the normal approximation.
+
+### Step 3: Compute the test statistic
+
+```{r}
+phat_pea <- x_pea / n_pea
+z_pea <- (phat_pea - p0_pea) / sqrt(p0_pea * (1 - p0_pea) / n_pea)
+
+phat_pea
+z_pea
+```
+
+Find the rejection region at $\alpha = 0.05$:
+
+```{r}
+qnorm(0.025)
+qnorm(0.975)
+```
+
+We reject if $z < -1.96$ or $z > 1.96$. Our z of -1.39 falls between them, so we fail to reject $H_0$.
+
+### Step 4: Compute the p-value
+
+```{r}
+2 * pnorm(abs(z_pea), lower.tail = FALSE)
+```
+
+### Step 5: Confirm with prop.test
+
+```{r}
+prop.test(x = 288, n = 400, p = 0.75, correct = FALSE)
+```
+
+`correct = FALSE` turns off a continuity correction that R adds by default. The number of successes follows a binomial distribution, which is discrete, and the correction adjusts the count by 0.5 so the continuous normal distribution approximates it more closely. Without it, the output will match the hand calculation. With small samples, it is typically better to leave it on.
+
+R reports `X-squared` instead of z. It equals $z^2$, here $(-1.386)^2 = 1.92$, and the p-value is the same.
+
+For a one-tailed test, add `alternative = "less"` or `alternative = "greater"`, the same as `t.test`.
+
+Note: The confidence interval from `prop.test` uses a different method than $\hat{p} \pm z_{\alpha/2}\sqrt{\hat{p}(1 - \hat{p})/n}$, so it will be close to a hand calculation but not exact. R’s interval always stays between 0 and 1, which matters when $\hat{p}$ is near 0 or 1, since a proportion can't be below 0 or above 1.
+
+### Step 6: Write the conclusion
+
+There is not enough evidence that the proportion of purple-flowered offspring differs from 3/4 ($z = -1.39$, $p = 0.166$). In the sample, 72% had purple flowers, with a 95% confidence interval of 67.4% to 76.2%.
+
+------------------------------------------------------------------------
+
+# Comparing Two Proportions
+
+To compare two independent groups on a yes/no outcome, test whether the two population proportions are equal.
+
+$$H_0: p_1 = p_2 \qquad H_a: p_1 \neq p_2$$
+
+Under $H_0$ both samples estimate the same $p$, so they are pooled. This is the same idea as the pooled variance for means.
+
+$$\hat{p} = \frac{x_1 + x_2}{n_1 + n_2} \qquad z = \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}(1 - \hat{p})\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}}$$
+
+Each group needs at least 10 successes and 10 failures.
+
+## Example: website layouts
+
+An online store tests a redesigned product page. Visitors are randomly shown either the old page or the new one, 200 visitors each. On the old page, 34 visitors make a purchase. On the new page, 52 do.
+
+### Step 1: State the hypotheses
+
+Group 1 is the old page and group 2 is the new page.
+
+$$H_0: p_1 = p_2 \qquad H_a: p_1 \neq p_2$$
+
+### Step 2: Check the validity conditions
+
+Enter the counts as vectors, group 1 first.
+
+```{r}
+x_web <- c(34, 52)
+n_web <- c(200, 200)
+
+x_web
+n_web - x_web
+```
+
+The smallest of the four counts is 34, so the conditions hold.
+
+### Step 3: Compute the test statistic
+
+```{r}
+phat1_web <- 34/200
+phat2_web <- 52/200
+phat_web <- (34+52) / (200+200)
+
+z_web <- (phat1_web - phat2_web) /
+  sqrt(phat_web * (1 - phat_web) * (1 / 200 + 1 / 200))
+
+phat1_web
+phat2_web
+z_web
+```
+
+Find the rejection region at $\alpha = 0.05$:
+
+```{r}
+qnorm(0.025)
+qnorm(0.975)
+```
+
+We reject if $z < -1.96$ or $z > 1.96$. Our z of -2.19 is below -1.96, so we reject $H_0$.
+
+### Step 4: Compute the p-value
+
+```{r}
+2 * pnorm(abs(z_web), lower.tail = FALSE)
+```
+
+### Step 5: Confirm with prop.test
+
+```{r}
+prop.test(x = c(34, 52), n = c(200, 200), correct = FALSE)
+```
+
+R subtracts group 2 from group 1, and `X-squared` is again $z^2$.
+
+### Step 6: Write the conclusion
+
+There is evidence that the purchase rate differs between the two pages ($z = -2.19$, $p = 0.028$). On the old page, 17% of visitors made a purchase, compared with 26% on the new page. We are 95% confident that the new page's purchase rate is between 1 and 17 percentage points higher.
+
+## When we don't have enough successes and failures for the normal approximation
+
+If the conditions fail, the normal approximation is not reliable, so use an exact test instead. For one proportion, `binom.test(x, n, p)` gets the p-value directly from the binomial distribution. For two proportions, `fisher.test` does the same job. It takes a table with one row per group, with successes and failures in the columns:
+
+```{r}
+web_table <- rbind(old = c(purchase = 34, no_purchase = 166),
+                   new = c(purchase = 52, no_purchase = 148))
+web_table
+
+fisher.test(web_table)
+```
+
+`fisher.test` reports an odds ratio instead of a difference in proportions (the confidence interval is also for an odds ratio). Its p-value, 0.038, is a little larger than the 0.028 from `prop.test`, which is typical of exact tests.
+
+We still compare the p-value to $\alpha = 0.05$. Because counts move in whole-number steps, an exact test's actual Type I error rate is at or below $\alpha$ rather than exactly $\alpha$.
+
+------------------------------------------------------------------------
+
+# Practice Problems
+
+Where a problem asks for hypotheses, write them in LaTeX.
+
+## Problem 1: Choosing a t Test
+
+For each scenario, decide which version of `t.test` fits, run it, and write a conclusion in context at $\alpha = 0.05$. For two independent groups, check to see if the sample standard deviations differ greatly first to decide which test to use.
+
+### Scenario A
+
+A seed company compares ear length (cm) of a hybrid corn variety with an open-pollinated variety. Ten ears of each are measured.
+
+Run this chunk to create the data.
+
+```{r}
+ears <- data.frame(
+  variety = rep(c("hybrid", "open"), each = 10),
+  length = c(19.8, 20.4, 19.5, 20.9, 20.1, 19.7, 20.6, 20.2, 19.9, 20.3,
+             17.2, 21.5, 15.8, 19.9, 22.6, 16.4, 18.8, 21.1, 15.5, 18.3))
+```
+
+\(a\) Which version of `t.test` fits? Explain.
+
+```{r}
+sd(ears$length[ears$variety == "hybrid"])
+sd(ears$length[ears$variety == "open"])
+
+```
+
+\(b\) Run the test. Report t, df, and the p-value.
+
+```{r}
+
+```
+
+\(c\) Write a conclusion in context.
+
+### Scenario B
+
+The built-in `sleep` data records the extra hours of sleep 10 patients got on each of two drugs. Every patient took both drugs. `ID` identifies the patient and `group` identifies the drug.
+
+```{r}
+data(sleep)
+sleep
+```
+
+\(a\) Which version of `t.test` fits? Explain.
+
+\(b\) Run the test. Report t, df, and the p-value.
+
+```{r}
+
+```
+
+\(c\) Write a conclusion in context.
+
+### Scenario C
+
+Bags of feed from a local mill are labeled 50 lb. A buyer suspects the bags are underfilled and weighs 12 of them.
+
+Run this chunk to create the data.
+
+```{r}
+bags <- c(49.6, 50.2, 49.1, 49.8, 50.4, 49.3, 49.7, 49.0, 50.1, 49.5, 49.4, 49.9)
+```
+
+\(a\) Which version of `t.test` fits? Explain.
+
+\(b\) Run the test. Report t, df, and the p-value.
+
+```{r}
+
+```
+
+\(c\) Write a conclusion in context.
+
+### Scenario D
+
+Twenty pigs in individual pens are randomly assigned to one of two diets, 10 per diet. Weight gain (lb) over four weeks is recorded.
+
+Run this chunk to create the data.
+
+```{r}
+pigs <- data.frame(
+  diet = rep(c("A", "B"), each = 10),
+  gain = c(52.4, 55.8, 49.6, 57.3, 53.1, 50.8, 54.9, 51.7, 56.2, 53.6,
+           56.9, 59.4, 54.2, 61.8, 57.5, 55.1, 60.3, 58.6, 62.4, 56.8))
+```
+
+\(a\) Which version of `t.test` fits? Explain.
+
+```{r}
+sd(pigs$gain[pigs$diet == "A"])
+sd(pigs$gain[pigs$diet == "B"])
+```
+
+\(b\) Run the test. Report t, df, and the p-value.
+
+```{r}
+
+```
+
+\(c\) Write a conclusion in context.
+
+------------------------------------------------------------------------
+
+## Problem 2
+
+A seed company advertises a 90% germination rate for its alfalfa seed. A buyer suspects the true rate is lower. She plants 200 seeds and 171 germinate.
+
+\(a\) Compute the sample proportion.
+
+```{r}
+
+```
+
+\(b\) State the hypotheses.
+
+$$H_0: \qquad H_a:$$
+
+\(c\) Are the validity conditions to use the normal approximation met here?
+
+```{r}
+
+```
+
+\(d\) Compute the test statistic and p-value by hand.
+
+```{r}
+
+```
+
+\(e\) Confirm with `prop.test`. Remember `correct = FALSE` and the alternative.
+
+```{r}
+
+```
+
+\(f\) Write a conclusion in context at $\alpha = 0.05$.
+
+------------------------------------------------------------------------
+
+## Problem 3
+
+Waterhemp is a common weed in Nebraska crop fields, and some populations are resistant to glyphosate. A weed scientist collects plants from fields in two counties and tests each one. In County A, 64 of 110 plants are resistant. In County B, 45 of 115 are.
+
+\(a\) Compute each sample proportion.
+
+```{r}
+
+```
+
+\(b\) State the hypotheses. Let group 1 be County A.
+
+$$H_0: \qquad H_a:$$
+
+\(c\) Are the validity conditions to use the normal approximation met here?
+
+```{r}
+
+```
+
+\(d\) Run `prop.test`. Report the p-value.
+
+```{r}
+
+```
+
+\(e\) Interpret the 95% confidence interval.
+
+\(f\) Write a conclusion in context.
+
+------------------------------------------------------------------------
+
+# Final Step
+
+Render your document. Click the Render button at the top of the editor, or press Ctrl + Shift + K.
+
+If the render fails, read the error message. It names the chunk that caused the problem. The most common causes are a missing closing parenthesis, or an object used before it was created.
