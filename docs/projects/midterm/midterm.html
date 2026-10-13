@@ -178,7 +178,7 @@ window.Quarto = {
 
 
 <p>Tinnitus is a condition in which a person hears sounds that are perceived in the absence of an external sound source. This usually occurs due to damage or aging of the ear and causes a constant ringing sound that can affect quality of life. For this midterm, you are tasked with analyzing a simulated dataset inspired by a study comparing two tinnitus treatment methods.</p>
-<p>For your submission, include a PDF document and a script file containing the code used in your analysis. You may use any software to prepare your submission (e.g., Quarto or Microsoft Word), but your document must be legible and neatly organized. If you use Quarto, submit your .qmd file. If you use another document creation tool, submit an R script. Your code must allow me to reproduce your results.</p>
+<p>Your code must be reproducible, but you are free to use any R packages that you would like (i.e., I can get the same output by running your code). You are also free to use any method for creating your submission (e.g., Quarto, Word, etc.), but your solutions must be accompanied by the relevant code file and a pdf file.</p>
 <p>Using your online access to the UNL library, read the following article:</p>
 <blockquote class="blockquote">
 <p>Beukes, Eldré W., et al.&nbsp;“Guided Internet-Based versus Face-to-Face Clinical Care in the Management of Tinnitus: Study Protocol for a Multi-Centre Randomised Controlled Trial.” Current Controlled Trials in Cardiovascular Medicine [London], vol.&nbsp;18, no. 1, no. 186, Apr.&nbsp;2017, https://doi.org/10.1186/s13063-017-1931-6.</p>
@@ -194,25 +194,26 @@ window.Quarto = {
 <li>What are the treatments? Are any of the treatments considered a control?</li>
 <li>How are participants randomized into treatment groups?</li>
 </ul></li>
-<li>What limitations are present in the planned study? In your answer, include at least one limitation not included in the article. Additionally, explain why is it important that limitations are discussed.</li>
+<li>What limitations are present in the planned study? In your answer, include at least one limitation not discussed in the article. Additionally, explain why is it important that limitations are discussed.</li>
 </ol>
 <hr>
 <p>The primary outcome of this study is the Tinnitus Functional Index (TFI). For this response, smaller values are better and a 13-point difference is considered to be a clinically significant change in score. Data inspired by the results of this study can be found on the Assignments page of the course website as <code>responses-tfi.csv</code>. Descriptions of each variable are provided below:</p>
 <ul>
 <li><code>id</code>: Identifier of the participant</li>
 <li><code>group</code>: Treatment group</li>
-<li><code>T0</code>: Baseline TFI</li>
+<li><code>T0</code>: Baseline TFI (before treatment application)</li>
 <li><code>T1</code>: TFI after intervention</li>
 <li><code>T2</code>: TFI after 2-month follow-up</li>
 </ul>
-<p>For each of the following questions, include the following: (1) justify an appropriate statistical test, (2) define the hypothesis test, (3) check normality assumptions with at least one visualization, (4) perform the test using the <code>t.test</code> function (you do not need to manually code the tests), (5) write a conclusion that satisfies the research question. For (1), if a two-sample t-test is required, justify whether to use the equal variance assumption or not. Use <span class="math inline">\(\alpha = 0.05\)</span> for all tests.</p>
+<p>For each of the following questions, include the following: (1) justify an appropriate statistical test, (2) define the hypothesis test (<span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_A\)</span>), (3) check normality assumptions with at least one visualization, (4) perform the test using the <code>t.test</code> function (you do not need to manually code the tests), (5) write a conclusion that satisfies the research question. For (1), if a two-sample t-test is required, justify whether to use the equal variance assumption or not. Use <span class="math inline">\(\alpha = 0.05\)</span> for all tests.</p>
 <hr>
 <ol start="5" type="1">
 <li><p>Does the sample of participants suggest that the mean baseline TFI (T0) for the population of eligible participants is greater than 50? Hint: baseline measurements are taken prior to treatment application.</p></li>
-<li><p>Is there a difference in mean baseline TFI between the iCBT and F2F groups?</p></li>
+<li><p>Is there a difference in mean baseline TFI (T0) between the iCBT and F2F groups?</p></li>
 <li><p>Immediately following treatment (T1), is the mean TFI for participants receiving iCBT better than that of participants receiving F2F treatment?</p></li>
 <li><p>Among participants receiving iCBT, is there evidence that the mean TFI improved between immediately following treatment (T1) and the two-month follow-up (T2)?</p></li>
 <li><p>Among participants receiving iCBT, is there evidence that the mean TFI showed clinically significant improvement at the two-month follow-up (T2) compared to the baseline (T0)?</p></li>
+<li><p>Describe each element of the output from problem (9). What does each value represent?</p></li>
 </ol>
 <p>Extra credit (2%): One of your colleagues wants to use t-tests for testing all possible comparisons in this study. Using Type I error in your answer, explain why this would be an issue.</p>
 
