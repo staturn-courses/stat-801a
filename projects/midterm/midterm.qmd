@@ -1,8 +1,55 @@
 ---
-title: "midterm"
-format: html
+title: "Midterm"
+date: "10/16/26"
+date-format: "MMMM D, YYYY [by 11:59 p.m.]"
+published-title: "Due date"
+format: 
+  html: default
 ---
 
-https://clinicaltrials.gov/study/NCT06037668
+Tinnitus is a condition in which a person hears sounds that are perceived in the absence of an external sound source. This usually occurs due to damage or aging of the ear and causes a constant ringing sound that can affect quality of life. For this midterm, you are tasked with analyzing a simulated dataset inspired by a study comparing two tinnitus treatment methods. 
 
-A study sponsored by Sumitomo Pharma America, Inc. was designed to test two at-home self-guided virtual reality interventions for adults with social anxiety disorder.  
+For your submission, include a PDF document and a script file containing the code used in your analysis. You may use any software to prepare your submission (e.g., Quarto or Microsoft Word), but your document must be legible and neatly organized. If you use Quarto, submit your .qmd file. If you use another document creation tool, submit an R script. Your code must allow me to reproduce your results.
+
+Using your online access to the UNL library, read the following article:
+
+> Beukes, Eldré W., et al. “Guided Internet-Based versus Face-to-Face Clinical Care in the Management of Tinnitus: Study Protocol for a Multi-Centre Randomised Controlled Trial.” Current Controlled Trials in Cardiovascular Medicine [London], vol. 18, no. 1, no. 186, Apr. 2017, https://doi.org/10.1186/s13063-017-1931-6.
+
+If you are having issue accessing the article, please contact your instructor. 
+
+---
+
+1. Identify the objective of the study. 
+2. Briefly discuss the Background section. What is previously known and what gap in literature does the study aim to fill?
+3. Discuss the design of the study. In your answer, identify the following:
+    - How are participants recruited?
+    - What are the treatments? Are any of the treatments considered a control?
+    - How are participants randomized into treatment groups?
+4. What limitations are present in the planned study? In your answer, include at least one limitation not included in the article. Additionally, explain why is it important that limitations are discussed.
+
+---
+
+The primary outcome of this study is the Tinnitus Functional Index (TFI). For this response, smaller values are better and a 13-point difference is considered to be a clinically significant change in score. Data inspired by the results of this study can be found on the Assignments page of the course website as `responses-tfi.csv`. Descriptions of each variable are provided below: 
+
+- `id`: Identifier of the participant
+- `group`: Treatment group
+- `T0`: Baseline TFI
+- `T1`: TFI after intervention
+- `T2`: TFI after 2-month follow-up
+
+For each of the following questions, include the following: (1) justify an appropriate statistical test, (2) define the hypothesis test, (3) check normality assumptions with at least one visualization, (4) perform the test using the `t.test` function (you do not need to manually code the tests), (5) write a conclusion that satisfies the research question. For (1), if a two-sample t-test is required, justify whether to use the equal variance assumption or not. Use $\alpha = 0.05$ for all tests.
+
+---
+
+5. Does the sample of participants suggest that the mean baseline TFI (T0) for the population of eligible participants is greater than 50? Hint: baseline measurements are taken prior to treatment application.
+
+6. Is there a difference in mean baseline TFI between the iCBT and F2F groups?
+
+7. Immediately following treatment (T1), is the mean TFI for participants receiving iCBT better than that of participants receiving F2F treatment?
+
+8. Among participants receiving iCBT, is there evidence that the mean TFI improved between immediately following treatment (T1) and the two-month follow-up (T2)?
+
+9. Among participants receiving iCBT, is there evidence that the mean TFI showed clinically significant improvement at the two-month follow-up (T2) compared to the baseline (T0)?
+
+
+Extra credit (2%): One of your colleagues wants to use t-tests for testing all possible comparisons in this study. Using Type I error in your answer, explain why this would be an issue.
