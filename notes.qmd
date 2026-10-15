@@ -89,10 +89,12 @@ format:
 10/05/26 -- Lab 5
 
 - [two-sample t-test](labs/lab5/STAT_801A_Lab5.qmd)
+- Solutions: [qmd](labs/lab5/STAT_801A_Lab5_Solutions.qmd)
 
 10/12/26 -- Lab 6
 
 - [Tests for categorical data](labs/lab6/STAT_801A_Lab6.qmd)
+- Solutions: [qmd](labs/lab6/STAT_801A_Lab6_Solutions.qmd)
 
 10/19/26 -- No lab (Fall break)
 
