@@ -111,3 +111,10 @@ The confidence intervals previously calculated are called Wald Confidence Interv
 > "it is tempting, if the only tool you have is a hammer, to treat everything as if it were a nail." -- Abraham Maslow
 
 There are better methods for analyzing categorical data than discussed here. I highly encourage you to check out course notes from Dr. Chris Bilder on his Categorical Data Analysis course for more information: <https://www.chrisbilder.com/stat875/>. Lab 6 will focus on some methods for inferences of $\pi$ and $\pi_1-\pi_2$.
+
+## R code exampol
+
+```{r}
+
+```
+

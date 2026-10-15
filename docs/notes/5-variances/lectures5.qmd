@@ -1,0 +1,296 @@
+---
+title: Inferences about Population Variances
+subtitle: "Confidence Interval for Population Variances\
+    Estimation and Tests for Comparing Two Population Variances"
+footer: STAT 801A
+format: 
+  revealjs:
+    smaller: true
+---
+
+
+## Inferences about population variances
+
+Estimation and Tests for a Single Population Variance
+
+- Recall that the sample variance $s^2 = \sum(y-\bar{y})^2/(n-1)$ is the [*point estimate*]{style="color: magenta"} of $\sigma^2$.
+
+- For tests and confidence intervals about $\sigma^2$ we use the fact that the sampling random variable $$(n-1) \, S^2/\sigma^2 = \chi^2$$ has the [*Chi-square Distribution* with $n-1$ degrees of freedom or $df$]{style="color: magenta"}, when the sample is from a normal population.
+
+
+---
+
+
+- The chi-square distribution is nonsymmetric.
+
+- Like the Student's $t$ distribution, there is a different curve for each sample size $n$ i.e., for each value of [*df*]{style="color: magenta"}.
+
+
+- The distribution appear to be more skewed for smaller values of $df$ and become more symmetric as $df$ increases.
+
+- Because the chi-square distribution is nonsymmetric, the percentiles for probabilities at both ends needs to be tabulated.
+
+
+## Chi-square Distribution
+
+```{r}
+#| echo: false
+curve(dchisq(x, df=5), from=0, to=30, col="#0072B2", xlab='X', ylab='f(x)', main = 'Chi-square Distribution')
+curve(dchisq(x, df=10),add=T, col='#E69F00')
+curve(dchisq(x, df=20),add=T, col='#009E73')
+legend("topright",
+       legend = expression(
+         chi[5]^2,
+         chi[10]^2,
+         chi[20]^2
+       ),
+       col = c("#0072B2", "#E69F00", "#009E73"),
+       lwd = 2)
+```
+
+
+## A $100(1-\alpha)$% Confidence Interval for $\sigma^2$
+
+This has the form: $$\frac{(n-1)s^2}{\chi_U^2} < \, \sigma^2 \, < \, \frac{(n-1)s^2}{\chi_L^2}$$ where\
+
+- Since $df = n-1$ look up $\chi_{n-1}^2$ percentiles.\
+
+- $\chi_L^2$ is the lower-tail value with area $\alpha/2$ to the left.\
+
+- $\chi_U^2$ is the upper-tail value with area $\alpha/2$ to the right.\
+
+- The confidence interval for the standard deviation $\sigma$ is found by taking square roots of both end points of above.
+
+
+
+## Example
+
+Let's assume that the normal probability plot of the data appear to show that the sample is from a normal distribution.
+From the data $n = 30$, $\bar{y} = 500.453$, $s= 3.433$ were calculated.
+
+
+A [99% confidence interval for $\sigma^2$]{style="color: magenta"} is computed as follows:\
+
+Since $\alpha=.01$,   $\alpha/2=.005$ and $1-\alpha/2=.995$, we compute\
+$\chi_L^2 =\chi_{0.995,29}^2 = 13.12 \quad \chi_U^2 = \chi_{0.005,29}^2 = 52.34$\
+
+Thus the endpoints for the required C.I. are, respectively,:\
+$\frac{(n-1)s^2}{\chi_U^2} = \frac{29(3.433^2)}{52.34} = 6.53$$\frac{(n-1)s^2}{\chi_L^2} = \frac{29(3.433^2)}{13.12} = 26.05$\
+
+Thus $(6.53,\ 26.05 )$ is a $99\%$ C.I. for $\sigma^2$
+
+## Example
+
+Taking square roots of both endpoints of the interval for $\sigma^2$:\
+we get $(2.56,\ 5.10 )$ as a $99\%$ C.I. for $\sigma$.\
+Thus we are $99\%$ confident that the standard deviation of the weights of coffee containers lies in the interval $(2.56,\ 5.10 )$.\
+The filling machine was designed to be so that $\sigma = 4$ grams, and since this value falls in the above interval, the machine satisfies the design specification for standard deviation.\
+A separate confidence interval for $\mu$ is computed for checking whether the design specification for the mean is satisfied.
+
+## Example: R
+
+$$\frac{(n-1)s^2}{\chi_U^2} < \, \sigma^2 \, < \, \frac{(n-1)s^2}{\chi_L^2}$$
+
+```{r}
+#| echo: true
+n <- 30; ybar <- 500.543; s <- 3.433; alpha <- 0.01
+
+# CI for sigma^2
+sigma2CI <- (n-1)*s^2 / qchisq(c(1-alpha/2, alpha/2), df=n-1)
+sigma2CI
+
+# CI for sigma
+sqrt(sigma2CI)
+```
+
+
+
+## Tests of Hypotheses about $\sigma^2$
+
+[Test:]{style="color: magenta"}
+
+1.  $H_0: \sigma^2 \leq \sigma_0^2$ vs. $H_a:$ $\sigma^2 > \sigma_0^2$
+
+2.  $H_0: \sigma^2 \geq \sigma_0^2$ vs. $\sigma^2 < \sigma_0^2$
+
+3.  $H_0: \sigma^2 =\sigma_0^2$ vs. $\sigma^2 \neq \sigma_0^2$
+
+[Test Statistic:]{style="color: magenta"}   $\chi^2 = \frac{(n-1)s^2}{\sigma_0^2}$\
+[Rejection Region:]{style="color: magenta"} for specified $\alpha$ and $df= n-1$,\
+
+1.  Reject $H_0$ if $\chi^2 > \chi_U^2$, where $\chi_U^2\equiv\chi_{\alpha,\,n-1}^2$
+
+2.  Reject $H_0$ if $\chi^2 < \chi_L^2$, where $\chi_L^2\equiv\chi_{1-\alpha,\,n-1}^2$
+
+3.  Reject $H_0$ if $\chi^2 > \chi_U^2$, where $\chi_U^2\equiv\chi_{\alpha/2,\,n-1}^2,$ or if $\chi^2 < \chi_L^2$, where $\chi_L^2\equiv\chi_{1-\alpha/2,\,n-1}^2$
+
+
+## Notes about Example
+
+- The above inferences are based on the assumption of sampling from a normal population.
+
+- They are more sensitive to departures from normality than the inferences about population mean.
+
+- We don't have a CLT-type theorem which applies to $S^2$ like we have in case of $\bar{Y}$.
+
+- Always plotting sample data as a preliminary procedure - using boxplot or normal probability plot to look for skewness, or outliers, is recommended.
+
+
+
+## Estimation and Tests for Comparing Two Population Variances
+
+- We will consider the case of independent samples from two populations having variances $\sigma_1^2$ and $\sigma_2^2$.
+
+- The main application is testing $\sigma_1^2 = \sigma_2^2$.
+
+- Theory says that when the two populations are Normal, and sample sizes are $n_1$ and $n_2$ then the random variable $$F = \frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2} \qquad$$ has the $F$ distribution with degrees of freedom $df_1 = n_1-1$ and $df_2 = n_2 - 1$.
+
+
+
+## Estimation and Tests for Comparing Two Population Variances - cont.
+
+- $df_1$ is the degrees of freedom associated with $S_1^2$.
+
+- $df_2$ is the degrees of freedom associated with $S_2^2$.
+
+- The $F$ distribution is a two parameter family indexed by $df_1$ and $df_2$.
+
+- Some use the terms [Numerator]{style="color: magenta"} and [Denominator]{style="color: magenta"} degrees of freedom for $df_1$ and $df_2$.
+
+- The F-statistic is calculated as $$F_c = \frac{s_1^2/\sigma_1^2}{s_2^2/\sigma_2^2}$$
+
+
+## Estimation and Tests for Comparing Two Population Variances - cont.
+
+- The lower tail values, when needed can be obtained by the relationship $$F_{1-\alpha,df_1,df_2}=\frac{1}{F_{\alpha,df_1^*,df_2^*}}$$ where $df_1^*=df_2$ and $df_2^*=df_1$.
+
+- That is, to calculate a left tail probability, look-up the corresponding right tail probability after switching the numerator and denominator degrees of freedom.
+
+- For example $F_{.95,3,10}$ is calculated using the above relationship as $1/F_{.05,10,3}=1/8.79=0.11$
+
+- And $F_{.95,10,3}$ is calculated using the above relationship as $1/F_{.05,3,10}=1/3.71=0.27$
+
+
+
+## Tests comparing two variances
+
+[Test:]{style="color: magenta"}\
+1. $H_0: \sigma_1^2 \leq \sigma_2^2$  vs. $H_a:\sigma_1^2 > \sigma_2^2$\
+2. $H_0:\sigma_1^2 = \sigma_2^2$  vs. $H_a: \sigma_1^2 \neq \sigma_2^2$\
+[Test Statistic:]{style="color: magenta"} $$F = \frac{s_1^2}{s_2^2}$$ [Rejection Region:]{style="color: magenta"} For given $\alpha$, $df_1 = n_1-1$, and $df_2 = n_2 - 1$.\
+1. Reject $H_0$ if $F \geq F_{\alpha,df_1,df_2}$\
+2. Reject $H_0$ if $F \leq F_{1-\alpha/2,df_1,df_2}$ or $F\geq F_{\alpha/2,df_1,df_2}$\
+
+
+
+## Example
+
+In order to test the hypothesis $H_0: \mu_1 - \mu_2 = 0$ using a two-sample $t$-statistic with pooled sample variance, we need to assume $\sigma_1^2 = \sigma_2^2$.\
+To check whether this is a valid assumption, let us formally test\
+$H_0:\sigma_1^2 = \sigma_2^2\ vs.\   H_a:  \sigma_1^2 \neq
+\sigma_2^2$\
+using $\alpha=.05$\
+The two independent samples gave sample variances:\
+$s_1^2 = 0.105, \quad s_2^2 = 0.058$ with $df_1=9$ and $df_2=9$.
+
+
+
+## Example - cont.
+
+[Test:]{style="color: magenta"} $H_0:\sigma_1^2 = \sigma_2^2\ vs.\   H_a:  \sigma_1^2 \neq \sigma_2^2$\
+[Test Statistic:]{style="color: magenta"} $F_c=\frac{s_1^2}{s_2^2}=\frac{0.105}{0.058}=1.81$\
+[Rejection Region:]{style="color: magenta"} $F \leq F_{.975,9,9}$ or $F\geq F_{.025,9,9}$\
+From Table 8, using $\alpha$ = 0.05, $df_1 = 9$, $df_2 = 9$, we have\
+$F_{0.025,9,9} = 4.03$ and $F_{0.975,9,9} = 1/F_{0.025,9,9}= 1/4.03=0.25$\
+Thus we reject if $F \leq 0.25$ or $F\geq 4.03$.\
+Since $F_c=1.81$ does not fall in the rejection region, we fail to reject $H_0:
+\sigma_1^2 = \sigma_2^2$.\
+[Conclusion:]{style="color: magenta"} The assumption of equal variances for the two populations appears reasonable.
+
+## Example: R
+
+$$H_0:\sigma_1^2 = \sigma_2^2\ vs.\   H_a:  \sigma_1^2 \neq \sigma_2^2$$
+
+```{r}
+#| echo: true
+s12 <- 0.105; s22 <- 0.058; df1 <- 9; df2 <- 9; alpha <- 0.05
+f <- s12/s22
+f
+
+# Rejection region
+rr <- qf(c(alpha/2, 1-alpha/2), df1=df1, df2=df2)
+rr
+
+# f in rejection region?
+f<rr[1] | f>rr[2]
+```
+
+## Example - cont.
+
+What if we are instead interested in the test $$H_0:\sigma_1^2 \leq \sigma_2^2\ vs.\   H_a:  \sigma_1^2 \gt \sigma_2^2$$
+
+```{r}
+#| echo: true
+s12 <- 0.105; s22 <- 0.058; df1 <- 9; df2 <- 9; alpha <- 0.05
+f <- s12/s22
+f
+
+# Rejection region
+rr <- qf(1-alpha, df1=df1, df2=df2)
+rr
+
+# f in rejection region?
+f > rr
+
+# p-value
+pf(f, df1=df1, df2=df2, lower.tail = F)
+```
+
+## Using var.test() {.scrollable}
+
+Say you have a dataset containing data with samples from two populations. We can use the `var.test()` function to perform the previous test.
+
+$$H_0:\sigma_1^2 \leq \sigma_2^2\ vs.\   H_a:  \sigma_1^2 \gt \sigma_2^2$$
+
+```{r}
+#| echo: true
+set.seed(412)
+x <- rnorm(n=20, mean = 10, sd = 8)
+y <- rnorm(n=20, mean = 20, sd = 5)
+
+boxplot(c(x,y)~rep(c('x', 'y'), each = 20))
+
+qqnorm(x); qqline(x)
+qqnorm(y); qqline(y)
+
+s12 <- var(x); s22 <- var(y); df1 <- length(x)-1; df2 <- length(y)-1; alpha <- 0.05
+f <- s12/s22
+f
+pf(f, df1=df1, df2=df2, lower.tail = F)
+var.test(x, y, alternative = 'greater')
+
+```
+
+
+## Test comparing several variances
+
+[Hartley's $F_{max}$ Test for Homogeneity of Variances]{style="color: red"}\
+This test requires that independent random samples of equal samples sizes, $n$, are drawn from $t$ populations having normal distributions.\
+[Test:]{style="color: magenta"} $H_0: \sigma_1^2 = \sigma_2^2=\ldots= \sigma_t^2$ vs. $H_a:$ Not all $\sigma^2$'s equal\
+[Test Statistic:]{style="color: magenta"} $F_{max} = \frac{s_{max}^2}{s_{min}^2}$ where $s_{max}^2$=largest sample variance and $s_{min}^2$=smallest sample variance\
+[Rejection Region:]{style="color: magenta"} For given $\alpha$, reject $H_0$ if $F_{max}$ exceeds the tabulated percentile
+
+
+
+## Test comparing several variances cont.
+
+- When [sample sizes are not all equal]{style="color: magenta"} an approximate test is obtained if $n$ is replaced with $n_{max}$, where $n_{max}$ is largest sample size, in the above procedure.
+
+- Hartley's test is quite sensitive to violation of the normality assumption.
+
+- Thus other procedures that do not require the normality assumption, such as Levene's test has been proposed.
+
+- Levene's test is too cumbersome to calculate by hand; so software may have to be used.
+
+- Levine's test procedure is less powerful than Hartley's test when populations have normal distributions.
+

@@ -1,5 +1,7 @@
 ---
-format: docx
+title: STAT 801A Final
+subtitle: Pre-experiment worksheet
+format: html
 ---
 
 ## Final exam -- pre-experiment worksheet

@@ -16,6 +16,10 @@ format:
 
 **Course Notes**
 
+5 -- Variances
+
+- [Slides](notes/5-variances/lectures5.qmd)
+
 4.5 -- Inference for proportions
 
 - [Slides](notes/4.5-proportions/index.qmd)
