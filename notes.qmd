@@ -100,6 +100,8 @@ format:
 
 10/26/26 -- Lab 7
 
+- [Tests for variances, random assignment](labs/lab7/STAT_801A_Lab7.qmd)
+
 11/2/26 -- Lab 8
 
 11/9/26 -- Lab 9

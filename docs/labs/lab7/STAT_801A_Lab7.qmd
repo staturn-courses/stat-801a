@@ -1,0 +1,223 @@
+---
+title: "STAT 801A Lab 7: Random Assignment"
+author: "Insert Name"
+date: today
+format: html
+editor: source
+---
+
+# Testing Two Variances
+
+The pooled two-sample t test assumes the two groups have equal variances. We can test that assumption.
+
+$$H_0: \sigma_1^2 = \sigma_2^2 \qquad H_a: \sigma_1^2 \neq \sigma_2^2$$
+
+Here is the steer data used for the pooled t test.
+
+```{r}
+steers <- data.frame(
+  ration = rep(c("control", "supplement"), each = 12),
+  adg = c(3.12, 3.45, 2.98, 3.30, 3.61, 3.05, 3.27, 3.52, 2.89, 3.38, 3.20, 3.41,
+          3.48, 3.71, 3.25, 3.66, 3.90, 3.39, 3.58, 3.82, 3.31, 3.55, 3.74, 3.44))
+```
+
+## F test
+
+```{r}
+var.test(adg ~ ration, data = steers)
+```
+
+`var.test` divides the two sample variances, $F = s_1^2 / s_2^2$. A ratio near 1 means the spreads are similar. Here $F = 1.20$ and $p = 0.768$, so there is no evidence that the variances differ.
+
+The F test assumes both groups come from normal distributions. It can give misleading results when they do not.
+
+## Levene's test
+
+Levene's test is less sensitive to non-normal data, and it also works with more than two groups. It is in the `car` package.
+
+```{r}
+library(car)
+leveneTest(adg ~ ration, data = steers)
+```
+
+Here $F = 0.09$ and $p = 0.765$, so again there is no evidence that the variances differ.
+
+------------------------------------------------------------------------
+
+# Random Assignment
+
+In a designed experiment, we apply treatments to experimental units and measure a response on each one.
+
+The experimental unit is the smallest unit that gets its own independent treatment, such as a plant, a field plot or a pig.
+
+Random assignment means chance decides which treatment each unit gets, not the researcher. Every unit has the same chance of getting each treatment.
+
+The units must also be independent. Each unit gets its own treatment and responds on its own, so one unit's response does not depend on another's.
+
+This matters because units differ before an experiment starts. If the researcher chooses, the groups can differ before the treatments are even applied. Random assignment spreads those differences across the groups, so a difference in the response can be credited to the treatment. The two-sample t test depends on this.
+
+Note: Random assignment is not the same as random sampling. Random sampling decides which units are in the study, which lets us generalize to a population. Random assignment decides which treatment each unit gets, which lets us say the treatment caused the difference.
+
+## What can go wrong
+
+- The researcher picks. A veterinarian gives a new vaccine to the healthiest-looking calves. Those calves might have done better with no vaccine at all.
+
+- Convenience. The first 10 plants off the cart get fertilizer A. The plants that were easiest to reach may differ from the rest.
+
+- Location. Hybrid A is planted on the north half of a field and hybrid B on the south half. Any soil difference between the halves gets mixed in with the hybrid difference.
+
+- Shared units. Ten fish share a tank fed diet A, and ten share a tank fed diet B. Fish in the same tank share water and feed, so they are not independent. The tank is the experimental unit, and each diet has only one.
+
+When a treatment is tangled up with some other difference like this, the two are confounded. The data cannot separate them.
+
+------------------------------------------------------------------------
+
+# Random Assignment in R
+
+## The sample function
+
+In R, `sample(x)` returns the values of `x` in a random order.
+
+```{r}
+set.seed(801)
+sample(1:10)
+sample(1:10, size=5)
+```
+
+## Example: baking cookies
+
+A food science student wants to compare how much cookies spread when they are baked at 350 or 375 degrees. She will bake 20 cookies, 10 at each temperature, and measure the diameter of each cookie.
+
+The temperature is set for the whole oven, so cookies baked together get the same setting at the same time. If she baked the 10 cookies for 350 degrees on one tray and the 10 for 375 degrees on another, each temperature would be applied only once. The tray gets the treatment, so the tray is the experimental unit, and each temperature would have only one. Anything else that differed between the two trays would be confounded with temperature.
+
+Instead, she bakes each cookie in its own run. She sets the oven to that cookie's temperature before every run, even when two runs in a row use the same temperature. Each cookie gets its own independent treatment, so each cookie is an experimental unit.
+
+The runs happen one after another and are numbered 1 to 20. Random assignment decides which temperature she uses in each run.
+
+### Step 1: Make the treatment labels
+
+Make one label per run. `rep` repeats each label 10 times.
+
+```{r}
+temp <- rep(c(350, 375), each = 10)
+temp
+```
+
+### Step 2: Shuffle the labels
+
+```{r}
+set.seed(21)
+cookies <- data.frame(run = 1:20, temp = sample(temp))
+
+cookies
+```
+
+`sample` puts the 20 labels in a random order, and each run gets the label in its row. Run 1 is baked first. Because we shuffled a fixed set of labels, each temperature gets exactly 10 runs, and every way of splitting the 20 runs into two groups of 10 is equally likely.
+
+### Step 3: Check the assignment
+
+```{r}
+table(cookies$temp)
+
+cookies$run[cookies$temp == 350]
+```
+
+The second line lists the runs baked at 350 degrees. This is the schedule she would take to the kitchen.
+
+## Why not bake them in order?
+
+It would be easier to bake all 10 cookies at 350 degrees first, then turn the oven up once and bake the 10 at 375. That is the order the labels are in before `sample`. But the dough warms up as it sits on the counter, and warm dough spreads more. Count how many of the first 10 runs use each temperature.
+
+```{r}
+# 350 first
+table(temp[1:10])
+
+# Random order
+table(cookies$temp[1:10])
+```
+
+Baked in order, all of the first 10 runs are at 350 degrees, so every 375 cookie would come from dough that sat out longer. Any change from the early runs to the late runs would be mixed in with the difference between the temperatures, so the two are confounded. In the random order, the first 10 runs are split.
+
+------------------------------------------------------------------------
+
+# More Than Two Treatments
+
+Many experiments compare more than two treatments. The steps are the same. Only the labels change.
+
+## Example: three diets
+
+A swine nutritionist will compare three diets based on corn, sorghum and wheat. She has 24 pigs and wants 8 on each diet. Each pig has its own pen and feeder, so each pig is an experimental unit. If the 8 pigs on a diet shared one pen, the pen would be the unit, and each diet would have only one.
+
+```{r}
+diet <- rep(c("corn", "sorghum", "wheat"), each = 8)
+
+set.seed(2026)
+pigs <- data.frame(pig = 1:24, diet = sample(diet))
+
+pigs
+
+```
+
+List the pigs on each diet:
+
+```{r}
+pigs$pig[pigs$diet == "corn"]
+pigs$pig[pigs$diet == "sorghum"]
+pigs$pig[pigs$diet == "wheat"]
+```
+
+Note: When the units do not divide evenly, give `rep` a count for each label with `times`. For 23 pigs, `rep(c("corn", "sorghum", "wheat"), times = c(8, 8, 7))` makes 8, 8 and 7 labels.
+
+A design where every unit is randomly assigned to one of the treatments is called a completely randomized design. A two-sample t test compares only two means, so it cannot compare all three diets at once. That is the job of ANOVA.
+
+------------------------------------------------------------------------
+
+# Practice Problems
+
+## Problem 1
+
+For each study, say whether the treatments were assigned randomly and independently. If not, explain the problem.
+
+\(a\) A veterinarian gives a new vaccine to the 15 calves that look healthiest and the standard vaccine to the other 15.
+
+\(b\) An agronomist plants hybrid A on the north half of a field and hybrid B on the south half.
+
+\(c\) A student numbers 30 petri dishes, uses `sample` to assign 15 dishes to each of two antibiotics, and treats each dish separately.
+
+\(d\) A researcher puts 10 fish in a tank fed diet A and 10 fish in a second tank fed diet B, then weighs each fish.
+
+------------------------------------------------------------------------
+
+## Problem 2
+
+A plant scientist has 16 soybean plants, each in its own pot, numbered 1 to 16. Eight will be sprayed with an insecticide and eight with water as a control.
+
+\(a\) Create a vector of treatment labels with 8 `"insecticide"` and 8 `"water"`.
+
+```{r}
+
+```
+
+\(b\) Set the seed and randomly assign the labels to the pots. Store the pot numbers and treatments in a data frame called `soy` and print it.
+
+```{r}
+
+```
+
+\(c\) Check that each treatment has 8 pots.
+
+```{r}
+
+```
+
+\(d\) Which pots get the insecticide?
+
+```{r}
+
+```
+
+# Final Step
+
+Render your document. Click the Render button at the top of the editor, or press Ctrl + Shift + K.
+
+If the render fails, read the error message. It names the chunk that caused the problem. The most common causes are a missing closing parenthesis, or an object used before it was created.
