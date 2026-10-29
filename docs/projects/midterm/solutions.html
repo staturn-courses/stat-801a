@@ -186,13 +186,15 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#from-reading" id="toc-from-reading" class="nav-link active" data-scroll-target="#from-reading">From Reading</a></li>
+  <li><a href="#rubric" id="toc-rubric" class="nav-link active" data-scroll-target="#rubric">Rubric</a></li>
+  <li><a href="#from-reading" id="toc-from-reading" class="nav-link" data-scroll-target="#from-reading">From Reading</a></li>
   <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a></li>
   <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a></li>
   <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a></li>
   <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a></li>
   <li><a href="#question-9" id="toc-question-9" class="nav-link" data-scroll-target="#question-9">Question 9</a></li>
   <li><a href="#question-10" id="toc-question-10" class="nav-link" data-scroll-target="#question-10">Question 10</a></li>
+  <li><a href="#extra-credit" id="toc-extra-credit" class="nav-link" data-scroll-target="#extra-credit">Extra Credit</a></li>
   </ul>
 </nav>
     </div>
@@ -218,20 +220,34 @@ window.Quarto = {
 </header>
 
 
+<section id="rubric" class="level1">
+<h1>Rubric</h1>
+<p>Questions 1-4: Full credit for meaningful solutions.</p>
+<p>Questions 5-9: 2 points for each component</p>
+<ul>
+<li>Identifies the appropriate test (one-sample, two-sample, or paired t-test). For two-sample t-tests, both the equal variance and unequal variance assumptions will suffice (no cases where the variances are not equal).</li>
+<li>Identifies the correct hypotheses. (Improvement = Smaller TFI)</li>
+<li>Correctly creates a visualization. For 5, 8, and 9, one visualization to check the normality of the responses or differences in responses. For 6 and 7, two visualizations are required to check the normality for each group.</li>
+<li>Correctly uses the t.test function with the appropriate subset of data.</li>
+<li>Writes a correct conclusion based on the results of t.test. Statement of rejecting or failing to reject the null hypothesis using the context of the alternative hypothesis.</li>
+</ul>
+<p>Question 10: 2 points for describing what each numeric value represents: t-statistic, degrees of freedom, p-value, confidence interval, and estimate of the mean.</p>
+<hr>
+</section>
 <section id="from-reading" class="level1">
 <h1>From Reading</h1>
 <ol type="1">
 <li>Answers will vary. The goal is to compare the effectiveness of guided internet-based cognitive behavioral therapy (iCBT) with face-to-face (F2F) clinical care for managing tinnitus.</li>
 <li>Answers will vary. The primary gap in literature is that there is no comparison of iCBT intervention compared to the F2F care.</li>
 <li>Answers will vary. Participants meet the eligibility criteria (age, location, internet access, etc.). Participants are randomly assigned into either intervention group, iCBT or F2F (control) in a 1:1 allocation.</li>
-<li>Answers will vary. Multiple barriers exist, no masking of treatments is possible, lack of standardization of care.</li>
+<li>Answers will vary. Multiple barriers exist, no masking of treatments is possible, lack of standardization of care. Limitations are important to discuss because it is not feasible to design a study that considers every possible aspect.</li>
 </ol>
 </section>
 <section id="question-5" class="level1">
 <h1>Question 5</h1>
 <ol type="1">
 <li>One-sample t-test</li>
-<li><span class="math inline">\(H_0: \mu=50\)</span> vs <span class="math inline">\(H_A:\mu&gt;50\)</span></li>
+<li><span class="math inline">\(H_0: \mu_{all}=50\)</span> vs <span class="math inline">\(H_A:\mu_{all}&gt;50\)</span></li>
 <li>Q-Q plot shows most points following the line. Can assume normality.</li>
 <li>See below</li>
 <li>We have evidence to conclude that the true mean baseline TFI is greater than 50.</li>
@@ -266,7 +282,7 @@ mean of x
 <h1>Question 6</h1>
 <ol type="1">
 <li>Two-sample t-test (equal variance or unequal variance forms are okay)</li>
-<li><span class="math inline">\(H_0: \mu_{iCBT, T0}=\mu_{F2F}\)</span> vs <span class="math inline">\(H_0: \mu_{iCBT, T0}\neq\mu_{F2F}\)</span></li>
+<li><span class="math inline">\(H_0: \mu_{iCBT, T0}=\mu_{F2F, T0}\)</span> vs <span class="math inline">\(H_A: \mu_{iCBT, T0}\neq\mu_{F2F, T0}\)</span></li>
 <li>Baseline for the iCBT group looks normally distributed. Some smaller outliers exist for the F2F group, but nothing too concerning.</li>
 <li>See below</li>
 <li>We do not have evidence to conclude that the true difference in baseline TFI scores between the iCBT and F2F groups is different than zero.</li>
@@ -317,10 +333,10 @@ mean of x mean of y
 <h1>Question 7</h1>
 <ol type="1">
 <li>Two-sample t-test (equal variance or unequal variance forms are okay)</li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+<li><span class="math inline">\(H_0: \mu_{iCBT, T1}=\mu_{F2F, T1}\)</span> vs <span class="math inline">\(H_A: \mu_{iCBT, T1}\lt\mu_{F2F, T1}\)</span></li>
+<li>Normality appears to be present in both groups at T1.</li>
+<li>See below.</li>
+<li>There is not evidence to conclude that the mean TFI is better for iCBT than for F2F.</li>
 </ol>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>t1.icbt <span class="ot">&lt;-</span> data<span class="sc">$</span>T1[data<span class="sc">$</span>group <span class="sc">==</span> <span class="st">'iCBT'</span>]</span>
@@ -348,16 +364,16 @@ mean of x mean of y
 </figure>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(t1.icbt, t1.f2f, <span class="at">alternative =</span> <span class="st">'greater'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(t1.icbt, t1.f2f, <span class="at">alternative =</span> <span class="st">'less'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
 
 data:  t1.icbt and t1.f2f
-t = -0.75996, df = 88.894, p-value = 0.7754
-alternative hypothesis: true difference in means is greater than 0
+t = -0.75996, df = 88.894, p-value = 0.2246
+alternative hypothesis: true difference in means is less than 0
 95 percent confidence interval:
- -9.908019       Inf
+     -Inf 3.690628
 sample estimates:
 mean of x mean of y 
  35.13043  38.23913 </code></pre>
@@ -367,32 +383,86 @@ mean of x mean of y
 <section id="question-8" class="level1">
 <h1>Question 8</h1>
 <ol type="1">
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+<li>Paired t-test</li>
+<li><span class="math inline">\(H_0: \mu_{iCBT, T2}-\mu_{iCBT, T1}=0\)</span> vs <span class="math inline">\(H_A: \mu_{iCBT, T2}-\mu_{iCBT, T1}\lt0\)</span></li>
+<li>The differences appear to be normally distributed.</li>
+<li>See below.</li>
+<li>There is evidence to suggest that the mean TFI improved between T1 and T2 for the iCBT group.</li>
 </ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>icbt <span class="ot">&lt;-</span> data[data<span class="sc">$</span>group<span class="sc">==</span><span class="st">'iCBT'</span>,]</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(icbt<span class="sc">$</span>T2<span class="sc">-</span>icbt<span class="sc">$</span>T1); <span class="fu">qqline</span>(icbt<span class="sc">$</span>T2<span class="sc">-</span>icbt<span class="sc">$</span>T1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="solutions_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(icbt<span class="sc">$</span>T2, icbt<span class="sc">$</span>T1, <span class="at">alternative =</span> <span class="st">'less'</span>, <span class="at">paired =</span> T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Paired t-test
+
+data:  icbt$T2 and icbt$T1
+t = -2.4064, df = 36, p-value = 0.01068
+alternative hypothesis: true mean difference is less than 0
+95 percent confidence interval:
+      -Inf -1.822818
+sample estimates:
+mean difference 
+      -6.108108 </code></pre>
+</div>
+</div>
 </section>
 <section id="question-9" class="level1">
 <h1>Question 9</h1>
 <ol type="1">
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+<li>Paired t-test</li>
+<li><span class="math inline">\(H_0: \mu_{iCBT, T0}-\mu_{iCBT,T2}=13\)</span> vs <span class="math inline">\(H_A: \mu_{iCBT, T0}-\mu_{iCBT, T2}\gt13\)</span></li>
+<li>The differences appear to be normally distributed.</li>
+<li>See below.</li>
+<li>There is evidence to conclude that the mean TFI improved by 13 points for T2 compared to T0.</li>
 </ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(icbt<span class="sc">$</span>T0<span class="sc">-</span>icbt<span class="sc">$</span>T2); <span class="fu">qqline</span>(icbt<span class="sc">$</span>T0<span class="sc">-</span>icbt<span class="sc">$</span>T2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="solutions_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(icbt<span class="sc">$</span>T0, icbt<span class="sc">$</span>T2, <span class="at">alternative =</span> <span class="st">'greater'</span>, <span class="at">paired =</span> T, <span class="at">na.rm =</span> T, <span class="at">mu=</span><span class="dv">13</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Paired t-test
+
+data:  icbt$T0 and icbt$T2
+t = 3.9831, df = 36, p-value = 0.0001584
+alternative hypothesis: true mean difference is greater than 13
+95 percent confidence interval:
+ 20.64541      Inf
+sample estimates:
+mean difference 
+       26.27027 </code></pre>
+</div>
+</div>
 </section>
 <section id="question-10" class="level1">
 <h1>Question 10</h1>
 <ol type="1">
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+<li>t = 3.9831 is the test statistic, obtained from <span class="math inline">\(\frac{\bar{X}-\mu}{s/\sqrt{n}}\)</span>.</li>
+<li>df = 36 is the degrees of freedom, obtained by 37 - 1 (only 37 complete observations)</li>
+<li>p-value = 0.0001584 is the probability of observing values of <span class="math inline">\(\bar{X}_{iCBT, T0}-\bar{X}_{iCBT, T2}\)</span> that are as or more extreme than our observed statistic assuming <span class="math inline">\(H_0\)</span> is true. Obtained with the <code>pt()</code> function.</li>
+<li>(okay if not present in solution) alternative hypothesis: true mean difference is greater than 13: statement of the alternative hypothesis.</li>
+<li>95 percent confidence interval: (20.64541, Inf) is the one-sided confidence interval for <span class="math inline">\(\mu\)</span>.</li>
+<li>mean difference: 26.27027 is the observed difference in means.</li>
 </ol>
+</section>
+<section id="extra-credit" class="level1">
+<h1>Extra Credit</h1>
+<p>Each hypothesis test has a probability of making a Type I error (with probability <span class="math inline">\(\alpha\)</span>). Performing multiple tests increases the probability of making at least one Type I error across the collection of tests. This is known as multiplicity, which affects the collective error rate across all of the tests.</p>
 
 
 </section>

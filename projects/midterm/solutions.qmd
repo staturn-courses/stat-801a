@@ -3,12 +3,28 @@ title: "Midterm Solutions"
 format: html
 ---
 
+# Rubric
+
+Questions 1-4: Full credit for meaningful solutions.
+
+Questions 5-9: 2 points for each component
+
+- Identifies the appropriate test (one-sample, two-sample, or paired t-test). For two-sample t-tests, both the equal variance and unequal variance assumptions will suffice (no cases where the variances are not equal).
+- Identifies the correct hypotheses. (Improvement = Smaller TFI)
+- Correctly creates a visualization. For 5, 8, and 9, one visualization to check the normality of the responses or differences in responses. For 6 and 7, two visualizations are required to check the normality for each group.
+- Correctly uses the t.test function with the appropriate subset of data.
+- Writes a correct conclusion based on the results of t.test. Statement of rejecting or failing to reject the null hypothesis using the context of the alternative hypothesis. 
+
+Question 10: 2 points for describing what each numeric value represents: t-statistic, degrees of freedom, p-value, confidence interval, and estimate of the mean.
+
+---
+
 # From Reading
 
 1. Answers will vary. The goal is to compare the effectiveness of guided internet-based cognitive behavioral therapy (iCBT) with face-to-face (F2F) clinical care for managing tinnitus.
 2. Answers will vary. The primary gap in literature is that there is no comparison of iCBT intervention compared to the F2F care.
 3. Answers will vary. Participants meet the eligibility criteria (age, location, internet access, etc.). Participants are randomly assigned into either intervention group, iCBT or F2F (control) in a 1:1 allocation.
-4. Answers will vary. Multiple barriers exist, no masking of treatments is possible, lack of standardization of care.
+4. Answers will vary. Multiple barriers exist, no masking of treatments is possible, lack of standardization of care. Limitations are important to discuss because it is not feasible to design a study that considers every possible aspect. 
 
 # Question 5
 
@@ -28,7 +44,7 @@ t.test(data$T0, mu = 50, alternative = 'greater')
 # Question 6
 
 1. Two-sample t-test (equal variance or unequal variance forms are okay)
-2. $H_0: \mu_{iCBT, T0}=\mu_{F2F, T0}$ vs $H_0: \mu_{iCBT, T0}\neq\mu_{F2F, T0}$
+2. $H_0: \mu_{iCBT, T0}=\mu_{F2F, T0}$ vs $H_A: \mu_{iCBT, T0}\neq\mu_{F2F, T0}$
 3. Baseline for the iCBT group looks normally distributed. Some smaller outliers exist for the F2F group, but nothing too concerning.
 4. See below
 5. We do not have evidence to conclude that the true difference in baseline TFI scores between the iCBT and F2F groups is different than zero.
@@ -47,10 +63,10 @@ t.test(t0.icbt, t0.f2f, alternative = 'two.sided')
 # Question 7
 
 1. Two-sample t-test (equal variance or unequal variance forms are okay)
-2. 
-3. 
-4. 
-5. 
+2. $H_0: \mu_{iCBT, T1}=\mu_{F2F, T1}$ vs $H_A: \mu_{iCBT, T1}\lt\mu_{F2F, T1}$
+3. Normality appears to be present in both groups at T1.
+4. See below.
+5. There is not evidence to conclude that the mean TFI is better for iCBT than for F2F.
 
 ```{r}
 t1.icbt <- data$T1[data$group == 'iCBT']
@@ -59,7 +75,7 @@ sd(t1.icbt); sd(t1.f2f)
 
 qqnorm(t1.icbt); qqline(t1.icbt)
 qqnorm(t1.f2f); qqline(t1.f2f)
-t.test(t1.icbt, t1.f2f, alternative = 'greater')
+t.test(t1.icbt, t1.f2f, alternative = 'less')
 ```
 
 
@@ -67,12 +83,13 @@ t.test(t1.icbt, t1.f2f, alternative = 'greater')
 
 1. Paired t-test
 2. $H_0: \mu_{iCBT, T2}-\mu_{iCBT, T1}=0$ vs $H_A: \mu_{iCBT, T2}-\mu_{iCBT, T1}\lt0$
-3. 
-4. 
-5. 
+3. The differences appear to be normally distributed.
+4. See below.
+5. There is evidence to suggest that the mean TFI improved between T1 and T2 for the iCBT group.
 
 ```{r}
 icbt <- data[data$group=='iCBT',]
+qqnorm(icbt$T2-icbt$T1); qqline(icbt$T2-icbt$T1)
 t.test(icbt$T2, icbt$T1, alternative = 'less', paired = T)
 ```
 
@@ -81,11 +98,12 @@ t.test(icbt$T2, icbt$T1, alternative = 'less', paired = T)
 
 1. Paired t-test
 2. $H_0: \mu_{iCBT, T0}-\mu_{iCBT,T2}=13$ vs $H_A: \mu_{iCBT, T0}-\mu_{iCBT, T2}\gt13$
-3. 
-4. 
-5. 
+3. The differences appear to be normally distributed.
+4. See below.
+5. There is evidence to conclude that the mean TFI improved by 13 points for T2 compared to T0.
 
 ```{r}
+qqnorm(icbt$T0-icbt$T2); qqline(icbt$T0-icbt$T2)
 t.test(icbt$T0, icbt$T2, alternative = 'greater', paired = T, na.rm = T, mu=13)
 ```
 
@@ -99,3 +117,6 @@ t.test(icbt$T0, icbt$T2, alternative = 'greater', paired = T, na.rm = T, mu=13)
 5. 95 percent confidence interval: (20.64541, Inf) is the one-sided confidence interval for $\mu$.
 6. mean difference: 26.27027 is the observed difference in means.
 
+# Extra Credit
+
+Each hypothesis test has a probability of making a Type I error (with probability $\alpha$). Performing multiple tests increases the probability of making at least one Type I error across the collection of tests. This is known as multiplicity, which affects the collective error rate across all of the tests.
