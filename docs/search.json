@@ -63,18 +63,53 @@
     "text": "(c) Probability of greater than 20 minutes\nWe want\n\\[\nP(X &gt; 20).\n\\]\nUsing the complement,\n\\[\nP(X &gt; 20)=1-P(X\\leq20).\n\\]\n\np_greater_20 &lt;- 1 - pnorm(\n  20,\n  mean = mu,\n  sd = sigma\n)\n\np_greater_20\n\n[1] 0.3054685"
   },
   {
-    "objectID": "projects/final/pre-experiment-worksheet.html",
-    "href": "projects/final/pre-experiment-worksheet.html",
-    "title": "STAT 801A Final",
+    "objectID": "projects/midterm/midterm.html",
+    "href": "projects/midterm/midterm.html",
+    "title": "Midterm",
     "section": "",
-    "text": "Prior to meeting with your instructor, answer all of the following fields.\n\nList all member of your group.\nIn 2-4 sentences, describe your experiment.\nWhat is the experimental unit?\nWhat is the explanatory variable (if applicable)?\nHow will randomization occur?\nWhat is the response variable?\nIs your response variable categorical or numeric?\nWhat test do you plan to use to analyze the collected data?"
+    "text": "Tinnitus is a condition in which a person hears sounds that are perceived in the absence of an external sound source. This usually occurs due to damage or aging of the ear and causes a constant ringing sound that can affect quality of life. For this midterm, you are tasked with analyzing a simulated dataset inspired by a study comparing two tinnitus treatment methods.\nYour code must be reproducible, but you are free to use any R packages that you would like (i.e., I can get the same output by running your code). You are also free to use any method for creating your submission (e.g., Quarto, Word, etc.), but your solutions must be accompanied by the relevant code file and a pdf file.\nUsing your online access to the UNL library, read the following article:\n\nBeukes, Eldré W., et al. “Guided Internet-Based versus Face-to-Face Clinical Care in the Management of Tinnitus: Study Protocol for a Multi-Centre Randomised Controlled Trial.” Current Controlled Trials in Cardiovascular Medicine [London], vol. 18, no. 1, no. 186, Apr. 2017, https://doi.org/10.1186/s13063-017-1931-6.\n\nIf you are having issue accessing the article, please contact your instructor.\n\n\nIdentify the objective of the study.\nBriefly discuss the Background section. What is previously known and what gap in literature does the study aim to fill?\nDiscuss the design of the study. In your answer, identify the following:\n\nHow are participants recruited?\nWhat are the treatments? Are any of the treatments considered a control?\nHow are participants randomized into treatment groups?\n\nWhat limitations are present in the planned study? In your answer, include at least one limitation not discussed in the article. Additionally, explain why is it important that limitations are discussed.\n\n\nThe primary outcome of this study is the Tinnitus Functional Index (TFI). For this response, smaller values are better and a 13-point difference is considered to be a clinically significant change in score. Data inspired by the results of this study can be found on the Assignments page of the course website as responses-tfi.csv. Descriptions of each variable are provided below:\n\nid: Identifier of the participant\ngroup: Treatment group\nT0: Baseline TFI (before treatment application)\nT1: TFI after intervention\nT2: TFI after 2-month follow-up\n\nFor each of the following questions, include the following: (1) justify an appropriate statistical test, (2) define the hypothesis test (\\(H_0\\) and \\(H_A\\)), (3) check normality assumptions with at least one visualization, (4) perform the test using the t.test function (you do not need to manually code the tests), (5) write a conclusion that satisfies the research question. For (1), if a two-sample t-test is required, justify whether to use the equal variance assumption or not. Use \\(\\alpha = 0.05\\) for all tests.\n\n\nDoes the sample of participants suggest that the mean baseline TFI (T0) for the population of eligible participants is greater than 50? Hint: baseline measurements are taken prior to treatment application.\nIs there a difference in mean baseline TFI (T0) between the iCBT and F2F groups?\nImmediately following treatment (T1), is the mean TFI for participants receiving iCBT better than that of participants receiving F2F treatment?\nAmong participants receiving iCBT, is there evidence that the mean TFI improved between immediately following treatment (T1) and the two-month follow-up (T2)?\nAmong participants receiving iCBT, is there evidence that the mean TFI showed clinically significant improvement at the two-month follow-up (T2) compared to the baseline (T0)?\nDescribe each element of the output from problem (9). What does each value represent?\n\nExtra credit (2%): One of your colleagues wants to use t-tests for testing all possible comparisons in this study. Using Type I error in your answer, explain why this would be an issue."
   },
   {
-    "objectID": "projects/final/pre-experiment-worksheet.html#final-exam-pre-experiment-worksheet",
-    "href": "projects/final/pre-experiment-worksheet.html#final-exam-pre-experiment-worksheet",
-    "title": "STAT 801A Final",
+    "objectID": "projects/final/final.html",
+    "href": "projects/final/final.html",
+    "title": "Final",
     "section": "",
-    "text": "Prior to meeting with your instructor, answer all of the following fields.\n\nList all member of your group.\nIn 2-4 sentences, describe your experiment.\nWhat is the experimental unit?\nWhat is the explanatory variable (if applicable)?\nHow will randomization occur?\nWhat is the response variable?\nIs your response variable categorical or numeric?\nWhat test do you plan to use to analyze the collected data?"
+    "text": "Instead of a final exam, you (in groups of 3-4) are tasked with designing and conducting an experiment suitable for analysis with one of the methods discussed in class. There is a written and presented component of the final, where each part is equally weighted. Details of the experiment and assessments are below."
+  },
+  {
+    "objectID": "projects/final/final.html#description-of-experiment",
+    "href": "projects/final/final.html#description-of-experiment",
+    "title": "Final",
+    "section": "Description of Experiment",
+    "text": "Description of Experiment\nThe purpose of the experiment is to demonstrate your knowledge of the topics taught in our course. The following criteria must be met:\n\nExperiment does not involve living subjects.\nOutcomes occur due to a random (stochastic) process (no observational data).\nHypothesis is reasonable with respect to the subject matter.\nExperiment can be ethically conducted.\nLarge enough sample size to meet the assumptions of the test.\n\nOnce you and your group have designed an experiment, schedule a time to meet with your instructor to finalize the details of your experiment. Prior to our meeting, fill out the Pre-experiment worksheet form.\nYour experiment does not need to be complicated or have an associated cost. The goal of this project is to connect the theory we discussed with real applications. Some examples of potential experiments are below:\n\nWhat is the average length of a blade of grass after mowing?\nWhen tasked to randomly choose a dog or cat, does a LLM show preference toward selecting cats? (Binomial)\nDoes shoe brand A help one jump higher than shoe brand B? (Gaussian)"
+  },
+  {
+    "objectID": "projects/final/final.html#written-component",
+    "href": "projects/final/final.html#written-component",
+    "title": "Final",
+    "section": "Written Component",
+    "text": "Written Component\nDue date: end of the scheduled final exam\nThe written component of the exam includes writing up your experiment in the style of academic research. Your paper should be around 4-6 pages, although there are no formal page limts (don’t add too much or too little).\nThe following sections are required:\n\nIntroduction: describe what is currently known about your topic and your hypothesis/objective. If testing one group/process, what value is reasonable to test against? For two groups/processes, what difference provides practical significance? Include at least three sources.\nMethods: describe how you designed the experiment and the statistical test associated with the analysis. If appropriate, a diagram of your study would be helpful. If the data violates the assumption of the test (e.g., nonnormality), how to you proceed with the analysis (e.g., log transformation, use non-parametric test, etc.).\nResults: discuss your findings using descriptive statistics and statistical tests. Include at least one visualization. Provide the results of the experiment, but not a discussion of them (save for the next section).\nDiscussion/Conclusion: connect your results to the real world implications, as well as limitations of your study. What could future research explore?\nReferences: cite your sources\n\nIt may be helpful to consult online articles for writing research articles, such as this one: https://pmc.ncbi.nlm.nih.gov/articles/PMC3178846/."
+  },
+  {
+    "objectID": "projects/final/final.html#presentation",
+    "href": "projects/final/final.html#presentation",
+    "title": "Final",
+    "section": "Presentation",
+    "text": "Presentation\nDate: last week of classes (Tuesday, Thursday)\nYour presentation should mirror your written paper (introduction, methods, results, discussion). Each group will have 7-10 minutes to present, and up to 5 minutes for questions. While you may omit some details to stay within the time constraints, your presentation should be able to capture the essence of your experiment and its results."
+  },
+  {
+    "objectID": "projects/final/final.html#rubric",
+    "href": "projects/final/final.html#rubric",
+    "title": "Final",
+    "section": "Rubric",
+    "text": "Rubric\nEach component listed below will be graded with following scale.\n\n\n\n\n\n\n\n\n\n\nFull credit\n75%\nHalf Credit\n25%\nNo credit\n\n\n\n\nFully sufficient\nSome errors\nMajor errors\nCritical errors\nNo effort was made\n\n\n\nPre-experiment (10%)\n\nGroups formed by October 22nd (email your instructor). If you are not in a group, you will be randomly assigned a group.\nMet with instructor by November 6th.\nPre-experiment worksheet is filled out prior to the meeting.\n\nWritten component (40%)\n\nIntroduction: sufficient background knowledge is provided on the subject matter; hypothesis is clearly stated\nMethods: experiment and analysis can be fully replicated\nResults: descriptive and inferential statistics clearly given and arranged neatly; at least one visualization of the data is provided\nDiscussion: results are clearly connected back to the intended hypothesis; limitations are discussed; future research areas are included based on your research\nReferences: at least 3 references are used and cited correctly\n\nPresentation (40%)\n\nIntroduction: motivation is clearly given; hypothesis is stated\nMethods: describe the setup of your experiment\nResults: describe the results of your experiment; at least one visualization is included\nDiscussion: connect your results back to they hypothesis (what is the main takeaway?)\nAttendance: attended and listened to your peers present their findings\n\nPeer Evaluation (10%)\n\nComplete peer evaluation for your group members."
+  },
+  {
+    "objectID": "projects/final/final.html#notes",
+    "href": "projects/final/final.html#notes",
+    "title": "Final",
+    "section": "Notes",
+    "text": "Notes\nThis final is designed to combine the theory and application of statistics. While there are many components that we have not discussed in class, I am here to help! Please don’t hesitate to ask questions if you get stuck."
   },
   {
     "objectID": "notes/5-variances/lectures5.html#inferences-about-population-variances",
@@ -1173,7 +1208,7 @@
     "href": "notes.html",
     "title": "STAT 801A",
     "section": "",
-    "text": "Stat 801A Syllabus\n\n\n\nCourse Notes\n5 – Variances\n\nSlides\n\n4.5 – Inference for proportions\n\nSlides\n\n4 – Inference for two means\n\nSlides, part 1\n\npotency.csv\nwelch’s t-test\nt-test code\n\nSlides, part 2\n\nreaction-times.csv\n\n\n3 – Inference for one mean\n\nSlides, part 1\n\\(z_c\\) code\nSlides, part 2\nt.test code\nfiltered_travel_time.csv\n\nTest \\(H_0: \\mu = 15\\) vs \\(H_A: \\mu &lt; 15\\)\n\n\n2 – Probability\n\nFull Slides\nIn-class Slides\nZ table\nBinomial problems\n\n1 – Descriptive Statistics\n\nSlides\npdf\n\n\nLabs\n8/31/26 – Lab 1\n\nR Script\nData: cereal.xlsx | Student_data.csv\nSolutions\n\n9/7/26 – No lab (Labor Day)\n9/14/26 – Lab 2\n\nQuarto, ggplot2, and probability\nSolutions: pdf, qmd\n\n9/21/26 – Lab 3\n\nSingle mean, known variance\nSolutions: pdf, qmd\n\n9/8/26 – Lab 4\n\nt-test, power\nvolleyball.csv\nSolutions: qmd\n\n10/05/26 – Lab 5\n\ntwo-sample t-test\nSolutions: qmd\n\n10/12/26 – Lab 6\n\nTests for categorical data\nSolutions: qmd\n\n10/19/26 – No lab (Fall break)\n10/26/26 – Lab 7\n\nTests for variances, random assignment\n\n11/2/26 – Lab 8\n11/9/26 – Lab 9\n11/16/26 – Lab 10\n11/23/26 – No lab\n11/30/26 – Lab 11\n12/7/26 – Lab 12\n12/14/26 – No lab"
+    "text": "Stat 801A Syllabus\n\n\n\nCourse Notes\n6 – Inference for multiple means\n\nSlides\ncrd.csv\n\n5 – Inference for variances\n\nSlides\n\n4.5 – Inference for proportions\n\nSlides\n\n4 – Inference for two means\n\nSlides, part 1\n\npotency.csv\nwelch’s t-test\nt-test code\n\nSlides, part 2\n\nreaction-times.csv\n\n\n3 – Inference for one mean\n\nSlides, part 1\n\\(z_c\\) code\nSlides, part 2\nt.test code\nfiltered_travel_time.csv\n\nTest \\(H_0: \\mu = 15\\) vs \\(H_A: \\mu &lt; 15\\)\n\n\n2 – Probability\n\nFull Slides\nIn-class Slides\nZ table\nBinomial problems\n\n1 – Descriptive Statistics\n\nSlides\npdf\n\n\nLabs\n8/31/26 – Lab 1\n\nR Script\nData: cereal.xlsx | Student_data.csv\nSolutions\n\n9/7/26 – No lab (Labor Day)\n9/14/26 – Lab 2\n\nQuarto, ggplot2, and probability\nSolutions: pdf, qmd\n\n9/21/26 – Lab 3\n\nSingle mean, known variance\nSolutions: pdf, qmd\n\n9/8/26 – Lab 4\n\nt-test, power\nvolleyball.csv\nSolutions: qmd\n\n10/05/26 – Lab 5\n\ntwo-sample t-test\nSolutions: qmd\n\n10/12/26 – Lab 6\n\nTests for categorical data\nSolutions: qmd\n\n10/19/26 – No lab (Fall break)\n10/26/26 – Lab 7\n\nTests for variances, random assignment\n\n11/2/26 – Lab 8\n11/9/26 – Lab 9\n11/16/26 – Lab 10\n11/23/26 – No lab\n11/30/26 – Lab 11\n12/7/26 – Lab 12\n12/14/26 – No lab"
   },
   {
     "objectID": "canvas.html",
@@ -2492,52 +2527,122 @@
     "text": "R code exampol"
   },
   {
-    "objectID": "projects/final/final.html",
-    "href": "projects/final/final.html",
-    "title": "Final",
+    "objectID": "notes/6-multiple-means/Part6_lectures.html#inference-about-more-than-two-population-central-values",
+    "href": "notes/6-multiple-means/Part6_lectures.html#inference-about-more-than-two-population-central-values",
+    "title": "Inferences about more than two population central values",
+    "section": "Inference about more than Two Population Central Values",
+    "text": "Inference about more than Two Population Central Values\nIn this section, we will examine the case of inference where we have multiple means, \\(\\mu_1,\\mu_2,\\dots,\\mu_t\\), where we have \\(t&gt;2\\) populations.\n\nThe first and foremost question that we ask is whether the populations have different means?"
+  },
+  {
+    "objectID": "notes/6-multiple-means/Part6_lectures.html#inference-about-more-than-two-population-central-values---cont.",
+    "href": "notes/6-multiple-means/Part6_lectures.html#inference-about-more-than-two-population-central-values---cont.",
+    "title": "Inferences about more than two population central values",
+    "section": "Inference about more than Two Population Central Values - cont.",
+    "text": "Inference about more than Two Population Central Values - cont.\nA natural approach to think of when faced with the task of determining whether evidence points to \\(\\mu_1 = \\mu_2 = \\mu_3 =\\cdots = \\mu_t\\) or not, is to draw on knowledge acquired in Part 4 and perform \\(t\\)-tests of \\(H_0: \\mu_i = \\mu_j\\) for all pairs of means.\n\nIf all pairwise tests of means fail to reject the null hypotheses, then one may conclude that all means \\(\\mu_i\\) are equal.\nThis procedure has a serious flaw which will now be described.\nTake the case \\(t=3\\), so that we have three populations with means \\(\\mu_1, \\mu_2, \\mu_3\\).\nA sample from each population yields sample means and variances \\(\\bar{y}_1, \\bar{y}_2, \\bar{y}_3,\ns_1^2, s_2^2, s_3^2\\)."
+  },
+  {
+    "objectID": "notes/6-multiple-means/Part6_lectures.html#inference-about-more-than-two-population-central-values---cont.-1",
+    "href": "notes/6-multiple-means/Part6_lectures.html#inference-about-more-than-two-population-central-values---cont.-1",
+    "title": "Inferences about more than two population central values",
+    "section": "Inference about more than Two Population Central Values - cont.",
+    "text": "Inference about more than Two Population Central Values - cont.\n\nAll possible differences \\(\\mu_i-\\mu_j\\) are: \\[\\mu_1 - \\mu_2, \\ \\mu_1 - \\mu_3, \\ \\mu_2 - \\mu_3 \\ .\\]\nTo test each \\(H_0: \\mu_i - \\mu_j = 0\\), a \\(t\\)-statistic used is of the form \\[t_{ij} = \\frac{\\bar{y}_i-\\bar{y}_j}{s_p\\sqrt{\\frac{1}{n_i} +\n  \\frac{1}{n_j}}}, \\quad s_p^2 = \\frac{(n_i-1)s_i^2 +\n(n_j-1)s_j^2}{n_i + n_j - 2}\\]\nSuppose each test is made at the same level \\(\\alpha\\). Thus for each pair (\\(i,j\\))\n\\(P(|t_{ij}| &gt; t_{\\alpha/2}\\) \\(|\\) when \\(H_0\\) is true) = \\(\\alpha\\)."
+  },
+  {
+    "objectID": "notes/6-multiple-means/Part6_lectures.html#inference-about-more-than-two-population-central-values---cont.-2",
+    "href": "notes/6-multiple-means/Part6_lectures.html#inference-about-more-than-two-population-central-values---cont.-2",
+    "title": "Inferences about more than two population central values",
+    "section": "Inference about more than Two Population Central Values - cont.",
+    "text": "Inference about more than Two Population Central Values - cont.\n\nIn other words, the Type I error probability for each test is \\(\\alpha\\). We shall call \\(\\alpha\\) the per-comparison error rate.\nNow let us ask the question – What is the probability of making one or more Type I errors when we make all three tests? ( We shall call this the overall error rate.)\nTheory says that if the three \\(t\\) random variables were statistically independent then the overall error rate is \\(1 - (1-\\alpha)^3\\) (this works out to 0.14 if \\(\\alpha\\) = 0.05, much larger than .05)\nThe three test statistics are not independent. For example \\(t_{12}\\) and \\(t_{13}\\) both involve \\(\\bar{y}_1\\). Furthermore, all three have the same denominator. So they are not statistically independent."
+  },
+  {
+    "objectID": "notes/6-multiple-means/Part6_lectures.html#inference-about-more-than-two-population-central-values---cont.-3",
+    "href": "notes/6-multiple-means/Part6_lectures.html#inference-about-more-than-two-population-central-values---cont.-3",
+    "title": "Inferences about more than two population central values",
+    "section": "Inference about more than Two Population Central Values - cont.",
+    "text": "Inference about more than Two Population Central Values - cont.\n\nThus the overall error rate is not exactly 0.14 for our three test situation, and computing its exact value is difficult in theory.\nIn general, for \\(c\\) tests made at level \\(\\alpha\\), the overall error rate is larger than \\(1-(1-\\alpha)^c\\).\nThis is the flaw in the multiple testing approach to testing \\(H_0: \\mu_1 = \\mu_2 = \\cdots = \\mu_t\\).\nOne solution is to use a very small \\(\\alpha\\) for each test in order to have a reasonably small overall error rate.\nFor example, in the previous situation, if we had \\(\\alpha=.01\\) then the overall error rate would be less than \\(.03\\)."
+  },
+  {
+    "objectID": "notes/6-multiple-means/Part6_lectures.html#inference-about-more-than-two-population-central-values---cont.-4",
+    "href": "notes/6-multiple-means/Part6_lectures.html#inference-about-more-than-two-population-central-values---cont.-4",
+    "title": "Inferences about more than two population central values",
+    "section": "Inference about more than Two Population Central Values - cont.",
+    "text": "Inference about more than Two Population Central Values - cont.\n\nWe would like to avoid doing this if possible, because we will lose power by using small \\(\\alpha\\) for each test.\nThe alternative to making multiple \\(t\\)-tests is to make a single \\(F\\)-test of \\(H_0: \\mu_1 = \\mu_2 = \\cdots = \\mu_t\\) versus \\(H_a:\\) at least one \\(\\mu_j\\) is different in value.\nThis is called the analysis of variance \\(F\\)-test."
+  },
+  {
+    "objectID": "notes/6-multiple-means/Part6_lectures.html#the-analysis-of-variance-and-the-f-test",
+    "href": "notes/6-multiple-means/Part6_lectures.html#the-analysis-of-variance-and-the-f-test",
+    "title": "Inferences about more than two population central values",
+    "section": "The Analysis of Variance and the \\(F\\)-test",
+    "text": "The Analysis of Variance and the \\(F\\)-test\n\nWe can, at this point, begin talking in terms of experiments and their outcome. An experiment is a planned data collection activity.\nA simplistic view is that an experiment is a planned way to observe the effect of treatments that are applied to experimental units."
+  },
+  {
+    "objectID": "notes/6-multiple-means/Part6_lectures.html#examples",
+    "href": "notes/6-multiple-means/Part6_lectures.html#examples",
+    "title": "Inferences about more than two population central values",
+    "section": "Examples",
+    "text": "Examples\n\nDifferent amounts of a headache drug (treatments) are given to people with headache (experimental units) to observe the effect.\nDifferent furnace temperatures (treatments) are used to temper steel rods (experimental units) to see the extent of tempering for each temperature."
+  },
+  {
+    "objectID": "notes/6-multiple-means/Part6_lectures.html#the-anova-table-for-a-crd",
+    "href": "notes/6-multiple-means/Part6_lectures.html#the-anova-table-for-a-crd",
+    "title": "Inferences about more than two population central values",
+    "section": "The ANOVA Table for a CRD",
+    "text": "The ANOVA Table for a CRD\n\nData: (Note: the sample sizes in the \\(t\\) treatment groups need not be the same.)\n\n\n\nTreatment 1:\n\\(y_{11},\\ y_{12}, \\ldots,\\ y_{1n_{1}}\\)\n\\(\\bar{y}_{1.}\\)\n\n\nTreatment 2:\n\\(y_{21},\\ y_{22}, \\ldots,\\ y_{2n_{2}}\\)\n\\(\\bar{y}_{2.}\\)\n\n\n⋮\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\nTreatment t:\n\\(y_{t1},\\ y_{t2}, \\ldots,\\ y_{tn_{t}}\\)\n\\(\\bar{y}_{t.}\\)\n\n\n\nLet \\(n_T = n_1 + n_2 + \\cdots n_t\\) denote total number of observations."
+  },
+  {
+    "objectID": "notes/6-multiple-means/Part6_lectures.html#the-analysis-of-variance-aov-table-for-a-crd",
+    "href": "notes/6-multiple-means/Part6_lectures.html#the-analysis-of-variance-aov-table-for-a-crd",
+    "title": "Inferences about more than two population central values",
+    "section": "The Analysis of Variance (AOV) Table for a CRD",
+    "text": "The Analysis of Variance (AOV) Table for a CRD\n\nThe AOV table in this case is:\n\n\n\n\n\n\n\n\n\n\n\n\nSource\ndf\nSS\nMS\nF\n\n\n\n\nTreatment\n\\(t-1\\)\n\\(SSB = \\displaystyle\\sum_{i=1}^t n_i(\\bar{y}_{i.}-\\bar{y}_{..})^2\\)\n\\(SSB/(t-1)\\)\n\\(MSB/MSE\\)\n\n\nError\n\\(n_T-t\\)\n\\(SSW = \\displaystyle\\sum_{i=1}^t\\sum_{j=1}^{n_i}(y_{ij}-\\bar{y}_{i.})^2\\)\n\\(SSW/(n_T-t) \\equiv MSE\\)\n\n\n\nTotal\n\\(n_T-1\\)\n\\(\\displaystyle\\sum_{i=1}^t\\sum_{j=1}^{n_i}(y_{ij}-\\bar{y}_{..})^2\\)"
+  },
+  {
+    "objectID": "notes/6-multiple-means/Part6_lectures.html#example",
+    "href": "notes/6-multiple-means/Part6_lectures.html#example",
+    "title": "Inferences about more than two population central values",
+    "section": "Example",
+    "text": "Example\n\nData:\nA horticulturist was investigating the phosphorous content of tree leaves from three different varieties of apple trees(1,2, and 3). Random samples of five leaves from each of the three varieties were analyzed for phosphorous content. The data are:\n\n\n\n\n\nVariety\n1\n2\n3\n4\n5\nn\n\\(\\bar{X}_i\\)\n\\(s^2_i\\)\n\n\n\n\n1\n0.35\n0.40\n0.58\n0.50\n0.47\n5\n0.460\n0.00795\n\n\n2\n0.65\n0.70\n0.90\n0.84\n0.79\n5\n0.776\n0.01033\n\n\n3\n0.60\n0.80\n0.75\n0.73\n0.66\n5\n0.798\n0.00617"
+  },
+  {
+    "objectID": "notes/6-multiple-means/Part6_lectures.html#example-cont.",
+    "href": "notes/6-multiple-means/Part6_lectures.html#example-cont.",
+    "title": "Inferences about more than two population central values",
+    "section": "Example, cont.",
+    "text": "Example, cont.\n\nAnalysis of Variance Table:\n\n\n\n\nSource of Variation\nd.f.\nS.S.\nM.S.\nF\n\n\n\n\nVariety\n2\n.2766\n.13832\n16.97\n\n\nError\n12\n.0978\n.00815\n\n\n\nTotal\n14\n.3748\n\n\n\n\n\n\nSince the computed \\(F\\) value exceeds \\(F_{.05,2,12} = 3.89\\), the null hypothesis that the mean phosphorus content for the three varieties are all equal is rejected.\nIt appears that the mean phosphorus content for Variety 1 is smaller than those for Varieties 2 and 3. We will discuss tests for these later."
+  },
+  {
+    "objectID": "notes/6-multiple-means/Part6_lectures.html#example-r",
+    "href": "notes/6-multiple-means/Part6_lectures.html#example-r",
+    "title": "Inferences about more than two population central values",
+    "section": "Example: R",
+    "text": "Example: R\n\ndf &lt;- data.frame(\n  variety = factor(rep(1:3, each = 5)),\n  phosphorus = c(\n    0.35, 0.40, 0.58, 0.50, 0.47,\n    0.65, 0.70, 0.90, 0.84, 0.79,\n    0.60, 0.80, 0.75, 0.73, 0.66\n  )\n)\n\nfit &lt;- aov(phosphorus ~ variety, data=df)\nsummary(fit)\n\n            Df Sum Sq Mean Sq F value   Pr(&gt;F)    \nvariety      2 0.2766 0.13832   16.97 0.000317 ***\nResiduals   12 0.0978 0.00815                     \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nNote: variety has to saved as either a character vector or a factor. Otherwise, R will treat variety as a numeric value."
+  },
+  {
+    "objectID": "notes/6-multiple-means/Part6_lectures.html#checking-the-equal-variance-assumption",
+    "href": "notes/6-multiple-means/Part6_lectures.html#checking-the-equal-variance-assumption",
+    "title": "Inferences about more than two population central values",
+    "section": "Checking the Equal Variance Assumption",
+    "text": "Checking the Equal Variance Assumption\n\nTo summarize, our model for the multiple population case is (possibly unequal sample size) \\[y_{ij} = \\mu + \\alpha_i + \\epsilon_j \\quad i=1,2,\\ldots,t; \\ j=1,2,\\ldots,n_i\\] where \\(\\epsilon_{ij}\\)’s are independent, normally distributed and for each \\(i\\) the population parameters are (\\(\\mu_i,\n\\sigma_\\epsilon^2\\)).\nA problem occurs if there is heterogeneity of variance. \\[H_0: \\sigma_1^2 = \\sigma_2^2 = \\cdots = \\sigma_t^2 \\rm{\\ vs.\\ }  H_a: \\rm{~not~all~} \\sigma_i^2 \\rm{'s~are~equal}\\]"
+  },
+  {
+    "objectID": "projects/final/pre-experiment-worksheet.html",
+    "href": "projects/final/pre-experiment-worksheet.html",
+    "title": "STAT 801A Final",
     "section": "",
-    "text": "Instead of a final exam, you (in groups of 3-4) are tasked with designing and conducting an experiment suitable for analysis with one of the methods discussed in class. There is a written and presented component of the final, where each part is equally weighted. Details of the experiment and assessments are below."
+    "text": "Prior to meeting with your instructor, answer all of the following fields.\n\nList all member of your group.\nIn 2-4 sentences, describe your experiment.\nWhat is the experimental unit?\nWhat is the explanatory variable (if applicable)?\nHow will randomization occur?\nWhat is the response variable?\nIs your response variable categorical or numeric?\nWhat test do you plan to use to analyze the collected data?"
   },
   {
-    "objectID": "projects/final/final.html#description-of-experiment",
-    "href": "projects/final/final.html#description-of-experiment",
-    "title": "Final",
-    "section": "Description of Experiment",
-    "text": "Description of Experiment\nThe purpose of the experiment is to demonstrate your knowledge of the topics taught in our course. The following criteria must be met:\n\nExperiment does not involve living subjects.\nOutcomes occur due to a random (stochastic) process (no observational data).\nHypothesis is reasonable with respect to the subject matter.\nExperiment can be ethically conducted.\nLarge enough sample size to meet the assumptions of the test.\n\nOnce you and your group have designed an experiment, schedule a time to meet with your instructor to finalize the details of your experiment. Prior to our meeting, fill out the Pre-experiment worksheet form.\nYour experiment does not need to be complicated or have an associated cost. The goal of this project is to connect the theory we discussed with real applications. Some examples of potential experiments are below:\n\nWhat is the average length of a blade of grass after mowing?\nWhen tasked to randomly choose a dog or cat, does a LLM show preference toward selecting cats? (Binomial)\nDoes shoe brand A help one jump higher than shoe brand B? (Gaussian)"
-  },
-  {
-    "objectID": "projects/final/final.html#written-component",
-    "href": "projects/final/final.html#written-component",
-    "title": "Final",
-    "section": "Written Component",
-    "text": "Written Component\nDue date: end of the scheduled final exam\nThe written component of the exam includes writing up your experiment in the style of academic research. Your paper should be around 4-6 pages, although there are no formal page limts (don’t add too much or too little).\nThe following sections are required:\n\nIntroduction: describe what is currently known about your topic and your hypothesis/objective. If testing one group/process, what value is reasonable to test against? For two groups/processes, what difference provides practical significance? Include at least three sources.\nMethods: describe how you designed the experiment and the statistical test associated with the analysis. If appropriate, a diagram of your study would be helpful. If the data violates the assumption of the test (e.g., nonnormality), how to you proceed with the analysis (e.g., log transformation, use non-parametric test, etc.).\nResults: discuss your findings using descriptive statistics and statistical tests. Include at least one visualization. Provide the results of the experiment, but not a discussion of them (save for the next section).\nDiscussion/Conclusion: connect your results to the real world implications, as well as limitations of your study. What could future research explore?\nReferences: cite your sources\n\nIt may be helpful to consult online articles for writing research articles, such as this one: https://pmc.ncbi.nlm.nih.gov/articles/PMC3178846/."
-  },
-  {
-    "objectID": "projects/final/final.html#presentation",
-    "href": "projects/final/final.html#presentation",
-    "title": "Final",
-    "section": "Presentation",
-    "text": "Presentation\nDate: last week of classes (Tuesday, Thursday)\nYour presentation should mirror your written paper (introduction, methods, results, discussion). Each group will have 7-10 minutes to present, and up to 5 minutes for questions. While you may omit some details to stay within the time constraints, your presentation should be able to capture the essence of your experiment and its results."
-  },
-  {
-    "objectID": "projects/final/final.html#rubric",
-    "href": "projects/final/final.html#rubric",
-    "title": "Final",
-    "section": "Rubric",
-    "text": "Rubric\nEach component listed below will be graded with following scale.\n\n\n\n\n\n\n\n\n\n\nFull credit\n75%\nHalf Credit\n25%\nNo credit\n\n\n\n\nFully sufficient\nSome errors\nMajor errors\nCritical errors\nNo effort was made\n\n\n\nPre-experiment (10%)\n\nGroups formed by October 22nd (email your instructor). If you are not in a group, you will be randomly assigned a group.\nMet with instructor by November 6th.\nPre-experiment worksheet is filled out prior to the meeting.\n\nWritten component (40%)\n\nIntroduction: sufficient background knowledge is provided on the subject matter; hypothesis is clearly stated\nMethods: experiment and analysis can be fully replicated\nResults: descriptive and inferential statistics clearly given and arranged neatly; at least one visualization of the data is provided\nDiscussion: results are clearly connected back to the intended hypothesis; limitations are discussed; future research areas are included based on your research\nReferences: at least 3 references are used and cited correctly\n\nPresentation (40%)\n\nIntroduction: motivation is clearly given; hypothesis is stated\nMethods: describe the setup of your experiment\nResults: describe the results of your experiment; at least one visualization is included\nDiscussion: connect your results back to they hypothesis (what is the main takeaway?)\nAttendance: attended and listened to your peers present their findings\n\nPeer Evaluation (10%)\n\nComplete peer evaluation for your group members."
-  },
-  {
-    "objectID": "projects/final/final.html#notes",
-    "href": "projects/final/final.html#notes",
-    "title": "Final",
-    "section": "Notes",
-    "text": "Notes\nThis final is designed to combine the theory and application of statistics. While there are many components that we have not discussed in class, I am here to help! Please don’t hesitate to ask questions if you get stuck."
-  },
-  {
-    "objectID": "projects/midterm/midterm.html",
-    "href": "projects/midterm/midterm.html",
-    "title": "Midterm",
+    "objectID": "projects/final/pre-experiment-worksheet.html#final-exam-pre-experiment-worksheet",
+    "href": "projects/final/pre-experiment-worksheet.html#final-exam-pre-experiment-worksheet",
+    "title": "STAT 801A Final",
     "section": "",
-    "text": "Tinnitus is a condition in which a person hears sounds that are perceived in the absence of an external sound source. This usually occurs due to damage or aging of the ear and causes a constant ringing sound that can affect quality of life. For this midterm, you are tasked with analyzing a simulated dataset inspired by a study comparing two tinnitus treatment methods.\nYour code must be reproducible, but you are free to use any R packages that you would like (i.e., I can get the same output by running your code). You are also free to use any method for creating your submission (e.g., Quarto, Word, etc.), but your solutions must be accompanied by the relevant code file and a pdf file.\nUsing your online access to the UNL library, read the following article:\n\nBeukes, Eldré W., et al. “Guided Internet-Based versus Face-to-Face Clinical Care in the Management of Tinnitus: Study Protocol for a Multi-Centre Randomised Controlled Trial.” Current Controlled Trials in Cardiovascular Medicine [London], vol. 18, no. 1, no. 186, Apr. 2017, https://doi.org/10.1186/s13063-017-1931-6.\n\nIf you are having issue accessing the article, please contact your instructor.\n\n\nIdentify the objective of the study.\nBriefly discuss the Background section. What is previously known and what gap in literature does the study aim to fill?\nDiscuss the design of the study. In your answer, identify the following:\n\nHow are participants recruited?\nWhat are the treatments? Are any of the treatments considered a control?\nHow are participants randomized into treatment groups?\n\nWhat limitations are present in the planned study? In your answer, include at least one limitation not discussed in the article. Additionally, explain why is it important that limitations are discussed.\n\n\nThe primary outcome of this study is the Tinnitus Functional Index (TFI). For this response, smaller values are better and a 13-point difference is considered to be a clinically significant change in score. Data inspired by the results of this study can be found on the Assignments page of the course website as responses-tfi.csv. Descriptions of each variable are provided below:\n\nid: Identifier of the participant\ngroup: Treatment group\nT0: Baseline TFI (before treatment application)\nT1: TFI after intervention\nT2: TFI after 2-month follow-up\n\nFor each of the following questions, include the following: (1) justify an appropriate statistical test, (2) define the hypothesis test (\\(H_0\\) and \\(H_A\\)), (3) check normality assumptions with at least one visualization, (4) perform the test using the t.test function (you do not need to manually code the tests), (5) write a conclusion that satisfies the research question. For (1), if a two-sample t-test is required, justify whether to use the equal variance assumption or not. Use \\(\\alpha = 0.05\\) for all tests.\n\n\nDoes the sample of participants suggest that the mean baseline TFI (T0) for the population of eligible participants is greater than 50? Hint: baseline measurements are taken prior to treatment application.\nIs there a difference in mean baseline TFI (T0) between the iCBT and F2F groups?\nImmediately following treatment (T1), is the mean TFI for participants receiving iCBT better than that of participants receiving F2F treatment?\nAmong participants receiving iCBT, is there evidence that the mean TFI improved between immediately following treatment (T1) and the two-month follow-up (T2)?\nAmong participants receiving iCBT, is there evidence that the mean TFI showed clinically significant improvement at the two-month follow-up (T2) compared to the baseline (T0)?\nDescribe each element of the output from problem (9). What does each value represent?\n\nExtra credit (2%): One of your colleagues wants to use t-tests for testing all possible comparisons in this study. Using Type I error in your answer, explain why this would be an issue."
+    "text": "Prior to meeting with your instructor, answer all of the following fields.\n\nList all member of your group.\nIn 2-4 sentences, describe your experiment.\nWhat is the experimental unit?\nWhat is the explanatory variable (if applicable)?\nHow will randomization occur?\nWhat is the response variable?\nIs your response variable categorical or numeric?\nWhat test do you plan to use to analyze the collected data?"
+  },
+  {
+    "objectID": "projects/midterm/solutions.html",
+    "href": "projects/midterm/solutions.html",
+    "title": "Midterm Solutions",
+    "section": "",
+    "text": "From Reading\n\nAnswers will vary. The goal is to compare the effectiveness of guided internet-based cognitive behavioral therapy (iCBT) with face-to-face (F2F) clinical care for managing tinnitus.\nAnswers will vary. The primary gap in literature is that there is no comparison of iCBT intervention compared to the F2F care.\nAnswers will vary. Participants meet the eligibility criteria (age, location, internet access, etc.). Participants are randomly assigned into either intervention group, iCBT or F2F (control) in a 1:1 allocation.\nAnswers will vary. Multiple barriers exist, no masking of treatments is possible, lack of standardization of care.\n\n\n\nQuestion 5\n\nOne-sample t-test\n\\(H_0: \\mu=50\\) vs \\(H_A:\\mu&gt;50\\)\nQ-Q plot shows most points following the line. Can assume normality.\nSee below\nWe have evidence to conclude that the true mean baseline TFI is greater than 50.\n\n\ndata &lt;- read.csv('responses-tfi.csv')\nqqnorm(data$T0); qqline(data$T0)\n\n\n\n\n\n\n\nt.test(data$T0, mu = 50, alternative = 'greater')\n\n\n    One Sample t-test\n\ndata:  data$T0\nt = 4.1859, df = 91, p-value = 3.272e-05\nalternative hypothesis: true mean is greater than 50\n95 percent confidence interval:\n 55.27635      Inf\nsample estimates:\nmean of x \n    58.75 \n\n\n\n\nQuestion 6\n\nTwo-sample t-test (equal variance or unequal variance forms are okay)\n\\(H_0: \\mu_{iCBT, T0}=\\mu_{F2F}\\) vs \\(H_0: \\mu_{iCBT, T0}\\neq\\mu_{F2F}\\)\nBaseline for the iCBT group looks normally distributed. Some smaller outliers exist for the F2F group, but nothing too concerning.\nSee below\nWe do not have evidence to conclude that the true difference in baseline TFI scores between the iCBT and F2F groups is different than zero.\n\n\nt0.icbt &lt;- data$T0[data$group == 'iCBT']\nt0.f2f &lt;- data$T0[data$group == 'F2F']\nsd(t0.icbt); sd(t0.f2f)\n\n[1] 22.05909\n\n\n[1] 17.98744\n\nqqnorm(t0.icbt); qqline(t0.icbt)\n\n\n\n\n\n\n\nqqnorm(t0.f2f); qqline(t0.f2f)\n\n\n\n\n\n\n\nt.test(t0.icbt, t0.f2f, alternative = 'two.sided')\n\n\n    Welch Two Sample t-test\n\ndata:  t0.icbt and t0.f2f\nt = -0.55427, df = 86.496, p-value = 0.5808\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -10.668095   6.015921\nsample estimates:\nmean of x mean of y \n 57.58696  59.91304 \n\n\n\n\nQuestion 7\n\nTwo-sample t-test (equal variance or unequal variance forms are okay)\n\n\n\n\n\n\nt1.icbt &lt;- data$T1[data$group == 'iCBT']\nt1.f2f &lt;- data$T1[data$group == 'F2F']\nsd(t1.icbt); sd(t1.f2f)\n\n[1] 18.49157\n\n\n[1] 20.68299\n\nqqnorm(t1.icbt); qqline(t1.icbt)\n\n\n\n\n\n\n\nqqnorm(t1.f2f); qqline(t1.f2f)\n\n\n\n\n\n\n\nt.test(t1.icbt, t1.f2f, alternative = 'greater')\n\n\n    Welch Two Sample t-test\n\ndata:  t1.icbt and t1.f2f\nt = -0.75996, df = 88.894, p-value = 0.7754\nalternative hypothesis: true difference in means is greater than 0\n95 percent confidence interval:\n -9.908019       Inf\nsample estimates:\nmean of x mean of y \n 35.13043  38.23913 \n\n\n\n\nQuestion 8\n\n\n\n\n\n\n\n\n\nQuestion 9\n\n\n\n\n\n\n\n\n\nQuestion 10"
   }
 ]

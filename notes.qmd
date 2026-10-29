@@ -16,7 +16,12 @@ format:
 
 **Course Notes**
 
-5 -- Variances
+6 -- Inference for multiple means
+
+- [Slides](notes/6-multiple-means/Part6_lectures.qmd)
+- [crd.csv](notes/data/crd.csv)
+
+5 -- Inference for variances
 
 - [Slides](notes/5-variances/lectures5.qmd)
 

@@ -10,3 +10,5 @@ erin/
 **/*.quarto_ipynb
 in-class/
 notes/2-probability/Probability.pdf
+hidden/
+.gitignored

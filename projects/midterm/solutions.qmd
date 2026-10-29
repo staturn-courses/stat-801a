@@ -1,0 +1,101 @@
+---
+title: "Midterm Solutions"
+format: html
+---
+
+# From Reading
+
+1. Answers will vary. The goal is to compare the effectiveness of guided internet-based cognitive behavioral therapy (iCBT) with face-to-face (F2F) clinical care for managing tinnitus.
+2. Answers will vary. The primary gap in literature is that there is no comparison of iCBT intervention compared to the F2F care.
+3. Answers will vary. Participants meet the eligibility criteria (age, location, internet access, etc.). Participants are randomly assigned into either intervention group, iCBT or F2F (control) in a 1:1 allocation.
+4. Answers will vary. Multiple barriers exist, no masking of treatments is possible, lack of standardization of care.
+
+# Question 5
+
+1. One-sample t-test
+2. $H_0: \mu_{all}=50$ vs $H_A:\mu_{all}>50$
+3. Q-Q plot shows most points following the line. Can assume normality.
+4. See below
+5. We have evidence to conclude that the true mean baseline TFI is greater than 50. 
+
+```{r}
+data <- read.csv('responses-tfi.csv')
+qqnorm(data$T0); qqline(data$T0)
+t.test(data$T0, mu = 50, alternative = 'greater')
+```
+
+
+# Question 6
+
+1. Two-sample t-test (equal variance or unequal variance forms are okay)
+2. $H_0: \mu_{iCBT, T0}=\mu_{F2F, T0}$ vs $H_0: \mu_{iCBT, T0}\neq\mu_{F2F, T0}$
+3. Baseline for the iCBT group looks normally distributed. Some smaller outliers exist for the F2F group, but nothing too concerning.
+4. See below
+5. We do not have evidence to conclude that the true difference in baseline TFI scores between the iCBT and F2F groups is different than zero.
+
+```{r}
+t0.icbt <- data$T0[data$group == 'iCBT']
+t0.f2f <- data$T0[data$group == 'F2F']
+sd(t0.icbt); sd(t0.f2f)
+
+qqnorm(t0.icbt); qqline(t0.icbt)
+qqnorm(t0.f2f); qqline(t0.f2f)
+t.test(t0.icbt, t0.f2f, alternative = 'two.sided')
+```
+
+
+# Question 7
+
+1. Two-sample t-test (equal variance or unequal variance forms are okay)
+2. 
+3. 
+4. 
+5. 
+
+```{r}
+t1.icbt <- data$T1[data$group == 'iCBT']
+t1.f2f <- data$T1[data$group == 'F2F']
+sd(t1.icbt); sd(t1.f2f)
+
+qqnorm(t1.icbt); qqline(t1.icbt)
+qqnorm(t1.f2f); qqline(t1.f2f)
+t.test(t1.icbt, t1.f2f, alternative = 'greater')
+```
+
+
+# Question 8
+
+1. Paired t-test
+2. $H_0: \mu_{iCBT, T2}-\mu_{iCBT, T1}=0$ vs $H_A: \mu_{iCBT, T2}-\mu_{iCBT, T1}\lt0$
+3. 
+4. 
+5. 
+
+```{r}
+icbt <- data[data$group=='iCBT',]
+t.test(icbt$T2, icbt$T1, alternative = 'less', paired = T)
+```
+
+
+# Question 9
+
+1. Paired t-test
+2. $H_0: \mu_{iCBT, T0}-\mu_{iCBT,T2}=13$ vs $H_A: \mu_{iCBT, T0}-\mu_{iCBT, T2}\gt13$
+3. 
+4. 
+5. 
+
+```{r}
+t.test(icbt$T0, icbt$T2, alternative = 'greater', paired = T, na.rm = T, mu=13)
+```
+
+
+# Question 10
+
+1. t = 3.9831 is the test statistic, obtained from $\frac{\bar{X}-\mu}{s/\sqrt{n}}$.
+2. df = 36 is the degrees of freedom, obtained by 37 - 1 (only 37 complete observations)
+3. p-value = 0.0001584 is the probability of observing values of $\bar{X}_{iCBT, T0}-\bar{X}_{iCBT, T2}$ that are as or more extreme than our observed statistic assuming $H_0$ is true. Obtained with the `pt()` function.
+4. (okay if not present in solution) alternative hypothesis: true mean difference is greater than 13: statement of the alternative hypothesis.
+5. 95 percent confidence interval: (20.64541, Inf) is the one-sided confidence interval for $\mu$.
+6. mean difference: 26.27027 is the observed difference in means.
+
