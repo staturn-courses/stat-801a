@@ -19,7 +19,7 @@ format:
 6 -- Inference for multiple means
 
 - [Slides](notes/6-multiple-means/Part6_lectures.qmd)
-- [crd.csv](notes/data/crd.csv)
+    - [crd.csv](notes/data/crd.csv)
 
 5 -- Inference for variances
 
