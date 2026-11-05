@@ -1,0 +1,200 @@
+---
+title: Comparison of Means
+subtitle: "Part 1: Linear Contrasts, Orthogonal Contrasts"
+footer: STAT 801A
+format: 
+  revealjs:
+    smaller: true
+---
+
+
+
+## Comparison of Means
+
+When the hypothesis $H_0: \mu_1 = \mu_2 = \cdots = \mu_t$ was rejected, the inference is that at least one of the $t$ population means differs from the rest.
+
+- Is $\mu_1 \neq \mu_2$? Is $\mu_6 \neq \mu_7$?
+
+- Is the average ($\mu_1 + \mu_2 + \mu_3)/3$ different from ($\mu_4 + \mu_5 + \mu_6)/3$? - etc.
+
+
+
+
+## Comparison of Means - cont.
+
+- We may require a comparison like $\mu_1 - (\mu_2 + \mu_3)/2 = 0$ to be made, but not all questions can be formulated as comparisons.
+
+To enable us to understand what kinds of questions can be formulated as comparisons, we define a special linear function of the means.
+
+- A [comparison]{style="color: magenta"} among $t$ population means $\mu_1,\,\mu_2, \cdots \mu_t$ can be written as the linear combination:\
+  $$\ell = a_1\mu_1 + a_2\mu_2 + \cdots + a_t\mu_t$$\
+  for given numbers $a_1, a_2, \ldots, a_t$ which satisfy $\sum_{i=1}^t a_i = 0$.
+
+
+
+
+## Examples:
+
+Suppose $t=5$ i.e., we consider the means $\mu_1,\, \mu_2,\, \mu_3,\, \mu_4$, and $\mu_5$.\
+
+- The linear combination $\ell = \mu_2 - \mu_3$ has $a_i$ values
+  $a_1 = 0,\, a_2 = 1,\, a_3 = -1,\, a_4 = 0,\, a_5 = 0.$
+  Note that $\sum a_i = 0$
+
+-  The linear combination $\ell = (\mu_1 + \mu_2)/2 - (\mu_3 + \mu_4)/2$ has $a_i$ values
+  $a_1 = 1/2,\, a_2 = 1/2,\, a_3 = -1/2,\, a_4 = - 1/2,a_5 = 0$
+
+
+
+## Linear Contrasts
+
+- A point estimate of a linear combination of population means is called a [linear contrast]{style="color: magenta"}, and is given by\
+  $$\hat{\ell} = a_1 \bar{y}_{1.} + a_2 \bar{y}_{2.} + a_3\bar{y}_{3.} + \cdots + a_t \bar{y}_{t.}$$\
+  with $\sum a_i = 0$.\
+  
+## Linear Contrasts, cont.
+
+- The estimated variance of $\hat{\ell}$ is\
+  $$\hat{V}(\hat{\ell}) = MSE \sum_{i=1}^t \frac{a_i^2}{n_i}$$\
+  where $n_i$ is the number of observations taken from the $i$-th population.\
+
+
+- To test the hypothesis $H_0: \ell = 0$ we can use the $t$ statistic\
+  $t = \frac{\hat{\ell}}{\sqrt{\hat{V}(\hat{\ell})}}$\
+  with the degrees of freedom associated with MSE.
+
+## Linear Contrasts, cont.
+
+We can also think of linear contrasts in terms of the fitted model. Each observation is assumed to have a distribution that is normally distributed with identical variances. 
+
+$$
+Y_{ij}=\mu_i+\epsilon_{ij}\sim N(\mu_i, \sigma^2)
+$$
+
+By the central limit theorem, 
+
+$$
+\bar{Y}_i\sim N(\mu_i, \sigma^2/n_i)
+$$
+
+## Linear Contrasts, cont.
+
+From probability theory, if $X$ and $Y$ are two independent variables, 
+
+$$
+E\big[aX+bY\big]=aE\big[X\big]+bE\big[Y\big];\quad V\big[aX+bY\big]=a^2V\big[X\big]+b^2V\big[Y\big]
+$$
+
+When we establish our contrast of interest, $\hat{\ell}$, the expected value and variance can be computed.
+
+## Linear Contrasts, cont.
+
+For example, let $t=5$ for the test $H_0:\frac{\mu_2+\mu_3}{2}=\frac{\mu_4+\mu_5}{2}$.
+
+The contrast for this test is provided by:
+
+$$
+\hat{\ell}=0\cdot\bar{Y}_1+0.5\cdot\bar{Y}_2+0.5\cdot\bar{Y}_3-0.5\cdot\bar{Y}_4-0.5\cdot\bar{Y}_5
+$$
+
+The expected value of $\ell$ is:
+
+$$
+E\big[\hat{\ell}\big]=\frac{\mu_2+\mu_3}{2}-\frac{\mu_4+\mu_5}{2}
+$$
+
+and our variance of $\ell$ is
+
+$$
+V\big[\hat{\ell}\big]=0.5^2\frac{\sigma^2}{n_2}+0.5^2\frac{\sigma^2}{n_3}+0.5^2\frac{\sigma^2}{n_4}+0.5^2\frac{\sigma^2}{n_5}=\sigma^2\sum_{i=2}^{5}\frac{a_i^2}{n_i}
+$$
+
+Since $\sigma^2$ is unknown, we estimate it with MSE. 
+
+## Orthogonal Contrasts
+
+Two contrasts $\hat{\ell}_1 = \sum_i a_i \bar{y}_{i.}$ and $\hat{\ell}_2 = \sum_i b_i \bar{y}_{i.}$ are [orthogonal]{style="color: magenta"} whenever $\sum_i a_i b_i = 0$. This is only defined when $n_1 = n_2 = \cdots = n_t = n$ i.e., equal sample sizes.
+
+- If all linear contrasts in a set $\hat{\ell}_1, \hat{\ell}_2, \ldots, \hat{\ell}_{t-1}$ are pairwise orthogonal, then the set is said to be [mutually orthogonal]{style="color: magenta"} set of linear contrasts.
+
+- Given $t$ means $\mu_1, \mu_2, \ldots, \mu_t$, and sample means $\bar{y}_{1.}, \bar{y}_{2.}, \ldots, \bar{y}_{t.}$ (all based on the same number $n$ of observations), the [maximum number of mutually orthogonal contrasts that exist is $(t-1)$]{style="color: magenta"}.
+
+
+
+## Orthogonal Contrasts - cont.
+
+- Among $t$ means there are many $(t-1)$ sets of contrasts that are mutually orthogonal.
+
+- In a maximum mutually orthogonal set\
+  $\hat{\ell}_1,\hat{\ell}_2, \ldots, \hat{\ell}_{t-1}$,\
+  the linear contrasts are random variables which are statistically independent.
+
+- Also, the treatment sum of squares SSB is equal to the sum of the $(\hat{\ell}_i)^2$ for any mutually orthogonal set of $(t-1)$ contrasts: $$\mbox{SSB } = \sum_{i=1}^{t-1} (\hat{\ell}_i)^2.$$ SSB has $(t-1)\ d.f.$ corresponding the $(t-1)$ contrasts.
+
+
+---
+
+Consider testing the [Control vs. Agents]{style="color: magenta"} comparison: $$H_0:\,\ell = 0 \quad \mbox{vs.} \quad H_a:\, \ell \neq 0$$ where $\ell = 4\mu_1-\mu_2-\mu_3-\mu_4-\mu_5$. The coefficients of the corresponding contrast are therefore:
+
+
+  ------- ------- ------- ------- -------
+  $a_1$   $a_2$   $a_3$   $a_4$   $a_5$
+  4       -1      -1      -1      -1
+  ------- ------- ------- ------- -------
+
+
+Thus\
+$$\begin{eqnarray*}
+\hat{\ell} & = & 4\bar{y_1}-\bar{y_2}-\bar{y_3}-\bar{y_4}-\bar{y_5}\\
+ & = & 4\times1.175 -1.293 -1.328 -1.415 -1.5=-.836\\[.1in]
+ V(\hat{\ell}) & = & s^2_W\cdot\sum^5_{i=1}
+\frac{a^2_i}{n_i}=(0.153)\left(\frac{20}{6}\right)=.051
+\end{eqnarray*}$$
+
+---
+
+where $$\sum^5_{i=1}\frac{a^2_i}{n_i}=\frac{4^2}{6}+\frac{1^2}{6}+\frac{1^2}{6}+\frac{1^2}{6}+\frac{1^2}{6}=\frac{20}{6}$$ Thus $$t_c=\frac{\hat{\ell}}{\sqrt{V(\hat{\ell})}}=\frac{-.836}{\sqrt{.051}}=-3.702$$ From Table the t-table, $t_{.025,\,25}=2.06$; thus we reject $H_0$ at $\alpha=.05$ since $|t_c|>2.06$ is in the R.R.
+
+---
+
+We also note that\
+$$\mbox{SSC}_1=\frac{(\hat{\ell})^2}{\sum\frac{a^2_i}{n_i}}=\frac{(-.836)^2}{20/6}=.2097$$ and therefore\
+$$F_c= \frac{\mbox{SSC}_1}{s^2_W}=\frac{.2097}{.0153}=13.71$$ Since $F_{.05,\,1,\,25}=4.24$, we reject $H_0$ at $\alpha=.05$, the same result as above.\
+[Note carefully that this sum of squares and F-test can be computed instead of the t-test.]{style="color: red"}
+
+---
+
+Now consider testing the [Biological vs. Chemical]{style="color: magenta"} comparison: $$H_0:\,\frac{\mu_2+\mu_3}{2} = \frac{\mu_4+\mu_5}{2} \quad
+\mbox{vs.} \quad H_a:\, \frac{\mu_2+\mu_3}{2} \neq \frac{\mu_4+\mu_5}{2}$$ Since $H_0$ is equivalent to $.5\mu_2+.5\mu_3-.5\mu_4-.5\mu_5=0$ which is equivalent to $\mu_2+\mu_3-\mu_4-\mu_5=0$, the problem is equivalent to testing $$H_0:\,\ell = 0 \quad \mbox{vs.} \quad H_a:\, \ell \neq 0$$ where $\ell = \mu_2+\mu_3-\mu_4-\mu_5$. 
+
+
+---
+
+Here the contrast coefficients are
+
+
+  ------- ------- ------- ------- -------
+  $a_1$   $a_2$   $a_3$   $a_4$   $a_5$
+  0       1       1       -1      -1
+  ------- ------- ------- ------- -------
+
+
+
+
+giving $\hat{\ell}=1.293+1.328 -1.415 -1.5=-.294$ and\
+$$V(\hat{\ell})=s^2_W\cdot
+\sum^5_{i=1}\frac{a^2_i}{n_i}=(0.153)\left(\frac{4}{6}\right)=.0102$$ where\
+$$\frac{a^2_i}{n_i}=\frac{0^2}{6}+\frac{1^2}{6}+\frac{1^2}{6}+\frac{1^2}{6}+\frac{1^2}{6}=\frac{4}{6}$$ 
+
+---
+
+Thus\
+$$t_c=\frac{\hat{\ell}}{\sqrt{V(\hat{\ell})}}=\frac{-.294}{\sqrt{.0102}}=-2.91$$ Since $t_{.025,\,25}=2.06$; thus we reject $H_0$ at $\alpha=.05$ since $|t_c|>2.06$ is in the R.R.
+
+---
+
+Similar to the previous comparison we may use an F-test: $$\mbox{SSC}_2=\frac{\hat{\ell}}{\sum\frac{a^2_i}{n_i}}=\frac{(-.294)^2}{4/6}=.1297$$ and therefore $$F_c= \frac{\mbox{SSC}_2}{s^2_W}=\frac{.1297}{.0153}=8.47$$ which leads us to the same result as the t-test as $F_{.05,\,1,\,25}=4.24$.\
+[The computations for testing the other two comparisons are similar and are not included here.]{style="color: red"}
+
+
+

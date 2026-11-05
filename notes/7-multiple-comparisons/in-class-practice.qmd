@@ -1,0 +1,38 @@
+---
+title: "Multiple Comparisons"
+subtitle: "In-class Practice"
+format:
+  html:
+    toc: false
+---
+
+An agricultural researcher wants to investigate whether different fertilizer treatments affect corn yield (measured in bushels per acre). Four treatments are considered:
+
+1. **Control:** No fertilizer.
+2. **Nitrogen:** Nitrogen-only fertilizer.
+3. **Organic:** Organic fertilizer.
+4. **Combination:** A combination of nitrogen and organic fertilizer.
+
+The researcher randomly assigns 10 plots of land to each treatment and measures the resulting corn yield. Data for the experiment is on our course webpage as `fertilizer-experiment.csv`.
+
+The researcher is interested in answering the following questions:
+
+1. Does applying fertilizer produce a different average corn yield than applying no fertilizer?
+2. Does nitrogen fertilizer produce a different average yield than organic fertilizer when applied individually?
+3. Does combining nitrogen and organic fertilizer produce a different average yield than using either fertilizer individually?
+
+For each research question:
+
+- Write the null and alternative hypotheses.
+- Identify the contrast coefficients.
+- Determine whether the three contrasts are mutually orthogonal.
+
+Using the R functions that we discussed, perform the following operations:
+
+1. Fit a one-way ANOVA model to investigate differences in average corn yield among the four fertilizer treatments.
+2. Obtain the estimated marginal means using the `emmeans` package.
+3. Define and implement your three planned contrasts.
+4. Conduct the hypothesis tests at \(\alpha = 0.05\).
+5. Interpret the results using the context of the research question.
+
+

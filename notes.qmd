@@ -16,6 +16,14 @@ format:
 
 **Course Notes**
 
+7 -- Multiple comparisons
+
+- [Slides, part 1](notes/7-multiple-comparisons/part7_notes.qmd)
+    - [contrasts.R](notes/7-multiple-comparisons/contrasts.R)
+    - [data_for_contrasts_mod.csv](notes/data/data_for_contrasts_mod.csv)
+    - [In-class practice](notes/7-multiple-comparisons/in-class-practice.qmd)
+    - [fertilizer-experiment.csv](notes/data/fertilizer-experiment.csv)
+
 6 -- Inference for multiple means
 
 - [Slides](notes/6-multiple-means/Part6_lectures.qmd)
