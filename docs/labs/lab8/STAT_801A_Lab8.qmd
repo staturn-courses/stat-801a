@@ -1,0 +1,227 @@
+---
+title: "STAT 801A Lab 8: One-Way ANOVA"
+author: "Insert Name"
+date: today
+format: html
+editor: source
+---
+
+# One-Way ANOVA
+
+A two-sample t test compares two means. One-way ANOVA compares the means of $k$ treatments with a single test. One-way means there is one factor.
+
+$$H_0: \mu_1 = \mu_2 = \dots = \mu_k \qquad H_a: \text{at least one } \mu_i \text{ differs}$$
+
+## Splitting the variation
+
+Let $y_{ij}$ be the response of unit $j$ in treatment $i$, $\bar{y}_{i\cdot}$ the mean of treatment $i$, and $\bar{y}_{\cdot\cdot}$ the overall mean. Treatment $i$ has $n_i$ units, and there are $N$ units in total.
+
+ANOVA splits the total variation into two parts. The treatment sum of squares measures how far the treatment means are from the overall mean. The error sum of squares measures how far the units are from their own treatment mean.
+
+$$SS_{Trt} = \sum_{i} n_i (\bar{y}_{i\cdot} - \bar{y}_{\cdot\cdot})^2 \qquad SS_E = \sum_{i}\sum_{j} (y_{ij} - \bar{y}_{i\cdot})^2 \qquad SS_{Total} = SS_{Trt} + SS_E$$
+
+Dividing each sum of squares by its degrees of freedom gives a mean square.
+
+| Source    | df      | SS           | MS                          | F               |
+|:------------|:------------|:------------|:--------------------|:------------|
+| Treatment | $k - 1$ | $SS_{Trt}$   | $MS_{Trt} = SS_{Trt}/(k-1)$ | $MS_{Trt}/MS_E$ |
+| Error     | $N - k$ | $SS_E$       | $MS_E = SS_E/(N-k)$         |                 |
+| Total     | $N - 1$ | $SS_{Total}$ |                             |                 |
+
+$MS_E$ is the pooled variance from the two-sample t test, extended to $k$ groups. It estimates $\sigma^2$ whether or not $H_0$ is true. $MS_{Trt}$ also estimates $\sigma^2$ when $H_0$ is true, so $F$ should be near 1. When the means differ, $MS_{Trt}$ gets larger and so does $F$.
+
+## The F distribution
+
+When $H_0$ is true, $F$ follows an F distribution with $k - 1$ numerator and $N - k$ denominator degrees of freedom. An F distribution is never negative and is skewed right. Large values of $F$ are evidence against $H_0$, so the p-value is the area to the right of $F$.
+
+Here is the F distribution with 2 and 21 degrees of freedom, which we will use in the example.
+
+```{r}
+curve(df(x, 2, 21), from = 0, to = 6, xlab = "F", ylab = "Density")
+```
+
+Note: With only two treatments, ANOVA and the pooled t test are the same test, and $F = t^2$.
+
+------------------------------------------------------------------------
+
+# Example: Three Diets
+
+A swine nutritionist randomly assigned 24 pigs to diets based on corn, sorghum and wheat, with 8 pigs on each diet. Each pig has its own pen and feeder, so this is a completely randomized design. At the end of the trial, she recorded each pig's average daily gain (ADG) in lb/day.
+
+```{r}
+pigs <- data.frame(
+  diet = factor(rep(c("corn", "sorghum", "wheat"), each = 8)),
+  adg = c(2.21, 2.05, 2.33, 2.12, 1.98, 2.27, 2.16, 2.08,
+          1.92, 2.11, 1.85, 2.04, 1.96, 2.15, 1.88, 2.01,
+          2.10, 1.90, 2.19, 1.98, 2.05, 1.85, 2.13, 1.96))
+```
+
+## Look at the data
+
+`tapply` applies a function to each group.
+
+```{r}
+tapply(pigs$adg, pigs$diet, mean)
+tapply(pigs$adg, pigs$diet, sd)
+```
+
+```{r}
+library(ggplot2)
+
+ggplot(pigs, aes(x = diet, y = adg)) +
+  geom_boxplot() +
+  labs(x = "Diet", y = "Average daily gain (lb/day)")
+```
+
+Corn has the highest mean and sorghum the lowest. The spreads look similar.
+
+## Fit the model
+
+The formula `adg ~ diet` reads as ADG explained by diet.
+
+```{r}
+fit <- aov(adg ~ diet, data = pigs)
+```
+
+We check the assumptions before reading the results.
+
+## Check the assumptions
+
+ANOVA has the same assumptions as the pooled t test: independent units, normal errors and equal variances. Independence comes from the design, through random assignment and separate pens. We check the other two using the fitted model. The residuals, $y_{ij} - \bar{y}_{i\cdot}$, estimate the errors.
+
+### Normality
+
+A Q-Q plot compares the residuals to a normal distribution. If the residuals are close to normal, the points stay near the line.
+
+```{r}
+plot(fit, which = 2)
+```
+
+The points stay close to the line, so normality looks reasonable.
+
+### Constant variance
+
+Levene's test works with more than two groups, with $H_0$ that all of the variances are equal.
+
+```{r}
+library(car)
+leveneTest(adg ~ diet, data = pigs)
+```
+
+Here $F = 0.06$ and $p = 0.940$, so there is no evidence that the variances differ. Both assumptions look reasonable, so we can use the ANOVA.
+
+## Interpret the ANOVA table
+
+```{r}
+summary(fit)
+```
+
+R labels the error row Residuals and leaves out the total row.
+
+- Df: 3 diets give $3 - 1 = 2$ treatment degrees of freedom. 24 pigs and 3 diets give $24 - 3 = 21$ error degrees of freedom.
+
+- Sum Sq: The variation between diets is $SS_{Trt} = 0.1157$, and the variation within diets is $SS_E = 0.2724$.
+
+- Mean Sq: Each sum of squares divided by its degrees of freedom. $MS_E = 0.01297$ is our estimate of $\sigma^2$.
+
+- F value: $F = 0.05787 / 0.01297 = 4.46$. The variation between diets is about 4.5 times what we would expect from the variation within diets alone.
+
+- Pr(\>F): The p-value, which is the area to the right of 4.46 under the F distribution above.
+
+```{r}
+pf(4.461, 2, 21, lower.tail = FALSE)
+```
+
+Here $p = 0.024$, which is less than 0.05, so we reject $H_0$. There is evidence that at least one diet has a different mean ADG. The test does not say which one.
+
+------------------------------------------------------------------------
+
+# Pairwise Comparisons with Tukey's HSD
+
+To find out which means differ, we compare pairs of means. With $k$ treatments there are $k(k-1)/2$ pairs, so 3 pairs here.
+
+Each test at $\alpha = 0.05$ has a 5% chance of a false positive when the two means are equal, so the chance of at least one false positive grows with the number of tests. Treated as independent tests, it is about 0.14 for 3 pairs and 0.90 for the 45 pairs among 10 treatments. Tukey's honestly significant difference (HSD) keeps this chance, called the family-wise error rate, at $\alpha$ across all of the pairs.
+
+## Tukey's HSD with emmeans
+
+The `emmeans` package works from a fitted model. If you do not have it yet, run `install.packages("emmeans")` once in the console.
+
+```{r}
+library(emmeans)
+
+diet_means <- emmeans(fit, ~ diet)
+diet_means
+```
+
+`pairs` compares every pair of means. Tukey's method is the default.
+
+```{r}
+pairs(diet_means)
+```
+
+`estimate` is the difference in means, $\bar{y}_{i\cdot} - \bar{y}_{j\cdot}$. The p-values account for all 3 comparisons, so they are larger than the p-values from separate t tests. Only corn and sorghum differ at the 0.05 level ($p = 0.027$).
+
+`confint` gives confidence intervals with the same adjustment.
+
+```{r}
+confint(pairs(diet_means))
+```
+
+The corn and sorghum interval, 0.02 to 0.30, does not contain 0. The other two do.
+
+## Writing the conclusion
+
+At the 0.05 level, mean ADG differs among the diets ($F = 4.46$, $p = 0.024$). Pigs on the corn diet gained more than pigs on the sorghum diet, by an estimated 0.16 lb/day (95% Tukey CI: 0.02 to 0.30). The data do not show a difference between corn and wheat or between sorghum and wheat.
+
+------------------------------------------------------------------------
+
+# Practice Problem
+
+A plant pathologist compares a control and three fungicides on winter wheat. She randomly assigns 24 field plots to the treatments, with 6 plots per treatment, and records yield in bu/acre.
+
+```{r}
+plots <- data.frame(
+  trt = factor(rep(c("control", "fungA", "fungB", "fungC"), each = 6)),
+  yield = c(58.2, 63.1, 55.4, 60.7, 65.3, 57.9,
+            62.5, 57.8, 66.4, 60.1, 64.2, 59.6,
+            66.8, 61.5, 70.2, 64.7, 59.9, 67.3,
+            71.4, 66.2, 74.8, 68.5, 63.9, 70.6))
+```
+
+\(a\) Find the mean and standard deviation of yield for each treatment, and make a boxplot.
+
+```{r}
+
+```
+
+\(b\) Fit the model. Check the normality assumption with a Q-Q plot.
+
+```{r}
+
+```
+
+\(c\) Use Levene's test to check the constant variance assumption.
+
+```{r}
+
+```
+
+\(d\) State the hypotheses. Print the ANOVA table and give your conclusion at the 0.05 level. What is the estimate of $\sigma^2$?
+
+```{r}
+
+```
+
+\(e\) Use `emmeans` and `pairs` to run Tukey's HSD, and use `confint` to get confidence intervals. Which pairs differ at the 0.05 level?
+
+```{r}
+
+```
+
+\(f\) Write a short conclusion for the study.
+
+# Final Step
+
+Render your document. Click the Render button at the top of the editor, or press Ctrl + Shift + K.
+
+If the render fails, read the error message. It names the chunk that caused the problem. The most common causes are a missing closing parenthesis, or an object used before it was created. If the error says there is no package called `emmeans`, install it in the console, then render again.

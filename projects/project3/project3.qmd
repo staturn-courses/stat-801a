@@ -1,0 +1,94 @@
+---
+title: "Project 3"
+date: '2026-10-04 21:00:00'
+author: STAT 801A, Fall 2026
+date-format: "[Due on] MMMM D, YYYY [at] h:mm a"
+format: html
+---
+
+Researchers are interested in investigating whether exposure to different volatile compounds influences the growth of southern magnolia (Magnolia virginiana) seedlings. Previous research on volatile compounds and ambrosia beetles has motivated interest in understanding how these compounds interact with plants.
+
+Researchers conduct a completely randomized design (CRD) in which seedlings are randomly assigned to one of five treatments:
+
+- Control (no volatile exposure)
+
+- Acetaldehyde
+
+- Acetone
+
+- Ethanol
+
+- Methanol
+
+There were 50 seeds available for the experiment, and each treatment randomly received 10 seeds. After a specified exposure period, researchers measure the root length (cm) of each seedling.
+
+## Part 1
+
+Suppose the researchers collect data from an experiment with five treatments and an equal number of seedlings assigned to each treatment.
+
+1. Identify the experimental design and write an appropriate statistical model for this experiment in terms of $Y_{ij}$. Define all parameters in your model.
+
+Researchers are particularly interested in comparing the control treatment against the four volatile treatments. One reasonable contrast is
+
+$$
+\ell_1 = \mu_C - \frac{\mu_A + \mu_B + \mu_E + \mu_M}{4}
+$$
+
+where (C), (A), (B), (E), and (M) represent the control, acetaldehyde, acetone, ethanol, and methanol treatments, respectively.
+
+2. Construct three additional contrasts such that all four contrasts form a mutually orthogonal set.
+
+Suppose the following partial ANOVA table is obtained from the experiment.
+
+
+| Source | DF |  Sums of Squares | Mean Square | F | Pr(>F) |
+| :-----: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Treatment | | 240 | | | |
+| Error | | 360 | | | |
+| Total | | | | | |
+
+3. Fill in the missing values of the ANOVA table. Recall that not every position in the table will contain a value.
+4. State the null and alternative hypothesis represented by Pr(>F). 
+5. Write an appropriate conclusion in the context of the research question using the p-value. Use a significance level of $\alpha=0.05$.
+
+
+
+
+## Part 2: Analysis in R
+
+Researchers also measured the shoot height (cm) of southern magnolia seedlings in the experiment described above. Responses for shoot height are provided below:
+
+```{r}
+#| echo: false
+set.seed(801)
+treatments <- c(
+  "Control",
+  "Acetaldehyde",
+  "Acetone",
+  "Ethanol",
+  "Methanol"
+)
+y <- round(MASS::mvrnorm(10, mu = c(15, 16, 17, 20, 21), 
+              Sigma = 2.5*diag(5)),2)
+responses <- data.frame(y)
+names(responses) <- treatments
+knitr::kable(responses)
+```
+
+6. Using Q-Q plots, check the normality of responses for each treatment group. For each plot, briefly comment the assumption of normality.
+7. Using the var.test() function to apply Hartley's test, determine if the equal variance assumption is satisfied.
+8. Fit an appropriate model to the data and produce an ANOVA table. Briefly interpret the output using the context of the research question.
+9. Using $\ell_1$ and the complete set of mutually orthogonal contrasts constructed in Question 2, conduct hypothesis tests for each contrast using the `emmeans` package. Apply the following three approaches: Fisher's LSD (no adjustment), Bonferroni's adjustment, and Scheffé's method. Create well-organized tables for all three approaches. 
+10. Write a brief section of results using the findings from the Bonferroni's adjustment with a significance level of $\alpha=0.05$ for each of the contrasts. 
+
+
+
+
+
+
+
+
+
+
+
+

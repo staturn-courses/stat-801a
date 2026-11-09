@@ -117,6 +117,8 @@ format:
 
 11/2/26 -- Lab 8
 
+- [One-way ANOVA](labs/lab8/STAT_801A_Lab8.qmd)
+
 11/9/26 -- Lab 9
 
 11/16/26 -- Lab 10
