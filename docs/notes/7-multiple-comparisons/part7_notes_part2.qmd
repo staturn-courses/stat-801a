@@ -9,11 +9,9 @@ format:
 
 ## Multiple Comparison Procedures
 
-- We know, of course, that the [overall error rate]{style="color: magenta"} when we make multiple tests is larger than $\alpha$ (and possibly much larger).\
+We know, of course, that the [overall error rate]{style="color: magenta"} when we make multiple tests is larger than $\alpha$ (and possibly much larger). To compensate for this, several different multiple comparison procedures have been proposed to control various error rates related to the overall error rate.\
 
-- To compensate for this, several different multiple comparison procedures have been proposed to control various error rates related to the overall error rate.\
-
-- There are several of these; we will consider the following:\
+There are several of these; we will consider the following:\
 
   - Fisher's LSD Procedure\
 
@@ -29,14 +27,14 @@ format:
 
 - Each procedure is constructed to control a certain kind of error rate and it is important for a user to be aware of what error rate is controlled by a procedure before using it. We will try to state how conservative each one is as we discuss it.
 
-**[Fisher's Protected LSD Procedure]{style="color: blue"}**\
-The procedure is used for making all possible comparisons between pairs of means $H_0: \mu_i - \mu_j = 0$  vs.  $H_a: \mu_i - \mu_j
-\neq 0$. It presumes we rejected $H_0: \mu_1 = \mu_2 = \cdots =
-\mu_t$.\
+## Fisher's Protected LSD Procedure
 
+The procedure is used for making all possible comparisons between pairs of means $H_0: \mu_i - \mu_j = 0$  vs.  $H_a: \mu_i - \mu_j\neq 0$. It presumes we rejected $H_0: \mu_1 = \mu_2 = \cdots =\mu_t$.\
 
+---
 
 - For equal sample sizes $n_1 = n_2 = \cdots = n_t = n$, consider the $t$-test of the hypothesis above. $$t = \frac{(\bar{y}_{i.} - \bar{y}_{j.})}{ (s_W \sqrt{2/n} \;)}$$
+
 
 - We reject $H_0$ when $|t| \geq t_{\alpha/2}$, This is equivalent to rejecting $H_0$, for a pair of ($i,j$) whenever $$|\bar{y}_{i.} - \bar{y}_{j.}| \geq t_{\alpha/2} \,
     s_W \, \sqrt{2/n } \ .$$
@@ -44,6 +42,7 @@ The procedure is used for making all possible comparisons between pairs of means
 - The right hand member of this inequality is not a function of $i$ or $j$. It is constant for a specified $\alpha$ and $n$, and is called the [Least Significant Difference or LSD]{style="color: magenta"}.
 
 
+---
 
 - Once the LSD is calculated, doing the tests for the pairs of differences of the form $H_0: \mu_i - \mu_j = 0$ is simple: Form all possible absolute differences $|\bar{y}_{i.} - \bar{y}_{j.}|$ and reject the corresponding $H_0$ if this difference exceeds or equals the LSD.
 
@@ -52,7 +51,7 @@ The procedure is used for making all possible comparisons between pairs of means
 - To minimize the number of comparisons we need to make, first arrange the $\bar{y}_{i.}$'s [ordered smallest to largest]{style="color: magenta"} in value. If we use the notation $\bar{y}_{(i)}$ for the $i$-th smallest $\bar{y}$, the ranked means may be represented as $\bar{y}_{(1)} \leq  \bar{y}_{(2)} \leq  \bar{y}_{(3)}
     \leq \cdots \leq  \bar{y}_{(t)}$
 
-
+---
 
 - For e.g., $\bar{y}_{(1)}$ might be $\bar{y}_7$ if $\bar{y}_{7}$ is the smallest; Now note that if the difference $\bar{y}_{(t)}- \bar{y}_{(1)}$, for example, does not exceed the LSD, then all the differences $\bar{y}_{(t)}- \bar{y}_{(2)}$, $\bar{y}_{(t)}- \bar{y}_{(3)}\ldots$, $\bar{y}_{(t)}- \bar{y}_{(t-1)}$ will not exceed the LSD.
 
@@ -67,7 +66,7 @@ The procedure is used for making all possible comparisons between pairs of means
     9.5    10.5   11.6   12.2   13.5
     ------ ------ ------ ------ ------
 
-
+---
 
 - Take each column in turn, and on a separate line below the list, starting from column 1 connect the means by underlining those pairs of means that are not significantly different from the mean in the current column, in the following way.
 
@@ -75,7 +74,7 @@ The procedure is used for making all possible comparisons between pairs of means
 
 - Otherwise, move left to the next largest mean $\bar{y}_{(t-1)}$ and compare $\bar{y}_{(1)}$ with $\bar{y}_{(t-1)}$, and so on.
 
-
+---
 
 - Begin underlining at that column the the difference is found to be `less than the LSD value` and extend all the way to the left to column 1 (or the column where you started)
 
@@ -87,10 +86,6 @@ The procedure is used for making all possible comparisons between pairs of means
     trt5   trt3   trt1   trt4   trt2
     9.5    10.5   11.6   12.2   13.5
                                 
-    1-4                         
-    2-4                         
-    3-4                         
-    4-5                         
     ------ ------ ------ ------ ------
 
 
@@ -109,12 +104,7 @@ The procedure is used for making all possible comparisons between pairs of means
 
 - Prepare table to be used in the underlining procedure:
 
-   center
-    -- ------ ------ ------ ------ ------ ------
-       trt6   trt4   trt1   trt2   trt3   trt5
-       470    498    505    528    564    600
-    -- ------ ------ ------ ------ ------ ------
-  
+
 
 
 
@@ -126,23 +116,9 @@ The procedure is used for making all possible comparisons between pairs of means
     trt6   trt4   trt1   trt2   trt3   trt5
     470    498    505    528    564    600
                                        
-    1-4                                
-    2-4                                
-    3-5                                
-    4-5                                
-    5-6                                
     ------ ------ ------ ------ ------ ------
 
-- Deleting the superfluous lines we have:
 
-    ------ ------ ------ ------ ------ ------
-    trt6   trt4   trt1   trt2   trt3   trt5
-    470    498    505    528    564    600
-                                       
-    1-4                                
-    3-5                                
-    5-6                                
-    ------ ------ ------ ------ ------ ------
 
 
 
@@ -160,7 +136,7 @@ These may lead to one or more of the following conclusions:\
 
 - $\mu_6$ is not significantly different from $\mu_4$.
 
-
+---
 
 When sample sizes are not equal the above procedure is not feasible. In this case, we may construct confidence intervals for all pairs of differences $\mu_i - \mu_j$ using $$\bar{y}_{i.} - \bar{y}_{j.} \pm  t_{\alpha/2} \, s_W \, \sqrt{\frac{1}{n_i} + \frac{1}{n_j}}$$ where $t_{\alpha/2}$ is again the percentile from the t-table with degrees of freedom same as that of the within mean square $s_W^2$.
 
@@ -178,7 +154,7 @@ When sample sizes are not equal the above procedure is not feasible. In this cas
 
 - The LSD analysis is carried out only when $H_0$ is rejected. There is some evidence, based on simulation studies that the [experimentwise error rate]{style="color: magenta"} for protected LSD may be near $\alpha$.
 
-- [The experimentwise error rate]{style="color: magenta"} is the probability of observing an experiment with one or more pairwise comparisons falsely declared significant.
+- [The experiment-wise error rate]{style="color: magenta"} is the probability of observing an experiment with one or more pairwise comparisons falsely declared significant.
 
 - Protected LSD is not a very conservative method. We would not be surprised to see it falsely declare several pairwise comparisons significant in an experiment involving several treatments when all possible differences are tested.
 
@@ -212,7 +188,7 @@ When sample sizes are not equal the above procedure is not feasible. In this cas
 
 - Then if $$|\bar{y}_{i.} - \bar{y}_{j.}| \geq W$$ we declare that the mean pair $\mu_i$ and $\mu_j$ are significantly different.
 
-- The value of $q_\alpha(t,\nu)$ is found in Table 10 (Handout). The table gives $q_\alpha(t,\nu)$ for either $\alpha=0.05$ or $\alpha=0.01$.
+- The value of $q_\alpha(t,\nu)$ is determined by the Studentized range distribution (R: `xtukey()` functions).
 
 - The the sample means are ordered smallest to largest as before. Then make all possible pairwise comparisons using the value of $W$ and underlining method may then be used to display results.
 
@@ -232,18 +208,22 @@ When sample sizes are not equal the above procedure is not feasible. In this cas
 
 - The ordered means table:\
 
-   center
-    -- ------ ------ ------ ------ ------ ------
-       trt5   trt3   trt6   trt4   trt2   trt1
-       13.3   14.6   18.7   19.9   24.0   28.8
-    -- ------ ------ ------ ------ ------ ------
+    ------ ------ ------ ------ ------ ------
+    trt5   trt3   trt6   trt4   trt2   trt1
+    13.3   14.6   18.7   19.9   24.0   28.8
+    ------ ------ ------ ------ ------ ------
   
 
 
 
 ## Example - cont.
 
-- From Table 10, $q_{.05}(6,24) = 4.37$, so $$W = 4.37 \sqrt{\frac{11.79}{5}} = 6.7$$
+- The code below, $q_{.05}(6,24) = 4.37$, so $$W = 4.37 \sqrt{\frac{11.79}{5}} = 6.7$$
+
+```{r}
+qtukey(0.95, 6, 24)
+```
+
 
 - The underlining procedure gives:\
 
@@ -251,11 +231,6 @@ When sample sizes are not equal the above procedure is not feasible. In this cas
     trt5   trt3   trt6   trt4   trt2   trt1
     13.3   14.6   18.7   19.9   24.0   28.8
                                        
-    1-4                                
-    2-4                                
-    3-5                                
-    4-5                                
-    5-6                                
     ------ ------ ------ ------ ------ ------
 
 
@@ -273,7 +248,7 @@ When sample sizes are not equal the above procedure is not feasible. In this cas
 
 ## Scheffe's Procedure
 
-- This procedure is ultra conservative. It controls experimentwise error rate. The probability of observing an experiment with one or more contrasts (from the set of all possible contrasts) falsely declared significant is the selected $\alpha$.
+This procedure is ultra conservative. It controls experiment-wise error rate. The probability of observing an experiment with one or more contrasts (from the set of all possible contrasts) falsely declared significant is the selected $\alpha$.
 
 - Scheffe's method can be used to test all possible differences of means (recall that simple differences are contrasts). However it is usually used where contrasts that are not all simple differences are to be tested together with any pairwise differences.
 
@@ -293,3 +268,16 @@ When sample sizes are not equal the above procedure is not feasible. In this cas
 - We reject $H_0$ when $|\hat{\ell}| > S$.
 
 - Now the underlining procedure is applied in the same way as described for the LSD or Tukey procedures.
+
+## Multiple Comparisons: R
+
+Using the `emmeans` package, we can easily access this functionality. For all pairwise comparisons, we can use the `pairs()` function on the object produced by `emmeans()`.
+
+```{r}
+#| eval: false
+#| echo: true
+library(emmeans)
+emm <- emmeans(fit, ~Treatment)
+pairs(emm, adjust = 'ADJUSTMENT HERE')
+```
+

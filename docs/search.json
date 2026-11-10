@@ -32,35 +32,42 @@
     "href": "notes/7-multiple-comparisons/part7_notes_part2.html#multiple-comparison-procedures",
     "title": "Comparison of Means",
     "section": "Multiple Comparison Procedures",
-    "text": "Multiple Comparison Procedures\n\nWe know, of course, that the overall error rate when we make multiple tests is larger than \\(\\alpha\\) (and possibly much larger).\n\nTo compensate for this, several different multiple comparison procedures have been proposed to control various error rates related to the overall error rate.\n\nThere are several of these; we will consider the following:\n\n\nFisher’s LSD Procedure\n\nTukey’s W Procedure\n\nScheffe’s Procedure"
+    "text": "Multiple Comparison Procedures\nWe know, of course, that the overall error rate when we make multiple tests is larger than \\(\\alpha\\) (and possibly much larger). To compensate for this, several different multiple comparison procedures have been proposed to control various error rates related to the overall error rate.\n\nThere are several of these; we will consider the following:\n\n\nFisher’s LSD Procedure\n\nTukey’s W Procedure\n\nScheffe’s Procedure"
   },
   {
     "objectID": "notes/7-multiple-comparisons/part7_notes_part2.html#multiple-comparison-procedures---cont.",
     "href": "notes/7-multiple-comparisons/part7_notes_part2.html#multiple-comparison-procedures---cont.",
     "title": "Comparison of Means",
     "section": "Multiple Comparison Procedures - cont.",
-    "text": "Multiple Comparison Procedures - cont.\n\nThese are different procedures that each controls a different kind of error rate and each is more or less conservative than others. Each has its set of fans among researchers.\n\nEach procedure is constructed to control a certain kind of error rate and it is important for a user to be aware of what error rate is controlled by a procedure before using it. We will try to state how conservative each one is as we discuss it.\n\nFisher’s Protected LSD Procedure\nThe procedure is used for making all possible comparisons between pairs of means \\(H_0: \\mu_i - \\mu_j = 0\\)  vs.  \\(H_a: \\mu_i - \\mu_j\n\\neq 0\\). It presumes we rejected \\(H_0: \\mu_1 = \\mu_2 = \\cdots =\n\\mu_t\\).\n\n\nFor equal sample sizes \\(n_1 = n_2 = \\cdots = n_t = n\\), consider the \\(t\\)-test of the hypothesis above. \\[t = \\frac{(\\bar{y}_{i.} - \\bar{y}_{j.})}{ (s_W \\sqrt{2/n} \\;)}\\]\nWe reject \\(H_0\\) when \\(|t| \\geq t_{\\alpha/2}\\), This is equivalent to rejecting \\(H_0\\), for a pair of (\\(i,j\\)) whenever \\[|\\bar{y}_{i.} - \\bar{y}_{j.}| \\geq t_{\\alpha/2} \\,\n  s_W \\, \\sqrt{2/n } \\ .\\]\nThe right hand member of this inequality is not a function of \\(i\\) or \\(j\\). It is constant for a specified \\(\\alpha\\) and \\(n\\), and is called the Least Significant Difference or LSD.\nOnce the LSD is calculated, doing the tests for the pairs of differences of the form \\(H_0: \\mu_i - \\mu_j = 0\\) is simple: Form all possible absolute differences \\(|\\bar{y}_{i.} - \\bar{y}_{j.}|\\) and reject the corresponding \\(H_0\\) if this difference exceeds or equals the LSD.\nTesting the hypotheses is thus easy, but reporting the results of all those tests can be messy. For \\(t\\) means, there are \\(t(t-1)/2\\) differences to test.\nTo minimize the number of comparisons we need to make, first arrange the \\(\\bar{y}_{i.}\\)’s ordered smallest to largest in value. If we use the notation \\(\\bar{y}_{(i)}\\) for the \\(i\\)-th smallest \\(\\bar{y}\\), the ranked means may be represented as \\(\\bar{y}_{(1)} \\leq  \\bar{y}_{(2)} \\leq  \\bar{y}_{(3)}\n  \\leq \\cdots \\leq  \\bar{y}_{(t)}\\)\nFor e.g., \\(\\bar{y}_{(1)}\\) might be \\(\\bar{y}_7\\) if \\(\\bar{y}_{7}\\) is the smallest; Now note that if the difference \\(\\bar{y}_{(t)}- \\bar{y}_{(1)}\\), for example, does not exceed the LSD, then all the differences \\(\\bar{y}_{(t)}- \\bar{y}_{(2)}\\), \\(\\bar{y}_{(t)}- \\bar{y}_{(3)}\\ldots\\), \\(\\bar{y}_{(t)}- \\bar{y}_{(t-1)}\\) will not exceed the LSD.\nIt follows that in this case we are spared from computing all the above differences and comparing them to the LSD. The following procedure is based on this idea:\nFirst write the ordered means on a line identified by their corresponding treatment names above them.\nFor Example – we might have\n\n\n\n\ntrt5\ntrt3\ntrt1\ntrt4\ntrt2\n\n\n9.5\n10.5\n11.6\n12.2\n13.5\n\n\n\nTake each column in turn, and on a separate line below the list, starting from column 1 connect the means by underlining those pairs of means that are not significantly different from the mean in the current column, in the following way.\nStart the comparison of the mean \\(\\bar{y}_{(1)}\\) with the mean on the last column \\(\\bar{y}_{(t)}\\). We know that if this pair is less than the LSD value, then none of the differences \\(|\\bar{y}_{(1)}-\\bar{y}_{(t-1)}|\\) will exceed the LSD value. If so, underline the means connecting \\(\\bar{y}_{(1)}\\) with \\(\\bar{y}_{(t)}\\)\nOtherwise, move left to the next largest mean \\(\\bar{y}_{(t-1)}\\) and compare \\(\\bar{y}_{(1)}\\) with \\(\\bar{y}_{(t-1)}\\), and so on.\nBegin underlining at that column the the difference is found to be less than the LSD value and extend all the way to the left to column 1 (or the column where you started)\nThis line implies that those means that are connected with this line are not significantly different from the mean in column 1 and all means between.\nNow restart at column 2 (i.e., \\(\\bar{y}_{(2)}\\) and repeat the procedure the same way as above. The new set of underlines will be displayed in a separate line. For Example – we might have\n\n\n\n\n\n\n\n\n\n\n\ntrt5 9.5\ntrt3 10.5\ntrt1 11.6\ntrt4 12.2\ntrt2 13.5\n\n\n1-4 2-4 3-4 4-5"
+    "text": "Multiple Comparison Procedures - cont.\n\nThese are different procedures that each controls a different kind of error rate and each is more or less conservative than others. Each has its set of fans among researchers.\n\nEach procedure is constructed to control a certain kind of error rate and it is important for a user to be aware of what error rate is controlled by a procedure before using it. We will try to state how conservative each one is as we discuss it."
+  },
+  {
+    "objectID": "notes/7-multiple-comparisons/part7_notes_part2.html#fishers-protected-lsd-procedure",
+    "href": "notes/7-multiple-comparisons/part7_notes_part2.html#fishers-protected-lsd-procedure",
+    "title": "Comparison of Means",
+    "section": "Fisher’s Protected LSD Procedure",
+    "text": "Fisher’s Protected LSD Procedure\nThe procedure is used for making all possible comparisons between pairs of means \\(H_0: \\mu_i - \\mu_j = 0\\)  vs.  \\(H_a: \\mu_i - \\mu_j\\neq 0\\). It presumes we rejected \\(H_0: \\mu_1 = \\mu_2 = \\cdots =\\mu_t\\)."
   },
   {
     "objectID": "notes/7-multiple-comparisons/part7_notes_part2.html#example",
     "href": "notes/7-multiple-comparisons/part7_notes_part2.html#example",
     "title": "Comparison of Means",
     "section": "Example",
-    "text": "Example\n\nSupposed that the computed sample means of six treatments with equal sample size 5 (i.e. \\(n=5\\)) are:\n\\[\\bar{y}_{1.} = 505, \\ \\bar{y}_{2.} = 528, \\ \\bar{y}_{3.} = 564, \\\n\\bar{y}_{4.} = 498, \\ \\bar{y}_{5.} = 600, \\ \\bar{y}_{6.} = 470\\]\nSince MSE \\(=s^2_W=2,451\\) with 24 d.f. Thus the LSD is:\nLSD \\(=2.064\\sqrt{2(2451)/5}=64.63\\).\nOrdered smallest to largest, the means are:\n\\(\\bar{y}_{6.},\\,\\bar{y}_{4.},\\,\\bar{y}_{1.},\\,\\bar{y}_{2.},\\,\\bar{y}_{3.},\\,\\bar{y}_{5.},\\equiv 470,\\, 498,\\, 505,\\, 528,\\, 564,\\, 600\\)\nPrepare table to be used in the underlining procedure:\n\n\n\nent\ner\n\n\n\n\n\n\n\n\n\n\ntrt6\ntrt4\ntrt1\ntrt2\ntrt3\ntrt5\n\n\n\n470\n498\n505\n528\n564\n600"
+    "text": "Example\n\nSupposed that the computed sample means of six treatments with equal sample size 5 (i.e. \\(n=5\\)) are:\n\\[\\bar{y}_{1.} = 505, \\ \\bar{y}_{2.} = 528, \\ \\bar{y}_{3.} = 564, \\\n\\bar{y}_{4.} = 498, \\ \\bar{y}_{5.} = 600, \\ \\bar{y}_{6.} = 470\\]\nSince MSE \\(=s^2_W=2,451\\) with 24 d.f. Thus the LSD is:\nLSD \\(=2.064\\sqrt{2(2451)/5}=64.63\\).\nOrdered smallest to largest, the means are:\n\\(\\bar{y}_{6.},\\,\\bar{y}_{4.},\\,\\bar{y}_{1.},\\,\\bar{y}_{2.},\\,\\bar{y}_{3.},\\,\\bar{y}_{5.},\\equiv 470,\\, 498,\\, 505,\\, 528,\\, 564,\\, 600\\)\nPrepare table to be used in the underlining procedure:"
   },
   {
     "objectID": "notes/7-multiple-comparisons/part7_notes_part2.html#example---cont.",
     "href": "notes/7-multiple-comparisons/part7_notes_part2.html#example---cont.",
     "title": "Comparison of Means",
     "section": "Example - cont.",
-    "text": "Example - cont.\n\nUsing LSD \\(= 64.63\\), underlining procedure is done as follows:\n\n\n\n\n\n\n\n\n\n\n\ntrt6 470\ntrt4 498\ntrt1 505\ntrt2 528\ntrt3 564\ntrt5 600\n\n\n1-4 2-4 3-5 4-5 5-6\n\n\n\n\n\n\n\n\nDeleting the superfluous lines we have:\n\n\n\n\n\n\n\n\n\n\n\ntrt6 470\ntrt4 498\ntrt1 505\ntrt2 528\ntrt3 564\ntrt5 600\n\n\n1-4 3-5 5-6"
+    "text": "Example - cont.\n\nUsing LSD \\(= 64.63\\), underlining procedure is done as follows:\n\n\n\n\n\n\n\n\n\n\n\ntrt6 470\ntrt4 498\ntrt1 505\ntrt2 528\ntrt3 564\ntrt5 600"
   },
   {
     "objectID": "notes/7-multiple-comparisons/part7_notes_part2.html#example---cont.-1",
     "href": "notes/7-multiple-comparisons/part7_notes_part2.html#example---cont.-1",
     "title": "Comparison of Means",
     "section": "Example - cont.",
-    "text": "Example - cont.\nThese may lead to one or more of the following conclusions:\n\n\n\\(\\mu_6, \\mu_4, \\mu_1, \\mu_2\\) are significantly different from \\(\\mu_5\\).\n\\(\\mu_6, \\mu_4\\) are significantly different from \\(\\mu_3\\).\nNone of \\(\\mu_6, \\mu_4, \\mu_1\\) is significantly different from \\(\\mu_2\\).\nNone of \\(\\mu_6, \\mu_4\\) is significantly different from \\(\\mu_1\\).\n\\(\\mu_6\\) is not significantly different from \\(\\mu_4\\).\n\nWhen sample sizes are not equal the above procedure is not feasible. In this case, we may construct confidence intervals for all pairs of differences \\(\\mu_i - \\mu_j\\) using \\[\\bar{y}_{i.} - \\bar{y}_{j.} \\pm  t_{\\alpha/2} \\, s_W \\, \\sqrt{\\frac{1}{n_i} + \\frac{1}{n_j}}\\] where \\(t_{\\alpha/2}\\) is again the percentile from the t-table with degrees of freedom same as that of the within mean square \\(s_W^2\\)."
+    "text": "Example - cont.\nThese may lead to one or more of the following conclusions:\n\n\n\\(\\mu_6, \\mu_4, \\mu_1, \\mu_2\\) are significantly different from \\(\\mu_5\\).\n\\(\\mu_6, \\mu_4\\) are significantly different from \\(\\mu_3\\).\nNone of \\(\\mu_6, \\mu_4, \\mu_1\\) is significantly different from \\(\\mu_2\\).\nNone of \\(\\mu_6, \\mu_4\\) is significantly different from \\(\\mu_1\\).\n\\(\\mu_6\\) is not significantly different from \\(\\mu_4\\)."
   },
   {
     "objectID": "notes/7-multiple-comparisons/part7_notes_part2.html#important-comments-regarding-multiple-comparison-procedures",
@@ -74,7 +81,7 @@
     "href": "notes/7-multiple-comparisons/part7_notes_part2.html#important-comments-regarding-multiple-comparison-procedures---cont.",
     "title": "Comparison of Means",
     "section": "Important comments regarding Multiple Comparison procedures - cont.",
-    "text": "Important comments regarding Multiple Comparison procedures - cont.\n\nThe LSD analysis is carried out only when \\(H_0\\) is rejected. There is some evidence, based on simulation studies that the experimentwise error rate for protected LSD may be near \\(\\alpha\\).\nThe experimentwise error rate is the probability of observing an experiment with one or more pairwise comparisons falsely declared significant.\nProtected LSD is not a very conservative method. We would not be surprised to see it falsely declare several pairwise comparisons significant in an experiment involving several treatments when all possible differences are tested."
+    "text": "Important comments regarding Multiple Comparison procedures - cont.\n\nThe LSD analysis is carried out only when \\(H_0\\) is rejected. There is some evidence, based on simulation studies that the experimentwise error rate for protected LSD may be near \\(\\alpha\\).\nThe experiment-wise error rate is the probability of observing an experiment with one or more pairwise comparisons falsely declared significant.\nProtected LSD is not a very conservative method. We would not be surprised to see it falsely declare several pairwise comparisons significant in an experiment involving several treatments when all possible differences are tested."
   },
   {
     "objectID": "notes/7-multiple-comparisons/part7_notes_part2.html#important-comments-regarding-multiple-comparison-procedures---cont.-1",
@@ -102,21 +109,21 @@
     "href": "notes/7-multiple-comparisons/part7_notes_part2.html#tukeys-w-procedure---cont.",
     "title": "Comparison of Means",
     "section": "Tukey’s W Procedure - cont.",
-    "text": "Tukey’s W Procedure - cont.\n\nThen if \\[|\\bar{y}_{i.} - \\bar{y}_{j.}| \\geq W\\] we declare that the mean pair \\(\\mu_i\\) and \\(\\mu_j\\) are significantly different.\nThe value of \\(q_\\alpha(t,\\nu)\\) is found in Table 10 (Handout). The table gives \\(q_\\alpha(t,\\nu)\\) for either \\(\\alpha=0.05\\) or \\(\\alpha=0.01\\).\nThe the sample means are ordered smallest to largest as before. Then make all possible pairwise comparisons using the value of \\(W\\) and underlining method may then be used to display results."
+    "text": "Tukey’s W Procedure - cont.\n\nThen if \\[|\\bar{y}_{i.} - \\bar{y}_{j.}| \\geq W\\] we declare that the mean pair \\(\\mu_i\\) and \\(\\mu_j\\) are significantly different.\nThe value of \\(q_\\alpha(t,\\nu)\\) is determined by the Studentized range distribution (R: xtukey() functions).\nThe the sample means are ordered smallest to largest as before. Then make all possible pairwise comparisons using the value of \\(W\\) and underlining method may then be used to display results."
   },
   {
     "objectID": "notes/7-multiple-comparisons/part7_notes_part2.html#example-1",
     "href": "notes/7-multiple-comparisons/part7_notes_part2.html#example-1",
     "title": "Comparison of Means",
     "section": "Example",
-    "text": "Example\n\nThe ANOVA table resulting from an experiment involving 6 treatments and \\(n=5\\) per treatment is:\n\n\n\n\nSource of Variation\nDF\nSS\nMS\nF\n\n\n\n\nBetween Treatments\n5\n847.05\n169.41\n14.37\n\n\nWithin Treatments\n24\n282.93\n11.79\n\n\n\nTotal\n29\n1129.98\n\n\n\n\n\nThe sample treatment means are: \\(\\bar{y}_{1.}= 28.8, \\bar{y}_{2.} = 24.0, \\bar{y}_{3.} = 14.6, \\bar{y}_{4.} = 19.9, \\bar{y}_{5.} = 13.3, \\bar{y}_{6.} =18.7\\)\n\nThe ordered means table:\n\n\n\n\nent\ner\n\n\n\n\n\n\n\n\n\n\ntrt5\ntrt3\ntrt6\ntrt4\ntrt2\ntrt1\n\n\n\n13.3\n14.6\n18.7\n19.9\n24.0\n28.8"
+    "text": "Example\n\nThe ANOVA table resulting from an experiment involving 6 treatments and \\(n=5\\) per treatment is:\n\n\n\n\nSource of Variation\nDF\nSS\nMS\nF\n\n\n\n\nBetween Treatments\n5\n847.05\n169.41\n14.37\n\n\nWithin Treatments\n24\n282.93\n11.79\n\n\n\nTotal\n29\n1129.98\n\n\n\n\n\nThe sample treatment means are: \\(\\bar{y}_{1.}= 28.8, \\bar{y}_{2.} = 24.0, \\bar{y}_{3.} = 14.6, \\bar{y}_{4.} = 19.9, \\bar{y}_{5.} = 13.3, \\bar{y}_{6.} =18.7\\)\n\nThe ordered means table:\n\n\n\n\ntrt5\ntrt3\ntrt6\ntrt4\ntrt2\ntrt1\n\n\n13.3\n14.6\n18.7\n19.9\n24.0\n28.8"
   },
   {
     "objectID": "notes/7-multiple-comparisons/part7_notes_part2.html#example---cont.-2",
     "href": "notes/7-multiple-comparisons/part7_notes_part2.html#example---cont.-2",
     "title": "Comparison of Means",
     "section": "Example - cont.",
-    "text": "Example - cont.\n\nFrom Table 10, \\(q_{.05}(6,24) = 4.37\\), so \\[W = 4.37 \\sqrt{\\frac{11.79}{5}} = 6.7\\]\nThe underlining procedure gives:\n\n\n\n\n\n\n\n\n\n\n\n\ntrt5 13.3\ntrt3 14.6\ntrt6 18.7\ntrt4 19.9\ntrt2 24.0\ntrt1 28.8\n\n\n1-4 2-4 3-5 4-5 5-6"
+    "text": "Example - cont.\n\nThe code below, \\(q_{.05}(6,24) = 4.37\\), so \\[W = 4.37 \\sqrt{\\frac{11.79}{5}} = 6.7\\]\n\n\n\n[1] 4.372651\n\n\n\nThe underlining procedure gives:\n\n\n\n\n\n\n\n\n\n\n\n\ntrt5 13.3\ntrt3 14.6\ntrt6 18.7\ntrt4 19.9\ntrt2 24.0\ntrt1 28.8"
   },
   {
     "objectID": "notes/7-multiple-comparisons/part7_notes_part2.html#example---cont.-3",
@@ -130,7 +137,7 @@
     "href": "notes/7-multiple-comparisons/part7_notes_part2.html#scheffes-procedure",
     "title": "Comparison of Means",
     "section": "Scheffe’s Procedure",
-    "text": "Scheffe’s Procedure\n\nThis procedure is ultra conservative. It controls experimentwise error rate. The probability of observing an experiment with one or more contrasts (from the set of all possible contrasts) falsely declared significant is the selected \\(\\alpha\\).\nScheffe’s method can be used to test all possible differences of means (recall that simple differences are contrasts). However it is usually used where contrasts that are not all simple differences are to be tested together with any pairwise differences.\nTo test \\(H_0: \\ell = \\sum_i a_i\\mu_i = 0 \\ \\rm{vs.}~ H_a: \\ell \\neq 0\\)\nwe base the test statistic on the estimate \\(\\hat{\\ell} = \\sum a_i \\bar{y}_{i.}\\)"
+    "text": "Scheffe’s Procedure\nThis procedure is ultra conservative. It controls experiment-wise error rate. The probability of observing an experiment with one or more contrasts (from the set of all possible contrasts) falsely declared significant is the selected \\(\\alpha\\).\n\nScheffe’s method can be used to test all possible differences of means (recall that simple differences are contrasts). However it is usually used where contrasts that are not all simple differences are to be tested together with any pairwise differences.\nTo test \\(H_0: \\ell = \\sum_i a_i\\mu_i = 0 \\ \\rm{vs.}~ H_a: \\ell \\neq 0\\)\nwe base the test statistic on the estimate \\(\\hat{\\ell} = \\sum a_i \\bar{y}_{i.}\\)"
   },
   {
     "objectID": "notes/7-multiple-comparisons/part7_notes_part2.html#scheffes-procedure---cont.",
@@ -138,6 +145,13 @@
     "title": "Comparison of Means",
     "section": "Scheffe’s Procedure - cont.",
     "text": "Scheffe’s Procedure - cont.\n\nCompute the quantity \\(S\\) based on a \\(F\\)-distribution as \\[S = \\sqrt{\\hat{V}(\\hat{\\ell})} \\ \\sqrt{(t-1)F_{\\alpha,df_1,df_2}}\\]\nHere \\(df_1 = t-1\\), and \\(df_2 = \\nu\\)\nThe variance estimate of \\(\\hat{\\ell}\\) is \\(\\hat{V}(\\hat{\\ell}) = s_W^2 \\sum_i \\frac{a_i^2}{n_i}\\) where \\(s_W^2\\) has \\(\\nu\\) degrees of freedom.\nWe reject \\(H_0\\) when \\(|\\hat{\\ell}| &gt; S\\).\nNow the underlining procedure is applied in the same way as described for the LSD or Tukey procedures."
+  },
+  {
+    "objectID": "notes/7-multiple-comparisons/part7_notes_part2.html#multiple-comparisons-r",
+    "href": "notes/7-multiple-comparisons/part7_notes_part2.html#multiple-comparisons-r",
+    "title": "Comparison of Means",
+    "section": "Multiple Comparisons: R",
+    "text": "Multiple Comparisons: R\nUsing the emmeans package, we can easily access this functionality. For all pairwise comparisons, we can use the pairs() function on the object produced by emmeans().\n\nlibrary(emmeans)\nemm &lt;- emmeans(fit, ~Treatment)\npairs(emm, adjust = 'ADJUSTMENT HERE')"
   },
   {
     "objectID": "notes/7-multiple-comparisons/in-class-practice.html",
@@ -1243,7 +1257,7 @@
     "href": "notes.html",
     "title": "STAT 801A",
     "section": "",
-    "text": "Stat 801A Syllabus\n\n\n\nCourse Notes\n7 – Multiple comparisons\n\nSlides, part 1\n\ncontrasts.R\ndata_for_contrasts_mod.csv\nIn-class practice\nfertilizer-experiment.csv\n\n\n6 – Inference for multiple means\n\nSlides\n\ncrd.csv\n\n\n5 – Inference for variances\n\nSlides\n\n4.5 – Inference for proportions\n\nSlides\n\n4 – Inference for two means\n\nSlides, part 1\n\npotency.csv\nwelch’s t-test\nt-test code\n\nSlides, part 2\n\nreaction-times.csv\n\n\n3 – Inference for one mean\n\nSlides, part 1\n\\(z_c\\) code\nSlides, part 2\nt.test code\nfiltered_travel_time.csv\n\nTest \\(H_0: \\mu = 15\\) vs \\(H_A: \\mu &lt; 15\\)\n\n\n2 – Probability\n\nFull Slides\nIn-class Slides\nZ table\nBinomial problems\n\n1 – Descriptive Statistics\n\nSlides\npdf\n\n\nLabs\n8/31/26 – Lab 1\n\nR Script\nData: cereal.xlsx | Student_data.csv\nSolutions\n\n9/7/26 – No lab (Labor Day)\n9/14/26 – Lab 2\n\nQuarto, ggplot2, and probability\nSolutions: pdf, qmd\n\n9/21/26 – Lab 3\n\nSingle mean, known variance\nSolutions: pdf, qmd\n\n9/8/26 – Lab 4\n\nt-test, power\nvolleyball.csv\nSolutions: qmd\n\n10/05/26 – Lab 5\n\ntwo-sample t-test\nSolutions: qmd\n\n10/12/26 – Lab 6\n\nTests for categorical data\nSolutions: qmd\n\n10/19/26 – No lab (Fall break)\n10/26/26 – Lab 7\n\nTests for variances, random assignment\n\n11/2/26 – Lab 8\n\nOne-way ANOVA\n\n11/9/26 – Lab 9\n11/16/26 – Lab 10\n11/23/26 – No lab\n11/30/26 – Lab 11\n12/7/26 – Lab 12\n12/14/26 – No lab"
+    "text": "Stat 801A Syllabus\n\n\n\nCourse Notes\n7 – Multiple comparisons\n\nSlides, part 1\n\ncontrasts.R\ndata_for_contrasts_mod.csv\nIn-class practice\nfertilizer-experiment.csv\n\n\nSlides, part 2\n\n6 – Inference for multiple means\n\nSlides\n\ncrd.csv\n\n\n5 – Inference for variances\n\nSlides\n\n4.5 – Inference for proportions\n\nSlides\n\n4 – Inference for two means\n\nSlides, part 1\n\npotency.csv\nwelch’s t-test\nt-test code\n\nSlides, part 2\n\nreaction-times.csv\n\n\n3 – Inference for one mean\n\nSlides, part 1\n\\(z_c\\) code\nSlides, part 2\nt.test code\nfiltered_travel_time.csv\n\nTest \\(H_0: \\mu = 15\\) vs \\(H_A: \\mu &lt; 15\\)\n\n\n2 – Probability\n\nFull Slides\nIn-class Slides\nZ table\nBinomial problems\n\n1 – Descriptive Statistics\n\nSlides\npdf\n\n\nLabs\n8/31/26 – Lab 1\n\nR Script\nData: cereal.xlsx | Student_data.csv\nSolutions\n\n9/7/26 – No lab (Labor Day)\n9/14/26 – Lab 2\n\nQuarto, ggplot2, and probability\nSolutions: pdf, qmd\n\n9/21/26 – Lab 3\n\nSingle mean, known variance\nSolutions: pdf, qmd\n\n9/8/26 – Lab 4\n\nt-test, power\nvolleyball.csv\nSolutions: qmd\n\n10/05/26 – Lab 5\n\ntwo-sample t-test\nSolutions: qmd\n\n10/12/26 – Lab 6\n\nTests for categorical data\nSolutions: qmd\n\n10/19/26 – No lab (Fall break)\n10/26/26 – Lab 7\n\nTests for variances, random assignment\n\n11/2/26 – Lab 8\n\nOne-way ANOVA\n\n11/9/26 – Lab 9\n11/16/26 – Lab 10\n11/23/26 – No lab\n11/30/26 – Lab 11\n12/7/26 – Lab 12\n12/14/26 – No lab"
   },
   {
     "objectID": "canvas.html",

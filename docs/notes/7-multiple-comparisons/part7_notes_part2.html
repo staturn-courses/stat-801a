@@ -33,6 +33,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -141,12 +207,9 @@
 </section>
 <section id="multiple-comparison-procedures" class="slide level2">
 <h2>Multiple Comparison Procedures</h2>
-<ul>
-<li><p>We know, of course, that the <span style="color: magenta">overall error rate</span> when we make multiple tests is larger than <span class="math inline">\(\alpha\)</span> (and possibly much larger).<br>
-</p></li>
-<li><p>To compensate for this, several different multiple comparison procedures have been proposed to control various error rates related to the overall error rate.<br>
-</p></li>
-<li><p>There are several of these; we will consider the following:<br>
+<p>We know, of course, that the <span style="color: magenta">overall error rate</span> when we make multiple tests is larger than <span class="math inline">\(\alpha\)</span> (and possibly much larger). To compensate for this, several different multiple comparison procedures have been proposed to control various error rates related to the overall error rate.<br>
+</p>
+<p>There are several of these; we will consider the following:<br>
 </p>
 <ul>
 <li><p>Fisher’s LSD Procedure<br>
@@ -154,7 +217,6 @@
 <li><p>Tukey’s W Procedure<br>
 </p></li>
 <li><p>Scheffe’s Procedure</p></li>
-</ul></li>
 </ul>
 </section>
 <section id="multiple-comparison-procedures---cont." class="slide level2">
@@ -164,20 +226,33 @@
 </p></li>
 <li><p>Each procedure is constructed to control a certain kind of error rate and it is important for a user to be aware of what error rate is controlled by a procedure before using it. We will try to state how conservative each one is as we discuss it.</p></li>
 </ul>
-<p><strong><span style="color: blue">Fisher’s Protected LSD Procedure</span></strong><br>
-The procedure is used for making all possible comparisons between pairs of means <span class="math inline">\(H_0: \mu_i - \mu_j = 0\)</span> &nbsp;vs.&nbsp;&nbsp;<span class="math inline">\(H_a: \mu_i - \mu_j
-\neq 0\)</span>. It presumes we rejected <span class="math inline">\(H_0: \mu_1 = \mu_2 = \cdots =
-\mu_t\)</span>.<br>
+</section>
+<section id="fishers-protected-lsd-procedure" class="slide level2">
+<h2>Fisher’s Protected LSD Procedure</h2>
+<p>The procedure is used for making all possible comparisons between pairs of means <span class="math inline">\(H_0: \mu_i - \mu_j = 0\)</span> &nbsp;vs.&nbsp;&nbsp;<span class="math inline">\(H_a: \mu_i - \mu_j\neq 0\)</span>. It presumes we rejected <span class="math inline">\(H_0: \mu_1 = \mu_2 = \cdots =\mu_t\)</span>.<br>
 </p>
+</section>
+<section class="slide level2">
+
 <ul>
 <li><p>For equal sample sizes <span class="math inline">\(n_1 = n_2 = \cdots = n_t = n\)</span>, consider the <span class="math inline">\(t\)</span>-test of the hypothesis above. <span class="math display">\[t = \frac{(\bar{y}_{i.} - \bar{y}_{j.})}{ (s_W \sqrt{2/n} \;)}\]</span></p></li>
 <li><p>We reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(|t| \geq t_{\alpha/2}\)</span>, This is equivalent to rejecting <span class="math inline">\(H_0\)</span>, for a pair of (<span class="math inline">\(i,j\)</span>) whenever <span class="math display">\[|\bar{y}_{i.} - \bar{y}_{j.}| \geq t_{\alpha/2} \,
   s_W \, \sqrt{2/n } \ .\]</span></p></li>
 <li><p>The right hand member of this inequality is not a function of <span class="math inline">\(i\)</span> or <span class="math inline">\(j\)</span>. It is constant for a specified <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(n\)</span>, and is called the <span style="color: magenta">Least Significant Difference or LSD</span>.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
 <li><p>Once the LSD is calculated, doing the tests for the pairs of differences of the form <span class="math inline">\(H_0: \mu_i - \mu_j = 0\)</span> is simple: Form all possible absolute differences <span class="math inline">\(|\bar{y}_{i.} - \bar{y}_{j.}|\)</span> and reject the corresponding <span class="math inline">\(H_0\)</span> if this difference exceeds or equals the LSD.</p></li>
 <li><p>Testing the hypotheses is thus easy, but <span style="color: magenta">reporting the results</span> of all those tests can be messy. For <span class="math inline">\(t\)</span> means, there are <span class="math inline">\(t(t-1)/2\)</span> differences to test.</p></li>
 <li><p>To minimize the number of comparisons we need to make, first arrange the <span class="math inline">\(\bar{y}_{i.}\)</span>’s <span style="color: magenta">ordered smallest to largest</span> in value. If we use the notation <span class="math inline">\(\bar{y}_{(i)}\)</span> for the <span class="math inline">\(i\)</span>-th smallest <span class="math inline">\(\bar{y}\)</span>, the ranked means may be represented as <span class="math inline">\(\bar{y}_{(1)} \leq  \bar{y}_{(2)} \leq  \bar{y}_{(3)}
   \leq \cdots \leq  \bar{y}_{(t)}\)</span></p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
 <li><p>For e.g., <span class="math inline">\(\bar{y}_{(1)}\)</span> might be <span class="math inline">\(\bar{y}_7\)</span> if <span class="math inline">\(\bar{y}_{7}\)</span> is the smallest; Now note that if the difference <span class="math inline">\(\bar{y}_{(t)}- \bar{y}_{(1)}\)</span>, for example, does not exceed the LSD, then all the differences <span class="math inline">\(\bar{y}_{(t)}- \bar{y}_{(2)}\)</span>, <span class="math inline">\(\bar{y}_{(t)}- \bar{y}_{(3)}\ldots\)</span>, <span class="math inline">\(\bar{y}_{(t)}- \bar{y}_{(t-1)}\)</span> will not exceed the LSD.</p></li>
 <li><p>It follows that in this case we are spared from computing all the above differences and comparing them to the LSD. The following procedure is based on this idea:</p></li>
 <li><p>First write the ordered means on a line identified by their corresponding treatment names above them.</p></li>
@@ -201,9 +276,19 @@ The procedure is used for making all possible comparisons between pairs of means
 </tr>
 </tbody>
 </table></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
 <li><p>Take each column in turn, and on a separate line below the list, starting from column 1 connect the means by underlining those pairs of means that are not significantly different from the mean in the current column, in the following way.</p></li>
 <li><p>Start the comparison of the mean <span class="math inline">\(\bar{y}_{(1)}\)</span> with the mean on the last column <span class="math inline">\(\bar{y}_{(t)}\)</span>. We know that if this pair is <code>less than the LSD value</code>, then none of the differences <span class="math inline">\(|\bar{y}_{(1)}-\bar{y}_{(t-1)}|\)</span> will exceed the LSD value. If so, underline the means connecting <span class="math inline">\(\bar{y}_{(1)}\)</span> with <span class="math inline">\(\bar{y}_{(t)}\)</span></p></li>
 <li><p>Otherwise, move left to the next largest mean <span class="math inline">\(\bar{y}_{(t-1)}\)</span> and compare <span class="math inline">\(\bar{y}_{(1)}\)</span> with <span class="math inline">\(\bar{y}_{(t-1)}\)</span>, and so on.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
 <li><p>Begin underlining at that column the the difference is found to be <code>less than the LSD value</code> and extend all the way to the left to column 1 (or the column where you started)</p></li>
 <li><p>This line implies that those means that are connected with this line are not significantly different from the mean in column 1 and all means between.</p></li>
 <li><p>Now restart at column 2 (i.e., <span class="math inline">\(\bar{y}_{(2)}\)</span> and repeat the procedure the same way as above. The new set of underlines will be displayed in a separate line. For Example – we might have<br>
@@ -224,13 +309,6 @@ The procedure is used for making all possible comparisons between pairs of means
 <td style="text-align: left;">trt4 12.2</td>
 <td style="text-align: left;">trt2 13.5</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">1-4 2-4 3-4 4-5</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
 </tbody>
 </table></li>
 </ul>
@@ -245,40 +323,7 @@ The procedure is used for making all possible comparisons between pairs of means
 LSD <span class="math inline">\(=2.064\sqrt{2(2451)/5}=64.63\)</span>.</p></li>
 <li><p>Ordered smallest to largest, the means are:<br>
 <span class="math inline">\(\bar{y}_{6.},\,\bar{y}_{4.},\,\bar{y}_{1.},\,\bar{y}_{2.},\,\bar{y}_{3.},\,\bar{y}_{5.},\equiv 470,\, 498,\, 505,\, 528,\, 564,\, 600\)</span></p></li>
-<li><p>Prepare table to be used in the underlining procedure:</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>ent</th>
-<th style="text-align: left;">er</th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td></td>
-<td style="text-align: left;">trt6</td>
-<td>trt4</td>
-<td>trt1</td>
-<td>trt2</td>
-<td>trt3</td>
-<td>trt5</td>
-</tr>
-<tr class="even">
-<td></td>
-<td style="text-align: left;">470</td>
-<td>498</td>
-<td>505</td>
-<td>528</td>
-<td>564</td>
-<td>600</td>
-</tr>
-</tbody>
-</table></li>
+<li><p>Prepare table to be used in the underlining procedure:</p></li>
 </ul>
 </section>
 <section id="example---cont." class="slide level2">
@@ -303,43 +348,6 @@ LSD <span class="math inline">\(=2.064\sqrt{2(2451)/5}=64.63\)</span>.</p></li>
 <td style="text-align: left;">trt3 564</td>
 <td style="text-align: left;">trt5 600</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">1-4 2-4 3-5 4-5 5-6</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table></li>
-<li><p>Deleting the superfluous lines we have:</p>
-<table class="caption-top" style="width:58%;">
-<colgroup>
-<col style="width: 9%">
-<col style="width: 9%">
-<col style="width: 9%">
-<col style="width: 9%">
-<col style="width: 9%">
-<col style="width: 9%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">trt6 470</td>
-<td style="text-align: left;">trt4 498</td>
-<td style="text-align: left;">trt1 505</td>
-<td style="text-align: left;">trt2 528</td>
-<td style="text-align: left;">trt3 564</td>
-<td style="text-align: left;">trt5 600</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">1-4 3-5 5-6</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
 </tbody>
 </table></li>
 </ul>
@@ -355,6 +363,9 @@ LSD <span class="math inline">\(=2.064\sqrt{2(2451)/5}=64.63\)</span>.</p></li>
 <li><p>None of <span class="math inline">\(\mu_6, \mu_4\)</span> is significantly different from <span class="math inline">\(\mu_1\)</span>.</p></li>
 <li><p><span class="math inline">\(\mu_6\)</span> is not significantly different from <span class="math inline">\(\mu_4\)</span>.</p></li>
 </ul>
+</section>
+<section class="slide level2">
+
 <p>When sample sizes are not equal the above procedure is not feasible. In this case, we may construct confidence intervals for all pairs of differences <span class="math inline">\(\mu_i - \mu_j\)</span> using <span class="math display">\[\bar{y}_{i.} - \bar{y}_{j.} \pm  t_{\alpha/2} \, s_W \, \sqrt{\frac{1}{n_i} + \frac{1}{n_j}}\]</span> where <span class="math inline">\(t_{\alpha/2}\)</span> is again the percentile from the t-table with degrees of freedom same as that of the within mean square <span class="math inline">\(s_W^2\)</span>.</p>
 </section>
 <section id="important-comments-regarding-multiple-comparison-procedures" class="slide level2">
@@ -368,7 +379,7 @@ LSD <span class="math inline">\(=2.064\sqrt{2(2451)/5}=64.63\)</span>.</p></li>
 <h2>Important comments regarding Multiple Comparison procedures - cont.</h2>
 <ul>
 <li><p>The LSD analysis is carried out only when <span class="math inline">\(H_0\)</span> is rejected. There is some evidence, based on simulation studies that the <span style="color: magenta">experimentwise error rate</span> for protected LSD may be near <span class="math inline">\(\alpha\)</span>.</p></li>
-<li><p><span style="color: magenta">The experimentwise error rate</span> is the probability of observing an experiment with one or more pairwise comparisons falsely declared significant.</p></li>
+<li><p><span style="color: magenta">The experiment-wise error rate</span> is the probability of observing an experiment with one or more pairwise comparisons falsely declared significant.</p></li>
 <li><p>Protected LSD is not a very conservative method. We would not be surprised to see it falsely declare several pairwise comparisons significant in an experiment involving several treatments when all possible differences are tested.</p></li>
 </ul>
 </section>
@@ -397,7 +408,7 @@ LSD <span class="math inline">\(=2.064\sqrt{2(2451)/5}=64.63\)</span>.</p></li>
 <h2>Tukey’s W Procedure - cont.</h2>
 <ul>
 <li><p>Then if <span class="math display">\[|\bar{y}_{i.} - \bar{y}_{j.}| \geq W\]</span> we declare that the mean pair <span class="math inline">\(\mu_i\)</span> and <span class="math inline">\(\mu_j\)</span> are significantly different.</p></li>
-<li><p>The value of <span class="math inline">\(q_\alpha(t,\nu)\)</span> is found in Table 10 (Handout). The table gives <span class="math inline">\(q_\alpha(t,\nu)\)</span> for either <span class="math inline">\(\alpha=0.05\)</span> or <span class="math inline">\(\alpha=0.01\)</span>.</p></li>
+<li><p>The value of <span class="math inline">\(q_\alpha(t,\nu)\)</span> is determined by the Studentized range distribution (R: <code>xtukey()</code> functions).</p></li>
 <li><p>The the sample means are ordered smallest to largest as before. Then make all possible pairwise comparisons using the value of <span class="math inline">\(W\)</span> and underlining method may then be used to display results.</p></li>
 </ul>
 </section>
@@ -445,35 +456,22 @@ LSD <span class="math inline">\(=2.064\sqrt{2(2451)/5}=64.63\)</span>.</p></li>
 <li><p>The ordered means table:<br>
 </p>
 <table class="caption-top">
-<thead>
-<tr class="header">
-<th>ent</th>
-<th style="text-align: left;">er</th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
-<td></td>
 <td style="text-align: left;">trt5</td>
-<td>trt3</td>
-<td>trt6</td>
-<td>trt4</td>
-<td>trt2</td>
-<td>trt1</td>
+<td style="text-align: left;">trt3</td>
+<td style="text-align: left;">trt6</td>
+<td style="text-align: left;">trt4</td>
+<td style="text-align: left;">trt2</td>
+<td style="text-align: left;">trt1</td>
 </tr>
 <tr class="even">
-<td></td>
 <td style="text-align: left;">13.3</td>
-<td>14.6</td>
-<td>18.7</td>
-<td>19.9</td>
-<td>24.0</td>
-<td>28.8</td>
+<td style="text-align: left;">14.6</td>
+<td style="text-align: left;">18.7</td>
+<td style="text-align: left;">19.9</td>
+<td style="text-align: left;">24.0</td>
+<td style="text-align: left;">28.8</td>
 </tr>
 </tbody>
 </table></li>
@@ -482,7 +480,14 @@ LSD <span class="math inline">\(=2.064\sqrt{2(2451)/5}=64.63\)</span>.</p></li>
 <section id="example---cont.-2" class="slide level2">
 <h2>Example - cont.</h2>
 <ul>
-<li><p>From Table 10, <span class="math inline">\(q_{.05}(6,24) = 4.37\)</span>, so <span class="math display">\[W = 4.37 \sqrt{\frac{11.79}{5}} = 6.7\]</span></p></li>
+<li>The code below, <span class="math inline">\(q_{.05}(6,24) = 4.37\)</span>, so <span class="math display">\[W = 4.37 \sqrt{\frac{11.79}{5}} = 6.7\]</span></li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.372651</code></pre>
+</div>
+</div>
+<ul>
 <li><p>The underlining procedure gives:<br>
 </p>
 <table class="caption-top" style="width:58%;">
@@ -503,14 +508,6 @@ LSD <span class="math inline">\(=2.064\sqrt{2(2451)/5}=64.63\)</span>.</p></li>
 <td style="text-align: left;">trt2 24.0</td>
 <td style="text-align: left;">trt1 28.8</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">1-4 2-4 3-5 4-5 5-6</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
 </tbody>
 </table></li>
 </ul>
@@ -527,8 +524,8 @@ LSD <span class="math inline">\(=2.064\sqrt{2(2451)/5}=64.63\)</span>.</p></li>
 </section>
 <section id="scheffes-procedure" class="slide level2">
 <h2>Scheffe’s Procedure</h2>
+<p>This procedure is ultra conservative. It controls experiment-wise error rate. The probability of observing an experiment with one or more contrasts (from the set of all possible contrasts) falsely declared significant is the selected <span class="math inline">\(\alpha\)</span>.</p>
 <ul>
-<li><p>This procedure is ultra conservative. It controls experimentwise error rate. The probability of observing an experiment with one or more contrasts (from the set of all possible contrasts) falsely declared significant is the selected <span class="math inline">\(\alpha\)</span>.</p></li>
 <li><p>Scheffe’s method can be used to test all possible differences of means (recall that simple differences are contrasts). However it is usually used where contrasts that are not all simple differences are to be tested together with any pairwise differences.</p></li>
 <li><p>To test <span class="math inline">\(H_0: \ell = \sum_i a_i\mu_i = 0 \ \rm{vs.}~ H_a: \ell \neq 0\)</span><br>
 we base the test statistic on the estimate <span class="math inline">\(\hat{\ell} = \sum a_i \bar{y}_{i.}\)</span></p></li>
@@ -543,6 +540,15 @@ we base the test statistic on the estimate <span class="math inline">\(\hat{\ell
 <li><p>We reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(|\hat{\ell}| &gt; S\)</span>.</p></li>
 <li><p>Now the underlining procedure is applied in the same way as described for the LSD or Tukey procedures.</p></li>
 </ul>
+</section>
+<section id="multiple-comparisons-r" class="slide level2">
+<h2>Multiple Comparisons: R</h2>
+<p>Using the <code>emmeans</code> package, we can easily access this functionality. For all pairwise comparisons, we can use the <code>pairs()</code> function on the object produced by <code>emmeans()</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a><span class="fu">library</span>(emmeans)</span>
+<span id="cb2-2"><a aria-label="2"></a>emm <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(fit, <span class="sc">~</span>Treatment)</span>
+<span id="cb2-3"><a aria-label="3"></a><span class="fu">pairs</span>(emm, <span class="at">adjust =</span> <span class="st">'ADJUSTMENT HERE'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
 
 </section>
@@ -761,6 +767,44 @@ we base the test statistic on the estimate <span class="math inline">\(\hat{\ell
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
