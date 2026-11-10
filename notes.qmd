@@ -23,7 +23,7 @@ format:
     - [data_for_contrasts_mod.csv](notes/data/data_for_contrasts_mod.csv)
     - [In-class practice](notes/7-multiple-comparisons/in-class-practice.qmd)
     - [fertilizer-experiment.csv](notes/data/fertilizer-experiment.csv)
-    - [](notes/7-multiple-comparisons/fertilizer-contrasts.R)
+    - [fertilizer-contrasts.R](notes/7-multiple-comparisons/fertilizer-contrasts.R)
 - [Slides, part 2](notes/7-multiple-comparisons/part7_notes_part2.qmd)
 
 6 -- Inference for multiple means
