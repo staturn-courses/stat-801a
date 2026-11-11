@@ -25,3 +25,10 @@ my_contrasts <- contrast(emm, list(
   'Combination vs. N + O' = c(2,0,-1,-1)/2
 ))
 summary(my_contrasts)
+
+pairs(emm, adjust = 'tukey')
+pairs(emm, adjust = 'none')
+pairs(emm, adjust = 'sidak')
+pairs(emm, adjust = 'bonferroni')
+pairs(emm, adjust = 'scheffe')
+pairs(emm, adjust = 'dunnett')

@@ -179,7 +179,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Due on October 4, 2026 at 9:00 pm</p>
+      <p class="date">Due on November 24, 2026 at 9:00 pm</p>
     </div>
   </div>
   
@@ -192,7 +192,7 @@ window.Quarto = {
 
 
 <p>Researchers are interested in investigating whether exposure to different volatile compounds influences the growth of southern magnolia (Magnolia virginiana) seedlings. Previous research on volatile compounds and ambrosia beetles has motivated interest in understanding how these compounds interact with plants.</p>
-<p>Researchers conduct a completely randomized design (CRD) in which seedlings are randomly assigned to one of five treatments:</p>
+<p>Researchers conduct an experiment with a completely randomized design (CRD) in which seedlings are randomly assigned to one of five treatments:</p>
 <ul>
 <li><p>Control (no volatile exposure)</p></li>
 <li><p>Acetaldehyde</p></li>
@@ -213,7 +213,7 @@ window.Quarto = {
 \]</span></p>
 <p>where (C), (A), (B), (E), and (M) represent the control, acetaldehyde, acetone, ethanol, and methanol treatments, respectively.</p>
 <ol start="2" type="1">
-<li>Construct three additional contrasts such that all four contrasts form a mutually orthogonal set.</li>
+<li>Write the linear contrast for <span class="math inline">\(\hat{\ell}_1\)</span> and construct three additional contrasts such that all four contrasts form a mutually orthogonal set.</li>
 </ol>
 <p>Suppose the following partial ANOVA table is obtained from the experiment.</p>
 <table class="caption-top table">
@@ -356,10 +356,17 @@ window.Quarto = {
 </div>
 <ol start="6" type="1">
 <li>Using Q-Q plots, check the normality of responses for each treatment group. For each plot, briefly comment the assumption of normality.</li>
-<li>Using Hartley’s test, determine if the equal variance assumption is satisfied.</li>
+<li>Use the <code>var.test()</code> function to apply Hartley’s test for <span class="math inline">\(H_0: \sigma^2_1=\sigma^2_2=\dots=\sigma^2_5\)</span>. Write a brief conclusion based on your findings. (Hint: Hartley’s test is a variation of the two-sample variance test.)</li>
 <li>Fit an appropriate model to the data and produce an ANOVA table. Briefly interpret the output using the context of the research question.</li>
-<li>Using <span class="math inline">\(\ell_1\)</span> and the complete set of mutually orthogonal contrasts constructed in Question 2, conduct hypothesis tests for each contrast using the <code>emmeans</code> package. Apply the following three approaches: Fisher’s LSD (no adjustment), Bonferroni’s adjustment, and Scheffé’s method. Create a well-organized table displaying the estimated contrast, standard error, test statistic, p-value, and conclusion for each contrast under all three approaches.</li>
-<li>Write a brief section of results using</li>
+<li>Using <span class="math inline">\(\ell_1\)</span> and the complete set of mutually orthogonal contrasts constructed in Question 2, conduct hypothesis tests for each contrast using the <code>emmeans</code> package. For each test, write a brief conclusion.</li>
+<li>Perform all pairwise comparisons using Fisher’s LSD, Tukey’s HSD, and two other multiple comparison procedures of your choice. For the two procedures that you choose, briefly describe how the tests are constructed and</li>
+<li>Write a results section (maximum of 4 paragraphs) describing how treatment affects the shoot height (cm) of southern magnolia seedlings. Your results section should incorporate findings from Questions 8–10 and include the following:
+<ul>
+<li>Overall ANOVA: Report the F-statistic, degrees of freedom, and p-value. State whether there is evidence of differences in mean shoot height among treatments.</li>
+<li>Orthogonal contrasts: Summarize the results of the four planned contrasts from Question 9. Identify which contrasts were statistically significant and describe the direction of any significant differences.</li>
+<li>Pairwise comparisons: Summarize the results of Tukey’s HSD from Question 10. Identify which treatment pairs differed significantly and describe the direction of the differences. Do not report results from the other multiple-comparison procedures in this section.</li>
+<li>Visualization: Include at least one figure that illustrates the differences in shoot height among treatments. Reference the figure in your discussion and describe the patterns it helps illustrate.</li>
+</ul></li>
 </ol>
 
 

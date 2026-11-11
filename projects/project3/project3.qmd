@@ -1,6 +1,6 @@
 ---
 title: "Project 3"
-date: '2026-10-04 21:00:00'
+date: '2026-11-24 21:00:00'
 author: STAT 801A, Fall 2026
 date-format: "[Due on] MMMM D, YYYY [at] h:mm a"
 format: html
@@ -8,7 +8,7 @@ format: html
 
 Researchers are interested in investigating whether exposure to different volatile compounds influences the growth of southern magnolia (Magnolia virginiana) seedlings. Previous research on volatile compounds and ambrosia beetles has motivated interest in understanding how these compounds interact with plants.
 
-Researchers conduct a completely randomized design (CRD) in which seedlings are randomly assigned to one of five treatments:
+Researchers conduct an experiment with a completely randomized design (CRD) in which seedlings are randomly assigned to one of five treatments:
 
 - Control (no volatile exposure)
 
@@ -36,7 +36,7 @@ $$
 
 where (C), (A), (B), (E), and (M) represent the control, acetaldehyde, acetone, ethanol, and methanol treatments, respectively.
 
-2. Construct three additional contrasts such that all four contrasts form a mutually orthogonal set.
+2. Write the linear contrast for $\hat{\ell}_1$ and construct three additional contrasts such that all four contrasts form a mutually orthogonal set.
 
 Suppose the following partial ANOVA table is obtained from the experiment.
 
@@ -76,10 +76,15 @@ knitr::kable(responses)
 ```
 
 6. Using Q-Q plots, check the normality of responses for each treatment group. For each plot, briefly comment the assumption of normality.
-7. Using the var.test() function to apply Hartley's test, determine if the equal variance assumption is satisfied.
+7. Use the `var.test()` function to apply Hartley's test for $H_0: \sigma^2_1=\sigma^2_2=\dots=\sigma^2_5$. Write a brief conclusion based on your findings. (Hint: Hartley's test is a variation of the two-sample variance test.)
 8. Fit an appropriate model to the data and produce an ANOVA table. Briefly interpret the output using the context of the research question.
-9. Using $\ell_1$ and the complete set of mutually orthogonal contrasts constructed in Question 2, conduct hypothesis tests for each contrast using the `emmeans` package. Apply the following three approaches: Fisher's LSD (no adjustment), Bonferroni's adjustment, and Scheffé's method. Create well-organized tables for all three approaches. 
-10. Write a brief section of results using the findings from the Bonferroni's adjustment with a significance level of $\alpha=0.05$ for each of the contrasts. 
+9. Using $\ell_1$ and the complete set of mutually orthogonal contrasts constructed in Question 2, conduct hypothesis tests for each contrast using the `emmeans` package. For each test, write a brief conclusion.
+10. Perform all pairwise comparisons using Fisher's LSD, Tukey's HSD, and two other multiple comparison procedures of your choice. For the two procedures that you choose, briefly describe how the tests are constructed and why they would be appropriate to use.
+11. Write a results section (maximum of 4 paragraphs) describing how treatment affects the shoot height (cm) of southern magnolia seedlings. Your results section should incorporate findings from Questions 8–10 and include the following:
+    - Overall ANOVA: Report the F-statistic, degrees of freedom, and p-value.
+    - Orthogonal contrasts: Summarize the results of the four planned contrasts from Question 9. Identify which contrasts were statistically significant and describe the direction of any significant differences.
+    - Pairwise comparisons: Summarize the results of Tukey's HSD from Question 10. Identify which treatment pairs differed significantly and describe the direction of the differences. Do not report results from the other multiple-comparison procedures in this section.
+    - Visualization: Include at least one figure that illustrates the differences in shoot height among treatments. Reference the figure in your discussion and describe the patterns it helps illustrate.
 
 
 
