@@ -19,6 +19,7 @@ format:
 8 -- Regression
 
 - [Slides](notes/8-regression/notes.pdf)
+    - [regression.R](notes/8-regression/regression.R)
 
 7 -- Multiple comparisons
 
