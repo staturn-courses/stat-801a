@@ -1,0 +1,455 @@
+---
+title: "STAT 801A Lab 9: Multiple Comparisons"
+author: "Insert Name"
+date: today
+format: html
+editor: source
+---
+
+# Multiple Comparisons
+
+When the ANOVA F test rejects $H_0$, we know at least one mean differs, but not which. Comparing the means after the F test is called multiple comparisons.
+
+## Family-Wise Error Rate
+
+Each comparison is a test. When two means are equal, a test at $\alpha = 0.05$ has a 5% chance of a false positive. This is the comparison-wise error rate.
+
+The family-wise error rate is the chance of at least one false positive across a whole set, or family, of comparisons. With $m$ independent tests at level $\alpha$, it is
+
+$$1 - (1 - \alpha)^m$$
+
+For 6 tests at $\alpha = 0.05$, this is 0.26. Most of the methods in this lab keep the family-wise error rate at $\alpha$. The cost is power. Each comparison needs a larger difference to be called significant, so real differences are harder to detect.
+
+## How the methods work
+
+Each method declares a comparison significant when
+
+$$|\text{estimate}| > c \times SE$$
+
+where $SE$ is the standard error of the estimate and $c$ is a critical value. For two means with equal sample sizes, $SE = \sqrt{2MS_E/n}$. The methods differ only in $c$. A method with a small $c$ is called liberal: it finds more differences, but it also has more false positives. A method with a large $c$ is called conservative: it has fewer false positives, but it misses more real differences. `emmeans` reports an adjusted p-value instead, which is below $\alpha$ exactly when the estimate is larger than $c \times SE$.
+
+------------------------------------------------------------------------
+
+# Example: Fertilizers for Corn
+
+An agronomist compares a control (no fertilizer) with three fertilizers: compost, manure and a synthetic fertilizer. She randomly assigned 24 plots to the treatments, with 6 plots each, and recorded corn yield in bu/acre.
+
+```{r}
+trts <- c("control", "compost", "manure", "synthetic")
+
+corn <- data.frame(
+  trt = factor(rep(trts, each = 6), levels = trts),
+  yield = c(141, 130, 161, 135, 147, 156,
+            155, 158, 134, 161, 153, 142,
+            174, 159, 162, 144, 183, 159,
+            177, 195, 172, 185, 186, 162))
+```
+
+```{r}
+fit <- aov(yield ~ trt, data = corn)
+summary(fit)
+```
+
+The assumptions were checked and look reasonable. Here $F = 9.91$ and $p < 0.001$, so at least one treatment has a different mean yield.
+
+```{r}
+library(emmeans)
+
+corn_means <- emmeans(fit, ~ trt)
+corn_means
+```
+
+The means are 145.0 bu/acre for the control, 150.5 for compost, 163.5 for manure and 179.5 for synthetic.
+
+------------------------------------------------------------------------
+
+# Contrasts
+
+A contrast is a weighted sum of the treatment means where the weights add to 0.
+
+$$L = \sum_i c_i \mu_i \qquad \sum_i c_i = 0$$
+
+It is estimated with the sample means, $\hat{L} = \sum_i c_i \bar{y}_{i\cdot}$, and has standard error $SE = \sqrt{MS_E \sum_i c_i^2 / n_i}$. The test of $H_0: L = 0$ uses $t = \hat{L}/SE$ with $N - k$ degrees of freedom.
+
+A pairwise comparison is a contrast with coefficients 1 and -1. Contrasts can also compare groups of treatments. Before the study, the agronomist planned three questions.
+
+Planned comparisons, like these, are chosen before seeing the data, based on the research question. Unplanned comparisons are chosen after looking at the data.
+
+| Contrast | control | compost | manure | synthetic | Question |
+|:-----------|:-----------|:-----------|:-----------|:-----------|:-----------|
+| Fertilizer vs control | -1 | 1/3 | 1/3 | 1/3 | Does fertilizer increase yield on average? |
+| Organic vs synthetic | 0 | 1/2 | 1/2 | -1 | Do the organic fertilizers differ from synthetic? |
+| Compost vs manure | 0 | 1 | -1 | 0 | Do the two organic fertilizers differ? |
+
+## Contrasts in R
+
+Give `contrast` a list of coefficient vectors, in the order of the levels.
+
+```{r}
+fert_vs_ctrl <- c(-1, 1/3, 1/3, 1/3)
+org_vs_syn <- c(0, 1/2, 1/2, -1)
+comp_vs_man <- c(0, 1, -1, 0)
+
+```
+
+## Orthogonal contrasts
+
+With equal sample sizes, two contrasts with coefficients $c_i$ and $d_i$ are orthogonal when
+
+$$\sum_i c_i d_i = 0$$
+
+```{r}
+sum(fert_vs_ctrl * org_vs_syn)
+sum(fert_vs_ctrl * comp_vs_man)
+sum(org_vs_syn * comp_vs_man)
+```
+
+All three sums are 0, so the contrasts are orthogonal. The estimates of orthogonal contrasts are independent, so each one answers a separate question.
+
+With $k$ treatments, at most $k - 1$ contrasts can all be orthogonal to each other.
+
+Note: With unequal sample sizes, contrasts are orthogonal when $\sum_i c_i d_i / n_i = 0$.
+
+------------------------------------------------------------------------
+
+# Fisher's LSD
+
+Fisher's least significant difference (LSD) uses ordinary t tests with $MS_E$ and makes no adjustment. Its critical value is $c = t_{\alpha/2, N-k}$, so
+
+$$LSD = t_{\alpha/2, N-k}\sqrt{\frac{2MS_E}{n}}$$
+
+The protected LSD is only used when the F test is significant.
+
+```{r}
+pairs(corn_means, adjust = "none")
+```
+
+The LSD finds 4 of the 6 pairs different: control and manure, control and synthetic, compost and synthetic, and manure and synthetic.
+
+- Conservative or liberal: The most liberal method in this lab.
+
+- Use when: there are only 3 treatments and the F test is significant.
+
+- Pros: The most power of any method here, and the simplest. With 3 treatments, the protected LSD keeps the family-wise error rate at $\alpha$.
+
+- Cons: No adjustment for the number of comparisons. With more than 3 treatments, the family-wise error rate can be well above $\alpha$, even when the F test is checked first.
+
+------------------------------------------------------------------------
+
+# Tukey's HSD
+
+Tukey's honestly significant difference (HSD) is built for comparing every pair of means. Its critical value comes from the studentized range distribution, $c = q_{\alpha, k, N-k}/\sqrt{2}$.
+
+```{r}
+pairs(corn_means)
+```
+
+Tukey is the default, so `adjust` is not needed. Two pairs differ: control and synthetic, and compost and synthetic. Control and manure ($p = 0.063$) and manure and synthetic ($p = 0.127$) no longer differ.
+
+- Conservative or liberal: More conservative than the LSD, but less conservative than other methods
+
+- Use when: you want to compare every pair of means.
+
+- Pros: The family-wise error rate is exactly $\alpha$ for all pairs when sample sizes are equal, and slightly below $\alpha$ when they are not.
+
+- Cons: Only for pairwise comparisons. If only a few pairs matter, it adjusts for more comparisons than you need.
+
+------------------------------------------------------------------------
+
+# Bonferroni
+
+The Bonferroni method tests each of the $m$ comparisons at level $\alpha/m$. Equivalently, it multiplies each p-value by $m$.
+
+```{r}
+pairs(corn_means, adjust = "bonferroni")
+```
+
+Bonferroni is a good choice for a few planned contrasts that are not orthogonal. Suppose the agronomist had planned only two comparisons: manure with the control, and synthetic with the control.
+
+```{r}
+man_vs_ctrl <- c(-1, 0, 1, 0)
+syn_vs_ctrl <- c(-1, 0, 0, 1)
+sum(man_vs_ctrl * syn_vs_ctrl)
+
+contrast(corn_means,
+         list("manure vs control" = man_vs_ctrl,
+              "synthetic vs control" = syn_vs_ctrl),
+         adjust = "bonferroni")
+```
+
+The sum is 1, so these contrasts are not orthogonal. With only 2 comparisons, each p-value is doubled instead of multiplied by 6. Manure now differs from the control ($p = 0.029$), even though Tukey's p-value for this pair was 0.063. Planning fewer comparisons means a smaller adjustment, but only if they were truly planned before seeing the data.
+
+- Conservative or liberal: Conservative. For all pairs, it is more conservative than Tukey and Šidák, and usually less conservative than Scheffé. It gets more conservative as $m$ grows.
+
+- Use when: there are a few planned comparisons or contrasts that are not orthogonal.
+
+- Pros: Simple, and it works for any set of tests, including contrasts and tests outside of ANOVA.
+
+- Cons: Loses power quickly as $m$ grows. For all pairwise comparisons, Tukey has more power.
+
+------------------------------------------------------------------------
+
+# Šidák
+
+The Šidák method is a small improvement on Bonferroni. It comes from the family-wise error rate formula above. Each comparison is tested at level $1 - (1 - \alpha)^{1/m}$, or equivalently each p-value is adjusted to $1 - (1 - p)^m$.
+
+```{r}
+pairs(corn_means, adjust = "sidak")
+```
+
+The p-values are slightly smaller than Bonferroni's, such as 0.083 instead of 0.086 for control and manure. The conclusions are the same. Like Bonferroni, it works for planned contrasts with `adjust = "sidak"`.
+
+- Conservative or liberal: Slightly less conservative than Bonferroni, but still more conservative than Tukey for all pairs.
+
+- Use when: the same situations as Bonferroni.
+
+- Pros: Always a little more power than Bonferroni.
+
+- Cons: The gain over Bonferroni is very small.
+
+------------------------------------------------------------------------
+
+# Scheffé
+
+Scheffé's method protects every possible contrast, not just pairs, including unplanned contrasts chosen after looking at the data. Its critical value comes from the F distribution, $c = \sqrt{(k-1)F_{\alpha, k-1, N-k}}$.
+
+```{r}
+pairs(corn_means, adjust = "scheffe")
+```
+
+For control and manure, $p = 0.098$, the largest of any method.
+
+Scheffé is the method for unplanned contrasts. Picking a contrast because it looks large makes a false positive more likely, and Scheffé's large critical value protects against that. For planned contrasts, it is more conservative than needed.
+
+Looking at the means, manure seems higher than both the control and compost. Suppose the agronomist decides, after seeing this, to compare manure with the average of the control and compost.
+
+```{r}
+unplanned <- contrast(corn_means,
+                      list("manure vs control and compost" = c(-1/2, -1/2, 1, 0)),
+                      adjust = "none")
+unplanned
+
+summary(unplanned, adjust = "scheffe", scheffe.rank = 3)
+```
+
+Without an adjustment, $p = 0.016$. With Scheffé, $p = 0.106$, so the difference is not significant. `scheffe.rank = 3` sets the rank to $k - 1$. Without it, R would adjust for this one contrast only, which is no adjustment at all.
+
+- Conservative or liberal: The most conservative method in this lab. Its large critical value is the price of protecting every possible contrast.
+
+- Use when: testing unplanned contrasts, chosen after looking at the data.
+
+- Pros: Protects any number of contrasts, even ones chosen after seeing the data. It agrees with the F test: if the F test is not significant, no contrast will be significant with Scheffé.
+
+- Cons: The least power for pairwise comparisons, and more conservative than needed for planned contrasts. For pairs, use Tukey.
+
+------------------------------------------------------------------------
+
+# Dunnett
+
+Dunnett's method compares each treatment with a control and skips the comparisons among the treatments. With $k$ treatments including the control, there are $k - 1$ comparisons instead of $k(k-1)/2$. Its critical value comes from a multivariate t distribution.
+
+In `emmeans`, use `contrast` with `method = "trt.vs.ctrl"`.
+
+```{r}
+contrast(corn_means, method = "trt.vs.ctrl")
+```
+
+`estimate` is each fertilizer minus the control. Manure ($p = 0.038$) and synthetic ($p < 0.001$) differ from the control. Tukey did not find a difference between the control and manure, because Dunnett adjusts for 3 comparisons instead of 6.
+
+Note: By default, the first level of the factor is the control. The control is first here because of `levels = trts`. If your control is not first, give its position with `ref`, such as `ref = 3`.
+
+- Conservative or liberal: Less conservative than Tukey for the comparisons with the control, because it adjusts for fewer comparisons.
+
+- Use when: the experiment has a control or standard treatment, and the question is which treatments differ from it.
+
+- Pros: Built for comparisons with a control, so it does not spend power on the other pairs.
+
+- Cons: Says nothing about how the treatments compare with each other.
+
+------------------------------------------------------------------------
+
+# Comparing the Methods
+
+| Method | Comparisons | Critical value | p, control vs manure | Pairs that differ |
+|:--------------|:--------------|:--------------|:--------------|:--------------|
+| Fisher's LSD | 6 | 2.09 | 0.014 | 4 of 6 |
+| Dunnett | 3 | 2.54 | 0.038 | 2 of 3 |
+| Tukey | 6 | 2.80 | 0.063 | 2 of 6 |
+| Šidák | 6 | 2.92 | 0.083 | 2 of 6 |
+| Bonferroni | 6 | 2.93 | 0.086 | 2 of 6 |
+| Scheffé | All contrasts | 3.05 | 0.098 | 2 of 6 |
+
+The table runs from the most liberal method, the LSD, to the most conservative, Scheffé. Moving down, each method needs a larger difference, so false positives become less likely and real differences become harder to find. Dunnett's critical value is small because it adjusts for only 3 comparisons.
+
+## Choosing a method
+
+| Situation | Method |
+|:----------------------------------------------|:-----------------------|
+| A few planned comparisons or contrasts that are not orthogonal | Bonferroni or Šidák |
+| Compare each treatment with a control | Dunnett |
+| Compare every pair of means | Tukey's HSD |
+| Unplanned contrasts, chosen after seeing the data | Scheffé |
+| Only 3 treatments, after a significant F test | Fisher's protected LSD |
+
+Note: Choose the method before looking at the results. Running several methods and reporting the one with the smallest p-values defeats the purpose of the adjustment. We ran all of them here only to compare them.
+
+------------------------------------------------------------------------
+
+# Practice Problem
+
+A horticulturist compares a control (no fertilizer) with three liquid fertilizers for tomato seedlings: two organic fertilizers, fish emulsion and seaweed extract, and a synthetic fertilizer. She randomly assigns 20 seedlings, each in its own pot, with 5 seedlings per treatment. After 4 weeks, she records each seedling's dry weight in grams. The assumptions have been checked and look reasonable.
+
+```{r}
+tomato <- data.frame(
+  trt = factor(rep(c("control", "fish", "seaweed", "synthetic"), each = 5)),
+  weight = c(3.07, 3.67, 3.09, 3.09, 2.58,
+             4.08, 4.04, 3.27, 3.78, 3.97,
+             3.28, 3.64, 3.48, 3.37, 2.83,
+             3.54, 4.01, 3.35, 4.04, 3.26))
+```
+
+\(a\) Fit the model and print the ANOVA table. What do you conclude at the 0.05 level?
+
+```{r}
+
+```
+
+\(b\) Use `emmeans` to get the mean dry weight for each treatment.
+
+```{r}
+
+```
+
+\(c\) Before the study, she planned three contrasts: the control vs the average of the three fertilizers, the average of the two organic fertilizers vs synthetic, and fish vs seaweed. Write the coefficients for each contrast, and check that the contrasts are orthogonal.
+
+```{r}
+
+```
+
+\(d\) Her main question is which fertilizers differ from the control. Which method fits this question? Run it, and say which fertilizers differ from the control.
+
+```{r}
+
+```
+
+\(e\) Use Tukey's HSD to compare every pair. Which pairs differ?
+
+```{r}
+
+```
+
+\(f\) Which method would you use in each situation? Explain briefly.
+
+1.  After seeing the means, she wants to compare fish with the average of the other three treatments.
+
+2.  Before the study, she planned only two comparisons: fish vs the control, and synthetic vs the control.
+
+3.  A follow-up study compares only the three fertilizers, with no control. After a significant F test, she wants to compare every pair.
+
+# Comparing Family-wise Type I Error
+
+For now, consider the multiple comparison procedures that can be used for all pairwise comparisons (Fisher's LSD, Tukey's HSD, Bonferroni, Sidak, and Scheffe). We want to control the overall Type I error across all of tests, so which method should we use? 
+
+Through simulation and assuming true numeric properties of the population, we can show how the methods compare. In the below simulation, we assume four treatments that all have the same mean. That is, we have a Type I error whenever we reject $H_0$. Recall that the probability of making at least one Type I error is $1-(1-\alpha)^c$ for $c$ tests. Here, we examine the case when at least one Type I error is made. 
+
+```{r}
+#| eval: false
+
+# Packages
+library(emmeans)
+
+# Allocate space for results
+n_sims <- 2000
+sims <- matrix(nrow=n_sims, ncol=6)
+
+# Comparisons to test
+comps <- c('none', 'tukey', 'scheffe', 'sidak', 'bonferroni')
+
+# For loop
+for(i in 1:n_sims) {
+  start_time <- Sys.time()
+  # Simulate values
+  n <- 20
+  n_trt <- 4
+  y <- rnorm(n*n_trt, mean = 30, sd = 5)
+  trt <- rep(letters[1:n_trt], each = n)
+  
+  # Fit the model and get overall f-test p-value
+  fit <- aov(y~trt)
+  anova.rr <- as.numeric(anova(fit)$`Pr(>F)`[1]<0.05)
+  
+  # Fit estimated marginal means
+  emm <- emmeans(fit, ~trt)
+  
+  # Fit multiple comparisons for each adjustment
+  comp_rates <- numeric(length(comps))
+  for(j in seq_along(comps)) {
+    all_pairwise <- data.frame(pairs(emm, adjust=comps[j]))
+    pairwise_rr <- any(all_pairwise$p.value < 0.05) # at least one rejection
+    comp_rates[j] <- pairwise_rr
+  }
+  
+  # Save results
+  results <- c(anova.rr, comp_rates)
+  sims[i,] <- results
+  
+  # Expectation of time spent on simulation
+  end_time <- Sys.time()
+  if(i==1) {
+    initial_start_time <- start_time
+    time_diff <- as.numeric(end_time-start_time, units='secs')
+    amount_of_time <- time_diff*n_sims
+    cat(glue::glue('This process will take approximately {round(amount_of_time, 1)} seconds to complete.'))
+  }
+  if(i == n_sims) {
+    last_time_diff <- as.numeric(end_time - initial_start_time, units='secs')
+    cat(glue::glue('\n\nActual process time was approximately {round(last_time_diff, 1)} seconds.'))
+  }
+}
+
+
+# Display first few observations
+head(sims)
+
+# Calculate the mean rate of at least 1 Type 1 error
+type1.error <- apply(sims, 2, mean)
+
+# Display results
+data.frame(
+  Test = c('Overall F-test', comps),
+  Type1.Error = type1.error
+)
+
+# Calculate cumulative means
+cummeans <- apply(sims, 2, dplyr::cummean)
+
+# Plot all six columns
+matplot(
+  cummeans,
+  type = "l",
+  lty = 1,
+  lwd = 2,
+  xlab = "Number of Simulations",
+  ylab = "Cumulative Mean Rejection Rate",
+  ylim = c(0, 0.15)
+)
+
+# Add reference line
+abline(h = 0.05, lty = 2)
+
+# Add legend
+legend(
+  "topright",
+  legend = c("ANOVA", "None", "Tukey", "Scheffe", "Sidak", "Bonferroni"),
+  col = 1:6,
+  lty = 1,
+  lwd = 2
+)
+```
+
+
+# Final Step
+
+Render your document. Click the Render button at the top of the editor, or press Ctrl + Shift + K.
+
+If the render fails, read the error message. It names the chunk that caused the problem. The most common causes are a missing closing parenthesis, or an object used before it was created.
