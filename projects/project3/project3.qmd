@@ -1,99 +1,97 @@
 ---
-title: "Project 3"
-date: '2026-11-24 21:00:00'
-author: STAT 801A, Fall 2026
-date-format: "[Due on] MMMM D, YYYY [at] h:mm a"
-format: html
+format: 
+  pdf: 
+    include-in-header:
+      text: |
+        \usepackage{fancyhdr}
+        \pagestyle{fancy}
+        \fancyhf{}
+        \lhead{STAT 801A}
+        \chead{Project 3}
+        \rhead{Fall 2026}
+        %\rfoot{\thepage}
+        \setlength{\headheight}{14pt}
+    fig-align: center
 ---
 
-Researchers are interested in investigating whether exposure to different volatile compounds influences the growth of southern magnolia (Magnolia virginiana) seedlings. Previous research on volatile compounds and ambrosia beetles has motivated interest in understanding how these compounds interact with plants.
+**Due date:** Friday, December 4th at 11:59pm
 
-Researchers conduct an experiment with a completely randomized design (CRD) in which seedlings are randomly assigned to one of five treatments:
+Researchers are interested in investigating whether different dosages of a new medication influence reductions in systolic blood pressure. To investigate this relationship, researchers conduct an experiment in which 50 subjects are randomly assigned to one of five treatment groups:
 
-- Control (no volatile exposure)
+- Control (placebo)
+- Low dosage (5 mg)
+- Medium dosage (10 mg)
+- High dosage (15 mg)
+- Very high dosage (20 mg)
 
-- Acetaldehyde
+Each treatment group receives 10 subjects. After a specified treatment period, researchers measure the reduction in systolic blood pressure (mmHg) for each subject. Larger reductions indicate a greater response to the medication.
 
-- Acetone
+## Part 1: Experimental Design and ANOVA
 
-- Ethanol
+Suppose the researchers collect data from the experiment described above.
 
-- Methanol
+1. Identify the experimental design used in this study. Write the statistical model for a one-way ANOVA in terms of $Y_{ij}$, expressing the model using the treatment means ($\mu_i$). Define all parameters in your model and state the model assumptions.
 
-There were 50 seeds available for the experiment, and each treatment randomly received 10 seeds. After a specified exposure period, researchers measure the root length (cm) of each seedling.
-
-## Part 1
-
-Suppose the researchers collect data from an experiment with five treatments and an equal number of seedlings assigned to each treatment.
-
-1. Identify the experimental design and write an appropriate statistical model for this experiment in terms of $Y_{ij}$. Define all parameters in your model.
-
-Researchers are particularly interested in comparing the control treatment against the four volatile treatments. One reasonable contrast is
-
-$$
-\ell_1 = \mu_C - \frac{\mu_A + \mu_B + \mu_E + \mu_M}{4}
-$$
-
-where (C), (A), (B), (E), and (M) represent the control, acetaldehyde, acetone, ethanol, and methanol treatments, respectively.
-
-2. Write the linear contrast for $\hat{\ell}_1$ and construct three additional contrasts such that all four contrasts form a mutually orthogonal set.
+2. Researchers are particularly interested in comparing the control group against the average response of the four dosage groups. Write the linear contrast for this comparison in terms of the treatment means and provide the corresponding contrast coefficients.
 
 Suppose the following partial ANOVA table is obtained from the experiment.
 
-
-| Source | DF |  Sums of Squares | Mean Square | F | Pr(>F) |
-| :-----: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Source | DF | Sums of Squares | Mean Square | F | Pr(>F) |
+|:---:|:---:|:---:|:---:|:---:|:---:|
 | Treatment | | 240 | | | |
 | Error | | 360 | | | |
 | Total | | | | | |
 
 3. Fill in the missing values of the ANOVA table. Recall that not every position in the table will contain a value.
-4. State the null and alternative hypothesis represented by Pr(>F). 
+
+4. State the null and alternative hypotheses represented by the treatment p-value in the ANOVA table.
+
 5. Write an appropriate conclusion in the context of the research question using the p-value. Use a significance level of $\alpha=0.05$.
 
+## Part 2: One-Way ANOVA
 
-
-
-## Part 2: Analysis in R
-
-Researchers also measured the shoot height (cm) of southern magnolia seedlings in the experiment described above. Responses for shoot height are provided below:
+Researchers conduct a second experiment to investigate the effects of medication dosage on reductions in systolic blood pressure. The following data represent the observed reductions (mmHg) for 10 subjects in each treatment group.
 
 ```{r}
 #| echo: false
 set.seed(801)
+
 treatments <- c(
   "Control",
-  "Acetaldehyde",
-  "Acetone",
-  "Ethanol",
-  "Methanol"
+  "Low",
+  "Medium",
+  "High",
+  "VeryHigh"
 )
-y <- round(MASS::mvrnorm(10, mu = c(15, 16, 17, 20, 21), 
-              Sigma = 2.5*diag(5)),2)
-responses <- data.frame(y)
-names(responses) <- treatments
+
+responses <- data.frame(
+  Control = round(rnorm(10, mean = 2, sd = 1.5), 2),
+  Low = round(rnorm(10, mean = 5, sd = 1.5), 2),
+  Medium = round(rnorm(10, mean = 8, sd = 1.5), 2),
+  High = round(rnorm(10, mean = 10, sd = 1.5), 2),
+  VeryHigh = round(rnorm(10, mean = 11, sd = 1.5), 2)
+)
+
 knitr::kable(responses)
 ```
 
-6. Using Q-Q plots, check the normality of responses for each treatment group. For each plot, briefly comment the assumption of normality.
-7. Use the `var.test()` function to apply Hartley's test for $H_0: \sigma^2_1=\sigma^2_2=\dots=\sigma^2_5$. Write a brief conclusion based on your findings. (Hint: Hartley's test is a variation of the two-sample variance test.)
-8. Fit an appropriate model to the data and produce an ANOVA table. Briefly interpret the output using the context of the research question.
-9. Using $\ell_1$ and the complete set of mutually orthogonal contrasts constructed in Question 2, conduct hypothesis tests for each contrast using the `emmeans` package. For each test, write a brief conclusion.
-10. Perform all pairwise comparisons using Fisher's LSD, Tukey's HSD, and two other multiple comparison procedures of your choice. For the two procedures that you choose, briefly describe how the tests are constructed and why they would be appropriate to use.
-11. Write a results section (maximum of 4 paragraphs) describing how treatment affects the shoot height (cm) of southern magnolia seedlings. Your results section should incorporate findings from Questions 8–10 and include the following:
-    - Overall ANOVA: Report the F-statistic, degrees of freedom, and p-value.
-    - Orthogonal contrasts: Summarize the results of the four planned contrasts from Question 9. Identify which contrasts were statistically significant and describe the direction of any significant differences.
-    - Pairwise comparisons: Summarize the results of Tukey's HSD from Question 10. Identify which treatment pairs differed significantly and describe the direction of the differences. Do not report results from the other multiple-comparison procedures in this section.
-    - Visualization: Include at least one figure that illustrates the differences in shoot height among treatments. Reference the figure in your discussion and describe the patterns it helps illustrate.
+6. Fit a one-way ANOVA model to the data and produce an ANOVA table. Briefly interpret the output in the context of the research question.
 
+7. Using the `emmeans` package, conduct a hypothesis test for the contrast comparing the control group against the average of the four dosage groups. Report the estimated contrast, standard error, test statistic, and p-value. Write a brief conclusion in the context of the research question.
 
+8. Perform all pairwise comparisons among the five treatment groups using the following two appropriate p-value adjustments:
+   - Bonferroni adjustment
+   - Tukey adjustment
 
+   Report the results of both procedures. Using the Tukey-adjusted results, identify which treatment groups differ significantly from one another. Interpret your findings in the context of the research question.
 
+## Part 3: Simple Linear Regression
 
+Researchers are also interested in investigating whether medication dosage has a linear relationship with reductions in systolic blood pressure. 
 
+9. Fit a simple linear regression model to investigate the relationship between medication dosage and reductions in systolic blood pressure.
 
+10. Write the statistical model for the simple linear regression in terms of $Y_i$. Define all parameters in your model.
 
-
-
-
+11. Conduct a hypothesis test to determine whether there is a significant linear relationship between medication dosage and reductions in systolic blood pressure. State the null and alternative hypotheses, report the test statistic and p-value, and write a conclusion in the context of the research question using a significance level of $\alpha=0.05$. (Hint: you can use either a t-test or F-test)
 
