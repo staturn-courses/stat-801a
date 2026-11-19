@@ -17,6 +17,7 @@ format:
 **Course Notes**
 
 9 -- Additional topics
+
 - [Two-way ANOVA](notes/9-additional/two-way-anova.qmd)
     - [example1-agriculture.csv](notes/9-additional/example1-agriculture.csv)
     - [example2-bacteria.csv](notes/9-additional/example2-bacteria.csv)
