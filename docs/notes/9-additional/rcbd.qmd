@@ -1,0 +1,412 @@
+---
+title: "Randomized Complete Block Designs"
+footer: STAT 801A
+format:
+  revealjs:
+    smaller: true
+execute:
+  echo: true
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+knitr::opts_chunk$set(fig.align = 'center')
+library(tidyverse)
+```
+
+## Randomized Complete Block Design
+
+**What is a randomized complete block design (RCBD)?**
+
+- An experimental design that accounts for variability among experimental units.
+- Experimental units are grouped into blocks based on a known source of variability.
+- Every block receives every treatment exactly once.
+- Treatments are randomized within each block.
+
+**Why use blocking?**
+
+- Reduce unexplained variability.
+- Improve precision when comparing treatment means.
+- Account for known sources of variability that are not the primary interest of the experiment.
+
+## Randomized Complete Block Design
+
+**Example:**
+
+Suppose we want to compare four fertilizers.
+
+- We have four different fields with varying soil conditions.
+- Each of three fields receives all four fertilizers.
+- Within each field, the fertilizers are randomly assigned to experimental plots.
+- Crop yield is measured for each plot.
+
+The fields are our **blocks**, and fertilizer is our **treatment**.
+
+---
+
+```{mermaid}
+%%| mermaid-format: svg
+%%| echo: false
+
+flowchart LR
+  A[Experimental units] --> B[Block 1]
+  A --> C[Block 2]
+  A --> D[Block 3]
+  B --> E[Randomize treatments]
+  C --> F[Randomize treatments]
+  D --> G[Randomize treatments]
+  E --> H[Experiment]
+  F --> H
+  G --> H
+
+```
+
+
+
+## Experimental Design
+
+```{r}
+#| echo: false
+#| fig-width: 9
+#| fig-height: 4
+
+set.seed(801)
+
+design <- expand_grid(
+  block = factor(1:4),
+  treatment = factor(c("A", "B", "C", "D"))
+) %>%
+  group_by(block) %>%
+  mutate(order = sample(1:4)) %>%
+  ungroup()
+
+ggplot(design, aes(x = order, y = block, fill = treatment)) +
+  geom_tile(color = "white", linewidth = 2) +
+  geom_text(aes(label = treatment), size = 6) +
+  scale_x_continuous(breaks = 1:4) +
+  scale_fill_brewer(palette = "Set2") +
+  labs(x = "Randomized plot position",
+       y = "Block",
+       fill = "Treatment") +
+  theme_bw() +
+  theme(aspect.ratio = 0.5)
+```
+
+- Every block contains all four treatments.
+- The order of treatments is randomized independently within each block.
+
+## Model
+
+Let there be $i=1,\ldots,a$ treatments and $j=1,\ldots,b$ blocks.
+
+The model is given by:
+
+$$
+Y_{ij}=\mu+\tau_i+\beta_j+\epsilon_{ij}
+$$
+
+Where
+
+- $Y_{ij}$ is the response for treatment $i$ in block $j$.
+- $\mu$ is the overall mean.
+- $\tau_i$ is the effect of treatment $i$.
+- $\beta_j$ is the effect of block $j$.
+- $\epsilon_{ij}\sim iid\ Normal(0,\sigma^2)$.
+
+
+
+## Model, cont.
+
+**Assumptions**
+
+- Residuals are normally distributed.
+- Homogeneity of variance (variance is constant).
+- Independence of observations.
+- No treatment-by-block interaction.
+
+**Why no interaction?**
+
+- Each treatment is observed only once in each block.
+- There is no replication within treatment-block combinations.
+- Therefore, treatment-by-block interaction cannot be separated from experimental error.
+
+The model assumes that treatment differences are consistent across blocks.
+
+## Hypothesis Testing
+
+Our primary interest is typically the treatment effect.
+
+**Treatment hypotheses:**
+
+$$
+H_0:\tau_1=\tau_2=\cdots=\tau_a=0
+$$
+
+$$
+H_A:\text{At least one }\tau_i\ne 0
+$$
+
+We may also test whether block effects are significant:
+
+$$
+H_0:\beta_1=\beta_2=\cdots=\beta_b=0
+$$
+
+$$
+H_A:\text{At least one }\beta_j\ne 0
+$$
+
+However, blocks are generally included to account for variability rather than to make conclusions about the blocks themselves.
+
+## ANOVA Table
+
+| Source | Sum of Squares | df | Mean Square |
+|:---|:---|:---:|:---|
+| Treatment | $b\sum_{i=1}^a(\bar Y_{i\cdot}-\bar Y_{\cdot\cdot})^2$ | $a-1$ | $SS_T/(a-1)$ |
+| Block | $a\sum_{j=1}^b(\bar Y_{\cdot j}-\bar Y_{\cdot\cdot})^2$ | $b-1$ | $SS_B/(b-1)$ |
+| Error | $SS_{Total}-SS_T-SS_B$ | $(a-1)(b-1)$ | $SS_E/[(a-1)(b-1)]$ |
+| Total | $\sum_{i=1}^a\sum_{j=1}^b(Y_{ij}-\bar Y_{\cdot\cdot})^2$ | $ab-1$ | |
+
+: ANOVA Table for a Balanced RCBD
+
+## ANOVA Table, cont.
+
+The treatment F-statistic is:
+
+$$
+F_T=\frac{MS_T}{MS_E}
+$$
+
+Under the null hypothesis:
+
+$$
+F_T\sim F_{a-1,(a-1)(b-1)}
+$$
+
+Similarly, the block F-statistic is:
+
+$$
+F_B=\frac{MS_B}{MS_E}
+$$
+
+## Sums of Squares
+
+The total variation is partitioned into three components:
+
+$$
+SS_{Total}=SS_T+SS_B+SS_E
+$$
+
+**Treatment:**
+
+$$
+SS_T=b\sum_{i=1}^a
+(\bar Y_{i\cdot}-\bar Y_{\cdot\cdot})^2
+$$
+
+**Block:**
+
+$$
+SS_B=a\sum_{j=1}^b
+(\bar Y_{\cdot j}-\bar Y_{\cdot\cdot})^2
+$$
+
+**Error:**
+
+$$
+SS_E=\sum_{i=1}^a\sum_{j=1}^b
+(Y_{ij}-\bar Y_{i\cdot}-\bar Y_{\cdot j}
++\bar Y_{\cdot\cdot})^2
+$$
+
+
+## Degrees of Freedom
+
+The total degrees of freedom are:
+
+$$
+df_{Total}=ab-1
+$$
+
+The treatment degrees of freedom are:
+
+$$
+df_T=a-1
+$$
+
+The block degrees of freedom are:
+
+$$
+df_B=b-1
+$$
+
+The error degrees of freedom are:
+
+$$
+\begin{aligned}
+df_E&=(ab-1)-(a-1)-(b-1)\\
+&=(a-1)(b-1)
+\end{aligned}
+$$
+
+## Example 1: Fertilizer Experiment
+
+```{r}
+#| echo: false
+#| eval: false
+
+# Generate an example dataset
+set.seed(801)
+
+dat <- expand_grid(
+  treatment = factor(LETTERS[1:4]),
+  block = factor(1:5)
+) %>%
+  mutate(
+    treatment_effect = c(0, 2, 4, 6)[treatment],
+    block_effect = c(-3, -1, 0, 2, 2)[block],
+    y = 20 + treatment_effect + block_effect +
+      rnorm(n(), 0, 1)
+  )
+
+dat
+write.csv(dat, 'example-rcbd.csv', row.names = F)
+```
+
+
+A researcher wants to compare four fertilizers to determine whether they differ in their effects on crop yield.
+
+- Five fields are selected for the experiment.
+- Each field is divided into four plots.
+- Each fertilizer is randomly assigned to one plot within each field.
+- Crop yield is measured for each plot.
+
+**Identify the experimental design.**
+
+- Treatment: Fertilizer
+- Block: Field
+- Response: Crop yield
+
+## Visualizing the Data
+
+We can visualize the treatment and block effects using an interaction plot.
+
+```{r}
+#| echo: true
+dat <- read.csv('data/example-rcbd.csv')
+with(dat,
+     interaction.plot(
+       x.factor = treatment,
+       trace.factor = block,
+       response = y
+     ))
+```
+
+**What do you notice?**
+
+- Are there differences among the treatments?
+- Are there differences among the blocks?
+- Do the treatment effects appear consistent across blocks?
+
+Remember, the RCBD model assumes no treatment-by-block interaction.
+
+## Fitting a Model
+
+We can fit the RCBD model using `lm()` or `aov()`.
+
+```{r}
+#| echo: true
+
+fit <- lm(y ~ treatment + block,
+             data = dat)
+
+summary(fit)
+```
+
+## Fitting a Model, cont.
+
+Notice that we use `+` rather than `*`.
+
+- `treatment + block`: Additive model.
+- `treatment * block`: Includes an interaction term.
+
+We cannot independently estimate the interaction and experimental error with only one observation per treatment-block combination.
+
+## ANOVA Table
+
+```{r}
+#| echo: true
+
+anova(fit)
+```
+
+The ANOVA table provides tests for both treatment and block effects.
+
+- Our primary interest is typically the treatment effect.
+- The block effect accounts for differences among experimental units.
+
+## Estimated Means
+
+We can use `emmeans` to obtain the estimated treatment means.
+
+```{r}
+#| echo: true
+
+library(emmeans)
+
+emm <- emmeans(fit, ~ treatment)
+
+emm
+```
+
+Because this is an additive model, the estimated treatment means account for differences among blocks.
+
+## Estimated Differences
+
+We can use these comparisons to determine which fertilizer treatments differ from one another.
+
+```{r}
+#| echo: true
+
+pairs(emm, infer = c(TRUE, TRUE))
+```
+
+## Fit of Model
+
+Check the model assumptions using the residual diagnostic plots.
+
+```{r}
+#| layout-ncol: 2
+#| layout-nrow: 2
+#| echo: true
+
+plot(fit)
+```
+
+
+## RCBD vs. Two-way ANOVA
+
+Both designs can be analyzed using an additive two-factor model.
+
+| Characteristic | Two-way ANOVA | RCBD |
+|:---|:---|:---|
+| Factor A | Treatment factor | Treatment factor |
+| Factor B | Second treatment factor | Block factor |
+| Interaction | Typically included | Not separately estimable |
+| Primary interest | Both factors and interaction | Treatment effects |
+| Randomization | Across all combinations | Within each block |
+
+**Key distinction:** In an RCBD, blocks are used to control variability rather than to study a second treatment factor.
+
+## Important Considerations
+
+- Every block must contain every treatment.
+- Treatments must be randomized within blocks.
+- Blocks should account for an important source of variability.
+- The model assumes treatment effects are consistent across blocks.
+- Blocking is most useful when differences among blocks explain a meaningful amount of variation.
+
+

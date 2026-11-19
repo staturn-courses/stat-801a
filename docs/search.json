@@ -28,6 +28,174 @@
     "text": "Prior to meeting with your instructor, answer all of the following fields.\n\nList all member of your group.\nIn 2-4 sentences, describe your experiment.\nWhat is the experimental unit?\nWhat is the explanatory variable (if applicable)?\nHow will randomization occur?\nWhat is the response variable?\nIs your response variable categorical or numeric?\nWhat test do you plan to use to analyze the collected data?"
   },
   {
+    "objectID": "notes/9-additional/two-way-anova.html#two-way-anova",
+    "href": "notes/9-additional/two-way-anova.html#two-way-anova",
+    "title": "Two-way ANOVA",
+    "section": "Two-way ANOVA",
+    "text": "Two-way ANOVA\nWhat is ANOVA?\n\nANalysis Of VAriance\nCompare the means of three or more treatment groups\n\nExtension of the t-test\n\n\nWhen to use two-way ANOVA?\n\nAnalyze the effect of two independent variables on a single response\n\nEffect of fertilizer type and planting density when measuring crop yield\nEffect of sugar and flour when measuring cake consistency"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#two-way-anova-1",
+    "href": "notes/9-additional/two-way-anova.html#two-way-anova-1",
+    "title": "Two-way ANOVA",
+    "section": "Two-way ANOVA",
+    "text": "Two-way ANOVA\n\n\n\n\n\n\n\n\n\n\n\nOne Replication\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFactor A\n\n\n\n\n\n\n\nAll combinations\n\n\n\n\n\n\n\nFactor B\n\n\n\n\n\n\n\nRandomize Order\n\n\n\n\n\n\n\nExperiment"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#model",
+    "href": "notes/9-additional/two-way-anova.html#model",
+    "title": "Two-way ANOVA",
+    "section": "Model",
+    "text": "Model\nLet A and B represent two factors. A has levels \\(i=1\\dots a\\) and B has levels \\(j=1\\dots b\\), and there are \\(k=1\\dots r\\) replications. The model is given by:\n\\[\nY_{ijk}=\\mu + A_i+B_j+(AB)_{ij}+\\epsilon_{ijk}\n\\]\nWhere\n\n\\(Y_{ijk}\\) is the response for the \\(k\\)th replication of level \\(i\\) for factor A and level \\(j\\) for factor B.\n\\(\\mu\\) is the overall mean\n\\(A_i\\) is the effect of level \\(i\\) for factor A\n\\(B_j\\) is the effect of level \\(j\\) for factor B\n\\((AB)_{ij}\\) is the interaction effect\n\\(\\epsilon_{ijk}\\sim iid \\quad Normal(0, \\sigma^2)\\)"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#model-cont.",
+    "href": "notes/9-additional/two-way-anova.html#model-cont.",
+    "title": "Two-way ANOVA",
+    "section": "Model, cont.",
+    "text": "Model, cont.\nAssumptions\n\nResiduals are normally distributed\nHomogeneity of variance (variance is constant)\nIndependence of observations"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#anova-table",
+    "href": "notes/9-additional/two-way-anova.html#anova-table",
+    "title": "Two-way ANOVA",
+    "section": "ANOVA Table",
+    "text": "ANOVA Table\n\nANOVA Table\n\n\n\n\n\n\n\n\n\nSource\nSum of Squares\ndf\nMean Square\n\n\n\n\n\nFactor A\n\\(rb\\sum_{i=1}^a(\\bar{Y}_{i\\cdot\\cdot}-\\bar{Y}_{\\cdot\\cdot\\cdot})^2\\)\n\\(a-1\\)\n\\(MS_A=\\frac{SS_A}{(a-1)}\\)\n\n\n\nFactor B\n\\(ra\\sum_{j=1}^b(\\bar{Y}_{\\cdot j\\cdot}-\\bar{Y}_{\\cdot\\cdot\\cdot})^2\\)\n\\(b-1\\)\n\\(MS_B=\\frac{SS_B}{(b-1)}\\)\n\n\n\nInteraction (A x B)\n\\(r\\sum_{i=1}^a\\sum_{j=1}^b(\\bar{Y}_{ij\\cdot}-\\bar{Y}_{i\\cdot\\cdot}-\\bar{Y}_{\\cdot j\\cdot}+\\bar{Y}_{\\cdot\\cdot\\cdot})^2\\)\n\\((a-1)(b-1)\\)\n\\(MS_{AB}=\\frac{SS_{AB}}{(a-1)(b-1)}\\)\n\n\n\nError\n\\(\\sum_{i=1}^a\\sum_{j=1}^b\\sum_{k=1}^r(Y_{ijk}-\\bar{Y}_{ij\\cdot})^2\\)\n\\(ab(r-1)\\)\n\\(MS_E=\\frac{SS_E}{ab(r-1)}\\)\n\n\n\nTotal\n\\(\\sum_{i=1}^a\\sum_{j=1}^b\\sum_{k=1}^r(Y_{ijk}-\\bar{Y}_{\\cdot\\cdot\\cdot})^2\\)\n\\(abr-1\\)\n\n\n\n\n\np-values are calculated by taking the probability of observing the F-statistic or larger values from an F-distribution."
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#example-1",
+    "href": "notes/9-additional/two-way-anova.html#example-1",
+    "title": "Two-way ANOVA",
+    "section": "Example 1",
+    "text": "Example 1\nAn experiment was conducted to measure the effect of fertilizer on the growth height of a plant. Researchers used two brands of fertilizers (Easy-Plant and Fast-Grow) with two quantities (low and high). Each combination of fertilizer brand and quantity were applied to individual pots of plants, measuring the plant height after a set growing period.\n\nagriculture &lt;- read.csv('data/example1-agriculture.csv')\nhead(agriculture)\n\n  fertilizer      brand rep height\n1        Low  Fast-Grow   1  16.53\n2        Low  Fast-Grow   2  22.04\n3        Low  Fast-Grow   3  20.64\n4        Low  Fast-Grow   4  20.45\n5        Low Easy-Plant   1  31.54\n6        Low Easy-Plant   2  29.22"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#interaction-plots",
+    "href": "notes/9-additional/two-way-anova.html#interaction-plots",
+    "title": "Two-way ANOVA",
+    "section": "Interaction plots",
+    "text": "Interaction plots\nThe interaction term of our model is not always required. To visualize whether this term is needed, we can create interaction plots. These are created by plotting the mean of each treatment combination against one treatment variable, and distinguishing the other treatment variable in the plot.\n\nIf the lines are parallel, then there is not likely an interaction.\n\n\nwith(agriculture, interaction.plot(brand, fertilizer, height))"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#interaction-plots-cont.",
+    "href": "notes/9-additional/two-way-anova.html#interaction-plots-cont.",
+    "title": "Two-way ANOVA",
+    "section": "Interaction plots, cont.",
+    "text": "Interaction plots, cont.\n\nwith(agriculture, interaction.plot(fertilizer, brand, height))"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#fitting-a-model",
+    "href": "notes/9-additional/two-way-anova.html#fitting-a-model",
+    "title": "Two-way ANOVA",
+    "section": "Fitting a model",
+    "text": "Fitting a model\n\nmodel1 &lt;- lm(height ~ fertilizer*brand,\n             data = agriculture)\nmodel1\n\n\nCall:\nlm(formula = height ~ fertilizer * brand, data = agriculture)\n\nCoefficients:\n                 (Intercept)                 fertilizerLow  \n                      24.465                         5.173  \n              brandFast-Grow  fertilizerLow:brandFast-Grow  \n                      15.033                       -24.755  \n\n# aov(height ~ fertilizer*brand,\n#              data = agriculture)"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#model-summary",
+    "href": "notes/9-additional/two-way-anova.html#model-summary",
+    "title": "Two-way ANOVA",
+    "section": "Model Summary",
+    "text": "Model Summary\n\nsummary(model1)\n\n\nCall:\nlm(formula = height ~ fertilizer * brand, data = agriculture)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.3850 -0.6025  0.4750  1.0900  2.1250 \n\nCoefficients:\n                             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)                   24.4650     0.9284   26.35 5.46e-12 ***\nfertilizerLow                  5.1725     1.3129    3.94  0.00196 ** \nbrandFast-Grow                15.0325     1.3129   11.45 8.15e-08 ***\nfertilizerLow:brandFast-Grow -24.7550     1.8568  -13.33 1.48e-08 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.857 on 12 degrees of freedom\nMultiple R-squared:  0.9535,    Adjusted R-squared:  0.9419 \nF-statistic: 82.05 on 3 and 12 DF,  p-value: 2.899e-08"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#anova-table-1",
+    "href": "notes/9-additional/two-way-anova.html#anova-table-1",
+    "title": "Two-way ANOVA",
+    "section": "ANOVA Table",
+    "text": "ANOVA Table\n\nanova(model1)\n\nAnalysis of Variance Table\n\nResponse: height\n                 Df Sum Sq Mean Sq  F value    Pr(&gt;F)    \nfertilizer        1 207.65  207.65  60.2301 5.123e-06 ***\nbrand             1  28.20   28.20   8.1785   0.01436 *  \nfertilizer:brand  1 612.81  612.81 177.7508 1.484e-08 ***\nResiduals        12  41.37    3.45                       \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nlibrary(car)\nAnova(model1, type = 3)\n\nAnova Table (Type III tests)\n\nResponse: height\n                  Sum Sq Df F value    Pr(&gt;F)    \n(Intercept)      2394.14  1 694.442 5.459e-12 ***\nfertilizer         53.51  1  15.521  0.001964 ** \nbrand             451.95  1 131.093 8.145e-08 ***\nfertilizer:brand  612.81  1 177.751 1.484e-08 ***\nResiduals          41.37 12                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#estimated-means",
+    "href": "notes/9-additional/two-way-anova.html#estimated-means",
+    "title": "Two-way ANOVA",
+    "section": "Estimated Means",
+    "text": "Estimated Means\nThe interaction term was significant, so we should only consider differences at each treatment combination.\n\nlibrary(emmeans)\nem1 &lt;- emmeans(model1, ~brand*fertilizer)\nem1\n\n brand      fertilizer emmean    SE df lower.CL upper.CL\n Easy-Plant High         24.5 0.928 12     22.4     26.5\n Fast-Grow  High         39.5 0.928 12     37.5     41.5\n Easy-Plant Low          29.6 0.928 12     27.6     31.7\n Fast-Grow  Low          19.9 0.928 12     17.9     21.9\n\nConfidence level used: 0.95 \n\nemmeans(model1, ~fertilizer|brand)\n\nbrand = Easy-Plant:\n fertilizer emmean    SE df lower.CL upper.CL\n High         24.5 0.928 12     22.4     26.5\n Low          29.6 0.928 12     27.6     31.7\n\nbrand = Fast-Grow:\n fertilizer emmean    SE df lower.CL upper.CL\n High         39.5 0.928 12     37.5     41.5\n Low          19.9 0.928 12     17.9     21.9\n\nConfidence level used: 0.95"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#estimated-differences",
+    "href": "notes/9-additional/two-way-anova.html#estimated-differences",
+    "title": "Two-way ANOVA",
+    "section": "Estimated differences",
+    "text": "Estimated differences\n\npairs(em1)\n\n contrast                             estimate   SE df t.ratio p.value\n (Easy-Plant High) - (Fast-Grow High)   -15.03 1.31 12 -11.450 &lt;0.0001\n (Easy-Plant High) - (Easy-Plant Low)    -5.17 1.31 12  -3.940  0.0092\n (Easy-Plant High) - (Fast-Grow Low)      4.55 1.31 12   3.466  0.0210\n (Fast-Grow High) - (Easy-Plant Low)      9.86 1.31 12   7.510 &lt;0.0001\n (Fast-Grow High) - (Fast-Grow Low)      19.58 1.31 12  14.915 &lt;0.0001\n (Easy-Plant Low) - (Fast-Grow Low)       9.72 1.31 12   7.405 &lt;0.0001\n\nP value adjustment: tukey method for comparing a family of 4 estimates \n\npairs(em1, infer = c(T,T))\n\n contrast                             estimate   SE df lower.CL upper.CL\n (Easy-Plant High) - (Fast-Grow High)   -15.03 1.31 12  -18.930   -11.13\n (Easy-Plant High) - (Easy-Plant Low)    -5.17 1.31 12   -9.070    -1.27\n (Easy-Plant High) - (Fast-Grow Low)      4.55 1.31 12    0.652     8.45\n (Fast-Grow High) - (Easy-Plant Low)      9.86 1.31 12    5.962    13.76\n (Fast-Grow High) - (Fast-Grow Low)      19.58 1.31 12   15.685    23.48\n (Easy-Plant Low) - (Fast-Grow Low)       9.72 1.31 12    5.825    13.62\n t.ratio p.value\n -11.450 &lt;0.0001\n  -3.940  0.0092\n   3.466  0.0210\n   7.510 &lt;0.0001\n  14.915 &lt;0.0001\n   7.405 &lt;0.0001\n\nConfidence level used: 0.95 \nConf-level adjustment: tukey method for comparing a family of 4 estimates \nP value adjustment: tukey method for comparing a family of 4 estimates"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#fit-of-model",
+    "href": "notes/9-additional/two-way-anova.html#fit-of-model",
+    "title": "Two-way ANOVA",
+    "section": "Fit of model",
+    "text": "Fit of model\nplot(model1)"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#example-2",
+    "href": "notes/9-additional/two-way-anova.html#example-2",
+    "title": "Two-way ANOVA",
+    "section": "Example 2",
+    "text": "Example 2\nAn experiment was conducted to measure the effect of pH and salt concentration on bacteria growth. Bacteria were placed into Petri dishes and were given a solution that consisted of a pH and salt concentration combination. pH levels were set at levels of 6, 7, and 8, and salt concentration levels were set at 15%, 20%, and 25%. After a set amount of time, the bacteria growth was measured by log CFU (colony forming unit).\n\nbacteria &lt;- read.csv('data/example2-bacteria.csv')\nhead(bacteria)\n\n  ph salt rep logcfu\n1  6   15   1   1.76\n2  6   15   2   2.25\n3  6   15   3   1.70\n4  6   15   4   1.91\n5  6   20   1   2.02\n6  6   20   2   1.94"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#interaction-plots-1",
+    "href": "notes/9-additional/two-way-anova.html#interaction-plots-1",
+    "title": "Two-way ANOVA",
+    "section": "Interaction plots",
+    "text": "Interaction plots\n\nwith(bacteria, interaction.plot(ph, salt, logcfu))\n\n\n\n\n\n\n\nwith(bacteria, interaction.plot(salt, ph, logcfu))"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#fitting-a-model-1",
+    "href": "notes/9-additional/two-way-anova.html#fitting-a-model-1",
+    "title": "Two-way ANOVA",
+    "section": "Fitting a model",
+    "text": "Fitting a model\nOption 1: categorical factors\n\nUse this option if you are interested in the categories themselves.\nSame approach as previous example, but convert treatments to factors.\n\n\nmodel2a &lt;- lm(logcfu ~ factor(ph)*factor(salt), \n              data = bacteria)\n\nOption 2: quantitative factors\n\nUse this option if you are interested in measuring polynomial trends and/or making predictions.\n\n\nmodel2b &lt;- lm(logcfu ~ (ph + I(ph^2))*(salt + I(salt^2)),\n              data = bacteria)\n\nNote: You can get the same results from both models using polynomial orthogonal contrasts."
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#model-summary-1",
+    "href": "notes/9-additional/two-way-anova.html#model-summary-1",
+    "title": "Two-way ANOVA",
+    "section": "Model Summary",
+    "text": "Model Summary\n\nsummary(model2b)\n\n\nCall:\nlm(formula = logcfu ~ (ph + I(ph^2)) * (salt + I(salt^2)), data = bacteria)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-0.51250 -0.12062  0.00375  0.12688  0.34500 \n\nCoefficients:\n                    Estimate Std. Error t value Pr(&gt;|t|)\n(Intercept)       131.722500 115.843558   1.137    0.265\nph                -37.890000  33.464837  -1.132    0.267\nI(ph^2)             2.720000   2.388315   1.139    0.265\nsalt              -14.499250  11.978762  -1.210    0.237\nI(salt^2)           0.365250   0.298692   1.223    0.232\nph:salt             4.223750   3.460420   1.221    0.233\nph:I(salt^2)       -0.106450   0.086286  -1.234    0.228\nI(ph^2):salt       -0.302750   0.246963  -1.226    0.231\nI(ph^2):I(salt^2)   0.007650   0.006158   1.242    0.225\n\nResidual standard error: 0.2053 on 27 degrees of freedom\nMultiple R-squared:  0.5819,    Adjusted R-squared:  0.458 \nF-statistic: 4.696 on 8 and 27 DF,  p-value: 0.001094"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#anova-table-2",
+    "href": "notes/9-additional/two-way-anova.html#anova-table-2",
+    "title": "Two-way ANOVA",
+    "section": "ANOVA Table",
+    "text": "ANOVA Table\n\nanova(model2b)\n\nAnalysis of Variance Table\n\nResponse: logcfu\n                  Df  Sum Sq Mean Sq F value    Pr(&gt;F)    \nph                 1 0.66002 0.66002 15.6643 0.0004948 ***\nI(ph^2)            1 0.17405 0.17405  4.1308 0.0520539 .  \nsalt               1 0.63050 0.63050 14.9638 0.0006264 ***\nI(salt^2)          1 0.00001 0.00001  0.0003 0.9863846    \nph:salt            1 0.05062 0.05062  1.2015 0.2827051    \nph:I(salt^2)       1 0.00141 0.00141  0.0334 0.8563030    \nI(ph^2):salt       1 0.00141 0.00141  0.0334 0.8563030    \nI(ph^2):I(salt^2)  1 0.06503 0.06503  1.5432 0.2248173    \nResiduals         27 1.13765 0.04214                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#estimated-means-1",
+    "href": "notes/9-additional/two-way-anova.html#estimated-means-1",
+    "title": "Two-way ANOVA",
+    "section": "Estimated Means",
+    "text": "Estimated Means\n\nem2 &lt;- emmeans(model2b, ~ph*salt)\nem2\n\n ph salt emmean    SE df lower.CL upper.CL\n  7   20    2.4 0.103 27     2.19     2.61\n\nConfidence level used: 0.95 \n\n\nWhat happened here??"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#estimated-means-2",
+    "href": "notes/9-additional/two-way-anova.html#estimated-means-2",
+    "title": "Two-way ANOVA",
+    "section": "Estimated Means",
+    "text": "Estimated Means\n\nem2b &lt;- emmeans(model2b, ~ph*salt,\n                at = list(ph = c(6, 7, 8),\n                          salt = c(15, 20, 25)))\nem2b\n\n ph salt emmean    SE df lower.CL upper.CL\n  6   15   1.91 0.103 27     1.69     2.12\n  7   15   2.12 0.103 27     1.91     2.33\n  8   15   2.13 0.103 27     1.92     2.35\n  6   20   1.97 0.103 27     1.76     2.18\n  7   20   2.40 0.103 27     2.19     2.61\n  8   20   2.28 0.103 27     2.07     2.49\n  6   25   2.13 0.103 27     1.92     2.34\n  7   25   2.42 0.103 27     2.21     2.63\n  8   25   2.58 0.103 27     2.37     2.79\n\nConfidence level used: 0.95"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#differences",
+    "href": "notes/9-additional/two-way-anova.html#differences",
+    "title": "Two-way ANOVA",
+    "section": "Differences",
+    "text": "Differences\n\npairs(em2b)\n\n contrast                estimate    SE df t.ratio p.value\n ph6 salt15 - ph7 salt15  -0.2150 0.145 27  -1.481  0.8544\n ph6 salt15 - ph8 salt15  -0.2300 0.145 27  -1.585  0.8046\n ph6 salt15 - ph6 salt20  -0.0625 0.145 27  -0.431  1.0000\n ph6 salt15 - ph7 salt20  -0.4925 0.145 27  -3.393  0.0469\n ph6 salt15 - ph8 salt20  -0.3725 0.145 27  -2.566  0.2464\n ph6 salt15 - ph6 salt25  -0.2225 0.145 27  -1.533  0.8304\n ph6 salt15 - ph7 salt25  -0.5175 0.145 27  -3.565  0.0317\n ph6 salt15 - ph8 salt25  -0.6775 0.145 27  -4.668  0.0021\n ph7 salt15 - ph8 salt15  -0.0150 0.145 27  -0.103  1.0000\n ph7 salt15 - ph6 salt20   0.1525 0.145 27   1.051  0.9766\n ph7 salt15 - ph7 salt20  -0.2775 0.145 27  -1.912  0.6120\n ph7 salt15 - ph8 salt20  -0.1575 0.145 27  -1.085  0.9716\n ph7 salt15 - ph6 salt25  -0.0075 0.145 27  -0.052  1.0000\n ph7 salt15 - ph7 salt25  -0.3025 0.145 27  -2.084  0.5035\n ph7 salt15 - ph8 salt25  -0.4625 0.145 27  -3.186  0.0739\n ph8 salt15 - ph6 salt20   0.1675 0.145 27   1.154  0.9595\n ph8 salt15 - ph7 salt20  -0.2625 0.145 27  -1.809  0.6765\n ph8 salt15 - ph8 salt20  -0.1425 0.145 27  -0.982  0.9845\n ph8 salt15 - ph6 salt25   0.0075 0.145 27   0.052  1.0000\n ph8 salt15 - ph7 salt25  -0.2875 0.145 27  -1.981  0.5684\n ph8 salt15 - ph8 salt25  -0.4475 0.145 27  -3.083  0.0919\n ph6 salt20 - ph7 salt20  -0.4300 0.145 27  -2.963  0.1176\n ph6 salt20 - ph8 salt20  -0.3100 0.145 27  -2.136  0.4718\n ph6 salt20 - ph6 salt25  -0.1600 0.145 27  -1.102  0.9689\n ph6 salt20 - ph7 salt25  -0.4550 0.145 27  -3.135  0.0824\n ph6 salt20 - ph8 salt25  -0.6150 0.145 27  -4.237  0.0062\n ph7 salt20 - ph8 salt20   0.1200 0.145 27   0.827  0.9949\n ph7 salt20 - ph6 salt25   0.2700 0.145 27   1.860  0.6445\n ph7 salt20 - ph7 salt25  -0.0250 0.145 27  -0.172  1.0000\n ph7 salt20 - ph8 salt25  -0.1850 0.145 27  -1.275  0.9303\n ph8 salt20 - ph6 salt25   0.1500 0.145 27   1.033  0.9788\n ph8 salt20 - ph7 salt25  -0.1450 0.145 27  -0.999  0.9828\n ph8 salt20 - ph8 salt25  -0.3050 0.145 27  -2.101  0.4929\n ph6 salt25 - ph7 salt25  -0.2950 0.145 27  -2.032  0.5358\n ph6 salt25 - ph8 salt25  -0.4550 0.145 27  -3.135  0.0824\n ph7 salt25 - ph8 salt25  -0.1600 0.145 27  -1.102  0.9689\n\nP value adjustment: tukey method for comparing a family of 9 estimates"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#fit-of-model-1",
+    "href": "notes/9-additional/two-way-anova.html#fit-of-model-1",
+    "title": "Two-way ANOVA",
+    "section": "Fit of Model",
+    "text": "Fit of Model\nplot(model2b)"
+  },
+  {
+    "objectID": "notes/9-additional/two-way-anova.html#sums-of-squares",
+    "href": "notes/9-additional/two-way-anova.html#sums-of-squares",
+    "title": "Two-way ANOVA",
+    "section": "Sums of Squares",
+    "text": "Sums of Squares\n\nR uses Type I Sums of Squares by default.\n\nType I: sequential fit, good for regression\nType III: fits all together, good for categorical treatment factors\nFor balanced design, these will give same result\n\n\n\n# Set R to use Type III sums of squares\noptions(contrasts = c(\"contr.sum\", \"contr.poly\"))\n\n# Or use car package\ncar::Anova(model, type=3)"
+  },
+  {
     "objectID": "notes/8-regression/notes.html#linear-regression-and-correlation",
     "href": "notes/8-regression/notes.html#linear-regression-and-correlation",
     "title": "Linear Regression",
@@ -1621,7 +1789,7 @@
     "href": "notes.html",
     "title": "STAT 801A",
     "section": "",
-    "text": "Stat 801A Syllabus\n\n\n\nCourse Notes\n8 – Regression\n\nSlides\n\nregression.R\nlack-of-fit-and-polynomial.R\n\n\n7 – Multiple comparisons\n\nSlides, part 1\n\ncontrasts.R\ndata_for_contrasts_mod.csv\nIn-class practice\nfertilizer-experiment.csv\nfertilizer-contrasts.R\n\nSlides, part 2\n\n6 – Inference for multiple means\n\nSlides\n\ncrd.csv\n\n\n5 – Inference for variances\n\nSlides\n\n4.5 – Inference for proportions\n\nSlides\n\n4 – Inference for two means\n\nSlides, part 1\n\npotency.csv\nwelch’s t-test\nt-test code\n\nSlides, part 2\n\nreaction-times.csv\n\n\n3 – Inference for one mean\n\nSlides, part 1\n\\(z_c\\) code\nSlides, part 2\nt.test code\nfiltered_travel_time.csv\n\nTest \\(H_0: \\mu = 15\\) vs \\(H_A: \\mu &lt; 15\\)\n\n\n2 – Probability\n\nFull Slides\nIn-class Slides\nZ table\nBinomial problems\n\n1 – Descriptive Statistics\n\nSlides\npdf\n\n\nLabs\n8/31/26 – Lab 1\n\nR Script\nData: cereal.xlsx | Student_data.csv\nSolutions\n\n9/7/26 – No lab (Labor Day)\n9/14/26 – Lab 2\n\nQuarto, ggplot2, and probability\nSolutions: pdf, qmd\n\n9/21/26 – Lab 3\n\nSingle mean, known variance\nSolutions: pdf, qmd\n\n9/8/26 – Lab 4\n\nt-test, power\nvolleyball.csv\nSolutions: qmd\n\n10/05/26 – Lab 5\n\ntwo-sample t-test\nSolutions: qmd\n\n10/12/26 – Lab 6\n\nTests for categorical data\nSolutions: qmd\n\n10/19/26 – No lab (Fall break)\n10/26/26 – Lab 7\n\nTests for variances, random assignment\n\n11/2/26 – No lab\n11/9/26 – Lab 8\n\nOne-way ANOVA\n\n11/16/26 – Lab 9\n\nMultiple comparisons\n\n11/23/26 – No lab\n11/30/26 – Lab 10\n12/7/26 – Lab 11\n12/14/26 – No lab"
+    "text": "Stat 801A Syllabus\n\n\n\nCourse Notes\n9 – Additional topics - Two-way ANOVA - example1-agriculture.csv - example2-bacteria.csv - Randomized Complete Block Designs\n8 – Regression\n\nSlides\n\nregression.R\nlack-of-fit-and-polynomial.R\n\n\n7 – Multiple comparisons\n\nSlides, part 1\n\ncontrasts.R\ndata_for_contrasts_mod.csv\nIn-class practice\nfertilizer-experiment.csv\nfertilizer-contrasts.R\n\nSlides, part 2\n\n6 – Inference for multiple means\n\nSlides\n\ncrd.csv\n\n\n5 – Inference for variances\n\nSlides\n\n4.5 – Inference for proportions\n\nSlides\n\n4 – Inference for two means\n\nSlides, part 1\n\npotency.csv\nwelch’s t-test\nt-test code\n\nSlides, part 2\n\nreaction-times.csv\n\n\n3 – Inference for one mean\n\nSlides, part 1\n\\(z_c\\) code\nSlides, part 2\nt.test code\nfiltered_travel_time.csv\n\nTest \\(H_0: \\mu = 15\\) vs \\(H_A: \\mu &lt; 15\\)\n\n\n2 – Probability\n\nFull Slides\nIn-class Slides\nZ table\nBinomial problems\n\n1 – Descriptive Statistics\n\nSlides\npdf\n\n\nLabs\n8/31/26 – Lab 1\n\nR Script\nData: cereal.xlsx | Student_data.csv\nSolutions\n\n9/7/26 – No lab (Labor Day)\n9/14/26 – Lab 2\n\nQuarto, ggplot2, and probability\nSolutions: pdf, qmd\n\n9/21/26 – Lab 3\n\nSingle mean, known variance\nSolutions: pdf, qmd\n\n9/8/26 – Lab 4\n\nt-test, power\nvolleyball.csv\nSolutions: qmd\n\n10/05/26 – Lab 5\n\ntwo-sample t-test\nSolutions: qmd\n\n10/12/26 – Lab 6\n\nTests for categorical data\nSolutions: qmd\n\n10/19/26 – No lab (Fall break)\n10/26/26 – Lab 7\n\nTests for variances, random assignment\n\n11/2/26 – No lab\n11/9/26 – Lab 8\n\nOne-way ANOVA\n\n11/16/26 – Lab 9\n\nMultiple comparisons\n\n11/23/26 – No lab\n11/30/26 – Lab 10\n12/7/26 – Lab 11\n12/14/26 – No lab"
   },
   {
     "objectID": "notes/2-probability/part2_inclass.html#sampling",
@@ -2847,6 +3015,146 @@
     "title": "Comparison of Means",
     "section": "Multiple Comparisons: R",
     "text": "Multiple Comparisons: R\nUsing the emmeans package, we can easily access this functionality. For all pairwise comparisons, we can use the pairs() function on the object produced by emmeans().\n\nlibrary(emmeans)\nemm &lt;- emmeans(fit, ~Treatment)\npairs(emm, adjust = 'ADJUSTMENT HERE')"
+  },
+  {
+    "objectID": "notes/9-additional/rcbd.html#randomized-complete-block-design",
+    "href": "notes/9-additional/rcbd.html#randomized-complete-block-design",
+    "title": "Randomized Complete Block Designs",
+    "section": "Randomized Complete Block Design",
+    "text": "Randomized Complete Block Design\nWhat is a randomized complete block design (RCBD)?\n\nAn experimental design that accounts for variability among experimental units.\nExperimental units are grouped into blocks based on a known source of variability.\nEvery block receives every treatment exactly once.\nTreatments are randomized within each block.\n\nWhy use blocking?\n\nReduce unexplained variability.\nImprove precision when comparing treatment means.\nAccount for known sources of variability that are not the primary interest of the experiment."
+  },
+  {
+    "objectID": "notes/9-additional/rcbd.html#randomized-complete-block-design-1",
+    "href": "notes/9-additional/rcbd.html#randomized-complete-block-design-1",
+    "title": "Randomized Complete Block Designs",
+    "section": "Randomized Complete Block Design",
+    "text": "Randomized Complete Block Design\nExample:\nSuppose we want to compare four fertilizers.\n\nWe have four different fields with varying soil conditions.\nEach of three fields receives all four fertilizers.\nWithin each field, the fertilizers are randomly assigned to experimental plots.\nCrop yield is measured for each plot.\n\nThe fields are our blocks, and fertilizer is our treatment."
+  },
+  {
+    "objectID": "notes/9-additional/rcbd.html#experimental-design",
+    "href": "notes/9-additional/rcbd.html#experimental-design",
+    "title": "Randomized Complete Block Designs",
+    "section": "Experimental Design",
+    "text": "Experimental Design\n\n\nEvery block contains all four treatments.\nThe order of treatments is randomized independently within each block."
+  },
+  {
+    "objectID": "notes/9-additional/rcbd.html#model",
+    "href": "notes/9-additional/rcbd.html#model",
+    "title": "Randomized Complete Block Designs",
+    "section": "Model",
+    "text": "Model\nLet there be \\(i=1,\\ldots,a\\) treatments and \\(j=1,\\ldots,b\\) blocks.\nThe model is given by:\n\\[\nY_{ij}=\\mu+\\tau_i+\\beta_j+\\epsilon_{ij}\n\\]\nWhere\n\n\\(Y_{ij}\\) is the response for treatment \\(i\\) in block \\(j\\).\n\\(\\mu\\) is the overall mean.\n\\(\\tau_i\\) is the effect of treatment \\(i\\).\n\\(\\beta_j\\) is the effect of block \\(j\\).\n\\(\\epsilon_{ij}\\sim iid\\ Normal(0,\\sigma^2)\\)."
+  },
+  {
+    "objectID": "notes/9-additional/rcbd.html#model-cont.",
+    "href": "notes/9-additional/rcbd.html#model-cont.",
+    "title": "Randomized Complete Block Designs",
+    "section": "Model, cont.",
+    "text": "Model, cont.\nAssumptions\n\nResiduals are normally distributed.\nHomogeneity of variance (variance is constant).\nIndependence of observations.\nNo treatment-by-block interaction.\n\nWhy no interaction?\n\nEach treatment is observed only once in each block.\nThere is no replication within treatment-block combinations.\nTherefore, treatment-by-block interaction cannot be separated from experimental error.\n\nThe model assumes that treatment differences are consistent across blocks."
+  },
+  {
+    "objectID": "notes/9-additional/rcbd.html#hypothesis-testing",
+    "href": "notes/9-additional/rcbd.html#hypothesis-testing",
+    "title": "Randomized Complete Block Designs",
+    "section": "Hypothesis Testing",
+    "text": "Hypothesis Testing\nOur primary interest is typically the treatment effect.\nTreatment hypotheses:\n\\[\nH_0:\\tau_1=\\tau_2=\\cdots=\\tau_a=0\n\\]\n\\[\nH_A:\\text{At least one }\\tau_i\\ne 0\n\\]\nWe may also test whether block effects are significant:\n\\[\nH_0:\\beta_1=\\beta_2=\\cdots=\\beta_b=0\n\\]\n\\[\nH_A:\\text{At least one }\\beta_j\\ne 0\n\\]\nHowever, blocks are generally included to account for variability rather than to make conclusions about the blocks themselves."
+  },
+  {
+    "objectID": "notes/9-additional/rcbd.html#anova-table",
+    "href": "notes/9-additional/rcbd.html#anova-table",
+    "title": "Randomized Complete Block Designs",
+    "section": "ANOVA Table",
+    "text": "ANOVA Table\n\nANOVA Table for a Balanced RCBD\n\n\n\n\n\n\n\n\nSource\nSum of Squares\ndf\nMean Square\n\n\n\n\nTreatment\n\\(b\\sum_{i=1}^a(\\bar Y_{i\\cdot}-\\bar Y_{\\cdot\\cdot})^2\\)\n\\(a-1\\)\n\\(SS_T/(a-1)\\)\n\n\nBlock\n\\(a\\sum_{j=1}^b(\\bar Y_{\\cdot j}-\\bar Y_{\\cdot\\cdot})^2\\)\n\\(b-1\\)\n\\(SS_B/(b-1)\\)\n\n\nError\n\\(SS_{Total}-SS_T-SS_B\\)\n\\((a-1)(b-1)\\)\n\\(SS_E/[(a-1)(b-1)]\\)\n\n\nTotal\n\\(\\sum_{i=1}^a\\sum_{j=1}^b(Y_{ij}-\\bar Y_{\\cdot\\cdot})^2\\)\n\\(ab-1\\)"
+  },
+  {
+    "objectID": "notes/9-additional/rcbd.html#anova-table-cont.",
+    "href": "notes/9-additional/rcbd.html#anova-table-cont.",
+    "title": "Randomized Complete Block Designs",
+    "section": "ANOVA Table, cont.",
+    "text": "ANOVA Table, cont.\nThe treatment F-statistic is:\n\\[\nF_T=\\frac{MS_T}{MS_E}\n\\]\nUnder the null hypothesis:\n\\[\nF_T\\sim F_{a-1,(a-1)(b-1)}\n\\]\nSimilarly, the block F-statistic is:\n\\[\nF_B=\\frac{MS_B}{MS_E}\n\\]"
+  },
+  {
+    "objectID": "notes/9-additional/rcbd.html#sums-of-squares",
+    "href": "notes/9-additional/rcbd.html#sums-of-squares",
+    "title": "Randomized Complete Block Designs",
+    "section": "Sums of Squares",
+    "text": "Sums of Squares\nThe total variation is partitioned into three components:\n\\[\nSS_{Total}=SS_T+SS_B+SS_E\n\\]\nTreatment:\n\\[\nSS_T=b\\sum_{i=1}^a\n(\\bar Y_{i\\cdot}-\\bar Y_{\\cdot\\cdot})^2\n\\]\nBlock:\n\\[\nSS_B=a\\sum_{j=1}^b\n(\\bar Y_{\\cdot j}-\\bar Y_{\\cdot\\cdot})^2\n\\]\nError:\n\\[\nSS_E=\\sum_{i=1}^a\\sum_{j=1}^b\n(Y_{ij}-\\bar Y_{i\\cdot}-\\bar Y_{\\cdot j}\n+\\bar Y_{\\cdot\\cdot})^2\n\\]"
+  },
+  {
+    "objectID": "notes/9-additional/rcbd.html#degrees-of-freedom",
+    "href": "notes/9-additional/rcbd.html#degrees-of-freedom",
+    "title": "Randomized Complete Block Designs",
+    "section": "Degrees of Freedom",
+    "text": "Degrees of Freedom\nThe total degrees of freedom are:\n\\[\ndf_{Total}=ab-1\n\\]\nThe treatment degrees of freedom are:\n\\[\ndf_T=a-1\n\\]\nThe block degrees of freedom are:\n\\[\ndf_B=b-1\n\\]\nThe error degrees of freedom are:\n\\[\n\\begin{aligned}\ndf_E&=(ab-1)-(a-1)-(b-1)\\\\\n&=(a-1)(b-1)\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "notes/9-additional/rcbd.html#example-1-fertilizer-experiment",
+    "href": "notes/9-additional/rcbd.html#example-1-fertilizer-experiment",
+    "title": "Randomized Complete Block Designs",
+    "section": "Example 1: Fertilizer Experiment",
+    "text": "Example 1: Fertilizer Experiment\nA researcher wants to compare four fertilizers to determine whether they differ in their effects on crop yield.\n\nFive fields are selected for the experiment.\nEach field is divided into four plots.\nEach fertilizer is randomly assigned to one plot within each field.\nCrop yield is measured for each plot.\n\nIdentify the experimental design.\n\nTreatment: Fertilizer\nBlock: Field\nResponse: Crop yield"
+  },
+  {
+    "objectID": "notes/9-additional/rcbd.html#visualizing-the-data",
+    "href": "notes/9-additional/rcbd.html#visualizing-the-data",
+    "title": "Randomized Complete Block Designs",
+    "section": "Visualizing the Data",
+    "text": "Visualizing the Data\nWe can visualize the treatment and block effects using an interaction plot.\n\ndat &lt;- read.csv('data/example-rcbd.csv')\nwith(dat,\n     interaction.plot(\n       x.factor = treatment,\n       trace.factor = block,\n       response = y\n     ))\n\n\nWhat do you notice?\n\nAre there differences among the treatments?\nAre there differences among the blocks?\nDo the treatment effects appear consistent across blocks?\n\nRemember, the RCBD model assumes no treatment-by-block interaction."
+  },
+  {
+    "objectID": "notes/9-additional/rcbd.html#fitting-a-model",
+    "href": "notes/9-additional/rcbd.html#fitting-a-model",
+    "title": "Randomized Complete Block Designs",
+    "section": "Fitting a Model",
+    "text": "Fitting a Model\nWe can fit the RCBD model using lm() or aov().\n\nfit &lt;- lm(y ~ treatment + block,\n             data = dat)\n\nsummary(fit)\n\n\nCall:\nlm(formula = y ~ treatment + block, data = dat)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-2.15084 -0.52426  0.04488  0.58469  1.94399 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  16.1683     0.7205  22.441 5.91e-13 ***\ntreatmentB    2.5347     0.6990   3.626  0.00249 ** \ntreatmentC    3.3940     0.6990   4.856  0.00021 ***\ntreatmentD    6.8973     0.6990   9.868 5.95e-08 ***\nblock         1.2266     0.1747   7.020 4.14e-06 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.105 on 15 degrees of freedom\nMultiple R-squared:  0.9086,    Adjusted R-squared:  0.8842 \nF-statistic: 37.28 on 4 and 15 DF,  p-value: 1.259e-07"
+  },
+  {
+    "objectID": "notes/9-additional/rcbd.html#fitting-a-model-cont.",
+    "href": "notes/9-additional/rcbd.html#fitting-a-model-cont.",
+    "title": "Randomized Complete Block Designs",
+    "section": "Fitting a Model, cont.",
+    "text": "Fitting a Model, cont.\nNotice that we use + rather than *.\n\ntreatment + block: Additive model.\ntreatment * block: Includes an interaction term.\n\nWe cannot independently estimate the interaction and experimental error with only one observation per treatment-block combination."
+  },
+  {
+    "objectID": "notes/9-additional/rcbd.html#anova-table-1",
+    "href": "notes/9-additional/rcbd.html#anova-table-1",
+    "title": "Randomized Complete Block Designs",
+    "section": "ANOVA Table",
+    "text": "ANOVA Table\n\nanova(fit)\n\nAnalysis of Variance Table\n\nResponse: y\n          Df  Sum Sq Mean Sq F value    Pr(&gt;F)    \ntreatment  3 121.949  40.650  33.281 7.147e-07 ***\nblock      1  60.184  60.184  49.274 4.143e-06 ***\nResiduals 15  18.321   1.221                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nThe ANOVA table provides tests for both treatment and block effects.\n\nOur primary interest is typically the treatment effect.\nThe block effect accounts for differences among experimental units."
+  },
+  {
+    "objectID": "notes/9-additional/rcbd.html#estimated-means",
+    "href": "notes/9-additional/rcbd.html#estimated-means",
+    "title": "Randomized Complete Block Designs",
+    "section": "Estimated Means",
+    "text": "Estimated Means\nWe can use emmeans to obtain the estimated treatment means.\n\nlibrary(emmeans)\n\nemm &lt;- emmeans(fit, ~ treatment)\n\nemm\n\n treatment emmean    SE df lower.CL upper.CL\n A           19.8 0.494 15     18.8     20.9\n B           22.4 0.494 15     21.3     23.4\n C           23.2 0.494 15     22.2     24.3\n D           26.7 0.494 15     25.7     27.8\n\nConfidence level used: 0.95 \n\n\nBecause this is an additive model, the estimated treatment means account for differences among blocks."
+  },
+  {
+    "objectID": "notes/9-additional/rcbd.html#estimated-differences",
+    "href": "notes/9-additional/rcbd.html#estimated-differences",
+    "title": "Randomized Complete Block Designs",
+    "section": "Estimated Differences",
+    "text": "Estimated Differences\nWe can use these comparisons to determine which fertilizer treatments differ from one another.\n\npairs(emm, infer = c(TRUE, TRUE))\n\n contrast estimate    SE df lower.CL upper.CL t.ratio p.value\n A - B      -2.535 0.699 15    -4.55    -0.52  -3.626  0.0119\n A - C      -3.394 0.699 15    -5.41    -1.38  -4.856  0.0011\n A - D      -6.897 0.699 15    -8.91    -4.88  -9.868 &lt;0.0001\n B - C      -0.859 0.699 15    -2.87     1.16  -1.229  0.6187\n B - D      -4.363 0.699 15    -6.38    -2.35  -6.241 &lt;0.0001\n C - D      -3.503 0.699 15    -5.52    -1.49  -5.012  0.0008\n\nConfidence level used: 0.95 \nConf-level adjustment: tukey method for comparing a family of 4 estimates \nP value adjustment: tukey method for comparing a family of 4 estimates"
+  },
+  {
+    "objectID": "notes/9-additional/rcbd.html#fit-of-model",
+    "href": "notes/9-additional/rcbd.html#fit-of-model",
+    "title": "Randomized Complete Block Designs",
+    "section": "Fit of Model",
+    "text": "Fit of Model\nCheck the model assumptions using the residual diagnostic plots.\nplot(fit)"
+  },
+  {
+    "objectID": "notes/9-additional/rcbd.html#rcbd-vs.-two-way-anova",
+    "href": "notes/9-additional/rcbd.html#rcbd-vs.-two-way-anova",
+    "title": "Randomized Complete Block Designs",
+    "section": "RCBD vs. Two-way ANOVA",
+    "text": "RCBD vs. Two-way ANOVA\nBoth designs can be analyzed using an additive two-factor model.\n\n\n\nCharacteristic\nTwo-way ANOVA\nRCBD\n\n\n\n\nFactor A\nTreatment factor\nTreatment factor\n\n\nFactor B\nSecond treatment factor\nBlock factor\n\n\nInteraction\nTypically included\nNot separately estimable\n\n\nPrimary interest\nBoth factors and interaction\nTreatment effects\n\n\nRandomization\nAcross all combinations\nWithin each block\n\n\n\nKey distinction: In an RCBD, blocks are used to control variability rather than to study a second treatment factor."
+  },
+  {
+    "objectID": "notes/9-additional/rcbd.html#important-considerations",
+    "href": "notes/9-additional/rcbd.html#important-considerations",
+    "title": "Randomized Complete Block Designs",
+    "section": "Important Considerations",
+    "text": "Important Considerations\n\nEvery block must contain every treatment.\nTreatments must be randomized within blocks.\nBlocks should account for an important source of variability.\nThe model assumes treatment effects are consistent across blocks.\nBlocking is most useful when differences among blocks explain a meaningful amount of variation."
   },
   {
     "objectID": "projects/final/final.html",

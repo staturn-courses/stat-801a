@@ -16,6 +16,12 @@ format:
 
 **Course Notes**
 
+9 -- Additional topics
+- [Two-way ANOVA](notes/9-additional/two-way-anova.qmd)
+    - [example1-agriculture.csv](notes/9-additional/example1-agriculture.csv)
+    - [example2-bacteria.csv](notes/9-additional/example2-bacteria.csv)
+- [Randomized Complete Block Designs](notes/9-additional/rcbd.qmd)
+
 8 -- Regression
 
 - [Slides](notes/8-regression/notes.pdf)
