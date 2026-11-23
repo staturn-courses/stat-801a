@@ -129,16 +129,19 @@ format:
 10/26/26 -- Lab 7
 
 - [Tests for variances, random assignment](labs/lab7/STAT_801A_Lab7.qmd)
+- [Solutions](labs/lab7/STAT_801A_Lab7_Solutions.qmd)
 
 11/2/26 -- No lab
 
 11/9/26 -- Lab 8
 
  - [One-way ANOVA](labs/lab8/STAT_801A_Lab8.qmd)
+ - [Solutions](labs/lab8/STAT_801A_Lab8_Solutions.qmd)
 
 11/16/26 -- Lab 9
 
 - [Multiple comparisons](labs/lab9/STAT_801A_Lab9.qmd)
+- [Solutions](labs/lab9/STAT_801A_Lab9_Solutions.qmd)
 
 11/23/26 -- No lab
 
